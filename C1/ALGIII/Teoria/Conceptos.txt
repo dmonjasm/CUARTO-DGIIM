@@ -1,0 +1,9 @@
+**Tema 1**
+-Inmersión
+-Descompone totalmente 
+-Algebraicamente cerrado
+-Elemento algebraico
+-Elemetno trascendente
+-Polinomio Irreducible de alfa sobre K
+-Criterio de Eisenstein
+
