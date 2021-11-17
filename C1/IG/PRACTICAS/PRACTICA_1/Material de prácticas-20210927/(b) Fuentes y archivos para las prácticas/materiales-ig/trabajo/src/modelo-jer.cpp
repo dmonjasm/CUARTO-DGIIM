@@ -64,6 +64,9 @@ PrismaAchatado::PrismaAchatado(const float ancho, const float alto, const float 
 
     agregar(MAT_Escalado(ancho,alto,largo));
     agregar(new Cubo());
+
+    if(ancho == (float)0.7)
+        ponerColor({0.15,0.15,0.15});        
 };
 
 TapasVerticales::TapasVerticales(const float ancho, const float alto, const float largo, const float distancia)
@@ -75,7 +78,7 @@ TapasVerticales::TapasVerticales(const float ancho, const float alto, const floa
     agregar( MAT_Traslacion(0.0, distancia+alto, 0.0));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
 
-    ponerColor({0.0,1.0,0.0});
+    ponerColor({0.552,0.286,0.145});
 };
 
 TapasLaterales::TapasLaterales(const float ancho, const float alto, const float largo, const float distancia)
@@ -87,7 +90,7 @@ TapasLaterales::TapasLaterales(const float ancho, const float alto, const float 
     agregar( MAT_Traslacion(distancia+ancho, 0.0, 0.0));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
 
-    ponerColor({1.0,0.0,0.0});
+    ponerColor({0.305,0.231,0.192});
 };
 
 TapaPosteriorDelantera::TapaPosteriorDelantera(const float ancho, const float alto, const float largo, const float lejania)
@@ -97,7 +100,7 @@ TapaPosteriorDelantera::TapaPosteriorDelantera(const float ancho, const float al
     agregar(MAT_Traslacion(0.0,0.0,lejania));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
 
-    ponerColor({1.0,0.0,1.0});
+    ponerColor({0.501,0.25,0.0});
 };
 
 CuerpoComoda::CuerpoComoda()
@@ -115,6 +118,7 @@ Cajon::Cajon(Matriz4f * & traslacion)
     ponerIdentificador(-1);
 
     unsigned ind = agregar(MAT_Traslacion(0.0,0.0,0.0));
+    PrismaAchatado* fondo_cajon;
     
     agregar(new TapaPosteriorDelantera(1.6,1.6/3+0.1,0.05,1));
     agregar(new TapaPosteriorDelantera(1.5,1.6/3,0.05,-1));
@@ -142,12 +146,35 @@ TresCajones::TresCajones(Matriz4f * & trasl1,Matriz4f * & trasl2,Matriz4f * & tr
 
 };
 
+Pata::Pata()
+{
+    ponerIdentificador(-1);
+
+    agregar(MAT_Traslacion(0.75,-1.2,0.85));
+    agregar(MAT_Escalado(0.15,0.1,0.15));
+    agregar(new Esfera(30,30));    
+}
+
+CuatroPatas::CuatroPatas()
+{
+    ponerIdentificador(-1);
+
+    agregar(new Pata());
+    agregar(MAT_Escalado(-1.0,1.0,-1.0));
+    agregar(new Pata());
+    agregar(MAT_Rotacion(-82.5,0.0,1.0,0.0));
+    agregar(new Pata());
+    agregar(MAT_Escalado(-1.0,1.0,-1.0));
+    agregar(new Pata());
+};
+
 ComodaCompleta::ComodaCompleta(Matriz4f * & traslacion1,Matriz4f * & traslacion2,Matriz4f * & traslacion3, Matriz4f * & rotacion)
 {
     ponerIdentificador(-1);
 
     unsigned ind = agregar( MAT_Rotacion(0.0,0.0,1.0,0.0));
 
+    agregar(new CuatroPatas());
     agregar(new CuerpoComoda());
     agregar(new TresCajones(traslacion1,traslacion2,traslacion3));
     agregar(new TapasVerticales(1.9,0.15,2.2,2.0));

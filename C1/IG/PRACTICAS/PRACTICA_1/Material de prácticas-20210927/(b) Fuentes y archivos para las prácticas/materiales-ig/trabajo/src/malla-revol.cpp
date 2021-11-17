@@ -139,7 +139,7 @@ Esfera::Esfera(const int num_verts_per, const unsigned nperfiles)
 
    inicializar(perfil, nperfiles);
 
-   ponerColor({1.0,1.0,0.0});
+   ponerColor({0.5,0.5,0.5});
    
 }
 

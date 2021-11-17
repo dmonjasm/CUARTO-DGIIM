@@ -70,6 +70,18 @@ class TresCajones : public NodoGrafoEscena
         TresCajones(Matriz4f * & traslacion1,Matriz4f * & traslacion2,Matriz4f * & traslacion3);
 };
 
+class Pata: public NodoGrafoEscena
+{
+    public:
+        Pata();
+};
+
+class CuatroPatas : public NodoGrafoEscena
+{
+    public:
+        CuatroPatas();
+};
+
 class ComodaCompleta : public NodoGrafoEscena
 {
     public:
