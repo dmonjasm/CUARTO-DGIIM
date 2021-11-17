@@ -108,10 +108,11 @@ CuerpoComoda::CuerpoComoda()
 {
     ponerIdentificador(-1);
 
-    agregar(new TapaPosteriorDelantera(1.7,2.0,0.1,-1.05));
     agregar(new TapasVerticales(1.5,0.1,2.0,1.8));
     agregar(new TapasVerticales(1.5,0.1,2.0,1.6/3));
     agregar(new TapasLaterales(0.1,2.0,2.0,1.5));
+    agregar(new TapaPosteriorDelantera(1.7,2.0,0.1,-1.05));
+    
 };
 
 Cajon::Cajon(Matriz4f * & traslacion)
@@ -121,12 +122,12 @@ Cajon::Cajon(Matriz4f * & traslacion)
     unsigned ind = agregar(MAT_Traslacion(0.0,0.0,0.0));
     PrismaAchatado* fondo_cajon;
     
-    agregar(new TapaPosteriorDelantera(1.6,1.6/3+0.1,0.05,1));
-    agregar(new TapaPosteriorDelantera(1.5,1.6/3,0.05,-1));
-    agregar(new TapasLaterales(0.05,1.6/3,1.95,1.4));
+    agregar(new TapasLaterales(0.05,1.6/3.0,1.95,1.4));
+    agregar(new TapaPosteriorDelantera(1.6,1.6/3.0+0.1,0.05,1.0));
+    agregar(new TapaPosteriorDelantera(1.5,1.6/3.0,0.05,-1.0));
     agregar(MAT_Traslacion(0.0,-1.6/6+0.025,0.0));
     agregar(new PrismaAchatado(0.7,0.025,0.975));
-    agregar(MAT_Traslacion(0.0,1.6/6-0.025,1.075));
+    agregar(MAT_Traslacion(0.0,1.6/6.0-0.025,1.075));
     agregar(MAT_Escalado(0.1,0.1,0.1));
     agregar(new Esfera(20,20));
 
@@ -142,7 +143,7 @@ TresCajones::TresCajones(Matriz4f * & trasl1,Matriz4f * & trasl2,Matriz4f * & tr
     agregar(new Cajon(trasl2));
     agregar(MAT_Traslacion(0.0,-1.6/3-0.1,0.0));
     agregar(new Cajon(trasl3));
-    agregar(MAT_Traslacion(0.0,2*1.6/3+0.2,0.0));
+    agregar(MAT_Traslacion(0.0,2*1.6/3.0+0.2,0.0));
     agregar(new Cajon(trasl1));
 
 };
@@ -176,9 +177,10 @@ ComodaCompleta::ComodaCompleta(Matriz4f * & traslacion1,Matriz4f * & traslacion2
     unsigned ind = agregar( MAT_Rotacion(0.0,0.0,1.0,0.0));
 
     agregar(new CuatroPatas());
+    agregar(new TapasVerticales(1.9,0.15,2.2,2.0));
     agregar(new CuerpoComoda());
     agregar(new TresCajones(traslacion1,traslacion2,traslacion3));
-    agregar(new TapasVerticales(1.9,0.15,2.2,2.0));
+    
 
     rotacion = leerPtrMatriz(ind);
 };
