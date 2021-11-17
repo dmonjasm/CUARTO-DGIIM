@@ -78,6 +78,7 @@ class Escena
 } ;
 
 
+// Nombre: Daniel, Apellidos: Monjas Miguélez, DNI/Pasaporte: 70274432W (IG GIM+GIADE, curso 21-22)
 // -------------------------------------------------------------------------
 // clase derivada de 'Escena', define un constructor que permite añadir
 // al array de objetos de la escena los objetos que se indican en la práctica 1

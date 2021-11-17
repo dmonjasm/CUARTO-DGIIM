@@ -1,3 +1,4 @@
+// Nombre: Daniel, Apellidos: Monjas Miguélez, DNI/Pasaporte: 70274432W (IG GIM+GIADE, curso 21-22)
 #include "ig-aux.h"
 #include "tuplasg.h"
 #include "practicas.h"
