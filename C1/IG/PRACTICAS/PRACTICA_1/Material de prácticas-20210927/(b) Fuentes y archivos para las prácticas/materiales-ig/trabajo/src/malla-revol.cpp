@@ -80,7 +80,7 @@ Cilindro::Cilindro(const int num_verts_per,const unsigned nperfiles)
    ponerNombre( std::string("Cilindro"));
    vector<Tupla3f> perfil;
    if(num_verts_per < 4){
-      std::cerr<< "Numero de perfil del perfil del cilindro insuficiente" << endl;
+      std::cerr<< "Numero de vértices del perfil del cilindro insuficiente" << endl;
    }
 
    perfil.push_back({0.0,0.0,0.0});
@@ -138,6 +138,8 @@ Esfera::Esfera(const int num_verts_per, const unsigned nperfiles)
    }
 
    inicializar(perfil, nperfiles);
+
+   ponerColor({1.0,1.0,0.0});
    
 }
 
