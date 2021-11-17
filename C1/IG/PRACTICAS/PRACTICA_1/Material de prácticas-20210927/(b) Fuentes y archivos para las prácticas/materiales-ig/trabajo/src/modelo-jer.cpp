@@ -3,6 +3,7 @@
 #include "malla-revol.h"
 #include "matrices-tr.h"
 #include "grafo-escena.h"
+#include <cmath>
 
 NodoRaiz::NodoRaiz(){
     ponerNombre("Comoda Ikea");
@@ -16,15 +17,15 @@ void NodoRaiz::actualizarEstadoParametro(const unsigned int iParam, const float 
 
     switch(iParam){
         case 0:
-            fijar_pm_trasl_cajon1(2/3 * sin(t_sec));
+            fijar_pm_trasl_cajon1(1.0/3.0*(1.0 + sin(t_sec)));
         break;
 
         case 1:
-            fijar_pm_trasl_cajon2(4/3 * sin(t_sec));
+            fijar_pm_trasl_cajon2(2.0/3.0*(1.0 + sin(t_sec)));
         break;
 
         case 2:
-            fijar_pm_trasl_cajon3(2 * sin(t_sec));
+            fijar_pm_trasl_cajon3(1.0 + sin(t_sec));
         break;
 
         case 3:
@@ -33,30 +34,30 @@ void NodoRaiz::actualizarEstadoParametro(const unsigned int iParam, const float 
     }
 };
 
+unsigned NodoRaiz::leerNumParametros() const
+{
+    return 4;
+};
+
 void NodoRaiz::fijar_pm_trasl_cajon1(const float nuevatrasl_cajon1)
 {
-    * pm_trasl_cajon1 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon1);
+    *pm_trasl_cajon1 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon1);
 };
 
 void NodoRaiz::fijar_pm_trasl_cajon2(const float nuevatrasl_cajon2)
 {
-    * pm_trasl_cajon2 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon2);
+    *pm_trasl_cajon2 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon2);
 };
 
 void NodoRaiz::fijar_pm_trasl_cajon3(const float nuevatrasl_cajon3)
 {
-    * pm_trasl_cajon3 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon3);
+    *pm_trasl_cajon3 = MAT_Traslacion(0.0,0.0,nuevatrasl_cajon3);
 };
 
 void NodoRaiz::fijar_pm_rot_comoda(const float nuevarot_comoda)
 {
-    * pm_rot_comoda = MAT_Rotacion(nuevarot_comoda, 0.0, 1.0, 0.0);
+    *pm_rot_comoda = MAT_Rotacion(nuevarot_comoda, 0.0, 1.0, 0.0);
 }
-
-unsigned NodoRaiz::leerNumParametros()
-{
-    return 4;
-};
 
 PrismaAchatado::PrismaAchatado(const float ancho, const float alto, const float largo){
     ponerIdentificador(-1);
@@ -113,7 +114,7 @@ Cajon::Cajon(Matriz4f * & traslacion)
 {   
     ponerIdentificador(-1);
 
-    unsigned int ind = agregar(MAT_Traslacion(0.0,0.0,0.0));
+    unsigned ind = agregar(MAT_Traslacion(0.0,0.0,0.0));
     
     agregar(new TapaPosteriorDelantera(1.6,1.6/3+0.1,0.05,1));
     agregar(new TapaPosteriorDelantera(1.5,1.6/3,0.05,-1));
@@ -129,15 +130,15 @@ Cajon::Cajon(Matriz4f * & traslacion)
 
 }
 
-TresCajones::TresCajones(Matriz4f * & traslacion1,Matriz4f * & traslacion2,Matriz4f * & traslacion3)
+TresCajones::TresCajones(Matriz4f * & trasl1,Matriz4f * & trasl2,Matriz4f * & trasl3)
 {
     ponerIdentificador(-1);
 
-    agregar(new Cajon(traslacion3));
+    agregar(new Cajon(trasl2));
     agregar(MAT_Traslacion(0.0,-1.6/3-0.1,0.0));
-    agregar(new Cajon(traslacion2));
+    agregar(new Cajon(trasl3));
     agregar(MAT_Traslacion(0.0,2*1.6/3+0.2,0.0));
-    agregar(new Cajon(traslacion1));
+    agregar(new Cajon(trasl1));
 
 };
 

@@ -6,17 +6,18 @@
 class NodoRaiz : public NodoGrafoEscena
 {
     protected:
-        Matriz4f * pm_trasl_cajon1 = nullptr,
-                 * pm_trasl_cajon2 = nullptr,
-                 * pm_trasl_cajon3 = nullptr,
-                 * pm_rot_comoda = nullptr;
+        Matriz4f * pm_trasl_cajon1 = nullptr;
+        Matriz4f * pm_trasl_cajon2 = nullptr;
+        Matriz4f * pm_trasl_cajon3 = nullptr;
+        Matriz4f * pm_rot_comoda = nullptr;
                  
-        virtual void actualizarEstadoParametro( const unsigned iPparam, const float t_sec);         
+        void actualizarEstadoParametro( const unsigned iPparam, const float t_sec);         
                 
 
     public:
         NodoRaiz();
-        unsigned leerNumParametros();
+
+        unsigned leerNumParametros() const;
 
         void fijar_pm_trasl_cajon1(const float nuevatrasl_cajon1);
         void fijar_pm_trasl_cajon2(const float nuevatrasl_cajon2);
@@ -77,4 +78,4 @@ class ComodaCompleta : public NodoGrafoEscena
 
 
 
-#endif MODELO_JER_H
+#endif
