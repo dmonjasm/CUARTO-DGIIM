@@ -311,5 +311,247 @@ CuboColores::CuboColores()
          {1,5,7}, {1,7,3}  // Z+ (+1)
       } ;
 
+};
+
+EstrellaZ::EstrellaZ(unsigned n)
+{
+   assert(n > 1);
+
+   ponerNombre("Ejercicio Adicional Practica 1:EstrellaZ");
+
+   //Inserto el centro
+   vertices.push_back({0.5,0.5,0.0});
+   //Le pongo color blanco
+   col_ver.push_back({1.0,1.0,1.0});
+
+   Tupla3f largo, corto;
+   largo={0.5,0.0,0.0};
+   corto={0.15,0.0,0.0};
+
+   corto=MAT_Rotacion((float)(360/(2*n)),0.0,0.0,1.0)*corto;
+
+   for(int i=0; i < n; i++){
+      vertices.push_back(MAT_Traslacion(0.5,0.5,0.0)*MAT_Rotacion((float)(360/n)*i,0.0,0.0,1.0)*largo);
+      vertices.push_back(MAT_Traslacion(0.5,0.5,0.0)*MAT_Rotacion((float)(360/n)*i,0.0,0.0,1.0)*corto);
+   }
+
+   for(int i=1; i < 2*n+1; i++){
+      col_ver.push_back(vertices[i]);//No se inculye el primer vertice que ya tiene color, y se tienen que tener en cuenta los 2n restantes
+   }
+
+   for(int i=0; i < 2*n-1; i++){
+      triangulos.push_back({0,i+1,i+2});
+   }
+
+   triangulos.push_back({0,1,2*n}); //Inserto el último triángulo
+
+};
+
+CasaX::CasaX()
+{
+   ponerNombre("Ejercicio Adicional Practica 1: CasaX");
+
+   vertices =
+      {  { -1.0, -1.0, -1.0 }, // 0
+         { -1.0, -1.0, +1.0 }, // 1
+         { -1.0, +1.0, -1.0 }, // 2
+         { -1.0, +1.0, +1.0 }, // 3
+         { +1.0, -1.0, -1.0 }, // 4
+         { +1.0, -1.0, +1.0 }, // 5
+         { +1.0, +1.0, -1.0 }, // 6
+         { +1.0, +1.0, +1.0 }, // 7
+         { +1.0, +1+sin(45)*0.5/cos(45), +0.0}, //Punto X+ del tejado 8
+         { -1.0, +1+sin(45)*0.5/cos(45), 0.0} //Punto X- del tejado 9
+      } ;
+
+      for(int i=0; i < vertices.size(); i++){
+         vertices[i]=MAT_Escalado(1.2,1.0,1.0)*vertices[i];
+      }
+
+      for(int i=0; i < 10; i++)
+         col_ver.push_back(vertices[i]);
+
+
+
+   triangulos =
+      {  {0,1,3}, {0,3,2}, // X-
+         {4,7,5}, {4,6,7}, // X+ (+4)
+
+         //{0,5,1}, {0,4,5}, // Y- Quito los triángulos de la base
+         //{2,3,7}, {2,7,6}, // Y+ (+2) Quito los triángulos de la tapa
+
+
+         {0,6,4}, {0,2,6}, // Z-
+         {1,5,7}, {1,7,3},  // Z+ (+1)
+
+         //Tejado Casa
+         {8,6,7}, {6,8,2}, {8,2,9},
+         {3,9,8}, {3,7,8}, {3,2,9}
+      } ;
+};
+
+MallaTriangulo::MallaTriangulo()
+{
+   ponerNombre("Ejercicio Adicional Practica 1:Malla Triangulo");
+
+   vertices = 
+      {  {-0.5,-sqrt(2)+sqrt(10)/4.0,0.0},
+         {0.0,sqrt(10)/4.0,0.0},
+         {0.5,-sqrt(2)+sqrt(10)/4.0,0.0},
+      };
+
+   triangulos={{0,1,2}};
+};
+
+MallaCuadrado::MallaCuadrado()
+{
+   ponerNombre("Ejercicio Adicional Practica 1:Malla Cuadrado");
+
+   vertices =
+      {  {-1.0,-1.0,0.0}, //0
+         {-1.0, 1.0,0.0}, //1
+         {1.0,-1.0,0.0}, //2
+         {1.0,1.0, 0.0} //3
+      };  
+
+   triangulos =
+      {
+         {0,1,2}, {1,2,3}
+      };
 }
+
+MallaPiramideL::MallaPiramideL()
+{  
+   ponerNombre("Ejercicio Adicional Practica 1:PiramideL");
+
+   vertices={
+      {-1.0,-1.0,0.0}, //0
+      {1.0,-1.0,0.0}, //1
+      {1.0,0.0,0.0}, //2
+      {0.0,0.0,0.0}, //3
+      {0.0,2.0,0.0}, //4
+      {-1.0,2.0,0.0}, //5
+      {0.0,0.0,1.0} //6
+   };  
+
+   for(int i=0; i < vertices.size(); i++){
+      col_ver.push_back(vertices[i]);
+   }
+
+   triangulos={
+      {0,1,3}, {1,2,3}, {3,4,5}, {5,0,3},
+      {5,4,6}, {1,2,6}, {6,3,2}, {6,3,4},
+      {0,5,6}, {0,1,6}
+   };
+
+}
+
+PiramideEstrellaZ::PiramideEstrellaZ(unsigned n)
+{
+   assert(n>1);
+
+   ponerNombre("Ejercicio Adicional Practica 2: PiramideEstrellaZ");
+
+   //Inserto el centro
+   vertices.push_back({0.5,0.5,0.0});
+   //Le pongo color blanco
+   col_ver.push_back({1.0,1.0,1.0});
+
+   Tupla3f largo, corto;
+   largo={0.5,0.0,0.0};
+   corto={0.15,0.0,0.0};
+
+   corto=MAT_Rotacion(22.5,0.0,0.0,1.0)*corto;
+
+   for(int i=0; i < n; i++){
+      vertices.push_back(MAT_Traslacion(0.5,0.5,0.0)*MAT_Rotacion(45*i,0.0,0.0,1.0)*largo);
+      vertices.push_back(MAT_Traslacion(0.5,0.5,0.0)*MAT_Rotacion(45*i,0.0,0.0,1.0)*corto);
+   }
+
+   for(int i=1; i < 2*n+1; i++){
+      col_ver.push_back(vertices[i]);//No se inculye el primer vertice que ya tiene color, y se tienen que tener en cuenta los 2n restantes
+   }
+
+   for(int i=0; i < 2*n-1; i++){
+      triangulos.push_back({0,i+1,i+2});
+   }
+
+   triangulos.push_back({0,1,2*n}); //Inserto el último triángulo
+
+   //Hasta aquí tenemos la base
+   vertices.push_back({0.5,0.5,0.5});
+   col_ver.push_back({1.0,1.0,1.0});
+
+   for(int i=1; i < 2*n+1; i++){
+      triangulos.push_back({0,i,2*n+1});
+   }
+
+   
+}
+
+RejillaY::RejillaY(unsigned m, unsigned n)
+{
+   ponerNombre("Ejercicio Adicional Practica 2: RejillaY");
+
+   assert(n>1 && m>1);
+   Tupla3f centro={0.0,0.0,0.0};
+
+   float ancho_x=(float)1.0/(m-1);
+   float largo_z=(float)1.0/(n-1);
+
+   for(int i=0; i < n; i++){
+      for(int j=0; j < m; j++){
+         vertices.push_back(MAT_Traslacion(j*ancho_x,0.0,i*largo_z)*centro);
+      }
+   }
+
+   for(int i=0; i < vertices.size();i++)
+      col_ver.push_back(vertices[i]);
+
+   for(int i=0; i < n-1; i++){
+      for(int j=0; j < m-1; j++){
+         triangulos.push_back({j+i*m,j+(i+1)*m,i*m+j+1}); 
+         triangulos.push_back({j+(i+1)*m,i*m+j+1,j+(i+1)*m+1}); 
+      }
+   }   
+}
+
+MallaTorre::MallaTorre(int n)
+{
+   assert(n >= 1);
+
+   
+
+   vertices.clear();
+   ponerNombre("Ejercicio Adicional Práctica 2: MallaTorre");
+
+   Tupla3f punto_inicial = {-0.5,0.0,0.5};
+
+   for(int i=0; i < n+1; i++){
+      for(int j=0; j < 4;j++){
+         vertices.push_back(MAT_Traslacion(0.0,i*1.0,0.0)*MAT_Rotacion(j*90,0.0,1.0,0.0)*punto_inicial);
+      }
+   }
+
+   for(int i=0; i < vertices.size(); i++)
+      col_ver.push_back(vertices[i]);
+
+   for(int i=0; i < n; i++){
+      for(int j=0; j < 4; j++){
+         if(j!=3){
+            triangulos.push_back({j+i*4,(j+1+i*4),(i+1)*4+j});
+            triangulos.push_back({j+1+i*4,(i+1)*4+j,(i+1)*4+j+1});
+         }
+         
+         else{
+            triangulos.push_back({j+i*4,(j+1+i*4)-4,(i+1)*4+j}); 
+            triangulos.push_back({j+1+i*4-4,(i+1)*4+j,(i+1)*4+j+1-4});
+         }
+
+      }
+   }
+
+}
+   
+
 

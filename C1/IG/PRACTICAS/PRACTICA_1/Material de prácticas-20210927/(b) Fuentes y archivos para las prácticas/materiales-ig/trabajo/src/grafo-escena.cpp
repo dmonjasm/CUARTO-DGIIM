@@ -22,6 +22,9 @@
 #include "ig-aux.h"
 #include "matrices-tr.h"
 #include "grafo-escena.h"
+#include "malla-ind.h"
+#include "objeto3d.h"
+#include "malla-revol.h"
 
 using namespace std ;
 
@@ -223,3 +226,56 @@ bool NodoGrafoEscena::buscarObjeto
    // ni este nodo ni ningún hijo es el buscado: terminar
    return false ;
 }
+
+ConoDesplazado::ConoDesplazado(){
+   ponerIdentificador(-1);
+
+   agregar(MAT_Traslacion(1.3,0.0,0.0));
+   agregar(MAT_Rotacion(-90,0.0,0.0,1.0));
+   agregar(MAT_Escalado(0.14,0.15,0.14));
+   agregar(new Cono(20,20));
+}
+
+EstrellaXDesplazada::EstrellaXDesplazada(unsigned n){
+   ponerIdentificador(-1);
+
+   agregar(MAT_Escalado(2.6,2.6,1.0));
+   agregar(MAT_Traslacion(-0.5,-0.5,0.0));
+   agregar(new EstrellaZ(n));
+}
+
+GrafoEstrellaX::GrafoEstrellaX(unsigned n)
+{
+   ponerIdentificador(-1);
+   ponerNombre("Ejercicio Adicional Practica 3: GrafoEstrellaX");
+
+   unsigned ind = agregar(MAT_Rotacion(0,1.0,0.0,0.0));
+
+   agregar(MAT_Rotacion(90,0.0,1.0,0.0));
+   agregar(new EstrellaXDesplazada(n));
+   for(int i=0; i < n; i++){
+      agregar(MAT_Rotacion(360/n,0.0,0.0,1.0));
+      agregar(new ConoDesplazado());
+   }
+
+   rotacion_objeto = leerPtrMatriz(ind);
+}
+
+unsigned GrafoEstrellaX::leerNumParametros() const
+{
+   return 1;
+}
+
+void GrafoEstrellaX::fijar_rotacion_objeto(const float nuevarot){
+   *rotacion_objeto = MAT_Rotacion(nuevarot, 1.0,0.0,0.0);
+}
+
+void GrafoEstrellaX::actualizarEstadoParametro(const unsigned int iParam, const float t_sec)
+{  
+   assert(iParam < leerNumParametros());
+
+   fijar_rotacion_objeto(900*t_sec);   
+}
+
+
+

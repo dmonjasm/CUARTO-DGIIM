@@ -34,6 +34,7 @@
 // declaración adelantada de estructura para un nodo del grafo de escena
 
 class NodoGrafoEscena ;
+class GrafoEstrellaX;
 
 // *********************************************************************
 // tipo enumerado con los tipos de entradas del nodo del grafo de escena
@@ -100,6 +101,32 @@ class NodoGrafoEscena : public Objeto3D
 
 } ;
 
+class GrafoEstrellaX : public NodoGrafoEscena
+{
+   protected:
+      Matriz4f * rotacion_objeto=nullptr;
+
+      void actualizarEstadoParametro(const unsigned int iParam, const float t_sec);
+   public:
+      GrafoEstrellaX(unsigned n);
+
+      void fijar_rotacion_objeto(const float nuevarot);
+
+      unsigned leerNumParametros() const;
+
+};
+
+class ConoDesplazado : public NodoGrafoEscena
+{
+   public:
+      ConoDesplazado();
+};
+
+class EstrellaXDesplazada : public NodoGrafoEscena
+{
+   public:
+      EstrellaXDesplazada(unsigned n);
+};
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

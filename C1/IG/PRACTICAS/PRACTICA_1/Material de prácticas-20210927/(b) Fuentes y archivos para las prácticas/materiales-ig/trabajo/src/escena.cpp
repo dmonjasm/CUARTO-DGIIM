@@ -165,10 +165,15 @@ Escena1::Escena1()
    // Añadir objetos al vector 'objetos', con:
    //     objetos.push_back( new .... )
    // .........
+   
+   objetos.push_back( new EstrellaZ(10));
+   objetos.push_back( new CasaX());
+   objetos.push_back( new MallaTriangulo());
+   objetos.push_back( new MallaCuadrado());
+   objetos.push_back( new MallaPiramideL());
    objetos.push_back( new CuboTejado() );
    objetos.push_back( new Tetraedro() );
    objetos.push_back( new CuboColores() );
-
 
    cout << "hecho." << endl << flush ;
 }
@@ -183,6 +188,9 @@ Escena2::Escena2()
 {
    using namespace std;
    cout << "Creando objetos de escena 2 .... " << flush ;
+   objetos.push_back( new PiramideEstrellaZ(8));
+   objetos.push_back( new RejillaY(7,8));
+   objetos.push_back( new MallaTorre(5));
    objetos.push_back( new MallaPLY("../recursos/plys/ant.ply"));
    objetos.push_back( new MallaPLY("../recursos/plys/beethoven.ply"));
    objetos.push_back( new MallaPLY("../recursos/plys/big_dodge.ply"));
@@ -210,6 +218,7 @@ Escena3::Escena3()
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    objetos.push_back(new NodoRaiz());
+   objetos.push_back(new GrafoEstrellaX(10));
    
 
    cout << "hecho." << endl << flush ;
