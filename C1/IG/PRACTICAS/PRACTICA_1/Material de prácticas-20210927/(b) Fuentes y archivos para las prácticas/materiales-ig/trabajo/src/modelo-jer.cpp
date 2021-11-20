@@ -18,15 +18,15 @@ void NodoRaiz::actualizarEstadoParametro(const unsigned int iParam, const float 
 
     switch(iParam){
         case 0:
-            fijar_pm_trasl_cajon1(1.0/3.0*(1.0 + sin(t_sec)));
+            fijar_pm_trasl_cajon1(1.0/3.0*(1.0 + sin(M_PI*t_sec)));
         break;
 
         case 1:
-            fijar_pm_trasl_cajon2(2.0/3.0*(1.0 + sin(t_sec)));
+            fijar_pm_trasl_cajon2(2.0/3.0*(1.0 + sin(M_PI*t_sec)));
         break;
 
         case 2:
-            fijar_pm_trasl_cajon3(1.0 + sin(t_sec));
+            fijar_pm_trasl_cajon3(1.0 + sin(M_PI*t_sec));
         break;
 
         case 3:
