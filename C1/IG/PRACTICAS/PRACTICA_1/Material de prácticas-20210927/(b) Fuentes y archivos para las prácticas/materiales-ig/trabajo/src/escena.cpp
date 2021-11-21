@@ -219,7 +219,7 @@ Escena3::Escena3()
 
    objetos.push_back(new NodoRaiz());
    objetos.push_back(new GrafoEstrellaX(10));
-   
+   objetos.push_back(new GrafoCubos());
 
    cout << "hecho." << endl << flush ;
 }

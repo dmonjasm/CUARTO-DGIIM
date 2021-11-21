@@ -277,5 +277,80 @@ void GrafoEstrellaX::actualizarEstadoParametro(const unsigned int iParam, const 
    fijar_rotacion_objeto(900*t_sec);   
 }
 
+CarasParalelas::CarasParalelas()
+{
+   ponerIdentificador(-1);
+
+   agregar(MAT_Traslacion(-0.5,-0.5,-0.5));
+   agregar(new RejillaY(10,10));
+   agregar(MAT_Traslacion(0.0,1.0,0.0));
+   agregar(new RejillaY(10,10));
+}
+
+CuboCentral::CuboCentral()
+{
+   ponerIdentificador(-1);
+
+   agregar(new CarasParalelas());
+   agregar(MAT_Rotacion(90,0.0,0.0,1.0));
+   agregar(new CarasParalelas());
+   agregar(MAT_Rotacion(90,1.0,0.0,0.0));
+   agregar(new CarasParalelas());
+}
+
+PrismaGiratorio::PrismaGiratorio(Matriz4f * & rotacion_prisma)
+{
+
+   unsigned int ind = agregar(MAT_Rotacion(0.0,1.0,0.0,0.0));
+
+   agregar(MAT_Traslacion(0.75,0.0,0.0));
+   agregar(MAT_Escalado(0.25,0.15,0.15));
+   agregar(new Cubo());
+
+   rotacion_prisma = leerPtrMatriz(ind);
+}
+
+GrafoCubos::GrafoCubos()
+{
+   ponerIdentificador(-1);
+
+   agregar(new CuboCentral());
+   agregar(new PrismaGiratorio(rotacion_cubos1));
+   agregar(MAT_Rotacion(180,0.0,0.0,1.0));
+   agregar(new PrismaGiratorio(rotacion_cubos2));
+   agregar(MAT_Rotacion(90,0.0,1.0,0.0));
+   agregar(new PrismaGiratorio(rotacion_cubos3));
+   agregar(MAT_Rotacion(90,0.0,0.0,1.0));
+   agregar(new PrismaGiratorio(rotacion_cubos4));
+   agregar(MAT_Rotacion(90,0.0,0.0,1.0));
+   agregar(new PrismaGiratorio(rotacion_cubos5));
+   agregar(MAT_Rotacion(90,0.0,0.0,1.0));
+   agregar(new PrismaGiratorio(rotacion_cubos6));
+}
+
+unsigned int GrafoCubos::leerNumParametros() const
+{
+   return 1;
+}
+
+void GrafoCubos::fijar_rotacion_objeto(const float nuevarot)
+{
+   *rotacion_cubos1 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+   *rotacion_cubos2 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+   *rotacion_cubos3 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+   *rotacion_cubos4 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+   *rotacion_cubos5 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+   *rotacion_cubos6 = MAT_Rotacion(nuevarot,1.0,0.0,0.0);
+}
+
+void GrafoCubos::actualizarEstadoParametro(const unsigned int iParam, const float t_sec)
+{
+   assert(iParam < leerNumParametros());
+
+   fijar_rotacion_objeto(360*t_sec);
+}
+
+
+
 
 

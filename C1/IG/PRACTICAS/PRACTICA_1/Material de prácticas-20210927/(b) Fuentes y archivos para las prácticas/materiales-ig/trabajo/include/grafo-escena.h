@@ -127,6 +127,46 @@ class EstrellaXDesplazada : public NodoGrafoEscena
    public:
       EstrellaXDesplazada(unsigned n);
 };
+
+class GrafoCubos : public NodoGrafoEscena
+{
+   protected:
+      Matriz4f * rotacion_cubos1=nullptr,
+               * rotacion_cubos2=nullptr,
+               * rotacion_cubos3=nullptr,
+               * rotacion_cubos4=nullptr,
+               * rotacion_cubos5=nullptr,
+               * rotacion_cubos6=nullptr;
+
+      void actualizarEstadoParametro(const unsigned int iParam, const float t_sec);
+   
+   public:
+      GrafoCubos();
+
+      void fijar_rotacion_objeto(const float nuevarot);
+
+      unsigned leerNumParametros() const;
+
+};
+
+class CuboCentral : public NodoGrafoEscena
+{
+   public: 
+      CuboCentral();
+};
+
+class CarasParalelas : public NodoGrafoEscena
+{
+   public:
+      CarasParalelas();
+};
+
+class PrismaGiratorio : public NodoGrafoEscena
+{
+   public:
+      PrismaGiratorio(Matriz4f * & rotacion_prisma);
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************
