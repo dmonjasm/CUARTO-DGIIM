@@ -25,6 +25,7 @@
 #include "malla-ind.h"
 #include "objeto3d.h"
 #include "malla-revol.h"
+#include <cmath>
 
 using namespace std ;
 
@@ -349,6 +350,53 @@ void GrafoCubos::actualizarEstadoParametro(const unsigned int iParam, const floa
 
    fijar_rotacion_objeto(360*t_sec);
 }
+
+CuboEscalado::CuboEscalado(float escala, Matriz4f * & matriz_escalado){
+   ponerIdentificador(-1);
+
+   unsigned ind = agregar(MAT_Escalado(1.0,1.0,1.0));
+
+   agregar(MAT_Escalado(escala,escala,escala));
+   agregar(new Cubo());
+
+   matriz_escalado=leerPtrMatriz(ind);
+}
+
+VariosCubos::VariosCubos(int n, float s_min, float s_max, float T){
+   cota_sup=s_max;
+   cota_inf=s_min;
+   periodo=T;
+   float s=(s_min+s_max)/2.0;
+
+   CuboEscalado *instancia = new CuboEscalado(1.0, escalado_cubos);
+
+   agregar(new Cubo());
+   
+   for(int i=1; i < n; i++){
+      agregar(MAT_Traslacion(1.0+s,0.0,0.0));
+      agregar(MAT_Escalado(s,s,s));
+      agregar(instancia);
+      //agregar(new CuboEscalado(pow(s,i), escalado_cubos));
+   }
+}
+
+unsigned VariosCubos::leerNumParametros() const
+{
+   return 1;
+}
+
+void VariosCubos::fijar_escalado_cubos(const float nuevo_escalado)
+{
+   //*escalado_cubos=MAT_Escalado(nuevo_escalado,nuevo_escalado,nuevo_escalado);
+}
+
+void VariosCubos::actualizarEstadoParametro(const unsigned int iParam, const float t_sec)
+{
+   assert(iParam < leerNumParametros());
+
+   fijar_escalado_cubos((cota_sup+cota_inf)/2.0+(cota_sup-cota_inf)/2.0*sin(2*M_PI*t_sec));
+}
+
 
 
 

@@ -552,6 +552,54 @@ MallaTorre::MallaTorre(int n)
    }
 
 }
+
+Piramide::Piramide(float s, float t, float h)
+{
+   ponerNombre("Piramide Examen");
+
+   assert(s < t);
+
+   vertices={
+         {t/2,0.0,t/2}, //0
+         {t/2,0.0,-t/2}, //1
+         {-t/2,0.0,-t/2}, //2
+         {-t/2,0.0,t/2}, //3
+         {s/2,h,s/2}, //4
+         {s/2,h,-s/2}, //5
+         {-s/2,h,-s/2}, //6
+         {-s/2,h,s/2} //7
+   };
+
+   triangulos={
+      {0,4,5}, {5,1,0},
+      {1,5,6}, {1,2,6},
+      {6,7,2}, {2,7,3},
+      {7,3,4}, {4,3,0}
+
+   };
+}
+
+ConoExamen::ConoExamen(int n, float r_1, float r_2, float h)
+{
+   assert(r_2 < r_1);
+
+   ponerNombre("Cono Examen");
+
+   Tupla3f inicial_bajo={r_1,0.0,0.0};
+   Tupla3f inicial_alta={r_2,h,0.0};
+
+   vertices.push_back(inicial_bajo);
+   vertices.push_back(inicial_alta);
+
+   for(int i=1; i < n; i++){
+      vertices.push_back(MAT_Rotacion((float)360/(n-1)*i,0.0,1.0,0.0)*vertices[0]);
+      vertices.push_back(MAT_Rotacion((float)360/(n-1)*i,0.0,1.0,0.0)*vertices[1]);
+   }
+
+   for(int i=0; i < 2*n; i++){
+      triangulos.push_back({i,(i+1)%(2*n),(i+2)%(2*n)});
+   }
+}
    
 
 

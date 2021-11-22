@@ -167,6 +167,29 @@ class PrismaGiratorio : public NodoGrafoEscena
       PrismaGiratorio(Matriz4f * & rotacion_prisma);
 };
 
+class CuboEscalado : public NodoGrafoEscena
+{
+   public:
+      CuboEscalado(float escala, Matriz4f * & matriz_escalado);
+};
+
+
+class VariosCubos : public NodoGrafoEscena
+{
+   protected:
+      Matriz4f * escalado_cubos=nullptr;
+      float cota_inf=0.0, cota_sup=0.0, periodo=0.0;
+
+      void actualizarEstadoParametro(const unsigned int iParam, const float t_sec);
+
+   public:
+      VariosCubos(int n, float s_min, float s_max, float T);
+
+      void fijar_escalado_cubos(const float nuevo_escalado);
+
+      unsigned leerNumParametros() const;
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

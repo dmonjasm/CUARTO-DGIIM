@@ -163,4 +163,17 @@ class MallaTorre : public MallaInd
       MallaTorre(int n);
 };
 
+class Piramide : public MallaInd
+{
+   public:
+      Piramide(float s, float t, float h);
+};
+
+class ConoExamen :  public MallaInd
+{
+   public:
+      ConoExamen(int n, float r_1, float r_2, float h);
+
+};
+
 #endif

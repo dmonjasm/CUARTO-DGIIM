@@ -1,0 +1,71 @@
+\documentclass{article}
+\author{Daniel Monjas Miguélez}
+
+\title{Topología II: Conceptos Básicos}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Grupo Fundamental}
+\textbf{Definición:} Sea $X$ un espacio topológico. Un lazo en $X$ con base un punto del espacio, $x\in X$ es un arco $\alpha:[0,1]\rightarrow X$ continuo con $\alpha(0)=\alpha(1)=x$. Se denota $\Omega_{x}(X)$ al conjunto de todos los lazos en $X$ con base $x$. \\
+
+Sean $\alpha,\:\beta\in \Omega_{x}(X)$, se define el producto de lazo como
+\begin{gather*}
+\alpha*\beta:[0,1]\rightarrow X \\
+(\alpha*\beta)(t)=\left\lbrace \begin{array}{c}
+\alpha(2t)\quad si\:0\leq t\leq \frac{1}{2} \\
+\beta(2t-1)\quad si\:\frac{1}{2}\leq t\leq 1
+\end{array} \right.
+\end{gather*}
+
+\textbf{Definción:} Sean $\alpha,\:\beta\in \Omega_x(X)$, se dicen que son homotópicos, y se denota por $\alpha\sim \beta$, si existe una aplicación:
+\begin{equation*}
+H:[0,1]\times[0,1]\rightarrow X\quad continua\:y:
+\end{equation*}
+
+\begin{itemize}
+\item $H(t,0)=\alpha(t)\quad \forall t\in [0,1]$, es decir, $H(*,0)=\alpha$.
+
+\item $H(t,1)=\beta(1)\quad \forall t\in [0,1]$, es decir, $H(*,1)=\beta$.
+
+\item $H(0,s)=H(1,s)=x\quad \forall s\in [0,1]$, es decir, $H(0,*)=H(1,*)=\varepsilon_x$
+\end{itemize}
+
+Se dice que $H$ es un homotopía de $\alpha$ a $\beta$, y se escribe:
+\begin{equation*}
+H:\alpha\sim \beta
+\end{equation*}
+
+\textbf{Propiedades de las homotopías:}
+\begin{enumerate}
+\item Si $\alpha\in \Omega_x(X)$, entonces $\alpha\sim \alpha$ con $H:[0,1]\times [0,1]\rightarrow X$ tal que $H(t,s)=~\alpha(t)$.
+
+\item Si $h:[0,1]\rightarrow [0,1]$ es un homomorfismo con $h(0)=0$ y $h(1)=1$ entonces $\alpha\sim \alpha\circ h$ donde $\alpha \circ h$ es un reparametrización de $\alpha$ preservando orientación.
+
+\item Sea $\alpha,\beta \in \Omega_x(X)$. Si $\alpha\sim \beta$ entonces $\beta \sim \alpha$.
+
+\item Sean $\alpha,\:\beta\in \Omega_x(X)$. Si $\alpha\sim \beta$ y $\beta\sim \gamma$ entonces $\alpha\sim \gamma$.
+\end{enumerate}
+
+\textbf{Proposición:} Sean $X$ un espacio topológicos y puntos $p,q,r\in X$. Sean $\alpha,\alpha'\in \Omega_{p,q}(X)$ y $\beta,\beta'\in \Omega_{q,r}(X)$ arcos tales que $\alpha\sim \alpha'$ y $\beta\sim \beta'$. Entonces $\alpha*\beta\sim \alpha'*\beta'$.
+
+\textbf{Proposición:} Sean $X$ un espacio topológico y puntos $p,q,r,s\in X$. Sean $\alpha \in \Omega_{p,q}(X)$, $\beta\in \Omega_{q,r}(X)$ y $\gamma\in \Omega_{r,s}(X)$. Las siguientes propiedades son ciertas:
+
+\begin{itemize}
+\item $\alpha*(\beta*\gamma)=(\alpha*\beta)*\gamma)$
+
+\item $(\alpha*\varepsilon_p=\varepsilon_p*\alpha=\alpha$
+
+\item $	\alpha*\overline{\alpha} = \varepsilon_p$
+\end{itemize}
+
+\end{document}
