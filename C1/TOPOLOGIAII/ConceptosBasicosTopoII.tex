@@ -27,7 +27,7 @@ Sean $\alpha,\:\beta\in \Omega_{x}(X)$, se define el producto de lazo como
 \end{array} \right.
 \end{gather*}
 
-\textbf{Definción:} Sean $\alpha,\:\beta\in \Omega_x(X)$, se dicen que son homotópicos, y se denota por $\alpha\sim \beta$, si existe una aplicación:
+\textbf{Definción:} Sean $\alpha,\:\beta\in \Omega_x(X)$, se dicen que son homotópicos, y se denota por $\alpha\simeq \beta$, si existe una aplicación:
 \begin{equation*}
 H:[0,1]\times[0,1]\rightarrow X\quad continua\:y:
 \end{equation*}
@@ -42,21 +42,21 @@ H:[0,1]\times[0,1]\rightarrow X\quad continua\:y:
 
 Se dice que $H$ es un homotopía de $\alpha$ a $\beta$, y se escribe:
 \begin{equation*}
-H:\alpha\sim \beta
+H:\alpha\simeq \beta
 \end{equation*}
 
 \textbf{Propiedades de las homotopías:}
 \begin{enumerate}
-\item Si $\alpha\in \Omega_x(X)$, entonces $\alpha\sim \alpha$ con $H:[0,1]\times [0,1]\rightarrow X$ tal que $H(t,s)=~\alpha(t)$.
+\item Si $\alpha\in \Omega_x(X)$, entonces $\alpha\simeq \alpha$ con $H:[0,1]\times [0,1]\rightarrow X$ tal que $H(t,s)=~\alpha(t)$.
 
-\item Si $h:[0,1]\rightarrow [0,1]$ es un homomorfismo con $h(0)=0$ y $h(1)=1$ entonces $\alpha\sim \alpha\circ h$ donde $\alpha \circ h$ es un reparametrización de $\alpha$ preservando orientación.
+\item Si $h:[0,1]\rightarrow [0,1]$ es un homomorfismo con $h(0)=0$ y $h(1)=1$ entonces $\alpha\simeq \alpha\circ h$ donde $\alpha \circ h$ es un reparametrización de $\alpha$ preservando orientación.
 
-\item Sea $\alpha,\beta \in \Omega_x(X)$. Si $\alpha\sim \beta$ entonces $\beta \sim \alpha$.
+\item Sea $\alpha,\beta \in \Omega_x(X)$. Si $\alpha\simeq \beta$ entonces $\beta \simeq \alpha$.
 
-\item Sean $\alpha,\:\beta\in \Omega_x(X)$. Si $\alpha\sim \beta$ y $\beta\sim \gamma$ entonces $\alpha\sim \gamma$.
+\item Sean $\alpha,\:\beta\in \Omega_x(X)$. Si $\alpha\simeq \beta$ y $\beta\simeq \gamma$ entonces $\alpha\simeq \gamma$.
 \end{enumerate}
 
-\textbf{Proposición:} Sean $X$ un espacio topológicos y puntos $p,q,r\in X$. Sean $\alpha,\alpha'\in \Omega_{p,q}(X)$ y $\beta,\beta'\in \Omega_{q,r}(X)$ arcos tales que $\alpha\sim \alpha'$ y $\beta\sim \beta'$. Entonces $\alpha*\beta\sim \alpha'*\beta'$.
+\textbf{Proposición:} Sean $X$ un espacio topológicos y puntos $p,q,r\in X$. Sean $\alpha,\alpha'\in \Omega_{p,q}(X)$ y $\beta,\beta'\in \Omega_{q,r}(X)$ arcos tales que $\alpha\simeq \alpha'$ y $\beta\simeq \beta'$. Entonces $\alpha*\beta\simeq \alpha'*\beta'$.
 
 \textbf{Proposición:} Sean $X$ un espacio topológico y puntos $p,q,r,s\in X$. Sean $\alpha \in \Omega_{p,q}(X)$, $\beta\in \Omega_{q,r}(X)$ y $\gamma\in \Omega_{r,s}(X)$. Las siguientes propiedades son ciertas:
 
@@ -67,5 +67,46 @@ H:\alpha\sim \beta
 
 \item $	\alpha*\overline{\alpha} = \varepsilon_p$
 \end{itemize}
+
+\textbf{Teorema:} Sea $X$ un espacio topológico y $p\in X$ un punto arbitrario. La ley de composición interna
+\begin{equation*}
+*:\Pi_1(X,p)\times\Pi_1(X,p)\rightarrow\Pi_1(X,p)\qquad [\alpha]*[\beta]=[\alpha*\beta]
+\end{equation*}
+
+está bien definida y dota al conjunto $\Pi_1(X,p)$ de estructura de grupo algebraico.
+
+El grupo $(\Pi_1(X,p),*)$ es conocido como \textbf{Grupo Fundamental o de Poincaré} del espacio en el punto $p$. Recalcar que $\Pi_1(X,p)=\Omega_p(X)/\simeq$.\\
+
+\textbf{Proposición:} Sea $(X,\tau)$ un espacio arcoconexo, $x,y\in X$. Entonces los grupos $\Pi_1(X,x)$ y $\Pi_1(X,y)$ son isomorfos.\\
+
+\textbf{Observación:} Sea $\gamma$ un arco que une los puntos $x_1,x_2\in X$ entonces 
+\begin{equation*}
+\phi:\Pi_1(X,x_1)\rightarrow \Pi_1(X,y),\qquad \phi([\alpha])=[\gamma^{-1}][\alpha][\gamma]
+\end{equation*}
+
+es un isomorfismo de grupos. 
+
+\textbf{Corolario:} El grupo fundamental $\Pi_1(X,p)$ está unívocamente determinado salvo isomorfismos por la arcocomponente $C_p$ del punto $p$. En particular, si $X$ es arcoconexo entonces la clase de isomorfía de $\Pi_1(X,p)$ no depende del punto $p\in X$. En este caso la notación es $\Pi_1(X)$. \\
+
+\textbf{Proposición:} Sean $X$ e $Y$ espacios topológicos y $\varphi:X\rightarrow Y$ una aplicación continua. Consideremos $\alpha,\beta\in \Omega_{p,q}(X)$ y los correspondientes $\varphi\circ\alpha,\varphi\circ\beta\in \Omega_{\varphi(p),\varphi(q)}(Y)$. Se tiene que
+
+\begin{equation*}
+\alpha\simeq \beta \Rightarrow \varphi\circ \alpha \simeq \varphi\circ\beta
+\end{equation*}
+
+En particular:
+\begin{itemize}
+\item La aplicación $\varphi_*:\Pi_1(X,p)\rightarrow \Pi_1(Y,\varphi(p)),\quad\varphi_*([\alpha])=[\varphi\circ\alpha]$ está bien definida yes un homomorfismo de grupos.
+
+\item Si $\psi:Y\rightarrow Z$ es otra aplicación continua y consideramos los homomorfismos de grupos 
+\begin{gather*}
+\psi_*:\Pi_1(X,\varphi(p))\rightarrow \Pi_1(Y,\psi(\varphi(p)))\\(\psi\circ\varphi)_*~:~\Pi_1(X,p)~\rightarrow~\Pi_1(Z,\psi(\varphi(p)))
+\end{gather*}
+entonces se tiene que $(\psi\circ\varphi)_*=\psi_*\circ\varphi_*$
+\end{itemize}
+
+
+
+
 
 \end{document}
