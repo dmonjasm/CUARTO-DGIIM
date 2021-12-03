@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  23 NOV 2021 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  2 DEC 2021 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -338,23 +338,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./ConceptosBasicosTopoII.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
 Package rerunfilecheck Info: File `ConceptosBasicosTopoII.out' has not changed.
 
 (rerunfilecheck)             Checksum: 6742AE4DEB441313E9CF93771FEC7CBB;52.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 110.
  ) 
 Here is how much of TeX's memory you used:
  6545 strings out of 481239
@@ -375,7 +380,7 @@ public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb>
-Output written on ConceptosBasicosTopoII.pdf (4 pages, 124744 bytes).
+Output written on ConceptosBasicosTopoII.pdf (4 pages, 124471 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
