@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{ textcomp }
 
 \begin{document}
 \maketitle
@@ -35,7 +36,7 @@ H:[0,1]\times[0,1]\rightarrow X\quad continua\:y:
 \begin{itemize}
 \item $H(t,0)=\alpha(t)\quad \forall t\in [0,1]$, es decir, $H(*,0)=\alpha$.
 
-\item $H(t,1)=\beta(1)\quad \forall t\in [0,1]$, es decir, $H(*,1)=\beta$.
+\item $H(t,1)=\beta(t)\quad \forall t\in [0,1]$, es decir, $H(*,1)=\beta$.
 
 \item $H(0,s)=H(1,s)=x\quad \forall s\in [0,1]$, es decir, $H(0,*)=H(1,*)=\varepsilon_x$
 \end{itemize}
@@ -96,7 +97,7 @@ es un isomorfismo de grupos. \\
 
 En particular:
 \begin{itemize}
-\item La aplicación $\varphi_*:\Pi_1(X,p)\rightarrow \Pi_1(Y,\varphi(p)),\quad\varphi_*([\alpha])=[\varphi\circ\alpha]$ está bien definida yes un homomorfismo de grupos.
+\item La aplicación $\varphi_*:\Pi_1(X,p)\rightarrow \Pi_1(Y,\varphi(p)),\quad\varphi_*([\alpha])=[\varphi\circ\alpha]$ está bien definida y es un homomorfismo de grupos.
 
 \item Si $\psi:Y\rightarrow Z$ es otra aplicación continua y consideramos los homomorfismos de grupos 
 \begin{gather*}
@@ -105,6 +106,231 @@ En particular:
 entonces se tiene que $(\psi\circ\varphi)_*=\psi_*\circ\varphi_*$
 \end{itemize}
 
+\textbf{Corolario (Invarianza topológica del Grupo Fundamental):} Si $\varphi:X\rightarrow Y$ es un homeomorfismo de espacios topológicos entonces $\phi_*:\Pi_1(X,p)\rightarrow \Pi_1(Y,f(p))$ es un isomorfismo de grupos.\\
+
+\textbf{Proposición:} El grupo fundamental de un subconjunto estrellado de $\mathbb{R}^n$ es trivial. En particular, todo subconjunto convexo de $\mathbb{R}^n$ tiene grupo fundamental trivial.
+
+Además, se tiene que 
+\begin{equation*}
+\Pi_1(X\times Y,(p,q))\cong\Pi_1(X,p)\times \Pi_1(Y,q)
+\end{equation*}
+
+\textbf{Observación importante:} El grupo fundamental de $S^n$ es $\mathbb{Z}$. El grupo fundamental de un conjunto $X$ estrellado es $\Pi_1(X,x)=\{[\epsilon_x]\}$.
+
+El grupo fundamental del toro $T=S^1\times S^1$ es $\mathbb{Z}\times \mathbb{Z} = \mathbb{Z}^2$.
+
+El grupo fundamental del cilindro $S^n\times \mathbb{R}$ es $\mathbb{Z}\times\{1\}\cong \mathbb{Z}$. El grupo fundamental de $X$ estrellado es $\Pi_1(S^1,1)=(\{[\alpha_n]:n\in \mathbb{N},*\})$.\\
+
+\textbf{Definición:} Un grupo topológico es un par $(G,.)$ donde:
+\begin{itemize}
+\item $G$ es un espacio topológico.
+
+\item $.:G\times G\rightarrow G$ es una ley de composición interna en $G$ que le dota de estructura algebraica.
+
+\item La aplicación $G\times G\rightarrow G\quad (a,b)\rightarrow a. b^{-1}$ es continua, o equivalentemente: $.:G\times G\quad (a,b)\mapsto a.b$ y $(~)^{-1}:G\rightarrow G\quad a\rightarrow a^{-1}$ son continuas.
+\end{itemize}
+
+\textbf{Propiedad del levantamiento de arco:} Sea $\alpha:[0,1]\rightarrow S^1$ un arco con $\alpha(0)=1$. Entonces existe un único arco $\tilde{\alpha}:[0,1]\rightarrow \mathbb{R}$ tal que $\rho \circ \tilde{\alpha}=\alpha$ y $\tilde{\alpha}(0)=0$, donde $\rho:\mathbb{R}\rightarrow S^1$, $\rho(t)=e^{2\pi it}=(cos(2\pi t), sen(2\pi t))$. \\
+
+\textbf{Propiedad del levantamiento de homotopías:} Sea $\alpha,\beta:[0,1]\rightarrow S^1$ un arco con $\alpha(0)=\beta(0)=1$ y $\alpha(1)=\beta(1)$. Supongamos que existe una homotopía $H$ de $\alpha$ en $\beta$. Entonces:
+\begin{itemize}
+\item Los arcos $\tilde{\alpha}$ y $\tilde{\beta}$ tienen los mismos extremos.
+
+\item La aplicación $\tilde{H}$ es una homotopía (con extremos fijos) de $\tilde{\alpha}$ en $\tilde{\beta}$, donde $\tilde{H}:[0,1]^2\rightarrow \mathbb{R}$ es continua y tal que $\rho \circ \tilde{H}=H$ y $\tilde{H}(0,0)=0$.
+\end{itemize}
+
+\textbf{Definición:} Si $\alpha \equiv (\alpha_1,\alpha_2):[0,1]\rightarrow S^1\subset \mathbb{R}^2$ es un arco de clase $C^1$ con $\alpha(0)=(1,0)$, entonces su levantamiento vía $\rho$ a $\mathbb{R}$ dado por:
+\begin{equation*}
+\tilde{\alpha}(t)=\frac{1}{2\pi}\int_0^t (\alpha_1(s)\alpha_2'(s)-\alpha_1'(s)\alpha_2(s))ds
+\end{equation*}
+
+De forma explícita, y para cada $n\in \mathbb{Z}$, el lazo $\alpha_n:[0,1]\rightarrow S^1\subset \mathbb{C}$, $\alpha_n(t)=e^{2n\pi it}$ se levanta con condición inicial $\tilde{\alpha}_n(0)=0$ al arco $\tilde{\alpha}_n:[0,1]\rightarrow\mathbb{R}$, $\tilde{\alpha}_n(t)=nt$.\\
+
+\textbf{Definición:} Dado un lazo $\alpha:[0,1]\rightarrow S^1$ con base el punto $1\in S^1$, definimos el grado de $\alpha$ como:
+\begin{equation*}
+deg(\alpha)=\tilde{\alpha}(1)\in \mathbb{Z}
+\end{equation*}
+
+donde $\tilde{\alpha}:[0,1]\rightarrow\mathbb{R}$ represental el levantamiento de $\alpha$ con condición inicial $\tilde{\alpha}(0)=0$.\\
+
+\textbf{Proposición:} Dados $\alpha,\beta:[0,1]\rightarrow S^1$ dos lazos con base $1\in S^1$, se tiene que 
+\begin{equation*}
+\alpha\simeq \beta\Leftrightarrow deg(\alpha)=deg(\beta)
+\end{equation*}
+
+\textbf{Teorema:} La aplicación 
+\begin{gather*}
+deg:(\Pi_1(S^1,1),*)\rightarrow (\mathbb{Z},+),\\
+deg([\alpha])=deg(\alpha)
+\end{gather*}
+
+\textbf{Proposición:} Si $\overline{D}$ denota el disco unidad cerrado $\overline{D}=\{(x,y)\in \mathbb{R}^2:x^2+y^2\leq 1\}$, no existe ninguna aplicación continua $f:\overline{D}\rightarrow S^1$ tal que $f_{|_{S^1}}=Id_{S^1}$. \\
+
+\textbf{Teorema (Punto fijo de Brower):} Sea $f:\overline{D}\rightarrow \overline{D}$ una aplicación continua. Entonces existe $p_0\in \overline{D}$ tal que $f(p_0)=p_0$. \\
+
+\textbf{Teorema Fundamental del Álgebra:} Sea $P:\mathbb{C}\rightarrow C$ una función polinómica de la forma
+\begin{equation*}
+P(z)=a_0+\ldots+a_{n-1}z^{n-1}+z^n\qquad n\geq 1
+\end{equation*}
+Entonces existe $z_0\in \mathbb{C}$ tal que $P(z_0)=0$.\\
+
+\textbf{Definición:} Sea $X$ un espacio topológico y $A\subset X$ un subespacio topológico. Una retracción o retracto de $X$ en $A$ es una aplicación continua $r:X\rightarrow A$ satisfaciendo $r_{|_A}=Id_A$, o equivalentemente, $r\circ i=Id_A$ donde $i:A\rightarrow X$ es la aplicación inclusión, $i(x)=x$. En este caso se dice que $A$ es un retractor de $X$. \\
+
+\textbf{Proposición:} Sea $r:X\rightarrow A$ es una retracción, $i:A\rightarrow X$ la aplicación inclusión y $a\in A$, entonces:
+\begin{itemize}
+\item $r_*:\Pi_1(X,a)\rightarrow\Pi_1(A,a)$ es un epimorfismo.
+
+\item $i_*:\Pi_1(A,a)\rightarrow\Pi_1(X,a)$ es un monomorfismo.
+\end{itemize}
+
+\textbf{Definición (Retracto de deformación):} Dado un espacio topológico $X$ y un subespacio $A\subset X$, se dice que $A$ es un retracto de deformación de $X$ si existen una retracción $r:X\rightarrow A$ y una aplicación continua $H:X\times[0,1]\rightarrow X$ satisfaciendo:
+\begin{equation*}
+H(x,0)=x\quad \forall x\in X\qquad H(x,1)=r(x)\quad \forall x\in X
+\end{equation*}
+
+Si adicionalmente $H(a,s)=a\quad \forall(a,s)\in A\times [0,1]$, entonces se dice que $A$ es un retracto fuerte de deformación de $X$. A las aplicaciones $H$ y $r$ se les llamará deformación y retracción asociadas al retracto (fuerte) de deformación $A$ de $X$, respectivamente.\\
+
+\textbf{Proposición:} Si $A$ es un retracto de deformación de $X$, $\{C_\alpha:\alpha\in \Lambda\}$ son las arcocomponentes de $A$ y $\hat{C}_\alpha$ es la arcocomponente de $X$ conteniendo a $C_\alpha$ para cada $\alpha\in \Lambda$, entonces:
+\begin{enumerate}
+\item $r(\hat{C}_\alpha)=C_\alpha \quad \forall\alpha\in\Lambda$ y por tanto, $\hat{C}_\alpha\neq \hat{C}_\beta,\:\alpha\neq \beta$.
+
+\item $\{C_\alpha:\alpha\in\Lambda\}$ son las arcocomponentes de $X$.
+
+\item Si $H:X\times [0,1]\rightarrow X$ y $r:X\rightarrow A$ son una deformación y retracción asociadas al retracto de deformación $A$ de $X$, entonces $H_{|\hat{C}_\alpha\times[0,1]}:\hat{C}_\alpha\times[0,1]\rightarrow \hat{C}_\alpha$ y $r_{|\hat{C}_\alpha}:\hat{C}_\alpha\rightarrow C_\alpha$ son una deformación y retracción asociadas al retracto de deformación $C_\alpha$ de $\hat{C}_\alpha$.
+\end{enumerate}
+
+\textbf{Proposición:} Sea $F:X\rightarrow A$ un homeomorfismo. Si $A$ es un retracto (fuerte) de deformación de $Y$ entonces $F^{-1}(A)$ es un retracto (fuerte) de deformación de $X$. \\
+
+\textbf{Teorema:} Sea $X$ un espacio topológico y sea $A\subset X$ un retracto fuerte de deformación con $r:X\rightarrow A$ una retracción asociada. Entonces dado $a\in A$ se tiene que:
+\begin{equation*}
+r_*:\Pi_1(X,a)\rightarrow \Pi_1(A,a)\qquad i_*:\Pi_1(A,a)\rightarrow \Pi_1(X,a)
+\end{equation*}
+
+son isomorfismos, uno inverso del otro.\\
+
+\textbf{Definición:} Un espacio topológico $X$ se dice contráctil si admite como retracto de deformación a un punto $\{p_0\}\subset X$. En caso de que $\{p_0\}$ sea retracto fuerte de deformación de $X$ diremos que el espacio es fuertemente contráctil.\\
+
+\textbf{Definición:} Un espacio topológico $X$ se dice simplemente conexo si es arcoconexo y $\Pi_1(X,p)=\{[\epsilon_p]\}$ para algún $p\in X$ (luego para todo $p\in X$).\\
+
+\textbf{Corolario:} Todo espacio fuertemente contráctil es simplemente conexo.\\
+
+\textbf{Consecuencias:} 
+\begin{enumerate}
+\item Todo subconjunto estrellado de $\mathbb{R}^n$ es simplemente conexo. Esto se aplica a subconjuntos $A\subset \mathbb{R}^n$ convexos.
+
+\item Si $p\in S^n$ entonces $\Pi_1(\mathbb{R}^{n+1}-\{0\},p)$ es isomorfo a $\Pi_1(S^n,p)$.
+
+\item Si $p\in S^1$ entonces $\Pi_1(S^1\times \mathbb{R},(p,0))$ es isomorfo a $\Pi_1(S^1,p)\cong \mathbb{Z}$.
+
+\item Si $p\in S^1\times \mathbb{R}$ entonces $\Pi_1(\mathbb{R}^3-\{x=y=0\},p)$ es isomorfo a $\Pi_1(S^1\times \mathbb{R},p)\cong \mathbb{Z}$.
+
+\item El grupo fundamental de la cinta de Möbius es isomorfo a $\mathbb{Z}$.
+\end{enumerate} 
+
+\textbf{Teorema:} Sea $X$ un espacio topológico conexo y localmente arcoconexo. Supongamos que la topología admite una base $\beta$ satisfaciendo:
+\begin{enumerate}
+\item $\beta$ es numerable (luego $X$ es II-Axioma de Numerabilidad).
+
+\item $B$ es simplemente conexo $\forall B\in \beta$.
+\end{enumerate}
+Entonces $\Pi_1(X,x)$ es numerable $\forall x\in X$. \\
+
+\textbf{Definición (Homotopía de aplicaciones):} Dados dso espacios topológicos $X$ e $Y$, dos aplicaciones continuas $\varphi_1,\varphi_2:X\rightarrow Y$, se dicen homotópicas, y se escribe $\varphi_1\simeq \varphi_2$, si existe una aplicación $H:X\times [0,1]\rightarrow Y$ verificando:
+\begin{equation*}
+H(x,0)=\varphi_1(x)\forall x\in X\qquad H(x,1)=\varphi_2(x)\forall x\in X
+\end{equation*}
+
+Si $A\subset X$, las aplicaciones continuas $\varphi_1,\varphi_2:X\rightarrow Y$ se dirán homotópicas relativas a $A$, $\varphi_1\simeq_A\varphi_2$ si existe $H:X\times [0,1]\rightarrow Y$ verificando:
+\begin{gather*}
+H(x,0)=\varphi_1(x)\quad \forall x\in X\qquad H(x,1)=\varphi_2(x)\quad \forall x\in X\\
+H(a,s)=\varphi_1(a)=\varphi_2(a)\quad \forall(a,s)\in A\times [0,1]
+\end{gather*}
+Si $A\subset X$ es un retracto de deformación vía $H$ con la retracción asociada $r$, entonces $Id_X\simeq r$. Si $A$ es un retracto fuerte de deformación de $X$ se tiene que $Id_X\simeq_A r$.\\
+
+\textbf{Teorema:} Sean $X$ e $Y$ espacios topológicos y dos aplicaciones continuas $\varphi_1,\varphi_2:X\rightarrow Y$. Supongamos que $\varphi_1\simeq\varphi_2$ vía $H:X\times [0,1]\rightarrow Y$, fijemos $x_0\in X$ y sea $\gamma:[0,1]\rightarrow Y$ el arco uniendo $\varphi_1(x_0)$ y $\varphi_2(x_0)$ definido por $\gamma(s)=H(x_0,s)$. \\
+
+Dados los homomorfismos de grupos
+\begin{equation*}
+(\varphi_1)_*:\Pi_1(X,x_0)\rightarrow \Pi_1(Y,\varphi_1(x_0))\qquad (\varphi_2)_*:\Pi_1(X,x_0)\rightarrow \Pi_1(Y,\varphi_2(x_0))
+\end{equation*}
+Y el isomorfismo $U_\gamma:\Pi_1(Y,\varphi_1(x_0))\rightarrow \Pi_1(Y,\varphi_2(x_0))$, se tiene que $U_\gamma\circ (\varphi_1)_*=(\varphi_2)_*$. En particular, los homomorfismos $(\varphi_1)_*$ y $(\varphi_2)_*$ son iguales salvo isomorfismo. \\
+
+\textbf{Corolario:} Sean $\varphi_1,\varphi_2:X\rightarrow Y$ aplicaciones continuas y $x_0\in X$. Supongamos que $\varphi_1\simeq_{\{x_0\}}\varphi_2$ y sea $y_0=\varphi_1(x_0)=\varphi_2(x_0)$. Entonces $(\varphi_1)_*=(\varphi_2)_*:\Pi_1(X,x_0)\rightarrow \Pi_1(Y,y_0)$.\\
+
+\textbf{Definición:} Sean $X$ e $Y$ espacios topológicos. Una aplicación continua $f:X\rightarrow Y$ se dirá una equivalencia homotópica si existe $g:X\rightarrow Y$ tal que $g\circ f=Id_X$ y $f\circ g=Id_Y$. En ese caso se dirá que $f$ y $g$ son inversas homotópicas. \\
+
+Dos espacios $X$ e $Y$ se dicen del mismo tipo de homotopía si existe una equivalencia homotópica entre ellos. \\
+
+\textbf{Nota:} Todo homeomorfismo es una equivalencia homotópica pero el recíproco no es cierto. La equivalencia homotópica es suficiente para garantizar isomorfismo entre grupos fundamentales. \\
+
+\textbf{Teorema:} Sean $X$ e $Y$ espacios topológicos y $f:X\rightarrow Y$ una equivalencia homotópica con inversa homotópica $g:X\rightarrow Y$. Fijemos $x_0\in X$. Entonces $f_*:\Pi_1(X,x_0)\rightarrow \Pi_1(Y,f(x_0))$ es un isomorfismo de grupos. \\
+
+\textbf{Corolario:} Sea $A\subset X$ es un retracto de deformación de $X$ con la retracción asociada $r:X\rightarrow A$ e $i:A\rightarrow X$ la aplicación inclusión. Entonces para cada $a\in A$ las aplicaciones 
+\begin{equation*}
+r_*:\Pi_1(X,a)\rightarrow \Pi_1(A,a)\qquad i_*:\Pi_1(A,a)\rightarrow \Pi_1(X,a)
+\end{equation*}
+son isomorfismos de grupos. En particular, todo espacio topológico contráctil es simplemente conexo. \\
+
+\textbf{Proposición:} Sea $X$ un espacio topológico, y sean $U,V\subset X$ subconjuntos satisfaciendo:
+\begin{enumerate}
+\item $U$ y $V$ son abiertos simplemente conexos (con la topología inducida).
+
+\item $U\cap V$ es arcoconexo y no vacío.
+
+\item $U\cup V=X$
+\end{enumerate}
+Entonces $X$ es simplemente conexo.\\
+
+\textbf{Corolario:} La esfera $S^n$ es simplemente conexa para todo $n\geq 2$. \\
+
+\textbf{Teorema de Invarianza de la Dimensión:} Si $\Omega_2\subset \mathbb{R}^2$ y $\Omega_n\subset \mathbb{R}^n$ con $n\neq 2$ son abiertos conexos, entonces $\Omega_2$ no es homeomorfo a $\Omega_n$.\\
+
+\textbf{Lema:} No existe ninguna aplicación $F:S^2\rightarrow S^1$ continua e impar. \\
+
+\textbf{Teorema (Borsuk-Ulam):} Si $f:S^2\rightarrow \mathbb{R}^2$ es continua, entonces existes $x_0\in S^2$ tal que $f(x_0)=f(-x_0)$. \\
+
+\textbf{Corolario:} Si identificamos $S^2$ con la superficie de la tierra y $f,g:S^2\rightarrow \mathbb{R}$ son dos magnitudes físicas que se distribuyen de forma continua sobre dicha superficie (por ejemplo, la presión y la temperatura), existen puntos antípodas $p_0,-p_0\in S^2$ tales que $(f,g)(p_0)=(f,g)(-p_0)$.\\
+
+\textbf{Corolario:} Si $S^2$ es la unión de tres subconjuntos cerrados $A_1,A_2$ y $A_3$, entonces alguno de ellos contiene dos puntos antípodas.\\
+
+\textbf{Corolario (Teorema de las tortitas):} Dados dos compactos $A_1,A_2\subset \mathbb{R}^2$, existe una recta combinatoria de $\mathbb{R}^2$ que los subdivide a ambos en trozos de igual área. \\
+
+\textbf{Corolario (Teorema del bocadillo de jamón):} Dados tres compactos $A_1,A_2,A_3\in \mathbb{R}^3$, es posible encontrar un plano combinatorio de $\mathbb{R}^3$ que los subdivida a los tres en trozos de igual volumen. \\
+
+\textbf{Teorema de Seifert-Van Kampen:} Sea $X$ un espacio topológico y sean $U,V\subset X$ subconjuntos satisfaciendo:
+\begin{enumerate}
+\item $U,V$ y $U\cap V$ son abiertos arcoconexos.
+
+\item $U\cap V\neq \emptyset$ y $U\cup V=X$
+\end{enumerate}
+
+$i_*:\Pi_1(U\cap V,x_0)\rightarrow \Pi_1(U,x_0)$ y $j_*:\Pi_1(U\cap V,x_0)\rightarrow \Pi_1(V,x_0)$ los correspondientes homomorfismos inducidos. Entonces
+\begin{equation*}
+\Pi_1(X,x_0)\cong \Pi_1(U,x_0)*_{\Pi_1(U\cap V,x_0)}\Pi_1(V,x_0)
+\end{equation*}
+donde el producto amalgamado es el relativo a los homomorfismos $i_*$ y $j_*$.\\
+
+\textbf{Corolario:} Bajo las mismas hipótesis del Teorema de Seifert-Van Kampen, si $U\cap V$ es simplemente conexo entonces $\Pi_1(X,x_0)\cong \Pi_1(U,x_0)*\Pi_1(V,x_0)$. \\
+
+\textbf{Corolario:} Bajos las mismas hipótesis del Teorema de Seifert-Van Kampen, si $V$ es simplemente conexo entonces 
+\begin{equation*}
+\Pi_1(X,x_0)\cong \Pi_1(U,x_0)/N(i_*(Pi_1(U\cap V,x_0)))
+\end{equation*}
+
+\textbf{Corolario:} Si $X$ es un n-ciclo entonces $\Pi_1(X,x_0)$ es isomorfo al grupo libre $F(a_1,\ldots,a_n)$. \\
+
+\textbf{Definición:} Sea el semiplano $\Pi_1=\{(x_1,x_2,x_3)\subset \mathbb{R}^3:x_1=0,x_2\geq 0\}$ y sus girados respecto del eje $x_3$:
+\begin{equation*}
+\Pi_j=\{\left(e^{2\pi(j-1)i/k}z,x_3\right):(z,x_3)\in \Pi_1\subset \mathbb{C}\times \mathbb{R}\equiv \mathbb{R}^3\}\quad j=1,\ldots,k
+\end{equation*}
+Por definición, el espacio libre de $k$ hojas es:
+\begin{equation*}
+L_k=\bigcup_{j=1}^k\Pi_j\qquad k\in\mathbb{N}
+\end{equation*}
+
+\textbf{Proposición:} Los espacios $L_k$ y $L_s$ no son homeomorfos, $k,s\in \mathbb{N}$, $k\neq s$.\\
+
+\textbf{Corolario:} Si $O\subset \mathbb{R}^3$ es un abierto conteniendo al origen, entonces $O\cap L_k$ no puede ser homeomorfo a un abierto de $\mathbb{R}^2$ para todo $k\neq 2$.
 
 
 \end{document}

@@ -94,20 +94,21 @@ void MallaInd::visualizarGL( ContextoVis & cv )
 
    if(array_verts == nullptr){
       array_verts = new ArrayVertices(GL_FLOAT, 3, vertices.size(), vertices.data());
-   }
+   
 
-   array_verts->fijarIndices(GL_UNSIGNED_INT, triangulos.size()*3, triangulos.data());
+      array_verts->fijarIndices(GL_UNSIGNED_INT, triangulos.size()*3, triangulos.data());
 
-   if(!col_ver.empty()){
-      array_verts->fijarColores(GL_FLOAT, 3, col_ver.data() );
-   }
+      if(!col_ver.empty()){
+         array_verts->fijarColores(GL_FLOAT, 3, col_ver.data() );
+      }
 
-   if(!cc_tt_ver.empty()){
-      array_verts->fijarCoordText(GL_FLOAT, 2, cc_tt_ver.data() );
-   }
+      if(!cc_tt_ver.empty()){
+         array_verts->fijarCoordText(GL_FLOAT, 2, cc_tt_ver.data() );
+      }
 
-   if(!nor_ver.empty()){
-      array_verts->fijarNormales(GL_FLOAT, nor_ver.data() );
+      if(!nor_ver.empty()){
+         array_verts->fijarNormales(GL_FLOAT, nor_ver.data() );
+      }
    }
 
 
