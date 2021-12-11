@@ -9,6 +9,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{ textcomp }
+\usepackage{ graphicx }
+\graphicspath{ {images/} }
 
 \begin{document}
 \maketitle
@@ -17,6 +19,7 @@
 \newpage
 
 \section{Grupo Fundamental}
+\subsection{Homotopías}
 \textbf{Definición:} Sea $X$ un espacio topológico. Un lazo en $X$ con base un punto del espacio, $x\in X$ es un arco $\alpha:[0,1]\rightarrow X$ continuo con $\alpha(0)=\alpha(1)=x$. Se denota $\Omega_{x}(X)$ al conjunto de todos los lazos en $X$ con base $x$. \\
 
 Sean $\alpha,\:\beta\in \Omega_{x}(X)$, se define el producto de lazo como
@@ -69,6 +72,7 @@ H:\alpha\simeq \beta
 \item $	\alpha*\overline{\alpha} = \varepsilon_p$
 \end{itemize}
 
+\subsection{Grupo Fundamental}
 \textbf{Teorema:} Sea $X$ un espacio topológico y $p\in X$ un punto arbitrario. La ley de composición interna
 \begin{equation*}
 *:\Pi_1(X,p)\times\Pi_1(X,p)\rightarrow\Pi_1(X,p)\qquad [\alpha]*[\beta]=[\alpha*\beta]
@@ -168,6 +172,7 @@ deg([\alpha])=deg(\alpha)
 
 \textbf{Teorema (Punto fijo de Brower):} Sea $f:\overline{D}\rightarrow \overline{D}$ una aplicación continua. Entonces existe $p_0\in \overline{D}$ tal que $f(p_0)=p_0$. \\
 
+\subsection{Retracciones y Retractos de Deformación}
 \textbf{Teorema Fundamental del Álgebra:} Sea $P:\mathbb{C}\rightarrow C$ una función polinómica de la forma
 \begin{equation*}
 P(z)=a_0+\ldots+a_{n-1}z^{n-1}+z^n\qquad n\geq 1
@@ -227,6 +232,13 @@ son isomorfismos, uno inverso del otro.\\
 \item El grupo fundamental de la cinta de Möbius es isomorfo a $\mathbb{Z}$.
 \end{enumerate} 
 
+\textbf{Definición:} Sea $(X,\tau)$ espacio topológico.
+\begin{enumerate}
+\item Se dice que el espacio satisface el primer axioma de numerabilidad (o ANI) si todo punto tiene una base numerable de entronos.
+
+\item Se dice que el espacio satisface el segundo axioma de numerabilidad (o ANII) si la topología tiene una base numerable.
+\end{enumerate}
+
 \textbf{Teorema:} Sea $X$ un espacio topológico conexo y localmente arcoconexo. Supongamos que la topología admite una base $\beta$ satisfaciendo:
 \begin{enumerate}
 \item $\beta$ es numerable (luego $X$ es II-Axioma de Numerabilidad).
@@ -235,6 +247,7 @@ son isomorfismos, uno inverso del otro.\\
 \end{enumerate}
 Entonces $\Pi_1(X,x)$ es numerable $\forall x\in X$. \\
 
+\subsection{Homotopías de aplicaciones}
 \textbf{Definición (Homotopía de aplicaciones):} Dados dso espacios topológicos $X$ e $Y$, dos aplicaciones continuas $\varphi_1,\varphi_2:X\rightarrow Y$, se dicen homotópicas, y se escribe $\varphi_1\simeq \varphi_2$, si existe una aplicación $H:X\times [0,1]\rightarrow Y$ verificando:
 \begin{equation*}
 H(x,0)=\varphi_1(x)\forall x\in X\qquad H(x,1)=\varphi_2(x)\forall x\in X
@@ -297,6 +310,7 @@ Entonces $X$ es simplemente conexo.\\
 
 \textbf{Corolario (Teorema del bocadillo de jamón):} Dados tres compactos $A_1,A_2,A_3\in \mathbb{R}^3$, es posible encontrar un plano combinatorio de $\mathbb{R}^3$ que los subdivida a los tres en trozos de igual volumen. \\
 
+\subsection{Teorema de Seifert-Van Kampen}
 \textbf{Teorema de Seifert-Van Kampen:} Sea $X$ un espacio topológico y sean $U,V\subset X$ subconjuntos satisfaciendo:
 \begin{enumerate}
 \item $U,V$ y $U\cap V$ son abiertos arcoconexos.
@@ -317,6 +331,13 @@ donde el producto amalgamado es el relativo a los homomorfismos $i_*$ y $j_*$.\\
 \Pi_1(X,x_0)\cong \Pi_1(U,x_0)/N(i_*(Pi_1(U\cap V,x_0)))
 \end{equation*}
 
+\textbf{Definición:} Si $A$ es un subconjunto de $G$:
+\begin{itemize}
+\item $N(A):=\left\lbrace \prod_{j=1}^k g_j^{-1}\cdot a_j^{n_j}\cdot g_j:(a_j,g_j,n_j)\in A\times G\times \mathbb{Z},\quad j=1,\ldots,k,\quad k\in \mathbb{N}\right\rbrace$ es el menor subgrupo normal de $G$ conteniendo a $A$, también llamado el subgrupo normal de $G$ generado por $A$. Es fácil comprobar que $N(A)$ coincide con la intersección de todos los subgrupos normales de $G$ que contienen a $A$.
+
+\item Si $H\leq G$, $N_0(H):=\{g\in G:g^{-1}\cdot H\cdot g=H\}$ es el mayor subgrupo de $G$ que contiene a $H$ como subgrupo normal, también llamado el normalizador de $H$ en $G$. Es claro que $H\unlhd N_0(H)\leq G$ y $N_0(H)=G$ si y solo si $H\unlhd G$.
+\end{itemize}
+
 \textbf{Corolario:} Si $X$ es un n-ciclo entonces $\Pi_1(X,x_0)$ es isomorfo al grupo libre $F(a_1,\ldots,a_n)$. \\
 
 \textbf{Definición:} Sea el semiplano $\Pi_1=\{(x_1,x_2,x_3)\subset \mathbb{R}^3:x_1=0,x_2\geq 0\}$ y sus girados respecto del eje $x_3$:
@@ -332,5 +353,293 @@ L_k=\bigcup_{j=1}^k\Pi_j\qquad k\in\mathbb{N}
 
 \textbf{Corolario:} Si $O\subset \mathbb{R}^3$ es un abierto conteniendo al origen, entonces $O\cap L_k$ no puede ser homeomorfo a un abierto de $\mathbb{R}^2$ para todo $k\neq 2$.
 
+\section{Espacios recubridores}
+\subsection{Definiciones y nociones básicas}
+\textbf{Definición:} Sea $X$ un espacio topológico. Un (espacio) recubridor de $X$ es un par $(\tilde{X},\pi)$, donde:
+\begin{enumerate}
+\item $\tilde{X}$ es un espacio topológico.
+
+\item $\pi:\tilde{X}\rightarrow X$ es una aplicación continua y sobreyectiva.
+
+\item Todo punto $p\in X$ admite un entorno abierto y arcoconexo $U$ en $X$ tal que $\pi_{|U}:\tilde{U}\rightarrow U$ es un homeomorfismo para toda arcocomponente $\tilde{U}$ de $\pi^{-1}(U)$
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=7cm, height=8cm]{recubridor.png}
+\end{figure}
+
+Al abierto $U$ se le llamará entorno fundamental o distinguido para el recubridor $(\tilde{X},\pi)$. A al aplicación $\pi$ se la llamará aplicación recubridora, y al espacio $X$ base del recubridor $(\tilde{X},\pi)$, y a $\tilde{X}$ el espacio recubridor. \\
+
+Dado $p\in X$, al conjunto $\pi^{-1}(p)\subset \tilde{X}$ se le llama fibra del punto $p$ para el recubridor $(\tilde{X},\pi)$. Un recubridor se dirá finito (y la aplicación recubridora finita) cuando la fibra $\pi^{-1}(p)$ sea finita para todo $p\in X$. \\
+
+La familia $\mathcal{U}=\{U\subset X:U\:es\:entorno\:distinguido\:para\:(\tilde{X},\pi)\}$ es una base de la topología de $X$. Cada arcocomponente $\tilde{U}$ de $\pi^{-1}(U)$ es un subconjunto abierto de $\tilde{X}$. Además, la aplicación $\pi$ es abierta, y el conjunto de arcocomponente de $\pi^{-1}(U)$ está en correspondencia uno a uno con la fibra de $p$.\\
+
+\textbf{Ejemplos imortantes de aplicaciones recubridoras:}
+\begin{itemize}
+\item La aplicación exponencial $\rho:\mathbb{R}\rightarrow \mathbb{S}^1$, $\rho(t)=e^{2\pi i t}$. Es decir, $\mathbb{R}$ recubre a $S^1$.
+
+\item De la anterior se induce que $\rho\times \rho:\mathbb{R}^2\rightarrow \mathbb{S}^1\times \mathbb{S}^1=\mathbb{T}$. Es decir, $\mathbb{R}^2$ recubre al toro de revolución.
+
+\item Un homeomorfismo $f:X\rightarrow Y$. Es decir, si $X\cong Y$ entonces $X$ recubre a $Y$.
+
+\item La aplicación $\pi_n:\mathbb{S}^1\rightarrow \mathbb{S}^1$, $\pi_n(z):=z^n$.
+
+\item $\pi_1\times \pi_2:Y_1\times Y_2\rightarrow X_1\times X_2$, donde $\pi_j:Y_j\rightarrow X_j$ es recubridora para $j=1,2$.
+
+\item $\rho\times Id_{\mathbb{R}}:\mathbb{R}^2\times \mathbb{S}^1\times \mathbb{R}$
+\end{itemize}
+
+\textbf{Proposición:} Si $f:Y\rightarrow X$ es un homeomorfismo local, sobreyectivo y propio entre espacios de Hausodrff localmente compactos, entonces $f$ es una aplicación recubridora finita. \\
+
+\textbf{Corolario:} Supongamos que $X$ e $Y$ son espacios Hausdorff, $Y$ compacto. Todo homeomorfismo local $f:Y\rightarrow X$ es una aplicación recubridora. \\
+
+\textbf{Proposición:} Sean $\pi_1:Y\rightarrow Z$ y $\pi_2:Z\rightarrow X$ aplicaciones recubridoras. Si $\pi_2$ es finita entonces $\pi_2\circ \pi_1: Y\rightarrow X$ es recubridora. \\
+
+\textbf{Definición:} Sea $X$ un espacio topológico, y sea $G\subset Hom(X)$ un subgrupo. Consideremos la acción canónica de $G$ sobre $X$, $\mu:G\times X\rightarrow X$, donde $\mu(g,x)=g(x)$. Es habitual escribir $g.x$ en vez de $\mu(g,x)$ para todo $g\in G$, $x\in X$. La relación binaria en $X$:
+\begin{equation*}
+x\sim y\Leftrightarrow \exists g\in G: g.x=y2
+\end{equation*}
+
+Es de equivalencia. El espacio topológico coeicnete $X/\sim$ se denotará por $X/G$ y será referido como el espacio de órbitas asociado a la acción $\mu$ inducida por $G$. \\
+
+\textbf{Definición:} Sea $X$ espacio topológico, y sea $G\subset Hom(X)$ un subgrupo. El subgrupo $g$ se dirá que actúa de forma propia y discontinua sobre $X$ (y la acción $\mu:G\times X\rightarrow X$ inducida se dirá propia y discontinua) si para todo $x\in X$ existe un entorno abierto $U$ de $x$ en $X$, tal que $(g.U)\cap U=\emptyset$ para todo $g\in G\backslash\{Id_X\}$ (aquí $g.U$ denota el conjunto $g(U)$). Al entrono $U$ se llama entorno distinguido (alrededor de x) para la acción. \\
+
+\textbf{Proposición:} Si $X$ es un espacio topológico Hausdorff y $G$ es un grupo finito de homomorfismos de $X$ sin puntos fijos (esto es, tal que $\phi(x)\neq x$ para todo $e\in X$ y $\phi\in G\backslash\{Id_X\}$), entonces $G$ actúa de forma propia y discontinua sobre $X$.\\
+
+\textbf{Teorema:} Sea $X$ un espacio topológico, y sea $G\subset Hom(X)$ un subgrupo actuando de forma propia y discontinua sobre $X$. Entonces la proyección al espacio de órbitas $\pi:X\rightarrow X/G$ es recubridora.
+
+\subsection{Levantamiento de aplicaciones al recubridor}
+\textbf{Proposición:} Sea $(\tilde{X},\pi)$ un recubridor de $X$, sea $Y$ un espacio topológico conexo y sean $f_1,f_2:Y\rightarrow \tilde{X}$ dos aplicaciones continuas satisfaciendo $\pi\circ f_1=\pi\circ f_2$. Si $A=\{y\in Y:f_1(y)=f_2(y)\}\neq\emptyset$ entonces $f_1=f_2$. \\
+
+\textbf{Lema}: Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x_0\in X$ y $\tilde{x}_0\in \pi^{-1}(x_0)$. Dada $H:[0,1]^2\rightarrow X$ continua con $H(0,0)=x_0$, existe una única aplicación $\tilde{H}:[0,1]^2\rightarrow X$ continua tal que $\pi\circ \tilde{H}=H$ y $\tilde{H}(0,0)=\tilde{x}_0$.\\
+
+\textbf{Corolario (Propiedad del levantamiento de arco):} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x_0\in X$ y $\tilde{x}_0\in \pi^{-1}(x_0)$, y se considera un arco $\alpha:[0,1]\rightarrow X$ con $\alpha(0)=x_0$. Entonces existe un único arco $\tilde{\alpha}:[0,1]\rightarrow \tilde{X}$ tal que $\pi\circ\tilde{\alpha}=\alpha$ y $\tilde{\alpha}(0)=\tilde{x}_0$. A $\tilde{\alpha}$ se le llama levantamiento de $\alpha$ vía $\pi$ con condición inicial $\tilde{\alpha}(0)=\tilde{x}_0$.\\
+
+\textbf{Definición:} Dado un recubridor $(\tilde{X},\pi)$ de $X$, un arco $\alpha:[0,1]\rightarrow X$ con $\alpha(0)=x$ y $\tilde{x}\in \pi^{-1}(x)$, se denota por $\tilde{\alpha}_{\tilde{x}}:[0,1]\rightarrow \tilde{X}$ el único levantamiento de $\alpha$ vía $\pi$ con condición inicial $\tilde{\alpha}(0)=\tilde{x}$.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=6.cm, height=6cm]{levantamientoarco.png}
+\end{figure}
+
+\textbf{Corolario:} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y $y\in X$ y un arco $\alpha:[0,1]\rightarrow X$ con $\alpha(0)=x$ y $\alpha(1)=1$. Consideramos la aplicación $n_\alpha:\pi^{-1}(x)\rightarrow \pi^{-1}(y)$ dada por $n_\alpha(\tilde{x})=\tilde{\alpha}_{\tilde{x}}(1)$. Entonces $n_\alpha$ es biyectiva, y en particular $\pi^{-1}(x)$ y $\pi^{-1}(y)$ tienen el mismo cardinal.\\
+
+\textbf{Definición (Número de hojas de un recubridor):} Dado un recubridor $(\tilde{X},\pi)$ de $X$, se llama número de hojas del recubridor al cardinal de $\pi^{-1}(x)$, donde $x$ es un punto aleatorio de $X$.\\
+
+\textbf{Corolario (Propiedad del levantamiento de homotopías):} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x_0\in X$ y $\tilde{x}_0\in \pi^{-1}(x_0)$, y sean dos arcos $\alpha,\beta:[0,1]\rightarrow X$ con $\alpha(0)=\beta(0)=x_0$ y $\alpha(1)=\beta(1)$. Supongamos que existe una homotopía de $\alpha$ en $\beta$ (con extremos fijos). Entonces, los arcos $\tilde{\alpha}_{\tilde{x}_0}$ y $\tilde{\beta}_{\tilde{x}_0}$ tienen los mismo extremos y la aplicación $\tilde{H}$ es una homotopía de $\tilde{\alpha}$ en $\tilde{\beta}$ (con extremos fijos).\\
+
+\textbf{Teorema de Monodromía:} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x\in X$ y $\tilde{x}\in \pi^{-1}(x)$, entonces $\pi_*:\Pi_1(\tilde{X},\tilde{x})\rightarrow \Pi_1(X,x)$ es un monomorfismo de grupos.\\
+
+\textbf{Corolario:} Sea $(\tilde{X},\pi)$ es un recubridor de $X$, y sean $x\in X$. Sean $\tilde{x}_1,\tilde{x}_2\in \pi^{-1}(x)$ y $\tilde{\alpha}:[0,1]\rightarrow \tilde{X}$ un arco con $\tilde{\alpha}(0)=\tilde{x}_1$ y $\tilde{\alpha}(1)=\tilde{x}_2$. Entonces
+\begin{equation*}
+\pi_*\left(\Pi_1(\tilde{X},\tilde{x}_2)\right)=[\alpha]^{-1}*\pi_*\left(\Pi_1(\tilde{X},\tilde{x}_1)\right)
+\end{equation*}
+
+donde $\alpha$ es el lazo $\pi\circ \tilde{\alpha}$ (con base $x$). Como consecuencia $\left\lbrace \pi_*(\left(\Pi_1(\tilde{X},\tilde{x})\right):\tilde{x}\in \pi^{-1}(x)\right\rbrace$ es una clase de conjugación de subgrupos en $\Pi_1(X,x)$.\\
+
+\textbf{Definición:} Se denota por $Rec(X)$ el conjunto de todos los recubridores de $X$, esto es:
+\begin{equation*}
+Rec(X)=\left\lbrace(\tilde{X},\pi):(\tilde{X},\pi)\:es\:un\:recubridor\:de\:X\right\rbrace
+\end{equation*}
+Fijamos $x\in X$ y sea el conjunto $S_c\left(\Pi_1(X,x)\right)$ de las clases de conjugación de subgrupos de $\Pi_1(X,x)$, se define:
+\begin{equation*}
+\Delta_x:Rec(X)\rightarrow S_c(\Pi_1(X,x))\qquad \Delta_x(\tilde{X},\pi)=\left\lbrace\pi_*(\Pi_1(\tilde{X},\tilde{x})):\tilde{x}\in \pi^{-1}(x)\right\rbrace
+\end{equation*}
+
+\textbf{Teorema:} Sea $\pi:\tilde{X}\rightarrow X$ una aplicación recubridora, sea $f:Y\rightarrow X$ una aplicacón continua y sea $y_0\in Y$, $x_0\in f(y_0)\in X$ y $\tilde{x}_0\in \pi^{-1}(x_0)$. Los siguientes enunciados son equivalentes:
+\begin{itemize}
+\item Existe $\tilde{f}:Y\rightarrow \tilde{X}$ continua tal que $\pi\circ \tilde{f}=f$ y $\tilde{f}(y_0)=\tilde{x}_0$.
+
+\item $f_*(\Pi_1(Y,y_0))\subset \pi_*(\Pi_1(\tilde{X},\tilde{x}_0))$. 
+\end{itemize}
+
+\textbf{Corolario:} Sea $(Y,\pi)$ un recubridor de $X$, sea $A\subset X$ un subespacio topológico arcoconexo y denotemos por $i:A\rightarrow X$ a la aplicación inclusión. Supongamos $i_*(\Pi_1(A,x))\pi(\Pi_1(Y,y))$ para algunos $x\in A$ e $y\in \pi^{-1}(x)$. Entonces $\pi_{|\tilde{A}}:\tilde{A}\rightarrow A$ es un homeomorfismo, donde $\tilde{A}$ es la arcocomponente de $\pi^{-1}(A)$ que contiene a $y$.\\
+
+\textbf{Proposición:} Sea $(G,.)$ un grupo topológico con elemento neutro $e\in G$, sea $\pi:\tilde{G}\rightarrow G$ una aplicación recubridora y elegimos $\tilde{e}\in \pi^{-1}(e)$. Entonces $\tilde{G}$ admite una estructura de grupo topológico con elemento neutro $\tilde{e}$ que conveirte a $\pi$ es un homomorfismo de grupos. \\
+
+\textbf{Corolario:} $X$ tiene como máximo, salvo isomorfismos, tantos recubridores como clases de conjugación de subgrupos tengan su grupo fundamental.\\
+
+\subsection{La acción del grupo fundamental sobre la fibra}
+\textbf{Teorema:} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x\in X$ fijo. La aplicación
+\begin{equation*}
+.:\pi^{-1}(x)\times \Pi_1(X,x)\rightarrow \pi^{-1}(x)\qquad y.[\alpha]=\tilde{\alpha}_y(1)
+\end{equation*}
+
+es una acción transitiva por la derecha del grupo $\Pi_1(X,x)$ sobre la fibra $\pi^{-1}(x)$ de $x$.\\
+
+Además, para cada $y\in \pi^{-1}(x)$ el subgrupo de isotropía asociado a la acción en el punto $y$, que se define por $H_y=\{[\alpha]\in\Pi_1(X,x):y.[\alpha]=y\}$ coincide con $\pi_*(\Pi_1(\tilde{X},y))$.\\
+
+\textbf{Corolario:} Sea $(\tilde{X},\pi)$ un recubridor de $X$, y sean $x\in X$ fijo. Entonces para cada $y\in \pi^{-1}(x)$ la aplicación 
+\begin{equation*}
+\left( \Pi_1(X,x)/\Pi_1(\tilde{X},y)\right)_{dcha}\rightarrow \pi^{-1}(x)\qquad \pi_*(\Pi_1(\tilde{X},y))*[\alpha]\rightarrow \tilde{\alpha}_y(1)
+\end{equation*}
+
+\textbf{Proposición:} Sea $(\tilde{X},\pi)$ un recubridor de $X$. Entonces:
+\begin{enumerate}
+\item $X$ es Hausdorff $\Rightarrow \tilde{X}$ es Hausdorff.
+
+\item $\tilde{X}$ es II-Axioma de numerabilidad $\Rightarrow X$ es II-Axioma de numerabilidad.
+
+\item Si $(\tilde{X},\pi)$ tiene una cantidad numerable de hojas.\\
+
+\centering
+$\tilde{X}$ es II-Axioma de numerabilidad $\Leftrightarrow$ $X$ es II-Axioma de numerabilidad
+\end{enumerate}
+
+\textbf{Corolario:} Sea $X$ espacio topológico II-Axioma de numerabilidad y con grupo fundamental numerable. Entonces todo recubridor de $X$ es II-Axioma de numerabilidad.
+
+\subsection{Transformaciones de recubridores}
+\textbf{Definición:} Sean $(\tilde{X}_j,\pi_j)\quad j=1,2$, dos espacios recubridores de $X$. \\
+
+Un homomorfismo de recubridores $\Phi$ de $(\tilde{X}_1,\pi_1)$ en $(\tilde{X}_2,\pi_2)$ es una aplicación continua $\Phi:\tilde{X}_1\rightarrow \tilde{X}_2$ satisfaciendo $\pi_2\circ \Phi=\pi_1$.\\
+
+Un homomorfismo de recubridores $\Phi$ de $(\tilde{X}_1,\pi_1)$ en $(\tilde{X}_2,\pi_2)$ se dirá un isomorfismo de recubridores si $\Phi$ es un homeomorfismo.\\
+
+Si $(\tilde{X},\pi)$ es un recubridor de $X$, a los isomorfismos de $(\tilde{X},\pi)$ en $(\tilde{X},\pi)$ se les llama automorfismos de $(\tilde{X},\pi)$.\\
+
+\textbf{Corolario:} Dado un espacio topológico:
+\begin{itemize}
+\item La composición de dos homeomorfismos entre dos recubridores de $X$ es un monomorfismo de recubridores de $X$.
+
+\item El inverso de un isomorfismo entre dos recubridores de $X$ es un isomorfismo de recubridores de $X$.
+
+\item Si $(\tilde{X},\pi)$ es un recubridor de $X$ entonces $Id_{\tilde{X}}$ es un automorfismo de $(\tilde{X},\pi)$.
+\end{itemize}
+
+\textbf{Definición:} Si $(\tilde{X},\pi)$ es un recubridor de $X$, se denota por $\mathcal{A}(\tilde{X},\pi)$ al grupo (respecto a la composición) de los automorfismos de $(\tilde{X},\pi)$.\\
+
+\textbf{Corolario:} Sean $(\tilde{X}_j,\pi_j)$ $j=1,2$, dos espacios recubridores de $X$. Si $\Phi,\Psi:(\tilde{X}_1,\pi_1)\rightarrow (\tilde{X}_2,\pi_2)$ son homomorfismos recubridores distintos, entonces $\Phi(y)\neq \Psi(y)\quad \forall y\in \tilde{X}_1$.\\
+
+\textbf{Corolario:} Sean $(\tilde{X}_j,\pi_j)$, $j=1,2$, dos espacios recubridores de $X$, y sean $x\in X$ e $y_j\in \pi_j^{-1}(x)$ $j=1,2$. 
+\begin{enumerate}
+\item Existe un homomorfismo $\Phi:(\tilde{X}_1,\pi_1)\rightarrow (\tilde{X}_2,\pi_2)$ con $\Phi(y_1)=y_2$ si y solo si
+\begin{equation*}
+(\pi_1)_*\left(\Pi_1(\tilde{X}_1,y_1)\right)\subseteq (\pi_2)_*\left(\Pi_1(\tilde{X}_2,y_2)\right)
+\end{equation*}
+
+\item Existe un isomorfismo $\Phi:(\tilde{X}_1,\pi_1)\rightarrow (\tilde{X}_2,\pi_2)$ con $\Phi(y_1)=y_2$ si y solo si
+\begin{equation*}
+(\pi_1)_*\left(\Pi_1(\tilde{X}_1,y_1)\right)=(\pi_2)_*(\left(\Pi_1(\tilde{X}_2,y_2)\right)
+\end{equation*}
+\end{enumerate}
+
+\textbf{Proposición:} Sean $(\tilde{X}_j,\pi_j)$, $j=1,2$, dos espacios recubridores de $X$ y $\Phi:(\tilde{X}_1,\pi_1)\rightarrow (\tilde{X}_2,\pi_2)$ un homomorfismo, entonces $(\tilde{X}_1,\Phi)$ es un recubridor de $\tilde{X}_2$.\\
+
+\textbf{Corolario:} Sean $(\tilde{X}_j,\pi_j)$, $j=1,2,$ dos espacios recubridores de $X$ y sean $x\in X$ e $y_j\in \pi_j^{-1}(x)$ $j=1,2$. Si $(\pi_1)_*\left(\Pi_1(\tilde{X}_1,y_1)\right)$ entonces $\tilde{X}_1$ recubre a $\tilde{X}_2$.
+
+\subsection{El grupo de automorfismos. Recubridores regulares.}
+\textbf{Proposición:} Sea $(\tilde{X},\pi)$ un recubridor de $X$. Entonces la acción
+\begin{equation*}
+\mu:Aut(\tilde{X},\pi)\times \tilde{X}\rightarrow \tilde{X}\qquad (\Phi,y)\rightarrow \Phi.y=\Phi(y)
+\end{equation*}
+es propia y discontinua.\\
+
+\textbf{Corolario (Construcción de Recubridores):} Sea $(\tilde{X},\pi)$ un recubridor de $X$, $G\leq Aut(\tilde{X},\pi)$ un subgrupo y $(\tilde{X},\pi_0)$ el recubridor asociado al espacio de órbitas $\tilde{X}/G$:
+\begin{equation*}
+\pi_0:\tilde{X}\rightarrow \tilde{X}/G\qquad y\mapsto G.y
+\end{equation*}
+
+Entonces la única aplicación $\tilde{\pi}:\tilde{X}/G\rightarrow X$ tal que $\tilde{\pi}\circ\pi_0=\pi$, esto es, definida por
+\begin{equation*}
+\tilde{\pi}(G.y)=\pi(y)\qquad\forall G.y\in \tilde{X}/G
+\end{equation*}
+
+es recubridora.\\
+
+\textbf{Proposición:} Sea $X$ un espacio topológico, sea $(\tilde{X},\pi)$ un recubridor de $X$ y fijemos $x\in X$ e $y_j\in \pi_j^{-1}(x)$, $j=1,2$. Se toma $\tilde{\alpha}$ cualquier arco en $\tilde{X}$ con $\tilde{\alpha}(0)=y_1$ y $\tilde{\alpha}(1)=y_2$, y llamamos $\alpha = \pi\circ \tilde{\alpha}$. Entonces $\exists\Phi \in Aut(\tilde{X},\pi)$ con $\Phi(y_1)=y_2\Leftrightarrow [\alpha]\in N_0(\pi_*(\Pi_1(\tilde{X},y_1)))$.\\
+
+\textbf{Definición:} Fijados $y\in \pi^{-1}(x)$ y $[\alpha]\in N_0(\pi_*(\Pi_1(\tilde{X},y)))$ la proposición anterior garantiza que existe un automorfismo $\Phi_y([\alpha])$ de $(\tilde{X},\pi)$ con $\Phi_y([\alpha])(y)=\tilde{\alpha}_y(1)$, que es único. Se denota $\gamma$ a la aplicación $\gamma:N_0(\pi_*(\Pi_1(\tilde{X},y)))\rightarrow Aut(\tilde{X},\pi),\quad \gamma([\alpha]))=\Phi_y([\alpha])$.\\
+
+\textbf{Teorema:} Sean $X$ un espacio topológico y $(\tilde{X},\pi)$ un recubridor de $X$ y fijemos $x\in X$ e $y\in \pi^{-1}(x)$. Entonces la aplicación $\gamma:N_0\left(\pi_*\left(\Pi_1(\tilde{X},y)\right)\right) \rightarrow Aut(\tilde{X},\pi)\quad \gamma([\alpha])=\Phi_y([\alpha])$ es un epimorfismo de grupos con $Ker \gamma = \pi_*(\Pi_1(\tilde{X},y))$.
+
+En particular, por el primer teorema de isomorfía para grupos
+\begin{equation*}
+N_0\left(\pi_*\left(\Pi_1(\tilde{X},y)\right)\right)/\pi_*\left(\Pi_1(\tilde{X},y)\right)\cong Aut(\tilde{X},\pi)
+\end{equation*} 
+
+\textbf{Observación:} Si además, $y_j\in \pi_j^{-1}(x)$, $j=1,2$ y $[\alpha]\in \Pi_1(X,x)$ es tal que $\tilde{\alpha}_{y_1}(1)=y_2$ entonces
+\begin{equation*}
+N_0\left(\pi_*\left(\tilde{X},y_2)\right)\right)=[\alpha]^{-1}*N_0\left(\pi_*\left(\Pi_1(\tilde{X},y)\right)\right)*[\alpha]
+\end{equation*}
+
+Ambos subgrupos conjugados de $\Pi_1(X,x)$ son isomorfos a $Aut(\tilde{X},\pi)$. Téngase en cuenta que 
+\begin{equation*}
+\pi_*\left(\Pi_1(\tilde{X},y_2)\right)=[\alpha]^{-1}*\pi_*(\Pi_1(\tilde{X},y_1))*[\alpha]
+\end{equation*}
+
+\textbf{Definición:}
+Sea $(\tilde{X},\pi)$ un recubridor de $X$ se dirá regular si existe $x\in X$ tal que la acción
+\begin{equation*}
+\mu:Aut(\tilde{X},\pi)\times \pi^{-1}(x)\rightarrow \pi^{-1}(x)\qquad (\Phi,y)\mapsto \Phi.y=\Phi(y)
+\end{equation*}
+
+\textbf{Observación:} $\mu_x$ es transitiva para algún $x\in X$ si y solo si $\mu_x$ es transitiva para todo $x\in X$. Por tanto, $(\tilde{X},\pi)$ es regular si y solo si $\mu_x$ es transitiva para todo $x\in X$. \\
+
+\textbf{Proposición:} Sea $(\tilde{X},\pi)$ un recubridor de $X$. Son equivalentes:
+\begin{itemize}
+\item $(\tilde{X},\pi)$ es regular.
+
+\item Para todo $x\in X$ e $y\in \pi^{-1}(x)$, $\pi_*(\Pi_1(\tilde{X},y))$ es un subgrupo normal de $\Pi_1(X,x)$.
+
+\item Existen $x\in X$ e $y\in \pi^{-1}(x)$ tales que $\pi_*(\Pi_1(\tilde{X},y))$ es un subgrupo normal de $\Pi_1(X,x)$.
+\end{itemize}
+
+\textbf{Corolario:} Si $(\tilde{X},\pi)$ es un recubridor regular de $X$, $x\in X$ e $y\in \pi^{-1}(x)$, entonces:
+\begin{itemize}
+\item $\tilde{\gamma}:\Pi_1(X,x)/\pi_*(\Pi_1(\tilde{X},y))\rightarrow Aut(\tilde{X},\pi)\qquad \pi_*(\Pi_1(\tilde{X},y))*[\alpha]\rightarrow \Phi_y([\alpha])$ es un isomorfismo de grupos.
+
+\item Si $\pi_0:\tilde{X}\rightarrow \tilde{X}/Aut(\tilde{X},\pi)$ es la proyección al espacio de órbitas $\tilde{X}/Aut(\tilde{X},\pi)$, existe un homeomorfismo $\tilde{\pi}:\tilde{X}/Aut(\tilde{X,\pi})\rightarrow X$ tal que $\tilde{\pi}\circ \pi_0=\pi$.
+\end{itemize}
+
+\textbf{Corolario:} Si $G$ es un grupo de homeomorfismos que actúa de forma propia y discontina sobre el espacio $X$ y $\pi:X\rightarrow X/G$ es la proyección al espacio de órbitas, entonces $(X,\pi)$ es un recubridor regular y $Aut(X,\pi)=G$. \\
+
+Recíprocamente, si $(\tilde{X},\pi)$ es un recubridor regular de $X$ entonces $X$ es homeomorfo al espacio de órbitas $\tilde{X}/Aut(\tilde{X},\pi)$, y salvo ese homeomorfismo la proyección recubridora $\pi$ no es sino la proyección de órbitas $\tilde{X}\rightarrow \tilde{X}/Aut(\tilde{X},\pi)$.\\
+
+\textbf{Proposción:} Si $\Phi\in Aut(Y,\pi)$, entonces $\Phi$ es (la restricción de $Y$ de) una transformación de Möbius.\\
+
+\textbf{Corolario:} Existen polinomios $P$ para los que el recubridor $(Y,\pi)$ no es regular.
+
+\subsection{Existencia y clasificación de recubridores}
+\textbf{Teorema:} Sean $(\tilde{X}_j,\pi_j)$, $j=1,2$, dos espacios recubridores de $X$. Son equivalentes:
+\begin{itemize}
+\item $(\tilde{X}_1,\pi_1)\cong(\tilde{X_2},\pi_2)$
+
+\item $\Delta_x(\tilde{X}_1,\pi_1)=\Delta_x(\tilde{X}_2,\pi_2)$ para todo $x\in X$.
+
+\item $\Delta_x(\tilde{X}_1,\pi_1)=\Delta_x(\tilde{X}_2,\pi_2)$ para algún $x\in X$.
+\end{itemize}
+
+En particular, para todo $x\in X$ la aplicación
+\begin{equation*}
+\tilde{\Delta}_x:R(x)\rightarrow S_c(\Pi_1(X,x))\qquad \tilde{\Delta}_x([\tilde{X},\pi])=\Delta(\tilde{X},\pi)
+\end{equation*}
+
+inducida por $\Delta_x(\tilde{X},\pi)$ en el cociente $R(x)$ es inyectiva. \\
+
+\textbf{Definición:} Un recubridor $(Y,\pi)$ de $X$ se dirá universal si $\Pi_1(Y)\cong\{0\}$, o equivalentemente, si $\tilde{\Delta}_x([\tilde{X},\pi])=\{[\varepsilon_x]\}$ para algún (luego para todo) $x\in X$.\\
+
+\textbf{Corolario:} Si $X$ admite recubridor universal $(Y,\pi_0)$, entonces:
+\begin{itemize}
+\item $Y$ recubre a $\tilde{X}$ para cualquier recubridor $(\tilde{X},\pi)$ de $X$.
+
+\item $(Y,\pi_0)$ es un recubridor regular.
+
+\item Si $x\in X$ e $y\in \pi^{-1}(x)$, la aplicación siguiente es un isomorfismo:
+\begin{equation*}
+\tilde{\gamma}:\Pi_1(X,x)\rightarrow Aut(Y,\pi_0)\qquad [\alpha]\mapsto \Phi_y([\alpha])
+\end{equation*}
+\end{itemize}
+
+\textbf{Teorema:} Si un espacio topológico $X$ admite recubridor universal si y solo si la aplicación $\tilde{\Delta}_x:R(x)\rightarrow S_c(\Pi_1(X,x))$ es biyectiva para algún (luego para todo) $x\in X$. 
+
+\subsection{Existencia de recubridor universal}
+\textbf{Definición:} Un abierto arcoconexo $U$ de un espacio topológico $X$ se dice que satisface la propiedad de semilocal simple conexión si el homomorfismo $i_*:\Pi_1(U,x)\rightarrow \Pi_1(X,x)$ inducido por la inclusión $i:U\rightarrow X$ es trivial (esto es, constante $[\varepsilon_x]\in \Pi_1(X,x)$).\\
+
+Un espacio topológico $X$ se dirá semilocalmente simplemente conexo si todo punto admite un entorno abierto arcoconexo y semilocalmente simplemente conexo.\\
+
+\textbf{Observación:} Si $X$ es semilocalmente simplemente conexo entonces la familia de abierto semilocalmente simplemente conexos en $X$ son una base de la topología de $X$. \\
+
+\textbf{Teorema:} Un espacio topológico $X$ admite recubridor universal si y solo si es semilocalmente simplemente conexo.
 
 \end{document}
