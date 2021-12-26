@@ -1,0 +1,258 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\graphicspath{ {images/} }
+
+\author{Daniel Monjas Miguélez}
+
+\title{Apuntes de Análisis Funcional}
+
+\begin{document}
+\maketitle
+
+\newpage 
+
+\tableofcontents
+
+\newpage
+
+\section{Espacios vectoriales de dimensión finita}
+En esta sección vamos a dar respuesta a 10 preguntas y vamos a asentar un poco conceptos que se van a usar a lo largo de toda la asignatura:
+
+\begin{enumerate}
+\item ¿Qué significa que un espacio vectorial tenga dimensión n?
+
+\item Dado un número natural $n\in \mathbb{N}$, ¿existén espacios vectoriales de dimensión $n$?
+
+\item ¿Qué significa que un espacio tenga dimensión infinita?
+
+\item ¿Existen espacios vectoriales de dimensión infinita?
+
+\item ¿Cuál es el concepto de base de un e.v?
+
+\item ¿Qué relación tiene el concepto de base con la dimensión de un e.v?
+
+\item Dado un espacio vectorial, ¿existe siempre alguna base?
+
+\item Dados 2 e.v sobre un mismo cuerpo $K$ (en adelante supondremos $K=\mathbb{R}$ ó $K=\mathbb{C}$), $V$ y $W$ decimos que $V$ y $W$ son isomorfos entre si existe alguna aplicación $T:V\rightarrow V$, $T$ biyectiva y lineal.
+
+Si la dimensión de $V(K)$ es $n$, es trivial probar que $V$ es isomorfo a $K^n$. Ahora bien, el tema se puede complicar si hablamos de dimensiones infinitas, ya que "no todos los infinitos son iguales", cosa que Cantor dejó claro y por la que se volvió loco. Por ejemplo, si $\chi_0=Car(\mathbb{N})$, $\chi_1=Car(\mathbb{R})$, entonces
+\begin{equation*}
+\chi_0<\chi_1
+\end{equation*}
+
+¿Sabes la respuesta a la siguientes cuestión?
+\begin{itemize}
+\item ¿$\exists A:\mathbb{N}\subset A\subset \mathbb{R},\:\chi_0<Car(A)<\chi_1?$
+\end{itemize}
+\textbf{Solución:} No existe, $\chi_1$ es el menor cardinal tal que $\chi_1>\chi_0$. En el siguiente link se da más información \href{https://www.madrimasd.org/blogs/matematicas/tag/aleph-cero}{El paraíso de Cantor}.\\
+
+\textbf{Ejercicio 1}.a) Sea $V(K)$ un e.v de dimensión finita y $L:V\rightarrow V$, lineal. Entonces son equivalentes:
+\begin{itemize}
+\item $L$ es inyectiva.
+\item $L$ es sobreyectiva.
+\item $L$ es biyectiva
+\end{itemize}
+
+\textbf{Solución:} La solución se va a basar en lo siguiente, sea $f:V\rightarrow V'$ lineal con $dim(V)=n$ y $dim(V')=m$. Entonces
+\begin{equation*}
+dim(V)=dim(Ker(f))+dim(Im(f))
+\end{equation*}
+
+Teniendo en cuenta lo anterior veamos:
+
+$1)\Rightarrow 2)$ Como $L$ es inyectiva, se tiene que $dim(Ker(L))=0$, luego por la fórmula anteriormente enunciada, $dim(V)=0+dim(Im(L))$, luego $dim(Im(L))=dim(V)$ luego $Im(L)=V$, pues $Im(L)\subset V$ y por tanto la aplicación es sobreyectiva.
+
+$2)\Rightarrow 1)$ Ahora como $L$ es sobreyectiva tenemos claramente que $dim(Im(L))=dim(V)$ luego por la fórmula $dim(V)=dim(Ker(L))+dim(V)\Rightarrow dim(Ker(L))=0$, de aquí deducimos que la aplicación es inyectiva.
+
+Por último, como hemos visto que $1)\Leftrightarrow 2)$ se tiene que conque se verifique 1 o 2 tenemos 3, pues si una aplicación es inyectiva y sobreyectiva es biyectiva.\\
+
+
+b)Sea $L:C([0,1],\mathbb{R})\rightarrow C([0,1],\mathbb{R})$
+
+$\qquad (Lf)(t)=\int_0^t f(s)ds,\quad \left.\begin{array}{c}
+\forall f\in C([0,1],\mathbb{R})\\
+\forall t\in[0,1] 
+\end{array}\right.$
+
+Prueba que $L$ es inyectiva, pero no sobreyectiva.
+
+\textbf{Solución:} Para ver que es inyectiva veamos que si $Lf=0\Rightarrow \int_0^t f(s)ds=0\quad \forall t\in[0,1]$, pero por el teorema fundamental del cálculo $f(t)=0\quad \forall t\in [0,1]$, lo que implica que $f$ es la función identicamente nula. Lo que nos dice que $Ker(L)=\{0\}$ y por tanto al tener un solo elemento la aplicación es inyectiva.
+
+Para ver que no es sobreyectiva basta ver que no toda función de $C([0,1],\mathbb{R})$ es derivable, por ejemplo el valor absoluto. Y por tanto no pueden ser sobreyectiva.
+
+\item Conectamos con la observación 7. Se puede demostrar, con la ayuda del Lema de Zorn, que todo espacio vectorial admite alguna base. Evidentemente, estamos hablando de base algebraica o base de Hamel. Veamos algunos ejemplos.
+
+	\begin{enumerate}
+	\item \textbf{Ejemplo:} $V=\mathcal{P}(\mathbb{R})$, conunto de los polinomios reales. Es claro que $V$ es un e.v real con las operaciones de suma de polinomios y producto por escalares y que una base de $V$ es $B=\{1,x,x^2,\ldots,x^n,\ldots\}$.
+	
+	Así pues, $V$ es un e.v real de dimensión infinita con base numerable.
+	
+	\item \textbf{Ejemplo:} $V=C([0,1],\mathbb{R})$, conjunto de funciones continua, definidas en $[0,1]$ y con valores reales. Es claro que $V$ es un e.v real con las operaciones con las operaciones habituales, pero demostraremos con ayuda del Teorema de Categoría de Baire que cualquier base de $V$ es no numerable (al final no se demostró). Así si $B=\{V_\lambda, \lambda\in \Lambda\}$ es cualquier base de $V$, $\Lambda$ es infinito no numerable, o sea que no se puede escribir $\Lambda=\{v_1,v_2,v_3,\ldots\}$, ya que si se puediera sería numerable.
+	
+	\item \textbf{Ejemplo:} $V=\mathbb{R}^\infty$, conjunto de las sucesiones de números reales, $\mathbb{R}^\infty =\{(\alpha_1,\alpha_2,\alpha_3,\ldots):\alpha_i\in \mathbb{R},\:\forall i\in \mathbb{N}\}$. Es claro que $V$ es un e.v real con las operaciones usuales. Podemos probar que su dimensión es infinita como sigue:
+	
+	El conjunto
+	\begin{gather*}
+	e_1=(1,0,0,\ldots)\\
+	e_2=(0,1,0,0,\ldots)\\
+	e_3=(0,0,1,0,0,\ldots)\\
+	\vdots\\
+	e_n=(0,\ldots,0^{(n},1,0,0,\ldots),\quad n\in\mathbb{N}
+	\end{gather*}
+	
+	es un conjunto linealmente independiente. Esto prueba que $dim V$ es infinita, pues la base de un espacio es el conjunto con el mayor número de elementos linealmente independientes. Cualquier conjunto de elementos linealmente indpenedientes tiene menos elementos que la base. Tenemos por otro lado que este conjunto no es una base, pues si lo fuera todo elemento del espacio sería combinación lineal (y por tanto finita) de los elementos de la base, pero claramente la sucesión $(1,1,1,\ldots)$ es la suma de todas las sucesiones de la base pero no es un suma finita, luego esta no sería combinación lineal de elementos de la base pero si está en el espacio.
+	
+	\item \textbf{Ejemplo 4:} $V=\mathbb{R}(\mathbb{Q})$ el conjunto de los números reales, como e.v sobre el cuerpo $\mathbb{Q}$, con las operaciones usuales.
+	
+	Si $H=\{\alpha_n,\:n\in \mathbb{N}\}$ es cualquier subconjunto de $V$, linealmente independiente, el conjunto de las combinaciones lineales de $H$ es numerable (ya que $\mathbb{Q}$ es numerable). 
+	
+	Como $\mathbb{R}$ no es numerable (hecho probado por Cantor alrededor de 1871), obtenemos una conclusión: cualquier base de $\mathbb{R}(\mathbb{Q})$ es no numerable.
+	\end{enumerate}
+	
+\item En un e.v, con un producto escalar y dimensión infinita, introduciremos un concepto de base, diferente del de base algebraica o base de Hamel: el concepto de base   Hilbertiana (las bases de Fourier son un buen ejemplo de ellas).
+
+\item Espacios de sucesiones y espacio de funciones, todos ellos e.v de dimensión infinita, que aprecerán a menudo a lo largo de estos apuntes.
+	\begin{itemize}
+	\item $\forall p\in [1,+\infty)$ definimos
+	\begin{equation*}
+	l_p=\{(a_n)_{n\in\mathbb{N}}:\:\sum_{n=1}^{+\infty}|a_n|^p<+\infty\}
+	\end{equation*}
+	\end{itemize}
+	
+Tomamos sucesiones de elementos de $K$, $K=\mathbb{R}$ ó $K=\mathbb{C}$. $l_p$ es un e.v y quizás la única propiedad no evidente sea la que nos dice que la suma de dos elementos de $l_p$ también esta en $l_p$. Esto no es difícil de probar: 
+\begin{gather*}
+\forall(a_n)_{n\in\mathbb{N}},\:(b_n)_{n\in\mathbb{N}}
+\end{gather*}
+, tenemos que
+\begin{gather*}
+|a_n+b_n|^p\leq (|a_n|+|b_n|)^p\leq (max\{|a_n|,|b_n|\}+max\{|a_n|,|b_n|\})^p)=\\
+=2^p(max\{|a_n|,|b_n|\})^p\leq 2^p(|a_n|^p+|b_n|^p)
+\end{gather*}
+
+Por tanto, si $\sum_{n=1}^{+\infty} |a_n|^p<+\infty$ y  $\sum_{n=1}^{+\infty}|b_n|^p<+\infty$, tenemos que
+\begin{equation*}
+\sum_{n=1}^{+\infty} |a_n+b_n|^p<+\infty
+\end{equation*}
+
+\textbf{NOTA:} Si $1<p<q<+\infty$, entonces $l_1\subset l_p\subset l_q$. Demuéstrese como ejercicio
+
+\textbf{Demostración:} Supongamos $1\leq p<q$ y sea $x\in l_p$. Pongamos $x=\|x\|_pu$ con $\|u\|_p=1$. Tenemos que
+\begin{equation*}
+\forall k\in \mathbb{N}\quad |u(k)|\leq \|u\|_p=1\Rightarrow |u(k)|^q\leq |u(k)|^p\Rightarrow \|u\|_q\leq 1
+\end{equation*}
+
+Deducimos que $x=\|x\|_pu\in l_q$ y $\|x\|_q=\|x\|_p\|u\|_q\leq \|x\|_p$, esto es, $\|x\|_q\leq\|x\|_p$. Por tanto $l_p\subset \bigcap_{q>p}l_q$, inclusión que es estricta, pues la sucesión $\{x_n\}$ dada por $x_n=\frac{1}{n^{1/p}}$ no está en $l_p$, pero sí está en $l_q$ para todo $q>p$. También tenemos que $\bigcup_{1\leq q<p} l_q\subset l_p$ y la inclusión es estricta, pues la sucesión $\{x_n\}$ dada por $x_n=\frac{1}{n^{1/p}log(n+1)}$ no está en $l_q$ para $1\leq q<p$ y sí está en $l_p$.
+
+Esta segunda inclusión estricta nos dá entre otras cosas que $l_1\subset l_p\subset l_q$. Obteniendo lo pedido.
+
+	\begin{itemize}
+	\item Se define $l_\infty=\{(a_n)_{n\in\mathbb{N}}:\:(a_n)_{n\in\mathbb{N}}\:es\:acotada\}$ \\
+	
+	(Recordemos que $(a_n)_{n\in\mathbb{N}}$ es acotada $\Leftrightarrow \sup_{n\in\mathbb{N}}|a_n|\in \mathbb{R}\Leftrightarrow \sup_{n\in\mathbb{N}}|a_n|<+\infty$)
+	
+	Aquí $|a_n|$ significa módulo del número complejo $a_n$ (valor absoluto si $a_n$ es real). Trivialmente $l_\infty$ es un e.v sobre $K$ y $l_p\subset l_\infty$, $\forall p\geq 1$
+	
+	\item Otro ejemplos de e.v son 
+	\begin{itemize}
+	\item $c_{00}$: sucesiones "casi nulas" ( $(a_n)_{n\in\mathbb{N}}\in c_{00}\Leftrightarrow $ todos sus términos, salvo un número no finito, son nulos)
+	\item $c_0$: sucesiones con límite cero.
+	\item $c$: sucesiones convergentes
+	\end{itemize}
+	
+	Claramente tenemos $c_{00}\subset c_0\subset c\subset l_{\infty}$, $c_{00}\subset l_1$. Se deja como ejercicio comprobar $c_0\subset l_1$
+	
+	\item Si $1\leq p\leq \infty $ y $a,b\in \mathbb{R}$, con $a<b$ definimos
+	\begin{equation}
+	L^p(a,b)=\{x:[a,b]\rightarrow \mathbb{R}:x\:es\:medible,\quad \int_a^b|x(t)|^p dt<+\infty \}
+	\end{equation}
+	donde, desde ahora, todas las integrales que aparecezcan se entenderán en el sentido de Lebesgue.
+	
+	Recordemos que si, $x,y\in L^p(a,b)$, entonces $x=y\Leftrightarrow x(t)=y(t)$, casi por doquier en $[a,b]$ (en inglés $x(t)=y(t)$, \textit{almost everywhere} en $[a,b]$)$\Leftrightarrow \cancel{\exists} A\subset [a,b]:\mu(A)\neq0,\:x(t)\neq y(t)$ (donde $\mu(A)$ es la medida de Lebesgue de $A$).
+	
+	\item $L^\infty(a,b)$ se define como
+	\begin{equation*}
+	L^\infty(a,b)=\{x:[a,b]\rightarrow \mathbb{R},medible,\exists M>0:|x(t)|\leq M,\:c.p.d\:en\:[a,b]\}
+	\end{equation*}	
+	
+	Recordemos que $l_p\subset l_\infty$, $\forall p\in [1,+\infty)$.\\
+	
+	\textbf{Ejercicio:} Consulta la bibliografía para establecer la relación entre $L^p(a,b),\:L^q(a,b),\:L^\infty (a,b),\quad 1\leq p\leq q$.
+	
+	\item Si $m\in\mathbb{N}$, definimos
+	\begin{equation*}
+	C^m[a,b]=\{x:[a,b]\rightarrow \mathbb{R}:x,x',\ldots,x^{(m)}\in C[a,b]\}
+	\end{equation*}
+	
+	donde $x^{(m)}$ indica la derivdad de orden $m$ de $x$.
+	\end{itemize}
+\end{enumerate}
+
+\subsection{COMPLEMENTOS}
+\begin{enumerate}
+\item Definición de espacio vectorial $V$ sobre un cuerpo $K$. Dos operaciones
+\begin{gather*}
++:V\times V\rightarrow V,\quad (x,y)\mapsto x+y\\
+\cdot:K\times V\rightarrow V,\quad (\lambda,x)\mapsto \lambda\cdot x
+\end{gather*}
+$\forall x,y,z\in V$, $\forall\alpha,\beta\in K$, se tiene:
+	\begin{enumerate}
+	\item Asociativa para $+$
+	\begin{equation*}
+	x+(y+z)=(x+y)+z
+	\end{equation*}
+	
+	\item $\exists$ elemento neutro para $+$
+	\begin{equation*}
+	\exists 0\in V:\:x+0=x
+	\end{equation*}
+	
+	\item Conmutativa para $+$
+	\begin{equation*}
+	x+y=y+x
+	\end{equation*}
+	
+	\item $1\cdot x=x\quad (1\:elemento\:unidad\:de\:K)$.
+	
+	\item Pseudoasociativa
+	\begin{equation*}
+	\alpha\cdot(\beta\cdot x)=(\alpha\beta)x
+	\end{equation*}
+	
+	\item Distributiva de los escalares
+	\begin{equation*}
+	(\alpha+\beta)\cdot x=\alpha\cdot x+\beta \cdot x
+	\end{equation*}
+	
+	\item Distributiva de los vectores
+	\begin{equation*}
+	\alpha\cdot (x+y)=\alpha\cdot x + \alpha \cdot y
+	\end{equation*}
+	\end{enumerate}
+
+\item CADINALIDAD DE UN CONJUNTO\\
+
+Dados dos conjuntos $A,B$, se dice que $A$ y $B$ poseen el mismo cardinal (o que son equivalentes en este ambiente) si y sólo si existe alguna aplicación biyectiva $f:A\rightarrow B$. 
+
+Si $A$ y $B$ son conjuntos finitos, entonces $A$ y $B$ son equivalentes si y solo si tienen el "mismo número de elementos". Así, "por convenio" si $A$ y $B$ son conjuntos infinitos equivalentes, decimos que $A$ y $B$ tienen el "mismo número de elementos".
+
+Se denota $\chi_0=Card(\mathbb{N}),\:\chi_1=Car(\mathbb{R}),\:etc.$. Decimos que $Car(A)<Car(B)$ si y sólo si existe alguna aplicación inyectiva de $A$ en $B$, pero ninguna biyectiva. 
+
+Para cualquier conjunto $A$, se tiene
+\begin{equation*}
+Car(A)<Car(\mathcal{P}(A))
+\end{equation*}
+
+donde $\mathcal{P}(A)$ es el conjunto de "todos los subconjuntos de A" (conjunto de las partes de A).\\
+
+\textbf{LEMA DE ZORN:} Sea $A$ un conjunto "parcialmente ordenado" (existe alguna relación de orden en $A$, $\leq$: reflexiva, antisimétrica, transitiva) tal que cualquier $B\subset A$, $B$ "totalmente ordenado" ($\forall x,y\in B$, ó $x\leq y$ ó $y\leq x$), admite alguna cota superior ($\exists x_0\in A/x\leq x_0,\:\forall x\in A$). 
+
+Entonces $A$ tiene algún elemento maximal: $\exists y\in A$ tal que $\cancel{\exists} x\in A$ cumpliento $y<x$ ($\Leftrightarrow y\leq x$, $y\neq x$).\\
+
+Lema de Zorn $\Leftrightarrow$ Axioma de elección
+\end{enumerate}
+\end{document}
