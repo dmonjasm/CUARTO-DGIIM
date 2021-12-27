@@ -130,8 +130,8 @@ Tomamos sucesiones de elementos de $K$, $K=\mathbb{R}$ ó $K=\mathbb{C}$. $l_p$ 
 \end{gather*}
 , tenemos que
 \begin{gather*}
-|a_n+b_n|^p\leq (|a_n|+|b_n|)^p\leq (max\{|a_n|,|b_n|\}+max\{|a_n|,|b_n|\})^p)=\\
-=2^p(max\{|a_n|,|b_n|\})^p\leq 2^p(|a_n|^p+|b_n|^p)
+|a_n+b_n|^p\leq (|a_n|+|b_n|)^p\leq (\max\{|a_n|,|b_n|\}+\max\{|a_n|,|b_n|\})^p)=\\
+=2^p(\max\{|a_n|,|b_n|\})^p\leq 2^p(|a_n|^p+|b_n|^p)
 \end{gather*}
 
 Por tanto, si $\sum_{n=1}^{+\infty} |a_n|^p<+\infty$ y  $\sum_{n=1}^{+\infty}|b_n|^p<+\infty$, tenemos que
@@ -183,6 +183,31 @@ Esta segunda inclusión estricta nos dá entre otras cosas que $l_1\subset l_p\s
 	
 	\textbf{Ejercicio:} Consulta la bibliografía para establecer la relación entre $L^p(a,b),\:L^q(a,b),\:L^\infty (a,b),\quad 1\leq p\leq q$.
 	
+	\textbf{Solución:} Para $1\leq p < q \leq \infty$ se verifica que $L_q[0,1] \subset L_p[0,1]$ , y $\|f\|_p\leq \|f\|_q$ para toda $f\in L_q[0,1]$. Además, si $1\leq p<q<\infty$, $L_q[0,1]$ es denso en $L_p[0,1]$. \\
+	
+	\textbf{Demostración:} El caso $q=\infty$ es claro, pues si $f\in L_\infty[0,1]$, entonces $|f(t)|^p\leq \|[f]\|_\infty^p$ casi para todo $x\in [0,1]$, y por tanto $f\in L_p[0,1]$ y $\|f\|_p\leq \|[f]\|_\infty$. Además, la inclusión $L_\infty
+	[0,1]\subset L_p[0,1]$ es estricta, pues la función dada por $f(x)=log(\frac{1}{x})$ para $0<x\leq 1$, está en $L_p[0,1]$ cualquiera sea $p\geq 1$, pues la integral
+
+	\begin{equation*}
+	\int_0^1\left[log(\frac{1}{x})\right]^p dt=\left[ x=\frac{1}{t}\right] =\int_1^{+\infty} \frac{(log\:u)^p}{u^2} du
+	\end{equation*}	
+	
+	es finita. Pero no está en $L_\infty[0,1]$, pues para $M>0$ se tiene que $\{t\in ]0,1]:|f(t)|>M\}=]0,e^{-M}[$ no es de medida nula.
+	
+	Sea $1\leq p<q<\infty$ y sea $f\in L_q[0,1]$. Recordemos la desigualdad de Hölder. Si $r>1$ y $s>1$ son tales que $\frac{1}{r}+\frac{1}{s}=1$, y $u\in L_r[0,1]$, $v\in L_s[0,1]$, entonces $uv\in L_1[0,1]$ y 
+	\begin{equation*}
+	\int_0^1|u(t)v(t)|dt\leq \left(\int_0^1|u(t)|^r\right)^\frac{1}{r}\left(\int_0^1 |f(t)|^q dt\right)^\frac{1}{s}
+	\end{equation*}	 
+	
+	Aplicamos esta desigualdad tomando $u=|f|^p$, $v=\chi_{[0,1]}$, y $r=\frac{q}{p}>1$. Con lo cual $u^r=|f|^q\in L_1[0,1]$, es decir, $u\in L_r[0,1]$, y obtenemos
+	\begin{equation*}
+	\int_0^1 |f(x)|^p dx\leq \left(\int_0^1 |f(t)|^q dt \right)^\frac{p}{q}
+	\end{equation*}
+	
+	Por tanto, $f\in L_p[0,1]$, y $\|f\|_p\leq \|f\|_q$.\\
+	
+	La densidad de $L_q[0,1]$ en $L_p[0,1]$ para $1\leq p< q<\infty$, es consecuencia de las funciones continuas $C[0,1]$ son densas en todos los espacios $L_p[0,1]$ con $p\neq \infty$.\\
+		
 	\item Si $m\in\mathbb{N}$, definimos
 	\begin{equation*}
 	C^m[a,b]=\{x:[a,b]\rightarrow \mathbb{R}:x,x',\ldots,x^{(m)}\in C[a,b]\}
@@ -255,4 +280,381 @@ Entonces $A$ tiene algún elemento maximal: $\exists y\in A$ tal que $\cancel{\e
 
 Lema de Zorn $\Leftrightarrow$ Axioma de elección
 \end{enumerate}
+
+\section{Espacios Normados. Ejemplos}
+Sea $X$ un e.v sobre $K(\mathbb{R}$ ó $\mathbb{C})$. Una norma en $X$ es una aplicación $\|\cdot\|:X\rightarrow [0,+\infty)$, $x\mapsto \|x\|$, que satisface:
+\begin{enumerate}
+\item $\|x\|\geq 0,\:\forall x\in X$, y $\|x\|=0\Leftrightarrow x=0$
+
+\item $\|\lambda x\|=|\lambda|\|x\|$, $\forall \lambda\in K$ y $\forall x\in X$
+
+\item $\|x+y\|\leq \|x\|+\|y\|$, $\forall x,y\in X$ (\textbf{Desigualdad Triangular})
+\end{enumerate}
+
+Un espacio vectorial se dice normado si está dotado de una norma $\|\cdot\|$, y se representa como $(X,\|\cdot\|)$.\\
+
+En cualquier espacio normado se puede definir una distancia (o métrica), inducida por la norma:
+\begin{equation}
+d:X\times X\rightarrow [0,+\infty),\quad (x,y)\mapsto d(x,y)=\|x-y\|
+\end{equation}
+
+Una vez definido el concepto de norma, espacio normado y distancia veamos algunos ejemplos significativos.
+
+\begin{itemize}
+\item \textbf{Ejemplo 1:} $\mathbb{R}^n(\mathbb{R})$, $n\in \mathbb{N}$.
+
+Para todo $p\in [1,+\infty)$, podemos definir
+\begin{equation*}
+\|x\|_p=(|x_1|+\ldots+|x_n|^p)^\frac{1}{p},\quad \forall (x_1,\ldots,x_n)\in \mathbb{R}^n
+\end{equation*}
+
+Es claro que la única propiedad de la norma que no es evidentes es la desigualdad triangular, que en este caso particular es llamada desigualdad de Minkowski. Probaremos esta escalonadamente:\\
+
+\textbf{Desigualdad de Young:} $\forall a,b\in [0,+\infty$, $\forall p>1,\:\forall q>1$ tal que $\frac{1}{p}+\frac{1}{q}=1$, se tiene que
+\begin{equation*}
+a^{1/p}b^{1/q}\leq \frac{a}{p}+\frac{b}{q}
+\end{equation*}
+
+Para demostrar la desigualdad de Young nos basaremos en el siguiente lema.
+
+\textbf{Lema:} $\forall \alpha\in (0,1)$, $\forall x\in [1,+\infty)$, se tiene
+\begin{equation*}
+\alpha(x-1)+1\geq x^\alpha
+\end{equation*}
+
+\textbf{Demostración:} Si $f:[1,+\infty)\rightarrow \mathbb{R}$, $x\mapsto \alpha(x-1)+1-x^\alpha$, entonces
+\begin{equation*}
+f'(x)=\alpha-\alpha x^{\alpha-1}=\alpha(1-x^{\alpha-1})=\alpha\left(1-\frac{1}{x^{1-\alpha}}\right)\geq 0
+\end{equation*}
+
+ya que $x^{1-\alpha}\geq 1$, $\forall x\geq 1$, $\forall \alpha\in (0,1)$. Así $f$ es una función creciente en $[1,+\infty)$. Por tanto $f(x)\geq f(1)=0,\:\forall x\in [1,+\infty)$ y queda por tanto probado el lema. Para probar la \textbf{desigualdad de Young} basta tomar $\alpha=\frac{1}{p}$, $x=\frac{a}{b}$ si $a\geq b$ (si $a\leq b$ basta cambiar a por b) y entonces tenemos
+
+\begin{gather*}
+\frac{1}{p}\left(\frac{a}{b}-1\right)+1\geq \left(\frac{a}{b}\right)^\frac{1}{p}\Rightarrow \frac{a-b}{pb}+1 \geq a^\frac{1}{p}b^\frac{-1}{p}\Rightarrow\\
+\Rightarrow \frac{a-b}{p}+b\geq a^\frac{1}{p}b^{1-\frac{1}{p}}\Rightarrow \frac{a}{p}+b(1-\frac{1}{p})\geq a^\frac{1}{p}b^{1-\frac{1}{p}}
+\end{gather*}
+
+Como $\frac{1}{p}+\frac{1}{q}=1\Rightarrow \frac{1}{q}=1-\frac{1}{p}$, lo que prueba la desigualdad de Young.\\
+
+\textbf{Desigualdad de Hölder:} $\forall x,y\in \mathbb{R}^n$ (ó $\mathbb{C}^n$), tenemos 
+\begin{equation*}
+\sum_{k=1}^n |x_k\:y_k|\leq \left(\sum_{k=1}^n |x_k|^p\right)^\frac{1}{p}\left(\sum_{k=1}^n |y_k|^q\right)^\frac{1}{q}
+\end{equation*}
+
+donde una vez más $\frac{1}{p}+\frac{1}{q}=1$ (Para $p=2$ y $q=2$ obtenemos la desigualdad de Cauchy-Schwarz).\\
+
+\textbf{Demostración:} Si $x=0$ ó $y=0$, la desigualdad es evidente. Así pues, suponemos $x\neq 0$ e $y\neq 0$ ($0\in\mathbb{R}^n$).
+
+Definamos $a_k=\frac{|x_k|^p}{\|x\|_p^p}$, $b_k=\frac{|y_k|^q}{\|y\|_q^q}$, $1\leq k\leq n$. Entonces por la desigualdad de Young tenemos
+\begin{gather*}
+a_k^{\frac{1}{p}}b_k^\frac{1}{q}\leq \frac{a_k}{p}+\frac{b_k}{q}\Rightarrow \frac{|x_k|}{\|x\|_p}\frac{|y_k|}{\|y_k\|_q}\leq \frac{|x_k|^p}{p\|x\|_p^p}+\frac{|y_k|^q}{q\|y\|_q^q}
+\end{gather*}
+
+Así, $|x_k||y_k|\leq \frac{|x_k|^p}{p}\|x\|_p^{1-p}\|y\|_q+\frac{|y_k|^q}{q}\|y\|_q^{1-q}\|x\|_p$. Sumando ahora desde 1 hasta n, tenemos:
+\begin{gather*}
+\sum_{k=1}^n|x_k||y_k|\leq \frac{1}{p}\|x\|_p^p\|x\|_p^{1-p}\|y\|_q+\frac{1}{q}\|y\|_q^q\|y\|_q^{1-q}\|x\|_p=\\
+=\frac{1}{p}\|x\|_p\|y\|_q+\frac{1}{q}\|y\|_q\|x\|_p=\|x\|_p\|y\|_q
+\end{gather*}
+
+Con la ayuda de la desigualdad de Hölder, deducimos la desigualdad triangular o la desigualdad de Minkowski para $\|\cdot\|_p$. En efecto, sean $x\in \mathbb{R}^n\backslash \{0\}$ y $y\in \mathbb{R}^n\backslash \{0\}$. Entonces:
+\begin{gather*}
+\|x+y\|_p^p=\sum_{k=1}^n|x_k+y_k|^p\leq \sum_{k=1}^n(|x_k+y_k|^{p-1})(|x_k|+|y_k|)=\\
+=\sum_{k=1}^n|x_k||x_k+y_k|^{p-1}+\sum_{k=1}^n|y_k||x_k+y_k|^{p-1}\leq^{Holder} \\
+\leq^{Holder} \left(\sum_{k=1}^n|x_k|^p\right)^\frac{1}{p}\left(\sum_{k=1}^n|x_k+y_k|^{q(p-1)}\right)^\frac{1}{q}+\left(\sum_{k=1}^n|y_k|^p\right)^\frac{1}{p}\left(\sum_{k=1}^n|x_k+y_k|^{q(p-1)}\right)^\frac{1}{q}
+\end{gather*}
+
+Como $\frac{1}{p}+\frac{1}{q}=1\Leftrightarrow \frac{1}{q}=1-\frac{1}{p}=\frac{p-1}{p}\Leftrightarrow p=q(p-1)$, tenemos
+
+\begin{gather*}
+\|x+y\|^p_p\leq \|x\|_p(\|x+y\|^p_p)^\frac{1}{q}+\|y\|_p(\|x+y\|_p^p)^\frac{1}{q}=(\|x\|_p+\|y\|_p)\|x+y\|_p^\frac{p}{q}
+\end{gather*} 
+
+Si $\|x+y\|=0$, la desigualdad triangular es trivial. Finalmente, si $\|x+y\|_p\neq 0$ (o lo que es lo mismo, $x\neq-y$), tenemos:
+\begin{equation*}
+\|x+y\|_p^{p-\frac{p}{q}}\leq \|x\|_p+\|y\|_p
+\end{equation*}
+
+Pero $\frac{1}{p}+\frac{1}{q}=1\Leftrightarrow 1+\frac{p}{q}=p\Leftrightarrow 1=p-\frac{p}{q}$, lo que prueba la desigualdad triangular.
+
+\item \textbf{Ejemplo 2:} $(\mathbb{R}^n,\|\cdot\|_\infty)$, donde $\forall x\in \mathbb{R}^n$, $x=(x_1,\ldots,x_n)$,
+\begin{equation*}
+\|x\|_\infty=\max\{|x_1|,\ldots,|x_n|\}
+\end{equation*}
+
+Es trivial probar las propiedades de la norma.
+
+\item \textbf{Ejemplo 3:} $X=C([a,b],\mathbb{R})$ con $\|\cdot\|_\infty$, donde 
+\begin{equation*}
+\forall x\in C([a,b],\mathbb{R}),\quad \|x\|_\infty =\max_{t\in[a,b]}|x(t)|
+\end{equation*}
+
+El máximo anterior existe, pues toda función real continua definida en un compacto alcanza su máximo y su mínimo.
+
+En $X$ podemos definir otras normas. De hecho, para cada $p,\:1\leq p<+\infty$
+\begin{equation*}
+\|x\|_p=\left(\int_a^b|x(t)|^p dt\right)^\frac{1}{p}
+\end{equation*}
+
+es una norma en $X$.
+
+\item \textbf{Ejemplo 5: "Espacios de Sucesiones"}
+
+Recordemos que si $1\leq p <+\infty$
+\begin{equation*}
+l_p=\{(a_n)_{n\in\mathbb{N}}:\sum_{n=1}^{+\infty}|a_n|^p<+\infty\}
+\end{equation*}
+
+, una norma "natural" para $l_p$ es
+\begin{equation*}
+\|(a_n)_{n\in\mathbb{N}}\|_p=\left(\sum_{k=1}^{+\infty}|x_k|^p\right)^\frac{1}{p}
+\end{equation*}
+
+También 
+\begin{equation*}
+l_\infty=\{(a_n)_{n\in \mathbb{N}}:(a_n)_{n\in\mathbb{N}}\quad es\:\:acotada\}
+\end{equation*}
+
+y una norma "natural" es
+\begin{equation*}
+\|(a_n)_{n\in \mathbb{N}}\|_\infty=\sup_{n\in\mathbb{N}}|a_n|
+\end{equation*}
+
+Las demostraciones para ver que tanto $\|\cdot\|_p$, $1\leq p<+\infty$, como $\|\cdot\|_\infty$, son una norma en los respectivos espacios de sucesiones, son similares al caso $\mathbb{R}^n$ (ejemplos 1 y 2), teniendo la precaución de demostrar primero la "versión de sumas finitas" y luego hacer un paso al límite (no hay problema, pues las series que se consideran son corvergentes).
+
+\item \textbf{Ejemplo 6: "Espacio de Lebesgue de funciones integrables.}
+
+Si $1\leq p<+\infty$
+\begin{gather*}
+L^p(a,b)=\{x:[a,b]\rightarrow \mathbb{R}:x\quad es\:medible,\int_a^b|x(t)|^p dt<+\infty\}\\
+L^\infty(a,b)=\{x:[a,b]\rightarrow \mathbb{R}:x\quad es\:medible,\exists M>0:|x(t)|\leq M\:c.p.d\:en\:[a,b]\}
+\end{gather*}
+con $\|x\|_p=\left(\int_a^b|x(t)|^p dt\right)^\frac{1}{p},\quad 1\leq p<+\infty,\:\forall x\in L^p(a,b)$, y 
+\begin{equation*}
+\|x\|_\infty =\inf\{M:|x(t)|\leq M,c.p.d\:en\:[a,b]\},\quad \forall x\in L^\infty(a,b)
+\end{equation*}
+
+(este último también llamado supremo esencial de $x$ y notado como $supess|x(t)|$ ó $ess-sup|x(t)|$).\\
+
+La demostración de que las definiciones anteriores constituyen auténticas normas, no es trivial, si $1\leq p<+\infty$ y se puede consultar para ello en la bibliografía recomendada (se recomienda los apuntes de JPerez o de RPaya, en ambos viene demostrado).
+\end{itemize}
+
+\subsection{COMPLEMENTOS}
+\textbf{1. Espacios métricos.} Sea $X$ un conjunto. Una métrica de $X$ es una aplicación $d:X\times X\rightarrow [0,+\infty)$ que satisface:
+\begin{enumerate}
+\item $d(x,y)\geq 0$, y $d(x,y)=0\Leftrightarrow x=y$, $\forall x,y\in X$
+
+\item $d(x,y)=d(y,x)$, $\forall x,y\in X$
+
+\item $d(x,z)\leq d(x,y)+d(y,z)$, $\forall x,y,z\in X$ (Desigualdad Triangular).
+\end{enumerate}
+
+\textbf{2.} Sea $X$ un espacio vectorial sobre $K$ ($K=\mathbb{R}$ ó $K=\mathbb{C}$). Demuestra que en $X$ se puede definir una norma.\\
+
+\textbf{3.} Sea $X$ un espacio normado y $(x_n)$ una sucesión ocnvergente. Prueba que las sucesiones
+\begin{gather*}
+\frac{x_1+x_2+\ldots+x_n}{n}\\
+\vdots \\
+\frac{x_1+2x_2+\ldots+nx_n}{n^2}
+\end{gather*}
+son convergentes y encuentra su límite.\\
+
+\textbf{Solución:} Sean $(a_n)_{n\in \mathbb{N}}=\sum_{i=1}^n\|x_i-x\|$ y $(b_n)_{n\in\mathbb{N}}=n$
+\begin{gather*}
+\lim_{n\to \infty}\frac{a_n-a_{n-1}}{b_n-b_{n-1}}=\lim_{n\to\infty}\|x_n-x\|=0\Rightarrow^{Criterio\:Stolz}\lim_{n\to \infty}\frac{\sum_{i=1}^n\|x_i-x\|}{n}=0\Rightarrow\\
+\Rightarrow \lim_{n\to\infty}v_n=\lim_{n\to\infty}\frac{x_1+\ldots+x_n}{n}=x
+\end{gather*}
+
+\textbf{4.} Desigualdad de Young, Hölder y Minkowski para funciones. (Vienen hechas en los apuntes de Jperez).
+
+\section{Topología de Espacios Normados}
+Si $(X,\|\cdot\|)$ es un espacio normado, entonces en $X$ se puede definir una métrica $d:X\times X\rightarrow \mathbb{R}$, $(x,y)\mapsto d(x,y)=\|x-y\|$. Por tanto cualquier espacio normado es espacio métrico y consecuentemente, espacio topológico.
+
+Eso nos permite hablar de bolas abiertas, bolas cerradas, subconjuntos abiertos, cerrados, interior, clausura, densidad, sucesiones y series convergentes, series de Cauchy, espacios completos, etc.\\
+
+En este tema nos vamos a concentrar en los conceptos y propiedades "propios de la dimensión infinita" y las diferencias fundamentales con los espacios de dimensión finita ($\mathbb{R}^n$ ó $\mathbb{C}^n$), con los que ya estamos familiarizados.
+
+\begin{enumerate}
+\item $(X,\|\cdot\|)\Rightarrow (X,d)$ métrico ($d(x,y)=\|x-y\|)$. Sin embargo, $(X,d)\cancel{\Rightarrow}$ la métrica derive de una norma.
+
+\textbf{Ejemplo:} $d:X\times X\rightarrow \mathbb{R}$ dada por
+\begin{gather*}
+d(x,y)=\left\lbrace \begin{array}{c}
+1\quad si\:x\neq y\\
+0\quad si\:x=y
+\end{array}\right.
+\end{gather*}
+
+\item Si $(X,\|\cdot\|)$ es normado, las aplicaciones:
+\begin{enumerate}
+\item $X\times X\rightarrow X$, $(x,y)\mapsto x+y$
+
+\item $K\times X\rightarrow X$, $(\lambda,x)\mapsto \lambda x$
+
+\item $X\rightarrow \mathbb{R}$, $x\mapsto \|x\|$
+\end{enumerate}
+
+son continuas, cuando en $X\times X$  en $K\times X$ se considera la topología producto.
+
+\textbf{NOTA:} En $X\times X$ podemos definir, por ejemplo, la norma: $\|(x,y)\|=\max\{\|x\|,\|y\|\}$. Entonces la bola abierta de centor $(a,b)\in X\times X$ y radio $r>0$, en $X\times X$, satisface:
+\begin{equation*}
+B_{X\times X}((a,b),r)=B_X(a,r)\times B_X(b,r)
+\end{equation*}
+
+luego la topología de la norma $\|(\cdot,\cdot)\|$ en $X\times X$ es la topología producto en $X\times X$. Análogamente $K\times X$.\\
+
+Probamos ya la continuidad de las aplicaciones anteriores:
+
+\textbf{(a)} Si $(x_n,y_n)\rightarrow (x,y)$, entonces $x_n\rightarrow x$ y $y_n\rightarrow y$. Como $\|x_n+y_n-(x+y)\|\leq \|x_n-x\|+\|y_n-y\|$, tenemos que $(x_n+y_n)\rightarrow x+y$.\\
+
+\textbf{(b)} Si $(\lambda_n,x_n)\rightarrow (\lambda,x)\in K\times X$, entonces $(\lambda_n)\rightarrow \lambda$ y $(x_n)\rightarrow x$. Como $(x_n)\rightarrow x$, la sucesión $(x_n)$ está acotada: $\exists M>0/\|x_n\|\leq M,\:\forall n\in \mathbb{N}$. Luego
+\begin{gather*}
+|\lambda_n x_n-\lambda x|=|\lambda_n x_n-\lambda x_n+\lambda x_n-\lambda x| \leq |\lambda_n-\lambda|\|x_n\|+|\lambda|\|x_n-x\|\leq \\
+\leq |\lambda_n-\lambda|M+|\lambda|\|x_n-x\|\rightarrow 0
+\end{gather*}
+
+\textbf{(c)} La demostración es trivial si usamos la desigualdad
+\begin{equation}
+|\|x\|-\|y\||\leq \|x-y\|,\quad \forall x,y\in X
+\end{equation}
+
+ya que si $x_n\rightarrow x$, entonces, $\|x_n\|\rightarrow \|x\|$, basta con llamar a $x=x_n$ y a $y=x$ y tender la n a infinito, tendríamos que la desigualdad está acotada superiormente por 0, y por tanto cuando n tiende a infinito $\|x_n\|\rightarrow \|x\|$.
+
+
+\item "Diferencia importante entre dimensión finita e infinita"
+
+Vamos a comparar la convergnecia de $\mathbb{R}^2$ con la de $l_\infty$ (pero lo mismo ocurriría con $\mathbb{R}^p$ y $l_q$, $1\leq q\leq +\infty$).\\
+
+Sea $(x^n)$ una sucesión de $\mathbb{R}^2$, $x^n=(x^n_1,x^n_2)$, $\forall n\in \mathbb{N}$ y $x=(x_1,x_2)\in \mathbb{R}^2$. Entonces, si en $\mathbb{R}^2$ consideramos la norma $\|y\|_{\mathbb{R}^2}=\|(y_1,y_2)\|_{\mathbb{R}^2}=\max\{|y_1|,|y_2|\}$ se tiene:
+\begin{equation*}
+x^n\xrightarrow{\mathbb{R}^2}x\Leftrightarrow \left\lbrace \begin{array}{c}
+x_1^n\xrightarrow{n\to\infty} x_1\\
+x_2^n\xrightarrow{n\to\infty} x_2
+\end{array}\right.
+\end{equation*}
+
+Esto es fácil de probar, pues:
+\begin{gather*}
+(x^n)\xrightarrow{\mathbb{R}^2} x\Leftrightarrow \|(x^n-x)\|_{\mathbb{R}^2}\xrightarrow{n\to\infty} 0\Leftrightarrow\\
+\Leftrightarrow \max\{|x_1^n-x_1|,|x_2^n-x_2|\}\xrightarrow{n\to\infty}0 \Leftrightarrow\\
+\Leftrightarrow x_1^n\xrightarrow{n\to\infty}x_1,\quad x_2^n\xrightarrow{n\to\infty} x_2
+\end{gather*}
+
+\textbf{Atención:} En $\mathbb{R}^2$ podemos considerar cualquier otra norma (ya que en $\mathbb{R}^n$ cualesquieran dos normas son equivalentes). Podemos tratar con $\mathbb{R}^p$, con $p\in \mathbb{N}$ y el resultado es el mismo (bastaría de nuevo usar la norma uniforme, sería análogo a lo visto, independientemente de la dimensión y si luego queremos aplicarlo a otra norma basta usar que será equivalente a la norma del máximo).
+
+Si $(f^n)$ es una sucesión en $\mathbb{R}^p$:
+\begin{gather*}
+f^1=(f_1^1,f_2^1,\ldots,f_p^1)\\
+f^2=(f^2_2,f^2_2,\ldots,f_p^2)\\
+\cdots\\
+f^n=(f_1^n,f_2^n,\ldots,f_p^n)
+\end{gather*}
+
+entonces
+\begin{gather*}
+(f^n)\xrightarrow{\mathbb{R}^p}f=(f_1,\ldots,f_p)\Leftrightarrow (f_i^n)\xrightarrow{n\to\infty}f_i,\quad 1\leq i\leq p
+\end{gather*}
+
+Ahora veamos el siguiente ejemplo en $l_\infty$:
+\begin{gather*}
+f^1=(0,1,1,1,\ldots)\\
+f^2=(0,0,1,1,1,\ldots)\\
+f^3=(0,0,0,1,1,1,\ldots)\\
+\cdots\\
+f^n=(0,\ldots^{(n},0,1,1,1,\ldots)\\
+\cdots
+\end{gather*}
+
+la sucesión $(f^n)$ es una sucesión de elementos de $l_\infty$ que, por columnas converge al elemento
+\begin{equation*}
+f=(0,0,0,0,\ldots\in l_\infty
+\end{equation*}
+
+pero $(f^n)\cancel{\xrightarrow{l_\infty}} f$, pues $\|f^n\|_\infty=1$, $\forall n\in \mathbb{N}$.\\
+
+Sabemos que convergencia en $l_p$, con $1\leq p\leq \infty$ implica convergencia por columnas, pero el recíproco no es cierto.
+
+\item Espacios de Banach. Ejemplos importantes.
+\end{enumerate}
+
+Un grupo especial de espacios normados lo constituyen los "espacios normados completos" (aquellos donde cualquier sucesión de Cauchy es convergente a un elemento del espacio normado considerado). El ejemplo más elemental es $\mathbb{R}^n$ (con cualquier norma), $\mathbb{C}^n$, etc. (en general, cualquier espacio normado de dimensión finita). En dimensión infinita es más interesante, pues no encontraremos espacios normados completos (de Banach) y otro que no lo sean como se ve en los siguientes ejemplos:
+
+\begin{enumerate}
+\item $l_p$, $1\leq p\leq +\infty$, con la norma habitual, es un espacio de Banach. Veamos la demostración.\\
+
+\textbf{Demostración:} Vamos a demostrar, por simplicidad, que $(l_2,\|\cdot\|_2)$ es completo, y el resto de casos serán análogos a las ideas usadas en este. Recordemos
+
+\begin{gather*}
+l_2=\{(x_n)_{n\in\mathbb{N}}:\sum_{n=1}^{+\infty}|x_n|^2<+\infty\}\\
+\|(x_n)\|=\left(\sum_{n=1}^{+\infty}|x_n|^2\right)^\frac{1}{2},\quad \forall (x_n)\in l_2
+\end{gather*}
+
+Sea $(x^k)_{k\in\mathbb{N}}$ una sucesión de Cauchy en $l_2$, vamos a demostrar que si es de Cauchy es convergente a un elemento del espacio. En efecto, pensemos que $(x^k)_{k\in\mathbb{N}}$ es una "sucesión de sucesiones":
+\begin{gather*}
+x^1=(x^1_1,x_2^1,\ldots,x_n^1,\ldots)\\
+x^2=(x^2_1,x_2^2,\ldots,x_n^2,\ldots)\\
+\cdots\\
+x^k=(x^k_1,x_2^k,\ldots,x_n^k,\ldots)
+\end{gather*}
+
+Como $(x^k)$ es de Cauchy en $l_2$:
+\begin{equation*}
+\forall \varepsilon >0,\:\exists k_0(\varepsilon)\in\mathbb{N}\::\left.\begin{array}{c}
+\forall k\geq k_0(\varepsilon)\\
+\forall p\in\mathbb{N}
+\end{array}\right.\:\|x^{k+p}-x^k\|_2\leq \varepsilon
+\end{equation*}
+
+Como $\|x^{k+p}-x^k\|_2=\left(\sum_{n=1}^{+\infty}|x_k^{k+p}-x_n^k|^2\right)^\frac{1}{2}\leq \varepsilon$, esto implica:
+\begin{equation*}
+\forall \varepsilon >0, \exists k_0(\varepsilon)\in\mathbb{N}:\left.\begin{array}{c}
+\forall k\geq k_0(\varepsilon)\\
+\forall p\in\mathbb{N}\\
+\forall n\in\mathbb{N}
+\end{array}\right\rbrace,\:|x_n^{k+p}-x_n^k|\leq \varepsilon
+\end{equation*}
+(pensemos que $\forall n\in\mathbb{N}$, fijo, $|x_n^{k+p}-x_n^k|\leq \|x^{k+p}-x^k\|$).\\
+
+\textbf{Importante:} Observemos que la desigualdad anterior es "uniforme" respecto de $p\in \mathbb{N}$, $n\in \mathbb{N}$. 
+
+\begin{itemize}
+\item Fijado $n\in\mathbb{N}$, la desigualdad implica que la sucesión $(x_n^k)_{k\in\mathbb{N}}$ es una sucesión de Cauchy de números reales (o complejo). Es decir, cada columna de la expresión es una sucesión de Cauchy (supongamos real, aunque es similar si es compleja). La conclusión es que $\forall n\in\mathbb{N}$ fijo, $x_n^k\xrightarrow{k\to\infty}x_n$.
+
+Sea $x=(x_n)_{n\in\mathbb{N}}$. Buscamos ver que nuestra sucesión de sucesiones converge a $x$. La clave está en lo siguiente:
+\begin{equation*}
+\forall \varepsilon >0,\:\exists k_0(\varepsilon)\in\mathbb{N}:\:\left.\begin{array}{c}
+\forall k\geq k_0(\varepsilon)\\
+\forall p\in\mathbb{N}
+\end{array}\right. 
+\end{equation*}
+tenemos,
+\begin{gather*}
+\sum_{n=1}^N|x_n^{k+p}-x_n^k|^2\leq \varepsilon^2,\quad \forall n\in\mathbb{N}\Rightarrow\\
+\Rightarrow \sum_{n=1}^N|x_n-x_n^k|^2\leq \varepsilon^2,\left.\begin{array}{c}
+\forall N\in\mathbb{N}\\
+\forall k\geq k_0(\varepsilon)
+\end{array}\right.\Rightarrow\\
+\Rightarrow \sum_{n=1}^{+\infty}|x_n-x_n^k|^2\leq \varepsilon^2 \quad \forall k\geq k_0(\varepsilon)
+\end{gather*}
+
+, pero lo anterior nos indica que $x-x^k\in l_2$, $\forall k\geq k_0(\varepsilon)$. Además $x=x^k+(x-x^k)\Rightarrow x\in l_2$ y fijándonos bien tenemos que:
+\begin{equation*}
+\forall \varepsilon>0,\:\exists k_0(\varepsilon)\in\mathbb{N}:\:\forall k\geq k_0(\varepsilon)\Rightarrow\|x-x^k\|_2\leq \varepsilon
+\end{equation*}
+
+\item Sea $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$ el espacio normado de funciones polinomiales (con coeficientes reales), restringidos a $[0,1]$, con la norma $\|f\|_\infty=\max_{t\in[0,1]}|f(t)|,\:\forall f\in\mathcal{P}_{[0,1]}$.
+
+Demostremos que no es un espacio de Banach. Para ello recordemoas:
+\begin{equation*}
+e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}+\cdots
+\end{equation*}
+
+de manera uniforme en $[0,1]$. Pero de esto anterior se deduce que la sucesión de polinomios $(P_n)_{n\in\mathbb{N}}$,
+\begin{equation*}
+P_n(x)=1+\frac{x}{1!}+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}
+\end{equation*}
+
+converge en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$ a la función exponencial. Luego $(P_n)_{n\in\mathbb{N}}$ es una sucesión de Cauchy en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$ que no converge en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$.
+\end{itemize}
+\end{enumerate}
+
 \end{document}
