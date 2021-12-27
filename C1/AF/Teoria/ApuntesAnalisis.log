@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  28 DEC 2021 00:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  28 DEC 2021 00:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -553,19 +553,25 @@ mr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/1
 0 ;  \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 f \OMS/cmsy/m/n/10 2
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 660.
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
 [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 660.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 692.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 692.
  (./ApuntesAnalisis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 660.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 660.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 692.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 692.
 Package rerunfilecheck Info: File `ApuntesAnalisis.out' has not changed.
 (rerunfilecheck)             Checksum: 65E961BC71E4889AB2246695CF0B5AA9;330.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 660.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 692.
  ) 
 Here is how much of TeX's memory you used:
- 6468 strings out of 481239
- 94714 string characters out of 5920377
+ 6469 strings out of 481239
+ 94721 string characters out of 5920377
  360118 words of memory out of 5000000
  21549 multiletter control sequences out of 15000+600000
  540882 words of font info for 57 fonts, out of 8000000 for 9000
@@ -590,10 +596,10 @@ pe1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sfrm1000.pfb>
-Output written on ApuntesAnalisis.pdf (18 pages, 244434 bytes).
+Output written on ApuntesAnalisis.pdf (19 pages, 247760 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

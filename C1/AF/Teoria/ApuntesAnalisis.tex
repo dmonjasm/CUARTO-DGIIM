@@ -654,7 +654,39 @@ P_n(x)=1+\frac{x}{1!}+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}
 \end{equation*}
 
 converge en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$ a la función exponencial. Luego $(P_n)_{n\in\mathbb{N}}$ es una sucesión de Cauchy en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$ que no converge en $(\mathcal{P}_{[0,1]},\|\cdot\|_\infty)$.
+
+\item Otra diferencia importante entre los espacios normados de dimensión finite e infinita.\\
+
+Si $(X,\|\cdot\|)$ es un espacio normado, cualquier subespacio vectorial $F$, de $X$ de dimensión finita es cerrado. Esto es "sencillo" y, básicamente es un "juego de palabras" llevado a cabo convenientemente. En efecto, sea $B=\{x^1,x^2,\ldots,x^m\}$ una base de $F$. Entonces $\forall f\in \overline{F}$ (clausura o cierre de $F$), tenemos que $\exists (f^k)_{k\in\mathbb{N}}\subset F/f^k\xrightarrow{k\to\infty}f$.
+
+Si escribimos
+\begin{gather*}
+f^1=a_1^1x^1+a_2^1x^2+\cdots+a^1_mx^m\\
+f^2=a_1^2x^1+a_2^2x^2+\cdots+a^2_mx^m\\
+\cdots\\
+f^k=a_1^kx^1+a_2^kx^2+\cdots +a_m^kx^m
+\end{gather*}
+
+entonces $\exists a\in \mathbb{R}^m$ tal que
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+(a_1^k)\xrightarrow{k\to\infty} a^1\\
+(a_2^k)\xrightarrow{k\to\infty} a^2\\
+\cdots\\
+(a^k_m)\xrightarrow{k\to\infty}a^m
+\end{array}\right.
+\end{equation*}
+
+En $F$ tenemos definida la norma $\|\cdot\|$, inducida por $X$. Pero como $F$ tiene dimensión finita, todas las normas definidas en $F$ son equivalentes y si usamos por ejemplo, $\|\cdot\|_\infty$ en $F$, es decir
+\begin{equation*}
+\|g\|_{\infty}=\max_{1\leq i\leq m}|\lambda_i|,\quad \forall g=\lambda_1x^1+\cdots+\lambda_m x^m\in F
+\end{equation*}
+
+sabemos que la convergencia de la sucesión implica la convergencia por columnas. Conclusión $f^k\xrightarrow{\|\cdot\|}a^1x^1+\cdots+a^mx^m\in F$. Así $\overline{F}=F$ y $F$ es cerrado.
 \end{itemize}
 \end{enumerate}
+
+
+En dimensión infinita, la situación puede cambiar drásticamente. Para ello veamos un ejemplo
 
 \end{document}
