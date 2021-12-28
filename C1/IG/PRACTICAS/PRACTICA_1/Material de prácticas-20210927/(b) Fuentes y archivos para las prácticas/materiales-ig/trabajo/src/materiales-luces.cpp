@@ -35,7 +35,7 @@ Textura::Textura( const std::string & nombreArchivoJPG )
    // COMPLETAR: práctica 4: cargar imagen de textura
    // (las variables de instancia están inicializadas en la decl. de la clase)
    // .....
-
+   imagen = LeerArchivoJPEG(nombreArchivoJPG.c_str(),ancho, alto);
 }
 
 // ---------------------------------------------------------------------
@@ -47,6 +47,11 @@ void Textura::enviar()
    // COMPLETAR: práctica 4: enviar la imagen de textura a la GPU
    // y configurar parámetros de la textura (glTexParameter)
    // .......
+   glGenTextures(1,&ident_textura);//Creo un nuevo identificador de textura único y lo almaceno en ident_textura
+   glActiveTexture(GL_TEXTURE0);//Activo el identificador ident_textura en la unidad de texturas '
+   glBindTexture(GL_TEXTURE_2D, ident_textura);//Activo la textura identificada por ident_textura
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//Selección de texel por interpolación bilinial.
+   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE,imagen);//envío a GPU.
 
 }
 
@@ -70,6 +75,15 @@ void Textura::activar( Cauce & cauce  )
 {
    // COMPLETAR: práctica 4: enviar la textura a la GPU (solo la primera vez) y activarla
    // .......
+   if(!enviada){
+      enviar();
+      enviada=true;
+   }
+
+   cauce.fijarEvalText(true,ident_textura);   
+   cauce.fijarTipoGCT(modo_gen_ct,coefs_s,coefs_t);
+
+
 
 }
 // *********************************************************************
@@ -195,6 +209,22 @@ void ColFuentesLuz::activar( Cauce & cauce )
    //   (crear un array con los colores y otro con las posiciones/direcciones,
    //    usar el cauce para activarlas)
    // .....
+
+   vector<Tupla3f> colores;
+   vector<Tupla4f> vector_direccion;
+
+   Tupla4f ejez= {0.0,0.0,1.0,0.0};
+
+   for(int i=0; i < vpf.size();i++){
+      colores.push_back(vpf[i]->color);
+
+      ejez = MAT_Rotacion(vpf[i]->longi, 0.0, 1.0, 0.0) * ejez;
+      ejez = MAT_Rotacion(vpf[i]->lati, -1.0, 0.0, 0.0) * ejez;
+
+      vector_direccion.push_back(ejez);
+   }
+
+   cauce.fijarFuentesLuz(colores, vector_direccion);
 
 }
 
