@@ -167,9 +167,9 @@ Esta segunda inclusión estricta nos dá entre otras cosas que $l_1\subset l_p\s
 	Claramente tenemos $c_{00}\subset c_0\subset c\subset l_{\infty}$, $c_{00}\subset l_1$. Se deja como ejercicio comprobar $c_0\subset l_1$
 	
 	\item Si $1\leq p\leq \infty $ y $a,b\in \mathbb{R}$, con $a<b$ definimos
-	\begin{equation}
+	\begin{equation*}
 	L^p(a,b)=\{x:[a,b]\rightarrow \mathbb{R}:x\:es\:medible,\quad \int_a^b|x(t)|^p dt<+\infty \}
-	\end{equation}
+	\end{equation*}
 	donde, desde ahora, todas las integrales que aparecezcan se entenderán en el sentido de Lebesgue.
 	
 	Recordemos que si, $x,y\in L^p(a,b)$, entonces $x=y\Leftrightarrow x(t)=y(t)$, casi por doquier en $[a,b]$ (en inglés $x(t)=y(t)$, \textit{almost everywhere} en $[a,b]$)$\Leftrightarrow \cancel{\exists} A\subset [a,b]:\mu(A)\neq0,\:x(t)\neq y(t)$ (donde $\mu(A)$ es la medida de Lebesgue de $A$).
@@ -294,9 +294,9 @@ Sea $X$ un e.v sobre $K(\mathbb{R}$ ó $\mathbb{C})$. Una norma en $X$ es una ap
 Un espacio vectorial se dice normado si está dotado de una norma $\|\cdot\|$, y se representa como $(X,\|\cdot\|)$.\\
 
 En cualquier espacio normado se puede definir una distancia (o métrica), inducida por la norma:
-\begin{equation}
+\begin{equation*}
 d:X\times X\rightarrow [0,+\infty),\quad (x,y)\mapsto d(x,y)=\|x-y\|
-\end{equation}
+\end{equation*}
 
 Una vez definido el concepto de norma, espacio normado y distancia veamos algunos ejemplos significativos.
 
@@ -513,9 +513,9 @@ Probamos ya la continuidad de las aplicaciones anteriores:
 \end{gather*}
 
 \textbf{(c)} La demostración es trivial si usamos la desigualdad
-\begin{equation}
+\begin{equation*}
 |\|x\|-\|y\||\leq \|x-y\|,\quad \forall x,y\in X
-\end{equation}
+\end{equation*}
 
 ya que si $x_n\rightarrow x$, entonces, $\|x_n\|\rightarrow \|x\|$, basta con llamar a $x=x_n$ y a $y=x$ y tender la n a infinito, tendríamos que la desigualdad está acotada superiormente por 0, y por tanto cuando n tiende a infinito $\|x_n\|\rightarrow \|x\|$.
 
@@ -687,6 +687,300 @@ sabemos que la convergencia de la sucesión implica la convergencia por columnas
 \end{enumerate}
 
 
-En dimensión infinita, la situación puede cambiar drásticamente. Para ello veamos un ejemplo
+En dimensión infinita, la situación puede cambiar drásticamente. Para ello veamos un ejemplo:\\
+
+$c_{00}$ es denso en $l_2$ (es decir, $\overline{c_{00}}=l_2$, en el espacio $(l_2,\|\cdot\|_2)$.
+
+Observemso que $c_{00}$ (conjunto de las sucesiones "casi nulas") es un subespacio vectorial de $l_2$. Claramente, $\overline{c_{00}}\subset l_2$. Veamos el recíproco: Sea $x\in l_2$, $x=(x_n)_{n\in\mathbb{N}}$. Como la serie $\sum_{n=1}^{+\infty} |x_n|^2$ es convergente, la serie de restos tiende a cero. Es decir la sucesión
+\begin{equation*}
+\sum_{n=1}^{+\infty}|x_n|^2,\sum_{n=2}^{+\infty}|x_n|^2,\ldots,\sum_{n=k}^{+\infty}|x_n|^2,\ldots
+\end{equation*}
+
+tiende a cero cuando $k\to+\infty$. Por tanto:
+\begin{equation*}
+\forall \varepsilon>0,\:\exists k_0(\varepsilon)\in \mathbb{N}:\:\forall k\geq k_0,\:se\:tiene\:\sum_{n=k}^{+\infty}|x_n|^2\leq \varepsilon
+\end{equation*}
+
+Consideremos el elemento de $c_{00}$ dado por
+\begin{equation*}
+y^{k_0}=(x_1,x_2,\ldots,x_{k-1},0,0,\ldots)
+\end{equation*}
+
+Entonces $\|x-y^{k_0}\|_2=\left(\sum_{n=k_0}^{+\infty}|x_n|^2\right)^\frac{1}{2}\leq \varepsilon^\frac{1}{2}$.
+
+El razonamiento anterior prueba que $\overline{c_{00}}=l_2$.\\
+
+\textbf{Noción de separabilidad}\\
+
+Un espacio normado $(X,\|\cdot\|)$ se dice separable si existe algún subconjunto $D\subset X$, $D$ denso y numerable.
+
+Por ejemplo, $\mathbb{R}^n$ es separable, pues podría tomar $D=\mathbb{Q}^n$.
+
+Una idea parecida puede usarse para ver que $l_p$, $1\leq p<+\infty$ es separable, pero $l_\infty$ no lo es. En efecto, demostremos que $l_1$ es seprable (las mismas ideas se usan para $l_p$, $1<p<+\infty$).\\
+
+Sea $D\subset l_1$, $D$ es el conjunto de las sucesiones racionales casi nulas ($D$ es la unión numerable de conjuntos numerables, y por tanto $D$ es numerable). Por otra parte, $\forall x\in l_1$, $\forall \varepsilon >0$, $\exists k_0(\varepsilon)$:$k\geq k_0(\varepsilon)$, se tiene $\sum_{n=k}^{+\infty}|x_n|<\varepsilon$.
+
+como $\mathbb{Q}$ es denso en $\mathbb{R}$, $\exists q_1,\ldots,q_{k_0}\in\mathbb{Q}$ tal que $\sum_{n=1}^{k_0}|x_n-q_n|<\epsilon$. Por tanto si $y=(q_1,\ldots,q_{k_0},0,0,\ldots)$ tenemos que $\|x-y\|_1\leq 2\varepsilon$. Esto prueba que $\overline{D}=l_1$.\\
+
+En cambio, $l_\infty$ no es seprable. Para ver que no es separable, podemos proceder como sigue:
+
+Sea $C=\{x^p:p\in\mathbb{N}\}\subset l_\infty$, denso. Sea $B\subset l\infty$ y 
+\begin{equation*}
+B=\{(y_n)_{n\in\mathbb{N}}:y_n\in\{0,1\},\:\forall n\in \mathbb{N}\}
+\end{equation*}
+
+Notemos que si $y=(y_n)_{n\in \mathbb{N}}$, $z=(z_n)_{n\in\mathbb{N}}$ son elementos distintos de $B$, entonces $\|y-z\|_{\infty}=1$. Además, como $C$ es denso en $l_\infty$, $\forall y\in B$ $\exists x^{p(y)}\in C$:$\|y-x^{p(y)}\|_{\infty}<\frac{1}{4}$. Claramente $B_{l_\infty}(y,\frac{1}{3})\cap B_{l_\infty}(z,\frac{1}{3})=\emptyset$, $\forall x,y\in B$, $y\neq z$ (pues $\|y-z\|_\infty=1$).
+
+Tenemos que la aplicación $\left.\begin{array}{c}
+B\rightarrow \mathbb{N}\\
+y\mapsto p(y)
+\end{array}\right.$ es inyectiva. Luego $B$ es numerable. Pero sabemos que $B$ no es numerable (pensar que cualquier número real se puede representar en binario).(JPerez tiene en sus apuntes otra demostración).\\
+
+Si $(X,\|\cdot\|)$ es un espacio normado tal que $\exists B\subset X$, $B$ no numerable y satisfaciendo la propiedad siguiente
+\begin{equation*}
+\exists\alpha>0:\:\: \|x-y\|\geq \alpha,\:\:\forall x,y\in B,\:\:x\neq y
+\end{equation*}
+
+entonces $(X,\|\cdot\|)$ no es separable.\\
+
+\textbf{Compacidad}\\
+
+Sea $(X,\|\cdot\|)$ un espacio normado y $B\subset X$. Como $X$ es también un espacio métrico (la métrica derivada de la norma) y por tanto, un espacio topológico, tiene sentido hablar de compacidad: $B$ es compacto cuando para cualquier recubrimiento de $K$, por abierto, es posible extraer un subrecubrimiento finito. Esta definición es poco útil en la práctica. Nos interesan más los siguientes:
+\begin{itemize}
+\item Si $dim(X)$ es finita, $B$ es compacto si y sólo si $B$ es cerrado y acotado.
+
+\item En espacio métricos (y por tanto en espacios normados) la compacidad es esquivalente a la "compacidad secuencial" (o "compacidad por sucesiones"):
+\begin{equation*}
+B\:\:es\:\:compacto \Leftrightarrow \forall (x_n)_{n\in\mathbb{N}}\subset B,\:\:\exists (x_{n_k})\rightarrow x\in B
+\end{equation*}
+
+Por tanto, como normalmente trabajamos con espacios normados, vamos a adoptar la anterior definición como "definición de conjunto compacto".
+\end{itemize}
+
+\textbf{Ejercicio.} Si $(X,\|\cdot\|)$ es normado y $B\subset X$ es compacto, demuestra que $B$ es cerrado y acotado.\\
+
+En efecto, $\forall x\in \overline{B}$(clausura o cierre de $B$), $\exists (x_n)\subset B:\:(x_n)\rightarrow x$. Como $B$ es compacto, $\exists (x_{n_k})\rightarrow y\in B$. Ahora bien $(x_{n_k})$ es una subsucesión de $(x_n)$, que es convergente a $x$. Luego $y=x$, lo que implica $x\in B$. Por tanto $\overline{B}=B$, y $B$ es cerrado. Por otra parte, si $B$ no fuese acotado $\exists (x_n)\subset B:\|x_n\|>n,\:\forall n\in \mathbb{N}$. Esto implica que $(x_n)$ no puede tener ninguna sucesión parcial convergente, pues cualquier sucesión convergente es acotada y $(x_{n_k})$ no lo es.\\
+
+\textbf{Ejercicio.} Demuestra que la bola unidad de $l_2$ no es compacta.\\
+
+Sea $(x_n)_{n\in \mathbb{N}}$ la sucesión de "vectores canónicos de $l_2$". Entonces $\|x_n-x_m\|=\sqrt{2},\:\forall n\neq m$. Esto implica que cualquier sucesión parcial de $(x_n)$ no es de Cauchy. Así $(x_n)$ no puede tener ninguna sucesión parcial convergente.\\
+
+\textbf{Ejercicio.} Demuestra que la bola cerrada unidad de $(C[0,1],\|\cdot\|_\infty)$ no es compacta.\\
+
+Sea $(x_n)_{n\in\mathbb{N}}$ dada por $x_n(t)=t^n$, $\forall t\in[0,1]$, $\forall n\in\mathbb{N}$. Si $(x_{n_k})$ es alguna subsucesión convergente a $x\in C[0,1]$, entonces $x_{n_k}(t)=t^{n_k}$. Como $n_k\to +\infty$, $x_{n_k}$ converge puntualmente a la función
+\begin{equation*}
+y:[0,1]\rightarrow \mathbb{R},\quad t\rightarrow \left\lbrace \begin{array}{c}
+0,\quad t\in [0,1]\\
+1,\quad t=1
+\end{array}\right.
+\end{equation*}
+
+Como $y$ debe ser igual a $x$ (por la unicidad del límite), esto no es posible, pues $y\notin C[0,1]$.
+
+\subsection{Complementos}
+\textbf{Ejercicio:} $(C[0,1],\mathbb{R}),\|\cdot\|_{\infty})$ es separable.
+
+Este ejercicio se basa en que por el Teorema de Aproximación de Weierstrass toda función real continua definida en un intervalo cerrado y acotado puede ser aproximada tanto como se quiera por un polinomio de coeficientes reales. Pero todo polinomio de coeficientes reales puede ser aproximado tanto como se quiera por un polinomio de coeficientes racionales, luego toda función continua se puede aproximar tanto como se quiera por un polinomio de coeficientes racionales, de lo que se deduce que el subconjunto de los polinomios de coeficientes racionales es un subconjunto denso de $(C[0,1],\mathbb{R}),\|\cdot\|_{\infty})$. Por último, es claro que el subconjunto de los polinomios de coeficientes racionales es numerable, luego se tiene lo pedido.
+
+\section{Operadores Lineales}
+En Análisis Funcional, los operadores lineales juegan un papel muy importante. El alumnado está familiarizado con el caso finito dimensional. De hecho, si $L:\mathbb{R}^n\rightarrow \mathbb{R}^m$ es lineal, es decir,
+\begin{equation}
+L(\alpha x+\beta y)=\alpha L(x)+\beta L(y),\quad \forall \alpha,\beta\in\mathbb{R},\:\forall x,y\in\mathbb{R}^n
+\end{equation}
+entonces $L$ se representa como 
+\begin{equation}
+L(x)=Ax,\quad\forall x\in\mathbb{R}^n
+\end{equation}
+
+donde $A$ es una matriz real de $n\times m$, y recíprocamente, cualquier operador de la forma (2), es un operador lineal. Tirivalmente, en este caso, cualquier operador lineal es continuo (es más, veremos que con que la dimensión del espacio de partida sea finita, entones todo operador lineal es continuo). 
+
+Si $(E,\|\cdot\|_E)$ y $(F,\|\cdot\|_F)$ son espacios normados, $L:E\rightarrow F$ se dice lineal si satisface 
+\begin{equation*}
+L(\alpha f+\beta g)=\alpha L(f)+\beta L(g),\quad \forall \alpha,\beta \in\mathbb{R},\:\forall f,g\in E
+\end{equation*}
+
+Ejemplos de operadores lineales son:
+\begin{enumerate}
+\item $L:(C^1[0,1],\|\cdot\|_\infty)\rightarrow (C^0[0,1],\|\cdot \|_\infty),\quad f\mapsto f'$
+
+\item $L:(C^1[0,1],\|\cdot\|_{\infty})\rightarrow \mathbb{R},\quad f\mapsto \int_0^1 f(t)dt$
+
+\item $L:(C^1[0,1],\|\cdot\|_1)\rightarrow (C[0,1],\|\cdot \|_{\infty}),\quad f\mapsto\int_0^1 f(t)dt+f'(t)$
+\end{enumerate}
+
+Puede ocurrir que, como en algún ejemplo anterior, $L$ no sea continuo (concretamente el caso 1 no es continuo).
+
+Por tanto, el tema de los operadores lineales, cuando entren en juegos espacios normados de dimensión infinita no es trivial. Comencemos con algunas propiedades de los operadores lineales.\\
+
+Sean $(E,\|\cdot\|_E)$, $(F,\|\cdot\|_F)$ espacios normados y $L:E\rightarrow F$ lineal. Entonces:
+\begin{enumerate}
+\item $L$ es continuo $\Leftrightarrow$ $L$ es continuo en $e=0$.
+
+\textbf{Demostración}:$\Rightarrow)$ Evidente.
+
+$\Leftarrow)$ Si $e_0\in E$ y $(e_n)\xrightarrow{n\to\infty}e_0$ entonces $(e_n-e_0)\xrightarrow{n\to\infty}0\Rightarrow L(e_n-e_0)\rightarrow L(0)=0\Rightarrow L(e_n)-L(e_0)\rightarrow 0$.\\
+
+\item $L$ es continuo $\Leftrightarrow L$ es continuo en algún $e_0\in E$.
+
+\textbf{Demostración:}$\Rightarrow)$ Evidente.
+
+$\Leftarrow)$ Sea $e\in E$ y $(e_n)\rightarrow e$. Entonces $e_0+(e_n-e)\Rightarrow L(e_0+e_n-e)$ converge a $L(e_0)$. Ahora bien $L(e_0+e_n-e)=L(e_0)+L(e_n)-L(e)\rightarrow L(e_0)\Rightarrow L(e_n)\rightarrow L(e)$.
+
+\item $L$ es continuo $\Leftrightarrow$ $\exists k\geq 0$ tal que $\|L(e)\|_F\leq k\|e\|_E,\:\:\forall e\in E$.\\
+
+\textbf{Demostración:} $\Leftarrow)$ Si $e\in E$ y $(e_n)\rightarrow e$, entonces $\|L(e_n)-L(e)\|=\|L(e_n-e)\|\leq k\|e_n-e\|\rightarrow 0$. Por tanto, $L(e_n)\rightarrow L(e)$.\\
+
+$\Rightarrow)$ Si no fuese cierta la implicación, entonces $\forall n\in \mathbb{N}$, $\exists e_n\in E\backslash\{0\}$ tal que $\|L(e_n)\|>n\|e_n\|\Rightarrow \|L(\frac{e_n}{n\|e_n\|}\|>1$. Pero $(\frac{e_n}{n\|e_n\|})\rightarrow 0$, pues $\|\frac{e_n}{n\|e_n\|}\|=\frac{1}{n}$. Por tanto, por hipótesis, $L(\frac{e_n}{n\|e_n\|})\rightarrow L(0)=0$, luego llegamos a una contradicción.
+
+\item $L$ es continuo $\Leftrightarrow \sup_{e\in E\backslash\{0\}}\frac{\|L(e)\|}{\|e\|}<+\infty\Leftrightarrow \sup_{\|e\|=1}\|L(e)\|<+\infty\Leftrightarrow \forall A\subset E$, $A$ acotado en $E\Rightarrow L(A)$ es acotado en $F$.
+
+La demostración de las equivalentcias anteriores es trivial, teniendo en cuenta lo ya demostrado.
+\end{enumerate}
+
+Como se ve, hay muchas caracterizaciones sobre la continuidad de los operadores lineales, pero recordad que es para operadores LINEALES, para operadores no lineales no se tienen porque verificar.\\
+
+\textbf{Ejercicio.} Sea $L:(E,\|\cdot\|_E)\rightarrow (F,\|\cdot\|_F)$ lineal, y $dim(E)$ finita. Entonces $L$ es continua.\\
+
+\textbf{Demostración:} Sea $L_1:E\rightarrow Img(L)$. Como la dimensión de $E$ es finita también lo será la de su imagen por $L$, luego esta función es una función entre espacios de dimensión finita y por tanto continua. Si componemos esta con la inclusión de $Img(L)$ en $F$ tenemos
+\begin{equation*}
+L=i\circ L_1
+\end{equation*}
+, luego se tiene que $L$ es continua por ser composición de continuas.\\
+
+\textbf{Ejercicio.} Sea $(E,\|\cdot\|_E)$ tal que $dim(E)$ es infinita. Demuestra que existe $L:E\rightarrow E$ lineal tal que $L$ no es continua, y $M:E\rightarrow \mathbb{R}$ lineal, no continuo.\\
+
+\textbf{Solución:} Si $dim(E)$ es infinita, simepre existe $L:E\rightarrow \mathbb{R}$ lineal no continua.
+
+Sea $B$ una base de $E$, $B=\{V_\lambda:\lambda\in \Lambda\}$, donde $\Lambda$ es conjunto infinito $\exists B'=\{V_1,V_2,\ldots\}\subset B$.
+
+Necesitamos definir $\{L(V_\lambda),\lambda\in\Lambda \}$ y "extender por linealidad". Por último
+\begin{equation*}
+L(v)=\left\lbrace \begin{array}{c}
+n\quad si\:\:v=v_n\in B'\\
+0\quad si\:\:v\in B\backslash B'
+\end{array}\right. \Leftrightarrow 
+\end{equation*}
+$L$ no está acotada en $\overline{B}(0,1)$ y queda demostrado que no es continua.\\
+
+La otra demostración es igual solo que para que $L$ vaya de $E$ en $E$ basta poner que $L(v)=ny$, $\forall v\in B'$ y con $y\in E\backslash\{0\}$.\\
+
+Antes de enunciarlo, recordemos que un hiperplano en $\mathbb{R}^n$ viene dado por conjuntos del tipo:
+\begin{equation*}
+B=\{(x_1,\ldots,x_n)\in \mathbb{R}^n:a_1x_1+\ldots+a_nx_n=c\}
+\end{equation*}
+
+donde $(a_1,\ldots,a_n)\in \mathbb{R}^n\backslash \{0\}$, $c\in\mathbb{R}$, son dados.
+
+Por ejemplo, en $\mathbb{R}^2$, los hiperplanos son rectas, en $\mathbb{R}^3$ los hiperplanos son planos, etc.(otra forma de verlo en espacios de dimensión finita, es que los hiperplanos son espacios de dimensión uno menos que la dimensión del espacio original).\\
+
+\textbf{Ejercicio.} Sea $(X,\|\cdot\|)$ un espacio normado de dimensión infinita. Un hiperplano se define como un conjunto de la forma
+\begin{equation*}
+H=\{x\in X:f(x)=\alpha\}
+\end{equation*}
+
+donde $f:X\rightarrow \mathbb{R}$ es lineal, no idénticamente cero y $\alpha\in\mathbb{R}$, dados.
+
+Demuestra que cualquier hiperplano de $H$ es o cerrado, o denso en $X$. Demuestra también que existen hiperplanos densos.(\textbf{Sugerencia:demuestra que si $f:X\rightarrow \mathbb{R}$ es lineal y no continua, entonces 
+\begin{equation*}
+f(B_X(x_0;r))=\mathbb{R},\quad \forall x_0\in X,\:\:\forall r>0
+\end{equation*}})
+
+Si $(E,\|\cdot\|_E)$ y $(F,\|\cdot\|_F)$ son espacios normados, $\mathcal{L}(E,F)$ va a denotar el conjunto de aplicaciones lineales continuas de $E$ en $F$. En el espacio $\mathcal{L}(E,F)$ se puede definir una norma:
+\begin{equation*}
+\|f\|=\sup_{\|x\|\leq 1}\|f(x)\|=\inf\{k\geq 0:\|f(x)\|\leq k\|x\|,\:\forall x\in E\}
+\end{equation*}
+
+Es fácil comprobar que es una norma en $\mathcal{L}(E,F)$. 
+
+Si $dim(E)=n$, $dim(F)=m$, $\mathcal{L}(E,F)$ no es sino el conjunto de matrices reales $\mathcal{M}_{n\times m}$ y la norma depende de las normas que se elijan en $E$ y en $F$.\\
+
+\textbf{Teorema:} Si $F$ es un espacio de Banach, entonces $\mathcal{L}(E,F)$ es un espacio de Banach con la norma usual de los operadores.\\
+
+\textbf{Demostración:} Sea $(f_p)_{p\in\mathbb{N}}$ una sucesión de Cauchy en $\mathcal{L}(E,F)$. Entonces
+\begin{equation*}
+\forall \varepsilon \in \mathbb{R}^+\:\:\exists p_0(\varepsilon):p,q\geq p_0(\varepsilon)\Rightarrow \|f_p-f_q\|_{\mathcal{L}(E,F)}\leq \varepsilon
+\end{equation*}
+
+lo que implica 
+\begin{equation*}
+\forall \varepsilon \in\mathbb{R}^+,\:\:\exists p_0(\varepsilon),\:p,q\geq p_0(\varepsilon)\Rightarrow \|f_p(x)-f_q(x)\|\leq \varepsilon \|x\|,\quad \forall x\in E
+\end{equation*}
+
+Con lo anterior tenemos:
+\begin{itemize}
+\item Si $x\in E$ es fijo, entonces $(f_p(x))_{p\in\mathbb{N}}$ es una sucesión de Cauchy en $F$. Como $F$ es un espacio de Banach, entonces $(f_p(x))_{p\in\mathbb{N}}$ converge a un elemento de $F$. Podemos así definir un operador
+\begin{equation*}
+f:E\rightarrow F,\quad x\mapsto \lim_{p\to+\infty} f_p(x),\quad \forall x\in E
+\end{equation*}
+
+\item $f(\alpha x+\beta y)=\lim_{p\to +\infty} f_p(\alpha x+\beta y)=\lim_{p\to +\infty}(\alpha f_p(x)+\beta f_p(y))=\alpha f(x)+\beta f(y),\quad \forall x,y\in E,\:\forall \alpha,\beta\in \mathbb{R}$
+
+\item Lo anterior significa que $f$ es lineal. Veamos que es continuo:
+
+Fijamos $x\in E$, $\varepsilon >0$, $p\geq p_0(\varepsilon)$, $p\to +\infty$ y tenemos
+\begin{equation*}
+\|f_p(x)-f(x)\|\leq \varepsilon \|x\|,\quad\forall x\in E
+\end{equation*}
+
+Así
+\begin{equation*}
+\|f(x)\|=\|f(x)-f_p(x)\|+\|f_p(x)\|\leq (\varepsilon +\|f_p\|)\|x\|,\quad\forall x\in F
+\end{equation*}
+
+Por tanto, $f$ es continuo
+
+\item Finalmente, veamos que $(f_p)_{p\in \mathbb{N}}\xrightarrow{\mathcal{L}(E,F)}f$.
+
+Obtenemos que $\|(f_p-f)(x)\|\leq \epsilon$, $\forall x\in E:\|x\|\leq 1$, luego:
+\begin{equation*}
+\forall \varepsilon>0,\:\exists p_0(\varepsilon):p\geq p_0(\varepsilon)\Rightarrow \|f_p-f\|_{\mathcal{L}(E,F)}\leq \varepsilon,\quad c.p.d
+\end{equation*}
+
+En particular, obtenemos el siguiente resultado notable:\\
+
+Si $(E,\|\cdot\|_E)$ es cualquier espacio normado, el espacio normado $\mathcal{L}(E,\mathbb{R})$, con la norma $\|f\|=\sup_{\|x\|\leq 1}|f(x)|\quad \forall f\in \mathcal{L}(E,F)$ es un espacio de Banach, al que denotaremos $E'$ ($E^*$ en algunos textos) y al que denotaremos dual topológico de $E$.\\
+
+\textbf{Teorema (F.Riesz, 1918):} Sea $(E,\|\cdot\|)$ normado. Entonces $dim(E)$ es finita $\Leftrightarrow$ $\overline{B}_E(0;1)$ es compacto.\\
+
+\textbf{Demostración:} $\Rightarrow)$ Tenemos que la bola cerrada unidad es cerrada y acotada. Ahora bien, como la $dim(E)$ es finita, tenemos que $\overline{B}_E(0;1)$ es compacto (es un corolario del teorema de Hausdorf).
+
+$\Leftarrow)$ Sea $B=\overline{B}_E(0;1)$ que, por hipótesis, es compacto.  Si $\varepsilon \in (0,1)$ es fijo, el conjunto
+\begin{equation*}
+\{B_E(b;\varepsilon),\:b\in B\}
+\end{equation*} 
+
+es un recubrimiento por abiertos de $B$. Por ser $B$ compacto, existe algún subrecubrimiento finito $F=\{b_1,b_2,\ldots,b_n\}\subset B$ tal que
+\begin{equation*}
+B\subset \bigcup_{i=1}^n B_E(b_i,\varepsilon)=\bigcup_{i=1}^n(b_i+\varepsilon B_E(0;1))
+\end{equation*}
+
+Sea $M$ el subespacio de $E$ generado por el subrecubrimiento finito. Entonces deducimos
+\begin{equation*}
+B\subset M+\varepsilon B
+\end{equation*}
+
+Luego
+\begin{equation*}
+B\subset M+\varepsilon B\subset M+\varepsilon(M+\varepsilon B)=M+\varepsilon M+\varepsilon^2 B=M+\varepsilon^2 B
+\end{equation*}
+
+es "fácil" darse cuenta que
+\begin{equation*}
+B\subset M+\varepsilon^n B,\quad \forall n\in\mathbb{N}
+\end{equation*}
+
+Esto implica que $B\subset M$. En efecto, se obtiene:
+\begin{equation*}
+\forall b\in B,\:\exists m\in M,\:b'\in B:\quad b=m_n+\varepsilon^nb'
+\end{equation*}
+luego $\|b-m_n\|\leq \varepsilon^n$, $\forall n\in \mathbb{N}$. Como $\varepsilon^n\to 0$, $m_n\to b$. Así $b\in \overline{M}=M$.
+
+En conclusión $B\subset M$. Pero $B$ es la bola cerrada unidad de $E$ y $M$ un suberpacio de $E$, luego $E=M$. En efecto
+\begin{equation*}
+\forall x\in E\backslash\{0\},\:\frac{x}{\|x\|}\in B\subset M\Rightarrow \frac{x}{\|x\|}\in M\Rightarrow x\in M
+\end{equation*}
+
+Finalmente como $M$ tiene dimensión finita, $E$ es de dimensión finita.
+\end{itemize}
 
 \end{document}

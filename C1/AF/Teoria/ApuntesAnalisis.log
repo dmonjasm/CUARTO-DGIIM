@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  28 DEC 2021 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  28 DEC 2021 18:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,24 +559,169 @@ Underfull \hbox (badness 10000) in paragraph at lines 658--659
  []
 
 [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 692.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 692.
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--720
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 734--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--761
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--769
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 821--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 850--851
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--864
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 939--940
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 941--942
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
+
+ []
+
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 986.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 986.
  (./ApuntesAnalisis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 692.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 692.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 986.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 986.
 Package rerunfilecheck Info: File `ApuntesAnalisis.out' has not changed.
-(rerunfilecheck)             Checksum: 65E961BC71E4889AB2246695CF0B5AA9;330.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 692.
+(rerunfilecheck)             Checksum: 825375AEF08A9E93E7233C8D9E84E078;445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 986.
  ) 
 Here is how much of TeX's memory you used:
- 6469 strings out of 481239
- 94721 string characters out of 5920377
+ 6486 strings out of 481239
+ 94857 string characters out of 5920377
  360118 words of memory out of 5000000
- 21549 multiletter control sequences out of 15000+600000
+ 21551 multiletter control sequences out of 15000+600000
  540882 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,18n,31p,698b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,18n,31p,785b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -596,10 +741,10 @@ pe1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sfrm1000.pfb>
-Output written on ApuntesAnalisis.pdf (19 pages, 247760 bytes).
+Output written on ApuntesAnalisis.pdf (26 pages, 277925 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
