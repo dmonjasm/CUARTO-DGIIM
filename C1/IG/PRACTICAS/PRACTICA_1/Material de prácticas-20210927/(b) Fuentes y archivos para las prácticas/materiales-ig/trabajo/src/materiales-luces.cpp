@@ -35,7 +35,7 @@ Textura::Textura( const std::string & nombreArchivoJPG )
    // COMPLETAR: práctica 4: cargar imagen de textura
    // (las variables de instancia están inicializadas en la decl. de la clase)
    // .....
-   imagen = LeerArchivoJPEG(nombreArchivoJPG.c_str(),ancho, alto);
+   imagen = LeerArchivoJPEG(nombreArchivoJPG.c_str(), ancho, alto);
 }
 
 // ---------------------------------------------------------------------
@@ -47,11 +47,13 @@ void Textura::enviar()
    // COMPLETAR: práctica 4: enviar la imagen de textura a la GPU
    // y configurar parámetros de la textura (glTexParameter)
    // .......
-   glGenTextures(1,&ident_textura);//Creo un nuevo identificador de textura único y lo almaceno en ident_textura
+   glGenTextures(1, &ident_textura);//Creo un nuevo identificador de textura único y lo almaceno en ident_textura
    glActiveTexture(GL_TEXTURE0);//Activo el identificador ident_textura en la unidad de texturas '
    glBindTexture(GL_TEXTURE_2D, ident_textura);//Activo la textura identificada por ident_textura
+
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//Selección de texel por interpolación bilinial.
-   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE,imagen);//envío a GPU.
+
+   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE, imagen);//envío a GPU.
 
 }
 
@@ -82,9 +84,6 @@ void Textura::activar( Cauce & cauce  )
 
    cauce.fijarEvalText(true,ident_textura);   
    cauce.fijarTipoGCT(modo_gen_ct,coefs_s,coefs_t);
-
-
-
 }
 // *********************************************************************
 // crea un material usando un color plano y los coeficientes de las componentes
@@ -138,7 +137,13 @@ void Material::activar( ContextoVis & cv )
 {
    // COMPLETAR: práctica 4: activar un material
    // .....
-
+   if(textura!=nullptr){
+      textura->activar(*(cv.cauce_act));
+   }
+   else
+      cv.cauce_act->fijarEvalText(false);
+   
+   cv.cauce_act->fijarParamsMIL({k_amb,k_amb,k_amb},{k_dif,k_dif,k_dif},{k_pse,k_pse,k_pse},exp_pse);
 
    // registrar el material actual en el cauce
    cv.material_act = this ; 
@@ -213,7 +218,7 @@ void ColFuentesLuz::activar( Cauce & cauce )
    vector<Tupla3f> colores;
    vector<Tupla4f> vector_direccion;
 
-   Tupla4f ejez= {0.0,0.0,1.0,0.0};
+   Tupla4f ejez= {0.0, 0.0, 1.0, 0.0};
 
    for(int i=0; i < vpf.size();i++){
       colores.push_back(vpf[i]->color);

@@ -983,4 +983,142 @@ En conclusión $B\subset M$. Pero $B$ es la bola cerrada unidad de $E$ y $M$ un 
 Finalmente como $M$ tiene dimensión finita, $E$ es de dimensión finita.
 \end{itemize}
 
+\section{Teorema de Hahn-Banach}
+Sea $(E,\|\cdot\|)$ un espacio normado. Si la $dim(E)$ es finita, sabemos que cualquier aplicación lineal $L:E\rightarrow \mathbb{R}$ es continua. 
+
+Si $dim(E)$ es infinita, sabemos que existen aplicaciones lineales no continuas y aplicaciones lineales continuas (por ejemplo, cualquier aplicación constante).\\
+
+\textbf{Teorema (H.Hahm, 1927; S.Banach, 1929):} Sea $E(\mathbb{R})$ un espacio vectorial y $p:E\rightarrow \mathbb{R}$ verificando
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+p(\lambda x)=\lambda p(x),\quad \forall \lambda > 0,\:\forall \lambda x\in E\\
+p(x+y)\leq p(x)+p(y),\quad \forall x,y\in E
+\end{array}\right.
+\end{equation*}
+
+Sea $G$ un subespacio vectorial de $E$ y $g:G\rightarrow \mathbb{R}$ lineal, tal que
+\begin{equation*}
+g(x)\leq p(x),\quad \forall x\in G
+\end{equation*}
+
+Entonces $\exists f:E\rightarrow \mathbb{R}$ lineal tal que
+\begin{equation*}
+\left.\begin{array}{c}
+f_{|_G}=g,\quad \forall x\in G\\
+f(x)\leq p(x),\quad \forall x\in E
+\end{array}\right\rbrace
+\end{equation*}
+
+(En el examen de diciembre de 2021 entró enunciar el teorema de Hanh-Banach).\\
+
+\textbf{Observación:} El teorema de Hahn-Banach se enuncai y prueba en el ambiente de espacios vectoriales. Sin embargo, sus principales aplicaciones se tienen en espacios normados (darse cuenta que cualquier norma cumple lo impuesto a $p$).\\
+
+\textbf{Corolario:} Sea $(E,\|\cdot\|)$ normado, $G\subset E$ un subespacio vectorial de $E$ y $g:G\rightarrow \mathbb{R}$ lineal y continua. Entonces existe $f:E\rightarrow \mathbb{R}$, lineal y continua tal que $f_{|_G}=g$ y $\|f\|_{E'}=\|g\|_{G'}$.(Este corolario del teorema de Hanh-Banach es a veces llamado Teorema de Hanh-Banach, y también se dió por bueno en el examen de diciembre de 2021).\\
+
+\textbf{Observación:} Con el teorema y su respectivo corolario tenemos una forma de demostrar la existencia de infinitas aplicaciones lineales y continuas no triviales de $E$ en $\mathbb{R}$, donde $(E,\|\cdot\|)$ es un espacio normado de dimensión infinita.
+
+\section{Espacios de Hilbert}
+Un producto escalar en $H$ es una aplicación 
+\begin{gather*}
+\left\langle\cdot,\cdot\right\rangle:H\times H\rightarrow \mathbb{R}\\
+(f,g)\mapsto \left\langle f,g\right\rangle
+\end{gather*}
+
+que satisface:
+\begin{enumerate}
+\item $\left\langle f,f\right\rangle\geq 0,\:\forall f\in H;\quad \left\langle f,f\right\rangle=0\Leftrightarrow f=0$
+
+\item $\left\langle f,g\right\rangle =\left\langle g,f\right\rangle,\quad \forall f,g\in H$
+
+\item $\left\langle \alpha f+\beta g,h\right\rangle =\alpha \left\langle f,h\right\rangle +\beta \left\langle g,h\right\rangle,\quad \forall f,g\in H$
+\end{enumerate}
+
+Observemos que debido a las propiedades anteriores, la aplicación $\left\langle\cdot,\cdot\right\rangle$ es bilineal. El ejemplo más elemental es, quizás, el espacio euclídeo o $\mathbb{R}^n$ equipado con el producto escalar
+\begin{equation*}
+\left\langle x,y\right\rangle =\sum_{i=1}^n x_iy_i,\quad \forall x=(x_1,\ldots,x_n),\:y=(y_1,\ldots,y_n)\in \mathbb{R}^n
+\end{equation*}
+
+Observemos que la norma euclídea en $\mathbb{R}^n$, es 
+\begin{equation*}
+\|x\|_2=\left\langle x,x\right\rangle^{\frac{1}{2}},\quad \forall x\in\mathbb{R}^n
+\end{equation*}
+
+En los espacios de funciones $L^2(a,b)$ (los $L^p$ son de Hilbert), podemos definir el producto escalar
+\begin{equation*}
+\left\langle f,g\right\rangle = \int_a^b f(x)g(x) dx, \quad \forall f,g\in L^2(a,b)
+\end{equation*}
+
+En los espacio de sucesiones $l_2$, podemos definir el produco escalar como (también son de Hilbert)
+\begin{equation*}
+\left\langle (a_n),(b_n)\right\rangle =\sum_{n=1}^{+\infty} a_nb_n,\quad \forall (a_n),(b_n)\in l_2
+\end{equation*}
+
+Vamos a demostrar que un producto escalar en $H$ siempre puede dar lugar a una norma en $H$, de tal forma que cualquier espacio vectorial donde tengamos definido un producto escalar (llamado en adelante espacio prehilbertiano), puede transformarse en un espacio normado. Para ello antes probaremos la desigualdad de Cauchy-Schwarz.\\
+
+\textbf{Teorema (Desigualdad de Cauchy-Schwarz):} Sea $H(\mathbb{R})$, dotado con un producto escalar $\left\langle \cdot,\cdot\right\rangle$. Entonces
+\begin{equation*}
+|\left\langle f,g\right\rangle |\leq \left\langle f,f\right\rangle^{\frac{1}{2}}\left\langle g,g\right\rangle^{\frac{1}{2}},\quad \forall f,g\in H
+\end{equation*}
+
+Debemos destacar que la igualdad en la desigualdad de Cauchy-Schwarz se da si y sólo si los vectores $x,y$ involucrados son linealmente dependientes.\\
+
+\textbf{Ejercicio:} Sea $(H,\left\langle \cdot,\cdot \right\rangle$ un espacio prehirbertiano. Prueba la llamada "igualdad del paralelogramo"
+\begin{equation*}
+\|x+y\|^2+\|x-y\|^2=2(\|x\|^2+\|y\|^2),\quad \forall x,y\in H
+\end{equation*}
+
+\textbf{Solución:}
+\begin{gather*}
+\|x+y\|^2=\left\langle x+y,x+y\right\rangle =\left\langle x,x\right\rangle +\left\langle y,y\right\rangle +2 \left\langle x,y\right\rangle\\
+\|x-y\|^2=\left\langle x-y,x-y\right\rangle =\left\langle x,x\right\rangle +\left\langle y,y\right\rangle -2 \left\langle x,y\right\rangle\\
+\|x+y\|^2+\|x-y\|^2=2\left\langle x,x\right\rangle +2\left\langle y,y\right\rangle =2(\|x\|^2+\|y\|^2)
+\end{gather*}
+
+\textbf{Observación:} Si bien existen normas que son derivadas de un producto escalar no toda norma lo es (por ejemplo la norma uniforme). Para ver lo anterior nos será de utilidad el siguiente teorema.\\
+
+\textbf{Teorema (Jordan-von Neumann):} Sea $\|\cdot\|$ una norma en un espacio vectorial $X$. Las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+\item Existe un producto escalar $(\cdot|\cdot)$ en $X$ tal que $\|x\|^2=(\cdot|\cdot)$ para todo $x\in X$.
+
+\item Se verifica la igualdad del paralelogramo
+\begin{equation*}
+\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2
+\end{equation*}
+\end{enumerate}
+
+\textbf{Definición (Espacio de Hilbert):} Si $(H,\left\langle\cdot,\cdot\right\rangle)$ es un espacio prehiblertiano, decimos que $H$ es un espacio de Hilbert, si el espacio normado $(H,\|\cdot\|)$, con $\|\cdot\|$ definida como la raíz del producto escalar de un vector por si mismo, es completo.
+
+\section{Teorema de la proyección ortogonal. Dual de un espacio de Hilbert}
+\textbf{Teorema (Proyección sobre un conexo cerrado):} Sea $H$ un espacio de Hilbert (real), $K\subset H$, $K$ convexo, cerrado y no vacío. Entonces, $\forall f\in H$, $\exists! u_f\in K$, tal que $d(f,u_f)=d(f,K)$. Además, $u_f$ se caracteriza por las dos propiedades siguientes:
+\begin{enumerate}
+\item $u_f\in K$
+
+\item $\left\langle f-u_f,v-u_f\right\rangle \leq 0,\quad \forall v\in K$
+\end{enumerate}
+
+Finalmente, si $P_k:H\rightarrow H,\quad f\mapsto u_f$ entonces $P_k$ es lipschitziana, con constante de Lipschitz uno; es decir, $P_k$ es "no expansiva"
+\begin{equation*}
+\|P_kf_1-P_kf_2\|\leq \|f_1-f_2\|,\quad \forall f_1,f_2\in H
+\end{equation*}
+
+\textbf{Teorema (De la proyección ortogonal):} Sea $K$ un subespacio vectorial cerrado de un espacio de Hilbert $H$. Entonces
+\begin{equation*}
+H=K\oplus K^\bot
+\end{equation*}
+
+donde $K^\bot=\{h\in H:\left\langle h,x\right\rangle = 0,\:\forall x\in K\}$. Además, las proyecciones de $H$ sobre $K$ y $K^\bot$ son lineales y continuas.
+
+\subsection{Dual de un espacio de Hilbert}
+\textbf{Teorema (De representación de Riesz-Fréchet, sobre el dual de un espacio de Hilbert):} Sea $H$ un espacio de Hilbert. Enconces
+\begin{equation*}
+\forall f\in H^*,\:\exists!v_f\in H:\:\:f(x)=\left\langle v_f,x\right\rangle,\quad \forall x\in H
+\end{equation*}
+
+Además
+\begin{equation*}
+\|f\|_{H^*}=\|v_f\|_{H}
+\end{equation*}
+
+
+
 \end{document}

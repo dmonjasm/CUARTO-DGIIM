@@ -90,6 +90,10 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    cv.cauce_act->pushMM();
 
    Tupla4f color_previo = leerFijarColVertsCauce( cv );
+   Material * material_previo = nullptr;
+
+   if(cv.iluminacion)
+      material_previo = cv.material_act;
 
    for(unsigned i=0; i < entradas.size(); i++)
       switch(entradas[i].tipo)
@@ -99,10 +103,26 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
          
          case TipoEntNGE::transformacion:
             cv.cauce_act->compMM( *(entradas[i].matriz));
-            break;         
+            break;
+             
+         case TipoEntNGE::material:
+            if(cv.iluminacion){
+               entradas[i].material->activar(cv);
+               cv.material_act=entradas[i].material;
+            }
+            break;
+
+         default:
+            cout << "Error, no existe ese tipo" << endl;
+            break;        
       }
 
    glColor4fv(color_previo);
+
+   if( material_previo != nullptr){
+      cv.material_act = material_previo;
+      cv.material_act->activar(cv);
+   }   
 
    cv.cauce_act->popMM();
    // COMPLETAR: práctica 4: en la práctica 4, si 'cv.iluminacion' es 'true',
@@ -396,9 +416,3 @@ void VariosCubos::actualizarEstadoParametro(const unsigned int iParam, const flo
 
    fijar_escalado_cubos((cota_sup+cota_inf)/2.0+(cota_sup-cota_inf)/2.0*sin(2*M_PI*t_sec));
 }
-
-
-
-
-
-

@@ -13,6 +13,7 @@
 
 #include "objeto3d.h"   // declaración de 'Objeto3D'
 #include "array-verts.h" // clase 'ArrayVert'
+#include "grafo-escena.h"
 
 // ---------------------------------------------------------------------
 // clase para objetos gráficos genéricos
@@ -174,6 +175,12 @@ class ConoExamen :  public MallaInd
    public:
       ConoExamen(int n, float r_1, float r_2, float h);
 
+};
+
+class NodoCubo : public NodoGrafoEscena
+{
+   public:
+      NodoCubo();
 };
 
 #endif
