@@ -190,6 +190,12 @@ class VariosCubos : public NodoGrafoEscena
       unsigned leerNumParametros() const;
 };
 
+class NodoDiscoP4 : public NodoGrafoEscena
+{
+   public:  
+      NodoDiscoP4();
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

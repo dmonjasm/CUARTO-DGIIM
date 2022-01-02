@@ -48,12 +48,12 @@ void Textura::enviar()
    // y configurar parámetros de la textura (glTexParameter)
    // .......
    glGenTextures(1, &ident_textura);//Creo un nuevo identificador de textura único y lo almaceno en ident_textura
-   glActiveTexture(GL_TEXTURE0);//Activo el identificador ident_textura en la unidad de texturas '
-   glBindTexture(GL_TEXTURE_2D, ident_textura);//Activo la textura identificada por ident_textura
+   glActiveTexture(GL_TEXTURE0);//Activo la unidad de texutras 0
+   glBindTexture(GL_TEXTURE_2D, ident_textura);//Ato a la unidad de texturas 0 la textura de nombre ident_textura
 
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//Selección de texel por interpolación bilinial.
 
-   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE, imagen);//envío a GPU.
+   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE, imagen);//envío a GPU (copia los bytes de RAM a la memoria de la GPU).
 
 }
 
@@ -216,20 +216,20 @@ void ColFuentesLuz::activar( Cauce & cauce )
    // .....
 
    vector<Tupla3f> colores;
-   vector<Tupla4f> vector_direccion;
+   vector<Tupla4f> posicion_direccion;
 
-   Tupla4f ejez= {0.0, 0.0, 1.0, 0.0};
+   Tupla4f ejeZ= {0.0, 0.0, 1.0, 0.0};
 
    for(int i=0; i < vpf.size();i++){
       colores.push_back(vpf[i]->color);
 
-      ejez = MAT_Rotacion(vpf[i]->longi, 0.0, 1.0, 0.0) * ejez;
-      ejez = MAT_Rotacion(vpf[i]->lati, -1.0, 0.0, 0.0) * ejez;
+      ejeZ = MAT_Rotacion(vpf[i]->longi, 0.0, 1.0, 0.0) * ejeZ;
+      ejeZ = MAT_Rotacion(vpf[i]->lati, -1.0, 0.0, 0.0) * ejeZ;
 
-      vector_direccion.push_back(ejez);
+      posicion_direccion.push_back(ejeZ);
    }
 
-   cauce.fijarFuentesLuz(colores, vector_direccion);
+   cauce.fijarFuentesLuz(colores, posicion_direccion);
 
 }
 
@@ -316,5 +316,49 @@ Col2Fuentes::Col2Fuentes()
    const float f0 = 0.7, f1 = 0.3 ;
    insertar( new FuenteLuz( +45.0, 60.0,  Tupla3f { f0, f0,     f0,    } ) );
    insertar( new FuenteLuz( -70.0, -30.0, Tupla3f { f1, f1*0.5, f1*0.5 } ) );
+
+}
+
+TexturaXY::TexturaXY(const std::string & nom){
+   imagen = LeerArchivoJPEG(nom.c_str(), ancho, alto);
+   glTexGeni( GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+   glTexGeni( GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);   
+
+   for(int i=0; i < 4; i++){
+      if(i==0)
+         coefs_s[i]=1.0;
+      else
+         coefs_s[i]=0.0; 
+   }
+
+   for(int i=0; i < 4; i++){
+      if(i==1)
+         coefs_t[i]=1.0;
+      else
+         coefs_t[i]=0.0; 
+   }
+   
+
+}
+
+TexturaXZ::TexturaXZ(const std::string & nom){
+   imagen = LeerArchivoJPEG(nom.c_str(), ancho, alto);
+   glTexGeni( GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
+   glTexGeni( GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);   
+
+   for(int i=0; i < 4; i++){
+      if(i==0)
+         coefs_s[i]=1.0;
+      else
+         coefs_s[i]=0.0; 
+   }
+
+   for(int i=0; i < 4; i++){
+      if(i==2)
+         coefs_t[i]=1.0;
+      else
+         coefs_t[i]=0.0; 
+   }
+   
 
 }

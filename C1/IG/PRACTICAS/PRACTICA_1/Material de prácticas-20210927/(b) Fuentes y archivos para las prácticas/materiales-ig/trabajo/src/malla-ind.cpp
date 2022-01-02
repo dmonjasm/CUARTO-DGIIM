@@ -725,3 +725,44 @@ NodoCubo :: NodoCubo(){
 
 }
 
+MallaDiscoP4::MallaDiscoP4()
+{
+   ponerColor({1.0,1.0,1.0}); 
+   const unsigned ni = 23, nj = 31;
+   Tupla2f aux_tex={0.0,0.0};
+   cc_tt_ver.clear();
+
+   for( unsigned i=0; i < ni; i++)
+   for( unsigned j=0; j < nj; j++)
+   {
+      const float
+         fi = float(i)/float(ni-1),
+         fj = float(j)/float(nj-1),
+         ai = 2.0*M_PI*fi,
+         x = fj * cos( ai ),
+         y = fj * sin( ai ),
+         z = 0.0;
+
+         //Ejercicio Adicional 1 P4
+         aux_tex(0)=(x+1)/2.0;
+         aux_tex(1)=(y+1)/2.0;
+      
+      vertices.push_back({x,y,z});
+
+      //Se inserta la coordenada de textura tras ajustarla al plano [0,1]^2
+      //cc_tt_ver.push_back(aux_tex);
+
+      cc_tt_ver.push_back({fi, fj});
+
+   }
+
+   for(unsigned i=0; i < ni-1; i++)
+   for(unsigned j=0; j < nj-1; j++)
+   {
+      triangulos.push_back({i*nj+j, i*nj+(j+1), (i+1)*nj+(j+1)});
+      triangulos.push_back({i*nj+j, (i+1)*nj+(j+1),(i+1)*nj+j});
+   }
+
+   calcularNormales();
+}
+

@@ -7,10 +7,10 @@ PeonBlanco::PeonBlanco(){
     ponerNombre("Peon Blanco");
     ponerIdentificador(1);
 
-    ponerColor({0.5,0.5,0.5});
+    ponerColor({1.0,1.0,1.0});
 
     agregar(new Material(0.2,0.8,0.2,15));
-    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",40));
+    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",100));
 }
 
 PeonNegro::PeonNegro(){
@@ -19,8 +19,8 @@ PeonNegro::PeonNegro(){
 
     ponerColor({0.0,0.0,0.0});
 
-    agregar(new Material(0.2,0.8,0.2,15));
-    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",40));
+    agregar(new Material(0.2,0.2,0.8,15));
+    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",100));
 }
 
 PeonMadera::PeonMadera(){
@@ -29,16 +29,16 @@ PeonMadera::PeonMadera(){
 
     Textura * madera=new Textura("../recursos/imgs/text-madera.jpg");
 
-    agregar(new Material(madera,0.2,0.8,0.2,15));
-    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",40));
+    agregar(new Material(madera,0.2,0.8,0.8,40));
+    agregar(new MallaRevolPLY("../recursos/plys/peon.ply",100));
 }
 
 Sup_lata::Sup_lata(){
     ponerNombre("Parte Superior de la Lata");
     ponerIdentificador(4);
 
-    agregar(new Material(0.2,0.8,0.2,15));
-    agregar(new MallaRevolPLY("../recursos/plys/lata_psup.ply",40));
+    agregar(new Material(0.2,0.6,0.2,15));
+    agregar(new MallaRevolPLY("../recursos/plys/lata_psup.ply",100));
 }
 
 Inf_lata::Inf_lata(){
@@ -46,7 +46,7 @@ Inf_lata::Inf_lata(){
     ponerIdentificador(5);
 
     agregar(new Material(0.2,0.8,0.2,15));
-    agregar(new MallaRevolPLY("../recursos/plys/lata_pinf.ply",40));
+    agregar(new MallaRevolPLY("../recursos/plys/lata_pinf.ply",100));
 }
 
 Centro_lata::Centro_lata(){
@@ -54,10 +54,9 @@ Centro_lata::Centro_lata(){
     ponerIdentificador(6);
 
     Textura * logo=new Textura("../recursos/imgs/lata-coke.jpg");
-    std::cout << "Cargando Textura" << std::endl;
 
-    agregar(new Material(logo,0.5,0.5,0.5,15));
-    agregar(new MallaRevolPLY("../recursos/plys/lata_pcue.ply",20));
+    agregar(new Material(logo,0.5,0.8,0.8,20));
+    agregar(new MallaRevolPLY("../recursos/plys/lata_pcue.ply",100));
 }
 
 Lata::Lata(){

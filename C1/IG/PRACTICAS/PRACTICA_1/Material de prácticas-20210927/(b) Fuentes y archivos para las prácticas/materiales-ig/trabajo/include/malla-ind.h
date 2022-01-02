@@ -183,4 +183,10 @@ class NodoCubo : public NodoGrafoEscena
       NodoCubo();
 };
 
+class MallaDiscoP4 : public MallaInd
+{
+   public:
+      MallaDiscoP4();
+};
+
 #endif

@@ -254,6 +254,7 @@ Escena4::Escena4()
 
    objetos.push_back(new NodoCubo());
    objetos.push_back(new LataPeones());
+   objetos.push_back(new NodoDiscoP4());
 
    cout << "hecho." << endl << flush;
 }

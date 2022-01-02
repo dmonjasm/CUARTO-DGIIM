@@ -35,9 +35,7 @@ void MallaRevol::inicializar
    for(unsigned int i = 0; i < perfil.size()-1; ++i){
       aux = perfil[i+1] - perfil[i];
 
-      normal(0) = aux(1);
-      normal(1) = -aux(0);
-      normal(2) = 0.0;
+      normal={aux(1),-aux(0),0.0};
 
       if(normal.lengthSq() > 0)
          normales_aris.push_back(normal.normalized());

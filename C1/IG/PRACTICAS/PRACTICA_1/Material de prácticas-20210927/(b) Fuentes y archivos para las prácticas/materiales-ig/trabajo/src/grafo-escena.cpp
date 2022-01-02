@@ -90,10 +90,8 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    cv.cauce_act->pushMM();
 
    Tupla4f color_previo = leerFijarColVertsCauce( cv );
-   Material * material_previo = nullptr;
+   Material * material_previo = cv.iluminacion ? cv.material_act : nullptr;
 
-   if(cv.iluminacion)
-      material_previo = cv.material_act;
 
    for(unsigned i=0; i < entradas.size(); i++)
       switch(entradas[i].tipo)
@@ -415,4 +413,13 @@ void VariosCubos::actualizarEstadoParametro(const unsigned int iParam, const flo
    assert(iParam < leerNumParametros());
 
    fijar_escalado_cubos((cota_sup+cota_inf)/2.0+(cota_sup-cota_inf)/2.0*sin(2*M_PI*t_sec));
+}
+
+NodoDiscoP4::NodoDiscoP4()
+{
+   ponerNombre("Nodo ejercicio adicional práctica 4, examen 27 enero");
+   Textura * cuadricula = new Textura("../recursos/imgs/ea-textura-cuadricula.jpeg");
+
+   agregar( new Material(cuadricula,0.5,0.5,0.5,50));
+   agregar( new MallaDiscoP4() );
 }
