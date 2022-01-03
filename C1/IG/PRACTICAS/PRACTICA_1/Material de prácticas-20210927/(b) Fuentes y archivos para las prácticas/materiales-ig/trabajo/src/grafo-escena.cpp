@@ -89,7 +89,7 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    // ........
    cv.cauce_act->pushMM();
 
-   Tupla4f color_previo = leerFijarColVertsCauce( cv );
+   Tupla4f color_previo = leerFijarColVertsCauce( cv ); //Se usa en practica 5
    Material * material_previo = cv.iluminacion ? cv.material_act : nullptr;
 
 
@@ -212,6 +212,30 @@ void NodoGrafoEscena::calcularCentroOC()
    //   (si el centro ya ha sido calculado, no volver a hacerlo)
    // ........
 
+   Matriz4f matriz_modelado = MAT_Ident();
+   Tupla3f sumatorio_centros={0.0,0.0,0.0};
+   int num_centros_calculados=0;
+
+   if(!centro_calculado){
+      for(int i=0; i < entradas.size(); i++){
+         if(entradas[i].tipo == TipoEntNGE::objeto){
+            entradas[i].objeto->calcularCentroOC();
+            sumatorio_centros = sumatorio_centros + (matriz_modelado * entradas[i].objeto->leerCentroOC());
+
+            num_centros_calculados++;
+         }
+
+         else if(entradas[i].tipo == TipoEntNGE::transformacion){
+            matriz_modelado = matriz_modelado * (*entradas[i].matriz);
+         }
+      }
+   }
+
+   Tupla3f centro = sumatorio_centros/(float)(num_centros_calculados);
+
+   ponerCentroOC(centro);
+
+   centro_calculado=true;
 }
 // -----------------------------------------------------------------------------
 // método para buscar un objeto con un identificador y devolver un puntero al mismo
@@ -231,15 +255,38 @@ bool NodoGrafoEscena::buscarObjeto
 
    // 1. calcula el centro del objeto, (solo la primera vez)
    // ........
+   calcularCentroOC();
 
 
    // 2. si el identificador del nodo es el que se busca, ya está (terminar)
    // ........
+   if(ident_busc == leerIdentificador()){
+      centro_wc = mmodelado * leerCentroOC();
 
+      if(objeto!=nullptr)
+         *objeto = this;
+
+      return true;
+   }
 
    // 3. El nodo no es el buscado: buscar recursivamente en los hijos
    //    (si alguna llamada para un sub-árbol lo encuentra, terminar y devolver 'true')
    // ........
+   else{
+      Matriz4f matriz_auxiliar = mmodelado; //No podemos usar directamente mmodelado, pues es constante
+      for(int i = 0; i < entradas.size(); i++){
+         if(entradas[i].tipo == TipoEntNGE::objeto){
+            if(entradas[i].objeto->buscarObjeto(ident_busc,matriz_auxiliar,objeto, centro_wc))
+               return true;
+         }
+
+         else if(entradas[i].tipo == TipoEntNGE::transformacion){
+            matriz_auxiliar = matriz_auxiliar * (*entradas[i].matriz);
+
+         }
+      }
+
+   }
 
 
    // ni este nodo ni ningún hijo es el buscado: terminar

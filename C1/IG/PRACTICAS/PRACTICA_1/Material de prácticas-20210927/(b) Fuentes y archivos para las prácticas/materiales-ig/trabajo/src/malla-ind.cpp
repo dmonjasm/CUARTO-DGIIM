@@ -112,6 +112,7 @@ void MallaInd::visualizarGL( ContextoVis & cv )
 
 
    using namespace std ;
+
    assert( cv.cauce_act != nullptr );
 
    if ( triangulos.size() == 0 || vertices.size() == 0 )
@@ -120,7 +121,7 @@ void MallaInd::visualizarGL( ContextoVis & cv )
    }
 
    // guardar el color previamente fijado
-   const Tupla4f color_previo = leerFijarColVertsCauce( cv );
+   const Tupla4f color_previo = leerFijarColVertsCauce( cv ); //Se usa en practica 5
 
    // COMPLETAR: práctica 1: si el puntero 'array_verts' es nulo, crear el objeto ArrayVerts
    //   * en el constructor se dan los datos de la tabla de coordenadas de vértices (tabla 'vertices')

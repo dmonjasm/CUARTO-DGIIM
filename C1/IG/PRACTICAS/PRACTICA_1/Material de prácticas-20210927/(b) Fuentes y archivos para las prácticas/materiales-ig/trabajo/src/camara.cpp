@@ -306,6 +306,10 @@ void Camara3Modos::desplRotarXY( const float da, const float db )
          // actualizar las coordenadas cartesianas a partir de las polares
          // .....
 
+         org_polares = org_polares + Tupla3f({da,db,0.0});       
+
+         org_cartesianas = Cartesianas(org_polares);         
+
          actualizarEjesMCV();
          break ;
       }
@@ -321,7 +325,17 @@ void Camara3Modos::desplRotarXY( const float da, const float db )
          // 5. actualizar los ejes del MCV (actualizarEjesMCV)
          // .....
 
+         Tupla3f n_aux={0.0,0.0,0.0};
 
+         org_polares = org_polares + Tupla3f({da,db,0.0});
+
+         n_aux=Cartesianas(org_polares);
+
+         punto_atencion = punto_atencion + (n_aux + org_cartesianas);
+
+         org_cartesianas = n_aux;
+
+         actualizarEjesMCV();
          break ;
       }
       case ModoCam::prim_pers_despl :
@@ -331,6 +345,8 @@ void Camara3Modos::desplRotarXY( const float da, const float db )
          // 'db' unidades en el eje Y de la cámara.
          // .....
          // (nota: los ejes no cambian)
+         punto_atencion = punto_atencion + da*eje[0] + db*eje[1];
+
 
          break ;
       }
@@ -354,6 +370,13 @@ void Camara3Modos::moverZ( const float dz )
          // nota: los ejes no cambian, ni el punto de atención
          // .....
 
+         float r_min = 0.2;
+         float epsilon = 0.1;
+
+         org_polares(2) = r_min + (dz-r_min)*pow(1.0+epsilon,dz);
+
+         org_cartesianas = Cartesianas(org_polares);
+
          break ;
       }
       case ModoCam::prim_pers_rot :
@@ -363,6 +386,8 @@ void Camara3Modos::moverZ( const float dz )
          // desplazar el punto de atención 'dz' unidades en el eje Z
          // nota: los ejes no cambian
          // .....
+
+         punto_atencion = punto_atencion + eje[2]*dz;
 
          break ;
       }
@@ -379,6 +404,12 @@ void Camara3Modos::mirarHacia( const Tupla3f & nuevo_punto_aten )
    // Actualizar las coordenadas cartesianas (desplazarlas)
    // Actualizar las coordenadas polares a partir de las cartesianas
    // Poner el modo actual en modo examinar
+
+   org_cartesianas = org_cartesianas + nuevo_punto_aten - punto_atencion;
+   
+   org_polares=Esfericas(org_cartesianas);
+
+   punto_atencion=nuevo_punto_aten;
 
 
    // actualizar los ejes del marco de coordenadas del mundo

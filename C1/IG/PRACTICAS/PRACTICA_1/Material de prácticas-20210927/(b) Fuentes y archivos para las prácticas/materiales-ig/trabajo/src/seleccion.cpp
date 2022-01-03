@@ -23,6 +23,11 @@ void FijarColVertsIdent( Cauce & cauce, const int ident )  // 0 ≤ ident < 2^24
 {
    // COMPLETAR: práctica 5: fijar color actual de OpenGL usando 'ident' (glColor3ub)
    // .....
+   const unsigned char
+      byteR = ( ident             ) % 0x100U,
+      byteG = ( ident /    0x100U ) % 0x100U,
+      byteB = ( ident /  0x10000U ) % 0x100U;
+
 
 }
 
@@ -35,9 +40,11 @@ int LeerIdentEnPixel( int xpix, int ypix )
    // COMPLETAR: práctica 5: leer el identificador codificado en el color del pixel (x,y)
    // .....(sustituir el 'return 0' por lo que corresponda)
    // .....
+   unsigned char bytes[3];
 
-   return 0 ;
+   glReadPixels( xpix, ypix, 1,1, GL_RGB, GL_UNSIGNED_BYTE, (void *)bytes);
 
+   return bytes[0] + ( 0x100U*bytes[1] ) + ( 0x10000U*bytes[2] );
 }
 
 // -------------------------------------------------------------------------------
@@ -62,7 +69,11 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
 
    // 1. Crear (si es necesario) y activar el framebuffer object (fbo) de selección
    // .........
+   if(fbo == nullptr){
+      fbo = new Framebuffer(cv_dib.ventana_tam_x,cv_dib.ventana_tam_y);
+   }
 
+   fbo->activar(cv_dib.ventana_tam_x,cv_dib.ventana_tam_y);
 
    // 2. crear un 'ContextoVis' apropiado, en ese objeto:
    //    * activar modo selecion, desactivar iluminación, poner modo relleno
@@ -71,37 +82,88 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    //
    // ..........
 
+   ContextoVis * cv_aux = new ContextoVis();
+
+   cv_aux->modo_seleccion = true;
+   cv_aux->iluminacion = false;
+   cv_aux->modo_visu = ModosVisu::relleno;
+
+   cv_aux->cauce_act = cv_dib.cauce_act;
+
+   cv_aux->ventana_tam_x = cv_dib.ventana_tam_x;
+   cv_aux->ventana_tam_y = cv_dib.ventana_tam_y;
+
+   FijarColVertsIdent(*(cv_aux->cauce_act), 0);
+
 
    // 3. Activar fbo, cauce y viewport. Configurar cauce (modo solido relleno, sin ilum.
    //    ni texturas). Limpiar el FBO (color de fondo: 0)
    // .......
+   fbo->activar(cv_aux->ventana_tam_x,cv_aux->ventana_tam_y);//Activo el fbo
+
+   cv_aux->cauce_act->activar();//Activo el cauce
+
+   glViewport(0,0, cv_aux->ventana_tam_x, cv_aux->ventana_tam_y);//Fijo la matriz del viewport
+
+   cv_aux->cauce_act->fijarEvalMIL(false);//Desactivo la iluminación
+   cv_aux->cauce_act->fijarEvalText(false);//Desactivo las texturas
+
+   glClearColor(0.0,0.0,0.0,1.0);//Limpio el color y lo pongo a 0 de color de fondo
+   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//Limpia colores y Z-búffer
 
 
    // 4. Activar la cámara (se debe leer de la escena con 'camaraActual')
    // ....
+   CamaraInteractiva * camara_actual = escena->camaraActual();
+
+   camara_actual->activar(*(cv_aux->cauce_act));
 
 
    // 5. Visualizar el objeto raiz actual (se debe leer de la escena con 'objetoActual()')
    // ........
+   Objeto3D * objeto_actual = escena->objetoActual();
+
+   objeto_actual->visualizarGL(*cv_aux);
 
 
    // 6. Leer el color del pixel (usar 'LeerIdentEnPixel')
    // (hay que hacerlo mientras está activado el framebuffer de selección)
    // .....
-
+   int color_pix = LeerIdentEnPixel(x,y);
 
    // 7. Desactivar el framebuffer de selección
    // .....
+   fbo->desactivar();
 
 
    // 8. Si el identificador del pixel es 0, imprimir mensaje y terminar (devolver 'false')
    // ....
+   if(color_pix == 0){
+      cout << "No se ha seleccionado un objeto" << endl;
+      return false;
+   }
+
 
 
    // 9. Buscar el objeto en el objeto_raiz (puede ser un grafo de escena)
    //    e informar del nombre del mismo (si no se encuentra, indicarlo)
    //   (usar 'buscarObjeto')
    // .....
+   Objeto3D ** auxiliar;
+   Tupla3f centro;
+
+   if(color_pix>0){
+      if(objeto_actual->buscarObjeto(color_pix, MAT_Ident(), auxiliar,centro)){
+         camara_actual->mirarHacia(centro);
+         cout << "Objeto seleccionado\nIdentificado " << color_pix << "\nNombre" << (**auxiliar).leerNombre() << endl;
+      }
+
+      else{
+         cout << "No se ha seleccionado un objeto, aunque el identificador sea mayor que 0" << endl;
+         return false;
+      }
+
+   }
 
 
    // al final devolvemos 'true', ya que hemos encontrado un objeto
