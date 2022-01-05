@@ -203,6 +203,12 @@ class GrafoEscenasP5 : public NodoGrafoEscena
       GrafoEscenasP5();
 };
 
+class GrafoEscenasP5_2 : public NodoGrafoEscena
+{
+   public:
+      GrafoEscenasP5_2();
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

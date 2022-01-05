@@ -308,6 +308,7 @@ Escena5::Escena5()
 
    objetos.push_back(new VariasLatasPeones() );
    objetos.push_back(new GrafoEscenasP5() );
+   objetos.push_back(new GrafoEscenasP5_2() );
    
    cout << "hecho." << endl << flush;
 

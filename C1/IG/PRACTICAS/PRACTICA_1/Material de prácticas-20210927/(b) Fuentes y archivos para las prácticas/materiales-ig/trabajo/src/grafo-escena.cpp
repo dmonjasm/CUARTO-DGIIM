@@ -493,3 +493,28 @@ GrafoEscenasP5::GrafoEscenasP5()
       agregar ( MAT_Traslacion( 0.0, 0.0, 5.0));
    }
 }
+
+GrafoEscenasP5_2::GrafoEscenasP5_2()
+{
+   const unsigned n_filas_esferas  = 8,
+                  n_esferas_x_fila = 5;
+   const float e= 2.5/n_esferas_x_fila;
+
+   for(unsigned i = 0; i < n_filas_esferas ; i++)
+   {
+      NodoGrafoEscena * fila_esferas = new NodoGrafoEscena();
+      fila_esferas->agregar( MAT_Traslacion( 3.0, 0.0, 0.0) );
+
+      for( unsigned j = 0; j < n_esferas_x_fila ; j++)
+      {
+         MallaInd * esfera = new Esfera(40,40);
+         esfera->ponerIdentificador((i+1)*10 + (j+1));
+         fila_esferas->agregar( MAT_Traslacion(2.5, 0.0, 0.0));
+         fila_esferas->agregar( esfera );
+
+      }
+
+      agregar( fila_esferas );
+      agregar( MAT_Rotacion( 360.0/n_filas_esferas, 0.0, 1.0, 0.0 ));
+   }
+}
