@@ -306,7 +306,8 @@ Escena5::Escena5()
 
    cout << "Creando objetos de escena 5 .... " << flush;
 
-   objetos.push_back(new VariasLatasPeones());
+   objetos.push_back(new VariasLatasPeones() );
+   objetos.push_back(new GrafoEscenasP5() );
    
    cout << "hecho." << endl << flush;
 

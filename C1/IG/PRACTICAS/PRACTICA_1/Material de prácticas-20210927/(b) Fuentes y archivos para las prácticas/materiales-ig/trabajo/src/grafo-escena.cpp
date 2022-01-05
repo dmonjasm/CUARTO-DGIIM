@@ -467,3 +467,29 @@ NodoDiscoP4::NodoDiscoP4()
    agregar( new Material(cuadricula,0.5,0.5,0.5,50));
    agregar( new MallaDiscoP4() );
 }
+
+GrafoEscenasP5::GrafoEscenasP5()
+{
+   const unsigned n_filas_esferas  = 8,
+                  n_esferas_x_fila = 5;
+   const float e = 0.4/n_esferas_x_fila;
+
+   agregar( MAT_Escalado( e,e,e ));
+
+   for(unsigned i = 0; i < n_filas_esferas ; i++)
+   {
+      ponerNombre("AdicionalP5");
+      NodoGrafoEscena * fila_esferas = new NodoGrafoEscena();
+
+      for( unsigned j = 0; j < n_esferas_x_fila ; j++)
+      {
+         MallaInd * esfera = new Esfera(40,40);
+         esfera->ponerIdentificador( (i+1)*10+(j+1) );
+         fila_esferas->agregar( MAT_Traslacion( 2.2, 0.0, 0.0 ));
+         fila_esferas->agregar( esfera ) ;
+      }
+
+      agregar( fila_esferas );
+      agregar ( MAT_Traslacion( 0.0, 0.0, 5.0));
+   }
+}

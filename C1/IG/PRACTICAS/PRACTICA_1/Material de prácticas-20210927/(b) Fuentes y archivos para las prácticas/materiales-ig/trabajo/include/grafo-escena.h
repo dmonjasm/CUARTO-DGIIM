@@ -197,6 +197,12 @@ class NodoDiscoP4 : public NodoGrafoEscena
       NodoDiscoP4();
 };
 
+class GrafoEscenasP5 : public NodoGrafoEscena
+{
+   public:
+      GrafoEscenasP5();
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

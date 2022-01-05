@@ -146,10 +146,21 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    // .....
    Objeto3D * auxiliar;
    Tupla3f centro;
+   int identificador=0,
+       fila=0,
+       columna=0;
 
    if(objeto_actual->buscarObjeto(id_pixel, MAT_Ident(), &auxiliar, centro)){
       camara_actual->mirarHacia(centro);
       cout << "Objeto seleccionado\nIdentificador: " << id_pixel << "\nNombre: " << auxiliar->leerNombre() << endl;
+
+      if(auxiliar->leerNombre() == "Esfera"){
+         identificador=auxiliar->leerIdentificador();
+         fila = identificador / 10;
+         columna = identificador % 10;
+
+         cout << "Se ha seleccionado la esfera número " << columna << " de la fila número " << fila << endl;
+      }
    }
 
    else{
