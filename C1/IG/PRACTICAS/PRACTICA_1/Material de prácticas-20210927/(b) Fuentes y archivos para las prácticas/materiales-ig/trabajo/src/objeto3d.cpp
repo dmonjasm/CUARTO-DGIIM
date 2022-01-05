@@ -90,6 +90,9 @@ Tupla4f Objeto3D::leerFijarColVertsCauce( ContextoVis & cv )
 
    if ( cv.visualizando_normales )
       return color_previo ;
+
+   if ( cv.visualizando_normales )
+      return color_previo ;
       
    if ( cv.modo_seleccion )
    {

@@ -70,9 +70,9 @@ class LataPeones : public NodoGrafoEscena{
         LataPeones();
 };
 
-class LataPeones_def : public NodoGrafoEscena{
+class VariasLatasPeones : public NodoGrafoEscena{
     public:
-        LataPeones_def();
+        VariasLatasPeones();
 };
 
 

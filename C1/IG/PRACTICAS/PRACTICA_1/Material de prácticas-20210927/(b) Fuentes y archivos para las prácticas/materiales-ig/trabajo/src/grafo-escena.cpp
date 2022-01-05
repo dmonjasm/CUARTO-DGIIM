@@ -104,7 +104,7 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
             break;
              
          case TipoEntNGE::material:
-            if(cv.iluminacion){
+            if(cv.iluminacion&&!cv.modo_seleccion){
                entradas[i].material->activar(cv);
                cv.material_act=entradas[i].material;
             }
@@ -129,7 +129,7 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    //   2. si una entrada des de tipo material, activarlo y actualizar 'cv.material_act'
    //   3. al finalizar, restaurar el material activo al inicio (si es distinto del actual)
 
-
+   //Hecho arriba
 
 }
 
@@ -212,30 +212,28 @@ void NodoGrafoEscena::calcularCentroOC()
    //   (si el centro ya ha sido calculado, no volver a hacerlo)
    // ........
 
-   Matriz4f matriz_modelado = MAT_Ident();
-   Tupla3f sumatorio_centros={0.0,0.0,0.0};
-   int num_centros_calculados=0;
+   if (!centro_calculado){
+      Matriz4f matriz = MAT_Ident();
+      Tupla3f sumatorio = {0.0, 0.0, 0.0};
+      float num_centros = 0.0;
 
-   if(!centro_calculado){
-      for(int i=0; i < entradas.size(); i++){
-         if(entradas[i].tipo == TipoEntNGE::objeto){
+      for (unsigned int i = 0; i < entradas.size(); ++i){
+         if (entradas[i].tipo == TipoEntNGE::objeto){
             entradas[i].objeto->calcularCentroOC();
-            sumatorio_centros = sumatorio_centros + (matriz_modelado * entradas[i].objeto->leerCentroOC());
-
-            num_centros_calculados++;
+            sumatorio = sumatorio + (matriz * entradas[i].objeto->leerCentroOC());
+            num_centros++;
          }
-
-         else if(entradas[i].tipo == TipoEntNGE::transformacion){
-            matriz_modelado = matriz_modelado * (*entradas[i].matriz);
-         }
+         else if ( entradas[i].tipo == TipoEntNGE::transformacion)
+            matriz = matriz * (*entradas[i].matriz);
       }
+
+      Tupla3f centro = sumatorio/num_centros;
+
+      ponerCentroOC(centro);
+
+      centro_calculado = true;
    }
 
-   Tupla3f centro = sumatorio_centros/(float)(num_centros_calculados);
-
-   ponerCentroOC(centro);
-
-   centro_calculado=true;
 }
 // -----------------------------------------------------------------------------
 // método para buscar un objeto con un identificador y devolver un puntero al mismo
@@ -263,8 +261,7 @@ bool NodoGrafoEscena::buscarObjeto
    if(ident_busc == leerIdentificador()){
       centro_wc = mmodelado * leerCentroOC();
 
-      if(objeto!=nullptr)
-         *objeto = this;
+      *objeto = this;
 
       return true;
    }
@@ -272,21 +269,21 @@ bool NodoGrafoEscena::buscarObjeto
    // 3. El nodo no es el buscado: buscar recursivamente en los hijos
    //    (si alguna llamada para un sub-árbol lo encuentra, terminar y devolver 'true')
    // ........
-   else{
-      Matriz4f matriz_auxiliar = mmodelado; //No podemos usar directamente mmodelado, pues es constante
-      for(int i = 0; i < entradas.size(); i++){
-         if(entradas[i].tipo == TipoEntNGE::objeto){
-            if(entradas[i].objeto->buscarObjeto(ident_busc,matriz_auxiliar,objeto, centro_wc))
-               return true;
-         }
+   Matriz4f matriz_auxiliar = mmodelado; //No podemos usar directamente mmodelado, pues es constante
 
-         else if(entradas[i].tipo == TipoEntNGE::transformacion){
-            matriz_auxiliar = matriz_auxiliar * (*entradas[i].matriz);
-
-         }
+   for(unsigned int i = 0; i < entradas.size(); i++){
+      if(entradas[i].tipo == TipoEntNGE::objeto){
+         if(entradas[i].objeto->buscarObjeto(ident_busc,matriz_auxiliar,objeto, centro_wc))
+            return true;
       }
 
+      else if(entradas[i].tipo == TipoEntNGE::transformacion){
+         matriz_auxiliar = matriz_auxiliar * (*entradas[i].matriz);
+
+      }
    }
+
+
 
 
    // ni este nodo ni ningún hijo es el buscado: terminar

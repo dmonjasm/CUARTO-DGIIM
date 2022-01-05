@@ -21,6 +21,11 @@
 class MallaInd : public Objeto3D
 {
    
+   private:
+      ArrayVertices * array_verts_normales = nullptr;
+      std::vector<Tupla3f> segmentos_normales;
+
+      void visualizarNormales();
 
    protected:
       // COMPLETAR: incluir aquí las variables y métodos privados que sean

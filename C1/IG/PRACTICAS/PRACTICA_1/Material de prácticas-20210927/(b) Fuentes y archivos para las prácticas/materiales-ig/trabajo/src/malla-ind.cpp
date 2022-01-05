@@ -115,6 +115,11 @@ void MallaInd::visualizarGL( ContextoVis & cv )
 
    assert( cv.cauce_act != nullptr );
 
+   if ( cv.visualizando_normales )
+   {  visualizarNormales(  );
+      return ;
+   }
+
    if ( triangulos.size() == 0 || vertices.size() == 0 )
    {  cout << "advertencia: intentando dibujar malla vacía '" << leerNombre() << "'" << endl << flush ;
       return ;
@@ -174,10 +179,27 @@ void MallaInd::visualizarGL( ContextoVis & cv )
    glColor4fv( color_previo );
 }
 
+void MallaInd::visualizarNormales(){
+   using namespace std ;
 
+   if ( nor_ver.size() == 0 )
+   {
+      cout << "Advertencia: intentando dibujar normales de una malla que no tiene tabla (" << leerNombre() << ")." << endl ;
+      return ;
+   }  
+   if ( array_verts_normales == nullptr )
+   {  
+      for( unsigned i = 0 ; i < vertices.size() ; i++ )
+      {  
+         segmentos_normales.push_back( vertices[i] );
+         segmentos_normales.push_back( vertices[i]+ 0.35f*(nor_ver[i]) );
+      }
+      array_verts_normales = new ArrayVertices( GL_FLOAT, 3, segmentos_normales.size(), segmentos_normales.data() );
+   }
 
-
-
+   array_verts_normales->visualizarGL_MI_DAE( GL_LINES );
+   CError();
+}
 
 // *****************************************************************************
 

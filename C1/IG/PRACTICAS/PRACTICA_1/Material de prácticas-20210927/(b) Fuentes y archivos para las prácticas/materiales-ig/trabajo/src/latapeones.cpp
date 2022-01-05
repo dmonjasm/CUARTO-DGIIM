@@ -46,7 +46,6 @@ Peones::Peones(){
 
 Sup_lata::Sup_lata(){
     ponerNombre("Parte Superior de la Lata");
-    ponerIdentificador(4);
 
     agregar(new Material(0.2,0.6,0.2,15));
     agregar(new MallaRevolPLY("../recursos/plys/lata_psup.ply",100));
@@ -54,7 +53,6 @@ Sup_lata::Sup_lata(){
 
 Inf_lata::Inf_lata(){
     ponerNombre("Parte Inferior de la Lata");
-    ponerIdentificador(5);
 
     agregar(new Material(0.2,0.8,0.2,15));
     agregar(new MallaRevolPLY("../recursos/plys/lata_pinf.ply",100));
@@ -62,7 +60,6 @@ Inf_lata::Inf_lata(){
 
 Centro_lata::Centro_lata(const std::string & path_imagen){
     ponerNombre("Cuerpo de la lata");
-    ponerIdentificador(6);
 
     Textura * logo=new Textura(path_imagen);
 
@@ -72,59 +69,55 @@ Centro_lata::Centro_lata(const std::string & path_imagen){
 
 Lata::Lata(const std::string & path_imagen){
     ponerNombre("Lata completa");
-    ponerIdentificador(7);
 
+    agregar(MAT_Escalado(3.0,3.0,3.0));
     agregar(new Centro_lata(path_imagen));
     agregar(new Inf_lata());
     agregar(new Sup_lata());
 }
 
-Latas::Latas(){
-    ponerNombre("Latas con todas las imágenes");
-    ponerIdentificador(10);
-
-    agregar(new Lata_coke());
-    agregar(MAT_Traslacion(0.9,0.0,0.0));
-    agregar(new Lata_pepsi());
-    agregar(MAT_Traslacion(0.89,0.0,0.0));
-    agregar(new Lata_ugr());
-}
-
-LataPeones::LataPeones(){
-    ponerNombre("LataPeones");
-    ponerIdentificador(8);
-
-    agregar(new Lata("../recursos/imgs/lata-coke.jpg"));
-    agregar(MAT_Escalado(0.25,0.25,0.25));
-    agregar(new Peones());
-}
-
-LataPeones_def::LataPeones_def(){
-    ponerNombre("LataPeones practica 5");
-    ponerIdentificador(11);
-
-    agregar(new Latas());
-    agregar(MAT_Escalado(0.25,0.25,0.25));
-    agregar(new Peones());
-}
 
 Lata_coke::Lata_coke(){
     ponerNombre("Lata coca-cola");
-    ponerIdentificador(12);
+    ponerIdentificador(4);
 
     agregar(new Lata("../recursos/imgs/lata-coke.jpg"));
 }
 
 Lata_pepsi::Lata_pepsi(){
     ponerNombre("Lata pepsi");
-    ponerIdentificador(13);
+    ponerIdentificador(5);
 
     agregar(new Lata("../recursos/imgs/lata-pepsi.jpg"));
 }
 
 Lata_ugr::Lata_ugr(){
     ponerNombre("Lata ugr");
-    ponerIdentificador(14);
+    ponerIdentificador(6);
 
     agregar(new Lata("../recursos/imgs/window-icon.jpg"));
+}
+
+Latas::Latas(){
+    ponerNombre("Latas con todas las imágenes");
+
+    agregar(new Lata_coke());
+    agregar(MAT_Traslacion(2.0,0.0,0.0));
+    agregar(new Lata_pepsi());
+    agregar(MAT_Traslacion(2.0,0.0,0.0));
+    agregar(new Lata_ugr());
+}
+
+LataPeones::LataPeones(){
+    ponerNombre("LataPeones");
+
+    agregar(new Lata("../recursos/imgs/lata-coke.jpg"));
+    agregar(new Peones());
+}
+
+VariasLatasPeones::VariasLatasPeones(){
+    ponerNombre("LataPeones practica 5");
+
+    agregar(new Latas());
+    agregar(new Peones());
 }

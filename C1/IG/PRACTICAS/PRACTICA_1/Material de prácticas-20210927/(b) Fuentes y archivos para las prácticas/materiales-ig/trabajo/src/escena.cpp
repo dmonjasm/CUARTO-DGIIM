@@ -30,9 +30,9 @@ Escena::Escena()
    // (sustituir la cámara orbital simple ('CamaraOrbitalSimple') por varias cámaras de 3 modos ('Camara3Modos')
    //camaras.push_back( new CamaraOrbitalSimple() );
    camaras.push_back( new Camara3Modos());
-   camaras.push_back( new Camara3Modos(true, {6.0,6.0,6.0}, 1.0, {2.0,0.0,3.0}, 50.0));
-   camaras.push_back( new Camara3Modos(false, {-6.0,6.0,6.0}, 1.0, {6.0,0.0,0.0}, 60.0));
-   camaras.push_back( new Camara3Modos(true, {6.0,6.0,-6.0}, 1.0, {0.0,0.0,0.0}, 80.0));
+   camaras.push_back( new Camara3Modos(true, {15.0,0.0,2.0}, 1.0, {0.0,0.0,2.0}, 70.0));//Perfil
+   camaras.push_back( new Camara3Modos(false, {3.01,15.0,3.0}, 1.0, {3.0,0.0,3.0}, 60.0));//Planta
+   camaras.push_back( new Camara3Modos(true, {4.0,0.0,15.0}, 1.0, {4.0,0.0,0.0}, 80.0));//Alzado
 
 }
 // -----------------------------------------------------------------------------------------------
@@ -108,6 +108,9 @@ void Escena::visualizarGL( ContextoVis & cv )
 
    // COMPLETAR: Práctica 1: visualizar el objeto actual ('objeto')
    objeto->visualizarGL(cv);  
+   
+   if ( cv.visualizar_normales && !cv.modo_seleccion )
+      visualizarNormales( cv );
 }
 
 
@@ -137,6 +140,32 @@ void Escena::siguienteObjeto()
    using namespace std ;
    cout << "Objeto actual cambiado a: " << objetoActual()->leerNombre()
         << " (" << (ind_objeto_actual+1) << "/" << objetos.size() << ")." << endl  ;
+}
+
+void Escena::visualizarNormales( ContextoVis & cv)
+{
+   // recuperar el objeto raiz de esta escena y comprobar que está ok.
+   bool ilum_ant = cv.iluminacion ;
+   assert( cv.cauce_act != nullptr );
+   Objeto3D * objeto = objetos[ind_objeto_actual] ; assert( objeto != nullptr );
+
+   // configurar el cauce:
+   cv.cauce_act->fijarEvalMIL( false );
+   cv.cauce_act->fijarEvalText( false );
+   cv.cauce_act->fijarModoSombrPlano( true ); // sombreado plano
+   glLineWidth( 1.5 ); // ancho de líneas (se queda puesto así)
+   glColor4f( 1.0, 0.7, 0.4, 1.0 ); // color de las normales
+
+   // configurar el contexto de visualizacion
+   cv.visualizando_normales = true ;   // hace que MallaInd::visualizarGL visualize las normales.
+   cv.iluminacion           = false ;
+
+   // visualizar objeto actual
+   objetos[ind_objeto_actual]->visualizarGL( cv );
+
+   // restaurar atributos cambiados en el contexto de visualización
+   cv.visualizando_normales = false ;
+   cv.iluminacion = ilum_ant ;
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -239,6 +268,7 @@ Escena3::Escena3()
    objetos.push_back(new NodoRaiz());
    objetos.push_back(new GrafoEstrellaX(10));
    objetos.push_back(new GrafoCubos());
+   
 
    cout << "hecho." << endl << flush ;
 }
@@ -276,7 +306,7 @@ Escena5::Escena5()
 
    cout << "Creando objetos de escena 5 .... " << flush;
 
-   objetos.push_back(new LataPeones_def());
+   objetos.push_back(new VariasLatasPeones());
    
    cout << "hecho." << endl << flush;
 
