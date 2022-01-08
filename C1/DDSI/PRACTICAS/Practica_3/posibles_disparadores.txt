@@ -1,0 +1,16 @@
+Disparadores:
+before:
+Trabaja->antes de insertar comprobar hora esta entre 07:00-23:00.
+Gestionan->antes de insertar tuplas comprobar que tipo es "gerente" o superior.
+Actividades-> antes de insertar o modificar comprobar que la hora es correcta.
+Organizan-> antes de insertar comprobar que tipo es "monitor" o superior.
+Leen-> antes de leer una sugerencia tiene que ser de tipo "empleado" o superior.
+Asientos Contables->antes de insertar se debe comprobar que la fecha sea del año actual, se lanza un error.
+Asientos Contables-> antes de modificar una asiento se debe comprobar que el asiento a modificar sea del año actual, en otro caso se lanza un error
+
+after:
+Organizan->antes de borrar una actividad, se deben borrar todas las tuplas de participan y todas las tuplas de organizan en las que aparezca la clave primaria de la actividad.
+Empleados-> antes de eliminar un empleado, borrar sus turnos de trabajo (relacion trabaja) y las gestiones en las que aparece.
+Centros-> antes cerrar centro eliminar todos los turnos de trabajo asignados al centro.
+
+
