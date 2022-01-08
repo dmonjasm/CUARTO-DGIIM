@@ -298,7 +298,7 @@ Camara3Modos::Camara3Modos( const bool perspectiva_ini,
 
 void Camara3Modos::desplRotarXY( const float da, const float db )
 {
-   float factor=50.0;
+   float factor=20.0;
 
    switch( modo_actual )
    {
