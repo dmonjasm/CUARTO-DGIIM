@@ -773,8 +773,10 @@ MallaDiscoP4::MallaDiscoP4()
       vertices.push_back({x,y,z});
 
       //Se inserta la coordenada de textura tras ajustarla al plano [0,1]^2
+      //Ejercicio Adicional 1 P4
       //cc_tt_ver.push_back(aux_tex);
 
+      //Ejercicio adicional 2 P4
       cc_tt_ver.push_back({fi, fj});
 
    }
