@@ -27,7 +27,7 @@ PeonMadera::PeonMadera(){
     ponerNombre("Peon Madera");
     ponerIdentificador(3);
 
-    Textura * madera=new Textura("../recursos/imgs/text-madera.jpg");
+    TexturaXY * madera=new TexturaXY("../recursos/imgs/text-madera.jpg");
 
     agregar(new Material(madera,0.2,0.8,0.8,40));
     agregar(new MallaRevolPLY("../recursos/plys/peon.ply",100));

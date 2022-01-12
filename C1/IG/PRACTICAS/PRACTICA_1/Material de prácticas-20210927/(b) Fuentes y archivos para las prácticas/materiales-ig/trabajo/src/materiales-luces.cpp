@@ -319,46 +319,33 @@ Col2Fuentes::Col2Fuentes()
 
 }
 
-TexturaXY::TexturaXY(const std::string & nom){
-   imagen = LeerArchivoJPEG(nom.c_str(), ancho, alto);
-   glTexGeni( GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-   glTexGeni( GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);   
+TexturaXY::TexturaXY( const std::string & nom ):Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
 
-   for(int i=0; i < 4; i++){
-      if(i==0)
-         coefs_s[i]=1.0;
-      else
-         coefs_s[i]=0.0; 
-   }
+   coefs_s[0] = 1.0;
+   coefs_s[1] = 0.0;
+   coefs_s[2] = 0.0;
+   coefs_s[3] = 0.0;
 
-   for(int i=0; i < 4; i++){
-      if(i==1)
-         coefs_t[i]=1.0;
-      else
-         coefs_t[i]=0.0; 
-   }
-   
+   coefs_t[0] = 0.0;
+   coefs_t[1] = 1.0;
+   coefs_t[2] = 0.0;
+   coefs_t[3] = 0.0;
 
 }
 
-TexturaXZ::TexturaXZ(const std::string & nom){
-   imagen = LeerArchivoJPEG(nom.c_str(), ancho, alto);
-   glTexGeni( GL_S, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);
-   glTexGeni( GL_T, GL_TEXTURE_GEN_MODE, GL_OBJECT_LINEAR);   
-
-   for(int i=0; i < 4; i++){
-      if(i==0)
-         coefs_s[i]=1.0;
-      else
-         coefs_s[i]=0.0; 
-   }
-
-   for(int i=0; i < 4; i++){
-      if(i==2)
-         coefs_t[i]=1.0;
-      else
-         coefs_t[i]=0.0; 
-   }
+TexturaXZ::TexturaXZ( const std::string & nom ):Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
    
+   coefs_s[0] = 1.0;
+   coefs_s[1] = 0.0;
+   coefs_s[2] = 0.0;
+   coefs_s[3] = 0.0;
 
+   coefs_t[0] = 0.0;
+   coefs_t[1] = 0.0;
+   coefs_t[2] = 1.0;
+   coefs_t[3] = 0.0;
 }
