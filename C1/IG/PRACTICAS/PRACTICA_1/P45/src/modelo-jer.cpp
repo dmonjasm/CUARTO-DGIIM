@@ -124,16 +124,6 @@ CuerpoComoda::CuerpoComoda()
     
 };
 
-Pomo::Pomo()
-{
-    ponerIdentificador(-1);
-
-    Textura * pomo = new Textura("../trabajo/imgs/pomo.jpg");
-
-    agregar(new Material(pomo,0.2,0.2,0.8,10));
-    agregar(new Esfera(20,20));
-}
-
 Cajon::Cajon(Matriz4f * & traslacion)
 {   
     ponerIdentificador(-1);
@@ -148,7 +138,7 @@ Cajon::Cajon(Matriz4f * & traslacion)
     agregar(new PrismaAchatado(0.7,0.025,0.975));
     agregar(MAT_Traslacion(0.0,1.6/6.0-0.025,1.075));
     agregar(MAT_Escalado(0.1,0.1,0.1));
-    agregar(new Pomo());
+    agregar(new Esfera(20,20));
 
     traslacion = leerPtrMatriz(ind);
     

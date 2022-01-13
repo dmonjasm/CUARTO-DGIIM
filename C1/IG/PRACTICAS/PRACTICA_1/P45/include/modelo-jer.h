@@ -59,12 +59,6 @@ class TapaPosteriorDelantera : public NodoGrafoEscena
         TapaPosteriorDelantera(const float ancho, const float alto, const float largo, const float lejania);
 };
 
-class Pomo : public NodoGrafoEscena
-{
-    public:
-        Pomo();
-};
-
 class Cajon : public NodoGrafoEscena
 {
     public:
