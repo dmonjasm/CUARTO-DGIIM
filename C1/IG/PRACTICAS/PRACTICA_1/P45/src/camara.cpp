@@ -381,7 +381,6 @@ void Camara3Modos::moverZ( const float dz )
       }
       case ModoCam::prim_pers_rot :
       case ModoCam::prim_pers_despl :
-      {
          // COMPLETAR: práctica 5
          // desplazar el punto de atención 'dz' unidades en el eje Z
          // nota: los ejes no cambian
@@ -390,7 +389,7 @@ void Camara3Modos::moverZ( const float dz )
          punto_atencion = punto_atencion + dz * eje[2];
 
          break ;
-      }
+      
    }
    matrices_actualizadas = false ;
 }

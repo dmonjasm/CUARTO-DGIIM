@@ -74,7 +74,7 @@ TapasVerticales::TapasVerticales(const float ancho, const float alto, const floa
 {
     ponerIdentificador(-1);
 
-    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+    Textura * madera = new Textura("./imgs/madera_2.jpg");
 
     agregar( new Material(madera,0.2,0.8,0.2, 80) );
     agregar( MAT_Traslacion(0.0,-distancia/2-alto/2,0.0));
@@ -89,7 +89,7 @@ TapasLaterales::TapasLaterales(const float ancho, const float alto, const float 
 {
     ponerIdentificador(-1);
 
-    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+    Textura * madera = new Textura("./imgs/madera_2.jpg");
 
     agregar( new Material(madera,0.5,0.8,0.2, 40) );
     agregar( MAT_Traslacion(-distancia/2-ancho/2,0.0,0.0));
@@ -104,7 +104,7 @@ TapaPosteriorDelantera::TapaPosteriorDelantera(const float ancho, const float al
 {
     ponerIdentificador(-1);
 
-    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+    Textura * madera = new Textura("./imgs/madera_2.jpg");
 
     agregar( new Material(madera,0.5,0.8,0.2, 40) );
     agregar(MAT_Traslacion(0.0,0.0,lejania));
@@ -161,7 +161,7 @@ Pata::Pata()
 {
     ponerIdentificador(-1);
 
-    Textura * metal = new Textura("../trabajo/imgs/madera-oscura.jpg");
+    Textura * metal = new Textura("./imgs/madera-oscura.jpg");
 
     agregar(new Material(metal,0.5,0.5,0.5,70));
     agregar(MAT_Traslacion(0.75,-1.2,0.85));
