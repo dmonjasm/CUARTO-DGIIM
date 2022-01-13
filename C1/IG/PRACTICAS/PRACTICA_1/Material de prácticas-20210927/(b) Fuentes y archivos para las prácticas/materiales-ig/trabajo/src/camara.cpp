@@ -372,7 +372,7 @@ void Camara3Modos::moverZ( const float dz )
 
          float r_min = 0.5;
          float epsilon = 0.1;
-         float r = r_min + (org_polares(2) - r_min) * pow(1.0+epsilon, dz);
+         float r = r_min + (org_polares(2) - r_min) * pow(1.0 + epsilon, dz);
          
          org_polares = {org_polares(0), org_polares(1),r};
          org_cartesianas = Cartesianas(org_polares);
@@ -387,7 +387,7 @@ void Camara3Modos::moverZ( const float dz )
          // nota: los ejes no cambian
          // .....
 
-         punto_atencion = punto_atencion + eje[2]*dz;
+         punto_atencion = punto_atencion + dz * eje[2];
 
          break ;
       }

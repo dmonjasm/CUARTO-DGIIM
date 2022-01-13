@@ -64,7 +64,7 @@ PrismaAchatado::PrismaAchatado(const float ancho, const float alto, const float 
     ponerIdentificador(-1);
 
     agregar(MAT_Escalado(ancho,alto,largo));
-    agregar(new Cubo());
+    agregar(new Cubo24());
 
     if(ancho == (float)0.7)
         ponerColor({0.15,0.15,0.15});        
@@ -74,6 +74,9 @@ TapasVerticales::TapasVerticales(const float ancho, const float alto, const floa
 {
     ponerIdentificador(-1);
 
+    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+
+    agregar( new Material(madera,0.2,0.8,0.2, 80) );
     agregar( MAT_Traslacion(0.0,-distancia/2-alto/2,0.0));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
     agregar( MAT_Traslacion(0.0, distancia+alto, 0.0));
@@ -86,6 +89,9 @@ TapasLaterales::TapasLaterales(const float ancho, const float alto, const float 
 {
     ponerIdentificador(-1);
 
+    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+
+    agregar( new Material(madera,0.5,0.8,0.2, 40) );
     agregar( MAT_Traslacion(-distancia/2-ancho/2,0.0,0.0));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
     agregar( MAT_Traslacion(distancia+ancho, 0.0, 0.0));
@@ -98,6 +104,9 @@ TapaPosteriorDelantera::TapaPosteriorDelantera(const float ancho, const float al
 {
     ponerIdentificador(-1);
 
+    Textura * madera = new Textura("../trabajo/imgs/madera_2.jpg");
+
+    agregar( new Material(madera,0.5,0.8,0.2, 40) );
     agregar(MAT_Traslacion(0.0,0.0,lejania));
     agregar( new PrismaAchatado(ancho/2,alto/2,largo/2));
 
@@ -115,13 +124,23 @@ CuerpoComoda::CuerpoComoda()
     
 };
 
+Pomo::Pomo()
+{
+    ponerIdentificador(-1);
+
+    Textura * pomo = new Textura("../trabajo/imgs/pomo.jpg");
+
+    agregar(new Material(pomo,0.2,0.2,0.8,10));
+    agregar(new Esfera(20,20));
+}
+
 Cajon::Cajon(Matriz4f * & traslacion)
 {   
     ponerIdentificador(-1);
 
     unsigned ind = agregar(MAT_Traslacion(0.0,0.0,0.0));
     PrismaAchatado* fondo_cajon;
-    
+
     agregar(new TapasLaterales(0.05,1.6/3.0,1.95,1.4));
     agregar(new TapaPosteriorDelantera(1.6,1.6/3.0+0.1,0.05,1.0));
     agregar(new TapaPosteriorDelantera(1.5,1.6/3.0,0.05,-1.0));
@@ -129,7 +148,7 @@ Cajon::Cajon(Matriz4f * & traslacion)
     agregar(new PrismaAchatado(0.7,0.025,0.975));
     agregar(MAT_Traslacion(0.0,1.6/6.0-0.025,1.075));
     agregar(MAT_Escalado(0.1,0.1,0.1));
-    agregar(new Esfera(20,20));
+    agregar(new Pomo());
 
     traslacion = leerPtrMatriz(ind);
     
@@ -152,6 +171,9 @@ Pata::Pata()
 {
     ponerIdentificador(-1);
 
+    Textura * metal = new Textura("../trabajo/imgs/madera-oscura.jpg");
+
+    agregar(new Material(metal,0.5,0.5,0.5,70));
     agregar(MAT_Traslacion(0.75,-1.2,0.85));
     agregar(MAT_Escalado(0.15,0.1,0.15));
     agregar(new Esfera(30,30));    

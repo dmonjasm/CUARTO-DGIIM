@@ -59,6 +59,12 @@ class TapaPosteriorDelantera : public NodoGrafoEscena
         TapaPosteriorDelantera(const float ancho, const float alto, const float largo, const float lejania);
 };
 
+class Pomo : public NodoGrafoEscena
+{
+    public:
+        Pomo();
+};
+
 class Cajon : public NodoGrafoEscena
 {
     public:
@@ -88,7 +94,6 @@ class ComodaCompleta : public NodoGrafoEscena
     public:
         ComodaCompleta(Matriz4f * & traslacion1,Matriz4f * & traslacion2,Matriz4f * & traslacion3, Matriz4f * & rotacion);
 };
-
 
 
 #endif
