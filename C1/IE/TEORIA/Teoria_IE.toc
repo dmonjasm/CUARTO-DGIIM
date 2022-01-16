@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducción a la Inferencia Estadística. Estadísticos muestrales.}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Muestra Aleatoria Simple}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Función de distribución muestral}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Estadístico muestral}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Distribuciones en el muestreo de poblaciones normales.}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Distribuciones $\chi ^2$ de Pearson, $t$ de Student y $F$ de Snedecor.}{7}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Distribución $\chi ^2$ de Pearson}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Distribución $t$ de Student}{8}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Distribución F de Snedecor}{9}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Muestreo en poblaciones normales}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Muestreo en una pobalación normal unidimensional}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Muestreo en dos poblaciones normales unidimensionales}{10}{subsubsection.2.2.2}%

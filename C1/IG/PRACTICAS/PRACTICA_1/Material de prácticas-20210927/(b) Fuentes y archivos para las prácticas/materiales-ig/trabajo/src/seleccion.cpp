@@ -134,8 +134,9 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    // 8. Si el identificador del pixel es 0, imprimir mensaje y terminar (devolver 'false')
    // ....
    if(id_pixel == 0){
-      cout << "Identificado igual a 0; no se realiza ninguna acción" << endl;
-      return false;
+      cout << "Identificado igual a 0; no se realiza ninguna acción. Redirigiendo la cámara hacia el origen" << endl;
+      camara_actual->mirarHacia({0.0,0.0,0.0});
+      return true;
    }
 
 
@@ -161,11 +162,32 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
 
          cout << "Se ha seleccionado la esfera número " << columna << " de la fila número " << fila << endl;
       }
+
+      if(auxiliar->leerNombre() == "P5Malla"){
+         switch(auxiliar->leerIdentificador()){
+            case 1:
+               cout << "Este (X+)" << endl;
+            break;
+
+            case 2:
+               cout << "Norte(Z-)" << endl;
+            break;
+
+            case 3:
+               cout << "Oeste (X-)" << endl;
+            break;
+
+            case 4:
+               cout << "Sur (Z+)" << endl;
+            break;
+         }
+      }
    }
 
    else{
       cout << "No se ha seleccionado un objeto, aunque el identificador sea mayor que 0" << endl;
-      return false;
+      camara_actual->mirarHacia({0.0,0.0,0.0});
+      return true;
    }
 
    // al final devolvemos 'true', ya que hemos encontrado un objeto

@@ -209,6 +209,19 @@ class GrafoEscenasP5_2 : public NodoGrafoEscena
       GrafoEscenasP5_2();
 };
 
+class P4Nodo : public NodoGrafoEscena
+{
+   public:
+      P4Nodo();
+
+};
+
+class P5Nodo : public NodoGrafoEscena
+{
+   public:
+      P5Nodo();
+};
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

@@ -518,3 +518,35 @@ GrafoEscenasP5_2::GrafoEscenasP5_2()
       agregar( MAT_Rotacion( 360.0/n_filas_esferas, 0.0, 1.0, 0.0 ));
    }
 }
+
+P4Nodo::P4Nodo(){
+   ponerIdentificador(-1);
+
+   ponerNombre("Ejercicio práctica 4 examen (21-22)");
+
+   Textura * lineas = new Textura("../recursos/imgs/textura-examen.jpg");
+
+   agregar(new Material(lineas, 0.8,0.3,0.3, 15));
+   agregar(new P4Malla());
+}
+
+P5Nodo::P5Nodo(){
+   ponerIdentificador(-1);
+
+   P5Malla * auxiliar;
+   ponerNombre("Ejercicio práctica 5 examen (21-22)");
+
+   for(int i=0; i <= 3; i++){
+      auxiliar=new P5Malla();
+      auxiliar->ponerIdentificador(i+1);
+
+      if(i==0)
+         agregar( auxiliar );
+
+      else{
+         agregar(MAT_Rotacion(90.0,0.0,1.0,0.0));
+         agregar( auxiliar );
+      }
+      
+   }
+}

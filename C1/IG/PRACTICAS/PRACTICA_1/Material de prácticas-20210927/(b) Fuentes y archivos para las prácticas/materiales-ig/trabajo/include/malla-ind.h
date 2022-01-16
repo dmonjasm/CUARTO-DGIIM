@@ -194,4 +194,16 @@ class MallaDiscoP4 : public MallaInd
       MallaDiscoP4();
 };
 
+class P4Malla : public MallaInd
+{
+   public:
+      P4Malla();
+};
+
+class P5Malla : public MallaInd
+{
+   public:
+      P5Malla();
+};
+
 #endif

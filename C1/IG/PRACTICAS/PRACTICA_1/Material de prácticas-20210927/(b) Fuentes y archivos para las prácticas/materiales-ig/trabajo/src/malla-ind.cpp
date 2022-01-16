@@ -791,3 +791,51 @@ MallaDiscoP4::MallaDiscoP4()
    calcularNormales();
 }
 
+P4Malla::P4Malla()
+{
+   ponerNombre("Malla examen práctica 4 (21-22)");
+    
+   vertices =
+   {   { 0.0, 1.0, 0.0 }, { +1.0, 0.0, +1.0  }, { +1.0, 0.0, -1.0 },  // mira hacia X+ e Y+
+      { 0.0, 1.0, 0.0 }, { -1.0, 0.0, -1.0  }, { -1.0, 0.0, +1.0 },  // mira hacia X- e Y+
+      { 0.0, 1.0, 0.0 }, { -1.0, 0.0, +1.0  }, { +1.0, 0.0, +1.0 },  // mira hacia Z+ e Y+
+      { 0.0, 1.0, 0.0 }, { +1.0, 0.0, -1.0  }, { -1.0, 0.0, -1.0 }   // mira hacia Z- e Y+
+   } ;
+
+   triangulos =
+   {  {0,1,2}, {3,4,5}, {6,7,8}, {9,10,11}
+   } ;
+
+   cc_tt_ver=
+   {
+      {0.5,1.0}, {0.0,0.0}, {1.0,0.0},
+      {0.5,1.0}, {0.0,0.0}, {1.0,0.0},
+      {0.5,1.0}, {0.0,0.0}, {1.0,0.0},
+      {0.5,1.0}, {0.0,0.0}, {1.0,0.0},
+   };
+
+   nor_ver={
+      (vertices[0] - (vertices[4]-vertices[5])/2).normalized(), {0.0,0.0,1.0}, {0.0,0.0,-1.0},
+      (vertices[0] - (vertices[1]-vertices[2])/2).normalized(), {0.0,0.0,-1.0}, {0.0,0.0,1.0},
+      (vertices[0] - (vertices[10]-vertices[11])/2).normalized(), {-1.0,0.0,0.0}, {1.0,0.0,0.0},
+      (vertices[0] - (vertices[7]-vertices[8])/2).normalized(), {1.0,0.0,0.0}, {-1.0,0.0,0.0}
+   };
+}
+
+P5Malla::P5Malla(){
+   ponerIdentificador(-1);
+
+   ponerNombre("P5Malla");
+
+   vertices = 
+   {  {1.0,1.0,1.0}, {1.0,-1.0,1.0},
+      {1.0,-1.0,-1.0}, {1.0,1.0,-1.0}
+   };
+
+   triangulos =
+   {
+      {0,1,2}, {0,2,3}
+   };
+}
+
+
