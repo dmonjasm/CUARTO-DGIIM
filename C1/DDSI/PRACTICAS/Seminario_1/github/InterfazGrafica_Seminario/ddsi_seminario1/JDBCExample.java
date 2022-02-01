@@ -17,7 +17,7 @@ public class JDBCExample {
     public static void iniciarConexion(){
         
         try{
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@oracle0.ugr.es:1521/practbd.oracle0.ugr.es", "X7449010", "x7449010");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@oracle0.ugr.es:1521/practbd.oracle0.ugr.es", "X0274432", "x0274432");
             
             if (conn != null) {
                 conn.setAutoCommit(false);
