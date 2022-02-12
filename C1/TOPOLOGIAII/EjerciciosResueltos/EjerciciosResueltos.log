@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  2 FEB 2022 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  12 FEB 2022 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ConceptosBasicosTopoII.tex
-(./ConceptosBasicosTopoII.tex
+**EjerciciosResueltos.tex
+(./EjerciciosResueltos.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -278,32 +278,32 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count267
 \l__pdf_internal_box=\box47
 )
-(./ConceptosBasicosTopoII.aux
+(./EjerciciosResueltos.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-\openout1 = `ConceptosBasicosTopoII.aux'.
+\openout1 = `EjerciciosResueltos.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Info: Redefining \. on input line 16.
+LaTeX Info: Redefining \% on input line 16.
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 15.
+Package hyperref Info: Link coloring OFF on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -316,13 +316,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count268
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
-(./ConceptosBasicosTopoII.out) (./ConceptosBasicosTopoII.out)
+(./EjerciciosResueltos.out) (./EjerciciosResueltos.out)
 \@outlinefile=\write3
-\openout3 = `ConceptosBasicosTopoII.out'.
+\openout3 = `EjerciciosResueltos.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -347,546 +347,95 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ConceptosBasicosTopoII.
-toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./EjerciciosResueltos.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write4
-\openout4 = `ConceptosBasicosTopoII.toc'.
+\openout4 = `EjerciciosResueltos.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+[3] [4]
+<images/toro-volumen.jpg, id=125, 403.5075pt x 237.88875pt>
+File: images/toro-volumen.jpg Graphic file (type jpg)
+<use images/toro-volumen.jpg>
+Package pdftex.def Info: images/toro-volumen.jpg  used on input line 119.
+(pdftex.def)             Requested size: 201.75325pt x 118.94408pt.
 
+Overfull \hbox (13.63199pt too wide) in paragraph at lines 116--121
+[]$\U/msb/m/n/10 T \OT1/cmr/m/n/10 = []$,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+[5 <./images/toro-volumen.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
-
- []
-
-
-Overfull \hbox (30.06876pt too wide) in paragraph at lines 336--337
-[]$\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) := []
-$
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
-
- []
-
-<images/recubridor.png, id=158, 485.815pt x 548.0475pt>
-File: images/recubridor.png Graphic file (type png)
-<use images/recubridor.png>
-Package pdftex.def Info: images/recubridor.png  used on input line 369.
-(pdftex.def)             Requested size: 485.81381pt x 548.04616pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
-
- []
-
-[12 <./images/recubridor.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
-
- []
-
-<images/levantamientoarco.png, id=179, 504.88625pt x 541.02126pt>
-File: images/levantamientoarco.png Graphic file (type png)
-<use images/levantamientoarco.png>
-Package pdftex.def Info: images/levantamientoarco.png  used on input line 423.
-(pdftex.def)             Requested size: 504.885pt x 541.01993pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-[14 <./images/levantamientoarco.png>]
-Overfull \hbox (43.721pt too wide) in paragraph at lines 439--440
-[]\OT1/cmr/m/n/10 donde $\OML/cmm/m/it/10 $ \OT1/cmr/m/n/10 es el la-zo $\OML/
-cmm/m/it/10 ^^Y \OMS/cmsy/m/n/10 ^^N []$ \OT1/cmr/m/n/10 (con ba-se $\OML/cmm/m
-/it/10 x$\OT1/cmr/m/n/10 ). Co-mo con-se-cuen-cia $[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 484--485
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 510--511
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 527--528
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--537
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
-
- []
-
-
-Overfull \hbox (19.09567pt too wide) in paragraph at lines 554--555
-\OML/cmm/m/it/10 Aut\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; ^^Y\OT1/cmr/m/n/10 ) 
-\OML/cmm/m/it/10 ^^M\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ]) = ^^
-H[]([\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ])$ es un epi-mor-fis-mo de gru-pos con 
-$\OML/cmm/m/it/10 Ker^^M \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/1
-0 (^^E[]([]\OML/cmm/m/it/10 ; y\OT1/cmr/m/n/10 ))$. 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
-
- []
-
-[18]
-Overfull \hbox (10.71196pt too wide) in paragraph at lines 592--593
-[]\OT1/cmr/m/n/10 Si $\OML/cmm/m/it/10 ^^Y[] \OT1/cmr/m/n/10 : [] \OMS/cmsy/m/n
-/10 ! []\OML/cmm/m/it/10 =Aut\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; ^^Y\OT1/cmr/
-m/n/10 )$ es la pro-yec-ci^^Son al es-pa-cio de ^^Sorbi-tas $[]\OML/cmm/m/it/10
- =Aut\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; ^^Y\OT1/cmr/m/n/10 )$,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 637--638
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
- (./ConceptosBasicosTopoII.aux
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
+ (./EjerciciosResueltos.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 656.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 656.
-Package rerunfilecheck Info: File `ConceptosBasicosTopoII.out' has not changed.
-
-(rerunfilecheck)             Checksum: 4397F007B0CC07DD5DBF6FFCADA2DC39;1174.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 656.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
+Package rerunfilecheck Info: File `EjerciciosResueltos.out' has not changed.
+(rerunfilecheck)             Checksum: FD0CD94C7E4A464153694F600534D8F5;1238.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
  ) 
 Here is how much of TeX's memory you used:
- 7409 strings out of 481239
- 107918 string characters out of 5920377
- 380741 words of memory out of 5000000
- 22477 multiletter control sequences out of 15000+600000
+ 7359 strings out of 481239
+ 107421 string characters out of 5920377
+ 379720 words of memory out of 5000000
+ 22464 multiletter control sequences out of 15000+600000
  540201 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,14n,35p,610b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,14n,35p,560b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ConceptosBasicosTopoII.pdf (20 pages, 277824 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on EjerciciosResueltos.pdf (9 pages, 170901 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 199 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
