@@ -267,4 +267,75 @@ H(x,t):=(1-t)x+tr(t)
 , esta aplicación está bien definida, pues fijado $x\in \mathbb{B}_s$ se verifica que $H$ es el segmento que une $x$ con la imagen de su retracción. Como $\mathbb{B}_s$ es convexo es claro que todos estos segmentos están completamente contenidos en $\mathbb{B}_s$ y por tanto está bien definida. Además es claramente continua. 
 
 De aquí se deduce que es un retracto de deformación.
+
+\subsection{Ejercicio 22 (Ejercicio 6 Retracciones)}
+
+\subsection{Ejercicio 23 (Ejercicio 7 Retracciones)}
+Sea $X$ un espacio topológico $A\subset X$ un retracto de deformación de $X$. ¿Se verifica que si $Y$ es un espacio homeomorfo a $X$ entonces $F(A)\subset Y$ es retracto de deformación?\\
+
+En primer lugar como $A$ es un retracto de deformación entonces existe
+\begin{gather*}
+r:X\rightarrow A\\
+\end{gather*}
+
+es una retracción, entonces
+\begin{gather*}
+f \circ r \circ f^{-1}:Y\rightarrow f(A)
+\end{gather*}
+
+es una aplicación continua, pues es composición de continuas y además veamos que al restringirlo a los valores de $f(A)$ es la identidad. Basta tomar un punto $y\in f(A)$, por ser $f$ un homeomorfismo $f^{-1}(y)\in A$, al aplicarle la retracción $r(f^{-1}(y)) = f^{-1}(y)$ y por último al volver a aplicar $f$ se vuelve a $y$, lo que implica que al restrigir esa aplicación a los valores de $f(A)$ es la identidad en $f(A)$ y por tanto es una retracción. 
+
+Para la deformación seguimos un procedimiento similar
+\begin{gather*}
+H'\equiv f\circ H:X\times [0,1]\rightarrow X\\
+H'(y,t)=H(f^{-1}(y),t)
+\end{gather*}
+
+es una aplicación continua, y está bien definida. Además cumple las propiedades de una deformación.
+
+De aquí se deduce que los retractos de deformación se mantienen por homeomorfismos.
+
+\subsection{Ejercicio 24 (Ejercicio 8 Retracciones)}
+Si $A\subset X$ es retracto de deformación de $X$ y $B\subset A$ es retracto de deformación de $A$
+\begin{gather*}
+\left.\begin{array}{c}
+r:X\rightarrow A\\
+r':A\rightarrow B
+\end{array}\right\rbrace r'\circ r:X\rightarrow B
+\end{gather*}
+
+es una retracción. Es continua, pues es composición de continua y claramente restringido a valores de $B$ es la identidad.
+
+Para la deformación sea
+\begin{gather*}
+H':X\times [0,1]\rightarrow X\\
+H'(q,t):=\left\lbrace \begin{array}{c}
+H(q,2t)\quad (q,t)\in X\times[0,1/2]\\
+H''(r(q),2t-1)\quad t\in [1/2,1]
+\end{array}\right.
+\end{gather*}
+
+y esta aplicación es claramente continua, pues para cada $q$ es el producto de arcos que unen  respectivamente $q$ con $r(q)$ y $r(q)$ con $r'(q)$ por medio de un arco.
+
+\subsection{Ejercicio 25 (Ejercicio 9 Retracciones)}
+Basta con tomar las siguientes retracciones y deformaciones
+\begin{gather*}
+r:X\rightarrow A\\
+r':Y\rightarrow B\\
+r\times r':X\times Y \rightarrow A\times B
+\end{gather*}
+
+es una aplicación continua, pues al componerlo con las proyecciones nos quedan las retracciones iniciales y está bien definida y al restringirloa a $A\times B$ es la identidad por como se ha definido.
+
+Para la deformación consideraremos lo siguiente
+\begin{gather*}
+H:X\times [0,1]\rightarrow X\\
+H':Y\times [0,1]\rightarrow Y\\
+H'':(X\times Y)\times [0,1]\rightarrow X\times Y\\
+H''((x,y),t):=(H(x,t),H'(y,t))
+\end{gather*}
+
+que de nuevo es continua pues al componerlo con la proyecciones nos quedan las deformaciones previas y por tanto es continua. Además se verifica que si $t=0$ se da la identidad y que si $t=1$ se da el producto cartesiano de las retracciones.
+
+
 \end{document}
