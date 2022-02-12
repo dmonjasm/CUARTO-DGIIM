@@ -337,5 +337,163 @@ H''((x,y),t):=(H(x,t),H'(y,t))
 
 que de nuevo es continua pues al componerlo con la proyecciones nos quedan las deformaciones previas y por tanto es continua. Además se verifica que si $t=0$ se da la identidad y que si $t=1$ se da el producto cartesiano de las retracciones.
 
+\subsection{Ejercicio 26 (Ejercicio 10 Retracciones)}
+Como $A\cap B$ es retracto de $B$ entonces existen
+\begin{gather*}
+r:B\rightarrow A\cap B\\
+H:B\times [0,1]\rightarrow B
+\end{gather*}
+
+son respectivamente una retracción y una deformación.
+
+Definimos la siguiente aplicación
+\begin{gather*}
+s(x)=\left\lbrace \begin{array}{c}
+x\qquad x\in A\\
+r(x)\qquad x\in B
+\end{array}\right.
+\end{gather*}
+
+es claro que está bien definida y como está definida en dos abiertos (resp. dos cerrados) es continua en cada uno de ellos y por tanto r es continua. Por otro lado es trivial que al restringirlo $A$ es la identidad.
+
+Por otro lado definimos 
+\begin{gather*}
+G:X\times [0,1]\rightarrow X\\
+G(x,t)=\left\lbrace\begin{array}{c}
+x\qquad x\in A\\
+H(x,t) \qquad x\in B
+\end{array}\right.
+\end{gather*}
+
+la cual es continua por lo dicho antes. Si $t=0$ es claro que se trata de la identidad para todo $x$ y si $t=1$ es claro que es $s(x)$, luego es una deformación y por consiguiente hemos llegadoa a que $A$ es un retracto de deformación de $X$.
+
+\subsection{Ejercicio 27 (Ejercicio 11 Retracciones)}
+Un espacio es Hausdorff o $T_2$ si y sólo si el espacio diagonal es cerrado, es decir, si
+\begin{equation*}
+\Delta:=\{(x,x)\in X\times X\} 
+\end{equation*}
+
+es cerrado.
+
+Definimos la siguiente aplicación 
+\begin{gather*}
+f:X\rightarrow X\times X\\
+x\mapsto (x,r(x))
+\end{gather*}
+
+Esta aplicación es continua pues al componerla con las proyecciones se obtiene la aplicación identidad y la retracción de $X$ en $A$, siendo ambas continuas. Por otro lado veamos que claramente
+\begin{equation*}
+f^{-1}(\Delta)=\{x\in X: x=r(x)\}=A
+\end{equation*}
+
+, luego por ser $f$ continua $A$ es cerrado.
+
+\subsection{Ejercicio 28 (Ejercicio 15 Retracciones)}
+Basta ver que si un espacio es contráctil, entonces existe una deformación tal que
+\begin{equation*}
+H:X\times [0,1]\rightarrow X
+\end{equation*}
+
+y fijando cada $x\in X$ se tiene que $H_x(t)$ es un arco que una $x$ con $r(x)$, pero como es contráctil $r(x)=\{p\}$. Por consiguiente para cada punto $x\in X$, $H_x(t)$ constituye un arco entre $x$ y $p$ y por tanto el espacio es arcoconexo.
+
+\section{Relación 2}
+$(\tilde{X},p)$ es un espacio recubridor de $X$.
+
+\subsection{Ejercicio 1}
+Como $p:\tilde{X}\rightarrow X$ es una aplicación recubridora entonces es un homeomorfismo local y sea $\tilde{x}\in \tilde{X}$ y $W \in U_{\tilde{x}}$ un entonrno de esta. Veamos que $p(W)$ es un entorno de $p(\tilde{x})$. Ya que $p$ es un homemomorfismo local existen $U\in U_{\tilde{x}}$ y $U'\in U_{p(\tilde{x})}$ tal que $p:U\rightarrow U'$ es un homemomorfismo. Entonces $U\cap W$ es un entorno de $\tilde{x}$ en la topología relativa de $U$ y como $p$ es homeomorfismo entre $U$ y $U'$, el conjunto  $p(U\cap W)$ es un entorno de $p(\tilde{x})$ en $X$. Por tanto $p(U\cap W)\subset p(W)$ y por tatno $p(W)$ es un entorno de $p(\tilde{x})$. Como la apliación lleva entornos en entornos la aplicación es abierta.
+
+\subsection{Ejercicio 2}
+Sea $q\in X$ y $O\subset X$ con $q\in O$. $\forall U$ entorno distinguido alrededor de $q$ la arcocomponente del abierto $U\cap O$ que contiene a $q$ satisface $q\in V\subset U\cap O\subset O$ y pertenecece a la familia de abiertos distinguidos. De aquí se deduce que $\forall O\in \tau$ existe $V\in U$ con $U\subset O\Rightarrow $ la familia de entornos distinguidos es una base.
+
+\subsection{Ejercicio 3}
+Sabemos que todo homeomorfismo es un aplicación recubridora. Por un lado veamos que
+\begin{gather*}
+f\circ p: \tilde{X}\rightarrow Y\\
+p\circ g:Z\rightarrow X
+\end{gather*}
+
+Para ver que $\tilde{X}$ es recubridor de $Y$ veamos que $\forall U\in X$ entorno distinguido $f(X)$ es entorno distinguido. Claramente $f\circ p$ es continua y sobreyectiva por ser composición de funciones continuas y sobreyectivas. Para los entornos distinguidos usaremos que $f$ es una biyección entre $X$ y $Y$ y que si $U_x$ es un entorno distinguido de un punto $x\in X$ tenemos que $f(U_x)$ es un entorno de $f(x)$ en $Y$ y además es arcoconexo y abierto, pues $f$ es la inversa de $f^{-1}$ que es continua, lo que implica que $f(U_x)$ es abierto. Y para ver que es arcoconexo basta con ver que la imagen de un arcoconexo por una función continua es arcoconexo, luego es abierto y arcoconexo. 
+
+Por último vemos que $f(U_x)$ es entorno distinguido simplemente con ver que como $f$ y $f^{-1}$ es biyectivo $f^{-1}(f(U_x))=U_x$ es entorno distinguido. Y por tanto si $A\subset p^{-1}(f^{-1}(f(U(x)))$ es una arcocomponente entonces es claro que $f\circ p_{|A}$ es un homeomorfismo, pues $p_{|A}$ es un homeomorfismo local, que compuesto con un homoemorfismo sigue siendo un homeomorfismo.\\
+
+Por otro lado de nuevo, $p\circ g$ es una aplicación continua y sobreyectivo. Y si tomamos un entorno distinguido cualquiera de un punto de $X$, veamos que este también es entorno distinguido para esta aplicación. Basta con ver que que $g^{-1}(p^{-1}(U))$ es un conjunto tal que para toda arcocomponente de este su restricción es un homemomorfismo, pues la restricción de un homeomorfismo a cualquier subconjunto sigue siendo un homemorfismo. Y es claro que la imagen de una arcocomponente sigue siendo una arcocomponente y claramente será una arcocomponente de $p^{-1}(U)$ y claramente al restringir $p$ es este conjunto seguirá siendo un homeomorfismo.
+
+\subsection{Ejercicio 4}
+Claramente se verifica que $p$ así descrita es una aplicación continua y sobreyectiva por ser una proyección.
+
+Vamos a observar que al ser $Y$ un espacio discreto lo vamos a tomar como unión de puntos aislados. Sea $G\subset Homeo(X\times Y)$ donde $G=\{g_{y_i}: i\in I\}$ tal que cada una de las funciones de $g$ es una traslación (y por tanto homeomorfismo) definida como
+\begin{gather*}
+g_{y_i}:X\times Y\rightarrow X\times \{y_i\}\\
+(x,y)\mapsto (x,y_i)
+\end{gather*}
+
+Si $U$ es un entorno abierto y arcoconexo de un punto $p$ entonces es claro que
+\begin{gather*}
+g\cdot U\cap U=\emptyset \qquad \forall g\in G\backslash \{Id_X\}
+\end{gather*}
+
+Por otro lado $X\times Y/G$ es claramente homeomorfo a $X$, pues dos puntos se relaciones si y sólo si existe $g\in G$ tal que $g(x,y)=g(x',y')$, pero por ser $G$ una traslación respecto a $y$ esto es solo posible si $x=x'$. Es decir, cada punto se relaciona únicamente consigo mismo y todos los puntos cuyo valor de $x$ sea el mismo que el del representando, luego hay tantas clases de equivalencia como puntos en $x$ y se pueden relacionar por un homeomorfismo.
+
+Como sabemos que claramente $G$ actúa de forma propia y discontinua entonces la proyección en el espacio de órbitas es una aplicación recubridora y como el espacio cociente es homeomorfo a $X$ entonces tenemos lo buscado que $X\times Y$ recubre a $X$.
+
+\subsection{Ejercicio 5}
+$f:Z\rightarrow \tilde{X}$. $f$ es continua por ser una poryección, es más, es continua y sobreyectiva.
+
+Sea $\tilde{x}\in \tilde{X}$, y $x=p(\tilde{x})$. Sea $U$ entorno distinguido de $x$ en $X$ para $(\tilde{X},p)$. Tomamos $\tilde{U}$ tal que $\tilde{x}\in \tilde{U}\subset p^{-1}(U)$. Veamos que $\tilde{U}$ es entorno distinguido de $\tilde{x}$ en $\tilde{X}$ para $(Z,f)$.
+\begin{equation*}
+f^{-1}(\tilde{U})=\{(\tilde{x}_1,\tilde{x}_2)|\:\tilde{x_1}\in \tilde{U},\quad \tilde{x_2}\in p^{-1}(p(\tilde{x_1})) \} \subseteq \tilde{U}\times p^{-1}(U)
+\end{equation*}
+
+Las arcocomponente de $f^{-1}(\tilde{U})$ son de la forma $(\tilde{U}\times \tilde{U}')\cap f^{-1}(\tilde{U})$ con $\tilde{U}'$ arcocomponente de $p^{-1}(U)$. Definimos $\tilde{\tilde{ U}}\equiv (\tilde{U}\times \tilde{U}')\cap f^{-1}(\tilde{U})=\{(\tilde{x}_1,\tilde{x}_2)|\tilde{x}_1\in \tilde{U},\quad \tilde{x}_2\in p^{-1}(p(\tilde{x}_1)) \wedge \tilde{x}_2\in \tilde{U}'\}=\{(\tilde{x}_1,\tilde{x}_2)| x_1\in \tilde{U},\quad x_2\in \tilde{U},\quad p(\tilde{x_1})=p(\tilde{x_2})\}$, donde para cada $x_1\in \tilde{U}$, existe un único $\tilde{x}_2\in \tilde{U}'$ tal que $p(\tilde{x}_1)=p(\tilde{x}_2)$  ya que las arcocomponentes son disjuntas $\Rightarrow f_{|\tilde{\tilde{U}}}:\tilde{\tilde{U}}\cong \tilde{U}$ homeomorfismo.
+
+\subsection{Ejercicio 6}
+Sea $\pi_1:Y\rightarrow X$ y $\pi_2:X\rightarrow Z$, donde $\pi_2$ es un recubridor finito.
+
+Sea $z\in Z$ un punto arbitrario y consideremos un entorno distinguido de $U$ en $Z$ para $(X,\pi_2)$ alrededor de $z$. Por ser $\pi_2$ finito se tiene que $\pi_2^{-1}=\{x_1,\ldots,x_n\}$, entonces
+\begin{equation*}
+\pi_2^{-1}(U)=\bigcup_{i=1}^n V_i
+\end{equation*}
+
+, donde $\{V_j:j=1,\ldots,n\}$ son disjuntos dos a dos, $x_j\in V_j$ y $\pi_{2|V_j}:V_j\rightarrow U$ es un homeomorfismo.
+
+Sea $W_j$ en $X$ entorno distinguido alrededor de $x_j$ para $\pi_1$, $j=1,\ldots,n$. Sea la arcocomponente $U_0$ de $\bigcap_{i=1}^n \pi_2(W_j\cap V_j)$ conteniendo a $x$. $U_0$ es abierto, pues las aplicaciones recubridoras son abiertas y como dicha intersección es un conjunto abierto, es la intersección de un conjunto de abiertos y además
+\begin{equation*}
+U_0\subseteq \bigcap_{i=1}^n \pi_2(W_j\cap V_j)\subseteq U
+\end{equation*}
+
+con $U$ entorno distinguido para $(X,\pi_2)$.
+
+Por tanto, si
+\begin{equation*}
+U_j:=\pi_2^{-1}(U_0)\cap V_j,\qquad j=1,\ldots, n
+\end{equation*}
+
+Se tiene que $\{U_j:j=1,\ldots,n\}$ son disjuntos dos a dos, pues lo son los $V_j$, $\pi_2^{-1}(U_0)=\bigcup_{j=1}^n U_j$, y las aplicaciones $\pi_{2|U_j}:U_j \rightarrow U_0$, $j=1,\ldots,n$ homeomorfismo, pues cada $U_j$ es una restricción de $V_j$ y este era un homeomorfismo, luego la restricción de un homeomorfismo es un homeomorfismo.\\
+
+Por definición
+\begin{equation*}
+U_0\subseteq \bigcap_{j=1}^n\pi_2(W_j\cap V_j)\subseteq \pi_2(W_j\cap V_j)\subseteq U
+\end{equation*}
+
+y como $\pi_{2|V_j}:V_j\rightarrow U$ es un homeomorfismo, también
+\begin{equation*}
+U_j=V_j\cap \pi_2^{-1}(U_0)=(\pi_{2|V_j})^{-1}(U_0)\subset W_j\cap V_j\subset W_j
+\end{equation*}
+
+de donde al ser $W_j$ entorno distinguido para $(Y,\pi_1)$, $U_j$ es entorno distinguido para $(Y,\pi_1)$, $j=1,\ldots,n$. De aquí que
+\begin{equation*}
+\pi_1^{-1}(U_j)=\bigcup_{p\in \pi_1^{-1}(x_j)} U_{j,p}
+\end{equation*}
+
+, donde $\{U_{j,p}: p\in \pi_1^{-1}(x_j)\}$ son disjuntos dos a dos y $\pi_{1|U_{j,p}}:U_{j,p}\rightarrow U_j$ es un homemorfismo para todo $p\in \pi_1^{-1}(x_j)$, con $j=1,\ldots,n$.\\
+
+Como conclusión
+\begin{gather*}
+(\pi_2\circ \pi_1)^{-1}=\pi_1^{-1}(\pi_2^{-1}(U))=\pi_1^{-1}(\bigcup_{j=1}^n U_j)=\\
+=\bigcup_{j=1}^n \pi_1^{-1}(U_j)=\bigcup_{j=1}^n(\bigcup_{p\in \pi_1^{-1}(x_j)} U_{j,p})
+\end{gather*}
+
+con $U_{j,p}$ son disjutnos dos a dos y la restricción de la composición a esto es un homeomorfismo, lo que implica que $U_0$ es un entorno distinguido.
+
 
 \end{document}
