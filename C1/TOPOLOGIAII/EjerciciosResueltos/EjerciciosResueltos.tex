@@ -495,5 +495,79 @@ Como conclusión
 
 con $U_{j,p}$ son disjutnos dos a dos y la restricción de la composición a esto es un homeomorfismo, lo que implica que $U_0$ es un entorno distinguido.
 
+\subsection{Ejercicio 7}
+basta con tomar las siguientes aplicaciones
+\begin{gather*}
+h_1:\tilde{X}\rightarrow \mathbb{R}^2 \qquad (x,y,z)\mapsto (x,y)\\
+f:\mathbb{R}^2\rightarrow \mathbb{S}^1\times \mathbb{R}\qquad (x,y)\mapsto (e^{2\pi xi}, y)\\
+h_2:\mathbb{S}^1\times \mathbb{R}\rightarrow X \qquad (x,y)\mapsto(\sqrt{1+z^2} x,\sqrt{1+z^2}y,z)
+\end{gather*}
 
+componiendo estas tres aplicaciones tenemos una aplicación continua y sobreyectiva y que cumple perfectamente las propiedades de una aplicación recubridora.
+
+\subsection{Ejercicio 9}
+$\Leftarrow$
+
+Tomamos $\mathcal{V}$ un recubrimiento por abiertos de $\tilde{X}$. Sea $x\in X$ y $U$ un entorno distinguido de $X$. Como $\pi$ es finita entonces $\pi^{-1}(x)=\{\tilde{x_1},\ldots,\tilde{x_n}\}$ y podemos hacer lo siguiente
+\begin{equation*}
+\pi^{-1}(U)\subset \bigcup_{i=1}^n V_i^x,\qquad V_i^x \cap \pi^{-1}(x)\neq \emptyset\qquad \forall i=1,\ldots,n
+\end{equation*}
+
+Al ser $\pi$ una aplicación abierta es claro que $\bigcap_{i=1}^n \pi(V_i^x)$ es abierto en $X$ contieniendo a $x$, por lo que podemos elegir $U_x\in U$ suficientemente pequeño para que
+\begin{equation*}
+\tilde{U}_j^x:=\pi^{-1}(U_j)\cap V_j^x
+\end{equation*}
+sea arcocomponente de $\pi^{-1}(U)$ para todo $j=1,\ldots,n$.\\
+
+Como $\pi^{-1}(x)\subset \bigcup_{j=1}^n V_j^x$ y $\pi_{|\tilde{U}_j^x}:\tilde{U}_j^x\rightarrow U$ es un homeomorfismo para toda $j=1,\ldots,n$, de donde se infiere que
+\begin{equation*}
+\pi^{-1}(U)\subset \bigcup_{j=1}^n V_j^x \qquad U\subset \bigcap_{j=1}^n \pi(V_i^x)
+\end{equation*}
+
+Usando que $\{U:x\in X\}$ es recubrimiento por abiertos de $X$, han de existir $x_1,\ldots,x_m\in X$ tales que $X=\bigcup_{j=1}^m U_{x_j}$. Por tanto
+\begin{equation*}
+\tilde{X}=\pi^{-1}\left(\bigcup_{j=1}^m U_{x_j}\right) = \bigcup_{i=1}^m \left(\bigcup_{j=1}^n \tilde{U}_j^{x_i}\right)\subset \bigcup_{i=1}^m\left(\bigcup_{j=1}^n V_j^{x_i}\right)
+\end{equation*}, de donde se infiere que $V_j$ con $j$ de 1 a n es un recubrimiento finito por abierto, lo que implica que $\tilde{X}$ es compacto.\\
+
+Para ver la propiedade de Hausdorff sean $x_1,x_2\in \tilde{X}$ y llamaremos $y_1=\pi(x_1)$ y $y_2=\pi(x_2)$. Si $y_1=y_2$, basta con tomar que $x_1$ y $x_2$ estarán en arcocomponentes disjuntas (que son entornos) dentro de la preimagen del entorno distinguido de $y_1=y_2$. Y en el caso de que $y_1\neq y_2$ veamos que podemos seleccionar entornos distinguidos disjuntos, cuyas preimágenes son disjuntas y por tanto las arcocomponentes que contienen a $x_1$ y a $x_2$ son disjuntas y entornos.
+
+$\Rightarrow$
+
+La compacidad es trivial, pues al ser una aplicación recubridora es continua y sobreyectiva y la imagen de un compacto por una aplicación continua es compacto, lo que implica que $X$ es compacto.
+
+Para el tema de ver que es Hausdorff basta tomar $x_1$ y $x_2$ de $X$ distintos. Tomamos entornos distinguidos de $x_1$ y $x_2$ y hacemos la preimagen de los mismos. Dentro de cada preimagen las arcocomponentes son disjuntas dos a dos, pero se puede dar que la intersección de la arcocomponente de una preimagen con la arcocomponente de otra no sea disjunta. Utilizando que $\pi$ es finita y que $\tilde{X}$ es de Hausdorff podemos elegir entornos dentro de estas arcocomponentes, de forma que estos entornos sean todos disjuntos dos a dos, de manera que al hacer la intersección de la imagen de dichos entornos nos quedan entornos en $X$ para $y_1$ e $y_2$ disjuntos, lo que implica que $X$ es Hausdorff.
+
+\subsection{Ejercicio 14}
+Para este ejercicio tomaremos $G\subset Homeo(\mathbb{T})$, con $G:=\{Id, A\}$, donde $A$ denota la aplicación antípodas. Claramente $A$ no tiene puntos fijos en $\mathbb{T}$ y por consiguiente $G$ actúa de forma propia y discontinua sobre $\mathbb{T}$. De aquí se deduce
+\begin{equation*}
+\pi:\mathbb{T}\rightarrow \mathbb{T}/G
+\end{equation*}
+
+es una aplicación recubridora.\\
+
+Por otro lado, sabemos que $\mathbb{T}^+$ (la parte derecha del toro) es homeomorfa al cilidro $\mathbb{S}^1\times [0,1]$. y se pueden definir lo siguiente
+\begin{equation*}
+\mathbb{T}^+\xrightarrow{i} \mathbb{T}\xrightarrow{p}\mathbb{T}/G
+\end{equation*}
+
+Si denotamos a $\tilde{i}\equiv p\circ i$ esta es una identificación, entonces la identificación del cilindro es $aba^{-1}b$, es decir, la botella de Klein. Por otro lado $\mathbb{R}^2$ recubre a $\mathbb{T}$, y $\mathbb{T}$ recubre finitamente a $\mathbb{K}$, lo que implica que $\mathbb{R}^2$ recubre a $\mathbb{K}$ (ojo, esto es cierto porque $\mathbb{T}$ recubre \textbf{finitamente} a $\mathbb{K}$)
+
+\subsection{Ejercicio 15}
+$\Leftarrow$
+
+Si $p$ es un homemomorfismo veamos que $p_*$ también lo es. Basta con considerar que $p^{-1}$ es también continua y tomaremos
+\begin{gather*}
+p_*\circ p^{-1}_*=(p\circ p^{-1})_*=(Id_X)_*=Id_{\Pi_1(X,x)}\\
+p^{-1}_*\circ p_*=(p^{-1}\circ p)_*=(Id_{\tilde{X}})_*=Id_{\Pi_1(\tilde{X},\tilde{x})}
+\end{gather*}
+
+$\Rightarrow$
+
+Para la vuelta nos vamos en fijar que todo espacio es recubridor de sí mismo. Sea $x\in X$ y $y_j\in \pi_j^{-1}(x)$, $j=1,2$ (en el caso de $\pi_2$ será la propia identidad de $X$). Por otro lado tenemos que
+\begin{gather*}
+(id_X)_*(\Pi_1(X,x))=\Pi_1(X,x)\\
+(p)_*(\Pi_1(\tilde{X},y_1)=\Pi_1(X,x)
+\end{gather*}
+
+, de lo anterior se infiere que son iguales, luego se verficia que $\pi(y_1)=y_2=x$ y $p$ es un isomorfismo. 
 \end{document}
