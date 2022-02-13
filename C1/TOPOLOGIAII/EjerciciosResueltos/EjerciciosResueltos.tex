@@ -570,4 +570,231 @@ Para la vuelta nos vamos en fijar que todo espacio es recubridor de sí mismo. S
 \end{gather*}
 
 , de lo anterior se infiere que son iguales, luego se verficia que $\pi(y_1)=y_2=x$ y $p$ es un isomorfismo. 
+
+\section{Relación 3}
+\subsection{Ejercicio 1}
+\begin{itemize}
+\item $\mathbb{S}^2$
+\begin{equation*}
+aa^{-1}\Rightarrow aa^{-1}bb^{-1}\Rightarrow aa^{-1}c,c^{-1}bb^{-1}\Rightarrow \mathbb{S}^2=\left\langle a,b,c|aa^{-1}c,c^{-1}bb^{-1}\right\rangle
+\end{equation*}
+
+\item $\mathbb{T}$
+\begin{equation*}
+aba^{-1}b^{-1}\Rightarrow abc,\:c^{-1}a^{-1}b^{-1}\Rightarrow \mathbb{T}=\left\langle a,b,c|abc, a^{-1}b^{-1}c^{-1}\right\rangle
+\end{equation*}
+
+\item $\mathbb{K}$
+\begin{equation*}
+aba^{-1}b\Rightarrow abc, c^{-1}a^{-1}b\Rightarrow \mathbb{K}=\left\langle a,b,c|abc,c^{-1}a^{-1}b\right\rangle
+\end{equation*}
+
+\item $\mathbb{P}^2$
+\begin{equation*}
+aa\Rightarrow aabb^{-1}\Rightarrow aac, c^{-1}bb^{-1}\Rightarrow \mathbb{P}^2=\left\langle a,b,c|aac, c^{-1}bb^{-1}\right\rangle
+\end{equation*}
+
+\item $3\mathbb{P}^2$
+\begin{gather*}
+aabbcc\rightarrow aad, d^{-1}bbcc\Rightarrow aad, d^{-1}be, e^{-1}bcc\Rightarrow aad, d^{-1}be,e^{-1}bf, f^{-1}cc \Rightarrow\\
+\Rightarrow 3\mathbb{P}^2=\left\langle a,b,c,d,e,f| aad, d^{-1}be, e^{-1}bf, f^{-1}cc\right\rangle
+\end{gather*}
+\end{itemize}
+
+\subsection{Ejercicio 2}
+Sabemos que $S_1\#S_2$ es orientable si y sólo si $S_1$ y $S_2$ son orientables.
+
+\subsection{Ejercicio 3}
+Por hipótesis supongamos $\chi(S)\geq -2$ entonces tenemos varias posibilidades
+\begin{itemize}
+\item $S$ es orientable, lo que implica que $2\geq n$, luego $n$ solo puede ser 0,1 y 2
+\begin{equation*}
+\left\lbrace \begin{array}{c}
+\mathbb{S}^2\qquad aa^{-1}bb^{-1}cc^{-1}dd^{-1}\\
+\mathbb{T}\qquad aba^{-1}b^{-1}cc^{-1}dd^{-1}\\
+2\mathbb{T}\qquad aba^{-1}b^{-1}cdc^{-1}d^{-1}
+\end{array}\right.
+\end{equation*}
+
+\item $S$ es no orientable, lo que implica $4\geq m$, luego $m$ solo pues ser 1,2,3 y 4
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+\mathbb{P}^2\qquad aabb^{-1}cc^{-1}dd^{-1}\\
+2\mathbb{P}^2\qquad aabbcc^{-1}dd^{-1}\\
+3\mathbb{P}^2\qquad aabbccdd^{-1}\\
+4\mathbb{P}^2\qquad aabbccdd
+\end{array}\right.
+\end{equation*}
+\end{itemize}
+
+Por otro lado si tenemos que es un octógono se tiene que $\chi(S)=1-4+V=-3+V$ como obligatoriamente tiene que haber al menos un vértice entonces es claro que $\chi(S)\geq -2$
+
+\subsection{Ejercicio 4}
+Debemos estudiar varios casos
+\begin{itemize}
+\item La superficie compacta es orientable
+\begin{equation*}
+\chi(S)=-4=2-2n\Rightarrow n=3\Rightarrow S\cong 3\mathbb{T}
+\end{equation*}
+
+\item La superficie compacta es no orientable
+\begin{equation*}
+\chi(S)=-4=2-n\Rightarrow n=6\Rightarrow S\cong 6\mathbb{P}^2
+\end{equation*}
+\end{itemize}
+
+\subsection{Ejercicio 5}
+\begin{itemize}
+\item $a_1a_2\ldots a_na_1^{-1}a_2^{-1}\ldots a_n^{-1}$
+
+Esta superficie es claramente orientable y únicamente debemos diferencias si $n$ es par o impar. Si es par hay un sólo vértice, mientras que si es impar hay dos.
+
+En el primer caso $S\cong \frac{n}{2}\mathbb{T}$, mientras que en el segundo $S\cong \frac{n-1}{2}\mathbb{T}$
+
+\item $a_1a_2\ldots a_na_1^{-1}a_2^{-1}\ldots a_{n-1}^{-1}a_n$
+
+Aquí no hay que diferencias entre par o impar, $S\cong n\mathbb{P}^2$
+
+\item $a_1^{-1}a_2\ldots a_na_1^{-1}a_2^{-1}\ldots a_n^{-1}$
+
+De nuevo no hay diferencias entre par o impar, $S\cong n\mathbb{P}^2$
+
+\item $a_1^{-1}a_2\ldots a_na_1^{-1}a_2^{-1}\ldots a_{n-1}^{-1}a_n$
+
+$S\cong (n-1)\mathbb{P}^2$
+\end{itemize}
+
+\subsection{Ejercicio 6}
+Como debe ser la suma conexa igual a $4\mathbb{P}^2$ es una superficie no orientable y $\chi(4\mathbb{P}^2)=-2$\\
+
+\begin{itemize}
+\item Solo una de las dos superficies es no orientable
+\begin{equation*}
+\chi(S_1\#S_2)=2-n+2-2m-2=-2\Rightarrow 2-n-2m=-2\Rightarrow 4=n+2m
+\end{equation*}
+
+De aquí se deduce que
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+n=0\:\wedge m=2 \Rightarrow S_1\cong \mathbb{S}^2\:\wedge S_2\cong 2\mathbb{T}\\
+n=2\:\wedge m=1 \Rightarrow S_1\cong 2\mathbb{P}^2\:\wedge S_2\cong \mathbb{T}
+\end{array}\right.
+\end{equation*}
+
+\item Ambas superficies son no orientables
+\begin{equation*}
+\chi(S_1\#S_2)=2-n+2-m-2=-2\Rightarrow 2-n-2m=-2\Rightarrow 4=n+m
+\end{equation*}
+De aquí se deduce
+
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+n=1\:\wedge m=3 \Rightarrow S_1\cong \mathbb{P}^2\:\wedge S_2\cong 3\mathbb{P}^2\\
+n=2\:\wedge m=2 \Rightarrow S_1\cong 2\mathbb{P}^2\:\wedge S_2\cong 2\mathbb{P}^2
+\end{array}\right.
+\end{equation*}
+
+\end{itemize}
+
+\subsection{Ejercicio 7}
+En este caso $4\mathbb{T}$ es una superficie orientable, luego tanto $S_1$ como $S_2$ deben de ser orientables. Por otro lado $\chi(4\mathbb{T})=2-2*4=-6$
+\begin{equation*}
+\chi(S_1\#S_2)=\chi(S_1)+\chi(S_2)-2=2-2n+2-2m-2=2-2*(n+m)=-6\Rightarrow (n+m)=4
+\end{equation*}
+
+Luego las únicas posibilidades son
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+n=0\:\wedge\:=4\quad S_1\cong \mathbb{S}^2\:\wedge\:S_1\cong 4\mathbb{T}\\
+n=1\:\wedge\:=3\quad S_1\cong \mathbb{T}\:\wedge\:S_1\cong 3\mathbb{T}\\
+n=2\:\wedge\:=2\quad S_1\cong 2\mathbb{T}\:\wedge\:S_1\cong 2\mathbb{T}
+\end{array}\right.
+\end{equation*}
+
+\subsection{Ejercicio 8}
+Volvemos al caso del ejercicio 6 y vamos probando uno a uno (en este caso $\chi(8\mathbb{P}^2)=2-8=-6$
+\begin{itemize}
+\item Una de las superficies es orientable y la otra no
+
+$\chi(S_1\#S_2)=2-n+2-2m-2=-6\Rightarrow 8=n+2m$
+
+Entonces las posibilidades que nos quedan son
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+n=2\:\wedge\:m=3\qquad S_1\cong 2\mathbb{P}^2\:\wedge\:S_2\cong 3\mathbb{T}\\
+n=4\:\wedge\:m=2\qquad S_1\cong 4\mathbb{P}^2\:\wedge\:S_2\cong 2\mathbb{T}\\
+n=6\:\wedge\:m=1\qquad S_1\cong 6\mathbb{P}^2\:\wedge\:S_2\cong \mathbb{T}\\
+n=8\:\wedge\:m=0\qquad S_1\cong 8\mathbb{P}^2\:\wedge\:S_2\cong \mathbb{S}^2
+\end{array}\right.
+\end{equation*}
+
+\item Ambas superficies son no orientables, lo que nos indica que
+
+$\chi(S_1\#S_2)=2-n+2-m-2=-6\Rightarrow 8=n+m$
+
+Entonces nos quedan las siguientes posibilidades
+\begin{equation*}
+\left\lbrace\begin{array}{c}
+n=1\:\wedge m=7\qquad S_1\cong \mathbb{P}^2\:\wedge\:S_2\cong 7\mathbb{P}^2\\
+n=2\:\wedge m=6\qquad S_1\cong 2\mathbb{P}^2\:\wedge\:S_2\cong 6\mathbb{P}^2\\
+n=3\:\wedge m=5\qquad S_1\cong 3\mathbb{P}^2\:\wedge\:S_2\cong 5\mathbb{P}^2\\
+n=4\:\wedge m=4\qquad S_1\cong 4\mathbb{P}^2\:\wedge\:S_2\cong 4\mathbb{P}^2
+\end{array}\right.
+\end{equation*}
+
+y todas las obtenidas de intercambiar los papeles entre $S_1$ y $S_2$.
+\end{itemize}
+
+\subsection{Ejercicio 9}
+Por un lado al hacer la función característica de Euler de $S_1$, que es no orientable, nos queda que
+\begin{equation*}
+\chi(S_1)=1-3+1=-1\Rightarrow S_1\cong 3\mathbb{P}^2
+\end{equation*}
+
+Por su parte $S_2$ es orientable y nos queda
+\begin{equation*}
+\chi(S_2)=1-3+2=0\Rightarrow S_2\cong \mathbb{T}
+\end{equation*}
+
+Y por último se obtiene que $S_1\#S_2$ es no orientable y $\chi(S_1\#S_2)=-1+0-2=-3\Rightarrow S_1\#S_2\cong 5\mathbb{P}^2$
+
+\subsection{Ejercicio 10}
+De nuevo $S_1$ es no orientable y obtenemos que
+\begin{equation*}
+\chi(S_1)=1-4+2=-1\Rightarrow S_1\cong 3\mathbb{P}^2
+\end{equation*}
+
+Por otra parte $S_2$ es también no orientable de donde se obtiene que
+\begin{equation*}
+\chi(S_2)=1-3+1=-1\Rightarrow S_2\cong 3\mathbb{P}^2
+\end{equation*}
+
+Y claramente se obtiene que la suma conexa es $S_1\#S_2\cong 6\mathbb{P}^2$
+
+\subsection{Ejercicio 11}
+\begin{gather*}
+abacb^{-1}c^{-1}\Rightarrow^{Corta} abd, d^{-1}acb^{-1}c^{-1}\\
+\Rightarrow^{reflejar}abd, cbc^{-1}a^{-1}d\\
+\Rightarrow^{rotar}bda, a^{-1}dcbc^{-1}\\
+\Rightarrow^{pegar}bddcbc^{-1} \\
+\Rightarrow^{cortar}bddce, e^{-1}bc^{-1}\\
+\Rightarrow^{reflejar}bddce, cb^{-1}e\\
+\Rightarrow^{rotar}ddceb,b^{-1}ec\\
+\Rightarrow^{pegar}ddceec\\
+\Rightarrow^{cortar}ddcf, eecf^{-1}\\
+\Rightarrow^{reflejar}ddcf,fc^{-1}e^{-1}e^{-1}\\
+\Rightarrow^{rotar}fddc,c^{-1}e^{-1}e^{-1}f\\
+\Rightarrow^{pegar}fdde^{-1}e^{-1}f\\
+\Rightarrow^{rotar}dde^{-1}e^{-1}ff\\
+\Rightarrow^{renombrar}ddeeff
+\end{gather*}
+
+\subsection{Ejercicio 12}
+Teneiendo en cuenta que 
+\begin{equation*}
+\mathcal{A}(\Pi_1(S_n))\cong \mathbb{Z}^{2n}\qquad \mathcal{A}(\Pi_1(S^*_{n+1}))\cong\mathbb{Z}_2\times \mathbb{Z}^n
+\end{equation*}
+, donde $S_n$ es el espacio asociado al esquema binario $\prod_{j=1}^n a_jc_ja_j^{-1}c_j^{-1}$, mientras que $S^*_n$ es el espacio asociado al esquema binario $\prod_{j=1}^n a_ja_j$.
+
+Po lo que nos dice el enunciado el único esquema binario factible es $aabbccddeeffjjhh$, el cual es claramente $8\mathbb{P}^2$. Por otro lado la característica de Euler de este es $\chi(8\mathbb{P}^2)=2-8=-6$ que es claramente menor que 7, con lo que hemos obtenido la única superficie compacta que verifica lo pedido.
 \end{document}

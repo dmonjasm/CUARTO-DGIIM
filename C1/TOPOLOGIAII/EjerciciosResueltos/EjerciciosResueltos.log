@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  12 FEB 2022 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  13 FEB 2022 01:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,17 +363,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./EjerciciosResueltos.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [2])
 \tf@toc=\write4
 \openout4 = `EjerciciosResueltos.toc'.
 
- [2]
+ [3]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-[3] [4]
-<images/toro-volumen.jpg, id=216, 403.5075pt x 237.88875pt>
+[4] [5]
+<images/toro-volumen.jpg, id=285, 403.5075pt x 237.88875pt>
 File: images/toro-volumen.jpg Graphic file (type jpg)
 <use images/toro-volumen.jpg>
 Package pdftex.def Info: images/toro-volumen.jpg  used on input line 119.
@@ -383,32 +383,32 @@ Overfull \hbox (13.63199pt too wide) in paragraph at lines 116--121
 []$\U/msb/m/n/10 T \OT1/cmr/m/n/10 = []$,
  []
 
-[5 <./images/toro-volumen.jpg>]
+[6 <./images/toro-volumen.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
-[7]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-[9] [10] [11] [12]
+[10] [11] [12] [13]
 Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[13] [14]
+[14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
@@ -418,7 +418,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--489
 
  []
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 519--521
 
  []
@@ -428,32 +428,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
-[17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
+[18]
+Overfull \hbox (3.01146pt too wide) detected at line 601
+[]
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+
+ []
+
+
+Overfull \hbox (22.81258pt too wide) detected at line 703
+\OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 #\OML/
+cmm/m/it/10 S[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 S[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 S[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2 = 2 \OMS/cm
+sy/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 2 \OMS/cmsy
+/m/n/10 ^^@ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 m \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m
+/n/10 2 = 2 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2 \OMS/cmsy/m/n/10 ^^C \OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m\OT1/cmr/m/n/1
+0 ) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 6 \OMS/cmsy/m/n/10 ) \OT1/cmr/m/n/10 
+(\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m\OT1/cmr/m/n/10 ) = 4
+ []
+
+[20] [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 800.
+
+Overfull \hbox (37.65932pt too wide) in paragraph at lines 799--800
+[]\OT1/cmr/m/n/10 Po lo que nos di-ce el enun-cia-do el ^^Suni-co es-que-ma bi-
+na-rio fac-ti-ble es $\OML/cmm/m/it/10 aabbccddeeffjjhh$\OT1/cmr/m/n/10 ,
+ []
+
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
  (./EjerciciosResueltos.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
 Package rerunfilecheck Info: File `EjerciciosResueltos.out' has not changed.
-(rerunfilecheck)             Checksum: 1A26D1B517223C9BBFAAD9204E1C1F6A;2547.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 573.
+(rerunfilecheck)             Checksum: 687D4E6ED04DB748DDFBA38975263D48;3334.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 800.
  ) 
 Here is how much of TeX's memory you used:
- 7404 strings out of 481239
- 108031 string characters out of 5920377
- 380724 words of memory out of 5000000
- 22483 multiletter control sequences out of 15000+600000
+ 7435 strings out of 481239
+ 108452 string characters out of 5920377
+ 382728 words of memory out of 5000000
+ 22496 multiletter control sequences out of 15000+600000
  540201 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,14n,35p,769b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,14n,35p,769b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -468,10 +499,10 @@ s/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EjerciciosResueltos.pdf (17 pages, 222535 bytes).
+Output written on EjerciciosResueltos.pdf (22 pages, 236611 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 429 PDF objects out of 1000 (max. 8388607)
+ 385 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 398 words of extra memory for PDF output out of 10000 (max. 10000000)
 
