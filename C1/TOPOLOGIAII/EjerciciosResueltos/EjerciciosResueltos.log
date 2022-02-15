@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  13 FEB 2022 01:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  13 FEB 2022 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,7 +373,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
  []
 
 [4] [5]
-<images/toro-volumen.jpg, id=285, 403.5075pt x 237.88875pt>
+<images/toro-volumen.jpg, id=295, 403.5075pt x 237.88875pt>
 File: images/toro-volumen.jpg Graphic file (type jpg)
 <use images/toro-volumen.jpg>
 Package pdftex.def Info: images/toro-volumen.jpg  used on input line 119.
@@ -434,17 +434,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 546--547
  []
 
 [18]
-Overfull \hbox (3.01146pt too wide) detected at line 601
+Overfull \hbox (44.53891pt too wide) detected at line 588
+\OT1/cmr/m/n/10 ^^A([\U/msb/m/n/10 S[]\OML/cmm/m/it/10 ; ^^Y[]\OT1/cmr/m/n/10 ]
+) = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 )[
+]([\OML/cmm/m/it/10 ^^O[]\OT1/cmr/m/n/10 ])\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 =
+ \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 ^^O[]\OT1/cmr/m/n/10 ]\OMS
+/cmsy/m/n/10 g\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 ^^A([\U/msb/m/n/10 P[]\OML/cm
+m/m/it/10 ; Id[]\OT1/cmr/m/n/10 ] = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 Id[]\OT1/cmr/m/n/10 )[](^^E[](\U/msb/m/n/10 P[]\OML/cmm/m/it/10 ; p\OT
+1/cmr/m/n/10 ))\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = ^^E[](\U/msb/m/n/10 P[]\OML
+/cmm/m/it/10 ; p\OT1/cmr/m/n/10 )
+ []
+
+
+Overfull \hbox (3.01146pt too wide) detected at line 628
 []
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
 
-Overfull \hbox (22.81258pt too wide) detected at line 703
+Overfull \hbox (22.81258pt too wide) detected at line 730
 \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 #\OML/
 cmm/m/it/10 S[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cm
 m/m/it/10 S[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/
@@ -457,52 +470,63 @@ r/m/n/10 (\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m\OT1/cmr/m/n/1
 (\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 m\OT1/cmr/m/n/10 ) = 4
  []
 
-[20] [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 800.
+[21] [22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 827.
 
-Overfull \hbox (37.65932pt too wide) in paragraph at lines 799--800
+Overfull \hbox (37.65932pt too wide) in paragraph at lines 826--827
 []\OT1/cmr/m/n/10 Po lo que nos di-ce el enun-cia-do el ^^Suni-co es-que-ma bi-
 na-rio fac-ti-ble es $\OML/cmm/m/it/10 aabbccddeeffjjhh$\OT1/cmr/m/n/10 ,
  []
 
-[22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
+[23]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 827.
  (./EjerciciosResueltos.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
-Package rerunfilecheck Info: File `EjerciciosResueltos.out' has not changed.
-(rerunfilecheck)             Checksum: 687D4E6ED04DB748DDFBA38975263D48;3334.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 800.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 827.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 827.
+
+
+Package rerunfilecheck Warning: File `EjerciciosResueltos.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `EjerciciosResueltos.out':
+(rerunfilecheck)             Before: 86A9EC965A07B6C268CED5322B690A14;3460
+(rerunfilecheck)             After:  D6AF8E285D6334329828D94581195D14;3397.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 827.
  ) 
 Here is how much of TeX's memory you used:
- 7435 strings out of 481239
- 108452 string characters out of 5920377
- 382728 words of memory out of 5000000
- 22496 multiletter control sequences out of 15000+600000
+ 7440 strings out of 481239
+ 108523 string characters out of 5920377
+ 384728 words of memory out of 5000000
+ 22498 multiletter control sequences out of 15000+600000
  540201 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,14n,35p,769b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on EjerciciosResueltos.pdf (22 pages, 236611 bytes).
+pdfTeX warning (dest): name{subsection.2.12} has been referenced but does not
+ exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on EjerciciosResueltos.pdf (23 pages, 242617 bytes).
 PDF statistics:
- 429 PDF objects out of 1000 (max. 8388607)
- 385 compressed objects within 4 object streams
- 74 named destinations out of 1000 (max. 500000)
- 398 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 448 PDF objects out of 1000 (max. 8388607)
+ 401 compressed objects within 5 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 414 words of extra memory for PDF output out of 10000 (max. 10000000)
 
