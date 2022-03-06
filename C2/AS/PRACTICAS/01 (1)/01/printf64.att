@@ -1,0 +1,31 @@
+
+printf64:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .plt:
+
+0000000000401000 <.plt>:
+  401000:	ff 35 02 20 00 00    	pushq  0x2002(%rip)        # 403008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  401006:	ff 25 04 20 00 00    	jmpq   *0x2004(%rip)        # 403010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40100c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000401010 <printf@plt>:
+  401010:	ff 25 02 20 00 00    	jmpq   *0x2002(%rip)        # 403018 <printf@GLIBC_2.2.5>
+  401016:	68 00 00 00 00       	pushq  $0x0
+  40101b:	e9 e0 ff ff ff       	jmpq   401000 <.plt>
+
+0000000000401020 <exit@plt>:
+  401020:	ff 25 fa 1f 00 00    	jmpq   *0x1ffa(%rip)        # 403020 <exit@GLIBC_2.2.5>
+  401026:	68 01 00 00 00       	pushq  $0x1
+  40102b:	e9 d0 ff ff ff       	jmpq   401000 <.plt>
+
+Desensamblado de la sección .text:
+
+0000000000401030 <_start>:
+  401030:	48 c7 c7 2c 30 40 00 	mov    $0x40302c,%rdi
+  401037:	48 8b 34 25 28 30 40 	mov    0x403028,%rsi
+  40103e:	00 
+  40103f:	48 31 c0             	xor    %rax,%rax
+  401042:	e8 c9 ff ff ff       	callq  401010 <printf@plt>
+  401047:	48 31 ff             	xor    %rdi,%rdi
+  40104a:	e8 d1 ff ff ff       	callq  401020 <exit@plt>

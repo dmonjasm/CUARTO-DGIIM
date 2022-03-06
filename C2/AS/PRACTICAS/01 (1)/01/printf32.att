@@ -1,0 +1,28 @@
+
+printf32:     formato del fichero elf32-i386
+
+
+Desensamblado de la sección .plt:
+
+08049000 <.plt>:
+ 8049000:	ff 35 04 b0 04 08    	pushl  0x804b004
+ 8049006:	ff 25 08 b0 04 08    	jmp    *0x804b008
+ 804900c:	00 00                	add    %al,(%eax)
+	...
+
+08049010 <printf@plt>:
+ 8049010:	ff 25 0c b0 04 08    	jmp    *0x804b00c
+ 8049016:	68 00 00 00 00       	push   $0x0
+ 804901b:	e9 e0 ff ff ff       	jmp    8049000 <.plt>
+
+Desensamblado de la sección .text:
+
+08049020 <_start>:
+ 8049020:	ff 35 10 b0 04 08    	pushl  0x804b010
+ 8049026:	68 14 b0 04 08       	push   $0x804b014
+ 804902b:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8049030:	e8 db ff ff ff       	call   8049010 <printf@plt>
+ 8049035:	83 c4 08             	add    $0x8,%esp
+ 8049038:	b8 01 00 00 00       	mov    $0x1,%eax
+ 804903d:	31 db                	xor    %ebx,%ebx
+ 804903f:	cd 80                	int    $0x80
