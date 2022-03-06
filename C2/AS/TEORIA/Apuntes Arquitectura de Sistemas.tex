@@ -179,5 +179,267 @@ Otra posible solución incluso mejor es separar el bus de E/S en dos buses en fu
 \includegraphics[scale=1,width=\textwidth]{arquitectura_actual.png}
 \end{figure}
 
+\subsubsection{Componentes}
+\textbf{Componentes básicos}
+\begin{itemize}
+\item Procesadores
+\item Jerarquía de memoria.
 
+Surge el problema de que cuanto menor es el tiempo de acceso mayor es el coste por bit, y que cuanto mayor es la capacidad menor la velocidad de acceso. Para lidiar con este dilema surge la jerarquía de memoria. En la jerarquía de memoria según se desciende disminuye el coste por bit, aumenta la capacidad, aumenta el tiempo de acceso y se reduce la frecuencia de acceso a ese nivel de la jerarquí por parte del procesador.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{jerarquiamemoria.png}
+\end{figure}
+
+
+\item Buses de interconexión: AGP, Hypertransport, IDE, IEEE 1394, ISA, M.2, PCI, PCIe, SATA, SCSI, USB, ...
+\item Entrada/Salida: controladores, canales de DMA, procesadores de E/S,...
+\item Periféricos: altavoz, disco, impresora, micrófono, monitor, ratón, teclado, ...
+\end{itemize}
+
+\textbf{Interfaz del procesador}
+\begin{itemize}
+\item Conjunto de instrucciones
+	\begin{itemize}
+	\item transferencia: \begin{verbatim}
+	in, mov, out,...
+	\end{verbatim}
+	
+	\item modificación: \begin{verbatim}
+	add, and, div, mul, or, sub,...
+	\end{verbatim}
+	
+	\item control: \begin{verbatim}
+	cli, sti,...
+	\end{verbatim}
+	
+	\href{http://jegerlehner.ch/intel/IntelCodeTable_es.pdf}{Chuleta instrucciones 8086}
+	\end{itemize}
+
+\item Registros generales y especiales
+
+\item Al menos dos modos de ejecución con diferentes privilegios:
+	\begin{itemize}
+	\item privilegiado: acceso completo
+	\item no privilegiado: acceso limitado $\Rightarrow$ excepción
+	\end{itemize}
+	
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{privilegios.png}
+\end{figure}
+\end{itemize}
+
+\href{https://upload.wikimedia.org/wikipedia/commons/4/41/Table_of_x86_Registers.png}{Registros del procesador: familia x86-64} \\
+
+En el modo núcleo (modo privilegiado, modo kernel, ...) se pueden ejecutar instrucciones privilegiadas y se puede accesder a áreas de memoria protegidas. Sóla mente el núcleo o kernel del sistema operativo puede ejecutar instrucciones en modo privilegiado. Algunos ejemplos de instrucciones privilegiadas son:
+
+\begin{itemize}
+\item Acceso a los dispositivos de E/S: consultar el estado de los dispositivos de E/S, llevar a cabo DMA (Direct Memory Access), atrapar interrupciones.
+
+\item Manipular la unidad de gestión de memoria (MMU): manipualar las tablas de segmento y páginas, cargar y vaciar el búfer de traducción anticipada (TLB)
+
+\item Configurar varios modos de funcionamiento: nivel de prioridad de interrupciones, alterar el vector de interrupción.
+
+\item Utilizar la instrucción $halt$ para activar el modo de ahorro de energía. Esta instrucción detiene abruptamente la CPU hasta que la siguiente interrupción externa ha sido tratada. También es común que se ejecute cuando no hay trabajo inmediato que ejecutar, de forma que se pone al procesador en un estado ocioso.
+\end{itemize}
+
+El procesador comprueba el nivel de privilegio en la ejecución de cada instrucción. Los posibles cambios de privilegio son:
+
+\begin{itemize}
+\item Usuario $\Rightarrow$ Núcleo: ganar privilegios
+	\begin{itemize}
+	\item Al arrancar.
+	\item Llamada al sistema.
+	\item Interrupción hardware.
+	\item Excepción.
+	\end{itemize}
+	
+\item Núcleo $\Rightarrow$ Usuario: perder privilegios
+	\begin{itemize}
+	\item El sistema operativo prepara el entorno necesario para que la aplicación comience su ejecución.
+	
+	\item El sistema operativo termina alguna de sus actividades y devuelve el control a la aplicación.
+	\end{itemize}
+\end{itemize}
+
+\textbf{Ciclo de instrucción:} se denomina ciclo de instrucción al procesamiento requerido por una única instrucción. El ciclo de instrucción básco es:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{ciclo_instruccion.png}
+\end{figure}
+
+\begin{itemize}
+\item El procesador capta una instrucción desde memoria.
+
+\item La instrucción debe ser decodificada para averiguar su tipo.
+
+\item Conocido el tipo puede ser necesario la captación de nuevos operandos.
+
+\item Se ejecuta la instrucción.
+
+\item Se almacenan los resultados de la ejecución.
+
+\item El proceso se repite instrucción a instrucción hasta que el programa termina.
+\end{itemize}
+
+\textbf{Tendencias en el diseño de procesadores}
+\begin{itemize}
+\item CISC (Complex Instruction Set Computing)$\Rightarrow$ RISC (Reduced Instruction Set Computing) $\Rightarrow$ VLIW (Very Long Instruction Word).
+
+\textbf{CISC}: Es un tipo de diseño de microprocesador. Este contiene un conjunto de instrucciones muy grande que van desde instrucciones muy simples a instrucciones muy especializadas. Se introducen instrucciones que en un diseño RISC se requieren de varias instrucciones, reduciendo así el número de instrucciones de los programas, pero al ser instrucciones más complejas acaban requiriendo más ciclos de reloj para su ejecución.\\
+
+\textbf{RISC}: Como su nombre dice se trata de un diseño de microprocesador. Este diseño contiene instrucciones muy simples y con la combinación de ellas se puede obtener cualquier programa. Si bien su ejecución es rápida, pues son instrucciones muy simples, su tamaño en memoria puede llegar a ser muy grande, pues la ejecución de un programa simple puede requerir de muchas instrucciones RISC.
+
+\textbf{VLIW}: se trata de un procesador segmentado que puede terminar más de una operación por ciclo en el que el compilador es el principal responsable de agrupar operaciones que pueden procesarse en paralelo para definir instrucciones que, de esta forma, se codifican a través de las denominadas palabras de instrucción larga (LIW) o muy larga (VLIW)
+
+\item Ejecución concurrente sobre procesadores: intento de explotación del paralelismo entre instrucciones (ILP). ILP es una mediad de cuántas operaciones pueden ejecutarse simultáneamente sin afectar al resultado.
+\end{itemize}
+
+\textbf{Técnicas de explotación de ILP}
+\begin{itemize}
+\item \textbf{Segmentación de cauce:} la ejecución de múltiples instrucciones puede solaparse total o parcialmente. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{segmentacion.png}
+\end{figure}
+
+\item \textbf{Ejecución superescalar:} múltiples unidades de ejecución se utilizan para ejecutar múltiples instrucciones en paralelo. Un procesador superescalar es un procesador segmentado que puede finalizar más de una instrucción por ciclo y que posee recursos hardware para extraer el paralelismo entre instrucciones. Para aprovechar al máximo el procesamiento de instrucciones en paralelo que proporcionan las distintas estapas, el procesador incluye una serie de elementos como ventanas de instruccioens o estaciones de buffers, buffers de renombramiento, buffers de reordenamiento, etc.
+
+\item \textbf{Computación con instrucciones explícitamente paralelas (EPIC):} uso del compilador en lugar de complejos circuitos para identificar y explotar el ILP. La intención era permiter un escalado simple del rendimiento sin disparar las frecuencias del reloj. Tiene su base en VLIW.
+
+\item \textbf{Ejecución fuera de orden:} ejecución de instrucciones en cualquier orden que no viole las dependencias entre instrucciones. El orden de ejecución depende de la disponibilidad de los datos de entrada y las unidades de ejecución, no del orden original del programa.
+
+\item \textbf{Renombrado de registros:} técnica para evitar la innecesaria serialización de instrucciones por la reutilización de registros. Puede ser aplicado por el propio compilador al asignar los registros de la arquitectura, pero también puede implementarse en hardware. Esto es lo usual en procesadores superescalares, donde se incluyen estructuras de buffers con una serie de campos específicos (por ejemplo, buffers de renombramiento).
+
+\item \textbf{Ejecución especulativa:} permitir la ejecución de instrucciones completas, o partes, antes de conocer con seguridad si su ejecución debe tener lugar. De esta forma se previene el retraso que habría, de tener que hacer el procesamiento después de saber que es necesario. Si resulta que el procesamiento no era necesario, los cambios realizados se revierten y los resultados se ignoran.
+
+\item \textbf{Predicción de salto:} se utiliza para evitar quedar parado antes de que se resuelvan las dependencias de control. Se utiliza en conjuntción con la ejecución especulativa. Se basa en determinar la alternativa más probable, y continuar el procesamiento, tras las instrucción de salto, con la secuencia de instrucciones que corresponde a dicha opción más probable. Cuando la condición de salto se evalúa, se comprueba si la predicción que se había hecho era correcta o no. Si no lo era habrá que retomar el procesamiento a partir de la primera instrucción de la alternativa que no se tomó, es decir, de la menos probable.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{predicionsalto.png}
+\end{figure}
+
+\item \textbf{Multihebra simultánea (SMT):} técnica que permite la ejecución de múltiples hebras de ejecución para aprovechar mejor las unidades funcionales de los procesadores superescalares.
+\end{itemize}
+
+\textbf{Jerarquí de memoria:} Se requiere de jerarquía de memoria entre otras cosas por la gran diferencia de velocidad entre procesador y memoria. La jerarquía de memoria puede aliviar este problema gracias a \textbf{los principios de localidad} y a la \textbf{regla 90/10}:
+\begin{itemize}
+\item Localidad \textbf{espacial:} la información a la que se accede suelen estar próxima a la que ha sido accedida con anterioridad.
+
+\item Localidad \textbf{temporal:} la información a la que se accede una vez suele volver a ser utilizada.
+
+\item Regla 90/10: el 10\% del código realiza el 90\% del trabajo.
+\end{itemize}
+
+\textbf{Tipos de memoria RAM}:
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=80mm]{tiposram.png}
+\end{figure}
+\begin{itemize}
+\item SRAM (Statica random-access memory): Es un tipo de memoria que utiliza circuitería flip-flop para almacenar cada bit. La diferencia con una DRAM es que la segunda debe de refrescarse periódicamente. La SRAM es más rápida y más cara que la DRAM. Se utiliza típicamente para la caché y los registros internos de la CPU mientras que la DRAM se utiliza para la memoria principal.
+
+\item DDR SDRAM I (Double Data Rate Synchronous RAM): Entre otras cosas las memorias DDR como su nombre indica tienen dos ciclos de reloj, es decir se hace un envío de información cuando el reloj sube y otro cuando el reloj baja. Con esto hace que una memoria DDR con una frecuencia de reloj x duplique el ancho de banda de una SDR SDRAM con igual frecuencia de reloj. Este tipo de memoria se ha visto superada por las versiones 2, 3, 4 y 5 de la misma. Ninguno de sus sucesores tienen compatibilidad ni con su predecesor ni con su sucesor, lo que quiere decir que una RAM DDR1 SDRAM no es compatible con DDR2, DDR3, .... 
+\item DDRAM II
+\end{itemize}
+
+\textbf{Cantidad de memoria en registros}
+\begin{itemize}
+\item Tipos de registros:
+
+\item RISC:
+	\begin{itemize}
+	\item 32 de propósito general (32 ó 64 bits)
+	\item 32 de punto flotante (64 bits IEEE 754)
+	\item multimedia (64,...,256 bits)
+	\end{itemize}
+
+\item CISC: 
+	\begin{itemize}
+	\item IA32: 8 de propósito general, 8 de punto flotante, 8 multimeida.
+	\item IA64: 128 de propósito general, 128 de punto flotante.
+	\end{itemize}
+
+\item Algunos procesadores tienen varios conjuntos de estos registros (ventanas de registros)
+\end{itemize}
+
+\textbf{Análisis de una jerarquía de dos niveles}
+\begin{equation*}
+\overline{T}_{acceso}=(1-T_{fallos})\times T_{cache}+T_{fallos}\times(T_{cache}+T_{ram})
+\end{equation*}
+
+\textbf{Parámetros de diseño de memorias caché}
+\begin{itemize}
+\item Tamaño:
+	\begin{itemize}
+	\item L1:8,...,256KB
+	\item L2:1,...,16MB
+	\item L3:4,...,128MB
+	\end{itemize}
+	
+\item Tamaño de bloque: 32,...,128B
+
+\item Tiempo de acceso: 1,...,10ns
+
+\item Política de búsqueda:
+	\begin{itemize}
+	\item bajo demanda
+	\item anticipativas
+	\end{itemize}
+
+\item Política de colocación:
+	\begin{itemize}
+	\item correspondencia directa: el bloque $B_j$ de memoria principal se puede ubicar sólo en el marco de bloque que cumple la siguiente relación $i=j\mod{m}$, donde $m$ es el número total de líneas que tiene la cache.
+	
+	\item asociativa por conjuntos: En la corresponcencia asociativa por conjuntos las líneas de memoria caché se agrupan en $v=2^d$ conjunto con $k$ líneas/conjuto o vías. Se cumple que el número total de marcos de bloque que tiene la caché $m=v*k$. Un bloque $B_j$ de memoria principal se puede ubicar sólo en el conjunto $C_i$ de memoria caché que cumple la siguiente relación $i=j\mod{v}$.
+	
+	\item completamente asociativa: la caché se organiza en un único conjunto de caché con varias líneas de caché. Un bloque de memoria puede ocupar cualquiera de las lineas de caché. La organización de la caché se puede enmarcar como una matriz de filas (1*m).
+	\end{itemize}
+	
+\item Política de reemplazo:
+	\begin{itemize}
+	\item LRU
+	\item FIFO
+	\item aleatoria
+	\end{itemize}
+
+\item Política de actualización:
+	\begin{itemize}
+	\item escritura directa
+	\item post-escritura
+	\end{itemize}
+
+\item Otras características importantes:
+	\begin{itemize}
+	\item caché de víctimas
+	\item inclusiva/exclusiva
+	\item unificada/separada
+	\end{itemize}
+\end{itemize}
+
+\textbf{Políticas de colocación: correspondencia directa}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=85mm]{correspondenciadirecta.png}
+\end{figure}
+\newpage
+
+\textbf{Políticas de colocación: correspondencia totalmente asociativa}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=85mm]{totalmenteasociativa.png}
+\end{figure}
+
+\newpage
+
+\textbf{Políticas de colocación: correspondencia asociativa por conjuntos (2 M/C)}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=85mm]{porconjuntos.png}
+\end{figure}
 \end{document}
