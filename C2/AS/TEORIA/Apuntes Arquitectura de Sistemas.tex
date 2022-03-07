@@ -542,7 +542,7 @@ El procesador debe tener una unidad de gestión de memoria (MMU, Memory Manageme
 
 \textbf{Buffer de traducción anticipada (TLB)}
 
-Traducir direcciones por software es muy lento, mientras que mediante hardware puede hacerse más rápido y además podemos añadir una caché de traducciones (TLB):
+Traducir direcciones por software es muy lento, mientras que mediante hardware puede hacerse más rápido y además podemos añadir una caché de traducciones (TLB). En principio, toda referencia a la memoria virtual puede causar dos accesos a memoria física, uno para buscar la entrada en la tabla de página apropiada y otra para buscar los datos solicitados. De esa forma, el esquema de memoria virtual básico causaría el efecto de duplicar el tiempo de acceso a la memoria. Para solventar este problema, la mayoría de esquemas de la memoria virtual utilizan una \textit{cache} especial de alta velocidad para las entradas de la tabla de páginas, habitualmente denominada buffer de traducción anticipada. TLB:
 \begin{itemize}
 \item Conenido: pares de direcciones virtual/física.
 
@@ -570,7 +570,141 @@ Funcionamiento:
 	\end{itemize}
 
 \item Es fundamental conocer la interacción TLB/caché.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{direccionamientocache.png}
+\end{figure}
+
+El proceso que sigue generalmente es el siguiente:
+\begin{enumerate}
+\item Dada una dirección virtual, el procesador primero examina la TLB.
+
+\item Si la entrada de la tabla de páginas solicitada está presente (acierto en la TLB), entonces se recupera el número de marco y se construye la dirección real.
+
+\item Si la entrada de la tabla de páginas no se encuentra (fallo en la TLB), el procesador utiliza el número de página para indexar la tabla de páginas del proceso y examinar la correspondiente entrada de la tabla de páginas.
+	
+	\begin{enumerate}
+	\item Si el bit de presente está puesto a 1, entonces la página se encuentra en memoria principal, y el procesador puede recuperar el número de marco desde la entrada de la tabla de páginas para construir la dirección real. El procesador también autorizará la TLB para incluir este nueva entrada de tabla de páginas.
+	
+	\item Si el bit presente no está puesto a 1, entonces la página solicitada no se encuentra en memoria principal y se produce un fallo de acceso memoria, llamado \textbf{fallo de página}.
+	\end{enumerate}
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{TLB.png}
+\end{figure}
+
+\newpage
+
+\textbf{Esquemas de direccionamiento de caché}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{esquemacache.png}
+\end{figure}
+
+\textbf{Control de Entrada/Salida}
+
+El sistema operativo inicia una operación E/S:
+\begin{itemize}
+\item Instrucciones especiales: \textbf{in}/\textbf{out} (x86)
+
+\item E/S en memoria: \textbf{mov} (x86)
+	\begin{itemize}
+	\item Acceso al hardware como direcciones de memoria.
+	\item Requiere de una MMU capaz de traducir el bus de E/S.
+	\end{itemize}
+\end{itemize}
+
+Por otro lado es SO puede averiguar cuando una orden E/S finaliza de las siguientes formas:
+\begin{itemize}
+\item Sondeo: leer el puerto de estado hasta encontrar el valor adecuado. La CPU continuamente rueba todos y cada uno de los dispositivos conectados a él para detectar si algún dispositivo necesita atención de la CPU. Algoritmo de sondeo:
+	\begin{enumerate}
+	\item Cuando un dispositivo tiene algún comando para ser ejecutado por la CPU, comprueba continuamente el bit de ocupado de la CPU hasta que se borra (0).
+	
+	\item Cuando se borra el bit de ocupado, el dispositivo establece el bit de escritura en su registro de comando y escribe un byte en el registro de salida de datos.
+	
+	\item Ahora el dispositivo establece (1) el bit de comando listo.
+	
+	\item Cuando la CPU verifica el bit de comando listo y lo encuentra establecido (1), establece (1) su bit de ocupado.
+	
+	\item Luego, la CPU lee el registro de comando del dispositivo y ejecuta el comando del dispositivo.
+	
+	\item Después de la ejecución del comando, la CPU borra (0) el bit de comando listo, el bit de error del dispositivo para indicar la ejecución exitosa del comando del dispositivo y además borra (0) su bit de ocupado para indicar que la CPU está libre para ejecutar el comando de algún otro dispositivo.
+	\end{enumerate}	 
+
+\item Interrupción: existe una línea física mediante la cual se avisa del fin de la operación y se cede el control al SO. Procesamiento de interrupciones:
+	\begin{enumerate}
+	\item El dispositivo genera una señal de interrupción hacia el procesador.
+	
+	\item El procesador termina la ejecución de la instrucción actual antes de responder a la interrupción.
+	
+	\item El procesador comprueba si hay petición de interrupción pendiente, determina que hay una y manda y una señal de reconocimiento al dispositivo que produjo la interrupción. Este reconocimiento permite que el dispositivo elimine su señal de interrupción.
+	
+	\item En ese momento, el procesador necesita prepararse para transferir el control a la rutina de interrupción. Para comenzar, necesita salvar la información requerida para reanudar el programa actual en el momento de la interrupción. La información mínima requerida es la palabra de estado del programa (PSW) y la posición de la siguiente instrucción que se va a ejecutar, que está contenida en el contador de programa. Esta información se peude apilar en la pila de control de sistema.
+	
+	\item A continuación, el procesador carga del contador del programa con la posición del punto de entrada de la rutina de interrupción que responderá a esta interrupción. Dependiendo de la arquitectura de computador y del diseño del sistema operativo, puede haber un único programa, uno por cada tipo de interrupción o uno por cada dispositivo y tipo de interrupción. Si hay más de una rutina de manejo de interrupción, el procesador debe determinar cuál invocar. Esta información puede estar incluida en la señal de interrupción original o el procesador puede tener que realizar una petición al dispositivo que generó la interrupción para obtener una respuesta que contiene la información requerida.
+	
+	\item En este momento, el contador del programa y la PSW vinculados con el programa interrumpido se han almacenado en la pila del sistema. Sin embargo, hay otra información que se considera parte del estado del programa en ejecución. En concreto, se necesita salvar el contenido de los registros del procesador, puesto que estos registros los podría utilizar el manejador de interrupciones. Por tanto, se deben salvar todos estos valores, así como cualquier otra información de estado. Generalmente, el manejador de interrupción comenzará salvando el contenido de todos los registros en pila. 
+	
+	\item El manejador de interrupción puede en este momento comenzar a procesar la interrupción. Esto incluirá un examen de la información de estado relacionada con la operación de E/S o con otro evento distinto que haya causado la interrupción. Asimismo, puede implicar el envío de mandtos adicionales o reconocimientos al dispositivo de E/S.
+	
+	\item Cuando se completa el procesamiento de la interrupción, se recuperarn los valores de los registros salvados en la pila y se restituyen los registros.
+	
+	\item La última acción consiste en restituir de la pila los valores de la PSW y del contador del programa. Como resultado, la siguiente instrucción que se va a ejecutar corresponderá al programa previamente interrumpido.
+	\end{enumerate}
+
 
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{interrupciones.png}
+\end{figure}
+
+\textbf{Eventos:excepciones e interrupciones}
+
+Eventos o "situaciones especiales":
+\begin{itemize}
+\item Excepciones (síncronas): llamadas al sistema.
+
+\item Interrupciones (asíncronas): fin de operación de DMA.
+\end{itemize}
+
+Hay otras diferencias como el origen, la predictibilidad o la reproducibilidad. El manejo de excepciones e interrupciones debe producirse a tiempo y es específico para cada tipo de procesador.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{eventos.png}
+\end{figure}
+
+\textbf{Interrupciones software (int/syscall - swi)}
+
+Se tratan de un mecanismo para ceder el contro al SO elevando el nivel de privilegio. Son síncroncas, predecibles y reproducibles, luego aunque se llamen interrupciones son excepciones. 
+
+Un mismo programa aislado siempre provoca las mismas:
+\begin{itemize}
+\item Instrucción desconocida.
+\item Instrucción errónea (divisón entre 0).
+\item Modo de direccionamiento erróneo.
+\item Violación del espacio de direcciones.
+\item Llamada al sistema.
+\item Fallo de página (solo políticas de paginación locales).
+\end{itemize}
+
+Deben atenderse, sino se daría un comportamiento erróneo. Producen una sobrecarge en espacio y tiempo fuera del programa que la solicita.\\
+
+\textbf{Interrupciones}
+
+Se trata de un mecanismo para solicitar la atención de la CPU. Son asíncronas, no predecibles y no reproducibles. Un periférico puede solicitar una interrupción independientemente del estado de la CPU o el proceso actual.
+
+Ejemplos:
+	\begin{itemize}
+	\item Eventos externos: sensores
+	\item Final de una operación DMA.
+	\item Final de una operación E/S.
+	\end{itemize}
 
 \end{document}
