@@ -198,6 +198,7 @@ Surge el problema de que cuanto menor es el tiempo de acceso mayor es el coste p
 \item Periféricos: altavoz, disco, impresora, micrófono, monitor, ratón, teclado, ...
 \end{itemize}
 
+\subsubsection{Procesador}
 \textbf{Interfaz del procesador}
 \begin{itemize}
 \item Conjunto de instrucciones
@@ -327,7 +328,9 @@ El procesador comprueba el nivel de privilegio en la ejecución de cada instrucc
 \item \textbf{Multihebra simultánea (SMT):} técnica que permite la ejecución de múltiples hebras de ejecución para aprovechar mejor las unidades funcionales de los procesadores superescalares.
 \end{itemize}
 
-\textbf{Jerarquí de memoria:} Se requiere de jerarquía de memoria entre otras cosas por la gran diferencia de velocidad entre procesador y memoria. La jerarquía de memoria puede aliviar este problema gracias a \textbf{los principios de localidad} y a la \textbf{regla 90/10}:
+\subsubsection{Memoria}
+
+\textbf{Jerarquía de memoria:} Se requiere de jerarquía de memoria entre otras cosas por la gran diferencia de velocidad entre procesador y memoria. La jerarquía de memoria puede aliviar este problema gracias a \textbf{los principios de localidad} y a la \textbf{regla 90/10}:
 \begin{itemize}
 \item Localidad \textbf{espacial:} la información a la que se accede suelen estar próxima a la que ha sido accedida con anterioridad.
 
@@ -442,4 +445,132 @@ El procesador comprueba el nivel de privilegio en la ejecución de cada instrucc
 \centering
 \includegraphics[scale=1,width=85mm]{porconjuntos.png}
 \end{figure}
+
+\textbf{Protección de memoria.}
+
+El sistema operativo debe proteger a los programas entre sí y a él mismo de programas maliciosos o erróneos. Este problema se soluciona utilizando los llamados espacios de direcciones (AS, Address Space). El espacio de direcciones de un computador corresponde al rango de direcciones disponible para un programa de computador.
+
+El procesador dispone de recursos para establecer límites al espacio de direcciones de memoria accesibles por los programas: memoria virtual.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1,width=\textwidth]{memvirtual.png}
+\end{figure}
+\newpage
+
+Hay varias implementaciones:
+
+\begin{itemize}
+\item Segmentaciones: tamaño variable y arbitrario.
+	\begin{itemize}
+	\item registro base: principio del espacio de direcciones.
+	\item registro límite: tamaño del espacio de direcciones.
+	\end{itemize}
+
+\item Paginación: tamaño variable en múltiplos de página.
+	\begin{itemize}
+	\item tablas de páginas: lista de páginas de un proceso.
+	\end{itemize}
+\end{itemize} 
+
+La mayoría de los SO asocian un espacio de direcciones diferente para cada proceso (salvo SASOS, Single Adrress Space Operating System):
+\begin{itemize}
+\item Ventaja $\Rightarrow$ protección automática.
+
+\item Inconveniente $\Rightarrow$ dificulta la compartición
+\end{itemize}
+
+Las partes de un espacio de direcciones pueden colocarse en cualquier parte de la memoria física. Algunos espacios de direcciones deben ocupar lugares específicos de la memoria física, ej: dispositivos de E/S.
+
+El procesador debe tener una unidad de gestión de memoria (MMU, Memory Management Unit) extremadamente eficiente porque la traducción entre direcciones virtual-física puede realizarse más de una vez por instrucción. Se requiere una traducción por cada acceso a memoria.\\
+
+\textbf{Traducción de dirección virutal a dirección física}
+\begin{enumerate}
+\item La ejecución de una instrucción puede requerir varias traducciones, por ejemplo:
+	\begin{itemize}
+	\item Captacińo de la instrucción.
+	
+	\item Captación del dato.
+	
+	\item Escritura del resultado.
+	\end{itemize}
+	
+\item Cada traducción puede requerir varios accesos a memoria:
+	\begin{itemize}
+	\item Segmentación + paginación.
+	
+	\item Tablas de página multinivel.
+	\end{itemize}
+	
+\item Se necesita una tabla de traducción por cada espacio de direcciones.
+
+\item Dependerá del tamaño de las direcciones virtuales y físicas, pero habrán al menos tantas entradas como páginas tenga el proceso.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=80mm]{traduccion.png}
+\end{figure}
+\newpage
+
+\textbf{Fucnionamiento de la segmentación (x86)}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{segmentacionx86.png}
+\end{figure}
+\newpage
+
+\textbf{Segmentación + paginación (x86\_64)}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{segmentacionpaginacion.png}
+\end{figure}
+
+\textbf{Tabla de páginas multinivel (x86\_64)}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=85mm]{tabla_multinivel.png}
+\end{figure}
+
+\newpage
+
+\textbf{Estructura habitual tabla de páginas}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{estructuratabla.png}
+\end{figure}
+
+\textbf{Buffer de traducción anticipada (TLB)}
+
+Traducir direcciones por software es muy lento, mientras que mediante hardware puede hacerse más rápido y además podemos añadir una caché de traducciones (TLB):
+\begin{itemize}
+\item Conenido: pares de direcciones virtual/física.
+
+\item Implementado mediante memorias asociativas.
+
+\item Tamaño típico: de 32 a 128 entradas.
+\end{itemize}
+
+Hay dos tipos fundamentales:
+\begin{itemize}
+\item Etiquetadas: añaden una marca del espacio de direcciones al que pertenece.
+
+\item No etiquetadas: no poseen la capacidad anterior, la mayoría.
+\end{itemize}
+
+Funcionamiento:
+\begin{itemize}
+\item Si se encuentra la dirección en el TLB se devuelve su traducción.
+
+\item Si no se encuentra es necesario calcular la traducción.
+	\begin{itemize}
+	\item Hardware: se devuelve la traducción correcta (x86).
+	
+	\item Software: más lento pero más flexible (PowerPC).
+	\end{itemize}
+
+\item Es fundamental conocer la interacción TLB/caché.
+
+\end{itemize}
+
 \end{document}
