@@ -6,3 +6,4 @@
 \contentsline {subsubsection}{\numberline {1.2.3}Componentes}{11}{subsubsection.1.2.3}%
 \contentsline {subsubsection}{\numberline {1.2.4}Procesador}{12}{subsubsection.1.2.4}%
 \contentsline {subsubsection}{\numberline {1.2.5}Memoria}{17}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Interacción}{27}{subsubsection.1.2.6}%

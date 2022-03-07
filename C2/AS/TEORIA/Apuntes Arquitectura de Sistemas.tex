@@ -540,6 +540,7 @@ El procesador debe tener una unidad de gestión de memoria (MMU, Memory Manageme
 \includegraphics[scale=1,width=\textwidth]{estructuratabla.png}
 \end{figure}
 
+\subsubsection{Interacción}
 \textbf{Buffer de traducción anticipada (TLB)}
 
 Traducir direcciones por software es muy lento, mientras que mediante hardware puede hacerse más rápido y además podemos añadir una caché de traducciones (TLB). En principio, toda referencia a la memoria virtual puede causar dos accesos a memoria física, uno para buscar la entrada en la tabla de página apropiada y otra para buscar los datos solicitados. De esa forma, el esquema de memoria virtual básico causaría el efecto de duplicar el tiempo de acceso a la memoria. Para solventar este problema, la mayoría de esquemas de la memoria virtual utilizan una \textit{cache} especial de alta velocidad para las entradas de la tabla de páginas, habitualmente denominada buffer de traducción anticipada. TLB:
@@ -701,10 +702,168 @@ Deben atenderse, sino se daría un comportamiento erróneo. Producen una sobreca
 Se trata de un mecanismo para solicitar la atención de la CPU. Son asíncronas, no predecibles y no reproducibles. Un periférico puede solicitar una interrupción independientemente del estado de la CPU o el proceso actual.
 
 Ejemplos:
+\begin{itemize}
+\item Eventos externos: sensores
+\item Final de una operación DMA.
+\item Final de una operación E/S.
+\end{itemize}
+
+\textbf{Vector de interrupciones}
+
+Se trata del vector que contiene las direcciones de los manejadores de interrupción para los distintos dispositivos conectados y las distintas interrupciones.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{vectorint.png}
+\end{figure}
+
+\textbf{Manejo de excepciones e interrupciones}
+
+Los siguientes eventos podríann lanzar una excepción o una interrupción:
+\begin{itemize}
+\item Señales de periféricos:
 	\begin{itemize}
-	\item Eventos externos: sensores
-	\item Final de una operación DMA.
-	\item Final de una operación E/S.
+	\item Final de una lectura de disco
+	\item Atasco de papel
 	\end{itemize}
+	
+\item Cambio del dominio de protección (segmentación/paginación).
+
+\item Errores de programación (acceso a dirección inválida).
+
+\item Desbordamiento de memoria (desbordamiento de pila).
+
+\item Paginación bajo demanda.
+
+\item Fallos hardware (paridad de memoria).
+\end{itemize}
+
+El manejo del evento se hace durante la ejecución del proceso actualmente en ejecución.\\
+
+\textbf{Efectos de la temporización}
+
+El manejo de cada evento ralentiza la ejecución del programa interrumpido. El resultado de los programas no se pone en peligro, salvo las aplicaciones de tiempo real que si pueden fallar. Esta es una de las razones por las que los programadores no deben confiar en las condiciones de temporización (ej: sincronización). \\
+
+\textbf{Control de interrupciones:}
+
+Las interrupciones pueden llegar en cualquier momento:
+\begin{itemize}
+\item Usuario modificando datos compartidos.
+
+\item SO realizando una operación no interrumpible.
+\end{itemize}
+
+El sistema operativo y el hardware permiten sincronizar actividades concurrentes mediantes operaciones atómicas: secuencias de instrucciones que no pueden ser interrumpidas. \\
+
+Soluciones:
+\begin{itemize}
+\item Deshabilitar las interrupciones. En una máquina monoprocesador, los procesos concurrentes no pueden solaparse, sólo pueden entrelazarse. Es más, un proceso continuará ejecutando hasta que invoque un servicio del sistema operativo o hasta que sea interrumpido. Por tanto, para garantizar la exclusión mutua, basta con impedir que un proceso sea interrumpido. Esta técnica puede proporcionarse en forma de primitivas definidas por el núcleo del sistema para deshabilitar y habilitar las interrupciones. Esta solución no funcionará sobre una arquitectura multiprocesador. Cuando el sistema de cómputo incluye más de un procesador, es posible (y típico) que se estén ejecutando al tiempo más de un proceso. En este caso, deshabilitar interrupciones no garantiza exclusión mutua.
+
+\item Instrucciones atómicas basadas en leer/modificar/almacenar: En una configuración multiprocesador, varios procesadores comparten acceso a una memoria principal comúnt. No hay mecanismo de interrupción entre procesadores en el que pueda basarse la exclusión mutua. 
+
+A un nivel hardware, el acceso a una posición de memoria excluye cualquier otro acceso a la misma posición. Los diseñadores de hardware han propuesto varias instrucciones que llevan a cabo dos acciones atómicamente, como leer y escribir o leer y comprobar, sobre una única posición de memoria con un único ciclo de búsqueda de instrucción. Durante la ejecución de la instrucción, el acceso a la posición de memoria se le bloquea a toda otra instrucción que referencia esa posición. Estas acciones se realizan (típicamente) en un solo ciclo de instrucción.
+	\begin{itemize}
+	\item \textbf{tas}: \textit{test and set} (comprueba y establece)
+	
+	\item \textbf{cmpxchg}: comparar e intercambiar.
+	
+	\item \textbf{ll/sc}: carga enlazada y almacenamiento condicional.
+	\end{itemize}
+\end{itemize}
+
+La mayoría de los ordenadores permiten que los ocntroladores de E/S interrumpan la actividad del procesador. La CPU transfiere el control a un manejador de interrupción que normalmente es parte del SO (excepción: controladores en espacio de usuario).
+
+El procesador puede prevenir las interrupciones:
+\begin{itemize}
+\item Enmascarándolas
+
+\item Deshabilitándolas
+
+\item Estableciendo un nivel mínimo de prioridad.
+\end{itemize}
+
+\textbf{Procesamiento de interrupciones}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{procinterrupcion.png}
+\end{figure}
+
+\textbf{Ventajas del uso de interrupciones}
+\begin{itemize}
+\item Los eventos son atendidos más rápidamente
+
+\item No se consume tiempo del procesador para descubrir el final de un evento.
+
+\item Los programas pueden ejecutarse más rápidamente.
+
+\item Se mejora el aprovechamiento del procesador.
+\end{itemize}
+
+Con sólo el uso de interrupciones el procesador sigue siendo el encargado de realizar las transferencias de información. La solución ideal es utilizar DMA para evitarlo.\\
+
+\textbf{Múltiples interrupciones}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{multinterrupcion.png}
+\end{figure}
+
+\textbf{Técnicas de Entrada/Salida}
+\begin{itemize}
+\item \textbf{E/S programada (sondeo)}. En E/S programada, el módulo de E/S realiza la acción solicitada y fija los bits correspondiente en el registro de estado de E/S, pero no realiza ninguna acción para avisar al procesador. En concreto, no interrumpe al procesador. Por tanto, después de que se invoca la instrucción de E/S, el procesador debe tomar un papel activo para determinar cuándo se completa la instrucción de E/S. Por eso el procesador comprueba periódicamente el estado del módulo de E/S hasta que se encuentre que se ha completado la operación.
+
+Tiene la desventaja de que es un proceso que consume un tiempo apreciable que mantiene al procesador ocupado innecesariamente.
+
+\item \textbf{E/S dirigida mediante interrupción}. Es una alternativa a la E/S programada. En ella el procesador genera un mandato de E/S para un módulo y, acto seguido, continúa realizando algún otro trabajo útil. El módulo de E/S interrumpirá más tarde al procesador para solicitar su servicio cuando esté listo para intercambiar datos con el mismo. El procesador ejecutará la transferencia de datos, como antes, y después reanudará el procesamiento previo.
+
+El mayor problema de esta alternativa es que el procesador tiene que hacer la transferencia de datos el mismo, cosa que se arreglará con DMA.
+
+\item \textbf{Acceso directo a memoria (DMA)}. La función DMA puede ser llevada a cabo por un módulo separado conectado en el bus del sistema o puede estar incluida en un módulo de E/S. La técnica funciona como sigue, cuando el procesador desea leer o escribir un bloque de datos, genera un mandato de DMA, enviándo la siguiente información:
+\begin{itemize}
+\item Si se trata de una lectura o una escritura.
+
+\item La dirección del dispositivo de E/S involucrado.
+
+\item La posición inicial de memoria en la que se desea leer los datos o donde se quieren escribir.
+
+\item El número de palabras que se pretende leer o escribir.
+\end{itemize}
+
+A continuación, el procesador continúa con otro trabajo. Ha delegado esta operación de E/S al módulo de DMA, que se ocupará de la misma. El módulo de DMA transferirá el bloque completo de datos, palabra a palabra, hacia la memoria o desde ella sin pasar a través del procesador. Por tanto, el procesador solo se involucra al principio y al final.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{DMA.png}
+\end{figure}
+
+\textbf{Direccionamiento físico de la memoria principal}
+
+El direccionamiento virtual es algo que sólo existe en el interior del procesador. Para acceder a memoria los controladores de dispositivos y DMA sólo emplean direcciones físicas. Por ejemplo:
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=70mm]{ejemplo1.png}
+\end{figure}
+
+Un retraso en la E/S podría provocar que el marco 4096 fuese asignado a otro proceso a través de los mecanismos de segmentación o paginación. La solución a este problema es fijar (\textbf{pinning}) el marco de página durante el tiempo que dure el proceso de transferencia. Fijar (\textbf{pinning}) y liberar (\textbf{unpinning}) es un mecanismo de protección.
+\begin{itemize}
+\item Usos: soporte de DMA y procesos de tiempo real.
+
+\item Problema: el abuso para acaparar recursos.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=70mm]{pinning.png}
+\end{figure}
+
+\textbf{Temporizador}
+
+Los niveles de privilegio son un mecanismo de protección útil para el SO. Los eventos pueden transferir el control al sistema operativo. Si un proceso no genera eventos nunca cede el control del procesador. A este problema hay varias soluciones:
+
+\begin{itemize}
+\item La más habitual: generar una interrupción de forma periódica mediante el temporizador, ej: cada 10ms.
+
+\item La más conveniente: reprogramar el temporizador tras cada evento para que sólo genere interrupciones cuando sea necesario.
+\end{itemize}
 
 \end{document}
