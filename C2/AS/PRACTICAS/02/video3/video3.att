@@ -1,0 +1,39 @@
+
+video3:     formato del fichero binary
+
+
+Desensamblado de la sección .data:
+
+00000000 <.data>:
+   0:	31 c0                	xor    %ax,%ax
+   2:	8e d8                	mov    %ax,%ds
+   4:	be 1d 7c             	mov    $0x7c1d,%si
+   7:	b8 00 b8             	mov    $0xb800,%ax
+   a:	8e c0                	mov    %ax,%es
+   c:	31 ff                	xor    %di,%di
+   e:	b9 12 00             	mov    $0x12,%cx
+  11:	f3 a5                	rep movsw %ds:(%si),%es:(%di)
+  13:	b9 be 07             	mov    $0x7be,%cx
+  16:	b8 20 0f             	mov    $0xf20,%ax
+  19:	f3 ab                	rep stos %ax,%es:(%di)
+  1b:	fa                   	cli    
+  1c:	f4                   	hlt    
+  1d:	63 0f                	arpl   %cx,(%bx)
+  1f:	6f                   	outsw  %ds:(%si),(%dx)
+  20:	0f 67 0f             	packuswb (%bx),%mm1
+  23:	6e                   	outsb  %ds:(%si),(%dx)
+  24:	0f 69 0f             	punpckhwd (%bx),%mm1
+  27:	74 0f                	je     0x38
+  29:	6f                   	outsw  %ds:(%si),(%dx)
+  2a:	0f 2c 0f             	cvttps2pi (%bx),%mm1
+  2d:	20 0f                	and    %cl,(%bx)
+  2f:	65 0f 72             	gs (bad) 
+  32:	0f 67 0f             	packuswb (%bx),%mm1
+  35:	6f                   	outsw  %ds:(%si),(%dx)
+  36:	0f 20 0f             	mov    %cr1,%edi
+  39:	73 0f                	jae    0x4a
+  3b:	75 0f                	jne    0x4c
+  3d:	6d                   	insw   (%dx),%es:(%di)
+  3e:	0f 20 0f             	mov    %cr1,%edi
+	...
+ 1fd:	00 55 aa             	add    %dl,-0x56(%di)

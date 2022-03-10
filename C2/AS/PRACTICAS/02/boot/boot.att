@@ -1,0 +1,11 @@
+
+boot:     formato del fichero binary
+
+
+Desensamblado de la sección .data:
+
+00000000 <.data>:
+   0:	eb fe                	jmp    0x0
+	...
+ 1fe:	55                   	push   %bp
+ 1ff:	aa                   	stos   %al,%es:(%di)

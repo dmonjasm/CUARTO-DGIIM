@@ -1,0 +1,21 @@
+
+boot:     formato del fichero binary
+
+
+Desensamblado de la sección .data:
+
+00000000 <.data>:
+   0:	b8 00 b8             	mov    $0xb800,%ax
+   3:	8e c0                	mov    %ax,%es
+   5:	31 ff                	xor    %di,%di
+   7:	b9 cf 07             	mov    $0x7cf,%cx
+   a:	31 c0                	xor    %ax,%ax
+   c:	aa                   	stos   %al,%es:(%di)
+   d:	aa                   	stos   %al,%es:(%di)
+   e:	40                   	inc    %ax
+   f:	e2 fb                	loop   0xc
+  11:	fa                   	cli    
+  12:	f4                   	hlt    
+	...
+ 1fb:	00 00                	add    %al,(%bx,%si)
+ 1fd:	00 55 aa             	add    %dl,-0x56(%di)
