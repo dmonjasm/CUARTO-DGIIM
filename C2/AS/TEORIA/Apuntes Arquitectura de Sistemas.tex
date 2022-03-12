@@ -866,4 +866,148 @@ Los niveles de privilegio son un mecanismo de protección útil para el SO. Los 
 \item La más conveniente: reprogramar el temporizador tras cada evento para que sólo genere interrupciones cuando sea necesario.
 \end{itemize}
 
+\section{Tema 2: Introducción a los sistemas operativos}
+\subsection{Abstracciones}
+Se denomina espacio de direcciones a la memoria utilizable por un proceso. Se trata además de una unidad de protección de memoria, pues el hardware de direccionamiento en memoria asegura que un proceso se pueda ejecutar únicamente dentro de su propio espacio de direcciones.
+
+Habitualmente este está formado por 3 componentes:
+\begin{itemize}
+\item \textbf{Código:} .text
+
+\item \textbf{Datos:} .data, .bss y heap
+
+\item \textbf{Pila:} Stack
+	\begin{itemize}
+	\item Variables locales
+	\item Marcos de procedimiento
+	\end{itemize}
+\end{itemize}
+
+El tamaño de cada zona es:
+\begin{itemize}
+\item Código: tamaño fijo
+
+\item Datos: pueden crecer hacia arriba
+
+\item Pila: pueden crecer hacia abajo
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=60mm]{adresspace.png}
+\end{figure}
+\newpage
+\textbf{Procesos y/o hebras:}
+
+Se trata de una unidad de trabajo. Incluye el contexto del procesador (que contiene el contador del programa y el puntero de pila) y su propia áread de datos para una pila (para posibilitar el salto a subrutinas). Un hilo se ejecuta secuencialmente y se puede interrumpir de forma que el procesador pueda dar paso a otro hilo. A parte de la distribución dada hay otras distintas como pueden ser
+
+\begin{itemize}
+\item (Porción de) un programa en ejecución.
+
+\item Instancia de un programa ejecutándose.
+
+\item Hebra/hilo/fibra: mínima unidad de ejecución
+
+\item Proceso/tarea: unidad de posesión/protección de recursos.
+\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=70mm]{hilos_programa.png}
+\end{figure}
+
+\textbf{Comunicación entre procesos}
+
+Hay varios 3 tipos de comunicación entre procesos:
+
+\begin{itemize}
+\item Ficheros: tuberías, sockets.
+	\begin{itemize}
+	\item Tubería: es un \textit{buffer} circular que permite que dos procsos se comuniquen siguiendo el modelo productor consumidor. Por tanto, se trata de una cola de tipo FIFO, en la que se escribe un proceso y se lee otro.
+	
+	\item Socket: permite la comunicación entre un proceso cliente y un proceso servidor y puede ser orientado a conexión o no orientado a conexión. Un socket se puede considerar como un punto final en una comunicación. Un socket cliente en un computador utiliza una dirección para llamar a u socket de servidor en otro computador. Una vez que han entrado en comunicación los sockets, los dos computadores pueden intercambiar datos.
+	\end{itemize}
+
+\item Paso de mensajes. Los procesos se comunican por medio de mensajes, que son un conjunto de bytes con un tipo asociado. Asociada a cada proceso existe una cola de mensajes, que funciona como buzón.
+
+\item Memoria compartida. Es la forma más rápida de comunicación entre procesos. Se trata de un bloque de  memoria virtual compartido por múltiples procesos. Los procesos leen y escriben en la memoria compartida utilizan las mismas instrucciones de máquina que se utilizan para leer y escribir en otras partes de su espacio de memoria virutal.
+\end{itemize}
+
+En algunos libros no se considera la tubería como un tipo de comunicación en sí mismo, ya que quería dentro de alguno de los otros dos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=60mm]{tipos_com.png}
+\end{figure}
+
+\textbf{Concurrencia y paralelismo:}
+
+Varios procesos pueden ejecutarse,
+\begin{itemize}
+\item en paralelo en un multiprocesador.
+
+\item de forma concurrente en un uniprocesador.
+\end{itemize}
+
+No se debe confundir concurrencia con paralelismo, pues aunque la concurrencia da una impresión de paralelismo, realmente lo único que hace es un empleo muy eficiente del tiempo de ejecución del procesador, dando lugar a la sensación de ejecución de varios procesos simultáneamente, pero relamente en ningún momento el procesador tiene en ejecución dos procesos distintos en el mismo instante.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{concurrenciavsparalelismo.png}
+\end{figure}
+
+Los procesos multihebra pueden ser ejecutados de forma paralela o concurrente en función de
+\begin{itemize}
+\item el número de procesadores
+
+\item el modelo de hebras: usuario o núcleo.
+\end{itemize}
+
+Podrán aparecer "condiciones de carrera" si no manejamos cuidadosamente la concurrencia, lo que implica la necesidad de métodos de sincronización de procesos y hebras.
+
+\textbf{Condiciones de carrera:} sucede cuando múltipres procesos o hilos leen y escriben datos de forma que el resultado final depende del orden de ejeucicón de las instrucciones en los múltiples procesos.\\
+
+\textbf{Gestión de memoria.}
+
+La memoria RAM es limitada. De aquí surge el problema de que los procesos no saben qué posición ocuparán en la RAM. La posición de los procesos en RAM es responsabilidad del compilador y del sistema operativo. La solución a este problema es la utilización de código relocalizable. Este código tiene la particularidad de que en vez de trabajar con direcciones físicas trabaja con direcciones relativas al código, es decir, en lugar de hacer un salto a la dirección 0xffff, se hace un salto a la dirección en la que está la instrucción actual-5. De esta forma ya no es necesario saber exactamente donde está cada cosa, sino que se buscará donde está la ejecución instrucción actual-5, cuya dirección puede variar entre ejecuciones (o incluso dentro de la misma ejecución). 
+
+Otro problema que surge es que la necesidad de memoria de todos los procesos activos pueden ser mayores que la RAM. La solución es el uso de memoria virtual, la cual da al proceso la impresión de tener más memoria disponible de la que realmente tiene, y este diferencia entre la memoria real y la virtual se suple con la carga de páginas de memoria bajo demanda. De esta forma no se requiere que todo el proceso esté cargado en memoria, sino unas ciertas páginas concretas, y se cargan las que se necesitan según la demanda del programa.\\
+
+\textbf{Memoria virtual:} Permite al programador direccionar memoria de forma razonable en cuanto a
+
+\begin{itemize}
+\item Cantidad: los procesoso creen disponer de toda la RAM.
+
+\item Seguridad: los espacios de direcciones son independientes. Una misma dirección virtual en dos espacios de direcciones distintos puede ser mapeada en diferentes posiciones en la RAM.
+
+\item El mapeado de porciones de memoria virtual en memoria física se hace de forma automática, liberando así al programador de esta tarea.
+\end{itemize}
+
+El funcionamiento eficiente de la memoria virtual requiere soporte hardware.\\
+
+Con la memoria virtual las aplicaciones creen tener un espacio de direcciones plano. La memoria física se divide en prociones. Las regiones no necesitan mapearse de forma continua, a excepción de la E/S mapeada en memoria (controladores). (Para maś información ver la explicación de memoria virtual del tema 1).
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{mem_virtual.png}
+\end{figure}
+
+\textbf{Planificación/gestión de recursos}
+
+\begin{itemize}
+\item Equidad: normalmente, se desea que todos los procesos que compiten por un determinado recurso, se les conceda un acceso equitativo a dicho recurso. Esto es especialmente cierto para trabajos de la misma categoría, es decir, trabajos con demandas similares.
+
+\item Tiempo de respuesta: el sistema operativo puede necesitar discriminar entre diferentes clases de trabajos con diferentes requisitos de servicio. El sistema operativo debe tomar las decisiones de asignación y planificación con el objetivo de satisfacer el conjunto total de requisitos. Además, debe tomar las decisiones de forma dinámica. 
+
+\item Eficiencia: el sistema operativo debe intentar maximizar la proximidad, minimizar el tiempo de respuesta, y, en caso de sistemas de tiempo compartido, acomodar tantos usuarios como sea posible. Estos criterios entran en conflicto: encontrar un compromiso adecuado en una situación particular es un problema objeto de la investigación sobre sistemas operativos.
+\end{itemize}
+
+Diferencia entre políticas y mecanismos:
+\begin{itemize}
+\item Planificación $\Leftrightarrow$ apropiación/explusión
+
+\item Paginación $\Leftrightarrow$ reemplazo.
+
+\item Interacción $\Leftrightarrow$ comunicación.
+\end{itemize}
+
 \end{document}
