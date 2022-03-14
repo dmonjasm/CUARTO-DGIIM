@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  14 MAR 2022 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  14 MAR 2022 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,24 +345,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-<images/gestion_memoria.png, id=74, 984.67876pt x 644.4075pt>
+<images/gestion_memoria.png, id=79, 984.67876pt x 644.4075pt>
 File: images/gestion_memoria.png Graphic file (type png)
 <use images/gestion_memoria.png>
 Package pdftex.def Info: images/gestion_memoria.png  used on input line 26.
 (pdftex.def)             Requested size: 787.74408pt x 515.5267pt.
  [3 <./images/gestion_memoria.png>]
-<images/time.png, id=81, 733.74126pt x 569.12625pt>
+<images/time.png, id=86, 733.74126pt x 569.12625pt>
 File: images/time.png Graphic file (type png)
 <use images/time.png>
 Package pdftex.def Info: images/time.png  used on input line 33.
 (pdftex.def)             Requested size: 586.9938pt x 455.30162pt.
-<images/ejemplo4x4.png, id=82, 459.7175pt x 163.61125pt>
+<images/ejemplo4x4.png, id=87, 459.7175pt x 163.61125pt>
 File: images/ejemplo4x4.png Graphic file (type png)
 <use images/ejemplo4x4.png>
 Package pdftex.def Info: images/ejemplo4x4.png  used on input line 39.
 (pdftex.def)             Requested size: 275.83263pt x 98.1675pt.
  [4 <./images/time.png> <./images/ejemplo4x4.png>]
-<images/Hyperthreading.jpg, id=91, 602.25pt x 304.13625pt>
+<images/Hyperthreading.jpg, id=96, 602.25pt x 304.13625pt>
 File: images/Hyperthreading.jpg Graphic file (type jpg)
 <use images/Hyperthreading.jpg>
 Package pdftex.def Info: images/Hyperthreading.jpg  used on input line 57.
@@ -373,19 +373,19 @@ Overfull \hbox (16.94502pt too wide) in paragraph at lines 60--61
 r en cualquier
  []
 
-<images/SMP.png, id=92, 1204.5pt x 773.89125pt>
+<images/SMP.png, id=97, 1204.5pt x 773.89125pt>
 File: images/SMP.png Graphic file (type png)
 <use images/SMP.png>
 Package pdftex.def Info: images/SMP.png  used on input line 64.
 (pdftex.def)             Requested size: 1204.49707pt x 773.88936pt.
 [5 <./images/Hyperthreading.jpg>]
-<images/umanuma.png, id=98, 501.875pt x 296.10625pt>
+<images/umanuma.png, id=103, 501.875pt x 296.10625pt>
 File: images/umanuma.png Graphic file (type png)
 <use images/umanuma.png>
 Package pdftex.def Info: images/umanuma.png  used on input line 78.
 (pdftex.def)             Requested size: 501.87376pt x 296.10551pt.
  [6 <./images/SMP.png> <./images/umanuma.png>]
-<images/NORMA.jpg, id=105, 602.25pt x 329.23pt>
+<images/NORMA.jpg, id=110, 602.25pt x 329.23pt>
 File: images/NORMA.jpg Graphic file (type jpg)
 <use images/NORMA.jpg>
 Package pdftex.def Info: images/NORMA.jpg  used on input line 85.
@@ -396,43 +396,43 @@ Overfull \hbox (0.26799pt too wide) in paragraph at lines 89--90
 . Al igual que los sis-temas mul-ti-proce-sadores,
  []
 
-<images/cluster.png, id=106, 301.125pt x 259.97125pt>
+<images/cluster.png, id=111, 301.125pt x 259.97125pt>
 File: images/cluster.png Graphic file (type png)
 <use images/cluster.png>
 Package pdftex.def Info: images/cluster.png  used on input line 96.
 (pdftex.def)             Requested size: 301.12425pt x 259.97061pt.
 [7 <./images/NORMA.jpg> <./images/cluster.png>]
-<images/monoprocesador.png, id=113, 672.5125pt x 393.47pt>
+<images/monoprocesador.png, id=118, 672.5125pt x 393.47pt>
 File: images/monoprocesador.png Graphic file (type png)
 <use images/monoprocesador.png>
 Package pdftex.def Info: images/monoprocesador.png  used on input line 125.
 (pdftex.def)             Requested size: 672.51085pt x 393.46902pt.
-<images/solucionmonoprocesador.png, id=114, 464.73625pt x 477.785pt>
+<images/solucionmonoprocesador.png, id=119, 464.73625pt x 477.785pt>
 File: images/solucionmonoprocesador.png Graphic file (type png)
 <use images/solucionmonoprocesador.png>
 Package pdftex.def Info: images/solucionmonoprocesador.png  used on input line 
 132.
 (pdftex.def)             Requested size: 464.7351pt x 477.78383pt.
  [8 <./images/monoprocesador.png> <./images/solucionmonoprocesador.png>]
-<images/sol2monoprocesador.png, id=121, 639.38875pt x 537.00626pt>
+<images/sol2monoprocesador.png, id=126, 639.38875pt x 537.00626pt>
 File: images/sol2monoprocesador.png Graphic file (type png)
 <use images/sol2monoprocesador.png>
 Package pdftex.def Info: images/sol2monoprocesador.png  used on input line 139.
 
 (pdftex.def)             Requested size: 639.38718pt x 537.00494pt.
-<images/multiprocesador.png, id=122, 790.955pt x 351.3125pt>
+<images/multiprocesador.png, id=127, 790.955pt x 351.3125pt>
 File: images/multiprocesador.png Graphic file (type png)
 <use images/multiprocesador.png>
 Package pdftex.def Info: images/multiprocesador.png  used on input line 151.
 (pdftex.def)             Requested size: 790.95308pt x 351.31163pt.
  [9 <./images/sol2monoprocesador.png> <./images/multiprocesador.png>]
-<images/multiprocesador-multihebra.png, id=129, 607.26875pt x 522.95375pt>
+<images/multiprocesador-multihebra.png, id=134, 607.26875pt x 522.95375pt>
 File: images/multiprocesador-multihebra.png Graphic file (type png)
 <use images/multiprocesador-multihebra.png>
 Package pdftex.def Info: images/multiprocesador-multihebra.png  used on input l
 ine 159.
 (pdftex.def)             Requested size: 607.26727pt x 522.95247pt.
-<images/multiprocesador-multihebra2.png, id=130, 577.15625pt x 508.90125pt>
+<images/multiprocesador-multihebra2.png, id=135, 577.15625pt x 508.90125pt>
 File: images/multiprocesador-multihebra2.png Graphic file (type png)
 <use images/multiprocesador-multihebra2.png>
 Package pdftex.def Info: images/multiprocesador-multihebra2.png  used on input 
@@ -440,7 +440,7 @@ line 165.
 (pdftex.def)             Requested size: 577.15483pt x 508.90001pt.
  [10 <./images/multiprocesador-multihebra.png> <./images/multiprocesador-multih
 ebra2.png>]
-<images/multiprocesador_actual.png, id=137, 884.30376pt x 408.52625pt>
+<images/multiprocesador_actual.png, id=142, 884.30376pt x 408.52625pt>
 File: images/multiprocesador_actual.png Graphic file (type png)
 <use images/multiprocesador_actual.png>
 Package pdftex.def Info: images/multiprocesador_actual.png  used on input line 
@@ -451,21 +451,21 @@ Overfull \hbox (53.33781pt too wide) in paragraph at lines 173--174
  [][] 
  []
 
-<images/arquitectura_actual.png, id=138, 878.28125pt x 533.995pt>
+<images/arquitectura_actual.png, id=143, 878.28125pt x 533.995pt>
 File: images/arquitectura_actual.png Graphic file (type png)
 <use images/arquitectura_actual.png>
 Package pdftex.def Info: images/arquitectura_actual.png  used on input line 179
 .
 (pdftex.def)             Requested size: 878.27911pt x 533.9937pt.
 [11 <./images/multiprocesador_actual.png> <./images/arquitectura_actual.png>]
-<images/jerarquiamemoria.png, id=145, 724.7075pt x 692.5875pt>
+<images/jerarquiamemoria.png, id=150, 724.7075pt x 692.5875pt>
 File: images/jerarquiamemoria.png Graphic file (type png)
 <use images/jerarquiamemoria.png>
 Package pdftex.def Info: images/jerarquiamemoria.png  used on input line 192.
 (pdftex.def)             Requested size: 724.70573pt x 692.5858pt.
 
 [12 <./images/jerarquiamemoria.png>]
-<images/privilegios.png, id=152, 483.8075pt x 352.31625pt>
+<images/privilegios.png, id=157, 483.8075pt x 352.31625pt>
 File: images/privilegios.png Graphic file (type png)
 <use images/privilegios.png>
 Package pdftex.def Info: images/privilegios.png  used on input line 231.
@@ -476,7 +476,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--236
  []
 
 [13 <./images/privilegios.png>]
-<images/ciclo_instruccion.png, id=161, 856.19875pt x 111.41624pt>
+<images/ciclo_instruccion.png, id=166, 856.19875pt x 111.41624pt>
 File: images/ciclo_instruccion.png Graphic file (type png)
 <use images/ciclo_instruccion.png>
 Package pdftex.def Info: images/ciclo_instruccion.png  used on input line 272.
@@ -486,7 +486,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
-<images/segmentacion.png, id=167, 1017.8025pt x 435.6275pt>
+<images/segmentacion.png, id=172, 1017.8025pt x 435.6275pt>
 File: images/segmentacion.png Graphic file (type png)
 <use images/segmentacion.png>
 Package pdftex.def Info: images/segmentacion.png  used on input line 308.
@@ -501,7 +501,7 @@ roce-sador su-perescalar
  []
 
 [15]
-<images/predicionsalto.png, id=172, 1041.8925pt x 581.17125pt>
+<images/predicionsalto.png, id=177, 1041.8925pt x 581.17125pt>
 File: images/predicionsalto.png Graphic file (type png)
 <use images/predicionsalto.png>
 Package pdftex.def Info: images/predicionsalto.png  used on input line 325.
@@ -511,7 +511,7 @@ Package pdftex.def Info: images/predicionsalto.png  used on input line 325.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16 <./images/segmentacion.png>]
-<images/tiposram.png, id=178, 464.73625pt x 591.20876pt>
+<images/tiposram.png, id=183, 464.73625pt x 591.20876pt>
 File: images/tiposram.png Graphic file (type png)
 <use images/tiposram.png>
 Package pdftex.def Info: images/tiposram.png  used on input line 345.
@@ -521,26 +521,26 @@ Package pdftex.def Info: images/tiposram.png  used on input line 345.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17 <./images/predicionsalto.png>] [18 <./images/tiposram.png>] [19]
-<images/correspondenciadirecta.png, id=196, 649.42625pt x 553.06625pt>
+<images/correspondenciadirecta.png, id=201, 649.42625pt x 553.06625pt>
 File: images/correspondenciadirecta.png Graphic file (type png)
 <use images/correspondenciadirecta.png>
 Package pdftex.def Info: images/correspondenciadirecta.png  used on input line 
 431.
 (pdftex.def)             Requested size: 649.42467pt x 553.0649pt.
  [20 <./images/correspondenciadirecta.png>]
-<images/totalmenteasociativa.png, id=202, 636.3775pt x 528.97626pt>
+<images/totalmenteasociativa.png, id=207, 636.3775pt x 528.97626pt>
 File: images/totalmenteasociativa.png Graphic file (type png)
 <use images/totalmenteasociativa.png>
 Package pdftex.def Info: images/totalmenteasociativa.png  used on input line 43
 8.
 (pdftex.def)             Requested size: 636.37595pt x 528.97496pt.
  [21 <./images/totalmenteasociativa.png>]
-<images/porconjuntos.png, id=208, 668.4975pt x 512.91624pt>
+<images/porconjuntos.png, id=213, 668.4975pt x 512.91624pt>
 File: images/porconjuntos.png Graphic file (type png)
 <use images/porconjuntos.png>
 Package pdftex.def Info: images/porconjuntos.png  used on input line 446.
 (pdftex.def)             Requested size: 668.49586pt x 512.915pt.
-<images/memvirtual.png, id=209, 601.24625pt x 819.06pt>
+<images/memvirtual.png, id=214, 601.24625pt x 819.06pt>
 File: images/memvirtual.png Graphic file (type png)
 <use images/memvirtual.png>
 Package pdftex.def Info: images/memvirtual.png  used on input line 457.
@@ -551,7 +551,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
-<images/traduccion.png, id=220, 487.8225pt x 418.56375pt>
+<images/traduccion.png, id=225, 487.8225pt x 418.56375pt>
 File: images/traduccion.png Graphic file (type png)
 <use images/traduccion.png>
 Package pdftex.def Info: images/traduccion.png  used on input line 512.
@@ -560,25 +560,25 @@ Package pdftex.def Info: images/traduccion.png  used on input line 512.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [24]
-<images/segmentacionx86.png, id=229, 1073.00874pt x 506.89375pt>
+<images/segmentacionx86.png, id=234, 1073.00874pt x 506.89375pt>
 File: images/segmentacionx86.png Graphic file (type png)
 <use images/segmentacionx86.png>
 Package pdftex.def Info: images/segmentacionx86.png  used on input line 519.
 (pdftex.def)             Requested size: 1073.00612pt x 506.89252pt.
  [25 <./images/traduccion.png> <./images/segmentacionx86.png>]
-<images/segmentacionpaginacion.png, id=237, 900.36375pt x 649.42625pt>
+<images/segmentacionpaginacion.png, id=242, 900.36375pt x 649.42625pt>
 File: images/segmentacionpaginacion.png Graphic file (type png)
 <use images/segmentacionpaginacion.png>
 Package pdftex.def Info: images/segmentacionpaginacion.png  used on input line 
 526.
 (pdftex.def)             Requested size: 900.36156pt x 649.42467pt.
-<images/tabla_multinivel.png, id=238, 1028.84375pt x 660.4675pt>
+<images/tabla_multinivel.png, id=243, 1028.84375pt x 660.4675pt>
 File: images/tabla_multinivel.png Graphic file (type png)
 <use images/tabla_multinivel.png>
 Package pdftex.def Info: images/tabla_multinivel.png  used on input line 532.
 (pdftex.def)             Requested size: 1028.84125pt x 660.46588pt.
  [26 <./images/segmentacionpaginacion.png> <./images/tabla_multinivel.png>]
-<images/estructuratabla.png, id=245, 711.65875pt x 738.76pt>
+<images/estructuratabla.png, id=250, 711.65875pt x 738.76pt>
 File: images/estructuratabla.png Graphic file (type png)
 <use images/estructuratabla.png>
 Package pdftex.def Info: images/estructuratabla.png  used on input line 540.
@@ -589,31 +589,31 @@ Overfull \hbox (1.22275pt too wide) in paragraph at lines 557--558
  al que pertenece. 
  []
 
-<images/direccionamientocache.png, id=252, 757.83125pt x 388.45125pt>
+<images/direccionamientocache.png, id=257, 757.83125pt x 388.45125pt>
 File: images/direccionamientocache.png Graphic file (type png)
 <use images/direccionamientocache.png>
 Package pdftex.def Info: images/direccionamientocache.png  used on input line 5
 78.
 (pdftex.def)             Requested size: 757.8294pt x 388.45029pt.
 [28 <./images/direccionamientocache.png>]
-<images/TLB.png, id=261, 536.0025pt x 676.5275pt>
+<images/TLB.png, id=266, 536.0025pt x 676.5275pt>
 File: images/TLB.png Graphic file (type png)
 <use images/TLB.png>
 Package pdftex.def Info: images/TLB.png  used on input line 598.
 (pdftex.def)             Requested size: 536.00119pt x 676.52583pt.
  [29 <./images/TLB.png>]
-<images/esquemacache.png, id=269, 1004.75375pt x 583.17876pt>
+<images/esquemacache.png, id=274, 1004.75375pt x 583.17876pt>
 File: images/esquemacache.png Graphic file (type png)
 <use images/esquemacache.png>
 Package pdftex.def Info: images/esquemacache.png  used on input line 606.
 (pdftex.def)             Requested size: 1004.75131pt x 583.17734pt.
  [30 <./images/esquemacache.png>] [31]
-<images/interrupciones.png, id=292, 676.5275pt x 480.79625pt>
+<images/interrupciones.png, id=297, 676.5275pt x 480.79625pt>
 File: images/interrupciones.png Graphic file (type png)
 <use images/interrupciones.png>
 Package pdftex.def Info: images/interrupciones.png  used on input line 665.
 (pdftex.def)             Requested size: 676.52583pt x 480.79506pt.
-<images/eventos.png, id=293, 781.92125pt x 567.11874pt>
+<images/eventos.png, id=298, 781.92125pt x 567.11874pt>
 File: images/eventos.png Graphic file (type png)
 <use images/eventos.png>
 Package pdftex.def Info: images/eventos.png  used on input line 681.
@@ -630,7 +630,7 @@ Overfull \hbox (4.08391pt too wide) in paragraph at lines 702--703
  []
 
 [33 <./images/eventos.png>]
-<images/vectorint.png, id=307, 755.82375pt x 441.65pt>
+<images/vectorint.png, id=312, 755.82375pt x 441.65pt>
 File: images/vectorint.png Graphic file (type png)
 <use images/vectorint.png>
 Package pdftex.def Info: images/vectorint.png  used on input line 717.
@@ -651,7 +651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 756--757
  []
 
 [35]
-<images/procinterrupcion.png, id=317, 665.48625pt x 541.02126pt>
+<images/procinterrupcion.png, id=322, 665.48625pt x 541.02126pt>
 File: images/procinterrupcion.png Graphic file (type png)
 <use images/procinterrupcion.png>
 Package pdftex.def Info: images/procinterrupcion.png  used on input line 788.
@@ -661,18 +661,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 802--803
 
  []
 
-<images/multinterrupcion.png, id=323, 791.95876pt x 385.44pt>
+<images/multinterrupcion.png, id=328, 791.95876pt x 385.44pt>
 File: images/multinterrupcion.png Graphic file (type png)
 <use images/multinterrupcion.png>
 Package pdftex.def Info: images/multinterrupcion.png  used on input line 807.
 (pdftex.def)             Requested size: 791.95683pt x 385.43906pt.
 [37 <./images/multinterrupcion.png>]
-<images/DMA.png, id=330, 644.4075pt x 460.72125pt>
+<images/DMA.png, id=335, 644.4075pt x 460.72125pt>
 File: images/DMA.png Graphic file (type png)
 <use images/DMA.png>
 Package pdftex.def Info: images/DMA.png  used on input line 836.
 (pdftex.def)             Requested size: 644.40593pt x 460.72012pt.
-<images/ejemplo1.png, id=331, 477.785pt x 264.99pt>
+<images/ejemplo1.png, id=336, 477.785pt x 264.99pt>
 File: images/ejemplo1.png Graphic file (type png)
 <use images/ejemplo1.png>
 Package pdftex.def Info: images/ejemplo1.png  used on input line 844.
@@ -682,13 +682,13 @@ Package pdftex.def Info: images/ejemplo1.png  used on input line 844.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [38 <./images/DMA.png>]
-<images/pinning.png, id=337, 471.7625pt x 264.99pt>
+<images/pinning.png, id=342, 471.7625pt x 264.99pt>
 File: images/pinning.png Graphic file (type png)
 <use images/pinning.png>
 Package pdftex.def Info: images/pinning.png  used on input line 856.
 (pdftex.def)             Requested size: 471.76134pt x 264.98935pt.
  [39 <./images/ejemplo1.png> <./images/pinning.png>]
-<images/adresspace.png, id=344, 230.8625pt x 371.3875pt>
+<images/adresspace.png, id=349, 230.8625pt x 371.3875pt>
 File: images/adresspace.png Graphic file (type png)
 <use images/adresspace.png>
 Package pdftex.def Info: images/adresspace.png  used on input line 897.
@@ -698,7 +698,7 @@ Package pdftex.def Info: images/adresspace.png  used on input line 897.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [40]
-<images/hilos_programa.png, id=349, 581.17125pt x 409.53pt>
+<images/hilos_programa.png, id=354, 581.17125pt x 409.53pt>
 File: images/hilos_programa.png Graphic file (type png)
 <use images/hilos_programa.png>
 Package pdftex.def Info: images/hilos_programa.png  used on input line 915.
@@ -708,7 +708,7 @@ Package pdftex.def Info: images/hilos_programa.png  used on input line 915.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [41 <./images/adresspace.png>]
-<images/tipos_com.png, id=355, 394.47375pt x 527.9725pt>
+<images/tipos_com.png, id=360, 394.47375pt x 527.9725pt>
 File: images/tipos_com.png Graphic file (type png)
 <use images/tipos_com.png>
 Package pdftex.def Info: images/tipos_com.png  used on input line 939.
@@ -717,7 +717,7 @@ Package pdftex.def Info: images/tipos_com.png  used on input line 939.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/concurrenciavsparalelismo.png, id=356, 650.43pt x 506.89375pt>
+<images/concurrenciavsparalelismo.png, id=361, 650.43pt x 506.89375pt>
 File: images/concurrenciavsparalelismo.png Graphic file (type png)
 <use images/concurrenciavsparalelismo.png>
 Package pdftex.def Info: images/concurrenciavsparalelismo.png  used on input li
@@ -741,13 +741,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 985--986
 
  []
 
-<images/mem_virtual.png, id=369, 902.37125pt x 462.72874pt>
+<images/mem_virtual.png, id=374, 902.37125pt x 462.72874pt>
 File: images/mem_virtual.png Graphic file (type png)
 <use images/mem_virtual.png>
 Package pdftex.def Info: images/mem_virtual.png  used on input line 991.
 (pdftex.def)             Requested size: 902.36905pt x 462.72762pt.
 [44 <./images/concurrenciavsparalelismo.png>] [45 <./images/mem_virtual.png>]
-<images/ES_windows.png, id=380, 151.56625pt x 233.87375pt>
+<images/ES_windows.png, id=385, 151.56625pt x 233.87375pt>
 File: images/ES_windows.png Graphic file (type png)
 <use images/ES_windows.png>
 Package pdftex.def Info: images/ES_windows.png  used on input line 1031.
@@ -759,31 +759,57 @@ Overfull \hbox (1.99135pt too wide) in paragraph at lines 1045--1046
 go plazo. Las unidades
  []
 
-<images/interaccion_sistema.png, id=386, 1122.1925pt x 518.93875pt>
+<images/interaccion_sistema.png, id=391, 1122.1925pt x 518.93875pt>
 File: images/interaccion_sistema.png Graphic file (type png)
 <use images/interaccion_sistema.png>
 Package pdftex.def Info: images/interaccion_sistema.png  used on input line 106
 3.
 (pdftex.def)             Requested size: 1122.18977pt x 518.93748pt.
 [47 <./images/interaccion_sistema.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1102.
- [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1102.
-
-(./Apuntes Arquitectura de Sistemas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1102.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1102.
+<images/llamadas_1.png, id=397, 972.63374pt x 473.77pt>
+File: images/llamadas_1.png Graphic file (type png)
+<use images/llamadas_1.png>
+Package pdftex.def Info: images/llamadas_1.png  used on input line 1105.
+(pdftex.def)             Requested size: 972.63136pt x 473.76884pt.
+ [48 <./images/llamadas_1.png>]
+<images/llamadas_2.png, id=403, 974.64125pt x 624.3325pt>
+File: images/llamadas_2.png Graphic file (type png)
+<use images/llamadas_2.png>
+Package pdftex.def Info: images/llamadas_2.png  used on input line 1113.
+(pdftex.def)             Requested size: 974.63887pt x 624.33098pt.
+<images/llamadas_3.png, id=404, 975.645pt x 628.3475pt>
+File: images/llamadas_3.png Graphic file (type png)
+<use images/llamadas_3.png>
+Package pdftex.def Info: images/llamadas_3.png  used on input line 1119.
+(pdftex.def)             Requested size: 975.64262pt x 628.34596pt.
+ [49 <./images/llamadas_2.png> <./images/llamadas_3.png>]
+<images/llamadas_4.png, id=412, 970.62625pt x 373.395pt>
+File: images/llamadas_4.png Graphic file (type png)
+<use images/llamadas_4.png>
+Package pdftex.def Info: images/llamadas_4.png  used on input line 1126.
+(pdftex.def)             Requested size: 970.62389pt x 373.39409pt.
+<images/comparativa.png, id=413, 742.775pt x 668.4975pt>
+File: images/comparativa.png Graphic file (type png)
+<use images/comparativa.png>
+Package pdftex.def Info: images/comparativa.png  used on input line 1132.
+(pdftex.def)             Requested size: 742.77318pt x 668.49586pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1138.
+ [50 <./images/llamadas_4.png> <./images/comparativa.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1138.
+ (./Apuntes Arquitectura de Sistemas.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1138.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1138.
 
 Package rerunfilecheck Info: File `"Apuntes Arquitectura de Sistemas".out' has 
 not changed.
-(rerunfilecheck)             Checksum: E84C4EC5AD018C61CBB857542B1D904F;832.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1102.
+(rerunfilecheck)             Checksum: 548059834D57580204E36F5E9B28E4AE;901.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1138.
  ) 
 Here is how much of TeX's memory you used:
- 6763 strings out of 481239
- 102429 string characters out of 5920377
+ 6797 strings out of 481239
+ 103134 string characters out of 5920377
  354292 words of memory out of 5000000
- 21777 multiletter control sequences out of 15000+600000
+ 21803 multiletter control sequences out of 15000+600000
  541050 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,8n,31p,851b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -798,11 +824,11 @@ ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "Apuntes Arquitectura de Sistemas.pdf" (48 pages, 2851598 byt
+Output written on "Apuntes Arquitectura de Sistemas.pdf" (50 pages, 3233270 byt
 es).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 85 named destinations out of 1000 (max. 500000)
- 334 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 481 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 367 words of extra memory for PDF output out of 10000 (max. 10000000)
 
