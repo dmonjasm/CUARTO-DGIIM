@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  12 MAR 2022 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  14 MAR 2022 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,25 +746,44 @@ File: images/mem_virtual.png Graphic file (type png)
 <use images/mem_virtual.png>
 Package pdftex.def Info: images/mem_virtual.png  used on input line 991.
 (pdftex.def)             Requested size: 902.36905pt x 462.72762pt.
-[44 <./images/concurrenciavsparalelismo.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1013.
- [45 <./images/mem_virtual.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1013.
+[44 <./images/concurrenciavsparalelismo.png>] [45 <./images/mem_virtual.png>]
+<images/ES_windows.png, id=380, 151.56625pt x 233.87375pt>
+File: images/ES_windows.png Graphic file (type png)
+<use images/ES_windows.png>
+Package pdftex.def Info: images/ES_windows.png  used on input line 1031.
+(pdftex.def)             Requested size: 151.56587pt x 233.87315pt.
+
+[46 <./images/ES_windows.png>]
+Overfull \hbox (1.99135pt too wide) in paragraph at lines 1045--1046
+[]\OT1/cmr/m/n/10 Implementaci^^Son del al-ma-ce-namiento per-sis-tente o a lar
+go plazo. Las unidades
+ []
+
+<images/interaccion_sistema.png, id=386, 1122.1925pt x 518.93875pt>
+File: images/interaccion_sistema.png Graphic file (type png)
+<use images/interaccion_sistema.png>
+Package pdftex.def Info: images/interaccion_sistema.png  used on input line 106
+3.
+(pdftex.def)             Requested size: 1122.18977pt x 518.93748pt.
+[47 <./images/interaccion_sistema.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1102.
+ [48]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1102.
 
 (./Apuntes Arquitectura de Sistemas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1013.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1013.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1102.
 
 Package rerunfilecheck Info: File `"Apuntes Arquitectura de Sistemas".out' has 
 not changed.
 (rerunfilecheck)             Checksum: E84C4EC5AD018C61CBB857542B1D904F;832.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1013.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1102.
  ) 
 Here is how much of TeX's memory you used:
- 6748 strings out of 481239
- 102092 string characters out of 5920377
+ 6763 strings out of 481239
+ 102429 string characters out of 5920377
  354292 words of memory out of 5000000
- 21767 multiletter control sequences out of 15000+600000
+ 21777 multiletter control sequences out of 15000+600000
  541050 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,8n,31p,851b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -779,11 +798,11 @@ ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "Apuntes Arquitectura de Sistemas.pdf" (45 pages, 2749442 byt
+Output written on "Apuntes Arquitectura de Sistemas.pdf" (48 pages, 2851598 byt
 es).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
- 324 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 334 words of extra memory for PDF output out of 10000 (max. 10000000)
 

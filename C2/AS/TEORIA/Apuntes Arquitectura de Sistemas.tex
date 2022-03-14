@@ -1010,4 +1010,93 @@ Diferencia entre políticas y mecanismos:
 \item Interacción $\Leftrightarrow$ comunicación.
 \end{itemize}
 
+\textbf{Gestión de E/S:}
+
+Clasificación de dispositivos de E/S:
+\begin{itemize}
+\item Dispositivos de caracteres: aquellos que envían o reciben un flujo de carateres, sin sujetarse a una estructura de bloques. No se pueden utilizar direcciones ni tienen una operación de búsqueda. Ejemplos: puerto de serie, módem, ratón, ...
+
+\item Dispositivos de bloques: aquellos que almacenan la información en bloques de tamaño fijo, cada uno con su propia dirección. Ejemplos: discos duros, tarjetas de red, ...
+\end{itemize}
+
+Papel de la gestión de dispositivos $\Rightarrow$ interfaz:
+\begin{itemize}
+\item Porporcionar una interfaz genérica, como en UNIX. En UNIX cada dispositivo de E/S está asociado con un fichero especial, que lo gestiona el sistema de ficheros y se lee y escribe de la misma manera que los ficheros de datos de usuario. Esto proporciona una interfaz bien definida y uniforme para los usuarios y los procesos. Para leer o escribir de un dispositivo, se realizan peticiones de lectura o escritura en el fichero especial asociado con el dispositivo.
+
+\item Proporcionar una interfaz específica para cada tipo de dispositivo, como en Windows. Windows dispone de un gestor de E/S, que es responsable de todo el sistema de E/S del sistema operativo y proporciona una interfaz uniforme a la que todos los tipos de manejadores pueden llamar. 
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=50mm]{ES_windows.png}
+\end{figure}
+
+Componentes de un controlador de dispositivo (software):
+\begin{itemize}
+\item Código de inicialización
+
+\item Llamada al sistema para responder a las peticiones de usuario
+
+\item Manejador de interrupción para responder a las peticiones del controlador de dispositivo (hardware)
+\end{itemize}
+
+\textbf{Ficheros}
+
+Implementación del almacenamiento persistente o a largo plazo. Las unidades almacenadas persistentemente son objetos como:
+\begin{itemize}
+\item Ficheros
+
+\item Directorios
+\end{itemize}
+
+Tipos de ficheros:
+\begin{itemize}
+\item Tradicionales: gestionados a través de llamadas al sistema.
+
+\item Mapeados en memoria: se gestionan igual pero se almacenan en la memoria principal.
+\end{itemize}
+
+\textbf{Interacción de los componentes del sistema}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{interaccion_sistema.png}
+\end{figure}
+
+\textbf{Interfaz de programación de aplicaciones (API)}
+
+Existen dos interfaces de programación para acceder a los servicios proporcionados por el núcleo del SO:
+\begin{itemize}
+\item Llamadas al sistema: interfaz directa con el núcleo.
+
+\item API: interfaz indirecta escrita en algún lenguaje de alto nivel (funciones de biblioteca).
+\end{itemize}
+
+Las 3 APIs más conocidas son:
+\begin{itemize}
+\item Win32/Win64
+
+\item POSIX: Portable Operating System Interface (UNIX)
+
+\item Java
+\end{itemize}
+
+\textbf{Paso de parámetros:}
+
+A menudo es necesaria más informació que la identificación de la llamada al sistema. El tipo y cantidad de información varia entre llamadas.
+
+Métodos de paso de parámetros:
+\begin{itemize}
+\item Registros: método rápido pero de poca capacidad
+
+\item Memoria: la aplicación agrupa los parámetros en un área de memoria y pasa la localización de dicha área mediante un registro.
+
+\item Pila: los parámetros son apilados por la aplicación y desapilados por la llamada al sistema.
+\end{itemize}
+
+El empleo de memoria tiene la ventaja de no limitar el número ni el tamaño de los parámetros, pero es más lenta que los registros (velocidad+copia). La estrategia más flexible para el paso de parámetros es la pila.
+
+
+
+
 \end{document}
