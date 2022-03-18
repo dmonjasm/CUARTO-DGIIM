@@ -1,4 +1,6 @@
 #!/bin/bash
+#Daniel Monjas Miguélez
+#17/03/2022
 
 gcc PI.c -o PI
 

@@ -1,0 +1,56 @@
+
+minus.bin:     formato del fichero binary
+
+
+Desensamblado de la sección .data:
+
+00000000 <.data>:
+   0:	31 c0                	xor    %ax,%ax
+   2:	8e d8                	mov    %ax,%ds
+   4:	8e d0                	mov    %ax,%ss
+   6:	bc 00 9c             	mov    $0x9c00,%sp
+   9:	b8 00 b8             	mov    $0xb800,%ax
+   c:	8e c0                	mov    %ax,%es
+   e:	31 ff                	xor    %di,%di
+  10:	fa                   	cli    
+  11:	bb 09 00             	mov    $0x9,%bx
+  14:	c1 e3 02             	shl    $0x2,%bx
+  17:	c7 07 22 7c          	movw   $0x7c22,(%bx)
+  1b:	8c 4f 02             	mov    %cs,0x2(%bx)
+  1e:	fb                   	sti    
+  1f:	f4                   	hlt    
+  20:	eb fd                	jmp    0x1f
+  22:	e4 60                	in     $0x60,%al
+  24:	88 c1                	mov    %al,%cl
+  26:	b0 20                	mov    $0x20,%al
+  28:	e6 20                	out    %al,$0x20
+  2a:	b4 0f                	mov    $0xf,%ah
+  2c:	88 c8                	mov    %cl,%al
+  2e:	3c 02                	cmp    $0x2,%al
+  30:	7c 0b                	jl     0x3d
+  32:	3c 40                	cmp    $0x40,%al
+  34:	7f 07                	jg     0x3d
+  36:	2c 02                	sub    $0x2,%al
+  38:	bb 3e 7c             	mov    $0x7c3e,%bx
+  3b:	d7                   	xlat   %ds:(%bx)
+  3c:	ab                   	stos   %ax,%es:(%di)
+  3d:	cf                   	iret   
+  3e:	31 32                	xor    %si,(%bp,%si)
+  40:	33 34                	xor    (%si),%si
+  42:	35 36 37             	xor    $0x3736,%ax
+  45:	38 39                	cmp    %bh,(%bx,%di)
+  47:	30 2e 2e 2e          	xor    %ch,0x2e2e
+  4b:	2e 71 77             	jno,pn 0xc5
+  4e:	65 72 74             	gs jb  0xc5
+  51:	79 75                	jns    0xc8
+  53:	69 6f 70 2e 2e       	imul   $0x2e2e,0x70(%bx),%bp
+  58:	2e 2e 61             	cs cs popa 
+  5b:	73 64                	jae    0xc1
+  5d:	66 67 68 6a 6b 6c 2e 	addr32 pushl $0x2e6c6b6a
+  64:	2e 2e 2e 2e 7a 78    	cs cs cs jp,pn 0xe2
+  6a:	63 76 62             	arpl   %si,0x62(%bp)
+  6d:	6e                   	outsb  %ds:(%si),(%dx)
+  6e:	6d                   	insw   (%dx),%es:(%di)
+  6f:	2e 2e 2e 2e 20 00    	cs cs cs and %al,%cs:(%bx,%si)
+	...
+ 1fd:	00 55 aa             	add    %dl,-0x56(%di)

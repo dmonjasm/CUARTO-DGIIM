@@ -1,6 +1,8 @@
 // Calculo aproximado de PI mediante la serie de Leibniz e integral del cuarto de circulo
 // https://es.wikipedia.org/wiki/Serie_de_Leibniz
 // N.C. Cruz, Universidad de Granada, 2022
+//DANIEL MONJAS MIGUÉLEZ
+//17/03/2022
 
 #include <stdio.h>
 #include <stdlib.h>
