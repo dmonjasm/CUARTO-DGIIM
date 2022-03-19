@@ -10,3 +10,16 @@
 \BOOKMARK [1][-]{section.2}{Tema 2: Introducci\363n a los sistemas operativos}{}% 10
 \BOOKMARK [2][-]{subsection.2.1}{Abstracciones}{section.2}% 11
 \BOOKMARK [2][-]{subsection.2.2}{Llamadas al sistema}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Tema 3: Historia de los Sistemas Operativos}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Definici\363n}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Historia}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Primera generaci\363n \(1945-1955\): Tubos de vac\355o y paneles}{subsection.3.2}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Segunda generaci\363n \(1955-1965\): Transistores y sistemas por lotes}{subsection.3.2}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Tercera generaci\363n \(1965-1980\): Circuitos integrados y multiprogramaci\363n}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Cuarta generaci\363n \(1980-hoy\): Ordenador personal \(era \)}{subsection.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.3}{Estructura}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.4}{Ejemplos}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.5}{Comparativa}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Coste estructural de una llamada al sistema: caso monol\355tico}{subsection.3.5}% 23
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Coste estructural de una llamada al sistema: caso micron\372cleo}{subsection.3.5}% 24
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Coste estructural: multiservidor}{subsection.3.5}% 25

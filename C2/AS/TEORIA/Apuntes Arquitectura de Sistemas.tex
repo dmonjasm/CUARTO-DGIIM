@@ -1134,5 +1134,362 @@ El empleo de memoria tiene la ventaja de no limitar el número ni el tamaño de 
 
 \end{itemize}
 
+\section{Tema 3: Historia de los Sistemas Operativos}
+\subsection{Definición}
+\textbf{Sistema operativo:} programa o conjunto de programas encargado de gestionar los recursos de la máquina y proveer servicios al resto de programas. Suele ejecutarse en modo privilegiado. Controla la ejecución de aplicaciones y programas y actúa como interfaz entre las aplicaciones y el hardware del computador. 
+
+Suelen venir junto con multitud de otros programas, que sin forma parte del sistema operativo, resultan de suma utilidad: intérprete de órdenes, editor de texto, gestor de ficheros, navegador, ...
+
+\subsection{Historia}
+\subsubsection{Primera generación (1945-1955): Tubos de vacío y paneles}
+En esta primera generación los sistemas operativos servían como máquinas de cálculo. Se trataban de dispositivos mecánicos que utilizaban tubos de vacío y paneles.
+
+Para programas estos se utilizaban cables, interruptores y tarjetas perfoardas. Un gran problema de estos era que el diseño, construcción, operación, programación y mantenimiento requería de genios como Aiken, von Neuman o Mauchley.
+
+\subsubsection{Segunda generación (1955-1965): Transistores y sistemas por lotes}
+En esta segunda generación los siststamas operativos se utilizaban para el cálculo científico y la ingeniería. La invención del transistor permitió que se redujera el tamaño y precio de estos y los popularizó dando lugar a mainframes como el IBM 1401 o el IBM 7094.
+
+Para programas estos se utilizaba lenguaje ensamblador y lenguajes se alto nivel (FORTRAN) sobre tarjetas perforadas. Por otro lado, se pasó del procesamiento secuencial al procesamiento por lotes. Ejemplos: FMS y IBSYS.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{solotes.png}
+\end{figure}
+
+\subsubsection{Tercera generación (1965-1980): Circuitos integrados y multiprogramación}
+En esta tercera generación a parte de seguir utilizandose los computadores para el cálculo científico y la ingeniería se utilizan para el procesamiento de caracteres. 
+
+Se comienzan a utilizar ciercuitos integrados que son más baratos y se convierten en más populares (IBM 360, GE-645, DEC PDP-1).
+
+Como logro más destacables tenemos:
+\begin{itemize}
+\item Multiprogramación.
+
+\item Spooling.
+
+\item Tiempo compartido.
+\end{itemize}
+
+Ejemplos: OS/360, CTSS, MULTICS, UNIX.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=100mm]{multiprogramacion.png}
+\end{figure}
+
+\subsubsection{Cuarta generación (1980-hoy): Ordenador personal (era $\mu$)}
+La empresa (V)LSI de circuitos integrados proporciona circuitos más baratos y por consiguiente se convirtieron en más populares, dando lugar a computadores como el IBM PC.
+
+Surgen arquitecturas de procesadores como los 8080, Z80, 80x86, Alpha, Ultrasparc, ARM.\\
+
+Como logros destacables tenemos:
+\begin{itemize}
+\item GUI (Graphic User Interface).
+
+\item SO de red. Sistema operativo especializado para dispositivos de red como pueden ser un router o un switch.
+
+\item SMP (Symmetric Multi-Processing).
+
+\item SO distribuidos.
+\end{itemize}
+
+Ejemplos: UINX, CP/M, MS-DOS, Linux, MacOS, Windows.\\
+
+
+\subsection{Estructura}
+\textbf{Clasificación:}
+\begin{itemize}
+\item Estructura simple:
+	\begin{itemize}
+	\item Monolíticos. Son sistemas operativos en los cual el núcleo proporciona la mayoría de las funcionalidades propias del sistemas operativo, incluyendo la planificación, los sistemas de ficheros, las redes y otras funciones.
+	
+	\item Capas. Las funciones se organizan jerárquicamente y sólo hay interacción entre las capas adyacentes. Con el enfoque por capas, la mayor parte o todas las capas ejecutan en modo núcleo.
+	
+	\item Modulares
+	\end{itemize}
+
+\item Estructura cliente/servidor:
+	\begin{itemize}
+	\item Micronúcleo. Asigna unas pocas funciones esenciales al núcleo, incluyendo los espacios de almacenamiento, comunicación entre procesos y planificación básica.
+	
+	\item Exonúcleo.
+	\end{itemize}
+	
+\item Máquina virtual.
+
+\item Híbridos
+\end{itemize}
+
+\textbf{Tendencias:}
+\begin{itemize}
+\item Núcleos Extensibles
+
+\item Multiservidores sobre un micronúcleo.
+
+\item Núcleos híbridos.
+\end{itemize}
+
+\textbf{Monolítico:}
+
+El Sistema operativo completos se ejecuta en modo protegido. Como consecuencia hay una protección nula entre los componentes del mismo, pues cualquier fallo puede afectar a cualquier parte del sistema operativo.\\
+
+Ventajas:
+\begin{itemize}
+\item Es muy eficiente gracias a la economía de cambios de contexto. Esto se debe a que gracias a que todo el SO se ejecuta en modo protegido no requiere de cambios de contexto mientras se ejecutan llamadas al sistema.
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item La falta de protección implica una menor fiabilidad. 
+
+\item Mal manejo de la complejidad. Es más sentillo escribir 1000 programas de 1000 líneas que uno de 1000000
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=90mm]{monolitico.png}
+\end{figure}
+
+\textbf{Capas/Niveles:}
+
+El Sistema Operativo completo se ejecuta en modo protegido. Hay una escasa división entre los componentes.\\
+
+Ventajas:
+\begin{itemize}
+\item Es muy eficiente gracias a la economía de cambios de contexto.
+
+\item La complejidad es menor que la de los sistemas operativos monolíticos.
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item La falta de protección implica una menor fiabilidad.
+
+\item Menos flexible que un sistema operativo monolítico.
+
+\item Es difícil subdividir adecuadamente las capas.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{capasniveles.png}
+\end{figure}
+
+\textbf{Modular:}
+
+El Sistema Operativo se ejecuta en modo protegido. Una vez más esto implica una escasa protección entre los componentes.\\
+
+Ventajas:
+\begin{itemize}
+\item De nuevo la econocomías de cambios de contexto lo hace eficiente.
+
+\item Tiene una menos complejidad.
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item La falta de protección implica una menor fiabilidad.
+
+\item Es menos flexible que un sistema operativo monolítico.
+
+\item Es difícil elegir que colocar en el núcleo y que en los módulos.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=90mm]{modular.png}
+\end{figure}
+\newpage
+
+\textbf{Micronúcleo/Microkernel}
+
+Una mínima parte del Sistema Operativo se ejecuta en modo protegido. \\
+
+Ventajas:
+\begin{itemize}
+\item La perfecta protección entre componente nos da una mayor fiabilidad
+
+\item Manejo de la complejidad.
+
+\item Facilidad de programación
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item Debido a la sobrecarga en las comunicaciones hay una menor eficiencia.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{microkernel.png}
+\end{figure}
+
+\newpage
+
+\textbf{Exonúcleo:}
+
+Apenas existe el sistema operativo, sólo un gestor de recursos. En este tipo de sistema operativo dejamos que el software accedad directamente al hardware.\\
+
+Ventajas:
+\begin{itemize}
+\item Perfecta protección entre componentes, lo cual da lugar a una alta fiabilidad.
+
+\item El acceso directo al hardware nos dá lugar a una máxima eficiencia.
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item Pobre reutilización del código.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=90mm]{exonucleo.png}
+\end{figure}
+
+\newpage
+
+\textbf{Máquina virtual:}
+
+Se trata de copias virtuales de la máquina rela:
+\begin{itemize}
+\item SW: Bochs, Qemu, VMWare, Xen.
+
+\item HW: VMWare, Xen
+\end{itemize}
+
+Ventajas:
+\begin{itemize}
+\item Perfecta protección entre componentes, lo que garantiza una alta fiabilidad.
+
+\item Mejor aprovechamiento del hardware.
+
+\item Máxima reutilización del código.
+\end{itemize}
+
+Desventajas:
+\begin{itemize}
+\item La simulación del hardware real puede ser costosa, dando lugar a una baja eficiencia.
+\end{itemize}
+
+Esta opción es un éxito gracias a mejoras en el HW.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=90mm]{maquinavirtual.png}
+\end{figure}
+
+\newpage
+\textbf{Híbrida}
+
+\begin{itemize}
+\item La mezcla más frecuente es la combinación de micronúcleo y monolítico.
+
+\item Ventaja: ganamos velocidad respecto al micronúcleo.
+
+\item Desventaja: perdemos protección entre componentes.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{hibrida.png}
+\end{figure}
+
+\newpage
+\subsection{Ejemplos}
+\textbf{MS-DOS}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{MSDOS.png}
+\end{figure}
+
+\newpage
+
+\textbf{Windows 2000}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{WINDOWS2000.png}
+\end{figure}
+
+\newpage
+
+\textbf{Linux}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{linux.png}
+\end{figure}
+
+\newpage
+
+\textbf{Mach}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{mach.png}
+\end{figure}
+
+\textbf{MacOS X}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=105mm]{MacOSX.png}
+\end{figure}
+
+\newpage
+
+\textbf{QNX}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{qnx.png}
+\end{figure}
+
+\newpage
+\subsection{Comparativa}
+\subsubsection{Coste estructural de una llamada al sistema: caso monolítico}
+\textbf{1 llamada al sistema:}
+\begin{enumerate}
+\item Entrada al núcleo.
+
+\item Cambio al espacio de direccionies del núcleo.
+
+\item Salida del núcleo.
+\end{enumerate}
+
+\textbf{1 llamada a procedimiento:} llamada y retorno en el interior del espacio de direcciones del núcleo y pudiendo compartir información.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=100mm]{llamada_sistema.png}
+\end{figure}
+\newpage
+
+\subsubsection{Coste estructural de una llamada al sistema: caso micronúcleo}
+\textbf{4 llamadas al sistema:}
+\begin{enumerate}
+\item Entrada al micronúcleo.
+
+\item Cambio al espacio de direcciones del micronúcleo.
+
+\item Transferencia del mensaje.
+
+\item Recuperar el espacio de direcciones original.
+
+\item Salida del micronúcleo.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{llamada_kernel.png}
+\end{figure}
+
+\newpage
+
+\subsubsection{Coste estructural: multiservidor}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{multisevidor.png}
+\end{figure}
+
+
+
+
 
 \end{document}
