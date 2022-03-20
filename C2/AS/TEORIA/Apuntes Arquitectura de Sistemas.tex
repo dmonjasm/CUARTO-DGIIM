@@ -1142,14 +1142,20 @@ Suelen venir junto con multitud de otros programas, que sin forma parte del sist
 
 \subsection{Historia}
 \subsubsection{Primera generación (1945-1955): Tubos de vacío y paneles}
-En esta primera generación los sistemas operativos servían como máquinas de cálculo. Se trataban de dispositivos mecánicos que utilizaban tubos de vacío y paneles.
+Algunos de los primeros ordenadores digitales eran binarios, algunos usaban tubos de vacío, otros eran programables, pero todo eran muy primitivos y tardaban segundos en realizar incluso los cálculos más simples.\\
 
-Para programas estos se utilizaban cables, interruptores y tarjetas perfoardas. Un gran problema de estos era que el diseño, construcción, operación, programación y mantenimiento requería de genios como Aiken, von Neuman o Mauchley.
+En esta generación un pequeño grupo de gente (normalmente ingenieros) diseñaba, construía, programaba, operaba y mantenía cada máquina (genios como Aiken, von Neuman o Mauchley). Toda la programación se realizaba en lenguaje máquina o incluso peor, cableando circuitos electricos conectando miles de cables a un clavijero para controlar las funciones básicas de la máquina. Por ese entonces los lenguajes de programación eran inexistentes y los sistemas operativos desconocidos.\\
+
+Se utilizaban para resolver problemas matemáticos y cálculos numéricos, ales como cosenos y logaritmos o computación de trayectorias de artillería.
 
 \subsubsection{Segunda generación (1955-1965): Transistores y sistemas por lotes}
-En esta segunda generación los siststamas operativos se utilizaban para el cálculo científico y la ingeniería. La invención del transistor permitió que se redujera el tamaño y precio de estos y los popularizó dando lugar a mainframes como el IBM 1401 o el IBM 7094.
+La invención del transistor cambió radicalmente la situación. Los ordenadores se volvieron suficientemente confiables para ser manufacturados y vendidos a consumidores con la esperanza de que funcionen el suficiente tiempo para obtener la consecución algún trabajo útil. Se hace una separación entre diseñadores, constructores, operadores, programadores y personal de mantenimiento.\\
 
-Para programas estos se utilizaba lenguaje ensamblador y lenguajes se alto nivel (FORTRAN) sobre tarjetas perforadas. Por otro lado, se pasó del procesamiento secuencial al procesamiento por lotes. Ejemplos: FMS y IBSYS.
+Estas máquinas se conocen actualmente como mainframes (IBM 1401, IBM 7094, la primera es una máquina para la escritura de cintas y la otra para el cálculo de operaciones). Para ejecutar una tarea el programador primero escribe el programa en papel (en FORTRAN o ensamblador), luego lo escribía en tarjetas, es decir, se programa en ensamblador o lenguajes de alto nivel.\\
+
+Debido al alto coste del equipo se buscaron formas de reducir el tiempo desperdiciado. La solución fueron los sitemas por lotes. La idea era recolectar una bandeja de tareas, escribirlas en una cinta magnética, llevarlas a la máquina de cálculo que hace los cálculos y los escribe en otra cinta magnética, y imprimir los resultados. Surge así el procesamiento por lotes.\\
+
+Los ordenadores de segunda generación se utilizaron principalmente para cálculos cinetíficos y de ingeniería, como resolver ecuaciones diferenciales parciales. Los sistemas operativos más típicos eran FMS (el Fortran Monitor System) y IBSYS, el sistema operativo de IBM para el 7094.
 
 \begin{figure}[h]
 \centering
@@ -1157,17 +1163,19 @@ Para programas estos se utilizaba lenguaje ensamblador y lenguajes se alto nivel
 \end{figure}
 
 \subsubsection{Tercera generación (1965-1980): Circuitos integrados y multiprogramación}
-En esta tercera generación a parte de seguir utilizandose los computadores para el cálculo científico y la ingeniería se utilizan para el procesamiento de caracteres. 
+A principios de los 60, la mayoría de fabricantes de ordenadores tomaron dos lineas de producto distintas e incompatibles. La primera era la orientada a palabras y ordenadores científicos de gran escala como el 7094, los cuales se utilizaron para cálculos numéricos en ciencia e ingeniería a nivel industrial.
 
-Se comienzan a utilizar ciercuitos integrados que son más baratos y se convierten en más populares (IBM 360, GE-645, DEC PDP-1).
+La segunda orientada a caracteres, ordenadores comerciales, como el 1401, los cuales eran ampliamente utilizados por bancos y compañías de seguros, en la ordenación de cintas y la escritura.\\
+
+Se empiezan a utilizar circuitos integrados, así se pudo proveer una mayor relación precio/rendimiento respecto a las máquinas de la segunda generación, las cuales se basaban en transistores individules (IBM 360, GE-645, DEC, PDP-1).\\
 
 Como logro más destacables tenemos:
 \begin{itemize}
 \item Multiprogramación.
 
-\item Spooling.
+\item Spooling (Simultaneos Peripheral Operation On Line). Habilidad de leer trabajos de tarjetas al disco tan pronto se traen a la sala de computación. Así, cuando el trabajo en ejecución termine, el sistema operativo puede cargar un nuevo trabajo desde el disco en la partición vacía y ejecutarlo.
 
-\item Tiempo compartido.
+\item Tiempo compartido. Varicación de la multiprogramación, en la cual cada usuario tiene un terminal online.
 \end{itemize}
 
 Ejemplos: OS/360, CTSS, MULTICS, UNIX.
@@ -1178,7 +1186,7 @@ Ejemplos: OS/360, CTSS, MULTICS, UNIX.
 \end{figure}
 
 \subsubsection{Cuarta generación (1980-hoy): Ordenador personal (era $\mu$)}
-La empresa (V)LSI de circuitos integrados proporciona circuitos más baratos y por consiguiente se convirtieron en más populares, dando lugar a computadores como el IBM PC.
+Con el desarrollo de circuitos LSI (Integración de Gran Escala) - chips con cientos de transistores por centímetro cuadrado de silicona - estalla la era el ordenador personal. 
 
 Surgen arquitecturas de procesadores como los 8080, Z80, 80x86, Alpha, Ultrasparc, ARM.\\
 
@@ -1186,7 +1194,7 @@ Como logros destacables tenemos:
 \begin{itemize}
 \item GUI (Graphic User Interface).
 
-\item SO de red. Sistema operativo especializado para dispositivos de red como pueden ser un router o un switch.
+\item SO de red. Los usuarios son conscientes de la existecia de múltiples ordenadores y pueden registrase en cada máquina remota y copiar archivos de una máquina a otra
 
 \item SMP (Symmetric Multi-Processing).
 
@@ -1235,12 +1243,12 @@ El Sistema operativo completos se ejecuta en modo protegido. Como consecuencia h
 
 Ventajas:
 \begin{itemize}
-\item Es muy eficiente gracias a la economía de cambios de contexto. Esto se debe a que gracias a que todo el SO se ejecuta en modo protegido no requiere de cambios de contexto mientras se ejecutan llamadas al sistema.
+\item La capacidad de llamar a cualquier procedimiento que se quiera es muy eficiente.
 \end{itemize}
 
 Desventajas:
 \begin{itemize}
-\item La falta de protección implica una menor fiabilidad. 
+\item La falta de protección implica una menor fiabilidad. Tener miles de procedimientos que pueden llamarse entre ellos sin restricción puede llevar a un sistema que es  dificil de entender. Además, un fallo en cualquiera de esos procedimientos tumbaría el sistema operativo entero. 
 
 \item Mal manejo de la complejidad. Es más sentillo escribir 1000 programas de 1000 líneas que uno de 1000000
 \end{itemize}
@@ -1334,7 +1342,7 @@ Ventajas:
 \begin{itemize}
 \item Perfecta protección entre componentes, lo cual da lugar a una alta fiabilidad.
 
-\item El acceso directo al hardware nos dá lugar a una máxima eficiencia.
+\item El acceso directo al hardware nos da lugar a una máxima eficiencia.
 \end{itemize}
 
 Desventajas:
@@ -1351,7 +1359,7 @@ Desventajas:
 
 \textbf{Máquina virtual:}
 
-Se trata de copias virtuales de la máquina rela:
+Se trata de copias virtuales de la máquina rel:
 \begin{itemize}
 \item SW: Bochs, Qemu, VMWare, Xen.
 

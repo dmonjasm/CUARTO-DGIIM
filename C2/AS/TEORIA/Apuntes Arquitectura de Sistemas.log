@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  19 MAR 2022 23:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.26)  20 MAR 2022 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,179 +794,228 @@ File: images/comparativa.png Graphic file (type png)
 Package pdftex.def Info: images/comparativa.png  used on input line 1132.
 (pdftex.def)             Requested size: 742.77318pt x 668.49586pt.
  [50 <./images/llamadas_4.png> <./images/comparativa.png>]
-<images/solotes.png, id=488, 683.55376pt x 207.77625pt>
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1152--1153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1154--1155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1157
+
+ []
+
+[51]
+<images/solotes.png, id=492, 683.55376pt x 207.77625pt>
 File: images/solotes.png Graphic file (type png)
 <use images/solotes.png>
-Package pdftex.def Info: images/solotes.png  used on input line 1156.
+Package pdftex.def Info: images/solotes.png  used on input line 1162.
 (pdftex.def)             Requested size: 683.5521pt x 207.77573pt.
- [51 <./images/solotes.png>]
-<images/multiprogramacion.png, id=494, 412.54124pt x 459.7175pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1168--1169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1170--1171
+
+ []
+
+[52 <./images/solotes.png>]
+<images/multiprogramacion.png, id=498, 412.54124pt x 459.7175pt>
 File: images/multiprogramacion.png Graphic file (type png)
 <use images/multiprogramacion.png>
-Package pdftex.def Info: images/multiprogramacion.png  used on input line 1177.
+Package pdftex.def Info: images/multiprogramacion.png  used on input line 1185.
 
 (pdftex.def)             Requested size: 412.54024pt x 459.71637pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1180.
+(hyperref)                removing `math shift' on input line 1188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 1180.
+(hyperref)                removing `\mu' on input line 1188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1180.
+(hyperref)                removing `math shift' on input line 1188.
 
-[52 <./images/multiprogramacion.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1183--1184
+
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
+
+ []
+
+[53 <./images/multiprogramacion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
-
- []
-
-
-Overfull \hbox (0.25056pt too wide) in paragraph at lines 1234--1235
+Overfull \hbox (0.25056pt too wide) in paragraph at lines 1242--1243
 \OT1/cmr/m/n/10 cuen-cia hay una pro-tecci^^Son nula en-tre los com-po-nentes d
 el mismo, pues cualquier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1243
 
  []
 
-[53]
-<images/monolitico.png, id=504, 413.545pt x 407.5225pt>
+[54]
+<images/monolitico.png, id=508, 413.545pt x 407.5225pt>
 File: images/monolitico.png Graphic file (type png)
 <use images/monolitico.png>
-Package pdftex.def Info: images/monolitico.png  used on input line 1250.
+Package pdftex.def Info: images/monolitico.png  used on input line 1258.
 (pdftex.def)             Requested size: 413.54398pt x 407.5215pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1255--1256
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1264
 
  []
 
-[54 <./images/monolitico.png>]
-<images/capasniveles.png, id=510, 407.5225pt x 459.7175pt>
+<images/capasniveles.png, id=509, 407.5225pt x 459.7175pt>
 File: images/capasniveles.png Graphic file (type png)
 <use images/capasniveles.png>
-Package pdftex.def Info: images/capasniveles.png  used on input line 1275.
+Package pdftex.def Info: images/capasniveles.png  used on input line 1283.
 (pdftex.def)             Requested size: 407.5215pt x 459.71637pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1288--1289
 
  []
 
-[55 <./images/capasniveles.png>]
-<images/modular.png, id=517, 399.4925pt x 412.54124pt>
+[55 <./images/monolitico.png>]
+<images/modular.png, id=516, 399.4925pt x 412.54124pt>
 File: images/modular.png Graphic file (type png)
 <use images/modular.png>
-Package pdftex.def Info: images/modular.png  used on input line 1300.
+Package pdftex.def Info: images/modular.png  used on input line 1308.
 (pdftex.def)             Requested size: 399.49152pt x 412.54024pt.
- [56 <./images/modular.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[56 <./images/capasniveles.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1314--1315
 
  []
 
-<images/microkernel.png, id=523, 421.575pt x 466.74374pt>
+<images/microkernel.png, id=522, 421.575pt x 466.74374pt>
 File: images/microkernel.png Graphic file (type png)
 <use images/microkernel.png>
-Package pdftex.def Info: images/microkernel.png  used on input line 1324.
+Package pdftex.def Info: images/microkernel.png  used on input line 1332.
 (pdftex.def)             Requested size: 421.57396pt x 466.7426pt.
-[57 <./images/microkernel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1331--1332
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[57 <./images/modular.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
 
  []
 
-<images/exonucleo.png, id=529, 406.51875pt x 335.2525pt>
+<images/exonucleo.png, id=528, 406.51875pt x 335.2525pt>
 File: images/exonucleo.png Graphic file (type png)
 <use images/exonucleo.png>
-Package pdftex.def Info: images/exonucleo.png  used on input line 1347.
+Package pdftex.def Info: images/exonucleo.png  used on input line 1355.
 (pdftex.def)             Requested size: 406.51775pt x 335.25168pt.
-[58 <./images/exonucleo.png>]
-<images/maquinavirtual.png, id=536, 382.42876pt x 326.21875pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[58 <./images/microkernel.png>]
+<images/maquinavirtual.png, id=535, 382.42876pt x 326.21875pt>
 File: images/maquinavirtual.png Graphic file (type png)
 <use images/maquinavirtual.png>
-Package pdftex.def Info: images/maquinavirtual.png  used on input line 1379.
+Package pdftex.def Info: images/maquinavirtual.png  used on input line 1387.
 (pdftex.def)             Requested size: 382.42781pt x 326.21794pt.
- [59 <./images/maquinavirtual.png>]
-<images/hibrida.png, id=542, 568.1225pt x 371.3875pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[59 <./images/exonucleo.png>]
+<images/hibrida.png, id=541, 568.1225pt x 371.3875pt>
 File: images/hibrida.png Graphic file (type png)
 <use images/hibrida.png>
-Package pdftex.def Info: images/hibrida.png  used on input line 1395.
+Package pdftex.def Info: images/hibrida.png  used on input line 1403.
 (pdftex.def)             Requested size: 568.1211pt x 371.38658pt.
- [60 <./images/hibrida.png>]
+ [60 <./images/maquinavirtual.png> <./images/hibrida.png>]
 <images/MSDOS.png, id=548, 464.73625pt x 514.92375pt>
 File: images/MSDOS.png Graphic file (type png)
 <use images/MSDOS.png>
-Package pdftex.def Info: images/MSDOS.png  used on input line 1403.
+Package pdftex.def Info: images/MSDOS.png  used on input line 1411.
 (pdftex.def)             Requested size: 464.7351pt x 514.92249pt.
  [61 <./images/MSDOS.png>]
 <images/WINDOWS2000.png, id=555, 583.17876pt x 541.02126pt>
 File: images/WINDOWS2000.png Graphic file (type png)
 <use images/WINDOWS2000.png>
-Package pdftex.def Info: images/WINDOWS2000.png  used on input line 1411.
+Package pdftex.def Info: images/WINDOWS2000.png  used on input line 1419.
 (pdftex.def)             Requested size: 583.17734pt x 541.01993pt.
  [62 <./images/WINDOWS2000.png>]
 <images/linux.png, id=561, 570.13pt x 520.94624pt>
 File: images/linux.png Graphic file (type png)
 <use images/linux.png>
-Package pdftex.def Info: images/linux.png  used on input line 1419.
+Package pdftex.def Info: images/linux.png  used on input line 1427.
 (pdftex.def)             Requested size: 570.12862pt x 520.94498pt.
-
-[63 <./images/linux.png>]
+ [63 <./images/linux.png>]
 <images/mach.png, id=567, 776.9025pt x 287.0725pt>
 File: images/mach.png Graphic file (type png)
 <use images/mach.png>
-Package pdftex.def Info: images/mach.png  used on input line 1427.
+Package pdftex.def Info: images/mach.png  used on input line 1435.
 (pdftex.def)             Requested size: 776.90059pt x 287.0718pt.
 <images/MacOSX.png, id=568, 590.205pt x 540.0175pt>
 File: images/MacOSX.png Graphic file (type png)
 <use images/MacOSX.png>
-Package pdftex.def Info: images/MacOSX.png  used on input line 1433.
+Package pdftex.def Info: images/MacOSX.png  used on input line 1441.
 (pdftex.def)             Requested size: 590.20355pt x 540.01617pt.
  [64 <./images/mach.png> <./images/MacOSX.png>]
 <images/qnx.png, id=575, 794.97pt x 540.0175pt>
 File: images/qnx.png Graphic file (type png)
 <use images/qnx.png>
-Package pdftex.def Info: images/qnx.png  used on input line 1441.
+Package pdftex.def Info: images/qnx.png  used on input line 1449.
 (pdftex.def)             Requested size: 794.96806pt x 540.01617pt.
-
-[65 <./images/qnx.png>]
+ [65 <./images/qnx.png>]
 <images/llamada_sistema.png, id=581, 388.45125pt x 334.24875pt>
 File: images/llamada_sistema.png Graphic file (type png)
 <use images/llamada_sistema.png>
-Package pdftex.def Info: images/llamada_sistema.png  used on input line 1460.
+Package pdftex.def Info: images/llamada_sistema.png  used on input line 1468.
 (pdftex.def)             Requested size: 388.45029pt x 334.24792pt.
  [66 <./images/llamada_sistema.png>]
 <images/llamada_kernel.png, id=590, 724.7075pt x 297.11pt>
 File: images/llamada_kernel.png Graphic file (type png)
 <use images/llamada_kernel.png>
-Package pdftex.def Info: images/llamada_kernel.png  used on input line 1480.
+Package pdftex.def Info: images/llamada_kernel.png  used on input line 1488.
 (pdftex.def)             Requested size: 724.70573pt x 297.10927pt.
  [67 <./images/llamada_kernel.png>]
 <images/multisevidor.png, id=602, 586.19pt x 513.92pt>
 File: images/multisevidor.png Graphic file (type png)
 <use images/multisevidor.png>
-Package pdftex.def Info: images/multisevidor.png  used on input line 1488.
+Package pdftex.def Info: images/multisevidor.png  used on input line 1496.
 (pdftex.def)             Requested size: 586.18857pt x 513.91873pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1495.
- [68 <./images/multisevidor.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1495.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1503.
 
-(./Apuntes Arquitectura de Sistemas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1495.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1495.
+[68 <./images/multisevidor.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1503.
+ (./Apuntes Arquitectura de Sistemas.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1503.
 
 Package rerunfilecheck Info: File `"Apuntes Arquitectura de Sistemas".out' has 
 not changed.
 (rerunfilecheck)             Checksum: 0D92F3D7E5FB3A1AC62DCE7959F38011;2135.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1495.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1503.
  ) 
 Here is how much of TeX's memory you used:
  6957 strings out of 481239
@@ -987,7 +1036,7 @@ ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "Apuntes Arquitectura de Sistemas.pdf" (68 pages, 3924623 byt
+Output written on "Apuntes Arquitectura de Sistemas.pdf" (68 pages, 3926292 byt
 es).
 PDF statistics:
  677 PDF objects out of 1000 (max. 8388607)

@@ -16,8 +16,8 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Primera generación (1945-1955): Tubos de vacío y paneles}{51}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Segunda generación (1955-1965): Transistores y sistemas por lotes}{51}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Tercera generación (1965-1980): Circuitos integrados y multiprogramación}{52}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Cuarta generación (1980-hoy): Ordenador personal (era $\mu $)}{52}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Estructura}{53}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Cuarta generación (1980-hoy): Ordenador personal (era $\mu $)}{53}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Estructura}{54}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Ejemplos}{61}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Comparativa}{66}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Coste estructural de una llamada al sistema: caso monolítico}{66}{subsubsection.3.5.1}%
