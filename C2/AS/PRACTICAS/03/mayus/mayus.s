@@ -36,17 +36,20 @@ controlador:
 	mov %cl, %al        # recuperar código
 
 	cmp $0x2a, %al      # shift izquierdo encendido
-	je shift_on
+	je caps
 
 	cmp $0x36, %al      # shift derecho encendido
-	je shift_on
+	je caps
 
 	cmp $0xaa, %al      # shift izquierdo apagado
-	je shift_off
+	je caps
 
 	cmp $0xb6, %al      # shift derecho apagado
-	je shift_off
+	je caps
 
+	cmp $0x3a, %al
+	je caps
+	
 	cmp $0x02, %al      # 1
 	jl fin
 	cmp $0x40, %al      # ' '
@@ -59,16 +62,19 @@ imprimir:
 	or %cl, %cl
 	jz char
 	mov $mayus, %bx
+	
 char:
 	xlat                # traducir, al = (bx + al)
 	stosw               # imprimir caracter
 	jmp fin
 
-shift_on:
-	movb $1, (shift)
+caps:
+	and $1, (shift)
+	xor $1, (shift)
 	jmp fin
 
-shift_off:
+	
+caps_block_off:
 	movb $0, (shift)
 	jmp fin
 

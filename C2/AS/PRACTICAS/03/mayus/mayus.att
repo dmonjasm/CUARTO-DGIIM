@@ -26,84 +26,88 @@ Desensamblado de la sección .data:
   28:	b4 0f                	mov    $0xf,%ah
   2a:	88 c8                	mov    %cl,%al
   2c:	3c 2a                	cmp    $0x2a,%al
-  2e:	74 28                	je     0x58
+  2e:	74 2c                	je     0x5c
   30:	3c 36                	cmp    $0x36,%al
-  32:	74 24                	je     0x58
+  32:	74 28                	je     0x5c
   34:	3c aa                	cmp    $0xaa,%al
-  36:	74 27                	je     0x5f
+  36:	74 24                	je     0x5c
   38:	3c b6                	cmp    $0xb6,%al
-  3a:	74 23                	je     0x5f
-  3c:	3c 02                	cmp    $0x2,%al
-  3e:	7c 26                	jl     0x66
-  40:	3c 40                	cmp    $0x40,%al
-  42:	7f 22                	jg     0x66
-  44:	2c 02                	sub    $0x2,%al
-  46:	bb 68 7c             	mov    $0x7c68,%bx
-  49:	8a 0e 67 7c          	mov    0x7c67,%cl
-  4d:	08 c9                	or     %cl,%cl
-  4f:	74 03                	je     0x54
-  51:	bb a0 7c             	mov    $0x7ca0,%bx
-  54:	d7                   	xlat   %ds:(%bx)
-  55:	ab                   	stos   %ax,%es:(%di)
-  56:	eb 0e                	jmp    0x66
-  58:	c6 06 67 7c 01       	movb   $0x1,0x7c67
-  5d:	eb 07                	jmp    0x66
-  5f:	c6 06 67 7c 00       	movb   $0x0,0x7c67
-  64:	eb 00                	jmp    0x66
-  66:	cf                   	iret   
-  67:	00 31                	add    %dh,(%bx,%di)
-  69:	32 33                	xor    (%bp,%di),%dh
-  6b:	34 35                	xor    $0x35,%al
-  6d:	36 37                	ss aaa 
-  6f:	38 39                	cmp    %bh,(%bx,%di)
-  71:	30 27                	xor    %ah,(%bx)
-  73:	2e 2e 2e 71 77       	cs cs jno,pn 0xef
-  78:	65 72 74             	gs jb  0xef
-  7b:	79 75                	jns    0xf2
-  7d:	69 6f 70 60 2b       	imul   $0x2b60,0x70(%bx),%bp
-  82:	2e 2e 61             	cs cs popa 
-  85:	73 64                	jae    0xeb
-  87:	66 67 68 6a 6b 6c 2e 	addr32 pushl $0x2e6c6b6a
-  8e:	2e 2e 2e 2e 7a 78    	cs cs cs jp,pn 0x10c
-  94:	63 76 62             	arpl   %si,0x62(%bp)
-  97:	6e                   	outsb  %ds:(%si),(%dx)
-  98:	6d                   	insw   (%dx),%es:(%di)
-  99:	2c 2e                	sub    $0x2e,%al
-  9b:	2d 2e 2e             	sub    $0x2e2e,%ax
-  9e:	2e 20 21             	and    %ah,%cs:(%bx,%di)
-  a1:	22 2e 2e 25          	and    0x252e,%ch
-  a5:	26 2f                	es das 
-  a7:	28 29                	sub    %ch,(%bx,%di)
-  a9:	3d 3f 2e             	cmp    $0x2e3f,%ax
-  ac:	2e 2e 51             	cs cs push %cx
-  af:	57                   	push   %di
-  b0:	45                   	inc    %bp
-  b1:	52                   	push   %dx
-  b2:	54                   	push   %sp
-  b3:	59                   	pop    %cx
-  b4:	55                   	push   %bp
-  b5:	49                   	dec    %cx
-  b6:	4f                   	dec    %di
-  b7:	50                   	push   %ax
-  b8:	5e                   	pop    %si
-  b9:	2a 2e 2e 41          	sub    0x412e,%ch
-  bd:	53                   	push   %bx
-  be:	44                   	inc    %sp
-  bf:	46                   	inc    %si
-  c0:	47                   	inc    %di
-  c1:	48                   	dec    %ax
-  c2:	4a                   	dec    %dx
-  c3:	4b                   	dec    %bx
-  c4:	4c                   	dec    %sp
-  c5:	2e 2e 2e 2e 2e 5a    	cs cs cs cs cs pop %dx
-  cb:	58                   	pop    %ax
-  cc:	43                   	inc    %bx
-  cd:	56                   	push   %si
-  ce:	42                   	inc    %dx
-  cf:	4e                   	dec    %si
-  d0:	4d                   	dec    %bp
-  d1:	3b 3a                	cmp    (%bp,%si),%di
-  d3:	5f                   	pop    %di
-  d4:	2e 2e 2e 20 00       	cs cs and %al,%cs:(%bx,%si)
+  3a:	74 20                	je     0x5c
+  3c:	3c 3a                	cmp    $0x3a,%al
+  3e:	74 1c                	je     0x5c
+  40:	3c 02                	cmp    $0x2,%al
+  42:	7c 2b                	jl     0x6f
+  44:	3c 40                	cmp    $0x40,%al
+  46:	7f 27                	jg     0x6f
+  48:	2c 02                	sub    $0x2,%al
+  4a:	bb 71 7c             	mov    $0x7c71,%bx
+  4d:	8a 0e 70 7c          	mov    0x7c70,%cl
+  51:	08 c9                	or     %cl,%cl
+  53:	74 03                	je     0x58
+  55:	bb a9 7c             	mov    $0x7ca9,%bx
+  58:	d7                   	xlat   %ds:(%bx)
+  59:	ab                   	stos   %ax,%es:(%di)
+  5a:	eb 13                	jmp    0x6f
+  5c:	83 26 70 7c 01       	andw   $0x1,0x7c70
+  61:	83 36 70 7c 01       	xorw   $0x1,0x7c70
+  66:	eb 07                	jmp    0x6f
+  68:	c6 06 70 7c 00       	movb   $0x0,0x7c70
+  6d:	eb 00                	jmp    0x6f
+  6f:	cf                   	iret   
+  70:	00 31                	add    %dh,(%bx,%di)
+  72:	32 33                	xor    (%bp,%di),%dh
+  74:	34 35                	xor    $0x35,%al
+  76:	36 37                	ss aaa 
+  78:	38 39                	cmp    %bh,(%bx,%di)
+  7a:	30 27                	xor    %ah,(%bx)
+  7c:	2e 2e 2e 71 77       	cs cs jno,pn 0xf8
+  81:	65 72 74             	gs jb  0xf8
+  84:	79 75                	jns    0xfb
+  86:	69 6f 70 60 2b       	imul   $0x2b60,0x70(%bx),%bp
+  8b:	2e 2e 61             	cs cs popa 
+  8e:	73 64                	jae    0xf4
+  90:	66 67 68 6a 6b 6c 2e 	addr32 pushl $0x2e6c6b6a
+  97:	2e 2e 2e 2e 7a 78    	cs cs cs jp,pn 0x115
+  9d:	63 76 62             	arpl   %si,0x62(%bp)
+  a0:	6e                   	outsb  %ds:(%si),(%dx)
+  a1:	6d                   	insw   (%dx),%es:(%di)
+  a2:	2c 2e                	sub    $0x2e,%al
+  a4:	2d 2e 2e             	sub    $0x2e2e,%ax
+  a7:	2e 20 21             	and    %ah,%cs:(%bx,%di)
+  aa:	22 2e 2e 25          	and    0x252e,%ch
+  ae:	26 2f                	es das 
+  b0:	28 29                	sub    %ch,(%bx,%di)
+  b2:	3d 3f 2e             	cmp    $0x2e3f,%ax
+  b5:	2e 2e 51             	cs cs push %cx
+  b8:	57                   	push   %di
+  b9:	45                   	inc    %bp
+  ba:	52                   	push   %dx
+  bb:	54                   	push   %sp
+  bc:	59                   	pop    %cx
+  bd:	55                   	push   %bp
+  be:	49                   	dec    %cx
+  bf:	4f                   	dec    %di
+  c0:	50                   	push   %ax
+  c1:	5e                   	pop    %si
+  c2:	2a 2e 2e 41          	sub    0x412e,%ch
+  c6:	53                   	push   %bx
+  c7:	44                   	inc    %sp
+  c8:	46                   	inc    %si
+  c9:	47                   	inc    %di
+  ca:	48                   	dec    %ax
+  cb:	4a                   	dec    %dx
+  cc:	4b                   	dec    %bx
+  cd:	4c                   	dec    %sp
+  ce:	2e 2e 2e 2e 2e 5a    	cs cs cs cs cs pop %dx
+  d4:	58                   	pop    %ax
+  d5:	43                   	inc    %bx
+  d6:	56                   	push   %si
+  d7:	42                   	inc    %dx
+  d8:	4e                   	dec    %si
+  d9:	4d                   	dec    %bp
+  da:	3b 3a                	cmp    (%bp,%si),%di
+  dc:	5f                   	pop    %di
+  dd:	2e 2e 2e 20 00       	cs cs and %al,%cs:(%bx,%si)
 	...
- 1fd:	00 55 aa             	add    %dl,-0x56(%di)
+ 1fe:	55                   	push   %bp
+ 1ff:	aa                   	stos   %al,%es:(%di)
