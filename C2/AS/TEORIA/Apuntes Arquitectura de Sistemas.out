@@ -23,3 +23,10 @@
 \BOOKMARK [3][-]{subsubsection.3.5.1}{Coste estructural de una llamada al sistema: caso monol\355tico}{subsection.3.5}% 23
 \BOOKMARK [3][-]{subsubsection.3.5.2}{Coste estructural de una llamada al sistema: caso micron\372cleo}{subsection.3.5}% 24
 \BOOKMARK [3][-]{subsubsection.3.5.3}{Coste estructural: multiservidor}{subsection.3.5}% 25
+\BOOKMARK [1][-]{section.4}{Tema 4: Procesos}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{Definici\363n}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Control}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.3}{Ejecuci\363n del Sistema Operativo}{section.4}% 29
+\BOOKMARK [3][-]{subsubsection.4.3.1}{N\372cleo independiente}{subsection.4.3}% 30
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Ejecuci\363n dentro de los procesos de usuario}{subsection.4.3}% 31
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Sistemas operativos basados en procesos}{subsection.4.3}% 32

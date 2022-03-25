@@ -1496,7 +1496,596 @@ Esta opción es un éxito gracias a mejoras en el HW.
 \includegraphics[scale=1, width=\textwidth]{multisevidor.png}
 \end{figure}
 
+\section{Tema 4: Procesos}
+\subsection{Definición}
+\textbf{Proceso (definiciones):}
+\begin{itemize}
+\item Programa en ejecución
+\item Entorno de protección
+\item Algo dinámico
+\end{itemize}
 
+\textbf{Componentes básicos:}
+\begin{itemize}
+\item Hebras/hilos de ejecución
+\item Espacio de direcciones.
+\end{itemize}
+
+\textbf{La tarea fundamental de un SO es la gestión de procesos:}
+\begin{itemize}
+\item Creación
+\item Planificación
+\item Comunicación
+\item Finalización
+\end{itemize}
+
+Un programa es
+\begin{itemize}
+\item Una lista de instrucciones
+\item Algo estático
+\item Varios procesos pueden ejecutar un mismo programa
+\end{itemize}
+
+Puede lanzar, o ser lanzado por, otros procesos.\\
+
+\textbf{Modelo de procesamiento:} 
+
+Todo el software se organiza en forma de procesos, donde
+\begin{equation*}
+proceso=programa+entorno\:(procesador+memoria)
+\end{equation*}
+
+\textbf{Objetivos:}
+\begin{itemize}
+\item Multiprogramación: maximizar el uso del procesador, para mantener a este continuamente ocupado y así maximizar el rendimiento.
+
+\item Tiempo Compartido: cada proceso cree tener el sistema por completo. Cambian entre ellos con frecuencia en los momentos precisos para que así todos accedan a los recursos de forma equitativa.
+\end{itemize}
+
+\textbf{Clasificación en función del coste del cambio de proceso:}
+\begin{itemize}
+\item Procesamiento pesado: procesos UNIX
+	\begin{itemize}
+	\item Hebra de actividad y espacio de direcciones unificado
+	
+	\item El cambio de proceso implica dos cambios en el espacio de direcciones
+	
+	\begin{equation*}
+	ED_x\rightarrow ED_{SO}\rightarrow ED_y
+	\end{equation*}
+	\end{itemize}
+
+\item Procesamiento ligero: hebras tipo núcleo.
+	\begin{itemize}
+	\item Hebra de actividad y espacio de direcciones desacoplados.
+	
+	\item El cambio de hebra implica uno o dos cambios de espacio de direcciones en función de si las hebras comparten o no.
+	
+	\begin{equation*}
+	ED_x\rightarrow ED_{SO}\rightarrow ED_y
+	\end{equation*}
+	\end{itemize}
+	
+\item Procesamiento superligero/pluma: hebras tipo usuario.
+	\begin{itemize}
+	\item Hebras de actividad y espacio de direcciones unificados.
+	
+	\item El cambio de hebra no implica cambio de espacio de direcciones.
+	
+	\begin{equation*}
+	ED_x\rightarrow ED_y
+	\end{equation*}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Control}
+\textbf{Estructuras de control del SO}
+Para gestionar procesos y recursos el SO debe disponer de información sobre estos. Para ello el SO mantiene tablas sobre cada elemento que gestiona:
+\begin{itemize}
+\item Tablas de memoria: principal y secundaria, protección, traducción. Se usan para mantener un registro tanto de la memoria principal (real) como de la secundaria (virtual). Parte de la memoria principal está reservada para el uso del SO, mientras que el resto está disponible para el uso de los procesos. Las tablas de memoria pueden contener la siguiente información:
+	\begin{itemize}
+	\item Las reservas de memoria principal por parte de los procesos
+	
+	\item Las reservas de memoria secundaria por parte de los procesos
+	
+	\item Todos los atributos de protección que restringe el uso de la memoria principal y virtual, de forma que los procesos puedan acceder a ciertas áreas de memoria compartida.
+	
+	\item La informacion necesaria para manejar la memoria virtual.
+	\end{itemize}
+
+\item Tablas de E/S: dispositivos y canales, estado de las operaciones. Información para gestionar los dispositivos de E/S y los canales del computador.
+
+\item Tablas de ficheros: existencia, atributos, localización,... Información sobre la existencia de ficheras, su posición en almacenamiento secundario, su estado actual y otros atributos.
+
+\item Tablas de procesos: localización y atributos. 
+\end{itemize}
+
+Estas tablas no suelen estar separadas, sino entrelazadas. Normalmente estas se inicializan al arrancar el sistema.\\
+
+\textbf{Representación física de un proceso:}
+\begin{itemize}
+\item Imagen del proceso:
+	\begin{itemize}
+	\item Programa a ejecutar.
+	
+	\item Espacio de direcciones disponible para código, datos, pila, ...
+	\end{itemize}
+
+\item Bloque de Control del Proceso (PCB) o descriptor de proceso:
+	\begin{itemize}
+	\item Atributos para la gestión del proceso por parte del SO.
+	
+	\item Es la estructura de datos más importante del SO.
+	\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{pcb1.png}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{pcb2.png}
+\end{figure}
+\end{itemize}
+
+\textbf{Atributos de un proceso:}
+\begin{itemize}
+\item Identificación del proceso: identificadores del proceso, porceso padre, usuario.
+
+\item Estado del procesador: registros de propósito general, de estado y control (PSW, \textit{program status word}), puntero de pila.
+
+\item Información de control del proceso: estado, planificación, estructuración, comunicación y sincronización, privilegios, gestión de memroia, control de recursos y utilización.
+\end{itemize}
+
+\textbf{Control de procesos}
+\begin{itemize}
+\item Modos de ejecución. La mayor parte de los procesadores proporcionan al menos dos modos de ejecución:
+	\begin{itemize}
+	\item Modo usuario: permite la ejecución de instrucciones que no afectan a otros procesos.
+	
+	\item Modo núcleo: permite la ejecución de cualquier instrucción.
+	\end{itemize}
+
+Existen otros modos intermedio que solían usarse en controladores de dispositivos y bibliotecas de lenguajes. Un bit en la palabra de estado indica en que modo se está ejecutando el procesador.
+	\begin{itemize}
+	\item El bit puede consultarse como el resto de la palabra de estado.
+	
+	\item Se modifica cuando se produce una llamada al sistema o una interrupción.	
+	
+	\item Al retornar de una llamada al sistema o de una interrupción se devuelve el valor original de dicho bit desde la pila.
+	\end{itemize}
+
+\item Creación de procesos.
+
+\item Finalización de procesos.
+
+\item Jerarquía de procesos.
+
+\item Cambio de procesos.
+
+\item Ejecución del sistema operativo.
+\end{itemize}
+
+\newpage
+\textbf{Funciones típica del núcleo de un SO:}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{kernel.png}
+\end{figure}
+
+\textbf{Creación de procesos}.
+
+Salvo sistemas extremadamente simples, todo SO tiene mecanismos para crear nuevos procesos. Posibles causas de la creación de un procesos: 
+\begin{enumerate}
+\item Inicialización del sistema:
+	\begin{itemize}
+	\item Interactivos / no interactivos
+	
+	\item Primer /segundo plano
+	\end{itemize}
+	
+\item Llamada al sistema para crear un proceso.
+	\begin{itemize}
+	\item fork() + exec()/CreateProcess()
+	\end{itemize}
+	
+\item Petición de usuario
+	\begin{itemize}
+	\item Lanzamiento de una nueva aplicación desde el interfaz de usuario
+	\end{itemize}
+	
+\item Inicio de un proceso por lotes
+	\begin{itemize}
+	\item Sistemas de colas de trabajos en servidores
+	\end{itemize}
+\end{enumerate}
+
+Pasos en la creación de un proceso:
+\begin{enumerate}
+\item Asignar un identificador de proceso único. Se añade una nueva entrada a la tabla primaria de procesos, que contiene una entrada por proceso.
+
+\item Reservar espacio para el proceso. El SO debe conocer cuánta memoria se requiere para el espacio de direcciones privado (programas y datos) y para la pila de usuario. 
+	\begin{itemize}
+	\item Estructuras de datos del SO (PCB).
+	
+	\item Imagen del proceso.
+	\end{itemize}
+	
+\item Inicialización del bloque de control del proceso (PCB). Habitualmente se inicializa con la mayoría de entradas a 0, excepto el contador de programa (fijado en el puntero entrada del programa) y los punteros de pila de sistema (fijados para definir los límites de la pila del proceso). La información de control de procesos se inicializa en base a los valores por omisión, considerando también los atributos que han sido solicitados para este proceso. La prioridad se puede fijar, por defecto, a la maś baja, a menos que una solicitud explícita la eleve a una prioridad mayor. Inicialmente, el proceso no debe poseer ningún recurso a menos que exista una indicación explícita de ello o haya sido heredado del padre.
+	\begin{itemize}
+	\item ppid, estado, ip, sp, prioridad, E/S, ...
+	\end{itemize}
+	
+\item Establecimiento de enlaces adecuados:
+	\begin{itemize}
+	\item Cola de trabajos
+	\end{itemize}
+	
+\item Creación o expansión de otras estructuras de datos:
+	\begin{itemize}
+	\item Auditoría, monitorización, análisis de rendimiento, ...
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Finalización de procesos:}
+
+Los procesos se crean, se ejecutan y se finalizan. Las causas de finalización de un proceso pueden ser:
+\begin{itemize}
+\item Voluntarias:
+	\begin{itemize}
+	\item Terminación normal: la mayoría de los procesos realizan su trabajo y devuelven el control al SO mediante la llamada al sistema exit() / ExitProcess().
+	
+	\item Terminación por error: falta argumento, ...
+	\end{itemize}
+
+\item Involuntarias:
+	\begin{itemize}
+	\item Error fatal: instrucción privilegiada, excepción de coma flotante, violación de segmento, ...
+	
+	\item Terminado por otro proceso: mediante la llamada al sistema kill() / TerminateProcess()
+	\end{itemize}
+\end{itemize}
+
+Una vez finalizado es necesario, auditoría/contabilidad del uso de recursos y recuperar/reciclar recursos. \\
+
+\textbf{Jerarquía de procesos:}\\
+
+\textbf{UNIX:}
+\begin{itemize}
+\item El uso de \textbf{fork()} crea una relación jerárquica entre procesos.
+
+\item \textbf{init/systemd} suele ser el primer proceso del sistema.
+
+\item La relación no se puede modificar.
+
+\item Si un proceso padre finaliza antes alguno de sus hijos estos pasan a depender del ancestro previo.
+
+\item Útil para llevar a cabo operaciones sobre grupos de procesos.
+\end{itemize}
+
+\textbf{Windows:}
+\begin{itemize}
+\item \textbf{CreateProcess()} no establece realción entre procesos.
+	\begin{itemize}
+	\item Se crea un objeto que permite controlar al nuevo proceso.
+	
+	\item Se puede traspasar la propiedad de este objeto.
+	\end{itemize}
+\end{itemize}
+
+\textbf{Cambio de proceso:}
+
+Se trata de una operació costosa. Por ejemplo, en Linux 2.4.21 un cambio de proceso requiere 5.4 $\mu$s o 13200 ciclos en un Intel Pentium IV a 2.4GHz. Los eventos que pueden provocar un cambio de proceso son:
+\begin{itemize}
+\item Interrupción.
+	\begin{itemize}
+	\item Interrupción del reloj. El SO determina si el proceso en ejecución ha excedido o no la unidad máxima de tiempo de ejecución, denominada rodaja de tiempo (time slice).
+	
+	\item Finalización de operación de E/S o DMA. El SO determina qué acción de E/S ha ocurrido. Si la acción de E/S constituye un evento por el cuál están esperando uno o más procesos, el sistema operativo mueve todos los procesos correspondientes al estado de Listos. El SO puede decidir si reanuda la ejecución del procesos actualmente en estado Ejecutando o si lo expulsa para proceder con la ejecución de un proceso Listo de mayor prioridad.
+	\end{itemize}
+
+\item Excepción: fallo de página/segmento, llamada al sistema (int/syscall), operación de E/S, ...
+\end{itemize}
+
+Cambio de modo: cambio del modo de privilegio ocn el que se ejecuta el procesador. Es una operación sencilla y poco costosa.\\
+
+Cambio de contexto es ambiguo.\\
+
+\textbf{Pasos a seguir para realizar el cambio de proceso:}
+\begin{enumerate}
+\item Salvar el estado del procesador, incluyendo el contador de programa y otros registros.
+
+\item Actualizar el bloque de control del proceso que está actualmetne en el estado de Ejecutando. Esto incluye cambiar el estado del proceso a uno de los otros estados. También se tienen que actualizar otros campos importantes, incluyendo la razón por la cual el proceso ha dejado el estado de Ejecutando y demás información de auditoría.
+
+\item Mover el bloque de control de proceso a la cola apropiada.
+
+\item Selección de un nuevo proceso a ejectuar,
+
+\item Actualizar el bloque de control del proceso elegido. Esto incluye pasarlo al estado Ejecutando.
+
+\item Actualizar las estructuras de datos de gestión de memoria. Estos se puede necesitar, dependiendo de cómo se haga la traducción de direcciónes.
+
+\item Restaurar el estado del procesador al que tenía en el mmoemnto en el que el proceso seleccionado salió del estado Ejecutando por última vez, leyendo los valores anteriores de contador de programa y registros.
+\end{enumerate}
+
+\textbf{UNIX:fork()+exec()+wait()+exit()}
+\begin{itemize}
+\item fork(): crea un nuevo proceso.
+
+\item exec(): cambia la imagen de un proceso
+
+\item wait(): permite al padre esperar al hijo
+
+\item exit(): finaliza el proceso
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{fork.png}
+\end{figure}
+
+\subsection{Ejecución del Sistema Operativo}
+\subsubsection{Núcleo independiente}
+Es el método más antiguo. El SO no es un proceso (aunque se comporte como uno). Además, dispone de áreas de memoria y pila propias. El sistema operativo puede realizar todas las funciones que necesite y restaurar el contexto del proceso interrumpido, que hace que se retome la ejecución del proceso de usuario afectado. De forma alternativa, el sistema operativo puede realizar la salvaguarda del contexto y la activación de otro proceso diferente. Si esto ocurre o no depende de la causa de la interrupción y de las circunstancias puntales en el momento. 
+
+El concepto de proceso es aplicable sólo a programas de usuario. El código del SO se ejecuta como una entidad independiente que requiere un modo privilegiado de ejecución.\\
+
+El inconveniente es que cada evento cuesta un cambio de proceso y modo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=80mm]{nucleo_independiente.png}
+\end{figure}
+
+\subsubsection{Ejecución dentro de los procesos de usuario}
+El SO parece un conjunto de subrutinas que el proceso puede invocar desde su espacio de direcciones. A la imagen de cada proceso se une la del SO. Cuando oucrre una interrupción, \textit{trap} o llamada al sistema, el procesador se pone en modo núcleo y el control se pasa al sistema operativo. Para este fin, el contexto se salva y se cambia de modo a una rutina del sistema operativo. Sin embargo, la ejecución continúa dentro del proceso de usuario actual. De esta forma, no se realiza un cambio de proceso, sino un cambio de modo dentro del mismo proceso.\\
+
+Ventaja: cada evento cuesta sólo un cambio de modo.
+
+Inconveniente: restamos espacio al proceso de usuario.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=80mm]{dentro_so.png}
+\end{figure}
+
+\subsubsection{Sistemas operativos basados en procesos}
+El SO se implementa como una colección de procesos. Debe haber una pequeña cantidad de código para intercambio de procesos que se ejecuta fuera de todos los procesos.
+
+Ventajas: 
+\begin{itemize}
+\item Modularidad y facilidad de programación
+
+\item Teórica mejora de rendimiento en sistemas multiprocesador.
+\end{itemize}
+
+Inconvenientes: un evento puede costar varios cambios de proceso y modo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{procesos_so.png}
+\end{figure}
+
+\textbf{Traza de un proceso.}
+
+Comportamiento de un proceso = lista de instrucciones que ejecuta, a la que denominaremos traza. 
+
+\textbf{Activador (dispatcher):} programa encargado de cambiar entre los PCBs de los procesos para ejecutar un proceso u otro.\\
+
+\textbf{Cola de procesos:}
+\begin{itemize}
+\item Creación de un proceso = crear PCB + cargar imagen
+
+\item Lista de procesos = lista de PCBs.
+
+\item Planificador ("\textit{scheduler}"):
+	\begin{itemize}
+	\item Parte del SO que escoge el siguiente proceso a ejecutar.
+	
+	\item Gestor de las colas de planificación.
+	\end{itemize}
+
+\item Activador ("\textit{dispatcher}"): parte del planificador que realiza un intercambio de procesos
+
+\item Ejecución = encolar + activar.
+\end{itemize}
+
+\textbf{Modelo de 2 estados}
+
+Estados:
+\begin{itemize}
+\item Ejecutando: proceso en ejecución
+
+\item No ejecutando: proceso que no se está ejecutando.
+\end{itemize}
+
+Transiciones:
+\begin{itemize}
+\item Ejecutando $\rightarrow$ no ejecutando: evento o temporización
+
+\item No ejecutando $\rightarrow$ ejecutando: temporización o fin de evento.
+\end{itemize}
+
+Inconvenientes:
+\begin{itemize}
+\item No permite discriminar fácilmente la razón por la que un proceso no se encuentra en ejecución.
+
+\item Solución: subdividir el estado "no ejecutando" para reflejar el motivo.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{dos_estados.png}
+\end{figure}
+
+\textbf{Modelo de 5 estados}
+
+Estados:
+\begin{itemize}
+\item Nuevo: el proceso ha sido creado
+
+\item Preparado: proceso a la espera de que se le asigne un procesador.
+
+\item Ejecutando: proceso actualmente en ejecución.
+
+\item Bloqueado: proceso que no puede continuar hasta que finalice un evento.
+
+\item Finalizado: proceso finalizado.
+\end{itemize}
+
+Transiciones:
+\begin{itemize}
+\item Nuevo $\rightarrow$ preparado: se admite un nuevo proceso en el sistema.
+
+\item Preparado $\rightarrow$ ejecutando: el planificador selecciona el proceso para su ejecución.
+
+\item Preparado $\rightarrow$ finalizado: padre termina hijo.
+
+\item Ejecutando $\rightarrow$ finalizado: proceso finalizado.
+
+\item Ejecutando $\rightarrow$ preparado: tiempo de procesador agotado.
+
+\item Ejecutando $\rightarrow$ bloqueado: se produce un evento.
+
+\item Bloqueado $\rightarrow$ preparado: finalización de evento.
+
+\item Bloqueado $\rightarrow$ finalizado: padre termina hijo.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=90mm]{cinco_estados.png}
+\end{figure}
+
+\textbf{Modelo de +5 estados}
+
+Añaden un nuevo estado, el estado suspendido. El objetivo de la multiprogramación es aprovechar al máximo el procesador por la lentitud de la E/S. Esto no resuelve el problema del modelo de 5 estados.
+\begin{itemize}
+\item Causa: diferencia de velocidad entre CPU y E/S.
+
+\item Todos los procesos podrían llegar a estar bloqueados en espera de finalización de un evento.
+
+\item Solución: añadir más procesos.
+
+\item Problema: falta de memoria.
+\end{itemize}
+
+Se trata de un círculo vicioso difícil de romper:
+\begin{itemize}
+\item Solución cara: añadir maś memoria
+
+\item Solución barata: memoria de intercambio ("\textit{swap}")
+\end{itemize}
+
+Intercambio ("\textit{swapping}"): proceso de expulsión de un proceso de memoria principal a secundaria y viceversa. Se agraba el problema, pues el intercambio requiere E/S.\\
+
+\textbf{Modelos de 6 estados}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{6_estados.png}
+\end{figure}
+
+\newpage
+\textbf{Modelo de 7 estados}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{7_estados.png}
+\end{figure}
+
+Motivación: el reactivar un proceso sólo para descubrir que sigue bloqueado es muy costoso.\\
+
+Nuevos estados:
+\begin{itemize}
+\item Suspendido (bloqueado): proceso en área de intercambio y esperando un evento.
+
+\item Suspendido (preparado): proceso en área de intercambio y a la espera de espacio en memoria principal.
+\end{itemize}
+
+Nuevas transiciones:
+\begin{itemize}
+\item Bloqueado $\rightarrow$ suspendido (bloqueado): no hay procesos preparados o estos consumen demasiada memoria.
+
+\item Suspendido (bloqueado)$\rightarrow$ suspendido (preparado): sucede el evento por el que estaba bloqeuado.
+
+\item Suspendido (preparado)$\rightarrow$ preparado: no quedan procesos preparados o tiene mayor prioridad que los preparados.
+
+\item Preparado $\rightarrow$ suspendido (preparado): liberar memoria o dejar sitio para un proceso bloqueado de mayor prioridad.
+
+\item Nuevo $\rightarrow$ suspendido (preparado): control de carga del sistema.
+
+\item Suspendido (bloqueado) $\rightarrow $ bloqueado: queda memoria libre o proceso de alta prioridad.
+
+\item Ejecutando $\rightarrow$ suspendido (preparado): un proceso agota su tiempo y hay que liberar memoria para un proceso suspendido de mayor prioridad.
+
+\item X $\rightarrow$ finalizado: un proceso elimina a otro.
+\end{itemize}
+
+\newpage
+\textbf{Diagrama de transiciones entre estados en UNIX}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{diagrama_transicioens.png}
+\end{figure}
+
+\textbf{Planificación}
+
+Los procesos pueden cambiar varias veces de cola de planificación a lo largo de su vida. La parte del SO encargada de realizar esos cambios es el planificador.\\
+
+Tipos de planificadores:
+\begin{itemize}
+\item Corto plazo: slecciona entre los procesos preparados para ejecutar.
+	\begin{itemize}
+	\item Ejecución muy frecuentemente, ej: cada 10,...,100ms.
+	\end{itemize}
+	
+\item Medio plazo: decide que procesos pasar al área de intercambio y así controla el grado de multiprogramación.
+
+\item Largo plazo: selecciona que procesos poner en ejecución, ej: sistema por lotes.
+	\begin{itemize}
+	\item Ejecución en función de la carga del sistema, cada varios minutos o cuando finaliza un proceso.
+	\end{itemize}
+\end{itemize}
+
+\textbf{Comunicación entre procesos}
+
+Los procesos pueden ser:
+\begin{itemize}
+\item Independientes: no afecta ni es afectado por otros procesos (no comparten datos).
+
+\item Cooperatnes: puede afectar y ser afectados por otros procesos (si comparten datos).
+\end{itemize}
+
+El SO debe proporcionar métdos para crear, comunicar y terminar procesos. Los motivos para cooperar son:
+\begin{itemize}
+\item Compartir información: capacidad de acceso y economía de recursos.
+
+\item Acelerar los cálculos: realizar las tareas más rápidamente.
+
+\item Modularidad: facilidad de creación de programas.
+
+\item Conveniencia: multitarea
+\end{itemize}
+
+Métodos d ecomunicación (ya explicado):
+\begin{itemize}
+\item Memoria compartida.
+	\begin{itemize}
+	\item Los procesos comparten un área de memoria
+	
+	\item La comunicación es responsabilidad de los procesos.
+	\end{itemize}
+
+\item Paso de mensajes.
+	\begin{itemize}
+	\item Los procesos intercambian mensajes.
+	
+	\item Comunicación responsabilidad del sistema operativo.
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{comunicacion.png}
+\end{figure}
 
 
 
