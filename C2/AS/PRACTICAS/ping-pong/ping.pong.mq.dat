@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.mq':
+
+            866.82 msec task-clock                #    0.866 CPUs utilized          
+            219913      context-switches          #  253.702 K/sec                  
+                31      cpu-migrations            #   35.763 /sec                   
+               147      page-faults               #  169.586 /sec                   
+        2876858884      cycles                    #    3.319 GHz                    
+        2921367643      instructions              #    1.02  insn per cycle         
+         653098076      branches                  #  753.445 M/sec                  
+           6619882      branch-misses             #    1.01% of all branches        
+
+       1.001462769 seconds time elapsed
+
+       0.256763000 seconds user
+       0.985036000 seconds sys
+
+

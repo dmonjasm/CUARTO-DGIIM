@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.mmap':
+
+           2001.50 msec task-clock                #    1.998 CPUs utilized          
+                10      context-switches          #    4.996 /sec                   
+                 3      cpu-migrations            #    1.499 /sec                   
+               214      page-faults               #  106.920 /sec                   
+        7323713850      cycles                    #    3.659 GHz                    
+       12926735616      instructions              #    1.77  insn per cycle         
+        4307857777      branches                  #    2.152 G/sec                  
+          19405928      branch-misses             #    0.45% of all branches        
+
+       1.001639257 seconds time elapsed
+
+       1.001610000 seconds user
+       0.000000000 seconds sys
+
+

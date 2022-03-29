@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.udp':
+
+            879.86 msec task-clock                #    0.879 CPUs utilized          
+             91329      context-switches          #  103.799 K/sec                  
+                31      cpu-migrations            #   35.233 /sec                   
+               216      page-faults               #  245.493 /sec                   
+        1779362620      cycles                    #    2.022 GHz                    
+        1715809796      instructions              #    0.96  insn per cycle         
+         354715439      branches                  #  403.148 M/sec                  
+           4103058      branch-misses             #    1.16% of all branches        
+
+       1.001537583 seconds time elapsed
+
+       0.050560000 seconds user
+       0.542373000 seconds sys
+
+

@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.pipe':
+
+            853.32 msec task-clock                #    0.852 CPUs utilized          
+            234956      context-switches          #  275.345 K/sec                  
+                 7      cpu-migrations            #    8.203 /sec                   
+               214      page-faults               #  250.787 /sec                   
+        2790342130      cycles                    #    3.270 GHz                    
+        2775790762      instructions              #    0.99  insn per cycle         
+         631620899      branches                  #  740.196 M/sec                  
+           8606396      branch-misses             #    1.36% of all branches        
+
+       1.001200465 seconds time elapsed
+
+       0.090762000 seconds user
+       0.535931000 seconds sys
+
+

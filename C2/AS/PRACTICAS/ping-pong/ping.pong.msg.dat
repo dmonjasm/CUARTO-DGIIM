@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.msg':
+
+            830.86 msec task-clock                #    0.830 CPUs utilized          
+            227681      context-switches          #  274.029 K/sec                  
+                 9      cpu-migrations            #   10.832 /sec                   
+               213      page-faults               #  256.360 /sec                   
+        2656148659      cycles                    #    3.197 GHz                    
+        2533118748      instructions              #    0.95  insn per cycle         
+         575839035      branches                  #  693.060 M/sec                  
+           7052228      branch-misses             #    1.22% of all branches        
+
+       1.001251471 seconds time elapsed
+
+       0.099372000 seconds user
+       0.515788000 seconds sys
+
+

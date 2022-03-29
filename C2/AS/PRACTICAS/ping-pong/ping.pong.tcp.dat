@@ -1,0 +1,18 @@
+
+ Performance counter stats for './ping.pong.tcp':
+
+            929.32 msec task-clock                #    0.928 CPUs utilized          
+            123776      context-switches          #  133.190 K/sec                  
+                16      cpu-migrations            #   17.217 /sec                   
+               220      page-faults               #  236.732 /sec                   
+        2736550490      cycles                    #    2.945 GHz                    
+        2652519418      instructions              #    0.97  insn per cycle         
+         550126111      branches                  #  591.967 M/sec                  
+           7215399      branch-misses             #    1.31% of all branches        
+
+       1.001288340 seconds time elapsed
+
+       0.062598000 seconds user
+       0.548942000 seconds sys
+
+
