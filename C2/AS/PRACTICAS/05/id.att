@@ -1,0 +1,2130 @@
+
+id:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000002000 <_init>:
+    2000:	f3 0f 1e fa          	endbr64 
+    2004:	48 83 ec 08          	sub    $0x8,%rsp
+    2008:	48 8b 05 d1 4f 00 00 	mov    0x4fd1(%rip),%rax        # 6fe0 <__gmon_start__>
+    200f:	48 85 c0             	test   %rax,%rax
+    2012:	74 02                	je     2016 <_init+0x16>
+    2014:	ff d0                	callq  *%rax
+    2016:	48 83 c4 08          	add    $0x8,%rsp
+    201a:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000002020 <.plt>:
+    2020:	ff 35 5a 4e 00 00    	pushq  0x4e5a(%rip)        # 6e80 <_GLOBAL_OFFSET_TABLE_+0x8>
+    2026:	f2 ff 25 5b 4e 00 00 	bnd jmpq *0x4e5b(%rip)        # 6e88 <_GLOBAL_OFFSET_TABLE_+0x10>
+    202d:	0f 1f 00             	nopl   (%rax)
+    2030:	f3 0f 1e fa          	endbr64 
+    2034:	68 00 00 00 00       	pushq  $0x0
+    2039:	f2 e9 e1 ff ff ff    	bnd jmpq 2020 <.plt>
+    203f:	90                   	nop
+    2040:	f3 0f 1e fa          	endbr64 
+    2044:	68 01 00 00 00       	pushq  $0x1
+    2049:	f2 e9 d1 ff ff ff    	bnd jmpq 2020 <.plt>
+    204f:	90                   	nop
+    2050:	f3 0f 1e fa          	endbr64 
+    2054:	68 02 00 00 00       	pushq  $0x2
+    2059:	f2 e9 c1 ff ff ff    	bnd jmpq 2020 <.plt>
+    205f:	90                   	nop
+    2060:	f3 0f 1e fa          	endbr64 
+    2064:	68 03 00 00 00       	pushq  $0x3
+    2069:	f2 e9 b1 ff ff ff    	bnd jmpq 2020 <.plt>
+    206f:	90                   	nop
+    2070:	f3 0f 1e fa          	endbr64 
+    2074:	68 04 00 00 00       	pushq  $0x4
+    2079:	f2 e9 a1 ff ff ff    	bnd jmpq 2020 <.plt>
+    207f:	90                   	nop
+    2080:	f3 0f 1e fa          	endbr64 
+    2084:	68 05 00 00 00       	pushq  $0x5
+    2089:	f2 e9 91 ff ff ff    	bnd jmpq 2020 <.plt>
+    208f:	90                   	nop
+    2090:	f3 0f 1e fa          	endbr64 
+    2094:	68 06 00 00 00       	pushq  $0x6
+    2099:	f2 e9 81 ff ff ff    	bnd jmpq 2020 <.plt>
+    209f:	90                   	nop
+    20a0:	f3 0f 1e fa          	endbr64 
+    20a4:	68 07 00 00 00       	pushq  $0x7
+    20a9:	f2 e9 71 ff ff ff    	bnd jmpq 2020 <.plt>
+    20af:	90                   	nop
+    20b0:	f3 0f 1e fa          	endbr64 
+    20b4:	68 08 00 00 00       	pushq  $0x8
+    20b9:	f2 e9 61 ff ff ff    	bnd jmpq 2020 <.plt>
+    20bf:	90                   	nop
+    20c0:	f3 0f 1e fa          	endbr64 
+    20c4:	68 09 00 00 00       	pushq  $0x9
+    20c9:	f2 e9 51 ff ff ff    	bnd jmpq 2020 <.plt>
+    20cf:	90                   	nop
+    20d0:	f3 0f 1e fa          	endbr64 
+    20d4:	68 0a 00 00 00       	pushq  $0xa
+    20d9:	f2 e9 41 ff ff ff    	bnd jmpq 2020 <.plt>
+    20df:	90                   	nop
+    20e0:	f3 0f 1e fa          	endbr64 
+    20e4:	68 0b 00 00 00       	pushq  $0xb
+    20e9:	f2 e9 31 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ef:	90                   	nop
+    20f0:	f3 0f 1e fa          	endbr64 
+    20f4:	68 0c 00 00 00       	pushq  $0xc
+    20f9:	f2 e9 21 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ff:	90                   	nop
+    2100:	f3 0f 1e fa          	endbr64 
+    2104:	68 0d 00 00 00       	pushq  $0xd
+    2109:	f2 e9 11 ff ff ff    	bnd jmpq 2020 <.plt>
+    210f:	90                   	nop
+    2110:	f3 0f 1e fa          	endbr64 
+    2114:	68 0e 00 00 00       	pushq  $0xe
+    2119:	f2 e9 01 ff ff ff    	bnd jmpq 2020 <.plt>
+    211f:	90                   	nop
+    2120:	f3 0f 1e fa          	endbr64 
+    2124:	68 0f 00 00 00       	pushq  $0xf
+    2129:	f2 e9 f1 fe ff ff    	bnd jmpq 2020 <.plt>
+    212f:	90                   	nop
+    2130:	f3 0f 1e fa          	endbr64 
+    2134:	68 10 00 00 00       	pushq  $0x10
+    2139:	f2 e9 e1 fe ff ff    	bnd jmpq 2020 <.plt>
+    213f:	90                   	nop
+    2140:	f3 0f 1e fa          	endbr64 
+    2144:	68 11 00 00 00       	pushq  $0x11
+    2149:	f2 e9 d1 fe ff ff    	bnd jmpq 2020 <.plt>
+    214f:	90                   	nop
+    2150:	f3 0f 1e fa          	endbr64 
+    2154:	68 12 00 00 00       	pushq  $0x12
+    2159:	f2 e9 c1 fe ff ff    	bnd jmpq 2020 <.plt>
+    215f:	90                   	nop
+    2160:	f3 0f 1e fa          	endbr64 
+    2164:	68 13 00 00 00       	pushq  $0x13
+    2169:	f2 e9 b1 fe ff ff    	bnd jmpq 2020 <.plt>
+    216f:	90                   	nop
+    2170:	f3 0f 1e fa          	endbr64 
+    2174:	68 14 00 00 00       	pushq  $0x14
+    2179:	f2 e9 a1 fe ff ff    	bnd jmpq 2020 <.plt>
+    217f:	90                   	nop
+    2180:	f3 0f 1e fa          	endbr64 
+    2184:	68 15 00 00 00       	pushq  $0x15
+    2189:	f2 e9 91 fe ff ff    	bnd jmpq 2020 <.plt>
+    218f:	90                   	nop
+    2190:	f3 0f 1e fa          	endbr64 
+    2194:	68 16 00 00 00       	pushq  $0x16
+    2199:	f2 e9 81 fe ff ff    	bnd jmpq 2020 <.plt>
+    219f:	90                   	nop
+    21a0:	f3 0f 1e fa          	endbr64 
+    21a4:	68 17 00 00 00       	pushq  $0x17
+    21a9:	f2 e9 71 fe ff ff    	bnd jmpq 2020 <.plt>
+    21af:	90                   	nop
+    21b0:	f3 0f 1e fa          	endbr64 
+    21b4:	68 18 00 00 00       	pushq  $0x18
+    21b9:	f2 e9 61 fe ff ff    	bnd jmpq 2020 <.plt>
+    21bf:	90                   	nop
+    21c0:	f3 0f 1e fa          	endbr64 
+    21c4:	68 19 00 00 00       	pushq  $0x19
+    21c9:	f2 e9 51 fe ff ff    	bnd jmpq 2020 <.plt>
+    21cf:	90                   	nop
+    21d0:	f3 0f 1e fa          	endbr64 
+    21d4:	68 1a 00 00 00       	pushq  $0x1a
+    21d9:	f2 e9 41 fe ff ff    	bnd jmpq 2020 <.plt>
+    21df:	90                   	nop
+    21e0:	f3 0f 1e fa          	endbr64 
+    21e4:	68 1b 00 00 00       	pushq  $0x1b
+    21e9:	f2 e9 31 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ef:	90                   	nop
+    21f0:	f3 0f 1e fa          	endbr64 
+    21f4:	68 1c 00 00 00       	pushq  $0x1c
+    21f9:	f2 e9 21 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ff:	90                   	nop
+    2200:	f3 0f 1e fa          	endbr64 
+    2204:	68 1d 00 00 00       	pushq  $0x1d
+    2209:	f2 e9 11 fe ff ff    	bnd jmpq 2020 <.plt>
+    220f:	90                   	nop
+    2210:	f3 0f 1e fa          	endbr64 
+    2214:	68 1e 00 00 00       	pushq  $0x1e
+    2219:	f2 e9 01 fe ff ff    	bnd jmpq 2020 <.plt>
+    221f:	90                   	nop
+    2220:	f3 0f 1e fa          	endbr64 
+    2224:	68 1f 00 00 00       	pushq  $0x1f
+    2229:	f2 e9 f1 fd ff ff    	bnd jmpq 2020 <.plt>
+    222f:	90                   	nop
+    2230:	f3 0f 1e fa          	endbr64 
+    2234:	68 20 00 00 00       	pushq  $0x20
+    2239:	f2 e9 e1 fd ff ff    	bnd jmpq 2020 <.plt>
+    223f:	90                   	nop
+    2240:	f3 0f 1e fa          	endbr64 
+    2244:	68 21 00 00 00       	pushq  $0x21
+    2249:	f2 e9 d1 fd ff ff    	bnd jmpq 2020 <.plt>
+    224f:	90                   	nop
+    2250:	f3 0f 1e fa          	endbr64 
+    2254:	68 22 00 00 00       	pushq  $0x22
+    2259:	f2 e9 c1 fd ff ff    	bnd jmpq 2020 <.plt>
+    225f:	90                   	nop
+    2260:	f3 0f 1e fa          	endbr64 
+    2264:	68 23 00 00 00       	pushq  $0x23
+    2269:	f2 e9 b1 fd ff ff    	bnd jmpq 2020 <.plt>
+    226f:	90                   	nop
+    2270:	f3 0f 1e fa          	endbr64 
+    2274:	68 24 00 00 00       	pushq  $0x24
+    2279:	f2 e9 a1 fd ff ff    	bnd jmpq 2020 <.plt>
+    227f:	90                   	nop
+    2280:	f3 0f 1e fa          	endbr64 
+    2284:	68 25 00 00 00       	pushq  $0x25
+    2289:	f2 e9 91 fd ff ff    	bnd jmpq 2020 <.plt>
+    228f:	90                   	nop
+
+Desensamblado de la sección .plt.got:
+
+0000000000002290 <__cxa_finalize@plt>:
+    2290:	f3 0f 1e fa          	endbr64 
+    2294:	f2 ff 25 25 4d 00 00 	bnd jmpq *0x4d25(%rip)        # 6fc0 <__cxa_finalize@GLIBC_2.2.5>
+    229b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .plt.sec:
+
+00000000000022a0 <std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@plt>:
+    22a0:	f3 0f 1e fa          	endbr64 
+    22a4:	f2 ff 25 e5 4b 00 00 	bnd jmpq *0x4be5(%rip)        # 6e90 <std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@GLIBCXX_3.4>
+    22ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022b0 <strerror_r@plt>:
+    22b0:	f3 0f 1e fa          	endbr64 
+    22b4:	f2 ff 25 dd 4b 00 00 	bnd jmpq *0x4bdd(%rip)        # 6e98 <strerror_r@GLIBC_2.2.5>
+    22bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022c0 <std::terminate()@plt>:
+    22c0:	f3 0f 1e fa          	endbr64 
+    22c4:	f2 ff 25 d5 4b 00 00 	bnd jmpq *0x4bd5(%rip)        # 6ea0 <std::terminate()@GLIBCXX_3.4>
+    22cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022d0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long)@plt>:
+    22d0:	f3 0f 1e fa          	endbr64 
+    22d4:	f2 ff 25 cd 4b 00 00 	bnd jmpq *0x4bcd(%rip)        # 6ea8 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long)@GLIBCXX_3.4.21>
+    22db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022e0 <__cxa_begin_catch@plt>:
+    22e0:	f3 0f 1e fa          	endbr64 
+    22e4:	f2 ff 25 c5 4b 00 00 	bnd jmpq *0x4bc5(%rip)        # 6eb0 <__cxa_begin_catch@CXXABI_1.3>
+    22eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022f0 <strlen@plt>:
+    22f0:	f3 0f 1e fa          	endbr64 
+    22f4:	f2 ff 25 bd 4b 00 00 	bnd jmpq *0x4bbd(%rip)        # 6eb8 <strlen@GLIBC_2.2.5>
+    22fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002300 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>:
+    2300:	f3 0f 1e fa          	endbr64 
+    2304:	f2 ff 25 b5 4b 00 00 	bnd jmpq *0x4bb5(%rip)        # 6ec0 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@GLIBCXX_3.4>
+    230b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002310 <std::_V2::generic_category()@plt>:
+    2310:	f3 0f 1e fa          	endbr64 
+    2314:	f2 ff 25 ad 4b 00 00 	bnd jmpq *0x4bad(%rip)        # 6ec8 <std::_V2::generic_category()@GLIBCXX_3.4.21>
+    231b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002320 <strncpy@plt>:
+    2320:	f3 0f 1e fa          	endbr64 
+    2324:	f2 ff 25 a5 4b 00 00 	bnd jmpq *0x4ba5(%rip)        # 6ed0 <strncpy@GLIBC_2.2.5>
+    232b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002330 <std::__throw_length_error(char const*)@plt>:
+    2330:	f3 0f 1e fa          	endbr64 
+    2334:	f2 ff 25 9d 4b 00 00 	bnd jmpq *0x4b9d(%rip)        # 6ed8 <std::__throw_length_error(char const*)@GLIBCXX_3.4>
+    233b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002340 <__cxa_guard_release@plt>:
+    2340:	f3 0f 1e fa          	endbr64 
+    2344:	f2 ff 25 95 4b 00 00 	bnd jmpq *0x4b95(%rip)        # 6ee0 <__cxa_guard_release@CXXABI_1.3>
+    234b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002350 <std::__throw_system_error(int)@plt>:
+    2350:	f3 0f 1e fa          	endbr64 
+    2354:	f2 ff 25 8d 4b 00 00 	bnd jmpq *0x4b8d(%rip)        # 6ee8 <std::__throw_system_error(int)@GLIBCXX_3.4.11>
+    235b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002360 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>:
+    2360:	f3 0f 1e fa          	endbr64 
+    2364:	f2 ff 25 85 4b 00 00 	bnd jmpq *0x4b85(%rip)        # 6ef0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@GLIBCXX_3.4.9>
+    236b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002370 <std::__throw_logic_error(char const*)@plt>:
+    2370:	f3 0f 1e fa          	endbr64 
+    2374:	f2 ff 25 7d 4b 00 00 	bnd jmpq *0x4b7d(%rip)        # 6ef8 <std::__throw_logic_error(char const*)@GLIBCXX_3.4>
+    237b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002380 <pthread_mutex_unlock@plt>:
+    2380:	f3 0f 1e fa          	endbr64 
+    2384:	f2 ff 25 75 4b 00 00 	bnd jmpq *0x4b75(%rip)        # 6f00 <pthread_mutex_unlock@GLIBC_2.2.5>
+    238b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002390 <std::ostream& std::ostream::_M_insert<void const*>(void const*)@plt>:
+    2390:	f3 0f 1e fa          	endbr64 
+    2394:	f2 ff 25 6d 4b 00 00 	bnd jmpq *0x4b6d(%rip)        # 6f08 <std::ostream& std::ostream::_M_insert<void const*>(void const*)@GLIBCXX_3.4.9>
+    239b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023a0 <memcpy@plt>:
+    23a0:	f3 0f 1e fa          	endbr64 
+    23a4:	f2 ff 25 65 4b 00 00 	bnd jmpq *0x4b65(%rip)        # 6f10 <memcpy@GLIBC_2.14>
+    23ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023b0 <__cxa_atexit@plt>:
+    23b0:	f3 0f 1e fa          	endbr64 
+    23b4:	f2 ff 25 5d 4b 00 00 	bnd jmpq *0x4b5d(%rip)        # 6f18 <__cxa_atexit@GLIBC_2.2.5>
+    23bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023c0 <pthread_self@plt>:
+    23c0:	f3 0f 1e fa          	endbr64 
+    23c4:	f2 ff 25 55 4b 00 00 	bnd jmpq *0x4b55(%rip)        # 6f20 <pthread_self@GLIBC_2.2.5>
+    23cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023d0 <operator delete(void*)@plt>:
+    23d0:	f3 0f 1e fa          	endbr64 
+    23d4:	f2 ff 25 4d 4b 00 00 	bnd jmpq *0x4b4d(%rip)        # 6f28 <operator delete(void*)@GLIBCXX_3.4>
+    23db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023e0 <operator new(unsigned long)@plt>:
+    23e0:	f3 0f 1e fa          	endbr64 
+    23e4:	f2 ff 25 45 4b 00 00 	bnd jmpq *0x4b45(%rip)        # 6f30 <operator new(unsigned long)@GLIBCXX_3.4>
+    23eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023f0 <operator delete(void*, unsigned long)@plt>:
+    23f0:	f3 0f 1e fa          	endbr64 
+    23f4:	f2 ff 25 3d 4b 00 00 	bnd jmpq *0x4b3d(%rip)        # 6f38 <operator delete(void*, unsigned long)@CXXABI_1.3.9>
+    23fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002400 <std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@plt>:
+    2400:	f3 0f 1e fa          	endbr64 
+    2404:	f2 ff 25 35 4b 00 00 	bnd jmpq *0x4b35(%rip)        # 6f40 <std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@GLIBCXX_3.4>
+    240b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002410 <std::runtime_error::~runtime_error()@plt>:
+    2410:	f3 0f 1e fa          	endbr64 
+    2414:	f2 ff 25 2d 4b 00 00 	bnd jmpq *0x4b2d(%rip)        # 6f48 <std::runtime_error::~runtime_error()@GLIBCXX_3.4>
+    241b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002420 <__stack_chk_fail@plt>:
+    2420:	f3 0f 1e fa          	endbr64 
+    2424:	f2 ff 25 25 4b 00 00 	bnd jmpq *0x4b25(%rip)        # 6f50 <__stack_chk_fail@GLIBC_2.4>
+    242b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002430 <__dynamic_cast@plt>:
+    2430:	f3 0f 1e fa          	endbr64 
+    2434:	f2 ff 25 1d 4b 00 00 	bnd jmpq *0x4b1d(%rip)        # 6f58 <__dynamic_cast@CXXABI_1.3>
+    243b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>:
+    2440:	f3 0f 1e fa          	endbr64 
+    2444:	f2 ff 25 15 4b 00 00 	bnd jmpq *0x4b15(%rip)        # 6f60 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9>
+    244b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002450 <std::runtime_error::what() const@plt>:
+    2450:	f3 0f 1e fa          	endbr64 
+    2454:	f2 ff 25 0d 4b 00 00 	bnd jmpq *0x4b0d(%rip)        # 6f68 <std::runtime_error::what() const@GLIBCXX_3.4>
+    245b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002460 <pthread_mutex_lock@plt>:
+    2460:	f3 0f 1e fa          	endbr64 
+    2464:	f2 ff 25 05 4b 00 00 	bnd jmpq *0x4b05(%rip)        # 6f70 <pthread_mutex_lock@GLIBC_2.2.5>
+    246b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002470 <std::ios_base::Init::Init()@plt>:
+    2470:	f3 0f 1e fa          	endbr64 
+    2474:	f2 ff 25 fd 4a 00 00 	bnd jmpq *0x4afd(%rip)        # 6f78 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    247b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002480 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@plt>:
+    2480:	f3 0f 1e fa          	endbr64 
+    2484:	f2 ff 25 f5 4a 00 00 	bnd jmpq *0x4af5(%rip)        # 6f80 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@GLIBCXX_3.4.21>
+    248b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002490 <__cxa_end_catch@plt>:
+    2490:	f3 0f 1e fa          	endbr64 
+    2494:	f2 ff 25 ed 4a 00 00 	bnd jmpq *0x4aed(%rip)        # 6f88 <__cxa_end_catch@CXXABI_1.3>
+    249b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024a0 <boost::fibers::context::active()@plt>:
+    24a0:	f3 0f 1e fa          	endbr64 
+    24a4:	f2 ff 25 e5 4a 00 00 	bnd jmpq *0x4ae5(%rip)        # 6f90 <boost::fibers::context::active()>
+    24ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024b0 <std::_V2::error_category::~error_category()@plt>:
+    24b0:	f3 0f 1e fa          	endbr64 
+    24b4:	f2 ff 25 dd 4a 00 00 	bnd jmpq *0x4add(%rip)        # 6f98 <std::_V2::error_category::~error_category()@GLIBCXX_3.4.21>
+    24bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024c0 <boost::fibers::context::get_id() const@plt>:
+    24c0:	f3 0f 1e fa          	endbr64 
+    24c4:	f2 ff 25 d5 4a 00 00 	bnd jmpq *0x4ad5(%rip)        # 6fa0 <boost::fibers::context::get_id() const>
+    24cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024d0 <_Unwind_Resume@plt>:
+    24d0:	f3 0f 1e fa          	endbr64 
+    24d4:	f2 ff 25 cd 4a 00 00 	bnd jmpq *0x4acd(%rip)        # 6fa8 <_Unwind_Resume@GCC_3.0>
+    24db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024e0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>:
+    24e0:	f3 0f 1e fa          	endbr64 
+    24e4:	f2 ff 25 c5 4a 00 00 	bnd jmpq *0x4ac5(%rip)        # 6fb0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@GLIBCXX_3.4.21>
+    24eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024f0 <__cxa_guard_acquire@plt>:
+    24f0:	f3 0f 1e fa          	endbr64 
+    24f4:	f2 ff 25 bd 4a 00 00 	bnd jmpq *0x4abd(%rip)        # 6fb8 <__cxa_guard_acquire@CXXABI_1.3>
+    24fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .text:
+
+0000000000002500 <main.cold>:
+    2500:	44 89 6b 18          	mov    %r13d,0x18(%rbx)
+    2504:	c5 f8 77             	vzeroupper 
+    2507:	e8 c4 ff ff ff       	callq  24d0 <_Unwind_Resume@plt>
+    250c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002510 <main>:
+    2510:	f3 0f 1e fa          	endbr64 
+    2514:	41 55                	push   %r13
+    2516:	ba 11 00 00 00       	mov    $0x11,%edx
+    251b:	48 8d 35 38 1b 00 00 	lea    0x1b38(%rip),%rsi        # 405a <_IO_stdin_used+0x5a>
+    2522:	41 54                	push   %r12
+    2524:	55                   	push   %rbp
+    2525:	48 8d 2d 14 4b 00 00 	lea    0x4b14(%rip),%rbp        # 7040 <std::cout@@GLIBCXX_3.4>
+    252c:	48 89 ef             	mov    %rbp,%rdi
+    252f:	53                   	push   %rbx
+    2530:	48 83 ec 08          	sub    $0x8,%rsp
+    2534:	48 8b 05 05 4b 00 00 	mov    0x4b05(%rip),%rax        # 7040 <std::cout@@GLIBCXX_3.4>
+    253b:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    253f:	48 c7 44 05 10 20 00 	movq   $0x20,0x10(%rbp,%rax,1)
+    2546:	00 00 
+    2548:	e8 f3 fe ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    254d:	e8 6e fe ff ff       	callq  23c0 <pthread_self@plt>
+    2552:	48 89 c6             	mov    %rax,%rsi
+    2555:	48 89 ef             	mov    %rbp,%rdi
+    2558:	49 89 c4             	mov    %rax,%r12
+    255b:	e8 00 fe ff ff       	callq  2360 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    2560:	48 89 c7             	mov    %rax,%rdi
+    2563:	e8 98 fd ff ff       	callq  2300 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    2568:	48 89 c5             	mov    %rax,%rbp
+    256b:	48 8b 00             	mov    (%rax),%rax
+    256e:	ba 1d 00 00 00       	mov    $0x1d,%edx
+    2573:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    2577:	48 8d 35 ee 1a 00 00 	lea    0x1aee(%rip),%rsi        # 406c <_IO_stdin_used+0x6c>
+    257e:	48 c7 44 05 10 20 00 	movq   $0x20,0x10(%rbp,%rax,1)
+    2585:	00 00 
+    2587:	48 89 ef             	mov    %rbp,%rdi
+    258a:	e8 b1 fe ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    258f:	48 83 3d 31 4a 00 00 	cmpq   $0x0,0x4a31(%rip)        # 6fc8 <__pthread_key_create>
+    2596:	00 
+    2597:	0f 84 ee 00 00 00    	je     268b <main+0x17b>
+    259d:	e8 1e fe ff ff       	callq  23c0 <pthread_self@plt>
+    25a2:	48 89 c6             	mov    %rax,%rsi
+    25a5:	48 85 c0             	test   %rax,%rax
+    25a8:	0f 85 e2 00 00 00    	jne    2690 <main+0x180>
+    25ae:	ba 24 00 00 00       	mov    $0x24,%edx
+    25b3:	48 8d 35 ee 1a 00 00 	lea    0x1aee(%rip),%rsi        # 40a8 <_IO_stdin_used+0xa8>
+    25ba:	48 89 ef             	mov    %rbp,%rdi
+    25bd:	e8 7e fe ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    25c2:	48 89 ef             	mov    %rbp,%rdi
+    25c5:	e8 36 fd ff ff       	callq  2300 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    25ca:	48 89 c5             	mov    %rax,%rbp
+    25cd:	48 8b 00             	mov    (%rax),%rax
+    25d0:	ba 1f 00 00 00       	mov    $0x1f,%edx
+    25d5:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    25d9:	48 8d 35 f0 1a 00 00 	lea    0x1af0(%rip),%rsi        # 40d0 <_IO_stdin_used+0xd0>
+    25e0:	48 c7 44 05 10 20 00 	movq   $0x20,0x10(%rbp,%rax,1)
+    25e7:	00 00 
+    25e9:	48 89 ef             	mov    %rbp,%rdi
+    25ec:	e8 4f fe ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    25f1:	4d 85 e4             	test   %r12,%r12
+    25f4:	0f 84 a6 00 00 00    	je     26a0 <main+0x190>
+    25fa:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    25fe:	4c 89 e6             	mov    %r12,%rsi
+    2601:	48 8b 58 e8          	mov    -0x18(%rax),%rbx
+    2605:	48 89 ef             	mov    %rbp,%rdi
+    2608:	48 01 eb             	add    %rbp,%rbx
+    260b:	44 8b 6b 18          	mov    0x18(%rbx),%r13d
+    260f:	44 89 e8             	mov    %r13d,%eax
+    2612:	83 e0 b5             	and    $0xffffffb5,%eax
+    2615:	83 c8 08             	or     $0x8,%eax
+    2618:	89 43 18             	mov    %eax,0x18(%rbx)
+    261b:	e8 40 fd ff ff       	callq  2360 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    2620:	44 89 6b 18          	mov    %r13d,0x18(%rbx)
+    2624:	48 89 c5             	mov    %rax,%rbp
+    2627:	48 89 ef             	mov    %rbp,%rdi
+    262a:	e8 d1 fc ff ff       	callq  2300 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    262f:	48 89 c5             	mov    %rax,%rbp
+    2632:	48 8b 00             	mov    (%rax),%rax
+    2635:	48 8d 35 b4 1a 00 00 	lea    0x1ab4(%rip),%rsi        # 40f0 <_IO_stdin_used+0xf0>
+    263c:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    2640:	ba 1e 00 00 00       	mov    $0x1e,%edx
+    2645:	48 c7 44 05 10 20 00 	movq   $0x20,0x10(%rbp,%rax,1)
+    264c:	00 00 
+    264e:	48 89 ef             	mov    %rbp,%rdi
+    2651:	e8 ea fd ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2656:	e8 45 fe ff ff       	callq  24a0 <boost::fibers::context::active()@plt>
+    265b:	48 89 c7             	mov    %rax,%rdi
+    265e:	e8 5d fe ff ff       	callq  24c0 <boost::fibers::context::get_id() const@plt>
+    2663:	48 89 c6             	mov    %rax,%rsi
+    2666:	48 85 c0             	test   %rax,%rax
+    2669:	74 4e                	je     26b9 <main+0x1a9>
+    266b:	48 89 ef             	mov    %rbp,%rdi
+    266e:	e8 1d fd ff ff       	callq  2390 <std::ostream& std::ostream::_M_insert<void const*>(void const*)@plt>
+    2673:	48 89 c5             	mov    %rax,%rbp
+    2676:	48 89 ef             	mov    %rbp,%rdi
+    2679:	e8 82 fc ff ff       	callq  2300 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    267e:	48 83 c4 08          	add    $0x8,%rsp
+    2682:	5b                   	pop    %rbx
+    2683:	5d                   	pop    %rbp
+    2684:	41 5c                	pop    %r12
+    2686:	31 c0                	xor    %eax,%eax
+    2688:	41 5d                	pop    %r13
+    268a:	c3                   	retq   
+    268b:	be 01 00 00 00       	mov    $0x1,%esi
+    2690:	48 89 ef             	mov    %rbp,%rdi
+    2693:	e8 c8 fc ff ff       	callq  2360 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    2698:	48 89 c5             	mov    %rax,%rbp
+    269b:	e9 22 ff ff ff       	jmpq   25c2 <main+0xb2>
+    26a0:	ba 10 00 00 00       	mov    $0x10,%edx
+    26a5:	48 8d 35 de 19 00 00 	lea    0x19de(%rip),%rsi        # 408a <_IO_stdin_used+0x8a>
+    26ac:	48 89 ef             	mov    %rbp,%rdi
+    26af:	e8 8c fd ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    26b4:	e9 6e ff ff ff       	jmpq   2627 <main+0x117>
+    26b9:	ba 0b 00 00 00       	mov    $0xb,%edx
+    26be:	48 8d 35 d6 19 00 00 	lea    0x19d6(%rip),%rsi        # 409b <_IO_stdin_used+0x9b>
+    26c5:	48 89 ef             	mov    %rbp,%rdi
+    26c8:	e8 73 fd ff ff       	callq  2440 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    26cd:	eb a7                	jmp    2676 <main+0x166>
+    26cf:	f3 0f 1e fa          	endbr64 
+    26d3:	48 89 c7             	mov    %rax,%rdi
+    26d6:	e9 25 fe ff ff       	jmpq   2500 <main.cold>
+    26db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000026e0 <_GLOBAL__sub_I_main>:
+    26e0:	f3 0f 1e fa          	endbr64 
+    26e4:	48 83 ec 08          	sub    $0x8,%rsp
+    26e8:	48 8d 3d 62 4a 00 00 	lea    0x4a62(%rip),%rdi        # 7151 <std::__ioinit>
+    26ef:	e8 7c fd ff ff       	callq  2470 <std::ios_base::Init::Init()@plt>
+    26f4:	48 8b 3d f5 48 00 00 	mov    0x48f5(%rip),%rdi        # 6ff0 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    26fb:	48 8d 15 06 49 00 00 	lea    0x4906(%rip),%rdx        # 7008 <__dso_handle>
+    2702:	48 8d 35 48 4a 00 00 	lea    0x4a48(%rip),%rsi        # 7151 <std::__ioinit>
+    2709:	48 83 c4 08          	add    $0x8,%rsp
+    270d:	e9 9e fc ff ff       	jmpq   23b0 <__cxa_atexit@plt>
+    2712:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2719:	00 00 00 
+    271c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002720 <_start>:
+    2720:	f3 0f 1e fa          	endbr64 
+    2724:	31 ed                	xor    %ebp,%ebp
+    2726:	49 89 d1             	mov    %rdx,%r9
+    2729:	5e                   	pop    %rsi
+    272a:	48 89 e2             	mov    %rsp,%rdx
+    272d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    2731:	50                   	push   %rax
+    2732:	54                   	push   %rsp
+    2733:	4c 8d 05 d6 16 00 00 	lea    0x16d6(%rip),%r8        # 3e10 <__libc_csu_fini>
+    273a:	48 8d 0d 5f 16 00 00 	lea    0x165f(%rip),%rcx        # 3da0 <__libc_csu_init>
+    2741:	48 8d 3d c8 fd ff ff 	lea    -0x238(%rip),%rdi        # 2510 <main>
+    2748:	ff 15 8a 48 00 00    	callq  *0x488a(%rip)        # 6fd8 <__libc_start_main@GLIBC_2.2.5>
+    274e:	f4                   	hlt    
+    274f:	90                   	nop
+
+0000000000002750 <deregister_tm_clones>:
+    2750:	48 8d 3d c1 48 00 00 	lea    0x48c1(%rip),%rdi        # 7018 <__TMC_END__>
+    2757:	48 8d 05 ba 48 00 00 	lea    0x48ba(%rip),%rax        # 7018 <__TMC_END__>
+    275e:	48 39 f8             	cmp    %rdi,%rax
+    2761:	74 15                	je     2778 <deregister_tm_clones+0x28>
+    2763:	48 8b 05 66 48 00 00 	mov    0x4866(%rip),%rax        # 6fd0 <_ITM_deregisterTMCloneTable>
+    276a:	48 85 c0             	test   %rax,%rax
+    276d:	74 09                	je     2778 <deregister_tm_clones+0x28>
+    276f:	ff e0                	jmpq   *%rax
+    2771:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2778:	c3                   	retq   
+    2779:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002780 <register_tm_clones>:
+    2780:	48 8d 3d 91 48 00 00 	lea    0x4891(%rip),%rdi        # 7018 <__TMC_END__>
+    2787:	48 8d 35 8a 48 00 00 	lea    0x488a(%rip),%rsi        # 7018 <__TMC_END__>
+    278e:	48 29 fe             	sub    %rdi,%rsi
+    2791:	48 89 f0             	mov    %rsi,%rax
+    2794:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    2798:	48 c1 f8 03          	sar    $0x3,%rax
+    279c:	48 01 c6             	add    %rax,%rsi
+    279f:	48 d1 fe             	sar    %rsi
+    27a2:	74 14                	je     27b8 <register_tm_clones+0x38>
+    27a4:	48 8b 05 3d 48 00 00 	mov    0x483d(%rip),%rax        # 6fe8 <_ITM_registerTMCloneTable>
+    27ab:	48 85 c0             	test   %rax,%rax
+    27ae:	74 08                	je     27b8 <register_tm_clones+0x38>
+    27b0:	ff e0                	jmpq   *%rax
+    27b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    27b8:	c3                   	retq   
+    27b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000027c0 <__do_global_dtors_aux>:
+    27c0:	f3 0f 1e fa          	endbr64 
+    27c4:	80 3d 85 49 00 00 00 	cmpb   $0x0,0x4985(%rip)        # 7150 <completed.8061>
+    27cb:	75 2b                	jne    27f8 <__do_global_dtors_aux+0x38>
+    27cd:	55                   	push   %rbp
+    27ce:	48 83 3d ea 47 00 00 	cmpq   $0x0,0x47ea(%rip)        # 6fc0 <__cxa_finalize@GLIBC_2.2.5>
+    27d5:	00 
+    27d6:	48 89 e5             	mov    %rsp,%rbp
+    27d9:	74 0c                	je     27e7 <__do_global_dtors_aux+0x27>
+    27db:	48 8b 3d 26 48 00 00 	mov    0x4826(%rip),%rdi        # 7008 <__dso_handle>
+    27e2:	e8 a9 fa ff ff       	callq  2290 <__cxa_finalize@plt>
+    27e7:	e8 64 ff ff ff       	callq  2750 <deregister_tm_clones>
+    27ec:	c6 05 5d 49 00 00 01 	movb   $0x1,0x495d(%rip)        # 7150 <completed.8061>
+    27f3:	5d                   	pop    %rbp
+    27f4:	c3                   	retq   
+    27f5:	0f 1f 00             	nopl   (%rax)
+    27f8:	c3                   	retq   
+    27f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002800 <frame_dummy>:
+    2800:	f3 0f 1e fa          	endbr64 
+    2804:	e9 77 ff ff ff       	jmpq   2780 <register_tm_clones>
+    2809:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002810 <boost::system::detail::generic_error_category::name() const>:
+    2810:	f3 0f 1e fa          	endbr64 
+    2814:	48 8d 05 e9 17 00 00 	lea    0x17e9(%rip),%rax        # 4004 <_IO_stdin_used+0x4>
+    281b:	c3                   	retq   
+    281c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002820 <boost::system::detail::system_error_category::name() const>:
+    2820:	f3 0f 1e fa          	endbr64 
+    2824:	48 8d 05 e1 17 00 00 	lea    0x17e1(%rip),%rax        # 400c <_IO_stdin_used+0xc>
+    282b:	c3                   	retq   
+    282c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002830 <boost::system::error_category::equivalent(int, boost::system::error_condition const&) const>:
+    2830:	f3 0f 1e fa          	endbr64 
+    2834:	53                   	push   %rbx
+    2835:	48 8b 07             	mov    (%rdi),%rax
+    2838:	48 89 d3             	mov    %rdx,%rbx
+    283b:	ff 50 08             	callq  *0x8(%rax)
+    283e:	49 89 c0             	mov    %rax,%r8
+    2841:	31 c0                	xor    %eax,%eax
+    2843:	44 39 03             	cmp    %r8d,(%rbx)
+    2846:	74 08                	je     2850 <boost::system::error_category::equivalent(int, boost::system::error_condition const&) const+0x20>
+    2848:	5b                   	pop    %rbx
+    2849:	c3                   	retq   
+    284a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2850:	48 8b 4b 08          	mov    0x8(%rbx),%rcx
+    2854:	48 8b 41 08          	mov    0x8(%rcx),%rax
+    2858:	48 85 c0             	test   %rax,%rax
+    285b:	75 0b                	jne    2868 <boost::system::error_category::equivalent(int, boost::system::error_condition const&) const+0x38>
+    285d:	48 39 d1             	cmp    %rdx,%rcx
+    2860:	0f 94 c0             	sete   %al
+    2863:	5b                   	pop    %rbx
+    2864:	c3                   	retq   
+    2865:	0f 1f 00             	nopl   (%rax)
+    2868:	48 39 42 08          	cmp    %rax,0x8(%rdx)
+    286c:	0f 94 c0             	sete   %al
+    286f:	5b                   	pop    %rbx
+    2870:	c3                   	retq   
+    2871:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2878:	00 00 00 
+    287b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002880 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const>:
+    2880:	f3 0f 1e fa          	endbr64 
+    2884:	48 8b 4e 08          	mov    0x8(%rsi),%rcx
+    2888:	48 8b 41 08          	mov    0x8(%rcx),%rax
+    288c:	48 85 c0             	test   %rax,%rax
+    288f:	75 17                	jne    28a8 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const+0x28>
+    2891:	48 39 cf             	cmp    %rcx,%rdi
+    2894:	0f 94 c0             	sete   %al
+    2897:	84 c0                	test   %al,%al
+    2899:	74 05                	je     28a0 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const+0x20>
+    289b:	39 16                	cmp    %edx,(%rsi)
+    289d:	0f 94 c0             	sete   %al
+    28a0:	c3                   	retq   
+    28a1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    28a8:	48 39 47 08          	cmp    %rax,0x8(%rdi)
+    28ac:	0f 94 c0             	sete   %al
+    28af:	eb e6                	jmp    2897 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const+0x17>
+    28b1:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    28b8:	00 00 00 
+    28bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000028c0 <boost::system::error_category::failed(int) const>:
+    28c0:	f3 0f 1e fa          	endbr64 
+    28c4:	85 f6                	test   %esi,%esi
+    28c6:	0f 95 c0             	setne  %al
+    28c9:	c3                   	retq   
+    28ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000000028d0 <boost::system::detail::system_error_category::default_error_condition(int) const>:
+    28d0:	f3 0f 1e fa          	endbr64 
+    28d4:	48 8d 05 65 19 00 00 	lea    0x1965(%rip),%rax        # 4240 <boost::system::detail::is_generic_value(int)::gen>
+    28db:	48 8d 90 3c 01 00 00 	lea    0x13c(%rax),%rdx
+    28e2:	eb 0d                	jmp    28f1 <boost::system::detail::system_error_category::default_error_condition(int) const+0x21>
+    28e4:	0f 1f 40 00          	nopl   0x0(%rax)
+    28e8:	48 83 c0 04          	add    $0x4,%rax
+    28ec:	48 39 d0             	cmp    %rdx,%rax
+    28ef:	74 37                	je     2928 <boost::system::detail::system_error_category::default_error_condition(int) const+0x58>
+    28f1:	3b 30                	cmp    (%rax),%esi
+    28f3:	75 f3                	jne    28e8 <boost::system::detail::system_error_category::default_error_condition(int) const+0x18>
+    28f5:	85 f6                	test   %esi,%esi
+    28f7:	0f 95 c2             	setne  %dl
+    28fa:	48 8d 05 1f 42 00 00 	lea    0x421f(%rip),%rax        # 6b20 <boost::system::detail::cat_holder<void>::generic_category_instance>
+    2901:	c5 f9 6e c6          	vmovd  %esi,%xmm0
+    2905:	c4 e3 79 20 ca 04    	vpinsrb $0x4,%edx,%xmm0,%xmm1
+    290b:	c5 f8 29 4c 24 e8    	vmovaps %xmm1,-0x18(%rsp)
+    2911:	48 89 44 24 f0       	mov    %rax,-0x10(%rsp)
+    2916:	48 8b 44 24 e8       	mov    -0x18(%rsp),%rax
+    291b:	48 8b 54 24 f0       	mov    -0x10(%rsp),%rdx
+    2920:	c3                   	retq   
+    2921:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2928:	85 f6                	test   %esi,%esi
+    292a:	0f 95 c2             	setne  %dl
+    292d:	48 8d 05 fc 41 00 00 	lea    0x41fc(%rip),%rax        # 6b30 <boost::system::detail::cat_holder<void>::system_category_instance>
+    2934:	eb cb                	jmp    2901 <boost::system::detail::system_error_category::default_error_condition(int) const+0x31>
+    2936:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    293d:	00 00 00 
+
+0000000000002940 <boost::system::detail::std_category::name() const>:
+    2940:	f3 0f 1e fa          	endbr64 
+    2944:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+    2948:	48 8b 07             	mov    (%rdi),%rax
+    294b:	ff 20                	jmpq   *(%rax)
+    294d:	0f 1f 00             	nopl   (%rax)
+
+0000000000002950 <boost::system::detail::std_category::message[abi:cxx11](int) const>:
+    2950:	f3 0f 1e fa          	endbr64 
+    2954:	41 54                	push   %r12
+    2956:	49 89 fc             	mov    %rdi,%r12
+    2959:	48 83 ec 10          	sub    $0x10,%rsp
+    295d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2964:	00 00 
+    2966:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    296b:	31 c0                	xor    %eax,%eax
+    296d:	48 8b 76 08          	mov    0x8(%rsi),%rsi
+    2971:	48 8b 06             	mov    (%rsi),%rax
+    2974:	ff 50 20             	callq  *0x20(%rax)
+    2977:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    297c:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2983:	00 00 
+    2985:	75 0a                	jne    2991 <boost::system::detail::std_category::message[abi:cxx11](int) const+0x41>
+    2987:	48 83 c4 10          	add    $0x10,%rsp
+    298b:	4c 89 e0             	mov    %r12,%rax
+    298e:	41 5c                	pop    %r12
+    2990:	c3                   	retq   
+    2991:	e8 8a fa ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2996:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    299d:	00 00 00 
+
+00000000000029a0 <boost::system::detail::system_error_category::message(int, char*, unsigned long) const>:
+    29a0:	f3 0f 1e fa          	endbr64 
+    29a4:	89 f7                	mov    %esi,%edi
+    29a6:	48 89 d6             	mov    %rdx,%rsi
+    29a9:	48 89 ca             	mov    %rcx,%rdx
+    29ac:	e9 ff f8 ff ff       	jmpq   22b0 <strerror_r@plt>
+    29b1:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    29b8:	00 00 00 
+    29bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000029c0 <boost::system::detail::generic_error_category::message(int, char*, unsigned long) const>:
+    29c0:	f3 0f 1e fa          	endbr64 
+    29c4:	89 f7                	mov    %esi,%edi
+    29c6:	48 89 d6             	mov    %rdx,%rsi
+    29c9:	48 89 ca             	mov    %rcx,%rdx
+    29cc:	e9 df f8 ff ff       	jmpq   22b0 <strerror_r@plt>
+    29d1:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    29d8:	00 00 00 
+    29db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000029e0 <boost::system::system_error::~system_error()>:
+    29e0:	f3 0f 1e fa          	endbr64 
+    29e4:	55                   	push   %rbp
+    29e5:	48 8d 05 14 41 00 00 	lea    0x4114(%rip),%rax        # 6b00 <vtable for boost::system::system_error+0x10>
+    29ec:	48 89 07             	mov    %rax,(%rdi)
+    29ef:	48 89 fd             	mov    %rdi,%rbp
+    29f2:	48 8b 7f 20          	mov    0x20(%rdi),%rdi
+    29f6:	48 8d 45 30          	lea    0x30(%rbp),%rax
+    29fa:	48 39 c7             	cmp    %rax,%rdi
+    29fd:	74 05                	je     2a04 <boost::system::system_error::~system_error()+0x24>
+    29ff:	e8 cc f9 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2a04:	48 89 ef             	mov    %rbp,%rdi
+    2a07:	5d                   	pop    %rbp
+    2a08:	e9 03 fa ff ff       	jmpq   2410 <std::runtime_error::~runtime_error()@plt>
+    2a0d:	0f 1f 00             	nopl   (%rax)
+
+0000000000002a10 <boost::system::detail::std_category::~std_category()>:
+    2a10:	f3 0f 1e fa          	endbr64 
+    2a14:	48 8d 05 fd 41 00 00 	lea    0x41fd(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    2a1b:	48 89 07             	mov    %rax,(%rdi)
+    2a1e:	e9 8d fa ff ff       	jmpq   24b0 <std::_V2::error_category::~error_category()@plt>
+    2a23:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2a2a:	00 00 00 
+    2a2d:	0f 1f 00             	nopl   (%rax)
+
+0000000000002a30 <boost::system::detail::std_category::~std_category()>:
+    2a30:	f3 0f 1e fa          	endbr64 
+    2a34:	48 8d 05 dd 41 00 00 	lea    0x41dd(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    2a3b:	55                   	push   %rbp
+    2a3c:	48 89 07             	mov    %rax,(%rdi)
+    2a3f:	48 89 fd             	mov    %rdi,%rbp
+    2a42:	e8 69 fa ff ff       	callq  24b0 <std::_V2::error_category::~error_category()@plt>
+    2a47:	48 89 ef             	mov    %rbp,%rdi
+    2a4a:	be 10 00 00 00       	mov    $0x10,%esi
+    2a4f:	5d                   	pop    %rbp
+    2a50:	e9 9b f9 ff ff       	jmpq   23f0 <operator delete(void*, unsigned long)@plt>
+    2a55:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2a5c:	00 00 00 
+    2a5f:	90                   	nop
+
+0000000000002a60 <boost::system::error_category::message(int, char*, unsigned long) const>:
+    2a60:	f3 0f 1e fa          	endbr64 
+    2a64:	41 54                	push   %r12
+    2a66:	49 89 d4             	mov    %rdx,%r12
+    2a69:	55                   	push   %rbp
+    2a6a:	53                   	push   %rbx
+    2a6b:	48 83 ec 30          	sub    $0x30,%rsp
+    2a6f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2a76:	00 00 
+    2a78:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    2a7d:	31 c0                	xor    %eax,%eax
+    2a7f:	48 85 c9             	test   %rcx,%rcx
+    2a82:	74 45                	je     2ac9 <boost::system::error_category::message(int, char*, unsigned long) const+0x69>
+    2a84:	48 89 cb             	mov    %rcx,%rbx
+    2a87:	48 83 f9 01          	cmp    $0x1,%rcx
+    2a8b:	74 5b                	je     2ae8 <boost::system::error_category::message(int, char*, unsigned long) const+0x88>
+    2a8d:	49 89 f8             	mov    %rdi,%r8
+    2a90:	49 8b 00             	mov    (%r8),%rax
+    2a93:	89 f2                	mov    %esi,%edx
+    2a95:	48 89 e7             	mov    %rsp,%rdi
+    2a98:	4c 89 c6             	mov    %r8,%rsi
+    2a9b:	ff 50 20             	callq  *0x20(%rax)
+    2a9e:	48 8b 2c 24          	mov    (%rsp),%rbp
+    2aa2:	48 8d 53 ff          	lea    -0x1(%rbx),%rdx
+    2aa6:	48 89 ee             	mov    %rbp,%rsi
+    2aa9:	4c 89 e7             	mov    %r12,%rdi
+    2aac:	e8 6f f8 ff ff       	callq  2320 <strncpy@plt>
+    2ab1:	48 8d 44 24 10       	lea    0x10(%rsp),%rax
+    2ab6:	41 c6 44 1c ff 00    	movb   $0x0,-0x1(%r12,%rbx,1)
+    2abc:	48 39 c5             	cmp    %rax,%rbp
+    2abf:	74 08                	je     2ac9 <boost::system::error_category::message(int, char*, unsigned long) const+0x69>
+    2ac1:	48 89 ef             	mov    %rbp,%rdi
+    2ac4:	e8 07 f9 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2ac9:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+    2ace:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2ad5:	00 00 
+    2ad7:	75 14                	jne    2aed <boost::system::error_category::message(int, char*, unsigned long) const+0x8d>
+    2ad9:	48 83 c4 30          	add    $0x30,%rsp
+    2add:	5b                   	pop    %rbx
+    2ade:	5d                   	pop    %rbp
+    2adf:	4c 89 e0             	mov    %r12,%rax
+    2ae2:	41 5c                	pop    %r12
+    2ae4:	c3                   	retq   
+    2ae5:	0f 1f 00             	nopl   (%rax)
+    2ae8:	c6 02 00             	movb   $0x0,(%rdx)
+    2aeb:	eb dc                	jmp    2ac9 <boost::system::error_category::message(int, char*, unsigned long) const+0x69>
+    2aed:	e8 2e f9 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2af2:	f3 0f 1e fa          	endbr64 
+    2af6:	48 89 c7             	mov    %rax,%rdi
+    2af9:	c5 f8 77             	vzeroupper 
+    2afc:	4c 8d 25 10 15 00 00 	lea    0x1510(%rip),%r12        # 4013 <_IO_stdin_used+0x13>
+    2b03:	e8 d8 f7 ff ff       	callq  22e0 <__cxa_begin_catch@plt>
+    2b08:	e8 83 f9 ff ff       	callq  2490 <__cxa_end_catch@plt>
+    2b0d:	eb ba                	jmp    2ac9 <boost::system::error_category::message(int, char*, unsigned long) const+0x69>
+    2b0f:	90                   	nop
+
+0000000000002b10 <boost::system::detail::system_error_category::message[abi:cxx11](int) const>:
+    2b10:	f3 0f 1e fa          	endbr64 
+    2b14:	41 56                	push   %r14
+    2b16:	41 55                	push   %r13
+    2b18:	41 54                	push   %r12
+    2b1a:	49 89 fc             	mov    %rdi,%r12
+    2b1d:	89 d7                	mov    %edx,%edi
+    2b1f:	55                   	push   %rbp
+    2b20:	ba 80 00 00 00       	mov    $0x80,%edx
+    2b25:	4d 8d 74 24 10       	lea    0x10(%r12),%r14
+    2b2a:	48 81 ec a8 00 00 00 	sub    $0xa8,%rsp
+    2b31:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    2b36:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2b3d:	00 00 
+    2b3f:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+    2b46:	00 
+    2b47:	31 c0                	xor    %eax,%eax
+    2b49:	e8 62 f7 ff ff       	callq  22b0 <strerror_r@plt>
+    2b4e:	4d 89 34 24          	mov    %r14,(%r12)
+    2b52:	48 85 c0             	test   %rax,%rax
+    2b55:	0f 84 a5 00 00 00    	je     2c00 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0xf0>
+    2b5b:	48 89 c7             	mov    %rax,%rdi
+    2b5e:	48 89 c5             	mov    %rax,%rbp
+    2b61:	e8 8a f7 ff ff       	callq  22f0 <strlen@plt>
+    2b66:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2b6b:	49 89 c5             	mov    %rax,%r13
+    2b6e:	48 83 f8 0f          	cmp    $0xf,%rax
+    2b72:	77 4c                	ja     2bc0 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0xb0>
+    2b74:	48 83 f8 01          	cmp    $0x1,%rax
+    2b78:	75 3e                	jne    2bb8 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0xa8>
+    2b7a:	0f b6 55 00          	movzbl 0x0(%rbp),%edx
+    2b7e:	41 88 54 24 10       	mov    %dl,0x10(%r12)
+    2b83:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+    2b88:	41 c6 04 06 00       	movb   $0x0,(%r14,%rax,1)
+    2b8d:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
+    2b94:	00 
+    2b95:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2b9c:	00 00 
+    2b9e:	75 6c                	jne    2c0c <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0xfc>
+    2ba0:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
+    2ba7:	5d                   	pop    %rbp
+    2ba8:	4c 89 e0             	mov    %r12,%rax
+    2bab:	41 5c                	pop    %r12
+    2bad:	41 5d                	pop    %r13
+    2baf:	41 5e                	pop    %r14
+    2bb1:	c3                   	retq   
+    2bb2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2bb8:	48 85 c0             	test   %rax,%rax
+    2bbb:	74 c6                	je     2b83 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0x73>
+    2bbd:	eb 21                	jmp    2be0 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0xd0>
+    2bbf:	90                   	nop
+    2bc0:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+    2bc5:	31 d2                	xor    %edx,%edx
+    2bc7:	4c 89 e7             	mov    %r12,%rdi
+    2bca:	e8 11 f9 ff ff       	callq  24e0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>
+    2bcf:	49 89 04 24          	mov    %rax,(%r12)
+    2bd3:	49 89 c6             	mov    %rax,%r14
+    2bd6:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2bdb:	49 89 44 24 10       	mov    %rax,0x10(%r12)
+    2be0:	4c 89 f7             	mov    %r14,%rdi
+    2be3:	4c 89 ea             	mov    %r13,%rdx
+    2be6:	48 89 ee             	mov    %rbp,%rsi
+    2be9:	e8 b2 f7 ff ff       	callq  23a0 <memcpy@plt>
+    2bee:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2bf3:	4d 8b 34 24          	mov    (%r12),%r14
+    2bf7:	eb 8a                	jmp    2b83 <boost::system::detail::system_error_category::message[abi:cxx11](int) const+0x73>
+    2bf9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2c00:	48 8d 3d 29 14 00 00 	lea    0x1429(%rip),%rdi        # 4030 <_IO_stdin_used+0x30>
+    2c07:	e8 64 f7 ff ff       	callq  2370 <std::__throw_logic_error(char const*)@plt>
+    2c0c:	e8 0f f8 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2c11:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2c18:	00 00 00 
+    2c1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002c20 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const>:
+    2c20:	f3 0f 1e fa          	endbr64 
+    2c24:	41 56                	push   %r14
+    2c26:	41 55                	push   %r13
+    2c28:	41 54                	push   %r12
+    2c2a:	49 89 fc             	mov    %rdi,%r12
+    2c2d:	89 d7                	mov    %edx,%edi
+    2c2f:	55                   	push   %rbp
+    2c30:	ba 80 00 00 00       	mov    $0x80,%edx
+    2c35:	4d 8d 74 24 10       	lea    0x10(%r12),%r14
+    2c3a:	48 81 ec a8 00 00 00 	sub    $0xa8,%rsp
+    2c41:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    2c46:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2c4d:	00 00 
+    2c4f:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
+    2c56:	00 
+    2c57:	31 c0                	xor    %eax,%eax
+    2c59:	e8 52 f6 ff ff       	callq  22b0 <strerror_r@plt>
+    2c5e:	4d 89 34 24          	mov    %r14,(%r12)
+    2c62:	48 85 c0             	test   %rax,%rax
+    2c65:	0f 84 a5 00 00 00    	je     2d10 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0xf0>
+    2c6b:	48 89 c7             	mov    %rax,%rdi
+    2c6e:	48 89 c5             	mov    %rax,%rbp
+    2c71:	e8 7a f6 ff ff       	callq  22f0 <strlen@plt>
+    2c76:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2c7b:	49 89 c5             	mov    %rax,%r13
+    2c7e:	48 83 f8 0f          	cmp    $0xf,%rax
+    2c82:	77 4c                	ja     2cd0 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0xb0>
+    2c84:	48 83 f8 01          	cmp    $0x1,%rax
+    2c88:	75 3e                	jne    2cc8 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0xa8>
+    2c8a:	0f b6 55 00          	movzbl 0x0(%rbp),%edx
+    2c8e:	41 88 54 24 10       	mov    %dl,0x10(%r12)
+    2c93:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+    2c98:	41 c6 04 06 00       	movb   $0x0,(%r14,%rax,1)
+    2c9d:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
+    2ca4:	00 
+    2ca5:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2cac:	00 00 
+    2cae:	75 6c                	jne    2d1c <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0xfc>
+    2cb0:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
+    2cb7:	5d                   	pop    %rbp
+    2cb8:	4c 89 e0             	mov    %r12,%rax
+    2cbb:	41 5c                	pop    %r12
+    2cbd:	41 5d                	pop    %r13
+    2cbf:	41 5e                	pop    %r14
+    2cc1:	c3                   	retq   
+    2cc2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2cc8:	48 85 c0             	test   %rax,%rax
+    2ccb:	74 c6                	je     2c93 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0x73>
+    2ccd:	eb 21                	jmp    2cf0 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0xd0>
+    2ccf:	90                   	nop
+    2cd0:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+    2cd5:	31 d2                	xor    %edx,%edx
+    2cd7:	4c 89 e7             	mov    %r12,%rdi
+    2cda:	e8 01 f8 ff ff       	callq  24e0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>
+    2cdf:	49 89 04 24          	mov    %rax,(%r12)
+    2ce3:	49 89 c6             	mov    %rax,%r14
+    2ce6:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2ceb:	49 89 44 24 10       	mov    %rax,0x10(%r12)
+    2cf0:	4c 89 f7             	mov    %r14,%rdi
+    2cf3:	4c 89 ea             	mov    %r13,%rdx
+    2cf6:	48 89 ee             	mov    %rbp,%rsi
+    2cf9:	e8 a2 f6 ff ff       	callq  23a0 <memcpy@plt>
+    2cfe:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2d03:	4d 8b 34 24          	mov    (%r12),%r14
+    2d07:	eb 8a                	jmp    2c93 <boost::system::detail::generic_error_category::message[abi:cxx11](int) const+0x73>
+    2d09:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2d10:	48 8d 3d 19 13 00 00 	lea    0x1319(%rip),%rdi        # 4030 <_IO_stdin_used+0x30>
+    2d17:	e8 54 f6 ff ff       	callq  2370 <std::__throw_logic_error(char const*)@plt>
+    2d1c:	e8 ff f6 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2d21:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2d28:	00 00 00 
+    2d2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002d30 <boost::system::system_error::~system_error()>:
+    2d30:	f3 0f 1e fa          	endbr64 
+    2d34:	55                   	push   %rbp
+    2d35:	48 8d 05 c4 3d 00 00 	lea    0x3dc4(%rip),%rax        # 6b00 <vtable for boost::system::system_error+0x10>
+    2d3c:	48 89 07             	mov    %rax,(%rdi)
+    2d3f:	48 89 fd             	mov    %rdi,%rbp
+    2d42:	48 8b 7f 20          	mov    0x20(%rdi),%rdi
+    2d46:	48 8d 45 30          	lea    0x30(%rbp),%rax
+    2d4a:	48 39 c7             	cmp    %rax,%rdi
+    2d4d:	74 05                	je     2d54 <boost::system::system_error::~system_error()+0x24>
+    2d4f:	e8 7c f6 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2d54:	48 89 ef             	mov    %rbp,%rdi
+    2d57:	e8 b4 f6 ff ff       	callq  2410 <std::runtime_error::~runtime_error()@plt>
+    2d5c:	48 89 ef             	mov    %rbp,%rdi
+    2d5f:	be 40 00 00 00       	mov    $0x40,%esi
+    2d64:	5d                   	pop    %rbp
+    2d65:	e9 86 f6 ff ff       	jmpq   23f0 <operator delete(void*, unsigned long)@plt>
+    2d6a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000002d70 <boost::system::error_category::default_error_condition(int) const>:
+    2d70:	f3 0f 1e fa          	endbr64 
+    2d74:	48 83 ec 28          	sub    $0x28,%rsp
+    2d78:	48 8b 47 08          	mov    0x8(%rdi),%rax
+    2d7c:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    2d83:	11 ab b2 
+    2d86:	48 39 d0             	cmp    %rdx,%rax
+    2d89:	74 22                	je     2dad <boost::system::error_category::default_error_condition(int) const+0x3d>
+    2d8b:	48 ba 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rdx
+    2d92:	d2 af 8f 
+    2d95:	48 39 d0             	cmp    %rdx,%rax
+    2d98:	74 13                	je     2dad <boost::system::error_category::default_error_condition(int) const+0x3d>
+    2d9a:	48 8b 07             	mov    (%rdi),%rax
+    2d9d:	48 8d 15 1c fb ff ff 	lea    -0x4e4(%rip),%rdx        # 28c0 <boost::system::error_category::failed(int) const>
+    2da4:	48 8b 40 30          	mov    0x30(%rax),%rax
+    2da8:	48 39 d0             	cmp    %rdx,%rax
+    2dab:	75 2b                	jne    2dd8 <boost::system::error_category::default_error_condition(int) const+0x68>
+    2dad:	85 f6                	test   %esi,%esi
+    2daf:	0f 95 c0             	setne  %al
+    2db2:	c5 f9 6e c6          	vmovd  %esi,%xmm0
+    2db6:	c4 e3 79 20 c8 04    	vpinsrb $0x4,%eax,%xmm0,%xmm1
+    2dbc:	c5 f8 29 0c 24       	vmovaps %xmm1,(%rsp)
+    2dc1:	48 89 7c 24 08       	mov    %rdi,0x8(%rsp)
+    2dc6:	48 8b 04 24          	mov    (%rsp),%rax
+    2dca:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+    2dcf:	48 83 c4 28          	add    $0x28,%rsp
+    2dd3:	c3                   	retq   
+    2dd4:	0f 1f 40 00          	nopl   0x0(%rax)
+    2dd8:	89 74 24 1c          	mov    %esi,0x1c(%rsp)
+    2ddc:	48 89 3c 24          	mov    %rdi,(%rsp)
+    2de0:	ff d0                	callq  *%rax
+    2de2:	8b 74 24 1c          	mov    0x1c(%rsp),%esi
+    2de6:	48 8b 3c 24          	mov    (%rsp),%rdi
+    2dea:	eb c6                	jmp    2db2 <boost::system::error_category::default_error_condition(int) const+0x42>
+    2dec:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002df0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)>:
+    2df0:	f3 0f 1e fa          	endbr64 
+    2df4:	48 85 f6             	test   %rsi,%rsi
+    2df7:	74 57                	je     2e50 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)+0x60>
+    2df9:	41 54                	push   %r12
+    2dfb:	49 89 fc             	mov    %rdi,%r12
+    2dfe:	55                   	push   %rbp
+    2dff:	48 89 f5             	mov    %rsi,%rbp
+    2e02:	53                   	push   %rbx
+    2e03:	48 8b 75 18          	mov    0x18(%rbp),%rsi
+    2e07:	4c 89 e7             	mov    %r12,%rdi
+    2e0a:	e8 e1 ff ff ff       	callq  2df0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)>
+    2e0f:	48 8b 7d 28          	mov    0x28(%rbp),%rdi
+    2e13:	48 8b 5d 10          	mov    0x10(%rbp),%rbx
+    2e17:	48 85 ff             	test   %rdi,%rdi
+    2e1a:	74 1c                	je     2e38 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)+0x48>
+    2e1c:	48 8b 07             	mov    (%rdi),%rax
+    2e1f:	ff 50 08             	callq  *0x8(%rax)
+    2e22:	48 89 ef             	mov    %rbp,%rdi
+    2e25:	e8 a6 f5 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2e2a:	48 85 db             	test   %rbx,%rbx
+    2e2d:	74 16                	je     2e45 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)+0x55>
+    2e2f:	48 89 dd             	mov    %rbx,%rbp
+    2e32:	eb cf                	jmp    2e03 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)+0x13>
+    2e34:	0f 1f 40 00          	nopl   0x0(%rax)
+    2e38:	48 89 ef             	mov    %rbp,%rdi
+    2e3b:	e8 90 f5 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2e40:	48 85 db             	test   %rbx,%rbx
+    2e43:	75 ea                	jne    2e2f <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)+0x3f>
+    2e45:	5b                   	pop    %rbx
+    2e46:	5d                   	pop    %rbp
+    2e47:	41 5c                	pop    %r12
+    2e49:	c3                   	retq   
+    2e4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2e50:	c3                   	retq   
+    2e51:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2e58:	00 00 00 
+    2e5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002e60 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()>:
+    2e60:	f3 0f 1e fa          	endbr64 
+    2e64:	41 54                	push   %r12
+    2e66:	55                   	push   %rbp
+    2e67:	53                   	push   %rbx
+    2e68:	48 8b 6f 10          	mov    0x10(%rdi),%rbp
+    2e6c:	48 85 ed             	test   %rbp,%rbp
+    2e6f:	74 44                	je     2eb5 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()+0x55>
+    2e71:	48 89 fb             	mov    %rdi,%rbx
+    2e74:	48 8b 75 18          	mov    0x18(%rbp),%rsi
+    2e78:	48 89 df             	mov    %rbx,%rdi
+    2e7b:	e8 70 ff ff ff       	callq  2df0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_erase(std::_Rb_tree_node<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >*)>
+    2e80:	48 8b 7d 28          	mov    0x28(%rbp),%rdi
+    2e84:	4c 8b 65 10          	mov    0x10(%rbp),%r12
+    2e88:	48 85 ff             	test   %rdi,%rdi
+    2e8b:	74 1b                	je     2ea8 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()+0x48>
+    2e8d:	48 8b 07             	mov    (%rdi),%rax
+    2e90:	ff 50 08             	callq  *0x8(%rax)
+    2e93:	48 89 ef             	mov    %rbp,%rdi
+    2e96:	e8 35 f5 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2e9b:	4d 85 e4             	test   %r12,%r12
+    2e9e:	74 15                	je     2eb5 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()+0x55>
+    2ea0:	4c 89 e5             	mov    %r12,%rbp
+    2ea3:	eb cf                	jmp    2e74 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()+0x14>
+    2ea5:	0f 1f 00             	nopl   (%rax)
+    2ea8:	48 89 ef             	mov    %rbp,%rdi
+    2eab:	e8 20 f5 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    2eb0:	4d 85 e4             	test   %r12,%r12
+    2eb3:	75 eb                	jne    2ea0 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()+0x40>
+    2eb5:	5b                   	pop    %rbx
+    2eb6:	5d                   	pop    %rbp
+    2eb7:	41 5c                	pop    %r12
+    2eb9:	c3                   	retq   
+    2eba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000002ec0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)>:
+    2ec0:	f3 0f 1e fa          	endbr64 
+    2ec4:	55                   	push   %rbp
+    2ec5:	48 89 f5             	mov    %rsi,%rbp
+    2ec8:	53                   	push   %rbx
+    2ec9:	48 83 ec 08          	sub    $0x8,%rsp
+    2ecd:	48 8b 5f 10          	mov    0x10(%rdi),%rbx
+    2ed1:	48 85 db             	test   %rbx,%rbx
+    2ed4:	74 6a                	je     2f40 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x80>
+    2ed6:	4c 8b 1e             	mov    (%rsi),%r11
+    2ed9:	4d 8b 4b 08          	mov    0x8(%r11),%r9
+    2edd:	eb 1f                	jmp    2efe <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x3e>
+    2edf:	90                   	nop
+    2ee0:	48 85 c9             	test   %rcx,%rcx
+    2ee3:	75 0a                	jne    2eef <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x2f>
+    2ee5:	49 39 c9             	cmp    %rcx,%r9
+    2ee8:	77 05                	ja     2eef <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x2f>
+    2eea:	4d 39 d8             	cmp    %r11,%r8
+    2eed:	77 1c                	ja     2f0b <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x4b>
+    2eef:	48 8b 43 18          	mov    0x18(%rbx),%rax
+    2ef3:	45 31 d2             	xor    %r10d,%r10d
+    2ef6:	48 85 c0             	test   %rax,%rax
+    2ef9:	74 1f                	je     2f1a <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x5a>
+    2efb:	48 89 c3             	mov    %rax,%rbx
+    2efe:	4c 8b 43 20          	mov    0x20(%rbx),%r8
+    2f02:	49 8b 48 08          	mov    0x8(%r8),%rcx
+    2f06:	49 39 c9             	cmp    %rcx,%r9
+    2f09:	73 d5                	jae    2ee0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x20>
+    2f0b:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    2f0f:	41 ba 01 00 00 00    	mov    $0x1,%r10d
+    2f15:	48 85 c0             	test   %rax,%rax
+    2f18:	75 e1                	jne    2efb <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x3b>
+    2f1a:	48 89 da             	mov    %rbx,%rdx
+    2f1d:	45 84 d2             	test   %r10b,%r10b
+    2f20:	75 22                	jne    2f44 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x84>
+    2f22:	49 39 c9             	cmp    %rcx,%r9
+    2f25:	77 0f                	ja     2f36 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x76>
+    2f27:	4d 85 c9             	test   %r9,%r9
+    2f2a:	75 44                	jne    2f70 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0xb0>
+    2f2c:	49 39 c9             	cmp    %rcx,%r9
+    2f2f:	72 3f                	jb     2f70 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0xb0>
+    2f31:	4d 39 d8             	cmp    %r11,%r8
+    2f34:	73 3a                	jae    2f70 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0xb0>
+    2f36:	31 c0                	xor    %eax,%eax
+    2f38:	48 83 c4 08          	add    $0x8,%rsp
+    2f3c:	5b                   	pop    %rbx
+    2f3d:	5d                   	pop    %rbp
+    2f3e:	c3                   	retq   
+    2f3f:	90                   	nop
+    2f40:	48 8d 5f 08          	lea    0x8(%rdi),%rbx
+    2f44:	31 c0                	xor    %eax,%eax
+    2f46:	48 89 da             	mov    %rbx,%rdx
+    2f49:	48 3b 5f 18          	cmp    0x18(%rdi),%rbx
+    2f4d:	74 e9                	je     2f38 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x78>
+    2f4f:	48 89 df             	mov    %rbx,%rdi
+    2f52:	e8 a9 f4 ff ff       	callq  2400 <std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@plt>
+    2f57:	4c 8b 40 20          	mov    0x20(%rax),%r8
+    2f5b:	4c 8b 5d 00          	mov    0x0(%rbp),%r11
+    2f5f:	48 89 da             	mov    %rbx,%rdx
+    2f62:	4d 8b 4b 08          	mov    0x8(%r11),%r9
+    2f66:	49 8b 48 08          	mov    0x8(%r8),%rcx
+    2f6a:	48 89 c3             	mov    %rax,%rbx
+    2f6d:	eb b3                	jmp    2f22 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)+0x62>
+    2f6f:	90                   	nop
+    2f70:	48 83 c4 08          	add    $0x8,%rsp
+    2f74:	48 89 d8             	mov    %rbx,%rax
+    2f77:	5b                   	pop    %rbx
+    2f78:	31 d2                	xor    %edx,%edx
+    2f7a:	5d                   	pop    %rbp
+    2f7b:	c3                   	retq   
+    2f7c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002f80 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)>:
+    2f80:	f3 0f 1e fa          	endbr64 
+    2f84:	41 57                	push   %r15
+    2f86:	41 56                	push   %r14
+    2f88:	41 55                	push   %r13
+    2f8a:	41 54                	push   %r12
+    2f8c:	49 89 f4             	mov    %rsi,%r12
+    2f8f:	55                   	push   %rbp
+    2f90:	48 89 fd             	mov    %rdi,%rbp
+    2f93:	53                   	push   %rbx
+    2f94:	48 83 ec 08          	sub    $0x8,%rsp
+    2f98:	e8 23 ff ff ff       	callq  2ec0 <std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_get_insert_unique_pos(boost::system::error_category const* const&)>
+    2f9d:	48 85 d2             	test   %rdx,%rdx
+    2fa0:	74 66                	je     3008 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0x88>
+    2fa2:	49 89 d5             	mov    %rdx,%r13
+    2fa5:	4c 8d 75 08          	lea    0x8(%rbp),%r14
+    2fa9:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+    2faf:	48 85 c0             	test   %rax,%rax
+    2fb2:	74 6c                	je     3020 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0xa0>
+    2fb4:	bf 30 00 00 00       	mov    $0x30,%edi
+    2fb9:	e8 22 f4 ff ff       	callq  23e0 <operator new(unsigned long)@plt>
+    2fbe:	c4 c1 7a 6f 04 24    	vmovdqu (%r12),%xmm0
+    2fc4:	49 c7 44 24 08 00 00 	movq   $0x0,0x8(%r12)
+    2fcb:	00 00 
+    2fcd:	4c 89 ea             	mov    %r13,%rdx
+    2fd0:	c5 f8 11 40 20       	vmovups %xmm0,0x20(%rax)
+    2fd5:	4c 89 f1             	mov    %r14,%rcx
+    2fd8:	48 89 c6             	mov    %rax,%rsi
+    2fdb:	44 89 ff             	mov    %r15d,%edi
+    2fde:	48 89 c3             	mov    %rax,%rbx
+    2fe1:	e8 ba f2 ff ff       	callq  22a0 <std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@plt>
+    2fe6:	48 ff 45 28          	incq   0x28(%rbp)
+    2fea:	48 83 c4 08          	add    $0x8,%rsp
+    2fee:	48 89 d8             	mov    %rbx,%rax
+    2ff1:	5b                   	pop    %rbx
+    2ff2:	5d                   	pop    %rbp
+    2ff3:	41 5c                	pop    %r12
+    2ff5:	41 5d                	pop    %r13
+    2ff7:	41 5e                	pop    %r14
+    2ff9:	ba 01 00 00 00       	mov    $0x1,%edx
+    2ffe:	41 5f                	pop    %r15
+    3000:	c3                   	retq   
+    3001:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3008:	48 83 c4 08          	add    $0x8,%rsp
+    300c:	5b                   	pop    %rbx
+    300d:	5d                   	pop    %rbp
+    300e:	41 5c                	pop    %r12
+    3010:	41 5d                	pop    %r13
+    3012:	41 5e                	pop    %r14
+    3014:	31 d2                	xor    %edx,%edx
+    3016:	41 5f                	pop    %r15
+    3018:	c3                   	retq   
+    3019:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3020:	4c 39 f2             	cmp    %r14,%rdx
+    3023:	74 8f                	je     2fb4 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0x34>
+    3025:	48 8b 4a 20          	mov    0x20(%rdx),%rcx
+    3029:	49 8b 34 24          	mov    (%r12),%rsi
+    302d:	48 8b 41 08          	mov    0x8(%rcx),%rax
+    3031:	48 8b 56 08          	mov    0x8(%rsi),%rdx
+    3035:	48 39 c2             	cmp    %rax,%rdx
+    3038:	0f 82 76 ff ff ff    	jb     2fb4 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0x34>
+    303e:	48 85 c0             	test   %rax,%rax
+    3041:	75 1d                	jne    3060 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0xe0>
+    3043:	48 39 c2             	cmp    %rax,%rdx
+    3046:	77 18                	ja     3060 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0xe0>
+    3048:	45 31 ff             	xor    %r15d,%r15d
+    304b:	48 39 ce             	cmp    %rcx,%rsi
+    304e:	41 0f 92 c7          	setb   %r15b
+    3052:	e9 5d ff ff ff       	jmpq   2fb4 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0x34>
+    3057:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    305e:	00 00 
+    3060:	45 31 ff             	xor    %r15d,%r15d
+    3063:	e9 4c ff ff ff       	jmpq   2fb4 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)+0x34>
+    3068:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    306f:	00 
+
+0000000000003070 <boost::system::detail::std_category::default_error_condition(int) const>:
+    3070:	f3 0f 1e fa          	endbr64 
+    3074:	41 55                	push   %r13
+    3076:	41 54                	push   %r12
+    3078:	55                   	push   %rbp
+    3079:	53                   	push   %rbx
+    307a:	48 83 ec 28          	sub    $0x28,%rsp
+    307e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    3085:	00 00 
+    3087:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    308c:	31 c0                	xor    %eax,%eax
+    308e:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+    3092:	48 8b 07             	mov    (%rdi),%rax
+    3095:	ff 50 08             	callq  *0x8(%rax)
+    3098:	48 89 c3             	mov    %rax,%rbx
+    309b:	48 8b 42 08          	mov    0x8(%rdx),%rax
+    309f:	48 89 d5             	mov    %rdx,%rbp
+    30a2:	48 ba 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rdx
+    30a9:	d2 af 8f 
+    30ac:	48 39 d0             	cmp    %rdx,%rax
+    30af:	0f 84 db 01 00 00    	je     3290 <boost::system::detail::std_category::default_error_condition(int) const+0x220>
+    30b5:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    30bc:	11 ab b2 
+    30bf:	48 39 d0             	cmp    %rdx,%rax
+    30c2:	0f 84 a8 01 00 00    	je     3270 <boost::system::detail::std_category::default_error_condition(int) const+0x200>
+    30c8:	0f b6 05 b9 40 00 00 	movzbl 0x40b9(%rip),%eax        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    30cf:	84 c0                	test   %al,%al
+    30d1:	0f 84 21 01 00 00    	je     31f8 <boost::system::detail::std_category::default_error_condition(int) const+0x188>
+    30d7:	4c 8b 2d ea 3e 00 00 	mov    0x3eea(%rip),%r13        # 6fc8 <__pthread_key_create>
+    30de:	4d 85 ed             	test   %r13,%r13
+    30e1:	74 14                	je     30f7 <boost::system::detail::std_category::default_error_condition(int) const+0x87>
+    30e3:	48 8d 3d 76 40 00 00 	lea    0x4076(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    30ea:	e8 71 f3 ff ff       	callq  2460 <pthread_mutex_lock@plt>
+    30ef:	85 c0                	test   %eax,%eax
+    30f1:	0f 85 09 02 00 00    	jne    3300 <boost::system::detail::std_category::default_error_condition(int) const+0x290>
+    30f7:	48 8b 15 b2 40 00 00 	mov    0x40b2(%rip),%rdx        # 71b0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x10>
+    30fe:	48 85 d2             	test   %rdx,%rdx
+    3101:	74 6d                	je     3170 <boost::system::detail::std_category::default_error_condition(int) const+0x100>
+    3103:	48 8b 4d 08          	mov    0x8(%rbp),%rcx
+    3107:	48 8d 35 9a 40 00 00 	lea    0x409a(%rip),%rsi        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    310e:	48 85 c9             	test   %rcx,%rcx
+    3111:	40 0f 95 c7          	setne  %dil
+    3115:	49 89 f4             	mov    %rsi,%r12
+    3118:	eb 1e                	jmp    3138 <boost::system::detail::std_category::default_error_condition(int) const+0xc8>
+    311a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3120:	72 0a                	jb     312c <boost::system::detail::std_category::default_error_condition(int) const+0xbc>
+    3122:	40 84 ff             	test   %dil,%dil
+    3125:	75 05                	jne    312c <boost::system::detail::std_category::default_error_condition(int) const+0xbc>
+    3127:	48 39 c5             	cmp    %rax,%rbp
+    312a:	77 16                	ja     3142 <boost::system::detail::std_category::default_error_condition(int) const+0xd2>
+    312c:	49 89 d4             	mov    %rdx,%r12
+    312f:	48 8b 52 10          	mov    0x10(%rdx),%rdx
+    3133:	48 85 d2             	test   %rdx,%rdx
+    3136:	74 13                	je     314b <boost::system::detail::std_category::default_error_condition(int) const+0xdb>
+    3138:	48 8b 42 20          	mov    0x20(%rdx),%rax
+    313c:	48 3b 48 08          	cmp    0x8(%rax),%rcx
+    3140:	76 de                	jbe    3120 <boost::system::detail::std_category::default_error_condition(int) const+0xb0>
+    3142:	48 8b 52 18          	mov    0x18(%rdx),%rdx
+    3146:	48 85 d2             	test   %rdx,%rdx
+    3149:	75 ed                	jne    3138 <boost::system::detail::std_category::default_error_condition(int) const+0xc8>
+    314b:	49 39 f4             	cmp    %rsi,%r12
+    314e:	74 20                	je     3170 <boost::system::detail::std_category::default_error_condition(int) const+0x100>
+    3150:	49 8b 54 24 20       	mov    0x20(%r12),%rdx
+    3155:	48 8b 42 08          	mov    0x8(%rdx),%rax
+    3159:	48 39 c1             	cmp    %rax,%rcx
+    315c:	72 12                	jb     3170 <boost::system::detail::std_category::default_error_condition(int) const+0x100>
+    315e:	48 85 c0             	test   %rax,%rax
+    3161:	75 50                	jne    31b3 <boost::system::detail::std_category::default_error_condition(int) const+0x143>
+    3163:	48 39 c1             	cmp    %rax,%rcx
+    3166:	77 4b                	ja     31b3 <boost::system::detail::std_category::default_error_condition(int) const+0x143>
+    3168:	48 39 d5             	cmp    %rdx,%rbp
+    316b:	73 46                	jae    31b3 <boost::system::detail::std_category::default_error_condition(int) const+0x143>
+    316d:	0f 1f 00             	nopl   (%rax)
+    3170:	bf 10 00 00 00       	mov    $0x10,%edi
+    3175:	e8 66 f2 ff ff       	callq  23e0 <operator new(unsigned long)@plt>
+    317a:	48 8d 0d 97 3a 00 00 	lea    0x3a97(%rip),%rcx        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    3181:	48 89 08             	mov    %rcx,(%rax)
+    3184:	48 89 68 08          	mov    %rbp,0x8(%rax)
+    3188:	48 89 e6             	mov    %rsp,%rsi
+    318b:	48 8d 3d 0e 40 00 00 	lea    0x400e(%rip),%rdi        # 71a0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    3192:	48 89 2c 24          	mov    %rbp,(%rsp)
+    3196:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    319b:	e8 e0 fd ff ff       	callq  2f80 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)>
+    31a0:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    31a5:	49 89 c4             	mov    %rax,%r12
+    31a8:	48 85 ff             	test   %rdi,%rdi
+    31ab:	74 06                	je     31b3 <boost::system::detail::std_category::default_error_condition(int) const+0x143>
+    31ad:	48 8b 07             	mov    (%rdi),%rax
+    31b0:	ff 50 08             	callq  *0x8(%rax)
+    31b3:	4d 8b 64 24 28       	mov    0x28(%r12),%r12
+    31b8:	4d 85 ed             	test   %r13,%r13
+    31bb:	74 0c                	je     31c9 <boost::system::detail::std_category::default_error_condition(int) const+0x159>
+    31bd:	48 8d 3d 9c 3f 00 00 	lea    0x3f9c(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    31c4:	e8 b7 f1 ff ff       	callq  2380 <pthread_mutex_unlock@plt>
+    31c9:	c5 f9 6e c3          	vmovd  %ebx,%xmm0
+    31cd:	48 8b 5c 24 18       	mov    0x18(%rsp),%rbx
+    31d2:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+    31d9:	00 00 
+    31db:	c4 e1 f9 7e c0       	vmovq  %xmm0,%rax
+    31e0:	0f 85 7e 01 00 00    	jne    3364 <boost::system::detail::std_category::default_error_condition(int) const+0x2f4>
+    31e6:	48 83 c4 28          	add    $0x28,%rsp
+    31ea:	5b                   	pop    %rbx
+    31eb:	5d                   	pop    %rbp
+    31ec:	4c 89 e2             	mov    %r12,%rdx
+    31ef:	41 5c                	pop    %r12
+    31f1:	41 5d                	pop    %r13
+    31f3:	c3                   	retq   
+    31f4:	0f 1f 40 00          	nopl   0x0(%rax)
+    31f8:	48 8d 3d 89 3f 00 00 	lea    0x3f89(%rip),%rdi        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    31ff:	e8 ec f2 ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3204:	85 c0                	test   %eax,%eax
+    3206:	0f 84 cb fe ff ff    	je     30d7 <boost::system::detail::std_category::default_error_condition(int) const+0x67>
+    320c:	48 8d 05 95 3f 00 00 	lea    0x3f95(%rip),%rax        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    3213:	48 8d 15 ee 3d 00 00 	lea    0x3dee(%rip),%rdx        # 7008 <__dso_handle>
+    321a:	48 8d 70 f8          	lea    -0x8(%rax),%rsi
+    321e:	48 8d 3d 3b fc ff ff 	lea    -0x3c5(%rip),%rdi        # 2e60 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()>
+    3225:	c7 05 79 3f 00 00 00 	movl   $0x0,0x3f79(%rip)        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    322c:	00 00 00 
+    322f:	48 c7 05 76 3f 00 00 	movq   $0x0,0x3f76(%rip)        # 71b0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x10>
+    3236:	00 00 00 00 
+    323a:	48 89 05 77 3f 00 00 	mov    %rax,0x3f77(%rip)        # 71b8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x18>
+    3241:	48 89 05 78 3f 00 00 	mov    %rax,0x3f78(%rip)        # 71c0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x20>
+    3248:	48 c7 05 75 3f 00 00 	movq   $0x0,0x3f75(%rip)        # 71c8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x28>
+    324f:	00 00 00 00 
+    3253:	e8 58 f1 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3258:	48 8d 3d 29 3f 00 00 	lea    0x3f29(%rip),%rdi        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    325f:	e8 dc f0 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    3264:	e9 6e fe ff ff       	jmpq   30d7 <boost::system::detail::std_category::default_error_condition(int) const+0x67>
+    3269:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3270:	0f b6 05 59 3f 00 00 	movzbl 0x3f59(%rip),%eax        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3277:	84 c0                	test   %al,%al
+    3279:	74 35                	je     32b0 <boost::system::detail::std_category::default_error_condition(int) const+0x240>
+    327b:	4c 8d 25 5e 3f 00 00 	lea    0x3f5e(%rip),%r12        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3282:	e9 42 ff ff ff       	jmpq   31c9 <boost::system::detail::std_category::default_error_condition(int) const+0x159>
+    3287:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    328e:	00 00 
+    3290:	0f b6 05 59 3f 00 00 	movzbl 0x3f59(%rip),%eax        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3297:	84 c0                	test   %al,%al
+    3299:	74 75                	je     3310 <boost::system::detail::std_category::default_error_condition(int) const+0x2a0>
+    329b:	4c 8d 25 5e 3f 00 00 	lea    0x3f5e(%rip),%r12        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    32a2:	e9 22 ff ff ff       	jmpq   31c9 <boost::system::detail::std_category::default_error_condition(int) const+0x159>
+    32a7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    32ae:	00 00 
+    32b0:	48 8d 3d 19 3f 00 00 	lea    0x3f19(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    32b7:	e8 34 f2 ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    32bc:	85 c0                	test   %eax,%eax
+    32be:	74 bb                	je     327b <boost::system::detail::std_category::default_error_condition(int) const+0x20b>
+    32c0:	48 8d 05 51 39 00 00 	lea    0x3951(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    32c7:	48 8d 15 3a 3d 00 00 	lea    0x3d3a(%rip),%rdx        # 7008 <__dso_handle>
+    32ce:	48 8d 35 0b 3f 00 00 	lea    0x3f0b(%rip),%rsi        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    32d5:	48 8d 3d 34 f7 ff ff 	lea    -0x8cc(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    32dc:	48 89 2d 05 3f 00 00 	mov    %rbp,0x3f05(%rip)        # 71e8 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance+0x8>
+    32e3:	48 89 05 f6 3e 00 00 	mov    %rax,0x3ef6(%rip)        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    32ea:	e8 c1 f0 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    32ef:	48 8d 3d da 3e 00 00 	lea    0x3eda(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    32f6:	e8 45 f0 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    32fb:	e9 7b ff ff ff       	jmpq   327b <boost::system::detail::std_category::default_error_condition(int) const+0x20b>
+    3300:	89 c7                	mov    %eax,%edi
+    3302:	e8 49 f0 ff ff       	callq  2350 <std::__throw_system_error(int)@plt>
+    3307:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    330e:	00 00 
+    3310:	48 8d 3d d9 3e 00 00 	lea    0x3ed9(%rip),%rdi        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3317:	e8 d4 f1 ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    331c:	85 c0                	test   %eax,%eax
+    331e:	0f 84 77 ff ff ff    	je     329b <boost::system::detail::std_category::default_error_condition(int) const+0x22b>
+    3324:	48 8d 05 ed 38 00 00 	lea    0x38ed(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    332b:	48 8d 15 d6 3c 00 00 	lea    0x3cd6(%rip),%rdx        # 7008 <__dso_handle>
+    3332:	48 8d 35 c7 3e 00 00 	lea    0x3ec7(%rip),%rsi        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3339:	48 8d 3d d0 f6 ff ff 	lea    -0x930(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    3340:	48 89 2d c1 3e 00 00 	mov    %rbp,0x3ec1(%rip)        # 7208 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance+0x8>
+    3347:	48 89 05 b2 3e 00 00 	mov    %rax,0x3eb2(%rip)        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    334e:	e8 5d f0 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3353:	48 8d 3d 96 3e 00 00 	lea    0x3e96(%rip),%rdi        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    335a:	e8 e1 ef ff ff       	callq  2340 <__cxa_guard_release@plt>
+    335f:	e9 37 ff ff ff       	jmpq   329b <boost::system::detail::std_category::default_error_condition(int) const+0x22b>
+    3364:	e8 b7 f0 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    3369:	f3 0f 1e fa          	endbr64 
+    336d:	eb 06                	jmp    3375 <boost::system::detail::std_category::default_error_condition(int) const+0x305>
+    336f:	f3 0f 1e fa          	endbr64 
+    3373:	eb 13                	jmp    3388 <boost::system::detail::std_category::default_error_condition(int) const+0x318>
+    3375:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    337a:	48 85 ff             	test   %rdi,%rdi
+    337d:	74 09                	je     3388 <boost::system::detail::std_category::default_error_condition(int) const+0x318>
+    337f:	48 8b 07             	mov    (%rdi),%rax
+    3382:	c5 f8 77             	vzeroupper 
+    3385:	ff 50 08             	callq  *0x8(%rax)
+    3388:	4d 85 ed             	test   %r13,%r13
+    338b:	74 14                	je     33a1 <boost::system::detail::std_category::default_error_condition(int) const+0x331>
+    338d:	48 8d 3d cc 3d 00 00 	lea    0x3dcc(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    3394:	c5 f8 77             	vzeroupper 
+    3397:	e8 e4 ef ff ff       	callq  2380 <pthread_mutex_unlock@plt>
+    339c:	e8 1f ef ff ff       	callq  22c0 <std::terminate()@plt>
+    33a1:	c5 f8 77             	vzeroupper 
+    33a4:	eb f6                	jmp    339c <boost::system::detail::std_category::default_error_condition(int) const+0x32c>
+    33a6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    33ad:	00 00 00 
+
+00000000000033b0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const>:
+    33b0:	f3 0f 1e fa          	endbr64 
+    33b4:	41 56                	push   %r14
+    33b6:	49 89 fe             	mov    %rdi,%r14
+    33b9:	41 55                	push   %r13
+    33bb:	41 89 d5             	mov    %edx,%r13d
+    33be:	41 54                	push   %r12
+    33c0:	55                   	push   %rbp
+    33c1:	48 89 f5             	mov    %rsi,%rbp
+    33c4:	53                   	push   %rbx
+    33c5:	48 83 ec 20          	sub    $0x20,%rsp
+    33c9:	48 8b 5e 08          	mov    0x8(%rsi),%rbx
+    33cd:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    33d4:	00 00 
+    33d6:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    33db:	31 c0                	xor    %eax,%eax
+    33dd:	48 39 df             	cmp    %rbx,%rdi
+    33e0:	0f 84 4a 01 00 00    	je     3530 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x180>
+    33e6:	e8 25 ef ff ff       	callq  2310 <std::_V2::generic_category()@plt>
+    33eb:	49 89 c4             	mov    %rax,%r12
+    33ee:	48 39 d8             	cmp    %rbx,%rax
+    33f1:	0f 84 c9 00 00 00    	je     34c0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x110>
+    33f7:	0f b6 05 d2 3d 00 00 	movzbl 0x3dd2(%rip),%eax        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    33fe:	84 c0                	test   %al,%al
+    3400:	0f 84 12 02 00 00    	je     3618 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x268>
+    3406:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+    340a:	48 8d 05 cf 3d 00 00 	lea    0x3dcf(%rip),%rax        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3411:	48 39 c7             	cmp    %rax,%rdi
+    3414:	0f 84 a6 00 00 00    	je     34c0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x110>
+    341a:	48 85 ff             	test   %rdi,%rdi
+    341d:	0f 84 ad 01 00 00    	je     35d0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x220>
+    3423:	31 c9                	xor    %ecx,%ecx
+    3425:	48 8d 15 64 37 00 00 	lea    0x3764(%rip),%rdx        # 6b90 <vtable for __cxxabiv1::__si_class_type_info@CXXABI_1.3>
+    342c:	48 8d 35 0d 37 00 00 	lea    0x370d(%rip),%rsi        # 6b40 <typeinfo for std::_V2::error_category@@GLIBCXX_3.4.21>
+    3433:	e8 f8 ef ff ff       	callq  2430 <__dynamic_cast@plt>
+    3438:	48 85 c0             	test   %rax,%rax
+    343b:	0f 84 8f 01 00 00    	je     35d0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x220>
+    3441:	48 8b 58 08          	mov    0x8(%rax),%rbx
+    3445:	8b 75 00             	mov    0x0(%rbp),%esi
+    3448:	48 8b 43 08          	mov    0x8(%rbx),%rax
+    344c:	48 ba 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rdx
+    3453:	d2 af 8f 
+    3456:	89 34 24             	mov    %esi,(%rsp)
+    3459:	48 39 d0             	cmp    %rdx,%rax
+    345c:	74 26                	je     3484 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0xd4>
+    345e:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    3465:	11 ab b2 
+    3468:	48 39 d0             	cmp    %rdx,%rax
+    346b:	74 17                	je     3484 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0xd4>
+    346d:	48 8b 03             	mov    (%rbx),%rax
+    3470:	48 8d 15 49 f4 ff ff 	lea    -0xbb7(%rip),%rdx        # 28c0 <boost::system::error_category::failed(int) const>
+    3477:	48 8b 40 30          	mov    0x30(%rax),%rax
+    347b:	48 39 d0             	cmp    %rdx,%rax
+    347e:	0f 85 f4 01 00 00    	jne    3678 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x2c8>
+    3484:	85 f6                	test   %esi,%esi
+    3486:	0f 95 c0             	setne  %al
+    3489:	49 8b 7e 08          	mov    0x8(%r14),%rdi
+    348d:	88 44 24 04          	mov    %al,0x4(%rsp)
+    3491:	48 8b 07             	mov    (%rdi),%rax
+    3494:	48 8d 15 e5 f3 ff ff 	lea    -0xc1b(%rip),%rdx        # 2880 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const>
+    349b:	48 8b 40 18          	mov    0x18(%rax),%rax
+    349f:	48 89 5c 24 08       	mov    %rbx,0x8(%rsp)
+    34a4:	48 39 d0             	cmp    %rdx,%rax
+    34a7:	0f 84 ea 00 00 00    	je     3597 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x1e7>
+    34ad:	0f 1f 00             	nopl   (%rax)
+    34b0:	48 89 e6             	mov    %rsp,%rsi
+    34b3:	44 89 ea             	mov    %r13d,%edx
+    34b6:	ff d0                	callq  *%rax
+    34b8:	eb 4f                	jmp    3509 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x159>
+    34ba:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    34c0:	49 8b 7e 08          	mov    0x8(%r14),%rdi
+    34c4:	48 8d 05 55 36 00 00 	lea    0x3655(%rip),%rax        # 6b20 <boost::system::detail::cat_holder<void>::generic_category_instance>
+    34cb:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    34d0:	48 8b 07             	mov    (%rdi),%rax
+    34d3:	8b 55 00             	mov    0x0(%rbp),%edx
+    34d6:	48 8b 40 18          	mov    0x18(%rax),%rax
+    34da:	85 d2                	test   %edx,%edx
+    34dc:	48 8d 0d 9d f3 ff ff 	lea    -0xc63(%rip),%rcx        # 2880 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const>
+    34e3:	89 14 24             	mov    %edx,(%rsp)
+    34e6:	0f 95 44 24 04       	setne  0x4(%rsp)
+    34eb:	48 39 c8             	cmp    %rcx,%rax
+    34ee:	75 c0                	jne    34b0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x100>
+    34f0:	48 b8 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rax
+    34f7:	11 ab b2 
+    34fa:	48 39 47 08          	cmp    %rax,0x8(%rdi)
+    34fe:	0f 94 c0             	sete   %al
+    3501:	41 39 d5             	cmp    %edx,%r13d
+    3504:	0f 94 c2             	sete   %dl
+    3507:	21 d0                	and    %edx,%eax
+    3509:	48 8b 4c 24 18       	mov    0x18(%rsp),%rcx
+    350e:	64 48 33 0c 25 28 00 	xor    %fs:0x28,%rcx
+    3515:	00 00 
+    3517:	0f 85 65 01 00 00    	jne    3682 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x2d2>
+    351d:	48 83 c4 20          	add    $0x20,%rsp
+    3521:	5b                   	pop    %rbx
+    3522:	5d                   	pop    %rbp
+    3523:	41 5c                	pop    %r12
+    3525:	41 5d                	pop    %r13
+    3527:	41 5e                	pop    %r14
+    3529:	c3                   	retq   
+    352a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3530:	48 8b 5f 08          	mov    0x8(%rdi),%rbx
+    3534:	8b 36                	mov    (%rsi),%esi
+    3536:	48 8b 43 08          	mov    0x8(%rbx),%rax
+    353a:	48 b9 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rcx
+    3541:	11 ab b2 
+    3544:	89 34 24             	mov    %esi,(%rsp)
+    3547:	48 8b 13             	mov    (%rbx),%rdx
+    354a:	48 39 c8             	cmp    %rcx,%rax
+    354d:	74 23                	je     3572 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x1c2>
+    354f:	48 b9 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rcx
+    3556:	d2 af 8f 
+    3559:	48 39 c8             	cmp    %rcx,%rax
+    355c:	74 14                	je     3572 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x1c2>
+    355e:	48 8b 42 30          	mov    0x30(%rdx),%rax
+    3562:	48 8d 0d 57 f3 ff ff 	lea    -0xca9(%rip),%rcx        # 28c0 <boost::system::error_category::failed(int) const>
+    3569:	48 39 c8             	cmp    %rcx,%rax
+    356c:	0f 85 8e 00 00 00    	jne    3600 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x250>
+    3572:	85 f6                	test   %esi,%esi
+    3574:	0f 95 c0             	setne  %al
+    3577:	48 89 df             	mov    %rbx,%rdi
+    357a:	88 44 24 04          	mov    %al,0x4(%rsp)
+    357e:	48 8b 42 18          	mov    0x18(%rdx),%rax
+    3582:	48 8d 15 f7 f2 ff ff 	lea    -0xd09(%rip),%rdx        # 2880 <boost::system::error_category::equivalent(boost::system::error_code const&, int) const>
+    3589:	48 89 5c 24 08       	mov    %rbx,0x8(%rsp)
+    358e:	48 39 d0             	cmp    %rdx,%rax
+    3591:	0f 85 19 ff ff ff    	jne    34b0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x100>
+    3597:	48 8b 43 08          	mov    0x8(%rbx),%rax
+    359b:	48 85 c0             	test   %rax,%rax
+    359e:	74 20                	je     35c0 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x210>
+    35a0:	48 39 47 08          	cmp    %rax,0x8(%rdi)
+    35a4:	0f 94 c0             	sete   %al
+    35a7:	84 c0                	test   %al,%al
+    35a9:	0f 84 5a ff ff ff    	je     3509 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x159>
+    35af:	44 39 2c 24          	cmp    %r13d,(%rsp)
+    35b3:	0f 94 c0             	sete   %al
+    35b6:	e9 4e ff ff ff       	jmpq   3509 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x159>
+    35bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    35c0:	48 39 fb             	cmp    %rdi,%rbx
+    35c3:	0f 94 c0             	sete   %al
+    35c6:	eb df                	jmp    35a7 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x1f7>
+    35c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    35cf:	00 
+    35d0:	49 8b 4e 08          	mov    0x8(%r14),%rcx
+    35d4:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    35db:	11 ab b2 
+    35de:	31 c0                	xor    %eax,%eax
+    35e0:	48 39 51 08          	cmp    %rdx,0x8(%rcx)
+    35e4:	0f 85 1f ff ff ff    	jne    3509 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x159>
+    35ea:	49 8b 04 24          	mov    (%r12),%rax
+    35ee:	44 89 ea             	mov    %r13d,%edx
+    35f1:	48 89 ee             	mov    %rbp,%rsi
+    35f4:	4c 89 e7             	mov    %r12,%rdi
+    35f7:	ff 50 38             	callq  *0x38(%rax)
+    35fa:	e9 0a ff ff ff       	jmpq   3509 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x159>
+    35ff:	90                   	nop
+    3600:	48 89 df             	mov    %rbx,%rdi
+    3603:	ff d0                	callq  *%rax
+    3605:	49 8b 7e 08          	mov    0x8(%r14),%rdi
+    3609:	48 8b 17             	mov    (%rdi),%rdx
+    360c:	e9 69 ff ff ff       	jmpq   357a <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x1ca>
+    3611:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3618:	48 8d 3d b1 3b 00 00 	lea    0x3bb1(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    361f:	e8 cc ee ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3624:	85 c0                	test   %eax,%eax
+    3626:	0f 84 da fd ff ff    	je     3406 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x56>
+    362c:	48 8d 05 e5 35 00 00 	lea    0x35e5(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    3633:	48 89 05 a6 3b 00 00 	mov    %rax,0x3ba6(%rip)        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    363a:	48 8d 15 c7 39 00 00 	lea    0x39c7(%rip),%rdx        # 7008 <__dso_handle>
+    3641:	48 8d 05 d8 34 00 00 	lea    0x34d8(%rip),%rax        # 6b20 <boost::system::detail::cat_holder<void>::generic_category_instance>
+    3648:	48 8d 35 91 3b 00 00 	lea    0x3b91(%rip),%rsi        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    364f:	48 8d 3d ba f3 ff ff 	lea    -0xc46(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    3656:	48 89 05 8b 3b 00 00 	mov    %rax,0x3b8b(%rip)        # 71e8 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance+0x8>
+    365d:	e8 4e ed ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3662:	48 8d 3d 67 3b 00 00 	lea    0x3b67(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3669:	e8 d2 ec ff ff       	callq  2340 <__cxa_guard_release@plt>
+    366e:	e9 93 fd ff ff       	jmpq   3406 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0x56>
+    3673:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    3678:	48 89 df             	mov    %rbx,%rdi
+    367b:	ff d0                	callq  *%rax
+    367d:	e9 07 fe ff ff       	jmpq   3489 <boost::system::detail::std_category::equivalent(std::error_code const&, int) const+0xd9>
+    3682:	e8 99 ed ff ff       	callq  2420 <__stack_chk_fail@plt>
+    3687:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    368e:	00 00 
+
+0000000000003690 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const>:
+    3690:	f3 0f 1e fa          	endbr64 
+    3694:	41 56                	push   %r14
+    3696:	41 55                	push   %r13
+    3698:	41 89 f5             	mov    %esi,%r13d
+    369b:	41 54                	push   %r12
+    369d:	55                   	push   %rbp
+    369e:	48 89 fd             	mov    %rdi,%rbp
+    36a1:	53                   	push   %rbx
+    36a2:	48 89 d3             	mov    %rdx,%rbx
+    36a5:	48 83 ec 20          	sub    $0x20,%rsp
+    36a9:	4c 8b 62 08          	mov    0x8(%rdx),%r12
+    36ad:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    36b4:	00 00 
+    36b6:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    36bb:	31 c0                	xor    %eax,%eax
+    36bd:	4c 39 e7             	cmp    %r12,%rdi
+    36c0:	0f 84 1a 01 00 00    	je     37e0 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x150>
+    36c6:	e8 45 ec ff ff       	callq  2310 <std::_V2::generic_category()@plt>
+    36cb:	49 39 c4             	cmp    %rax,%r12
+    36ce:	0f 84 9c 00 00 00    	je     3770 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xe0>
+    36d4:	0f b6 05 f5 3a 00 00 	movzbl 0x3af5(%rip),%eax        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    36db:	84 c0                	test   %al,%al
+    36dd:	0f 84 55 03 00 00    	je     3a38 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x3a8>
+    36e3:	48 8b 7b 08          	mov    0x8(%rbx),%rdi
+    36e7:	48 8d 05 f2 3a 00 00 	lea    0x3af2(%rip),%rax        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    36ee:	48 39 c7             	cmp    %rax,%rdi
+    36f1:	74 7d                	je     3770 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xe0>
+    36f3:	48 85 ff             	test   %rdi,%rdi
+    36f6:	0f 84 94 01 00 00    	je     3890 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x200>
+    36fc:	31 c9                	xor    %ecx,%ecx
+    36fe:	48 8d 15 8b 34 00 00 	lea    0x348b(%rip),%rdx        # 6b90 <vtable for __cxxabiv1::__si_class_type_info@CXXABI_1.3>
+    3705:	48 8d 35 34 34 00 00 	lea    0x3434(%rip),%rsi        # 6b40 <typeinfo for std::_V2::error_category@@GLIBCXX_3.4.21>
+    370c:	e8 1f ed ff ff       	callq  2430 <__dynamic_cast@plt>
+    3711:	48 85 c0             	test   %rax,%rax
+    3714:	0f 84 76 01 00 00    	je     3890 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x200>
+    371a:	4c 8b 60 08          	mov    0x8(%rax),%r12
+    371e:	8b 33                	mov    (%rbx),%esi
+    3720:	49 8b 44 24 08       	mov    0x8(%r12),%rax
+    3725:	48 ba 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rdx
+    372c:	d2 af 8f 
+    372f:	89 34 24             	mov    %esi,(%rsp)
+    3732:	48 39 d0             	cmp    %rdx,%rax
+    3735:	74 27                	je     375e <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xce>
+    3737:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    373e:	11 ab b2 
+    3741:	48 39 d0             	cmp    %rdx,%rax
+    3744:	74 18                	je     375e <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xce>
+    3746:	49 8b 04 24          	mov    (%r12),%rax
+    374a:	48 8d 15 6f f1 ff ff 	lea    -0xe91(%rip),%rdx        # 28c0 <boost::system::error_category::failed(int) const>
+    3751:	48 8b 40 30          	mov    0x30(%rax),%rax
+    3755:	48 39 d0             	cmp    %rdx,%rax
+    3758:	0f 85 e2 03 00 00    	jne    3b40 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4b0>
+    375e:	85 f6                	test   %esi,%esi
+    3760:	0f 95 c0             	setne  %al
+    3763:	88 44 24 04          	mov    %al,0x4(%rsp)
+    3767:	4c 89 64 24 08       	mov    %r12,0x8(%rsp)
+    376c:	eb 1a                	jmp    3788 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xf8>
+    376e:	66 90                	xchg   %ax,%ax
+    3770:	8b 03                	mov    (%rbx),%eax
+    3772:	85 c0                	test   %eax,%eax
+    3774:	89 04 24             	mov    %eax,(%rsp)
+    3777:	48 8d 05 a2 33 00 00 	lea    0x33a2(%rip),%rax        # 6b20 <boost::system::detail::cat_holder<void>::generic_category_instance>
+    377e:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    3783:	0f 95 44 24 04       	setne  0x4(%rsp)
+    3788:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+    378c:	48 8d 15 9d f0 ff ff 	lea    -0xf63(%rip),%rdx        # 2830 <boost::system::error_category::equivalent(int, boost::system::error_condition const&) const>
+    3793:	48 8b 07             	mov    (%rdi),%rax
+    3796:	48 8b 48 10          	mov    0x10(%rax),%rcx
+    379a:	48 39 d1             	cmp    %rdx,%rcx
+    379d:	0f 85 cd 01 00 00    	jne    3970 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2e0>
+    37a3:	44 89 ee             	mov    %r13d,%esi
+    37a6:	ff 50 08             	callq  *0x8(%rax)
+    37a9:	49 89 c0             	mov    %rax,%r8
+    37ac:	31 c0                	xor    %eax,%eax
+    37ae:	44 39 04 24          	cmp    %r8d,(%rsp)
+    37b2:	0f 84 a6 00 00 00    	je     385e <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x1ce>
+    37b8:	48 8b 5c 24 18       	mov    0x18(%rsp),%rbx
+    37bd:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+    37c4:	00 00 
+    37c6:	0f 85 3b 04 00 00    	jne    3c07 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x577>
+    37cc:	48 83 c4 20          	add    $0x20,%rsp
+    37d0:	5b                   	pop    %rbx
+    37d1:	5d                   	pop    %rbp
+    37d2:	41 5c                	pop    %r12
+    37d4:	41 5d                	pop    %r13
+    37d6:	41 5e                	pop    %r14
+    37d8:	c3                   	retq   
+    37d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    37e0:	4c 8b 67 08          	mov    0x8(%rdi),%r12
+    37e4:	8b 32                	mov    (%rdx),%esi
+    37e6:	49 8b 44 24 08       	mov    0x8(%r12),%rax
+    37eb:	48 b9 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rcx
+    37f2:	11 ab b2 
+    37f5:	89 34 24             	mov    %esi,(%rsp)
+    37f8:	49 8b 14 24          	mov    (%r12),%rdx
+    37fc:	48 39 c8             	cmp    %rcx,%rax
+    37ff:	74 23                	je     3824 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x194>
+    3801:	48 b9 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rcx
+    3808:	d2 af 8f 
+    380b:	48 39 c8             	cmp    %rcx,%rax
+    380e:	74 14                	je     3824 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x194>
+    3810:	48 8b 42 30          	mov    0x30(%rdx),%rax
+    3814:	48 8d 0d a5 f0 ff ff 	lea    -0xf5b(%rip),%rcx        # 28c0 <boost::system::error_category::failed(int) const>
+    381b:	48 39 c8             	cmp    %rcx,%rax
+    381e:	0f 85 fc 01 00 00    	jne    3a20 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x390>
+    3824:	85 f6                	test   %esi,%esi
+    3826:	0f 95 c0             	setne  %al
+    3829:	4c 89 e7             	mov    %r12,%rdi
+    382c:	88 44 24 04          	mov    %al,0x4(%rsp)
+    3830:	48 8b 42 10          	mov    0x10(%rdx),%rax
+    3834:	48 8d 0d f5 ef ff ff 	lea    -0x100b(%rip),%rcx        # 2830 <boost::system::error_category::equivalent(int, boost::system::error_condition const&) const>
+    383b:	4c 89 64 24 08       	mov    %r12,0x8(%rsp)
+    3840:	48 39 c8             	cmp    %rcx,%rax
+    3843:	0f 85 c7 01 00 00    	jne    3a10 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x380>
+    3849:	44 89 ee             	mov    %r13d,%esi
+    384c:	ff 52 08             	callq  *0x8(%rdx)
+    384f:	49 89 c0             	mov    %rax,%r8
+    3852:	31 c0                	xor    %eax,%eax
+    3854:	44 39 04 24          	cmp    %r8d,(%rsp)
+    3858:	0f 85 5a ff ff ff    	jne    37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    385e:	48 8b 4c 24 08       	mov    0x8(%rsp),%rcx
+    3863:	48 8b 41 08          	mov    0x8(%rcx),%rax
+    3867:	48 85 c0             	test   %rax,%rax
+    386a:	75 14                	jne    3880 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x1f0>
+    386c:	48 39 d1             	cmp    %rdx,%rcx
+    386f:	0f 94 c0             	sete   %al
+    3872:	e9 41 ff ff ff       	jmpq   37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    3877:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    387e:	00 00 
+    3880:	48 39 42 08          	cmp    %rax,0x8(%rdx)
+    3884:	0f 94 c0             	sete   %al
+    3887:	e9 2c ff ff ff       	jmpq   37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    388c:	0f 1f 40 00          	nopl   0x0(%rax)
+    3890:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    3894:	48 8d 15 d5 f7 ff ff 	lea    -0x82b(%rip),%rdx        # 3070 <boost::system::detail::std_category::default_error_condition(int) const>
+    389b:	48 8b 40 28          	mov    0x28(%rax),%rax
+    389f:	48 39 d0             	cmp    %rdx,%rax
+    38a2:	0f 85 f0 01 00 00    	jne    3a98 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x408>
+    38a8:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+    38ac:	44 89 ee             	mov    %r13d,%esi
+    38af:	48 8b 07             	mov    (%rdi),%rax
+    38b2:	ff 50 08             	callq  *0x8(%rax)
+    38b5:	49 89 c4             	mov    %rax,%r12
+    38b8:	48 8b 42 08          	mov    0x8(%rdx),%rax
+    38bc:	48 89 d5             	mov    %rdx,%rbp
+    38bf:	48 ba 9b e0 c5 25 1e 	movabs $0x8fafd21e25c5e09b,%rdx
+    38c6:	d2 af 8f 
+    38c9:	48 39 d0             	cmp    %rdx,%rax
+    38cc:	0f 84 7e 02 00 00    	je     3b50 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4c0>
+    38d2:	48 ba 0d df 7e 25 7a 	movabs $0xb2ab117a257edf0d,%rdx
+    38d9:	11 ab b2 
+    38dc:	48 39 d0             	cmp    %rdx,%rax
+    38df:	0f 84 43 02 00 00    	je     3b28 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x498>
+    38e5:	0f b6 05 9c 38 00 00 	movzbl 0x389c(%rip),%eax        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    38ec:	84 c0                	test   %al,%al
+    38ee:	0f 84 bc 01 00 00    	je     3ab0 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x420>
+    38f4:	4c 8b 2d cd 36 00 00 	mov    0x36cd(%rip),%r13        # 6fc8 <__pthread_key_create>
+    38fb:	4d 85 ed             	test   %r13,%r13
+    38fe:	74 14                	je     3914 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x284>
+    3900:	48 8d 3d 59 38 00 00 	lea    0x3859(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    3907:	e8 54 eb ff ff       	callq  2460 <pthread_mutex_lock@plt>
+    390c:	85 c0                	test   %eax,%eax
+    390e:	0f 85 f8 02 00 00    	jne    3c0c <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x57c>
+    3914:	48 8b 15 95 38 00 00 	mov    0x3895(%rip),%rdx        # 71b0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x10>
+    391b:	48 85 d2             	test   %rdx,%rdx
+    391e:	0f 84 7c 00 00 00    	je     39a0 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x310>
+    3924:	48 8b 75 08          	mov    0x8(%rbp),%rsi
+    3928:	48 8d 3d 79 38 00 00 	lea    0x3879(%rip),%rdi        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    392f:	48 85 f6             	test   %rsi,%rsi
+    3932:	0f 95 c0             	setne  %al
+    3935:	49 89 fe             	mov    %rdi,%r14
+    3938:	eb 1d                	jmp    3957 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2c7>
+    393a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3940:	72 09                	jb     394b <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2bb>
+    3942:	84 c0                	test   %al,%al
+    3944:	75 05                	jne    394b <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2bb>
+    3946:	48 39 cd             	cmp    %rcx,%rbp
+    3949:	77 16                	ja     3961 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2d1>
+    394b:	49 89 d6             	mov    %rdx,%r14
+    394e:	48 8b 52 10          	mov    0x10(%rdx),%rdx
+    3952:	48 85 d2             	test   %rdx,%rdx
+    3955:	74 29                	je     3980 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2f0>
+    3957:	48 8b 4a 20          	mov    0x20(%rdx),%rcx
+    395b:	48 3b 71 08          	cmp    0x8(%rcx),%rsi
+    395f:	76 df                	jbe    3940 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2b0>
+    3961:	48 8b 52 18          	mov    0x18(%rdx),%rdx
+    3965:	eb eb                	jmp    3952 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x2c2>
+    3967:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    396e:	00 00 
+    3970:	48 89 e2             	mov    %rsp,%rdx
+    3973:	44 89 ee             	mov    %r13d,%esi
+    3976:	ff d1                	callq  *%rcx
+    3978:	e9 3b fe ff ff       	jmpq   37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    397d:	0f 1f 00             	nopl   (%rax)
+    3980:	49 39 fe             	cmp    %rdi,%r14
+    3983:	74 1b                	je     39a0 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x310>
+    3985:	49 8b 56 20          	mov    0x20(%r14),%rdx
+    3989:	48 8b 42 08          	mov    0x8(%rdx),%rax
+    398d:	48 39 c6             	cmp    %rax,%rsi
+    3990:	72 0e                	jb     39a0 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x310>
+    3992:	77 4f                	ja     39e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x353>
+    3994:	48 85 c0             	test   %rax,%rax
+    3997:	75 4a                	jne    39e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x353>
+    3999:	48 39 d5             	cmp    %rdx,%rbp
+    399c:	73 45                	jae    39e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x353>
+    399e:	66 90                	xchg   %ax,%ax
+    39a0:	bf 10 00 00 00       	mov    $0x10,%edi
+    39a5:	e8 36 ea ff ff       	callq  23e0 <operator new(unsigned long)@plt>
+    39aa:	48 8d 0d 67 32 00 00 	lea    0x3267(%rip),%rcx        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    39b1:	48 89 08             	mov    %rcx,(%rax)
+    39b4:	48 89 68 08          	mov    %rbp,0x8(%rax)
+    39b8:	48 89 e6             	mov    %rsp,%rsi
+    39bb:	48 8d 3d de 37 00 00 	lea    0x37de(%rip),%rdi        # 71a0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    39c2:	48 89 2c 24          	mov    %rbp,(%rsp)
+    39c6:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    39cb:	e8 b0 f5 ff ff       	callq  2f80 <std::pair<std::_Rb_tree_iterator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, bool> std::_Rb_tree<boost::system::error_category const*, std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >, std::_Select1st<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::_M_insert_unique<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > >(std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > >&&)>
+    39d0:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    39d5:	49 89 c6             	mov    %rax,%r14
+    39d8:	48 85 ff             	test   %rdi,%rdi
+    39db:	74 06                	je     39e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x353>
+    39dd:	48 8b 07             	mov    (%rdi),%rax
+    39e0:	ff 50 08             	callq  *0x8(%rax)
+    39e3:	49 8b 6e 28          	mov    0x28(%r14),%rbp
+    39e7:	4d 85 ed             	test   %r13,%r13
+    39ea:	74 0c                	je     39f8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x368>
+    39ec:	48 8d 3d 6d 37 00 00 	lea    0x376d(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    39f3:	e8 88 e9 ff ff       	callq  2380 <pthread_mutex_unlock@plt>
+    39f8:	31 c0                	xor    %eax,%eax
+    39fa:	48 39 6b 08          	cmp    %rbp,0x8(%rbx)
+    39fe:	0f 85 b4 fd ff ff    	jne    37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    3a04:	44 39 23             	cmp    %r12d,(%rbx)
+    3a07:	0f 94 c0             	sete   %al
+    3a0a:	e9 a9 fd ff ff       	jmpq   37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    3a0f:	90                   	nop
+    3a10:	48 89 e2             	mov    %rsp,%rdx
+    3a13:	44 89 ee             	mov    %r13d,%esi
+    3a16:	ff d0                	callq  *%rax
+    3a18:	e9 9b fd ff ff       	jmpq   37b8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x128>
+    3a1d:	0f 1f 00             	nopl   (%rax)
+    3a20:	4c 89 e7             	mov    %r12,%rdi
+    3a23:	ff d0                	callq  *%rax
+    3a25:	48 8b 7d 08          	mov    0x8(%rbp),%rdi
+    3a29:	48 8b 17             	mov    (%rdi),%rdx
+    3a2c:	e9 fb fd ff ff       	jmpq   382c <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x19c>
+    3a31:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3a38:	48 8d 3d 91 37 00 00 	lea    0x3791(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3a3f:	e8 ac ea ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3a44:	85 c0                	test   %eax,%eax
+    3a46:	0f 84 97 fc ff ff    	je     36e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x53>
+    3a4c:	48 8d 05 c5 31 00 00 	lea    0x31c5(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    3a53:	48 89 05 86 37 00 00 	mov    %rax,0x3786(%rip)        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3a5a:	48 8d 15 a7 35 00 00 	lea    0x35a7(%rip),%rdx        # 7008 <__dso_handle>
+    3a61:	48 8d 05 b8 30 00 00 	lea    0x30b8(%rip),%rax        # 6b20 <boost::system::detail::cat_holder<void>::generic_category_instance>
+    3a68:	48 8d 35 71 37 00 00 	lea    0x3771(%rip),%rsi        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3a6f:	48 8d 3d 9a ef ff ff 	lea    -0x1066(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    3a76:	48 89 05 6b 37 00 00 	mov    %rax,0x376b(%rip)        # 71e8 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance+0x8>
+    3a7d:	e8 2e e9 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3a82:	48 8d 3d 47 37 00 00 	lea    0x3747(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3a89:	e8 b2 e8 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    3a8e:	e9 50 fc ff ff       	jmpq   36e3 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x53>
+    3a93:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    3a98:	48 89 ef             	mov    %rbp,%rdi
+    3a9b:	44 89 ee             	mov    %r13d,%esi
+    3a9e:	ff d0                	callq  *%rax
+    3aa0:	41 89 c4             	mov    %eax,%r12d
+    3aa3:	48 89 d5             	mov    %rdx,%rbp
+    3aa6:	e9 4d ff ff ff       	jmpq   39f8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x368>
+    3aab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    3ab0:	48 8d 3d d1 36 00 00 	lea    0x36d1(%rip),%rdi        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    3ab7:	e8 34 ea ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3abc:	85 c0                	test   %eax,%eax
+    3abe:	0f 84 30 fe ff ff    	je     38f4 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x264>
+    3ac4:	48 8d 05 dd 36 00 00 	lea    0x36dd(%rip),%rax        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    3acb:	48 8d 15 36 35 00 00 	lea    0x3536(%rip),%rdx        # 7008 <__dso_handle>
+    3ad2:	48 8d 70 f8          	lea    -0x8(%rax),%rsi
+    3ad6:	48 8d 3d 83 f3 ff ff 	lea    -0xc7d(%rip),%rdi        # 2e60 <std::map<boost::system::error_category const*, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> >, boost::system::detail::cat_ptr_less, std::allocator<std::pair<boost::system::error_category const* const, std::unique_ptr<boost::system::detail::std_category, std::default_delete<boost::system::detail::std_category> > > > >::~map()>
+    3add:	c7 05 c1 36 00 00 00 	movl   $0x0,0x36c1(%rip)        # 71a8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x8>
+    3ae4:	00 00 00 
+    3ae7:	48 c7 05 be 36 00 00 	movq   $0x0,0x36be(%rip)        # 71b0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x10>
+    3aee:	00 00 00 00 
+    3af2:	48 89 05 bf 36 00 00 	mov    %rax,0x36bf(%rip)        # 71b8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x18>
+    3af9:	48 89 05 c0 36 00 00 	mov    %rax,0x36c0(%rip)        # 71c0 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x20>
+    3b00:	48 c7 05 bd 36 00 00 	movq   $0x0,0x36bd(%rip)        # 71c8 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_+0x28>
+    3b07:	00 00 00 00 
+    3b0b:	e8 a0 e8 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3b10:	48 8d 3d 71 36 00 00 	lea    0x3671(%rip),%rdi        # 7188 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::map_>
+    3b17:	e8 24 e8 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    3b1c:	e9 d3 fd ff ff       	jmpq   38f4 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x264>
+    3b21:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3b28:	0f b6 05 a1 36 00 00 	movzbl 0x36a1(%rip),%eax        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3b2f:	84 c0                	test   %al,%al
+    3b31:	74 34                	je     3b67 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4d7>
+    3b33:	48 8d 2d a6 36 00 00 	lea    0x36a6(%rip),%rbp        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3b3a:	e9 b9 fe ff ff       	jmpq   39f8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x368>
+    3b3f:	90                   	nop
+    3b40:	4c 89 e7             	mov    %r12,%rdi
+    3b43:	ff d0                	callq  *%rax
+    3b45:	e9 19 fc ff ff       	jmpq   3763 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0xd3>
+    3b4a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3b50:	0f b6 05 99 36 00 00 	movzbl 0x3699(%rip),%eax        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3b57:	84 c0                	test   %al,%al
+    3b59:	74 5c                	je     3bb7 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x527>
+    3b5b:	48 8d 2d 9e 36 00 00 	lea    0x369e(%rip),%rbp        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3b62:	e9 91 fe ff ff       	jmpq   39f8 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x368>
+    3b67:	48 8d 3d 62 36 00 00 	lea    0x3662(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3b6e:	e8 7d e9 ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3b73:	85 c0                	test   %eax,%eax
+    3b75:	74 bc                	je     3b33 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4a3>
+    3b77:	48 8d 05 9a 30 00 00 	lea    0x309a(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    3b7e:	48 8d 15 83 34 00 00 	lea    0x3483(%rip),%rdx        # 7008 <__dso_handle>
+    3b85:	48 8d 35 54 36 00 00 	lea    0x3654(%rip),%rsi        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3b8c:	48 8d 3d 7d ee ff ff 	lea    -0x1183(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    3b93:	48 89 2d 4e 36 00 00 	mov    %rbp,0x364e(%rip)        # 71e8 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance+0x8>
+    3b9a:	48 89 05 3f 36 00 00 	mov    %rax,0x363f(%rip)        # 71e0 <boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3ba1:	e8 0a e8 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3ba6:	48 8d 3d 23 36 00 00 	lea    0x3623(%rip),%rdi        # 71d0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::generic_instance>
+    3bad:	e8 8e e7 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    3bb2:	e9 7c ff ff ff       	jmpq   3b33 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4a3>
+    3bb7:	48 8d 3d 32 36 00 00 	lea    0x3632(%rip),%rdi        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3bbe:	e8 2d e9 ff ff       	callq  24f0 <__cxa_guard_acquire@plt>
+    3bc3:	85 c0                	test   %eax,%eax
+    3bc5:	74 94                	je     3b5b <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4cb>
+    3bc7:	48 8d 05 4a 30 00 00 	lea    0x304a(%rip),%rax        # 6c18 <vtable for boost::system::detail::std_category+0x10>
+    3bce:	48 8d 15 33 34 00 00 	lea    0x3433(%rip),%rdx        # 7008 <__dso_handle>
+    3bd5:	48 8d 35 24 36 00 00 	lea    0x3624(%rip),%rsi        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3bdc:	48 8d 3d 2d ee ff ff 	lea    -0x11d3(%rip),%rdi        # 2a10 <boost::system::detail::std_category::~std_category()>
+    3be3:	48 89 2d 1e 36 00 00 	mov    %rbp,0x361e(%rip)        # 7208 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance+0x8>
+    3bea:	48 89 05 0f 36 00 00 	mov    %rax,0x360f(%rip)        # 7200 <boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3bf1:	e8 ba e7 ff ff       	callq  23b0 <__cxa_atexit@plt>
+    3bf6:	48 8d 3d f3 35 00 00 	lea    0x35f3(%rip),%rdi        # 71f0 <guard variable for boost::system::detail::to_std_category(boost::system::error_category const&)::system_instance>
+    3bfd:	e8 3e e7 ff ff       	callq  2340 <__cxa_guard_release@plt>
+    3c02:	e9 54 ff ff ff       	jmpq   3b5b <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x4cb>
+    3c07:	e8 14 e8 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    3c0c:	89 c7                	mov    %eax,%edi
+    3c0e:	e8 3d e7 ff ff       	callq  2350 <std::__throw_system_error(int)@plt>
+    3c13:	f3 0f 1e fa          	endbr64 
+    3c17:	eb 06                	jmp    3c1f <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x58f>
+    3c19:	f3 0f 1e fa          	endbr64 
+    3c1d:	eb 13                	jmp    3c32 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x5a2>
+    3c1f:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    3c24:	48 85 ff             	test   %rdi,%rdi
+    3c27:	74 09                	je     3c32 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x5a2>
+    3c29:	48 8b 07             	mov    (%rdi),%rax
+    3c2c:	c5 f8 77             	vzeroupper 
+    3c2f:	ff 50 08             	callq  *0x8(%rax)
+    3c32:	4d 85 ed             	test   %r13,%r13
+    3c35:	74 14                	je     3c4b <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x5bb>
+    3c37:	48 8d 3d 22 35 00 00 	lea    0x3522(%rip),%rdi        # 7160 <boost::system::detail::to_std_category(boost::system::error_category const&)::map_mx_>
+    3c3e:	c5 f8 77             	vzeroupper 
+    3c41:	e8 3a e7 ff ff       	callq  2380 <pthread_mutex_unlock@plt>
+    3c46:	e8 75 e6 ff ff       	callq  22c0 <std::terminate()@plt>
+    3c4b:	c5 f8 77             	vzeroupper 
+    3c4e:	eb f6                	jmp    3c46 <boost::system::detail::std_category::equivalent(int, std::error_condition const&) const+0x5b6>
+
+0000000000003c50 <boost::system::system_error::what() const>:
+    3c50:	f3 0f 1e fa          	endbr64 
+    3c54:	41 55                	push   %r13
+    3c56:	41 54                	push   %r12
+    3c58:	55                   	push   %rbp
+    3c59:	48 89 fd             	mov    %rdi,%rbp
+    3c5c:	48 83 ec 40          	sub    $0x40,%rsp
+    3c60:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    3c67:	00 00 
+    3c69:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    3c6e:	31 c0                	xor    %eax,%eax
+    3c70:	48 83 7f 28 00       	cmpq   $0x0,0x28(%rdi)
+    3c75:	74 29                	je     3ca0 <boost::system::system_error::what() const+0x50>
+    3c77:	48 8b 45 20          	mov    0x20(%rbp),%rax
+    3c7b:	48 8b 4c 24 38       	mov    0x38(%rsp),%rcx
+    3c80:	64 48 33 0c 25 28 00 	xor    %fs:0x28,%rcx
+    3c87:	00 00 
+    3c89:	0f 85 b2 00 00 00    	jne    3d41 <boost::system::system_error::what() const+0xf1>
+    3c8f:	48 83 c4 40          	add    $0x40,%rsp
+    3c93:	5d                   	pop    %rbp
+    3c94:	41 5c                	pop    %r12
+    3c96:	41 5d                	pop    %r13
+    3c98:	c3                   	retq   
+    3c99:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3ca0:	e8 ab e7 ff ff       	callq  2450 <std::runtime_error::what() const@plt>
+    3ca5:	48 89 c7             	mov    %rax,%rdi
+    3ca8:	49 89 c4             	mov    %rax,%r12
+    3cab:	4c 8d 6d 20          	lea    0x20(%rbp),%r13
+    3caf:	e8 3c e6 ff ff       	callq  22f0 <strlen@plt>
+    3cb4:	48 8b 55 28          	mov    0x28(%rbp),%rdx
+    3cb8:	49 89 c0             	mov    %rax,%r8
+    3cbb:	4c 89 e1             	mov    %r12,%rcx
+    3cbe:	31 f6                	xor    %esi,%esi
+    3cc0:	4c 89 ef             	mov    %r13,%rdi
+    3cc3:	e8 b8 e7 ff ff       	callq  2480 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@plt>
+    3cc8:	48 8b 45 28          	mov    0x28(%rbp),%rax
+    3ccc:	48 85 c0             	test   %rax,%rax
+    3ccf:	75 47                	jne    3d18 <boost::system::system_error::what() const+0xc8>
+    3cd1:	48 8b 75 18          	mov    0x18(%rbp),%rsi
+    3cd5:	8b 55 10             	mov    0x10(%rbp),%edx
+    3cd8:	48 8b 06             	mov    (%rsi),%rax
+    3cdb:	48 8d 7c 24 10       	lea    0x10(%rsp),%rdi
+    3ce0:	ff 50 20             	callq  *0x20(%rax)
+    3ce3:	48 8b 54 24 18       	mov    0x18(%rsp),%rdx
+    3ce8:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+    3ced:	4c 89 ef             	mov    %r13,%rdi
+    3cf0:	e8 db e5 ff ff       	callq  22d0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long)@plt>
+    3cf5:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    3cfa:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+    3cff:	48 39 c7             	cmp    %rax,%rdi
+    3d02:	0f 84 6f ff ff ff    	je     3c77 <boost::system::system_error::what() const+0x27>
+    3d08:	e8 c3 e6 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    3d0d:	e9 65 ff ff ff       	jmpq   3c77 <boost::system::system_error::what() const+0x27>
+    3d12:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3d18:	48 ba ff ff ff ff ff 	movabs $0x3fffffffffffffff,%rdx
+    3d1f:	ff ff 3f 
+    3d22:	48 29 c2             	sub    %rax,%rdx
+    3d25:	48 83 fa 01          	cmp    $0x1,%rdx
+    3d29:	76 1b                	jbe    3d46 <boost::system::system_error::what() const+0xf6>
+    3d2b:	ba 02 00 00 00       	mov    $0x2,%edx
+    3d30:	48 8d 35 ed 03 00 00 	lea    0x3ed(%rip),%rsi        # 4124 <_IO_stdin_used+0x124>
+    3d37:	4c 89 ef             	mov    %r13,%rdi
+    3d3a:	e8 91 e5 ff ff       	callq  22d0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long)@plt>
+    3d3f:	eb 90                	jmp    3cd1 <boost::system::system_error::what() const+0x81>
+    3d41:	e8 da e6 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    3d46:	48 8d 3d c2 03 00 00 	lea    0x3c2(%rip),%rdi        # 410f <_IO_stdin_used+0x10f>
+    3d4d:	e8 de e5 ff ff       	callq  2330 <std::__throw_length_error(char const*)@plt>
+    3d52:	f3 0f 1e fa          	endbr64 
+    3d56:	48 89 c7             	mov    %rax,%rdi
+    3d59:	eb 21                	jmp    3d7c <boost::system::system_error::what() const+0x12c>
+    3d5b:	f3 0f 1e fa          	endbr64 
+    3d5f:	49 89 c4             	mov    %rax,%r12
+    3d62:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    3d67:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+    3d6c:	48 39 c7             	cmp    %rax,%rdi
+    3d6f:	74 08                	je     3d79 <boost::system::system_error::what() const+0x129>
+    3d71:	c5 f8 77             	vzeroupper 
+    3d74:	e8 57 e6 ff ff       	callq  23d0 <operator delete(void*)@plt>
+    3d79:	4c 89 e7             	mov    %r12,%rdi
+    3d7c:	c5 f8 77             	vzeroupper 
+    3d7f:	e8 5c e5 ff ff       	callq  22e0 <__cxa_begin_catch@plt>
+    3d84:	48 89 ef             	mov    %rbp,%rdi
+    3d87:	e8 c4 e6 ff ff       	callq  2450 <std::runtime_error::what() const@plt>
+    3d8c:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    3d91:	e8 fa e6 ff ff       	callq  2490 <__cxa_end_catch@plt>
+    3d96:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    3d9b:	e9 db fe ff ff       	jmpq   3c7b <boost::system::system_error::what() const+0x2b>
+
+0000000000003da0 <__libc_csu_init>:
+    3da0:	f3 0f 1e fa          	endbr64 
+    3da4:	41 57                	push   %r15
+    3da6:	4c 8d 3d 9b 2c 00 00 	lea    0x2c9b(%rip),%r15        # 6a48 <__frame_dummy_init_array_entry>
+    3dad:	41 56                	push   %r14
+    3daf:	49 89 d6             	mov    %rdx,%r14
+    3db2:	41 55                	push   %r13
+    3db4:	49 89 f5             	mov    %rsi,%r13
+    3db7:	41 54                	push   %r12
+    3db9:	41 89 fc             	mov    %edi,%r12d
+    3dbc:	55                   	push   %rbp
+    3dbd:	48 8d 2d 94 2c 00 00 	lea    0x2c94(%rip),%rbp        # 6a58 <__do_global_dtors_aux_fini_array_entry>
+    3dc4:	53                   	push   %rbx
+    3dc5:	4c 29 fd             	sub    %r15,%rbp
+    3dc8:	48 83 ec 08          	sub    $0x8,%rsp
+    3dcc:	e8 2f e2 ff ff       	callq  2000 <_init>
+    3dd1:	48 c1 fd 03          	sar    $0x3,%rbp
+    3dd5:	74 1f                	je     3df6 <__libc_csu_init+0x56>
+    3dd7:	31 db                	xor    %ebx,%ebx
+    3dd9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3de0:	4c 89 f2             	mov    %r14,%rdx
+    3de3:	4c 89 ee             	mov    %r13,%rsi
+    3de6:	44 89 e7             	mov    %r12d,%edi
+    3de9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    3ded:	48 83 c3 01          	add    $0x1,%rbx
+    3df1:	48 39 dd             	cmp    %rbx,%rbp
+    3df4:	75 ea                	jne    3de0 <__libc_csu_init+0x40>
+    3df6:	48 83 c4 08          	add    $0x8,%rsp
+    3dfa:	5b                   	pop    %rbx
+    3dfb:	5d                   	pop    %rbp
+    3dfc:	41 5c                	pop    %r12
+    3dfe:	41 5d                	pop    %r13
+    3e00:	41 5e                	pop    %r14
+    3e02:	41 5f                	pop    %r15
+    3e04:	c3                   	retq   
+    3e05:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    3e0c:	00 00 00 00 
+
+0000000000003e10 <__libc_csu_fini>:
+    3e10:	f3 0f 1e fa          	endbr64 
+    3e14:	c3                   	retq   
+
+Desensamblado de la sección .fini:
+
+0000000000003e18 <_fini>:
+    3e18:	f3 0f 1e fa          	endbr64 
+    3e1c:	48 83 ec 08          	sub    $0x8,%rsp
+    3e20:	48 83 c4 08          	add    $0x8,%rsp
+    3e24:	c3                   	retq   

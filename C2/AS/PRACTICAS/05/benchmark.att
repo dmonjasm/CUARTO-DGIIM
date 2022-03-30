@@ -1,0 +1,1990 @@
+
+benchmark:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64 
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 d9 3f 00 00 	mov    0x3fd9(%rip),%rax        # 4fe8 <__gmon_start__>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	callq  *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 ea 3e 00 00    	pushq  0x3eea(%rip)        # 4f10 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	f2 ff 25 eb 3e 00 00 	bnd jmpq *0x3eeb(%rip)        # 4f18 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102d:	0f 1f 00             	nopl   (%rax)
+    1030:	f3 0f 1e fa          	endbr64 
+    1034:	68 00 00 00 00       	pushq  $0x0
+    1039:	f2 e9 e1 ff ff ff    	bnd jmpq 1020 <.plt>
+    103f:	90                   	nop
+    1040:	f3 0f 1e fa          	endbr64 
+    1044:	68 01 00 00 00       	pushq  $0x1
+    1049:	f2 e9 d1 ff ff ff    	bnd jmpq 1020 <.plt>
+    104f:	90                   	nop
+    1050:	f3 0f 1e fa          	endbr64 
+    1054:	68 02 00 00 00       	pushq  $0x2
+    1059:	f2 e9 c1 ff ff ff    	bnd jmpq 1020 <.plt>
+    105f:	90                   	nop
+    1060:	f3 0f 1e fa          	endbr64 
+    1064:	68 03 00 00 00       	pushq  $0x3
+    1069:	f2 e9 b1 ff ff ff    	bnd jmpq 1020 <.plt>
+    106f:	90                   	nop
+    1070:	f3 0f 1e fa          	endbr64 
+    1074:	68 04 00 00 00       	pushq  $0x4
+    1079:	f2 e9 a1 ff ff ff    	bnd jmpq 1020 <.plt>
+    107f:	90                   	nop
+    1080:	f3 0f 1e fa          	endbr64 
+    1084:	68 05 00 00 00       	pushq  $0x5
+    1089:	f2 e9 91 ff ff ff    	bnd jmpq 1020 <.plt>
+    108f:	90                   	nop
+    1090:	f3 0f 1e fa          	endbr64 
+    1094:	68 06 00 00 00       	pushq  $0x6
+    1099:	f2 e9 81 ff ff ff    	bnd jmpq 1020 <.plt>
+    109f:	90                   	nop
+    10a0:	f3 0f 1e fa          	endbr64 
+    10a4:	68 07 00 00 00       	pushq  $0x7
+    10a9:	f2 e9 71 ff ff ff    	bnd jmpq 1020 <.plt>
+    10af:	90                   	nop
+    10b0:	f3 0f 1e fa          	endbr64 
+    10b4:	68 08 00 00 00       	pushq  $0x8
+    10b9:	f2 e9 61 ff ff ff    	bnd jmpq 1020 <.plt>
+    10bf:	90                   	nop
+    10c0:	f3 0f 1e fa          	endbr64 
+    10c4:	68 09 00 00 00       	pushq  $0x9
+    10c9:	f2 e9 51 ff ff ff    	bnd jmpq 1020 <.plt>
+    10cf:	90                   	nop
+    10d0:	f3 0f 1e fa          	endbr64 
+    10d4:	68 0a 00 00 00       	pushq  $0xa
+    10d9:	f2 e9 41 ff ff ff    	bnd jmpq 1020 <.plt>
+    10df:	90                   	nop
+    10e0:	f3 0f 1e fa          	endbr64 
+    10e4:	68 0b 00 00 00       	pushq  $0xb
+    10e9:	f2 e9 31 ff ff ff    	bnd jmpq 1020 <.plt>
+    10ef:	90                   	nop
+    10f0:	f3 0f 1e fa          	endbr64 
+    10f4:	68 0c 00 00 00       	pushq  $0xc
+    10f9:	f2 e9 21 ff ff ff    	bnd jmpq 1020 <.plt>
+    10ff:	90                   	nop
+    1100:	f3 0f 1e fa          	endbr64 
+    1104:	68 0d 00 00 00       	pushq  $0xd
+    1109:	f2 e9 11 ff ff ff    	bnd jmpq 1020 <.plt>
+    110f:	90                   	nop
+    1110:	f3 0f 1e fa          	endbr64 
+    1114:	68 0e 00 00 00       	pushq  $0xe
+    1119:	f2 e9 01 ff ff ff    	bnd jmpq 1020 <.plt>
+    111f:	90                   	nop
+    1120:	f3 0f 1e fa          	endbr64 
+    1124:	68 0f 00 00 00       	pushq  $0xf
+    1129:	f2 e9 f1 fe ff ff    	bnd jmpq 1020 <.plt>
+    112f:	90                   	nop
+    1130:	f3 0f 1e fa          	endbr64 
+    1134:	68 10 00 00 00       	pushq  $0x10
+    1139:	f2 e9 e1 fe ff ff    	bnd jmpq 1020 <.plt>
+    113f:	90                   	nop
+    1140:	f3 0f 1e fa          	endbr64 
+    1144:	68 11 00 00 00       	pushq  $0x11
+    1149:	f2 e9 d1 fe ff ff    	bnd jmpq 1020 <.plt>
+    114f:	90                   	nop
+
+Desensamblado de la sección .plt.got:
+
+0000000000001150 <__cxa_finalize@plt>:
+    1150:	f3 0f 1e fa          	endbr64 
+    1154:	f2 ff 25 55 3e 00 00 	bnd jmpq *0x3e55(%rip)        # 4fb0 <__cxa_finalize@GLIBC_2.2.5>
+    115b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .plt.sec:
+
+0000000000001160 <std::__throw_bad_alloc()@plt>:
+    1160:	f3 0f 1e fa          	endbr64 
+    1164:	f2 ff 25 b5 3d 00 00 	bnd jmpq *0x3db5(%rip)        # 4f20 <std::__throw_bad_alloc()@GLIBCXX_3.4>
+    116b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001170 <__cxa_begin_catch@plt>:
+    1170:	f3 0f 1e fa          	endbr64 
+    1174:	f2 ff 25 ad 3d 00 00 	bnd jmpq *0x3dad(%rip)        # 4f28 <__cxa_begin_catch@CXXABI_1.3>
+    117b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001180 <memset@plt>:
+    1180:	f3 0f 1e fa          	endbr64 
+    1184:	f2 ff 25 a5 3d 00 00 	bnd jmpq *0x3da5(%rip)        # 4f30 <memset@GLIBC_2.2.5>
+    118b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001190 <__cxa_guard_release@plt>:
+    1190:	f3 0f 1e fa          	endbr64 
+    1194:	f2 ff 25 9d 3d 00 00 	bnd jmpq *0x3d9d(%rip)        # 4f38 <__cxa_guard_release@CXXABI_1.3>
+    119b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011a0 <__assert_fail@plt>:
+    11a0:	f3 0f 1e fa          	endbr64 
+    11a4:	f2 ff 25 95 3d 00 00 	bnd jmpq *0x3d95(%rip)        # 4f40 <__assert_fail@GLIBC_2.2.5>
+    11ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011b0 <std::__throw_system_error(int)@plt>:
+    11b0:	f3 0f 1e fa          	endbr64 
+    11b4:	f2 ff 25 8d 3d 00 00 	bnd jmpq *0x3d8d(%rip)        # 4f48 <std::__throw_system_error(int)@GLIBCXX_3.4.11>
+    11bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011c0 <__cxa_atexit@plt>:
+    11c0:	f3 0f 1e fa          	endbr64 
+    11c4:	f2 ff 25 85 3d 00 00 	bnd jmpq *0x3d85(%rip)        # 4f50 <__cxa_atexit@GLIBC_2.2.5>
+    11cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011d0 <operator delete(void*)@plt>:
+    11d0:	f3 0f 1e fa          	endbr64 
+    11d4:	f2 ff 25 7d 3d 00 00 	bnd jmpq *0x3d7d(%rip)        # 4f58 <operator delete(void*)@GLIBCXX_3.4>
+    11db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011e0 <operator new(unsigned long)@plt>:
+    11e0:	f3 0f 1e fa          	endbr64 
+    11e4:	f2 ff 25 75 3d 00 00 	bnd jmpq *0x3d75(%rip)        # 4f60 <operator new(unsigned long)@GLIBCXX_3.4>
+    11eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000011f0 <__stack_chk_fail@plt>:
+    11f0:	f3 0f 1e fa          	endbr64 
+    11f4:	f2 ff 25 6d 3d 00 00 	bnd jmpq *0x3d6d(%rip)        # 4f68 <__stack_chk_fail@GLIBC_2.4>
+    11fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001200 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt>:
+    1200:	f3 0f 1e fa          	endbr64 
+    1204:	f2 ff 25 65 3d 00 00 	bnd jmpq *0x3d65(%rip)        # 4f70 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@GLIBCXX_3.4.18>
+    120b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001210 <std::__throw_out_of_range(char const*)@plt>:
+    1210:	f3 0f 1e fa          	endbr64 
+    1214:	f2 ff 25 5d 3d 00 00 	bnd jmpq *0x3d5d(%rip)        # 4f78 <std::__throw_out_of_range(char const*)@GLIBCXX_3.4>
+    121b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001220 <__cxa_rethrow@plt>:
+    1220:	f3 0f 1e fa          	endbr64 
+    1224:	f2 ff 25 55 3d 00 00 	bnd jmpq *0x3d55(%rip)        # 4f80 <__cxa_rethrow@CXXABI_1.3>
+    122b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001230 <std::ios_base::Init::Init()@plt>:
+    1230:	f3 0f 1e fa          	endbr64 
+    1234:	f2 ff 25 4d 3d 00 00 	bnd jmpq *0x3d4d(%rip)        # 4f88 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    123b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001240 <__cxa_end_catch@plt>:
+    1240:	f3 0f 1e fa          	endbr64 
+    1244:	f2 ff 25 45 3d 00 00 	bnd jmpq *0x3d45(%rip)        # 4f90 <__cxa_end_catch@CXXABI_1.3>
+    124b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001250 <pthread_once@plt>:
+    1250:	f3 0f 1e fa          	endbr64 
+    1254:	f2 ff 25 3d 3d 00 00 	bnd jmpq *0x3d3d(%rip)        # 4f98 <pthread_once@GLIBC_2.2.5>
+    125b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001260 <_Unwind_Resume@plt>:
+    1260:	f3 0f 1e fa          	endbr64 
+    1264:	f2 ff 25 35 3d 00 00 	bnd jmpq *0x3d35(%rip)        # 4fa0 <_Unwind_Resume@GCC_3.0>
+    126b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001270 <__cxa_guard_acquire@plt>:
+    1270:	f3 0f 1e fa          	endbr64 
+    1274:	f2 ff 25 2d 3d 00 00 	bnd jmpq *0x3d2d(%rip)        # 4fa8 <__cxa_guard_acquire@CXXABI_1.3>
+    127b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .text:
+
+0000000000001280 <main>:
+    1280:	f3 0f 1e fa          	endbr64 
+    1284:	48 83 ec 08          	sub    $0x8,%rsp
+    1288:	48 8d 3d 71 01 00 00 	lea    0x171(%rip),%rdi        # 1400 <int ackermann1<int>(int, int)>
+    128f:	e8 7c 0c 00 00       	callq  1f10 <void test<int (int, int)>(int (&)(int, int))>
+    1294:	48 8d 3d 85 16 00 00 	lea    0x1685(%rip),%rdi        # 2920 <int ackermann2<int>(int, int)>
+    129b:	e8 70 0c 00 00       	callq  1f10 <void test<int (int, int)>(int (&)(int, int))>
+    12a0:	48 8d 3d c9 13 00 00 	lea    0x13c9(%rip),%rdi        # 2670 <int ackermann3<int>(int, int)>
+    12a7:	e8 64 0c 00 00       	callq  1f10 <void test<int (int, int)>(int (&)(int, int))>
+    12ac:	48 8d 3d ad 01 00 00 	lea    0x1ad(%rip),%rdi        # 1460 <int ackermann4<int>(int, int)>
+    12b3:	e8 58 0c 00 00       	callq  1f10 <void test<int (int, int)>(int (&)(int, int))>
+    12b8:	48 8d 3d 21 08 00 00 	lea    0x821(%rip),%rdi        # 1ae0 <int ackermann5<int>(int, int)>
+    12bf:	e8 4c 0c 00 00       	callq  1f10 <void test<int (int, int)>(int (&)(int, int))>
+    12c4:	31 c0                	xor    %eax,%eax
+    12c6:	48 83 c4 08          	add    $0x8,%rsp
+    12ca:	c3                   	retq   
+    12cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000012d0 <_GLOBAL__sub_I_main>:
+    12d0:	f3 0f 1e fa          	endbr64 
+    12d4:	48 83 ec 08          	sub    $0x8,%rsp
+    12d8:	48 8d 3d 42 3d 00 00 	lea    0x3d42(%rip),%rdi        # 5021 <std::__ioinit>
+    12df:	e8 4c ff ff ff       	callq  1230 <std::ios_base::Init::Init()@plt>
+    12e4:	48 8b 3d 0d 3d 00 00 	mov    0x3d0d(%rip),%rdi        # 4ff8 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    12eb:	48 8d 15 16 3d 00 00 	lea    0x3d16(%rip),%rdx        # 5008 <__dso_handle>
+    12f2:	48 8d 35 28 3d 00 00 	lea    0x3d28(%rip),%rsi        # 5021 <std::__ioinit>
+    12f9:	48 83 c4 08          	add    $0x8,%rsp
+    12fd:	e9 be fe ff ff       	jmpq   11c0 <__cxa_atexit@plt>
+    1302:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1309:	00 00 00 
+    130c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001310 <_start>:
+    1310:	f3 0f 1e fa          	endbr64 
+    1314:	31 ed                	xor    %ebp,%ebp
+    1316:	49 89 d1             	mov    %rdx,%r9
+    1319:	5e                   	pop    %rsi
+    131a:	48 89 e2             	mov    %rsp,%rdx
+    131d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1321:	50                   	push   %rax
+    1322:	54                   	push   %rsp
+    1323:	4c 8d 05 d6 18 00 00 	lea    0x18d6(%rip),%r8        # 2c00 <__libc_csu_fini>
+    132a:	48 8d 0d 5f 18 00 00 	lea    0x185f(%rip),%rcx        # 2b90 <__libc_csu_init>
+    1331:	48 8d 3d 48 ff ff ff 	lea    -0xb8(%rip),%rdi        # 1280 <main>
+    1338:	ff 15 a2 3c 00 00    	callq  *0x3ca2(%rip)        # 4fe0 <__libc_start_main@GLIBC_2.2.5>
+    133e:	f4                   	hlt    
+    133f:	90                   	nop
+
+0000000000001340 <deregister_tm_clones>:
+    1340:	48 8d 3d d9 3c 00 00 	lea    0x3cd9(%rip),%rdi        # 5020 <__TMC_END__>
+    1347:	48 8d 05 d2 3c 00 00 	lea    0x3cd2(%rip),%rax        # 5020 <__TMC_END__>
+    134e:	48 39 f8             	cmp    %rdi,%rax
+    1351:	74 15                	je     1368 <deregister_tm_clones+0x28>
+    1353:	48 8b 05 7e 3c 00 00 	mov    0x3c7e(%rip),%rax        # 4fd8 <_ITM_deregisterTMCloneTable>
+    135a:	48 85 c0             	test   %rax,%rax
+    135d:	74 09                	je     1368 <deregister_tm_clones+0x28>
+    135f:	ff e0                	jmpq   *%rax
+    1361:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1368:	c3                   	retq   
+    1369:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001370 <register_tm_clones>:
+    1370:	48 8d 3d a9 3c 00 00 	lea    0x3ca9(%rip),%rdi        # 5020 <__TMC_END__>
+    1377:	48 8d 35 a2 3c 00 00 	lea    0x3ca2(%rip),%rsi        # 5020 <__TMC_END__>
+    137e:	48 29 fe             	sub    %rdi,%rsi
+    1381:	48 89 f0             	mov    %rsi,%rax
+    1384:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    1388:	48 c1 f8 03          	sar    $0x3,%rax
+    138c:	48 01 c6             	add    %rax,%rsi
+    138f:	48 d1 fe             	sar    %rsi
+    1392:	74 14                	je     13a8 <register_tm_clones+0x38>
+    1394:	48 8b 05 55 3c 00 00 	mov    0x3c55(%rip),%rax        # 4ff0 <_ITM_registerTMCloneTable>
+    139b:	48 85 c0             	test   %rax,%rax
+    139e:	74 08                	je     13a8 <register_tm_clones+0x38>
+    13a0:	ff e0                	jmpq   *%rax
+    13a2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    13a8:	c3                   	retq   
+    13a9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000013b0 <__do_global_dtors_aux>:
+    13b0:	f3 0f 1e fa          	endbr64 
+    13b4:	80 3d 65 3c 00 00 00 	cmpb   $0x0,0x3c65(%rip)        # 5020 <__TMC_END__>
+    13bb:	75 2b                	jne    13e8 <__do_global_dtors_aux+0x38>
+    13bd:	55                   	push   %rbp
+    13be:	48 83 3d ea 3b 00 00 	cmpq   $0x0,0x3bea(%rip)        # 4fb0 <__cxa_finalize@GLIBC_2.2.5>
+    13c5:	00 
+    13c6:	48 89 e5             	mov    %rsp,%rbp
+    13c9:	74 0c                	je     13d7 <__do_global_dtors_aux+0x27>
+    13cb:	48 8b 3d 36 3c 00 00 	mov    0x3c36(%rip),%rdi        # 5008 <__dso_handle>
+    13d2:	e8 79 fd ff ff       	callq  1150 <__cxa_finalize@plt>
+    13d7:	e8 64 ff ff ff       	callq  1340 <deregister_tm_clones>
+    13dc:	c6 05 3d 3c 00 00 01 	movb   $0x1,0x3c3d(%rip)        # 5020 <__TMC_END__>
+    13e3:	5d                   	pop    %rbp
+    13e4:	c3                   	retq   
+    13e5:	0f 1f 00             	nopl   (%rax)
+    13e8:	c3                   	retq   
+    13e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000013f0 <frame_dummy>:
+    13f0:	f3 0f 1e fa          	endbr64 
+    13f4:	e9 77 ff ff ff       	jmpq   1370 <register_tm_clones>
+    13f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001400 <int ackermann1<int>(int, int)>:
+    1400:	f3 0f 1e fa          	endbr64 
+    1404:	85 ff                	test   %edi,%edi
+    1406:	74 38                	je     1440 <int ackermann1<int>(int, int)+0x40>
+    1408:	53                   	push   %rbx
+    1409:	89 fb                	mov    %edi,%ebx
+    140b:	8d 7b ff             	lea    -0x1(%rbx),%edi
+    140e:	85 f6                	test   %esi,%esi
+    1410:	75 36                	jne    1448 <int ackermann1<int>(int, int)+0x48>
+    1412:	85 ff                	test   %edi,%edi
+    1414:	74 1a                	je     1430 <int ackermann1<int>(int, int)+0x30>
+    1416:	83 eb 02             	sub    $0x2,%ebx
+    1419:	e8 e2 ff ff ff       	callq  1400 <int ackermann1<int>(int, int)>
+    141e:	89 c6                	mov    %eax,%esi
+    1420:	85 db                	test   %ebx,%ebx
+    1422:	75 e7                	jne    140b <int ackermann1<int>(int, int)+0xb>
+    1424:	8d 40 01             	lea    0x1(%rax),%eax
+    1427:	5b                   	pop    %rbx
+    1428:	c3                   	retq   
+    1429:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1430:	b8 02 00 00 00       	mov    $0x2,%eax
+    1435:	5b                   	pop    %rbx
+    1436:	c3                   	retq   
+    1437:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    143e:	00 00 
+    1440:	8d 46 01             	lea    0x1(%rsi),%eax
+    1443:	c3                   	retq   
+    1444:	0f 1f 40 00          	nopl   0x0(%rax)
+    1448:	89 f8                	mov    %edi,%eax
+    144a:	ff ce                	dec    %esi
+    144c:	89 df                	mov    %ebx,%edi
+    144e:	89 c3                	mov    %eax,%ebx
+    1450:	eb c7                	jmp    1419 <int ackermann1<int>(int, int)+0x19>
+    1452:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1459:	00 00 00 
+    145c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001460 <int ackermann4<int>(int, int)>:
+    1460:	f3 0f 1e fa          	endbr64 
+    1464:	41 55                	push   %r13
+    1466:	41 54                	push   %r12
+    1468:	55                   	push   %rbp
+    1469:	53                   	push   %rbx
+    146a:	48 83 ec 08          	sub    $0x8,%rsp
+    146e:	83 ff 03             	cmp    $0x3,%edi
+    1471:	0f 8f 99 00 00 00    	jg     1510 <int ackermann4<int>(int, int)+0xb0>
+    1477:	81 fe ff ff 00 00    	cmp    $0xffff,%esi
+    147d:	0f 8f 8d 00 00 00    	jg     1510 <int ackermann4<int>(int, int)+0xb0>
+    1483:	4c 63 e7             	movslq %edi,%r12
+    1486:	4c 89 e3             	mov    %r12,%rbx
+    1489:	48 63 d6             	movslq %esi,%rdx
+    148c:	48 c1 e3 10          	shl    $0x10,%rbx
+    1490:	48 8d 2d a9 3b 00 00 	lea    0x3ba9(%rip),%rbp        # 5040 <ackermann4<int>(int, int)::solution>
+    1497:	48 01 d3             	add    %rdx,%rbx
+    149a:	8b 44 9d 00          	mov    0x0(%rbp,%rbx,4),%eax
+    149e:	85 c0                	test   %eax,%eax
+    14a0:	75 0b                	jne    14ad <int ackermann4<int>(int, int)+0x4d>
+    14a2:	85 ff                	test   %edi,%edi
+    14a4:	75 1a                	jne    14c0 <int ackermann4<int>(int, int)+0x60>
+    14a6:	8d 46 01             	lea    0x1(%rsi),%eax
+    14a9:	89 44 95 00          	mov    %eax,0x0(%rbp,%rdx,4)
+    14ad:	48 83 c4 08          	add    $0x8,%rsp
+    14b1:	5b                   	pop    %rbx
+    14b2:	5d                   	pop    %rbp
+    14b3:	41 5c                	pop    %r12
+    14b5:	41 5d                	pop    %r13
+    14b7:	c3                   	retq   
+    14b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    14bf:	00 
+    14c0:	44 8d 6f ff          	lea    -0x1(%rdi),%r13d
+    14c4:	85 f6                	test   %esi,%esi
+    14c6:	75 28                	jne    14f0 <int ackermann4<int>(int, int)+0x90>
+    14c8:	44 89 ef             	mov    %r13d,%edi
+    14cb:	be 01 00 00 00       	mov    $0x1,%esi
+    14d0:	e8 8b ff ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    14d5:	49 c1 e4 12          	shl    $0x12,%r12
+    14d9:	42 89 44 25 00       	mov    %eax,0x0(%rbp,%r12,1)
+    14de:	48 83 c4 08          	add    $0x8,%rsp
+    14e2:	5b                   	pop    %rbx
+    14e3:	5d                   	pop    %rbp
+    14e4:	41 5c                	pop    %r12
+    14e6:	41 5d                	pop    %r13
+    14e8:	c3                   	retq   
+    14e9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    14f0:	ff ce                	dec    %esi
+    14f2:	e8 69 ff ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    14f7:	89 c6                	mov    %eax,%esi
+    14f9:	44 89 ef             	mov    %r13d,%edi
+    14fc:	e8 5f ff ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1501:	89 44 9d 00          	mov    %eax,0x0(%rbp,%rbx,4)
+    1505:	48 83 c4 08          	add    $0x8,%rsp
+    1509:	5b                   	pop    %rbx
+    150a:	5d                   	pop    %rbp
+    150b:	41 5c                	pop    %r12
+    150d:	41 5d                	pop    %r13
+    150f:	c3                   	retq   
+    1510:	48 8d 0d f1 1a 00 00 	lea    0x1af1(%rip),%rcx        # 3008 <_IO_stdin_used+0x8>
+    1517:	ba 50 00 00 00       	mov    $0x50,%edx
+    151c:	48 8d 35 07 1b 00 00 	lea    0x1b07(%rip),%rsi        # 302a <_IO_stdin_used+0x2a>
+    1523:	48 8d 3d 0d 1b 00 00 	lea    0x1b0d(%rip),%rdi        # 3037 <_IO_stdin_used+0x37>
+    152a:	e8 71 fc ff ff       	callq  11a0 <__assert_fail@plt>
+    152f:	90                   	nop
+
+0000000000001530 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()>:
+    1530:	f3 0f 1e fa          	endbr64 
+    1534:	41 55                	push   %r13
+    1536:	41 54                	push   %r12
+    1538:	55                   	push   %rbp
+    1539:	53                   	push   %rbx
+    153a:	48 89 fb             	mov    %rdi,%rbx
+    153d:	48 83 ec 08          	sub    $0x8,%rsp
+    1541:	48 8b 6f 10          	mov    0x10(%rdi),%rbp
+    1545:	48 85 ed             	test   %rbp,%rbp
+    1548:	0f 84 82 00 00 00    	je     15d0 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0xa0>
+    154e:	66 90                	xchg   %ax,%ax
+    1550:	4c 8b 65 20          	mov    0x20(%rbp),%r12
+    1554:	4c 8b 6d 00          	mov    0x0(%rbp),%r13
+    1558:	4d 85 e4             	test   %r12,%r12
+    155b:	74 14                	je     1571 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0x41>
+    155d:	0f 1f 00             	nopl   (%rax)
+    1560:	4c 89 e7             	mov    %r12,%rdi
+    1563:	4d 8b 24 24          	mov    (%r12),%r12
+    1567:	e8 64 fc ff ff       	callq  11d0 <operator delete(void*)@plt>
+    156c:	4d 85 e4             	test   %r12,%r12
+    156f:	75 ef                	jne    1560 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0x30>
+    1571:	48 8b 45 18          	mov    0x18(%rbp),%rax
+    1575:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+    1579:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    1580:	00 
+    1581:	31 f6                	xor    %esi,%esi
+    1583:	e8 f8 fb ff ff       	callq  1180 <memset@plt>
+    1588:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+    158c:	48 8d 45 40          	lea    0x40(%rbp),%rax
+    1590:	48 c7 45 28 00 00 00 	movq   $0x0,0x28(%rbp)
+    1597:	00 
+    1598:	48 c7 45 20 00 00 00 	movq   $0x0,0x20(%rbp)
+    159f:	00 
+    15a0:	48 39 c7             	cmp    %rax,%rdi
+    15a3:	74 1b                	je     15c0 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0x90>
+    15a5:	e8 26 fc ff ff       	callq  11d0 <operator delete(void*)@plt>
+    15aa:	48 89 ef             	mov    %rbp,%rdi
+    15ad:	e8 1e fc ff ff       	callq  11d0 <operator delete(void*)@plt>
+    15b2:	4d 85 ed             	test   %r13,%r13
+    15b5:	74 19                	je     15d0 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0xa0>
+    15b7:	4c 89 ed             	mov    %r13,%rbp
+    15ba:	eb 94                	jmp    1550 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0x20>
+    15bc:	0f 1f 40 00          	nopl   0x0(%rax)
+    15c0:	48 89 ef             	mov    %rbp,%rdi
+    15c3:	e8 08 fc ff ff       	callq  11d0 <operator delete(void*)@plt>
+    15c8:	4d 85 ed             	test   %r13,%r13
+    15cb:	75 ea                	jne    15b7 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0x87>
+    15cd:	0f 1f 00             	nopl   (%rax)
+    15d0:	48 8b 43 08          	mov    0x8(%rbx),%rax
+    15d4:	48 8b 3b             	mov    (%rbx),%rdi
+    15d7:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    15de:	00 
+    15df:	31 f6                	xor    %esi,%esi
+    15e1:	e8 9a fb ff ff       	callq  1180 <memset@plt>
+    15e6:	48 8b 3b             	mov    (%rbx),%rdi
+    15e9:	48 c7 43 18 00 00 00 	movq   $0x0,0x18(%rbx)
+    15f0:	00 
+    15f1:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+    15f8:	00 
+    15f9:	48 83 c3 30          	add    $0x30,%rbx
+    15fd:	48 39 df             	cmp    %rbx,%rdi
+    1600:	74 16                	je     1618 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()+0xe8>
+    1602:	48 83 c4 08          	add    $0x8,%rsp
+    1606:	5b                   	pop    %rbx
+    1607:	5d                   	pop    %rbp
+    1608:	41 5c                	pop    %r12
+    160a:	41 5d                	pop    %r13
+    160c:	e9 bf fb ff ff       	jmpq   11d0 <operator delete(void*)@plt>
+    1611:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1618:	48 83 c4 08          	add    $0x8,%rsp
+    161c:	5b                   	pop    %rbx
+    161d:	5d                   	pop    %rbp
+    161e:	41 5c                	pop    %r12
+    1620:	41 5d                	pop    %r13
+    1622:	c3                   	retq   
+    1623:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    162a:	00 00 00 
+    162d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001630 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()>:
+    1630:	f3 0f 1e fa          	endbr64 
+    1634:	8b 05 32 3a 0c 00    	mov    0xc3a32(%rip),%eax        # c506c <ackermann4<int>(int, int)::solution+0xc002c>
+    163a:	85 c0                	test   %eax,%eax
+    163c:	0f 85 9e 00 00 00    	jne    16e0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0xb0>
+    1642:	41 55                	push   %r13
+    1644:	41 54                	push   %r12
+    1646:	55                   	push   %rbp
+    1647:	53                   	push   %rbx
+    1648:	48 83 ec 08          	sub    $0x8,%rsp
+    164c:	8b 05 16 3a 0c 00    	mov    0xc3a16(%rip),%eax        # c5068 <ackermann4<int>(int, int)::solution+0xc0028>
+    1652:	85 c0                	test   %eax,%eax
+    1654:	0f 84 8e 00 00 00    	je     16e8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0xb8>
+    165a:	3d ff ff 00 00       	cmp    $0xffff,%eax
+    165f:	0f 8f 4e 04 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    1665:	48 8d 1d d4 39 00 00 	lea    0x39d4(%rip),%rbx        # 5040 <ackermann4<int>(int, int)::solution>
+    166c:	48 63 e8             	movslq %eax,%rbp
+    166f:	8b 94 ab 00 00 08 00 	mov    0x80000(%rbx,%rbp,4),%edx
+    1676:	85 d2                	test   %edx,%edx
+    1678:	75 55                	jne    16cf <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x9f>
+    167a:	85 c0                	test   %eax,%eax
+    167c:	0f 85 8e 01 00 00    	jne    1810 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x1e0>
+    1682:	8b 15 bc 39 04 00    	mov    0x439bc(%rip),%edx        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    1688:	85 d2                	test   %edx,%edx
+    168a:	75 3d                	jne    16c9 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x99>
+    168c:	8b 05 ae 39 04 00    	mov    0x439ae(%rip),%eax        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    1692:	85 c0                	test   %eax,%eax
+    1694:	75 12                	jne    16a8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x78>
+    1696:	be 01 00 00 00       	mov    $0x1,%esi
+    169b:	31 ff                	xor    %edi,%edi
+    169d:	e8 be fd ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    16a2:	89 05 98 39 04 00    	mov    %eax,0x43998(%rip)        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    16a8:	3d ff ff 00 00       	cmp    $0xffff,%eax
+    16ad:	0f 8f 00 04 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    16b3:	48 63 c8             	movslq %eax,%rcx
+    16b6:	8b 14 8b             	mov    (%rbx,%rcx,4),%edx
+    16b9:	85 d2                	test   %edx,%edx
+    16bb:	75 06                	jne    16c3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x93>
+    16bd:	8d 50 01             	lea    0x1(%rax),%edx
+    16c0:	89 14 8b             	mov    %edx,(%rbx,%rcx,4)
+    16c3:	89 15 7b 39 04 00    	mov    %edx,0x4397b(%rip)        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    16c9:	89 15 71 39 08 00    	mov    %edx,0x83971(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    16cf:	89 15 97 39 0c 00    	mov    %edx,0xc3997(%rip)        # c506c <ackermann4<int>(int, int)::solution+0xc002c>
+    16d5:	48 83 c4 08          	add    $0x8,%rsp
+    16d9:	5b                   	pop    %rbx
+    16da:	5d                   	pop    %rbp
+    16db:	41 5c                	pop    %r12
+    16dd:	41 5d                	pop    %r13
+    16df:	c3                   	retq   
+    16e0:	c3                   	retq   
+    16e1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    16e8:	8b 15 76 39 0c 00    	mov    0xc3976(%rip),%edx        # c5064 <ackermann4<int>(int, int)::solution+0xc0024>
+    16ee:	85 d2                	test   %edx,%edx
+    16f0:	75 5c                	jne    174e <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x11e>
+    16f2:	8b 05 68 39 0c 00    	mov    0xc3968(%rip),%eax        # c5060 <ackermann4<int>(int, int)::solution+0xc0020>
+    16f8:	85 c0                	test   %eax,%eax
+    16fa:	0f 84 f0 01 00 00    	je     18f0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x2c0>
+    1700:	3d ff ff 00 00       	cmp    $0xffff,%eax
+    1705:	0f 8f a8 03 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    170b:	48 63 d8             	movslq %eax,%rbx
+    170e:	48 8d 2d 2b 39 00 00 	lea    0x392b(%rip),%rbp        # 5040 <ackermann4<int>(int, int)::solution>
+    1715:	48 81 c3 00 00 02 00 	add    $0x20000,%rbx
+    171c:	8b 54 9d 00          	mov    0x0(%rbp,%rbx,4),%edx
+    1720:	85 d2                	test   %edx,%edx
+    1722:	75 24                	jne    1748 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x118>
+    1724:	85 c0                	test   %eax,%eax
+    1726:	0f 85 bc 02 00 00    	jne    19e8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x3b8>
+    172c:	be 01 00 00 00       	mov    $0x1,%esi
+    1731:	bf 01 00 00 00       	mov    $0x1,%edi
+    1736:	e8 25 fd ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    173b:	89 05 ff 38 08 00    	mov    %eax,0x838ff(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    1741:	89 c2                	mov    %eax,%edx
+    1743:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    1748:	89 15 16 39 0c 00    	mov    %edx,0xc3916(%rip)        # c5064 <ackermann4<int>(int, int)::solution+0xc0024>
+    174e:	81 fa ff ff 00 00    	cmp    $0xffff,%edx
+    1754:	0f 8f 59 03 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    175a:	48 8d 1d df 38 00 00 	lea    0x38df(%rip),%rbx        # 5040 <ackermann4<int>(int, int)::solution>
+    1761:	48 63 ea             	movslq %edx,%rbp
+    1764:	8b 84 ab 00 00 08 00 	mov    0x80000(%rbx,%rbp,4),%eax
+    176b:	85 c0                	test   %eax,%eax
+    176d:	0f 85 8d 00 00 00    	jne    1800 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x1d0>
+    1773:	85 d2                	test   %edx,%edx
+    1775:	0f 84 3d 01 00 00    	je     18b8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x288>
+    177b:	8d 42 ff             	lea    -0x1(%rdx),%eax
+    177e:	4c 63 e0             	movslq %eax,%r12
+    1781:	49 81 c4 00 00 02 00 	add    $0x20000,%r12
+    1788:	42 8b 0c a3          	mov    (%rbx,%r12,4),%ecx
+    178c:	85 c9                	test   %ecx,%ecx
+    178e:	75 20                	jne    17b0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x180>
+    1790:	85 c0                	test   %eax,%eax
+    1792:	0f 85 74 02 00 00    	jne    1a0c <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x3dc>
+    1798:	be 01 00 00 00       	mov    $0x1,%esi
+    179d:	bf 01 00 00 00       	mov    $0x1,%edi
+    17a2:	e8 b9 fc ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    17a7:	89 05 93 38 08 00    	mov    %eax,0x83893(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    17ad:	89 c1                	mov    %eax,%ecx
+    17af:	90                   	nop
+    17b0:	81 f9 ff ff 00 00    	cmp    $0xffff,%ecx
+    17b6:	0f 8f f7 02 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    17bc:	4c 63 e1             	movslq %ecx,%r12
+    17bf:	49 81 c4 00 00 01 00 	add    $0x10000,%r12
+    17c6:	42 8b 04 a3          	mov    (%rbx,%r12,4),%eax
+    17ca:	85 c0                	test   %eax,%eax
+    17cc:	75 22                	jne    17f0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x1c0>
+    17ce:	85 c9                	test   %ecx,%ecx
+    17d0:	0f 85 5a 02 00 00    	jne    1a30 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x400>
+    17d6:	be 01 00 00 00       	mov    $0x1,%esi
+    17db:	31 ff                	xor    %edi,%edi
+    17dd:	e8 7e fc ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    17e2:	89 05 58 38 04 00    	mov    %eax,0x43858(%rip)        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    17e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    17ef:	00 
+    17f0:	89 84 ab 00 00 08 00 	mov    %eax,0x80000(%rbx,%rbp,4)
+    17f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    17fe:	00 00 
+    1800:	89 05 62 38 0c 00    	mov    %eax,0xc3862(%rip)        # c5068 <ackermann4<int>(int, int)::solution+0xc0028>
+    1806:	e9 4f fe ff ff       	jmpq   165a <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x2a>
+    180b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    1810:	8d 50 ff             	lea    -0x1(%rax),%edx
+    1813:	4c 63 e2             	movslq %edx,%r12
+    1816:	42 8b 8c a3 00 00 08 	mov    0x80000(%rbx,%r12,4),%ecx
+    181d:	00 
+    181e:	85 c9                	test   %ecx,%ecx
+    1820:	75 3e                	jne    1860 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x230>
+    1822:	85 d2                	test   %edx,%edx
+    1824:	0f 85 ec 00 00 00    	jne    1916 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x2e6>
+    182a:	8b 0d 14 38 04 00    	mov    0x43814(%rip),%ecx        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    1830:	85 c9                	test   %ecx,%ecx
+    1832:	75 1d                	jne    1851 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x221>
+    1834:	31 f6                	xor    %esi,%esi
+    1836:	bf 01 00 00 00       	mov    $0x1,%edi
+    183b:	e8 20 fc ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1840:	89 c6                	mov    %eax,%esi
+    1842:	31 ff                	xor    %edi,%edi
+    1844:	e8 17 fc ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1849:	89 05 f5 37 04 00    	mov    %eax,0x437f5(%rip)        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    184f:	89 c1                	mov    %eax,%ecx
+    1851:	89 0d e9 37 08 00    	mov    %ecx,0x837e9(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    1857:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    185e:	00 00 
+    1860:	81 f9 ff ff 00 00    	cmp    $0xffff,%ecx
+    1866:	0f 8f 47 02 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    186c:	4c 63 e1             	movslq %ecx,%r12
+    186f:	42 8b 94 a3 00 00 04 	mov    0x40000(%rbx,%r12,4),%edx
+    1876:	00 
+    1877:	85 d2                	test   %edx,%edx
+    1879:	75 2d                	jne    18a8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x278>
+    187b:	85 c9                	test   %ecx,%ecx
+    187d:	0f 85 0e 01 00 00    	jne    1991 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x361>
+    1883:	8b 15 bb 37 00 00    	mov    0x37bb(%rip),%edx        # 5044 <ackermann4<int>(int, int)::solution+0x4>
+    1889:	85 d2                	test   %edx,%edx
+    188b:	75 0f                	jne    189c <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x26c>
+    188d:	c7 05 ad 37 00 00 02 	movl   $0x2,0x37ad(%rip)        # 5044 <ackermann4<int>(int, int)::solution+0x4>
+    1894:	00 00 00 
+    1897:	ba 02 00 00 00       	mov    $0x2,%edx
+    189c:	89 15 9e 37 04 00    	mov    %edx,0x4379e(%rip)        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    18a2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    18a8:	89 94 ab 00 00 08 00 	mov    %edx,0x80000(%rbx,%rbp,4)
+    18af:	e9 1b fe ff ff       	jmpq   16cf <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x9f>
+    18b4:	0f 1f 40 00          	nopl   0x0(%rax)
+    18b8:	8b 05 86 37 04 00    	mov    0x43786(%rip),%eax        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    18be:	85 c0                	test   %eax,%eax
+    18c0:	75 1b                	jne    18dd <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x2ad>
+    18c2:	31 f6                	xor    %esi,%esi
+    18c4:	bf 01 00 00 00       	mov    $0x1,%edi
+    18c9:	e8 92 fb ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    18ce:	89 c6                	mov    %eax,%esi
+    18d0:	31 ff                	xor    %edi,%edi
+    18d2:	e8 89 fb ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    18d7:	89 05 67 37 04 00    	mov    %eax,0x43767(%rip)        # 45044 <ackermann4<int>(int, int)::solution+0x40004>
+    18dd:	89 05 5d 37 08 00    	mov    %eax,0x8375d(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    18e3:	e9 18 ff ff ff       	jmpq   1800 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x1d0>
+    18e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    18ef:	00 
+    18f0:	be 07 00 00 00       	mov    $0x7,%esi
+    18f5:	bf 03 00 00 00       	mov    $0x3,%edi
+    18fa:	e8 61 fb ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    18ff:	89 c6                	mov    %eax,%esi
+    1901:	bf 02 00 00 00       	mov    $0x2,%edi
+    1906:	e8 55 fb ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    190b:	89 05 4f 37 0c 00    	mov    %eax,0xc374f(%rip)        # c5060 <ackermann4<int>(int, int)::solution+0xc0020>
+    1911:	e9 ea fd ff ff       	jmpq   1700 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0xd0>
+    1916:	8d 48 fe             	lea    -0x2(%rax),%ecx
+    1919:	4c 63 e9             	movslq %ecx,%r13
+    191c:	49 81 c5 00 00 02 00 	add    $0x20000,%r13
+    1923:	42 8b 14 ab          	mov    (%rbx,%r13,4),%edx
+    1927:	85 d2                	test   %edx,%edx
+    1929:	75 1f                	jne    194a <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x31a>
+    192b:	85 c9                	test   %ecx,%ecx
+    192d:	0f 85 3d 01 00 00    	jne    1a70 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x440>
+    1933:	be 01 00 00 00       	mov    $0x1,%esi
+    1938:	bf 01 00 00 00       	mov    $0x1,%edi
+    193d:	e8 1e fb ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1942:	89 05 f8 36 08 00    	mov    %eax,0x836f8(%rip)        # 85040 <ackermann4<int>(int, int)::solution+0x80000>
+    1948:	89 c2                	mov    %eax,%edx
+    194a:	81 fa ff ff 00 00    	cmp    $0xffff,%edx
+    1950:	0f 8f 5d 01 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    1956:	4c 63 ea             	movslq %edx,%r13
+    1959:	49 81 c5 00 00 01 00 	add    $0x10000,%r13
+    1960:	42 8b 0c ab          	mov    (%rbx,%r13,4),%ecx
+    1964:	85 c9                	test   %ecx,%ecx
+    1966:	75 1c                	jne    1984 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x354>
+    1968:	85 d2                	test   %edx,%edx
+    196a:	0f 85 df 00 00 00    	jne    1a4f <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x41f>
+    1970:	be 01 00 00 00       	mov    $0x1,%esi
+    1975:	31 ff                	xor    %edi,%edi
+    1977:	e8 e4 fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    197c:	89 05 be 36 04 00    	mov    %eax,0x436be(%rip)        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    1982:	89 c1                	mov    %eax,%ecx
+    1984:	42 89 8c a3 00 00 08 	mov    %ecx,0x80000(%rbx,%r12,4)
+    198b:	00 
+    198c:	e9 cf fe ff ff       	jmpq   1860 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x230>
+    1991:	8d 51 ff             	lea    -0x1(%rcx),%edx
+    1994:	4c 63 ea             	movslq %edx,%r13
+    1997:	49 81 c5 00 00 01 00 	add    $0x10000,%r13
+    199e:	42 8b 04 ab          	mov    (%rbx,%r13,4),%eax
+    19a2:	85 c0                	test   %eax,%eax
+    19a4:	75 1a                	jne    19c0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x390>
+    19a6:	85 d2                	test   %edx,%edx
+    19a8:	0f 85 e6 00 00 00    	jne    1a94 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x464>
+    19ae:	be 01 00 00 00       	mov    $0x1,%esi
+    19b3:	31 ff                	xor    %edi,%edi
+    19b5:	e8 a6 fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    19ba:	89 05 80 36 04 00    	mov    %eax,0x43680(%rip)        # 45040 <ackermann4<int>(int, int)::solution+0x40000>
+    19c0:	3d ff ff 00 00       	cmp    $0xffff,%eax
+    19c5:	0f 8f e8 00 00 00    	jg     1ab3 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x483>
+    19cb:	48 63 c8             	movslq %eax,%rcx
+    19ce:	8b 14 8b             	mov    (%rbx,%rcx,4),%edx
+    19d1:	85 d2                	test   %edx,%edx
+    19d3:	75 06                	jne    19db <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x3ab>
+    19d5:	8d 50 01             	lea    0x1(%rax),%edx
+    19d8:	89 14 8b             	mov    %edx,(%rbx,%rcx,4)
+    19db:	42 89 94 a3 00 00 04 	mov    %edx,0x40000(%rbx,%r12,4)
+    19e2:	00 
+    19e3:	e9 c0 fe ff ff       	jmpq   18a8 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x278>
+    19e8:	8d 70 ff             	lea    -0x1(%rax),%esi
+    19eb:	bf 02 00 00 00       	mov    $0x2,%edi
+    19f0:	e8 6b fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    19f5:	89 c6                	mov    %eax,%esi
+    19f7:	bf 01 00 00 00       	mov    $0x1,%edi
+    19fc:	e8 5f fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a01:	89 44 9d 00          	mov    %eax,0x0(%rbp,%rbx,4)
+    1a05:	89 c2                	mov    %eax,%edx
+    1a07:	e9 3c fd ff ff       	jmpq   1748 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x118>
+    1a0c:	8d 72 fe             	lea    -0x2(%rdx),%esi
+    1a0f:	bf 02 00 00 00       	mov    $0x2,%edi
+    1a14:	e8 47 fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a19:	89 c6                	mov    %eax,%esi
+    1a1b:	bf 01 00 00 00       	mov    $0x1,%edi
+    1a20:	e8 3b fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a25:	42 89 04 a3          	mov    %eax,(%rbx,%r12,4)
+    1a29:	89 c1                	mov    %eax,%ecx
+    1a2b:	e9 80 fd ff ff       	jmpq   17b0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x180>
+    1a30:	8d 71 ff             	lea    -0x1(%rcx),%esi
+    1a33:	bf 01 00 00 00       	mov    $0x1,%edi
+    1a38:	e8 23 fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a3d:	89 c6                	mov    %eax,%esi
+    1a3f:	31 ff                	xor    %edi,%edi
+    1a41:	e8 1a fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a46:	42 89 04 a3          	mov    %eax,(%rbx,%r12,4)
+    1a4a:	e9 a1 fd ff ff       	jmpq   17f0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x1c0>
+    1a4f:	8d 72 ff             	lea    -0x1(%rdx),%esi
+    1a52:	bf 01 00 00 00       	mov    $0x1,%edi
+    1a57:	e8 04 fa ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a5c:	89 c6                	mov    %eax,%esi
+    1a5e:	31 ff                	xor    %edi,%edi
+    1a60:	e8 fb f9 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a65:	42 89 04 ab          	mov    %eax,(%rbx,%r13,4)
+    1a69:	89 c1                	mov    %eax,%ecx
+    1a6b:	e9 14 ff ff ff       	jmpq   1984 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x354>
+    1a70:	8d 70 fd             	lea    -0x3(%rax),%esi
+    1a73:	bf 02 00 00 00       	mov    $0x2,%edi
+    1a78:	e8 e3 f9 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a7d:	89 c6                	mov    %eax,%esi
+    1a7f:	bf 01 00 00 00       	mov    $0x1,%edi
+    1a84:	e8 d7 f9 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1a89:	42 89 04 ab          	mov    %eax,(%rbx,%r13,4)
+    1a8d:	89 c2                	mov    %eax,%edx
+    1a8f:	e9 b6 fe ff ff       	jmpq   194a <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x31a>
+    1a94:	8d 71 fe             	lea    -0x2(%rcx),%esi
+    1a97:	bf 01 00 00 00       	mov    $0x1,%edi
+    1a9c:	e8 bf f9 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1aa1:	89 c6                	mov    %eax,%esi
+    1aa3:	31 ff                	xor    %edi,%edi
+    1aa5:	e8 b6 f9 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1aaa:	42 89 04 ab          	mov    %eax,(%rbx,%r13,4)
+    1aae:	e9 0d ff ff ff       	jmpq   19c0 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()+0x390>
+    1ab3:	48 8d 0d 4e 15 00 00 	lea    0x154e(%rip),%rcx        # 3008 <_IO_stdin_used+0x8>
+    1aba:	ba 50 00 00 00       	mov    $0x50,%edx
+    1abf:	48 8d 35 64 15 00 00 	lea    0x1564(%rip),%rsi        # 302a <_IO_stdin_used+0x2a>
+    1ac6:	48 8d 3d 6a 15 00 00 	lea    0x156a(%rip),%rdi        # 3037 <_IO_stdin_used+0x37>
+    1acd:	e8 ce f6 ff ff       	callq  11a0 <__assert_fail@plt>
+    1ad2:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1ad9:	00 00 00 
+    1adc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001ae0 <int ackermann5<int>(int, int)>:
+    1ae0:	f3 0f 1e fa          	endbr64 
+    1ae4:	41 57                	push   %r15
+    1ae6:	48 8d 0d 43 fb ff ff 	lea    -0x4bd(%rip),%rcx        # 1630 <std::call_once<ackermann5<int>(int, int)::{lambda()#1}>(std::once_flag&, ackermann5<int>(int, int)::{lambda()#1}&&)::{lambda()#2}::_FUN()>
+    1aed:	41 56                	push   %r14
+    1aef:	41 55                	push   %r13
+    1af1:	41 54                	push   %r12
+    1af3:	55                   	push   %rbp
+    1af4:	53                   	push   %rbx
+    1af5:	48 83 ec 28          	sub    $0x28,%rsp
+    1af9:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1b00:	00 00 
+    1b02:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    1b07:	31 c0                	xor    %eax,%eax
+    1b09:	48 8d 44 24 0f       	lea    0xf(%rsp),%rax
+    1b0e:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    1b13:	48 8b 05 9e 34 00 00 	mov    0x349e(%rip),%rax        # 4fb8 <std::__once_callable@GLIBCXX_3.4.11>
+    1b1a:	48 8d 54 24 10       	lea    0x10(%rsp),%rdx
+    1b1f:	64 48 89 10          	mov    %rdx,%fs:(%rax)
+    1b23:	48 8b 05 96 34 00 00 	mov    0x3496(%rip),%rax        # 4fc0 <std::__once_call@GLIBCXX_3.4.11>
+    1b2a:	48 83 3d 9e 34 00 00 	cmpq   $0x0,0x349e(%rip)        # 4fd0 <__pthread_key_create@GLIBC_2.2.5>
+    1b31:	00 
+    1b32:	64 48 89 08          	mov    %rcx,%fs:(%rax)
+    1b36:	0f 84 35 01 00 00    	je     1c71 <int ackermann5<int>(int, int)+0x191>
+    1b3c:	89 f3                	mov    %esi,%ebx
+    1b3e:	48 8b 35 83 34 00 00 	mov    0x3483(%rip),%rsi        # 4fc8 <__once_proxy@GLIBCXX_3.4.11>
+    1b45:	89 fd                	mov    %edi,%ebp
+    1b47:	48 8d 3d d6 34 00 00 	lea    0x34d6(%rip),%rdi        # 5024 <ackermann5<int>(int, int)::flag>
+    1b4e:	e8 fd f6 ff ff       	callq  1250 <pthread_once@plt>
+    1b53:	85 c0                	test   %eax,%eax
+    1b55:	0f 85 1b 01 00 00    	jne    1c76 <int ackermann5<int>(int, int)+0x196>
+    1b5b:	83 fd 03             	cmp    $0x3,%ebp
+    1b5e:	0f 8f 38 01 00 00    	jg     1c9c <int ackermann5<int>(int, int)+0x1bc>
+    1b64:	81 fb ff ff 00 00    	cmp    $0xffff,%ebx
+    1b6a:	0f 8f 2c 01 00 00    	jg     1c9c <int ackermann5<int>(int, int)+0x1bc>
+    1b70:	4c 63 f5             	movslq %ebp,%r14
+    1b73:	4d 89 f4             	mov    %r14,%r12
+    1b76:	48 63 d3             	movslq %ebx,%rdx
+    1b79:	49 c1 e4 10          	shl    $0x10,%r12
+    1b7d:	4c 8d 2d bc 34 00 00 	lea    0x34bc(%rip),%r13        # 5040 <ackermann4<int>(int, int)::solution>
+    1b84:	49 01 d4             	add    %rdx,%r12
+    1b87:	43 8b 44 a5 00       	mov    0x0(%r13,%r12,4),%eax
+    1b8c:	85 c0                	test   %eax,%eax
+    1b8e:	75 0c                	jne    1b9c <int ackermann5<int>(int, int)+0xbc>
+    1b90:	85 ed                	test   %ebp,%ebp
+    1b92:	75 2c                	jne    1bc0 <int ackermann5<int>(int, int)+0xe0>
+    1b94:	8d 43 01             	lea    0x1(%rbx),%eax
+    1b97:	41 89 44 95 00       	mov    %eax,0x0(%r13,%rdx,4)
+    1b9c:	48 8b 4c 24 18       	mov    0x18(%rsp),%rcx
+    1ba1:	64 48 33 0c 25 28 00 	xor    %fs:0x28,%rcx
+    1ba8:	00 00 
+    1baa:	0f 85 0b 01 00 00    	jne    1cbb <int ackermann5<int>(int, int)+0x1db>
+    1bb0:	48 83 c4 28          	add    $0x28,%rsp
+    1bb4:	5b                   	pop    %rbx
+    1bb5:	5d                   	pop    %rbp
+    1bb6:	41 5c                	pop    %r12
+    1bb8:	41 5d                	pop    %r13
+    1bba:	41 5e                	pop    %r14
+    1bbc:	41 5f                	pop    %r15
+    1bbe:	c3                   	retq   
+    1bbf:	90                   	nop
+    1bc0:	44 8d 7d ff          	lea    -0x1(%rbp),%r15d
+    1bc4:	85 db                	test   %ebx,%ebx
+    1bc6:	75 78                	jne    1c40 <int ackermann5<int>(int, int)+0x160>
+    1bc8:	49 63 df             	movslq %r15d,%rbx
+    1bcb:	48 89 da             	mov    %rbx,%rdx
+    1bce:	48 c1 e2 12          	shl    $0x12,%rdx
+    1bd2:	4c 01 ea             	add    %r13,%rdx
+    1bd5:	8b 42 04             	mov    0x4(%rdx),%eax
+    1bd8:	85 c0                	test   %eax,%eax
+    1bda:	75 55                	jne    1c31 <int ackermann5<int>(int, int)+0x151>
+    1bdc:	45 85 ff             	test   %r15d,%r15d
+    1bdf:	74 7f                	je     1c60 <int ackermann5<int>(int, int)+0x180>
+    1be1:	8b 32                	mov    (%rdx),%esi
+    1be3:	44 8d 65 fe          	lea    -0x2(%rbp),%r12d
+    1be7:	85 f6                	test   %esi,%esi
+    1be9:	75 35                	jne    1c20 <int ackermann5<int>(int, int)+0x140>
+    1beb:	4d 63 fc             	movslq %r12d,%r15
+    1bee:	49 c1 e7 12          	shl    $0x12,%r15
+    1bf2:	4d 01 ef             	add    %r13,%r15
+    1bf5:	41 8b 77 04          	mov    0x4(%r15),%esi
+    1bf9:	85 f6                	test   %esi,%esi
+    1bfb:	75 14                	jne    1c11 <int ackermann5<int>(int, int)+0x131>
+    1bfd:	45 85 e4             	test   %r12d,%r12d
+    1c00:	75 7b                	jne    1c7d <int ackermann5<int>(int, int)+0x19d>
+    1c02:	c7 05 38 34 00 00 02 	movl   $0x2,0x3438(%rip)        # 5044 <ackermann4<int>(int, int)::solution+0x4>
+    1c09:	00 00 00 
+    1c0c:	be 02 00 00 00       	mov    $0x2,%esi
+    1c11:	48 89 d8             	mov    %rbx,%rax
+    1c14:	48 c1 e0 12          	shl    $0x12,%rax
+    1c18:	41 89 74 05 00       	mov    %esi,0x0(%r13,%rax,1)
+    1c1d:	0f 1f 00             	nopl   (%rax)
+    1c20:	44 89 e7             	mov    %r12d,%edi
+    1c23:	e8 38 f8 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1c28:	48 c1 e3 12          	shl    $0x12,%rbx
+    1c2c:	41 89 44 1d 04       	mov    %eax,0x4(%r13,%rbx,1)
+    1c31:	49 c1 e6 12          	shl    $0x12,%r14
+    1c35:	43 89 44 35 00       	mov    %eax,0x0(%r13,%r14,1)
+    1c3a:	e9 5d ff ff ff       	jmpq   1b9c <int ackermann5<int>(int, int)+0xbc>
+    1c3f:	90                   	nop
+    1c40:	8d 73 ff             	lea    -0x1(%rbx),%esi
+    1c43:	89 ef                	mov    %ebp,%edi
+    1c45:	e8 16 f8 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1c4a:	89 c6                	mov    %eax,%esi
+    1c4c:	44 89 ff             	mov    %r15d,%edi
+    1c4f:	e8 0c f8 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1c54:	43 89 44 a5 00       	mov    %eax,0x0(%r13,%r12,4)
+    1c59:	e9 3e ff ff ff       	jmpq   1b9c <int ackermann5<int>(int, int)+0xbc>
+    1c5e:	66 90                	xchg   %ax,%ax
+    1c60:	c7 05 da 33 00 00 02 	movl   $0x2,0x33da(%rip)        # 5044 <ackermann4<int>(int, int)::solution+0x4>
+    1c67:	00 00 00 
+    1c6a:	b8 02 00 00 00       	mov    $0x2,%eax
+    1c6f:	eb c0                	jmp    1c31 <int ackermann5<int>(int, int)+0x151>
+    1c71:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    1c76:	89 c7                	mov    %eax,%edi
+    1c78:	e8 33 f5 ff ff       	callq  11b0 <std::__throw_system_error(int)@plt>
+    1c7d:	31 f6                	xor    %esi,%esi
+    1c7f:	44 89 e7             	mov    %r12d,%edi
+    1c82:	e8 d9 f7 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1c87:	89 c6                	mov    %eax,%esi
+    1c89:	8d 7d fd             	lea    -0x3(%rbp),%edi
+    1c8c:	e8 cf f7 ff ff       	callq  1460 <int ackermann4<int>(int, int)>
+    1c91:	41 89 47 04          	mov    %eax,0x4(%r15)
+    1c95:	89 c6                	mov    %eax,%esi
+    1c97:	e9 75 ff ff ff       	jmpq   1c11 <int ackermann5<int>(int, int)+0x131>
+    1c9c:	48 8d 0d 65 13 00 00 	lea    0x1365(%rip),%rcx        # 3008 <_IO_stdin_used+0x8>
+    1ca3:	ba 50 00 00 00       	mov    $0x50,%edx
+    1ca8:	48 8d 35 7b 13 00 00 	lea    0x137b(%rip),%rsi        # 302a <_IO_stdin_used+0x2a>
+    1caf:	48 8d 3d 81 13 00 00 	lea    0x1381(%rip),%rdi        # 3037 <_IO_stdin_used+0x37>
+    1cb6:	e8 e5 f4 ff ff       	callq  11a0 <__assert_fail@plt>
+    1cbb:	e8 30 f5 ff ff       	callq  11f0 <__stack_chk_fail@plt>
+
+0000000000001cc0 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()>:
+    1cc0:	f3 0f 1e fa          	endbr64 
+    1cc4:	48 8b 87 c0 09 00 00 	mov    0x9c0(%rdi),%rax
+    1ccb:	48 8d 50 01          	lea    0x1(%rax),%rdx
+    1ccf:	48 3d 37 01 00 00    	cmp    $0x137,%rax
+    1cd5:	77 61                	ja     1d38 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x78>
+    1cd7:	48 8b 04 c7          	mov    (%rdi,%rax,8),%rax
+    1cdb:	48 89 97 c0 09 00 00 	mov    %rdx,0x9c0(%rdi)
+    1ce2:	48 89 c2             	mov    %rax,%rdx
+    1ce5:	48 c1 ea 1d          	shr    $0x1d,%rdx
+    1ce9:	48 b9 55 55 55 55 55 	movabs $0x5555555555555555,%rcx
+    1cf0:	55 55 55 
+    1cf3:	48 21 ca             	and    %rcx,%rdx
+    1cf6:	48 31 c2             	xor    %rax,%rdx
+    1cf9:	48 89 d0             	mov    %rdx,%rax
+    1cfc:	48 c1 e0 11          	shl    $0x11,%rax
+    1d00:	48 b9 00 00 a6 ed ff 	movabs $0x71d67fffeda60000,%rcx
+    1d07:	7f d6 71 
+    1d0a:	48 21 c8             	and    %rcx,%rax
+    1d0d:	48 31 c2             	xor    %rax,%rdx
+    1d10:	48 89 d0             	mov    %rdx,%rax
+    1d13:	48 c1 e0 25          	shl    $0x25,%rax
+    1d17:	48 b9 00 00 00 00 e0 	movabs $0xfff7eee000000000,%rcx
+    1d1e:	ee f7 ff 
+    1d21:	48 21 c8             	and    %rcx,%rax
+    1d24:	48 31 d0             	xor    %rdx,%rax
+    1d27:	48 89 c2             	mov    %rax,%rdx
+    1d2a:	48 c1 ea 2b          	shr    $0x2b,%rdx
+    1d2e:	48 31 d0             	xor    %rdx,%rax
+    1d31:	c3                   	retq   
+    1d32:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1d38:	c5 fd 6f 15 20 13 00 	vmovdqa 0x1320(%rip),%ymm2        # 3060 <_IO_stdin_used+0x60>
+    1d3f:	00 
+    1d40:	c5 fd 6f 1d 38 13 00 	vmovdqa 0x1338(%rip),%ymm3        # 3080 <_IO_stdin_used+0x80>
+    1d47:	00 
+    1d48:	c5 fd 6f 25 50 13 00 	vmovdqa 0x1350(%rip),%ymm4        # 30a0 <_IO_stdin_used+0xa0>
+    1d4f:	00 
+    1d50:	c5 fd 6f 2d 68 13 00 	vmovdqa 0x1368(%rip),%ymm5        # 30c0 <_IO_stdin_used+0xc0>
+    1d57:	00 
+    1d58:	48 8d 87 e0 04 00 00 	lea    0x4e0(%rdi),%rax
+    1d5f:	48 89 fa             	mov    %rdi,%rdx
+    1d62:	c5 c1 ef ff          	vpxor  %xmm7,%xmm7,%xmm7
+    1d66:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1d6d:	00 00 00 
+    1d70:	c5 e5 db 4a 08       	vpand  0x8(%rdx),%ymm3,%ymm1
+    1d75:	c5 ed db 02          	vpand  (%rdx),%ymm2,%ymm0
+    1d79:	48 83 c2 20          	add    $0x20,%rdx
+    1d7d:	c5 fd eb c1          	vpor   %ymm1,%ymm0,%ymm0
+    1d81:	c5 f5 73 d0 01       	vpsrlq $0x1,%ymm0,%ymm1
+    1d86:	c5 fd db c4          	vpand  %ymm4,%ymm0,%ymm0
+    1d8a:	c5 f5 ef 8a c0 04 00 	vpxor  0x4c0(%rdx),%ymm1,%ymm1
+    1d91:	00 
+    1d92:	c4 e2 7d 29 c7       	vpcmpeqq %ymm7,%ymm0,%ymm0
+    1d97:	c5 f5 ef f5          	vpxor  %ymm5,%ymm1,%ymm6
+    1d9b:	c4 e3 4d 4c c1 00    	vpblendvb %ymm0,%ymm1,%ymm6,%ymm0
+    1da1:	c5 fe 7f 42 e0       	vmovdqu %ymm0,-0x20(%rdx)
+    1da6:	48 39 d0             	cmp    %rdx,%rax
+    1da9:	75 c5                	jne    1d70 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0xb0>
+    1dab:	48 8d 97 a0 09 00 00 	lea    0x9a0(%rdi),%rdx
+    1db2:	c5 c1 ef ff          	vpxor  %xmm7,%xmm7,%xmm7
+    1db6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1dbd:	00 00 00 
+    1dc0:	c5 e5 db 48 08       	vpand  0x8(%rax),%ymm3,%ymm1
+    1dc5:	c5 ed db 00          	vpand  (%rax),%ymm2,%ymm0
+    1dc9:	48 83 c0 20          	add    $0x20,%rax
+    1dcd:	c5 fd eb c1          	vpor   %ymm1,%ymm0,%ymm0
+    1dd1:	c5 f5 73 d0 01       	vpsrlq $0x1,%ymm0,%ymm1
+    1dd6:	c5 fd db c4          	vpand  %ymm4,%ymm0,%ymm0
+    1dda:	c5 f5 ef 88 00 fb ff 	vpxor  -0x500(%rax),%ymm1,%ymm1
+    1de1:	ff 
+    1de2:	c4 e2 7d 29 c7       	vpcmpeqq %ymm7,%ymm0,%ymm0
+    1de7:	c5 f5 ef f5          	vpxor  %ymm5,%ymm1,%ymm6
+    1deb:	c4 e3 4d 4c c1 00    	vpblendvb %ymm0,%ymm1,%ymm6,%ymm0
+    1df1:	c5 fe 7f 40 e0       	vmovdqu %ymm0,-0x20(%rax)
+    1df6:	48 39 c2             	cmp    %rax,%rdx
+    1df9:	75 c5                	jne    1dc0 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x100>
+    1dfb:	48 8b 87 a8 09 00 00 	mov    0x9a8(%rdi),%rax
+    1e02:	48 8b 97 a0 09 00 00 	mov    0x9a0(%rdi),%rdx
+    1e09:	48 89 c1             	mov    %rax,%rcx
+    1e0c:	81 e1 ff ff ff 7f    	and    $0x7fffffff,%ecx
+    1e12:	48 81 e2 00 00 00 80 	and    $0xffffffff80000000,%rdx
+    1e19:	48 09 ca             	or     %rcx,%rdx
+    1e1c:	48 89 d1             	mov    %rdx,%rcx
+    1e1f:	48 d1 e9             	shr    %rcx
+    1e22:	48 33 8f c0 04 00 00 	xor    0x4c0(%rdi),%rcx
+    1e29:	83 e2 01             	and    $0x1,%edx
+    1e2c:	74 0d                	je     1e3b <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x17b>
+    1e2e:	48 ba e9 19 66 a9 5a 	movabs $0xb5026f5aa96619e9,%rdx
+    1e35:	6f 02 b5 
+    1e38:	48 31 d1             	xor    %rdx,%rcx
+    1e3b:	48 8b 97 b0 09 00 00 	mov    0x9b0(%rdi),%rdx
+    1e42:	48 89 8f a0 09 00 00 	mov    %rcx,0x9a0(%rdi)
+    1e49:	48 89 d1             	mov    %rdx,%rcx
+    1e4c:	81 e1 ff ff ff 7f    	and    $0x7fffffff,%ecx
+    1e52:	48 25 00 00 00 80    	and    $0xffffffff80000000,%rax
+    1e58:	48 09 c8             	or     %rcx,%rax
+    1e5b:	48 89 c1             	mov    %rax,%rcx
+    1e5e:	48 d1 e9             	shr    %rcx
+    1e61:	48 33 8f c8 04 00 00 	xor    0x4c8(%rdi),%rcx
+    1e68:	a8 01                	test   $0x1,%al
+    1e6a:	74 0d                	je     1e79 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x1b9>
+    1e6c:	48 b8 e9 19 66 a9 5a 	movabs $0xb5026f5aa96619e9,%rax
+    1e73:	6f 02 b5 
+    1e76:	48 31 c1             	xor    %rax,%rcx
+    1e79:	48 8b 87 b8 09 00 00 	mov    0x9b8(%rdi),%rax
+    1e80:	48 81 e2 00 00 00 80 	and    $0xffffffff80000000,%rdx
+    1e87:	25 ff ff ff 7f       	and    $0x7fffffff,%eax
+    1e8c:	48 09 d0             	or     %rdx,%rax
+    1e8f:	48 89 c2             	mov    %rax,%rdx
+    1e92:	48 d1 ea             	shr    %rdx
+    1e95:	48 89 8f a8 09 00 00 	mov    %rcx,0x9a8(%rdi)
+    1e9c:	48 33 97 d0 04 00 00 	xor    0x4d0(%rdi),%rdx
+    1ea3:	a8 01                	test   $0x1,%al
+    1ea5:	74 0d                	je     1eb4 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x1f4>
+    1ea7:	48 b8 e9 19 66 a9 5a 	movabs $0xb5026f5aa96619e9,%rax
+    1eae:	6f 02 b5 
+    1eb1:	48 31 c2             	xor    %rax,%rdx
+    1eb4:	48 89 97 b0 09 00 00 	mov    %rdx,0x9b0(%rdi)
+    1ebb:	48 8b 87 b8 09 00 00 	mov    0x9b8(%rdi),%rax
+    1ec2:	48 8b 17             	mov    (%rdi),%rdx
+    1ec5:	48 25 00 00 00 80    	and    $0xffffffff80000000,%rax
+    1ecb:	81 e2 ff ff ff 7f    	and    $0x7fffffff,%edx
+    1ed1:	48 09 d0             	or     %rdx,%rax
+    1ed4:	48 89 c2             	mov    %rax,%rdx
+    1ed7:	48 d1 ea             	shr    %rdx
+    1eda:	48 33 97 d8 04 00 00 	xor    0x4d8(%rdi),%rdx
+    1ee1:	a8 01                	test   $0x1,%al
+    1ee3:	74 0d                	je     1ef2 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x232>
+    1ee5:	48 b8 e9 19 66 a9 5a 	movabs $0xb5026f5aa96619e9,%rax
+    1eec:	6f 02 b5 
+    1eef:	48 31 c2             	xor    %rax,%rdx
+    1ef2:	48 89 97 b8 09 00 00 	mov    %rdx,0x9b8(%rdi)
+    1ef9:	31 c0                	xor    %eax,%eax
+    1efb:	ba 01 00 00 00       	mov    $0x1,%edx
+    1f00:	c5 f8 77             	vzeroupper 
+    1f03:	e9 cf fd ff ff       	jmpq   1cd7 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()+0x17>
+    1f08:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    1f0f:	00 
+
+0000000000001f10 <void test<int (int, int)>(int (&)(int, int))>:
+    1f10:	f3 0f 1e fa          	endbr64 
+    1f14:	41 56                	push   %r14
+    1f16:	31 c9                	xor    %ecx,%ecx
+    1f18:	ba 01 00 00 00       	mov    $0x1,%edx
+    1f1d:	41 55                	push   %r13
+    1f1f:	48 be 2d 7f 95 4c 2d 	movabs $0x5851f42d4c957f2d,%rsi
+    1f26:	f4 51 58 
+    1f29:	41 54                	push   %r12
+    1f2b:	55                   	push   %rbp
+    1f2c:	48 89 fd             	mov    %rdi,%rbp
+    1f2f:	53                   	push   %rbx
+    1f30:	48 81 ec d0 09 00 00 	sub    $0x9d0,%rsp
+    1f37:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1f3e:	00 00 
+    1f40:	48 89 84 24 c8 09 00 	mov    %rax,0x9c8(%rsp)
+    1f47:	00 
+    1f48:	31 c0                	xor    %eax,%eax
+    1f4a:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+    1f51:	00 
+    1f52:	49 89 e6             	mov    %rsp,%r14
+    1f55:	0f 1f 00             	nopl   (%rax)
+    1f58:	48 89 c8             	mov    %rcx,%rax
+    1f5b:	48 c1 e8 3e          	shr    $0x3e,%rax
+    1f5f:	48 31 c8             	xor    %rcx,%rax
+    1f62:	48 0f af c6          	imul   %rsi,%rax
+    1f66:	48 8d 0c 10          	lea    (%rax,%rdx,1),%rcx
+    1f6a:	49 89 0c d6          	mov    %rcx,(%r14,%rdx,8)
+    1f6e:	48 ff c2             	inc    %rdx
+    1f71:	48 81 fa 38 01 00 00 	cmp    $0x138,%rdx
+    1f78:	75 de                	jne    1f58 <void test<int (int, int)>(int (&)(int, int))+0x48>
+    1f7a:	48 c7 84 24 c0 09 00 	movq   $0x138,0x9c0(%rsp)
+    1f81:	00 38 01 00 00 
+    1f86:	41 bc e8 03 00 00    	mov    $0x3e8,%r12d
+    1f8c:	49 bd ab aa aa aa aa 	movabs $0xaaaaaaaaaaaaaaab,%r13
+    1f93:	aa aa aa 
+    1f96:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1f9d:	00 00 00 
+    1fa0:	4c 89 f7             	mov    %r14,%rdi
+    1fa3:	e8 18 fd ff ff       	callq  1cc0 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()>
+    1fa8:	4c 89 f7             	mov    %r14,%rdi
+    1fab:	48 89 c3             	mov    %rax,%rbx
+    1fae:	e8 0d fd ff ff       	callq  1cc0 <std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()()>
+    1fb3:	49 89 c0             	mov    %rax,%r8
+    1fb6:	48 89 d8             	mov    %rbx,%rax
+    1fb9:	49 f7 e5             	mul    %r13
+    1fbc:	44 89 c7             	mov    %r8d,%edi
+    1fbf:	83 e7 03             	and    $0x3,%edi
+    1fc2:	48 c1 ea 03          	shr    $0x3,%rdx
+    1fc6:	48 8d 04 52          	lea    (%rdx,%rdx,2),%rax
+    1fca:	48 c1 e0 02          	shl    $0x2,%rax
+    1fce:	48 29 c3             	sub    %rax,%rbx
+    1fd1:	48 89 de             	mov    %rbx,%rsi
+    1fd4:	ff d5                	callq  *%rbp
+    1fd6:	41 ff cc             	dec    %r12d
+    1fd9:	75 c5                	jne    1fa0 <void test<int (int, int)>(int (&)(int, int))+0x90>
+    1fdb:	48 8b 84 24 c8 09 00 	mov    0x9c8(%rsp),%rax
+    1fe2:	00 
+    1fe3:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    1fea:	00 00 
+    1fec:	75 10                	jne    1ffe <void test<int (int, int)>(int (&)(int, int))+0xee>
+    1fee:	48 81 c4 d0 09 00 00 	add    $0x9d0,%rsp
+    1ff5:	5b                   	pop    %rbx
+    1ff6:	5d                   	pop    %rbp
+    1ff7:	41 5c                	pop    %r12
+    1ff9:	41 5d                	pop    %r13
+    1ffb:	41 5e                	pop    %r14
+    1ffd:	c3                   	retq   
+    1ffe:	e8 ed f1 ff ff       	callq  11f0 <__stack_chk_fail@plt>
+    2003:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    200a:	00 00 00 
+    200d:	0f 1f 00             	nopl   (%rax)
+
+0000000000002010 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>:
+    2010:	f3 0f 1e fa          	endbr64 
+    2014:	41 55                	push   %r13
+    2016:	41 54                	push   %r12
+    2018:	55                   	push   %rbp
+    2019:	48 89 f5             	mov    %rsi,%rbp
+    201c:	53                   	push   %rbx
+    201d:	48 89 fb             	mov    %rdi,%rbx
+    2020:	48 83 ec 08          	sub    $0x8,%rsp
+    2024:	48 83 fe 01          	cmp    $0x1,%rsi
+    2028:	0f 84 da 00 00 00    	je     2108 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf8>
+    202e:	48 b8 ff ff ff ff ff 	movabs $0xfffffffffffffff,%rax
+    2035:	ff ff 0f 
+    2038:	49 89 d4             	mov    %rdx,%r12
+    203b:	48 39 c6             	cmp    %rax,%rsi
+    203e:	0f 87 d8 00 00 00    	ja     211c <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x10c>
+    2044:	4c 8d 2c f5 00 00 00 	lea    0x0(,%rsi,8),%r13
+    204b:	00 
+    204c:	4c 89 ef             	mov    %r13,%rdi
+    204f:	e8 8c f1 ff ff       	callq  11e0 <operator new(unsigned long)@plt>
+    2054:	4c 89 ea             	mov    %r13,%rdx
+    2057:	31 f6                	xor    %esi,%esi
+    2059:	48 89 c7             	mov    %rax,%rdi
+    205c:	49 89 c4             	mov    %rax,%r12
+    205f:	e8 1c f1 ff ff       	callq  1180 <memset@plt>
+    2064:	4c 8d 4b 30          	lea    0x30(%rbx),%r9
+    2068:	48 8b 73 10          	mov    0x10(%rbx),%rsi
+    206c:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+    2073:	00 
+    2074:	48 85 f6             	test   %rsi,%rsi
+    2077:	74 5f                	je     20d8 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    2079:	45 31 c0             	xor    %r8d,%r8d
+    207c:	4c 8d 53 10          	lea    0x10(%rbx),%r10
+    2080:	eb 17                	jmp    2099 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    2082:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2088:	48 8b 00             	mov    (%rax),%rax
+    208b:	48 89 01             	mov    %rax,(%rcx)
+    208e:	48 8b 07             	mov    (%rdi),%rax
+    2091:	48 89 08             	mov    %rcx,(%rax)
+    2094:	48 85 f6             	test   %rsi,%rsi
+    2097:	74 3f                	je     20d8 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    2099:	48 89 f1             	mov    %rsi,%rcx
+    209c:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    20a0:	31 d2                	xor    %edx,%edx
+    20a2:	48 f7 f5             	div    %rbp
+    20a5:	48 8b 36             	mov    (%rsi),%rsi
+    20a8:	49 8d 3c d4          	lea    (%r12,%rdx,8),%rdi
+    20ac:	48 8b 07             	mov    (%rdi),%rax
+    20af:	48 85 c0             	test   %rax,%rax
+    20b2:	75 d4                	jne    2088 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x78>
+    20b4:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    20b8:	48 89 01             	mov    %rax,(%rcx)
+    20bb:	48 89 4b 10          	mov    %rcx,0x10(%rbx)
+    20bf:	4c 89 17             	mov    %r10,(%rdi)
+    20c2:	48 83 39 00          	cmpq   $0x0,(%rcx)
+    20c6:	74 38                	je     2100 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf0>
+    20c8:	4b 89 0c c4          	mov    %rcx,(%r12,%r8,8)
+    20cc:	49 89 d0             	mov    %rdx,%r8
+    20cf:	48 85 f6             	test   %rsi,%rsi
+    20d2:	75 c5                	jne    2099 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    20d4:	0f 1f 40 00          	nopl   0x0(%rax)
+    20d8:	48 8b 3b             	mov    (%rbx),%rdi
+    20db:	4c 39 cf             	cmp    %r9,%rdi
+    20de:	74 05                	je     20e5 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xd5>
+    20e0:	e8 eb f0 ff ff       	callq  11d0 <operator delete(void*)@plt>
+    20e5:	48 89 6b 08          	mov    %rbp,0x8(%rbx)
+    20e9:	4c 89 23             	mov    %r12,(%rbx)
+    20ec:	48 83 c4 08          	add    $0x8,%rsp
+    20f0:	5b                   	pop    %rbx
+    20f1:	5d                   	pop    %rbp
+    20f2:	41 5c                	pop    %r12
+    20f4:	41 5d                	pop    %r13
+    20f6:	c3                   	retq   
+    20f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    20fe:	00 00 
+    2100:	49 89 d0             	mov    %rdx,%r8
+    2103:	eb 8f                	jmp    2094 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x84>
+    2105:	0f 1f 00             	nopl   (%rax)
+    2108:	4c 8d 67 30          	lea    0x30(%rdi),%r12
+    210c:	48 c7 47 30 00 00 00 	movq   $0x0,0x30(%rdi)
+    2113:	00 
+    2114:	4d 89 e1             	mov    %r12,%r9
+    2117:	e9 4c ff ff ff       	jmpq   2068 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x58>
+    211c:	e8 3f f0 ff ff       	callq  1160 <std::__throw_bad_alloc()@plt>
+    2121:	f3 0f 1e fa          	endbr64 
+    2125:	48 89 c7             	mov    %rax,%rdi
+    2128:	c5 f8 77             	vzeroupper 
+    212b:	e8 40 f0 ff ff       	callq  1170 <__cxa_begin_catch@plt>
+    2130:	49 8b 04 24          	mov    (%r12),%rax
+    2134:	48 89 43 28          	mov    %rax,0x28(%rbx)
+    2138:	e8 e3 f0 ff ff       	callq  1220 <__cxa_rethrow@plt>
+    213d:	f3 0f 1e fa          	endbr64 
+    2141:	48 89 c5             	mov    %rax,%rbp
+    2144:	c5 f8 77             	vzeroupper 
+    2147:	e8 f4 f0 ff ff       	callq  1240 <__cxa_end_catch@plt>
+    214c:	48 89 ef             	mov    %rbp,%rdi
+    214f:	e8 0c f1 ff ff       	callq  1260 <_Unwind_Resume@plt>
+    2154:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    215b:	00 00 00 
+    215e:	66 90                	xchg   %ax,%ax
+
+0000000000002160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>:
+    2160:	f3 0f 1e fa          	endbr64 
+    2164:	41 56                	push   %r14
+    2166:	31 d2                	xor    %edx,%edx
+    2168:	41 55                	push   %r13
+    216a:	41 54                	push   %r12
+    216c:	49 89 f4             	mov    %rsi,%r12
+    216f:	55                   	push   %rbp
+    2170:	53                   	push   %rbx
+    2171:	48 89 fb             	mov    %rdi,%rbx
+    2174:	48 83 ec 10          	sub    $0x10,%rsp
+    2178:	4c 63 2e             	movslq (%rsi),%r13
+    217b:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+    217f:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2186:	00 00 
+    2188:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    218d:	31 c0                	xor    %eax,%eax
+    218f:	4c 89 e8             	mov    %r13,%rax
+    2192:	48 f7 f7             	div    %rdi
+    2195:	48 8b 03             	mov    (%rbx),%rax
+    2198:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    219c:	4c 8d 34 d5 00 00 00 	lea    0x0(,%rdx,8),%r14
+    21a3:	00 
+    21a4:	48 85 c0             	test   %rax,%rax
+    21a7:	74 5f                	je     2208 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    21a9:	48 8b 08             	mov    (%rax),%rcx
+    21ac:	4d 89 e9             	mov    %r13,%r9
+    21af:	44 8b 41 08          	mov    0x8(%rcx),%r8d
+    21b3:	48 89 d6             	mov    %rdx,%rsi
+    21b6:	eb 21                	jmp    21d9 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x79>
+    21b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    21bf:	00 
+    21c0:	48 8b 09             	mov    (%rcx),%rcx
+    21c3:	48 85 c9             	test   %rcx,%rcx
+    21c6:	74 40                	je     2208 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    21c8:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    21cc:	31 d2                	xor    %edx,%edx
+    21ce:	49 89 c0             	mov    %rax,%r8
+    21d1:	48 f7 f7             	div    %rdi
+    21d4:	48 39 d6             	cmp    %rdx,%rsi
+    21d7:	75 2f                	jne    2208 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    21d9:	45 39 c1             	cmp    %r8d,%r9d
+    21dc:	75 e2                	jne    21c0 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x60>
+    21de:	48 8d 41 10          	lea    0x10(%rcx),%rax
+    21e2:	48 8b 5c 24 08       	mov    0x8(%rsp),%rbx
+    21e7:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+    21ee:	00 00 
+    21f0:	0f 85 02 01 00 00    	jne    22f8 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x198>
+    21f6:	48 83 c4 10          	add    $0x10,%rsp
+    21fa:	5b                   	pop    %rbx
+    21fb:	5d                   	pop    %rbp
+    21fc:	41 5c                	pop    %r12
+    21fe:	41 5d                	pop    %r13
+    2200:	41 5e                	pop    %r14
+    2202:	c3                   	retq   
+    2203:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2208:	bf 48 00 00 00       	mov    $0x48,%edi
+    220d:	e8 ce ef ff ff       	callq  11e0 <operator new(unsigned long)@plt>
+    2212:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    2219:	48 89 c5             	mov    %rax,%rbp
+    221c:	41 8b 04 24          	mov    (%r12),%eax
+    2220:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    2224:	4c 8d 65 40          	lea    0x40(%rbp),%r12
+    2228:	c5 f8 11 45 30       	vmovups %xmm0,0x30(%rbp)
+    222d:	89 45 08             	mov    %eax,0x8(%rbp)
+    2230:	48 c7 45 40 00 00 00 	movq   $0x0,0x40(%rbp)
+    2237:	00 
+    2238:	4c 89 65 10          	mov    %r12,0x10(%rbp)
+    223c:	48 c7 45 18 01 00 00 	movq   $0x1,0x18(%rbp)
+    2243:	00 
+    2244:	48 c7 45 20 00 00 00 	movq   $0x0,0x20(%rbp)
+    224b:	00 
+    224c:	48 c7 45 28 00 00 00 	movq   $0x0,0x28(%rbp)
+    2253:	00 
+    2254:	c7 45 30 00 00 80 3f 	movl   $0x3f800000,0x30(%rbp)
+    225b:	48 c7 45 38 00 00 00 	movq   $0x0,0x38(%rbp)
+    2262:	00 
+    2263:	48 8b 43 28          	mov    0x28(%rbx),%rax
+    2267:	48 8b 53 18          	mov    0x18(%rbx),%rdx
+    226b:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+    226f:	48 8d 7b 20          	lea    0x20(%rbx),%rdi
+    2273:	b9 01 00 00 00       	mov    $0x1,%ecx
+    2278:	48 89 04 24          	mov    %rax,(%rsp)
+    227c:	e8 7f ef ff ff       	callq  1200 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt>
+    2281:	48 89 d6             	mov    %rdx,%rsi
+    2284:	84 c0                	test   %al,%al
+    2286:	74 1c                	je     22a4 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x144>
+    2288:	48 89 e2             	mov    %rsp,%rdx
+    228b:	48 89 df             	mov    %rbx,%rdi
+    228e:	e8 7d fd ff ff       	callq  2010 <std::_Hashtable<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>
+    2293:	4c 89 e8             	mov    %r13,%rax
+    2296:	31 d2                	xor    %edx,%edx
+    2298:	48 f7 73 08          	divq   0x8(%rbx)
+    229c:	4c 8d 34 d5 00 00 00 	lea    0x0(,%rdx,8),%r14
+    22a3:	00 
+    22a4:	48 8b 0b             	mov    (%rbx),%rcx
+    22a7:	49 01 ce             	add    %rcx,%r14
+    22aa:	49 8b 06             	mov    (%r14),%rax
+    22ad:	48 85 c0             	test   %rax,%rax
+    22b0:	74 1e                	je     22d0 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x170>
+    22b2:	48 8b 00             	mov    (%rax),%rax
+    22b5:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    22b9:	49 8b 06             	mov    (%r14),%rax
+    22bc:	48 89 28             	mov    %rbp,(%rax)
+    22bf:	48 ff 43 18          	incq   0x18(%rbx)
+    22c3:	48 8d 45 10          	lea    0x10(%rbp),%rax
+    22c7:	e9 16 ff ff ff       	jmpq   21e2 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x82>
+    22cc:	0f 1f 40 00          	nopl   0x0(%rax)
+    22d0:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    22d4:	48 89 6b 10          	mov    %rbp,0x10(%rbx)
+    22d8:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    22dc:	48 85 c0             	test   %rax,%rax
+    22df:	74 0e                	je     22ef <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x18f>
+    22e1:	48 63 40 08          	movslq 0x8(%rax),%rax
+    22e5:	31 d2                	xor    %edx,%edx
+    22e7:	48 f7 73 08          	divq   0x8(%rbx)
+    22eb:	48 89 2c d1          	mov    %rbp,(%rcx,%rdx,8)
+    22ef:	48 8d 43 10          	lea    0x10(%rbx),%rax
+    22f3:	49 89 06             	mov    %rax,(%r14)
+    22f6:	eb c7                	jmp    22bf <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x15f>
+    22f8:	e8 f3 ee ff ff       	callq  11f0 <__stack_chk_fail@plt>
+    22fd:	f3 0f 1e fa          	endbr64 
+    2301:	48 89 c7             	mov    %rax,%rdi
+    2304:	c5 f8 77             	vzeroupper 
+    2307:	e8 64 ee ff ff       	callq  1170 <__cxa_begin_catch@plt>
+    230c:	48 8b 7d 20          	mov    0x20(%rbp),%rdi
+    2310:	48 85 ff             	test   %rdi,%rdi
+    2313:	75 42                	jne    2357 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x1f7>
+    2315:	48 8b 45 18          	mov    0x18(%rbp),%rax
+    2319:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+    231d:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    2324:	00 
+    2325:	31 f6                	xor    %esi,%esi
+    2327:	e8 54 ee ff ff       	callq  1180 <memset@plt>
+    232c:	48 8b 7d 10          	mov    0x10(%rbp),%rdi
+    2330:	48 c7 45 28 00 00 00 	movq   $0x0,0x28(%rbp)
+    2337:	00 
+    2338:	48 c7 45 20 00 00 00 	movq   $0x0,0x20(%rbp)
+    233f:	00 
+    2340:	49 39 fc             	cmp    %rdi,%r12
+    2343:	74 05                	je     234a <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x1ea>
+    2345:	e8 86 ee ff ff       	callq  11d0 <operator delete(void*)@plt>
+    234a:	48 89 ef             	mov    %rbp,%rdi
+    234d:	e8 7e ee ff ff       	callq  11d0 <operator delete(void*)@plt>
+    2352:	e8 c9 ee ff ff       	callq  1220 <__cxa_rethrow@plt>
+    2357:	48 8b 1f             	mov    (%rdi),%rbx
+    235a:	e8 71 ee ff ff       	callq  11d0 <operator delete(void*)@plt>
+    235f:	48 89 df             	mov    %rbx,%rdi
+    2362:	eb ac                	jmp    2310 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x1b0>
+    2364:	f3 0f 1e fa          	endbr64 
+    2368:	48 89 c5             	mov    %rax,%rbp
+    236b:	c5 f8 77             	vzeroupper 
+    236e:	e8 cd ee ff ff       	callq  1240 <__cxa_end_catch@plt>
+    2373:	48 89 ef             	mov    %rbp,%rdi
+    2376:	e8 e5 ee ff ff       	callq  1260 <_Unwind_Resume@plt>
+    237b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002380 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>:
+    2380:	f3 0f 1e fa          	endbr64 
+    2384:	41 55                	push   %r13
+    2386:	41 54                	push   %r12
+    2388:	55                   	push   %rbp
+    2389:	48 89 f5             	mov    %rsi,%rbp
+    238c:	53                   	push   %rbx
+    238d:	48 89 fb             	mov    %rdi,%rbx
+    2390:	48 83 ec 08          	sub    $0x8,%rsp
+    2394:	48 83 fe 01          	cmp    $0x1,%rsi
+    2398:	0f 84 da 00 00 00    	je     2478 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf8>
+    239e:	48 b8 ff ff ff ff ff 	movabs $0xfffffffffffffff,%rax
+    23a5:	ff ff 0f 
+    23a8:	49 89 d4             	mov    %rdx,%r12
+    23ab:	48 39 c6             	cmp    %rax,%rsi
+    23ae:	0f 87 d8 00 00 00    	ja     248c <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x10c>
+    23b4:	4c 8d 2c f5 00 00 00 	lea    0x0(,%rsi,8),%r13
+    23bb:	00 
+    23bc:	4c 89 ef             	mov    %r13,%rdi
+    23bf:	e8 1c ee ff ff       	callq  11e0 <operator new(unsigned long)@plt>
+    23c4:	4c 89 ea             	mov    %r13,%rdx
+    23c7:	31 f6                	xor    %esi,%esi
+    23c9:	48 89 c7             	mov    %rax,%rdi
+    23cc:	49 89 c4             	mov    %rax,%r12
+    23cf:	e8 ac ed ff ff       	callq  1180 <memset@plt>
+    23d4:	4c 8d 4b 30          	lea    0x30(%rbx),%r9
+    23d8:	48 8b 73 10          	mov    0x10(%rbx),%rsi
+    23dc:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+    23e3:	00 
+    23e4:	48 85 f6             	test   %rsi,%rsi
+    23e7:	74 5f                	je     2448 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    23e9:	45 31 c0             	xor    %r8d,%r8d
+    23ec:	4c 8d 53 10          	lea    0x10(%rbx),%r10
+    23f0:	eb 17                	jmp    2409 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    23f2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    23f8:	48 8b 00             	mov    (%rax),%rax
+    23fb:	48 89 01             	mov    %rax,(%rcx)
+    23fe:	48 8b 07             	mov    (%rdi),%rax
+    2401:	48 89 08             	mov    %rcx,(%rax)
+    2404:	48 85 f6             	test   %rsi,%rsi
+    2407:	74 3f                	je     2448 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    2409:	48 89 f1             	mov    %rsi,%rcx
+    240c:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    2410:	31 d2                	xor    %edx,%edx
+    2412:	48 f7 f5             	div    %rbp
+    2415:	48 8b 36             	mov    (%rsi),%rsi
+    2418:	49 8d 3c d4          	lea    (%r12,%rdx,8),%rdi
+    241c:	48 8b 07             	mov    (%rdi),%rax
+    241f:	48 85 c0             	test   %rax,%rax
+    2422:	75 d4                	jne    23f8 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x78>
+    2424:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    2428:	48 89 01             	mov    %rax,(%rcx)
+    242b:	48 89 4b 10          	mov    %rcx,0x10(%rbx)
+    242f:	4c 89 17             	mov    %r10,(%rdi)
+    2432:	48 83 39 00          	cmpq   $0x0,(%rcx)
+    2436:	74 38                	je     2470 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf0>
+    2438:	4b 89 0c c4          	mov    %rcx,(%r12,%r8,8)
+    243c:	49 89 d0             	mov    %rdx,%r8
+    243f:	48 85 f6             	test   %rsi,%rsi
+    2442:	75 c5                	jne    2409 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    2444:	0f 1f 40 00          	nopl   0x0(%rax)
+    2448:	48 8b 3b             	mov    (%rbx),%rdi
+    244b:	4c 39 cf             	cmp    %r9,%rdi
+    244e:	74 05                	je     2455 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xd5>
+    2450:	e8 7b ed ff ff       	callq  11d0 <operator delete(void*)@plt>
+    2455:	48 89 6b 08          	mov    %rbp,0x8(%rbx)
+    2459:	4c 89 23             	mov    %r12,(%rbx)
+    245c:	48 83 c4 08          	add    $0x8,%rsp
+    2460:	5b                   	pop    %rbx
+    2461:	5d                   	pop    %rbp
+    2462:	41 5c                	pop    %r12
+    2464:	41 5d                	pop    %r13
+    2466:	c3                   	retq   
+    2467:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    246e:	00 00 
+    2470:	49 89 d0             	mov    %rdx,%r8
+    2473:	eb 8f                	jmp    2404 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x84>
+    2475:	0f 1f 00             	nopl   (%rax)
+    2478:	4c 8d 67 30          	lea    0x30(%rdi),%r12
+    247c:	48 c7 47 30 00 00 00 	movq   $0x0,0x30(%rdi)
+    2483:	00 
+    2484:	4d 89 e1             	mov    %r12,%r9
+    2487:	e9 4c ff ff ff       	jmpq   23d8 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x58>
+    248c:	e8 cf ec ff ff       	callq  1160 <std::__throw_bad_alloc()@plt>
+    2491:	f3 0f 1e fa          	endbr64 
+    2495:	48 89 c7             	mov    %rax,%rdi
+    2498:	c5 f8 77             	vzeroupper 
+    249b:	e8 d0 ec ff ff       	callq  1170 <__cxa_begin_catch@plt>
+    24a0:	49 8b 04 24          	mov    (%r12),%rax
+    24a4:	48 89 43 28          	mov    %rax,0x28(%rbx)
+    24a8:	e8 73 ed ff ff       	callq  1220 <__cxa_rethrow@plt>
+    24ad:	f3 0f 1e fa          	endbr64 
+    24b1:	48 89 c5             	mov    %rax,%rbp
+    24b4:	c5 f8 77             	vzeroupper 
+    24b7:	e8 84 ed ff ff       	callq  1240 <__cxa_end_catch@plt>
+    24bc:	48 89 ef             	mov    %rbp,%rdi
+    24bf:	e8 9c ed ff ff       	callq  1260 <_Unwind_Resume@plt>
+    24c4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    24cb:	00 00 00 
+    24ce:	66 90                	xchg   %ax,%ax
+
+00000000000024d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>:
+    24d0:	f3 0f 1e fa          	endbr64 
+    24d4:	41 56                	push   %r14
+    24d6:	31 d2                	xor    %edx,%edx
+    24d8:	41 55                	push   %r13
+    24da:	41 54                	push   %r12
+    24dc:	49 89 f4             	mov    %rsi,%r12
+    24df:	55                   	push   %rbp
+    24e0:	53                   	push   %rbx
+    24e1:	48 89 fb             	mov    %rdi,%rbx
+    24e4:	48 83 ec 10          	sub    $0x10,%rsp
+    24e8:	4c 63 2e             	movslq (%rsi),%r13
+    24eb:	48 8b 7f 08          	mov    0x8(%rdi),%rdi
+    24ef:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    24f6:	00 00 
+    24f8:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    24fd:	31 c0                	xor    %eax,%eax
+    24ff:	4c 89 e8             	mov    %r13,%rax
+    2502:	48 f7 f7             	div    %rdi
+    2505:	48 8b 03             	mov    (%rbx),%rax
+    2508:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    250c:	4c 8d 34 d5 00 00 00 	lea    0x0(,%rdx,8),%r14
+    2513:	00 
+    2514:	48 85 c0             	test   %rax,%rax
+    2517:	74 5f                	je     2578 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    2519:	48 8b 08             	mov    (%rax),%rcx
+    251c:	4d 89 e9             	mov    %r13,%r9
+    251f:	44 8b 41 08          	mov    0x8(%rcx),%r8d
+    2523:	48 89 d6             	mov    %rdx,%rsi
+    2526:	eb 21                	jmp    2549 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x79>
+    2528:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    252f:	00 
+    2530:	48 8b 09             	mov    (%rcx),%rcx
+    2533:	48 85 c9             	test   %rcx,%rcx
+    2536:	74 40                	je     2578 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    2538:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    253c:	31 d2                	xor    %edx,%edx
+    253e:	49 89 c0             	mov    %rax,%r8
+    2541:	48 f7 f7             	div    %rdi
+    2544:	48 39 d6             	cmp    %rdx,%rsi
+    2547:	75 2f                	jne    2578 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0xa8>
+    2549:	45 39 c1             	cmp    %r8d,%r9d
+    254c:	75 e2                	jne    2530 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x60>
+    254e:	48 8d 41 0c          	lea    0xc(%rcx),%rax
+    2552:	48 8b 5c 24 08       	mov    0x8(%rsp),%rbx
+    2557:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+    255e:	00 00 
+    2560:	0f 85 ca 00 00 00    	jne    2630 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x160>
+    2566:	48 83 c4 10          	add    $0x10,%rsp
+    256a:	5b                   	pop    %rbx
+    256b:	5d                   	pop    %rbp
+    256c:	41 5c                	pop    %r12
+    256e:	41 5d                	pop    %r13
+    2570:	41 5e                	pop    %r14
+    2572:	c3                   	retq   
+    2573:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2578:	bf 10 00 00 00       	mov    $0x10,%edi
+    257d:	e8 5e ec ff ff       	callq  11e0 <operator new(unsigned long)@plt>
+    2582:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    2589:	48 89 c5             	mov    %rax,%rbp
+    258c:	41 8b 04 24          	mov    (%r12),%eax
+    2590:	c7 45 0c 00 00 00 00 	movl   $0x0,0xc(%rbp)
+    2597:	89 45 08             	mov    %eax,0x8(%rbp)
+    259a:	48 8b 53 18          	mov    0x18(%rbx),%rdx
+    259e:	48 8b 43 28          	mov    0x28(%rbx),%rax
+    25a2:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+    25a6:	48 8d 7b 20          	lea    0x20(%rbx),%rdi
+    25aa:	b9 01 00 00 00       	mov    $0x1,%ecx
+    25af:	48 89 04 24          	mov    %rax,(%rsp)
+    25b3:	e8 48 ec ff ff       	callq  1200 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt>
+    25b8:	48 89 d6             	mov    %rdx,%rsi
+    25bb:	84 c0                	test   %al,%al
+    25bd:	74 1c                	je     25db <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x10b>
+    25bf:	48 89 e2             	mov    %rsp,%rdx
+    25c2:	48 89 df             	mov    %rbx,%rdi
+    25c5:	e8 b6 fd ff ff       	callq  2380 <std::_Hashtable<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>
+    25ca:	4c 89 e8             	mov    %r13,%rax
+    25cd:	31 d2                	xor    %edx,%edx
+    25cf:	48 f7 73 08          	divq   0x8(%rbx)
+    25d3:	4c 8d 34 d5 00 00 00 	lea    0x0(,%rdx,8),%r14
+    25da:	00 
+    25db:	48 8b 0b             	mov    (%rbx),%rcx
+    25de:	49 01 ce             	add    %rcx,%r14
+    25e1:	49 8b 06             	mov    (%r14),%rax
+    25e4:	48 85 c0             	test   %rax,%rax
+    25e7:	74 1f                	je     2608 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x138>
+    25e9:	48 8b 00             	mov    (%rax),%rax
+    25ec:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    25f0:	49 8b 06             	mov    (%r14),%rax
+    25f3:	48 89 28             	mov    %rbp,(%rax)
+    25f6:	48 ff 43 18          	incq   0x18(%rbx)
+    25fa:	48 8d 45 0c          	lea    0xc(%rbp),%rax
+    25fe:	e9 4f ff ff ff       	jmpq   2552 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x82>
+    2603:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2608:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    260c:	48 89 6b 10          	mov    %rbp,0x10(%rbx)
+    2610:	48 89 45 00          	mov    %rax,0x0(%rbp)
+    2614:	48 85 c0             	test   %rax,%rax
+    2617:	74 0e                	je     2627 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x157>
+    2619:	48 63 40 08          	movslq 0x8(%rax),%rax
+    261d:	31 d2                	xor    %edx,%edx
+    261f:	48 f7 73 08          	divq   0x8(%rbx)
+    2623:	48 89 2c d1          	mov    %rbp,(%rcx,%rdx,8)
+    2627:	48 8d 43 10          	lea    0x10(%rbx),%rax
+    262b:	49 89 06             	mov    %rax,(%r14)
+    262e:	eb c6                	jmp    25f6 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)+0x126>
+    2630:	e8 bb eb ff ff       	callq  11f0 <__stack_chk_fail@plt>
+    2635:	f3 0f 1e fa          	endbr64 
+    2639:	48 89 c7             	mov    %rax,%rdi
+    263c:	c5 f8 77             	vzeroupper 
+    263f:	e8 2c eb ff ff       	callq  1170 <__cxa_begin_catch@plt>
+    2644:	48 89 ef             	mov    %rbp,%rdi
+    2647:	e8 84 eb ff ff       	callq  11d0 <operator delete(void*)@plt>
+    264c:	e8 cf eb ff ff       	callq  1220 <__cxa_rethrow@plt>
+    2651:	f3 0f 1e fa          	endbr64 
+    2655:	48 89 c5             	mov    %rax,%rbp
+    2658:	c5 f8 77             	vzeroupper 
+    265b:	e8 e0 eb ff ff       	callq  1240 <__cxa_end_catch@plt>
+    2660:	48 89 ef             	mov    %rbp,%rdi
+    2663:	e8 f8 eb ff ff       	callq  1260 <_Unwind_Resume@plt>
+    2668:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    266f:	00 
+
+0000000000002670 <int ackermann3<int>(int, int)>:
+    2670:	f3 0f 1e fa          	endbr64 
+    2674:	41 54                	push   %r12
+    2676:	55                   	push   %rbp
+    2677:	53                   	push   %rbx
+    2678:	48 83 ec 10          	sub    $0x10,%rsp
+    267c:	89 7c 24 0c          	mov    %edi,0xc(%rsp)
+    2680:	89 74 24 08          	mov    %esi,0x8(%rsp)
+    2684:	0f b6 05 b5 29 10 00 	movzbl 0x1029b5(%rip),%eax        # 105040 <guard variable for ackermann3<int>(int, int)::solution>
+    268b:	84 c0                	test   %al,%al
+    268d:	0f 84 3d 01 00 00    	je     27d0 <int ackermann3<int>(int, int)+0x160>
+    2693:	48 63 44 24 0c       	movslq 0xc(%rsp),%rax
+    2698:	48 8b 35 c9 29 10 00 	mov    0x1029c9(%rip),%rsi        # 105068 <ackermann3<int>(int, int)::solution+0x8>
+    269f:	31 d2                	xor    %edx,%edx
+    26a1:	48 89 c7             	mov    %rax,%rdi
+    26a4:	48 f7 f6             	div    %rsi
+    26a7:	48 8b 05 b2 29 10 00 	mov    0x1029b2(%rip),%rax        # 105060 <ackermann3<int>(int, int)::solution>
+    26ae:	8b 5c 24 08          	mov    0x8(%rsp),%ebx
+    26b2:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    26b6:	49 89 d1             	mov    %rdx,%r9
+    26b9:	48 85 c0             	test   %rax,%rax
+    26bc:	0f 84 96 00 00 00    	je     2758 <int ackermann3<int>(int, int)+0xe8>
+    26c2:	48 8b 08             	mov    (%rax),%rcx
+    26c5:	44 8b 41 08          	mov    0x8(%rcx),%r8d
+    26c9:	eb 22                	jmp    26ed <int ackermann3<int>(int, int)+0x7d>
+    26cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    26d0:	48 8b 09             	mov    (%rcx),%rcx
+    26d3:	48 85 c9             	test   %rcx,%rcx
+    26d6:	0f 84 7c 00 00 00    	je     2758 <int ackermann3<int>(int, int)+0xe8>
+    26dc:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    26e0:	31 d2                	xor    %edx,%edx
+    26e2:	49 89 c0             	mov    %rax,%r8
+    26e5:	48 f7 f6             	div    %rsi
+    26e8:	49 39 d1             	cmp    %rdx,%r9
+    26eb:	75 6b                	jne    2758 <int ackermann3<int>(int, int)+0xe8>
+    26ed:	44 39 c7             	cmp    %r8d,%edi
+    26f0:	75 de                	jne    26d0 <int ackermann3<int>(int, int)+0x60>
+    26f2:	4c 8b 41 18          	mov    0x18(%rcx),%r8
+    26f6:	48 63 c3             	movslq %ebx,%rax
+    26f9:	31 d2                	xor    %edx,%edx
+    26fb:	49 f7 f0             	div    %r8
+    26fe:	48 8b 41 10          	mov    0x10(%rcx),%rax
+    2702:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    2706:	49 89 d2             	mov    %rdx,%r10
+    2709:	48 85 c0             	test   %rax,%rax
+    270c:	0f 84 5e 01 00 00    	je     2870 <int ackermann3<int>(int, int)+0x200>
+    2712:	48 8b 30             	mov    (%rax),%rsi
+    2715:	44 8b 4e 08          	mov    0x8(%rsi),%r9d
+    2719:	41 39 d9             	cmp    %ebx,%r9d
+    271c:	74 28                	je     2746 <int ackermann3<int>(int, int)+0xd6>
+    271e:	66 90                	xchg   %ax,%ax
+    2720:	48 8b 36             	mov    (%rsi),%rsi
+    2723:	48 85 f6             	test   %rsi,%rsi
+    2726:	0f 84 44 01 00 00    	je     2870 <int ackermann3<int>(int, int)+0x200>
+    272c:	48 63 46 08          	movslq 0x8(%rsi),%rax
+    2730:	31 d2                	xor    %edx,%edx
+    2732:	49 89 c1             	mov    %rax,%r9
+    2735:	49 f7 f0             	div    %r8
+    2738:	49 39 d2             	cmp    %rdx,%r10
+    273b:	0f 85 2f 01 00 00    	jne    2870 <int ackermann3<int>(int, int)+0x200>
+    2741:	41 39 d9             	cmp    %ebx,%r9d
+    2744:	75 da                	jne    2720 <int ackermann3<int>(int, int)+0xb0>
+    2746:	8b 46 0c             	mov    0xc(%rsi),%eax
+    2749:	48 83 c4 10          	add    $0x10,%rsp
+    274d:	5b                   	pop    %rbx
+    274e:	5d                   	pop    %rbp
+    274f:	41 5c                	pop    %r12
+    2751:	c3                   	retq   
+    2752:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2758:	85 ff                	test   %edi,%edi
+    275a:	0f 84 50 01 00 00    	je     28b0 <int ackermann3<int>(int, int)+0x240>
+    2760:	85 db                	test   %ebx,%ebx
+    2762:	0f 84 f8 00 00 00    	je     2860 <int ackermann3<int>(int, int)+0x1f0>
+    2768:	8d 73 ff             	lea    -0x1(%rbx),%esi
+    276b:	e8 00 ff ff ff       	callq  2670 <int ackermann3<int>(int, int)>
+    2770:	89 c6                	mov    %eax,%esi
+    2772:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+    2776:	8d 78 ff             	lea    -0x1(%rax),%edi
+    2779:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    277e:	e8 ed fe ff ff       	callq  2670 <int ackermann3<int>(int, int)>
+    2783:	4c 89 e6             	mov    %r12,%rsi
+    2786:	48 8d 3d d3 28 10 00 	lea    0x1028d3(%rip),%rdi        # 105060 <ackermann3<int>(int, int)::solution>
+    278d:	89 c3                	mov    %eax,%ebx
+    278f:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    2794:	e8 c7 f9 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2799:	48 89 c7             	mov    %rax,%rdi
+    279c:	48 89 ee             	mov    %rbp,%rsi
+    279f:	e8 2c fd ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    27a4:	89 18                	mov    %ebx,(%rax)
+    27a6:	4c 89 e6             	mov    %r12,%rsi
+    27a9:	48 8d 3d b0 28 10 00 	lea    0x1028b0(%rip),%rdi        # 105060 <ackermann3<int>(int, int)::solution>
+    27b0:	e8 ab f9 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    27b5:	48 89 c7             	mov    %rax,%rdi
+    27b8:	48 89 ee             	mov    %rbp,%rsi
+    27bb:	e8 10 fd ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    27c0:	8b 00                	mov    (%rax),%eax
+    27c2:	48 83 c4 10          	add    $0x10,%rsp
+    27c6:	5b                   	pop    %rbx
+    27c7:	5d                   	pop    %rbp
+    27c8:	41 5c                	pop    %r12
+    27ca:	c3                   	retq   
+    27cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    27d0:	48 8d 3d 69 28 10 00 	lea    0x102869(%rip),%rdi        # 105040 <guard variable for ackermann3<int>(int, int)::solution>
+    27d7:	e8 94 ea ff ff       	callq  1270 <__cxa_guard_acquire@plt>
+    27dc:	85 c0                	test   %eax,%eax
+    27de:	0f 84 af fe ff ff    	je     2693 <int ackermann3<int>(int, int)+0x23>
+    27e4:	48 8d 05 a5 28 10 00 	lea    0x1028a5(%rip),%rax        # 105090 <ackermann3<int>(int, int)::solution+0x30>
+    27eb:	48 8d 15 16 28 00 00 	lea    0x2816(%rip),%rdx        # 5008 <__dso_handle>
+    27f2:	48 8d 70 d0          	lea    -0x30(%rax),%rsi
+    27f6:	48 8d 3d 33 ed ff ff 	lea    -0x12cd(%rip),%rdi        # 1530 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()>
+    27fd:	48 89 05 5c 28 10 00 	mov    %rax,0x10285c(%rip)        # 105060 <ackermann3<int>(int, int)::solution>
+    2804:	48 c7 05 59 28 10 00 	movq   $0x1,0x102859(%rip)        # 105068 <ackermann3<int>(int, int)::solution+0x8>
+    280b:	01 00 00 00 
+    280f:	48 c7 05 56 28 10 00 	movq   $0x0,0x102856(%rip)        # 105070 <ackermann3<int>(int, int)::solution+0x10>
+    2816:	00 00 00 00 
+    281a:	48 c7 05 53 28 10 00 	movq   $0x0,0x102853(%rip)        # 105078 <ackermann3<int>(int, int)::solution+0x18>
+    2821:	00 00 00 00 
+    2825:	c7 05 51 28 10 00 00 	movl   $0x3f800000,0x102851(%rip)        # 105080 <ackermann3<int>(int, int)::solution+0x20>
+    282c:	00 80 3f 
+    282f:	48 c7 05 4e 28 10 00 	movq   $0x0,0x10284e(%rip)        # 105088 <ackermann3<int>(int, int)::solution+0x28>
+    2836:	00 00 00 00 
+    283a:	48 c7 05 4b 28 10 00 	movq   $0x0,0x10284b(%rip)        # 105090 <ackermann3<int>(int, int)::solution+0x30>
+    2841:	00 00 00 00 
+    2845:	e8 76 e9 ff ff       	callq  11c0 <__cxa_atexit@plt>
+    284a:	48 8d 3d ef 27 10 00 	lea    0x1027ef(%rip),%rdi        # 105040 <guard variable for ackermann3<int>(int, int)::solution>
+    2851:	e8 3a e9 ff ff       	callq  1190 <__cxa_guard_release@plt>
+    2856:	e9 38 fe ff ff       	jmpq   2693 <int ackermann3<int>(int, int)+0x23>
+    285b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2860:	ff cf                	dec    %edi
+    2862:	be 01 00 00 00       	mov    $0x1,%esi
+    2867:	e9 0d ff ff ff       	jmpq   2779 <int ackermann3<int>(int, int)+0x109>
+    286c:	0f 1f 40 00          	nopl   0x0(%rax)
+    2870:	4c 8d 61 10          	lea    0x10(%rcx),%r12
+    2874:	85 ff                	test   %edi,%edi
+    2876:	0f 84 7c 00 00 00    	je     28f8 <int ackermann3<int>(int, int)+0x288>
+    287c:	85 db                	test   %ebx,%ebx
+    287e:	75 60                	jne    28e0 <int ackermann3<int>(int, int)+0x270>
+    2880:	ff cf                	dec    %edi
+    2882:	be 01 00 00 00       	mov    $0x1,%esi
+    2887:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    288c:	e8 df fd ff ff       	callq  2670 <int ackermann3<int>(int, int)>
+    2891:	4c 89 e7             	mov    %r12,%rdi
+    2894:	48 89 ee             	mov    %rbp,%rsi
+    2897:	89 c3                	mov    %eax,%ebx
+    2899:	e8 32 fc ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    289e:	89 18                	mov    %ebx,(%rax)
+    28a0:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    28a5:	e9 fc fe ff ff       	jmpq   27a6 <int ackermann3<int>(int, int)+0x136>
+    28aa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    28b0:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    28b5:	4c 89 e6             	mov    %r12,%rsi
+    28b8:	48 8d 3d a1 27 10 00 	lea    0x1027a1(%rip),%rdi        # 105060 <ackermann3<int>(int, int)::solution>
+    28bf:	e8 9c f8 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    28c4:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    28c9:	48 89 c7             	mov    %rax,%rdi
+    28cc:	48 89 ee             	mov    %rbp,%rsi
+    28cf:	e8 fc fb ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    28d4:	ff c3                	inc    %ebx
+    28d6:	89 18                	mov    %ebx,(%rax)
+    28d8:	e9 c9 fe ff ff       	jmpq   27a6 <int ackermann3<int>(int, int)+0x136>
+    28dd:	0f 1f 00             	nopl   (%rax)
+    28e0:	8d 73 ff             	lea    -0x1(%rbx),%esi
+    28e3:	e8 88 fd ff ff       	callq  2670 <int ackermann3<int>(int, int)>
+    28e8:	89 c6                	mov    %eax,%esi
+    28ea:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+    28ee:	8d 78 ff             	lea    -0x1(%rax),%edi
+    28f1:	eb 94                	jmp    2887 <int ackermann3<int>(int, int)+0x217>
+    28f3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    28f8:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    28fd:	4c 89 e7             	mov    %r12,%rdi
+    2900:	48 89 ee             	mov    %rbp,%rsi
+    2903:	e8 c8 fb ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2908:	ff c3                	inc    %ebx
+    290a:	89 18                	mov    %ebx,(%rax)
+    290c:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    2911:	e9 90 fe ff ff       	jmpq   27a6 <int ackermann3<int>(int, int)+0x136>
+    2916:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    291d:	00 00 00 
+
+0000000000002920 <int ackermann2<int>(int, int)>:
+    2920:	f3 0f 1e fa          	endbr64 
+    2924:	41 54                	push   %r12
+    2926:	55                   	push   %rbp
+    2927:	53                   	push   %rbx
+    2928:	48 83 ec 10          	sub    $0x10,%rsp
+    292c:	89 7c 24 0c          	mov    %edi,0xc(%rsp)
+    2930:	89 74 24 08          	mov    %esi,0x8(%rsp)
+    2934:	0f b6 05 5d 27 10 00 	movzbl 0x10275d(%rip),%eax        # 105098 <guard variable for ackermann2<int>(int, int)::solution>
+    293b:	84 c0                	test   %al,%al
+    293d:	0f 84 cd 00 00 00    	je     2a10 <int ackermann2<int>(int, int)+0xf0>
+    2943:	48 63 44 24 0c       	movslq 0xc(%rsp),%rax
+    2948:	48 8b 35 59 27 10 00 	mov    0x102759(%rip),%rsi        # 1050a8 <ackermann2<int>(int, int)::solution+0x8>
+    294f:	31 d2                	xor    %edx,%edx
+    2951:	49 89 c0             	mov    %rax,%r8
+    2954:	48 f7 f6             	div    %rsi
+    2957:	48 8b 05 42 27 10 00 	mov    0x102742(%rip),%rax        # 1050a0 <ackermann2<int>(int, int)::solution>
+    295e:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    2962:	49 89 d1             	mov    %rdx,%r9
+    2965:	48 85 c0             	test   %rax,%rax
+    2968:	0f 84 2d 01 00 00    	je     2a9b <int ackermann2<int>(int, int)+0x17b>
+    296e:	48 8b 08             	mov    (%rax),%rcx
+    2971:	8b 79 08             	mov    0x8(%rcx),%edi
+    2974:	eb 2b                	jmp    29a1 <int ackermann2<int>(int, int)+0x81>
+    2976:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    297d:	00 00 00 
+    2980:	48 8b 09             	mov    (%rcx),%rcx
+    2983:	48 85 c9             	test   %rcx,%rcx
+    2986:	0f 84 0f 01 00 00    	je     2a9b <int ackermann2<int>(int, int)+0x17b>
+    298c:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    2990:	31 d2                	xor    %edx,%edx
+    2992:	48 89 c7             	mov    %rax,%rdi
+    2995:	48 f7 f6             	div    %rsi
+    2998:	49 39 d1             	cmp    %rdx,%r9
+    299b:	0f 85 fa 00 00 00    	jne    2a9b <int ackermann2<int>(int, int)+0x17b>
+    29a1:	41 39 f8             	cmp    %edi,%r8d
+    29a4:	75 da                	jne    2980 <int ackermann2<int>(int, int)+0x60>
+    29a6:	48 63 44 24 08       	movslq 0x8(%rsp),%rax
+    29ab:	48 8b 71 18          	mov    0x18(%rcx),%rsi
+    29af:	31 d2                	xor    %edx,%edx
+    29b1:	49 89 c1             	mov    %rax,%r9
+    29b4:	48 f7 f6             	div    %rsi
+    29b7:	48 8b 41 10          	mov    0x10(%rcx),%rax
+    29bb:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    29bf:	49 89 d0             	mov    %rdx,%r8
+    29c2:	48 85 c0             	test   %rax,%rax
+    29c5:	0f 84 dc 00 00 00    	je     2aa7 <int ackermann2<int>(int, int)+0x187>
+    29cb:	48 8b 08             	mov    (%rax),%rcx
+    29ce:	8b 79 08             	mov    0x8(%rcx),%edi
+    29d1:	eb 26                	jmp    29f9 <int ackermann2<int>(int, int)+0xd9>
+    29d3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    29d8:	48 8b 09             	mov    (%rcx),%rcx
+    29db:	48 85 c9             	test   %rcx,%rcx
+    29de:	0f 84 c3 00 00 00    	je     2aa7 <int ackermann2<int>(int, int)+0x187>
+    29e4:	48 63 41 08          	movslq 0x8(%rcx),%rax
+    29e8:	31 d2                	xor    %edx,%edx
+    29ea:	48 89 c7             	mov    %rax,%rdi
+    29ed:	48 f7 f6             	div    %rsi
+    29f0:	49 39 d0             	cmp    %rdx,%r8
+    29f3:	0f 85 ae 00 00 00    	jne    2aa7 <int ackermann2<int>(int, int)+0x187>
+    29f9:	41 39 f9             	cmp    %edi,%r9d
+    29fc:	75 da                	jne    29d8 <int ackermann2<int>(int, int)+0xb8>
+    29fe:	8b 41 0c             	mov    0xc(%rcx),%eax
+    2a01:	48 83 c4 10          	add    $0x10,%rsp
+    2a05:	5b                   	pop    %rbx
+    2a06:	5d                   	pop    %rbp
+    2a07:	41 5c                	pop    %r12
+    2a09:	c3                   	retq   
+    2a0a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2a10:	48 8d 3d 81 26 10 00 	lea    0x102681(%rip),%rdi        # 105098 <guard variable for ackermann2<int>(int, int)::solution>
+    2a17:	e8 54 e8 ff ff       	callq  1270 <__cxa_guard_acquire@plt>
+    2a1c:	85 c0                	test   %eax,%eax
+    2a1e:	0f 84 1f ff ff ff    	je     2943 <int ackermann2<int>(int, int)+0x23>
+    2a24:	48 8d 05 a5 26 10 00 	lea    0x1026a5(%rip),%rax        # 1050d0 <ackermann2<int>(int, int)::solution+0x30>
+    2a2b:	48 8d 15 d6 25 00 00 	lea    0x25d6(%rip),%rdx        # 5008 <__dso_handle>
+    2a32:	48 8d 70 d0          	lea    -0x30(%rax),%rsi
+    2a36:	48 8d 3d f3 ea ff ff 	lea    -0x150d(%rip),%rdi        # 1530 <std::unordered_map<int, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > >, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > > >::~unordered_map()>
+    2a3d:	48 89 05 5c 26 10 00 	mov    %rax,0x10265c(%rip)        # 1050a0 <ackermann2<int>(int, int)::solution>
+    2a44:	48 c7 05 59 26 10 00 	movq   $0x1,0x102659(%rip)        # 1050a8 <ackermann2<int>(int, int)::solution+0x8>
+    2a4b:	01 00 00 00 
+    2a4f:	48 c7 05 56 26 10 00 	movq   $0x0,0x102656(%rip)        # 1050b0 <ackermann2<int>(int, int)::solution+0x10>
+    2a56:	00 00 00 00 
+    2a5a:	48 c7 05 53 26 10 00 	movq   $0x0,0x102653(%rip)        # 1050b8 <ackermann2<int>(int, int)::solution+0x18>
+    2a61:	00 00 00 00 
+    2a65:	c7 05 51 26 10 00 00 	movl   $0x3f800000,0x102651(%rip)        # 1050c0 <ackermann2<int>(int, int)::solution+0x20>
+    2a6c:	00 80 3f 
+    2a6f:	48 c7 05 4e 26 10 00 	movq   $0x0,0x10264e(%rip)        # 1050c8 <ackermann2<int>(int, int)::solution+0x28>
+    2a76:	00 00 00 00 
+    2a7a:	48 c7 05 4b 26 10 00 	movq   $0x0,0x10264b(%rip)        # 1050d0 <ackermann2<int>(int, int)::solution+0x30>
+    2a81:	00 00 00 00 
+    2a85:	e8 36 e7 ff ff       	callq  11c0 <__cxa_atexit@plt>
+    2a8a:	48 8d 3d 07 26 10 00 	lea    0x102607(%rip),%rdi        # 105098 <guard variable for ackermann2<int>(int, int)::solution>
+    2a91:	e8 fa e6 ff ff       	callq  1190 <__cxa_guard_release@plt>
+    2a96:	e9 a8 fe ff ff       	jmpq   2943 <int ackermann2<int>(int, int)+0x23>
+    2a9b:	48 8d 3d a4 05 00 00 	lea    0x5a4(%rip),%rdi        # 3046 <_IO_stdin_used+0x46>
+    2aa2:	e8 69 e7 ff ff       	callq  1210 <std::__throw_out_of_range(char const*)@plt>
+    2aa7:	48 8d 3d 98 05 00 00 	lea    0x598(%rip),%rdi        # 3046 <_IO_stdin_used+0x46>
+    2aae:	e8 5d e7 ff ff       	callq  1210 <std::__throw_out_of_range(char const*)@plt>
+    2ab3:	f3 0f 1e fa          	endbr64 
+    2ab7:	48 89 c7             	mov    %rax,%rdi
+    2aba:	48 89 d0             	mov    %rdx,%rax
+    2abd:	48 ff c8             	dec    %rax
+    2ac0:	75 63                	jne    2b25 <int ackermann2<int>(int, int)+0x205>
+    2ac2:	c5 f8 77             	vzeroupper 
+    2ac5:	e8 a6 e6 ff ff       	callq  1170 <__cxa_begin_catch@plt>
+    2aca:	8b 7c 24 0c          	mov    0xc(%rsp),%edi
+    2ace:	8b 44 24 08          	mov    0x8(%rsp),%eax
+    2ad2:	85 ff                	test   %edi,%edi
+    2ad4:	75 57                	jne    2b2d <int ackermann2<int>(int, int)+0x20d>
+    2ad6:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    2adb:	4c 89 e6             	mov    %r12,%rsi
+    2ade:	48 8d 3d bb 25 10 00 	lea    0x1025bb(%rip),%rdi        # 1050a0 <ackermann2<int>(int, int)::solution>
+    2ae5:	8d 58 01             	lea    0x1(%rax),%ebx
+    2ae8:	e8 73 f6 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2aed:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    2af2:	48 89 c7             	mov    %rax,%rdi
+    2af5:	48 89 ee             	mov    %rbp,%rsi
+    2af8:	e8 d3 f9 ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2afd:	89 18                	mov    %ebx,(%rax)
+    2aff:	e8 3c e7 ff ff       	callq  1240 <__cxa_end_catch@plt>
+    2b04:	4c 89 e6             	mov    %r12,%rsi
+    2b07:	48 8d 3d 92 25 10 00 	lea    0x102592(%rip),%rdi        # 1050a0 <ackermann2<int>(int, int)::solution>
+    2b0e:	e8 4d f6 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2b13:	48 89 c7             	mov    %rax,%rdi
+    2b16:	48 89 ee             	mov    %rbp,%rsi
+    2b19:	e8 b2 f9 ff ff       	callq  24d0 <std::__detail::_Map_base<int, std::pair<int const, int>, std::allocator<std::pair<int const, int> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2b1e:	8b 00                	mov    (%rax),%eax
+    2b20:	e9 dc fe ff ff       	jmpq   2a01 <int ackermann2<int>(int, int)+0xe1>
+    2b25:	c5 f8 77             	vzeroupper 
+    2b28:	e8 33 e7 ff ff       	callq  1260 <_Unwind_Resume@plt>
+    2b2d:	85 c0                	test   %eax,%eax
+    2b2f:	74 2e                	je     2b5f <int ackermann2<int>(int, int)+0x23f>
+    2b31:	8d 70 ff             	lea    -0x1(%rax),%esi
+    2b34:	e8 e7 fd ff ff       	callq  2920 <int ackermann2<int>(int, int)>
+    2b39:	89 c6                	mov    %eax,%esi
+    2b3b:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+    2b3f:	8d 78 ff             	lea    -0x1(%rax),%edi
+    2b42:	e8 d9 fd ff ff       	callq  2920 <int ackermann2<int>(int, int)>
+    2b47:	4c 8d 64 24 0c       	lea    0xc(%rsp),%r12
+    2b4c:	4c 89 e6             	mov    %r12,%rsi
+    2b4f:	48 8d 3d 4a 25 10 00 	lea    0x10254a(%rip),%rdi        # 1050a0 <ackermann2<int>(int, int)::solution>
+    2b56:	89 c3                	mov    %eax,%ebx
+    2b58:	e8 03 f6 ff ff       	callq  2160 <std::__detail::_Map_base<int, std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > >, std::allocator<std::pair<int const, std::unordered_map<int, int, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, int> > > > >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)>
+    2b5d:	eb 8e                	jmp    2aed <int ackermann2<int>(int, int)+0x1cd>
+    2b5f:	ff cf                	dec    %edi
+    2b61:	be 01 00 00 00       	mov    $0x1,%esi
+    2b66:	e8 b5 fd ff ff       	callq  2920 <int ackermann2<int>(int, int)>
+    2b6b:	eb da                	jmp    2b47 <int ackermann2<int>(int, int)+0x227>
+    2b6d:	f3 0f 1e fa          	endbr64 
+    2b71:	48 89 c5             	mov    %rax,%rbp
+    2b74:	c5 f8 77             	vzeroupper 
+    2b77:	e8 c4 e6 ff ff       	callq  1240 <__cxa_end_catch@plt>
+    2b7c:	48 89 ef             	mov    %rbp,%rdi
+    2b7f:	e8 dc e6 ff ff       	callq  1260 <_Unwind_Resume@plt>
+    2b84:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2b8b:	00 00 00 
+    2b8e:	66 90                	xchg   %ax,%ax
+
+0000000000002b90 <__libc_csu_init>:
+    2b90:	f3 0f 1e fa          	endbr64 
+    2b94:	41 57                	push   %r15
+    2b96:	4c 8d 3d 33 21 00 00 	lea    0x2133(%rip),%r15        # 4cd0 <__frame_dummy_init_array_entry>
+    2b9d:	41 56                	push   %r14
+    2b9f:	49 89 d6             	mov    %rdx,%r14
+    2ba2:	41 55                	push   %r13
+    2ba4:	49 89 f5             	mov    %rsi,%r13
+    2ba7:	41 54                	push   %r12
+    2ba9:	41 89 fc             	mov    %edi,%r12d
+    2bac:	55                   	push   %rbp
+    2bad:	48 8d 2d 2c 21 00 00 	lea    0x212c(%rip),%rbp        # 4ce0 <__do_global_dtors_aux_fini_array_entry>
+    2bb4:	53                   	push   %rbx
+    2bb5:	4c 29 fd             	sub    %r15,%rbp
+    2bb8:	48 83 ec 08          	sub    $0x8,%rsp
+    2bbc:	e8 3f e4 ff ff       	callq  1000 <_init>
+    2bc1:	48 c1 fd 03          	sar    $0x3,%rbp
+    2bc5:	74 1f                	je     2be6 <__libc_csu_init+0x56>
+    2bc7:	31 db                	xor    %ebx,%ebx
+    2bc9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2bd0:	4c 89 f2             	mov    %r14,%rdx
+    2bd3:	4c 89 ee             	mov    %r13,%rsi
+    2bd6:	44 89 e7             	mov    %r12d,%edi
+    2bd9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    2bdd:	48 83 c3 01          	add    $0x1,%rbx
+    2be1:	48 39 dd             	cmp    %rbx,%rbp
+    2be4:	75 ea                	jne    2bd0 <__libc_csu_init+0x40>
+    2be6:	48 83 c4 08          	add    $0x8,%rsp
+    2bea:	5b                   	pop    %rbx
+    2beb:	5d                   	pop    %rbp
+    2bec:	41 5c                	pop    %r12
+    2bee:	41 5d                	pop    %r13
+    2bf0:	41 5e                	pop    %r14
+    2bf2:	41 5f                	pop    %r15
+    2bf4:	c3                   	retq   
+    2bf5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2bfc:	00 00 00 00 
+
+0000000000002c00 <__libc_csu_fini>:
+    2c00:	f3 0f 1e fa          	endbr64 
+    2c04:	c3                   	retq   
+
+Desensamblado de la sección .fini:
+
+0000000000002c08 <_fini>:
+    2c08:	f3 0f 1e fa          	endbr64 
+    2c0c:	48 83 ec 08          	sub    $0x8,%rsp
+    2c10:	48 83 c4 08          	add    $0x8,%rsp
+    2c14:	c3                   	retq   

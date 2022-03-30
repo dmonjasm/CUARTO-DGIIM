@@ -1,0 +1,1124 @@
+
+fib-hash:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000002000 <_init>:
+    2000:	f3 0f 1e fa          	endbr64 
+    2004:	48 83 ec 08          	sub    $0x8,%rsp
+    2008:	48 8b 05 d9 2f 00 00 	mov    0x2fd9(%rip),%rax        # 4fe8 <__gmon_start__>
+    200f:	48 85 c0             	test   %rax,%rax
+    2012:	74 02                	je     2016 <_init+0x16>
+    2014:	ff d0                	callq  *%rax
+    2016:	48 83 c4 08          	add    $0x8,%rsp
+    201a:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000002020 <.plt>:
+    2020:	ff 35 92 2e 00 00    	pushq  0x2e92(%rip)        # 4eb8 <_GLOBAL_OFFSET_TABLE_+0x8>
+    2026:	f2 ff 25 93 2e 00 00 	bnd jmpq *0x2e93(%rip)        # 4ec0 <_GLOBAL_OFFSET_TABLE_+0x10>
+    202d:	0f 1f 00             	nopl   (%rax)
+    2030:	f3 0f 1e fa          	endbr64 
+    2034:	68 00 00 00 00       	pushq  $0x0
+    2039:	f2 e9 e1 ff ff ff    	bnd jmpq 2020 <.plt>
+    203f:	90                   	nop
+    2040:	f3 0f 1e fa          	endbr64 
+    2044:	68 01 00 00 00       	pushq  $0x1
+    2049:	f2 e9 d1 ff ff ff    	bnd jmpq 2020 <.plt>
+    204f:	90                   	nop
+    2050:	f3 0f 1e fa          	endbr64 
+    2054:	68 02 00 00 00       	pushq  $0x2
+    2059:	f2 e9 c1 ff ff ff    	bnd jmpq 2020 <.plt>
+    205f:	90                   	nop
+    2060:	f3 0f 1e fa          	endbr64 
+    2064:	68 03 00 00 00       	pushq  $0x3
+    2069:	f2 e9 b1 ff ff ff    	bnd jmpq 2020 <.plt>
+    206f:	90                   	nop
+    2070:	f3 0f 1e fa          	endbr64 
+    2074:	68 04 00 00 00       	pushq  $0x4
+    2079:	f2 e9 a1 ff ff ff    	bnd jmpq 2020 <.plt>
+    207f:	90                   	nop
+    2080:	f3 0f 1e fa          	endbr64 
+    2084:	68 05 00 00 00       	pushq  $0x5
+    2089:	f2 e9 91 ff ff ff    	bnd jmpq 2020 <.plt>
+    208f:	90                   	nop
+    2090:	f3 0f 1e fa          	endbr64 
+    2094:	68 06 00 00 00       	pushq  $0x6
+    2099:	f2 e9 81 ff ff ff    	bnd jmpq 2020 <.plt>
+    209f:	90                   	nop
+    20a0:	f3 0f 1e fa          	endbr64 
+    20a4:	68 07 00 00 00       	pushq  $0x7
+    20a9:	f2 e9 71 ff ff ff    	bnd jmpq 2020 <.plt>
+    20af:	90                   	nop
+    20b0:	f3 0f 1e fa          	endbr64 
+    20b4:	68 08 00 00 00       	pushq  $0x8
+    20b9:	f2 e9 61 ff ff ff    	bnd jmpq 2020 <.plt>
+    20bf:	90                   	nop
+    20c0:	f3 0f 1e fa          	endbr64 
+    20c4:	68 09 00 00 00       	pushq  $0x9
+    20c9:	f2 e9 51 ff ff ff    	bnd jmpq 2020 <.plt>
+    20cf:	90                   	nop
+    20d0:	f3 0f 1e fa          	endbr64 
+    20d4:	68 0a 00 00 00       	pushq  $0xa
+    20d9:	f2 e9 41 ff ff ff    	bnd jmpq 2020 <.plt>
+    20df:	90                   	nop
+    20e0:	f3 0f 1e fa          	endbr64 
+    20e4:	68 0b 00 00 00       	pushq  $0xb
+    20e9:	f2 e9 31 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ef:	90                   	nop
+    20f0:	f3 0f 1e fa          	endbr64 
+    20f4:	68 0c 00 00 00       	pushq  $0xc
+    20f9:	f2 e9 21 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ff:	90                   	nop
+    2100:	f3 0f 1e fa          	endbr64 
+    2104:	68 0d 00 00 00       	pushq  $0xd
+    2109:	f2 e9 11 ff ff ff    	bnd jmpq 2020 <.plt>
+    210f:	90                   	nop
+    2110:	f3 0f 1e fa          	endbr64 
+    2114:	68 0e 00 00 00       	pushq  $0xe
+    2119:	f2 e9 01 ff ff ff    	bnd jmpq 2020 <.plt>
+    211f:	90                   	nop
+    2120:	f3 0f 1e fa          	endbr64 
+    2124:	68 0f 00 00 00       	pushq  $0xf
+    2129:	f2 e9 f1 fe ff ff    	bnd jmpq 2020 <.plt>
+    212f:	90                   	nop
+    2130:	f3 0f 1e fa          	endbr64 
+    2134:	68 10 00 00 00       	pushq  $0x10
+    2139:	f2 e9 e1 fe ff ff    	bnd jmpq 2020 <.plt>
+    213f:	90                   	nop
+    2140:	f3 0f 1e fa          	endbr64 
+    2144:	68 11 00 00 00       	pushq  $0x11
+    2149:	f2 e9 d1 fe ff ff    	bnd jmpq 2020 <.plt>
+    214f:	90                   	nop
+    2150:	f3 0f 1e fa          	endbr64 
+    2154:	68 12 00 00 00       	pushq  $0x12
+    2159:	f2 e9 c1 fe ff ff    	bnd jmpq 2020 <.plt>
+    215f:	90                   	nop
+    2160:	f3 0f 1e fa          	endbr64 
+    2164:	68 13 00 00 00       	pushq  $0x13
+    2169:	f2 e9 b1 fe ff ff    	bnd jmpq 2020 <.plt>
+    216f:	90                   	nop
+    2170:	f3 0f 1e fa          	endbr64 
+    2174:	68 14 00 00 00       	pushq  $0x14
+    2179:	f2 e9 a1 fe ff ff    	bnd jmpq 2020 <.plt>
+    217f:	90                   	nop
+    2180:	f3 0f 1e fa          	endbr64 
+    2184:	68 15 00 00 00       	pushq  $0x15
+    2189:	f2 e9 91 fe ff ff    	bnd jmpq 2020 <.plt>
+    218f:	90                   	nop
+    2190:	f3 0f 1e fa          	endbr64 
+    2194:	68 16 00 00 00       	pushq  $0x16
+    2199:	f2 e9 81 fe ff ff    	bnd jmpq 2020 <.plt>
+    219f:	90                   	nop
+    21a0:	f3 0f 1e fa          	endbr64 
+    21a4:	68 17 00 00 00       	pushq  $0x17
+    21a9:	f2 e9 71 fe ff ff    	bnd jmpq 2020 <.plt>
+    21af:	90                   	nop
+    21b0:	f3 0f 1e fa          	endbr64 
+    21b4:	68 18 00 00 00       	pushq  $0x18
+    21b9:	f2 e9 61 fe ff ff    	bnd jmpq 2020 <.plt>
+    21bf:	90                   	nop
+    21c0:	f3 0f 1e fa          	endbr64 
+    21c4:	68 19 00 00 00       	pushq  $0x19
+    21c9:	f2 e9 51 fe ff ff    	bnd jmpq 2020 <.plt>
+    21cf:	90                   	nop
+    21d0:	f3 0f 1e fa          	endbr64 
+    21d4:	68 1a 00 00 00       	pushq  $0x1a
+    21d9:	f2 e9 41 fe ff ff    	bnd jmpq 2020 <.plt>
+    21df:	90                   	nop
+    21e0:	f3 0f 1e fa          	endbr64 
+    21e4:	68 1b 00 00 00       	pushq  $0x1b
+    21e9:	f2 e9 31 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ef:	90                   	nop
+    21f0:	f3 0f 1e fa          	endbr64 
+    21f4:	68 1c 00 00 00       	pushq  $0x1c
+    21f9:	f2 e9 21 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ff:	90                   	nop
+    2200:	f3 0f 1e fa          	endbr64 
+    2204:	68 1d 00 00 00       	pushq  $0x1d
+    2209:	f2 e9 11 fe ff ff    	bnd jmpq 2020 <.plt>
+    220f:	90                   	nop
+    2210:	f3 0f 1e fa          	endbr64 
+    2214:	68 1e 00 00 00       	pushq  $0x1e
+    2219:	f2 e9 01 fe ff ff    	bnd jmpq 2020 <.plt>
+    221f:	90                   	nop
+    2220:	f3 0f 1e fa          	endbr64 
+    2224:	68 1f 00 00 00       	pushq  $0x1f
+    2229:	f2 e9 f1 fd ff ff    	bnd jmpq 2020 <.plt>
+    222f:	90                   	nop
+
+Desensamblado de la sección .plt.got:
+
+0000000000002230 <__cxa_finalize@plt>:
+    2230:	f3 0f 1e fa          	endbr64 
+    2234:	f2 ff 25 8d 2d 00 00 	bnd jmpq *0x2d8d(%rip)        # 4fc8 <__cxa_finalize@GLIBC_2.2.5>
+    223b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .plt.sec:
+
+0000000000002240 <std::__throw_bad_alloc()@plt>:
+    2240:	f3 0f 1e fa          	endbr64 
+    2244:	f2 ff 25 7d 2c 00 00 	bnd jmpq *0x2c7d(%rip)        # 4ec8 <std::__throw_bad_alloc()@GLIBCXX_3.4>
+    224b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002250 <__cxa_begin_catch@plt>:
+    2250:	f3 0f 1e fa          	endbr64 
+    2254:	f2 ff 25 75 2c 00 00 	bnd jmpq *0x2c75(%rip)        # 4ed0 <__cxa_begin_catch@CXXABI_1.3>
+    225b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002260 <strlen@plt>:
+    2260:	f3 0f 1e fa          	endbr64 
+    2264:	f2 ff 25 6d 2c 00 00 	bnd jmpq *0x2c6d(%rip)        # 4ed8 <strlen@GLIBC_2.2.5>
+    226b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002270 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream()@plt>:
+    2270:	f3 0f 1e fa          	endbr64 
+    2274:	f2 ff 25 65 2c 00 00 	bnd jmpq *0x2c65(%rip)        # 4ee0 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream()@GLIBCXX_3.4.21>
+    227b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002280 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>:
+    2280:	f3 0f 1e fa          	endbr64 
+    2284:	f2 ff 25 5d 2c 00 00 	bnd jmpq *0x2c5d(%rip)        # 4ee8 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@GLIBCXX_3.4>
+    228b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002290 <__cxa_allocate_exception@plt>:
+    2290:	f3 0f 1e fa          	endbr64 
+    2294:	f2 ff 25 55 2c 00 00 	bnd jmpq *0x2c55(%rip)        # 4ef0 <__cxa_allocate_exception@CXXABI_1.3>
+    229b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022a0 <memset@plt>:
+    22a0:	f3 0f 1e fa          	endbr64 
+    22a4:	f2 ff 25 4d 2c 00 00 	bnd jmpq *0x2c4d(%rip)        # 4ef8 <memset@GLIBC_2.2.5>
+    22ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022b0 <__cxa_guard_abort@plt>:
+    22b0:	f3 0f 1e fa          	endbr64 
+    22b4:	f2 ff 25 45 2c 00 00 	bnd jmpq *0x2c45(%rip)        # 4f00 <__cxa_guard_abort@CXXABI_1.3>
+    22bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022c0 <__cxa_guard_release@plt>:
+    22c0:	f3 0f 1e fa          	endbr64 
+    22c4:	f2 ff 25 3d 2c 00 00 	bnd jmpq *0x2c3d(%rip)        # 4f08 <__cxa_guard_release@CXXABI_1.3>
+    22cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022d0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>:
+    22d0:	f3 0f 1e fa          	endbr64 
+    22d4:	f2 ff 25 35 2c 00 00 	bnd jmpq *0x2c35(%rip)        # 4f10 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@GLIBCXX_3.4.9>
+    22db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022e0 <std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@plt>:
+    22e0:	f3 0f 1e fa          	endbr64 
+    22e4:	f2 ff 25 2d 2c 00 00 	bnd jmpq *0x2c2d(%rip)        # 4f18 <std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@GLIBCXX_3.4.18>
+    22eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022f0 <std::__throw_logic_error(char const*)@plt>:
+    22f0:	f3 0f 1e fa          	endbr64 
+    22f4:	f2 ff 25 25 2c 00 00 	bnd jmpq *0x2c25(%rip)        # 4f20 <std::__throw_logic_error(char const*)@GLIBCXX_3.4>
+    22fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002300 <__cxa_free_exception@plt>:
+    2300:	f3 0f 1e fa          	endbr64 
+    2304:	f2 ff 25 1d 2c 00 00 	bnd jmpq *0x2c1d(%rip)        # 4f28 <__cxa_free_exception@CXXABI_1.3>
+    230b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002310 <memcpy@plt>:
+    2310:	f3 0f 1e fa          	endbr64 
+    2314:	f2 ff 25 15 2c 00 00 	bnd jmpq *0x2c15(%rip)        # 4f30 <memcpy@GLIBC_2.14>
+    231b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002320 <__cxa_atexit@plt>:
+    2320:	f3 0f 1e fa          	endbr64 
+    2324:	f2 ff 25 0d 2c 00 00 	bnd jmpq *0x2c0d(%rip)        # 4f38 <__cxa_atexit@GLIBC_2.2.5>
+    232b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002330 <operator delete(void*)@plt>:
+    2330:	f3 0f 1e fa          	endbr64 
+    2334:	f2 ff 25 05 2c 00 00 	bnd jmpq *0x2c05(%rip)        # 4f40 <operator delete(void*)@GLIBCXX_3.4>
+    233b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002340 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>:
+    2340:	f3 0f 1e fa          	endbr64 
+    2344:	f2 ff 25 fd 2b 00 00 	bnd jmpq *0x2bfd(%rip)        # 4f48 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@GLIBCXX_3.4>
+    234b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002350 <operator new(unsigned long)@plt>:
+    2350:	f3 0f 1e fa          	endbr64 
+    2354:	f2 ff 25 f5 2b 00 00 	bnd jmpq *0x2bf5(%rip)        # 4f50 <operator new(unsigned long)@GLIBCXX_3.4>
+    235b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002360 <__stack_chk_fail@plt>:
+    2360:	f3 0f 1e fa          	endbr64 
+    2364:	f2 ff 25 ed 2b 00 00 	bnd jmpq *0x2bed(%rip)        # 4f58 <__stack_chk_fail@GLIBC_2.4>
+    236b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002370 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>:
+    2370:	f3 0f 1e fa          	endbr64 
+    2374:	f2 ff 25 e5 2b 00 00 	bnd jmpq *0x2be5(%rip)        # 4f60 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9>
+    237b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002380 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt>:
+    2380:	f3 0f 1e fa          	endbr64 
+    2384:	f2 ff 25 dd 2b 00 00 	bnd jmpq *0x2bdd(%rip)        # 4f68 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@GLIBCXX_3.4.18>
+    238b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002390 <std::__throw_out_of_range(char const*)@plt>:
+    2390:	f3 0f 1e fa          	endbr64 
+    2394:	f2 ff 25 d5 2b 00 00 	bnd jmpq *0x2bd5(%rip)        # 4f70 <std::__throw_out_of_range(char const*)@GLIBCXX_3.4>
+    239b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023a0 <__cxa_rethrow@plt>:
+    23a0:	f3 0f 1e fa          	endbr64 
+    23a4:	f2 ff 25 cd 2b 00 00 	bnd jmpq *0x2bcd(%rip)        # 4f78 <__cxa_rethrow@CXXABI_1.3>
+    23ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023b0 <std::ios_base::Init::Init()@plt>:
+    23b0:	f3 0f 1e fa          	endbr64 
+    23b4:	f2 ff 25 c5 2b 00 00 	bnd jmpq *0x2bc5(%rip)        # 4f80 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    23bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023c0 <__cxa_end_catch@plt>:
+    23c0:	f3 0f 1e fa          	endbr64 
+    23c4:	f2 ff 25 bd 2b 00 00 	bnd jmpq *0x2bbd(%rip)        # 4f88 <__cxa_end_catch@CXXABI_1.3>
+    23cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023d0 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::basic_istringstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)@plt>:
+    23d0:	f3 0f 1e fa          	endbr64 
+    23d4:	f2 ff 25 b5 2b 00 00 	bnd jmpq *0x2bb5(%rip)        # 4f90 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::basic_istringstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)@GLIBCXX_3.4.21>
+    23db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023e0 <__cxa_throw@plt>:
+    23e0:	f3 0f 1e fa          	endbr64 
+    23e4:	f2 ff 25 ad 2b 00 00 	bnd jmpq *0x2bad(%rip)        # 4f98 <__cxa_throw@CXXABI_1.3>
+    23eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023f0 <std::istream& std::istream::_M_extract<unsigned int>(unsigned int&)@plt>:
+    23f0:	f3 0f 1e fa          	endbr64 
+    23f4:	f2 ff 25 a5 2b 00 00 	bnd jmpq *0x2ba5(%rip)        # 4fa0 <std::istream& std::istream::_M_extract<unsigned int>(unsigned int&)@GLIBCXX_3.4.9>
+    23fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002400 <_Unwind_Resume@plt>:
+    2400:	f3 0f 1e fa          	endbr64 
+    2404:	f2 ff 25 9d 2b 00 00 	bnd jmpq *0x2b9d(%rip)        # 4fa8 <_Unwind_Resume@GCC_3.0>
+    240b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002410 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>:
+    2410:	f3 0f 1e fa          	endbr64 
+    2414:	f2 ff 25 95 2b 00 00 	bnd jmpq *0x2b95(%rip)        # 4fb0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@GLIBCXX_3.4.21>
+    241b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002420 <__cxa_guard_acquire@plt>:
+    2420:	f3 0f 1e fa          	endbr64 
+    2424:	f2 ff 25 8d 2b 00 00 	bnd jmpq *0x2b8d(%rip)        # 4fb8 <__cxa_guard_acquire@CXXABI_1.3>
+    242b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002430 <std::invalid_argument::invalid_argument(char const*)@plt>:
+    2430:	f3 0f 1e fa          	endbr64 
+    2434:	f2 ff 25 85 2b 00 00 	bnd jmpq *0x2b85(%rip)        # 4fc0 <std::invalid_argument::invalid_argument(char const*)@GLIBCXX_3.4.21>
+    243b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .text:
+
+0000000000002440 <main.cold>:
+    2440:	bf 10 00 00 00       	mov    $0x10,%edi
+    2445:	e8 46 fe ff ff       	callq  2290 <__cxa_allocate_exception@plt>
+    244a:	48 89 c7             	mov    %rax,%rdi
+    244d:	48 8d 35 1c 0c 00 00 	lea    0xc1c(%rip),%rsi        # 3070 <_IO_stdin_used+0x70>
+    2454:	49 89 c5             	mov    %rax,%r13
+    2457:	e8 d4 ff ff ff       	callq  2430 <std::invalid_argument::invalid_argument(char const*)@plt>
+    245c:	48 8b 15 6d 2b 00 00 	mov    0x2b6d(%rip),%rdx        # 4fd0 <std::invalid_argument::~invalid_argument()@GLIBCXX_3.4>
+    2463:	48 8d 35 0e 28 00 00 	lea    0x280e(%rip),%rsi        # 4c78 <typeinfo for std::invalid_argument@@GLIBCXX_3.4>
+    246a:	4c 89 ef             	mov    %r13,%rdi
+    246d:	e8 6e ff ff ff       	callq  23e0 <__cxa_throw@plt>
+    2472:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    2477:	4c 39 ef             	cmp    %r13,%rdi
+    247a:	74 70                	je     24ec <main.cold+0xac>
+    247c:	c5 f8 77             	vzeroupper 
+    247f:	e8 ac fe ff ff       	callq  2330 <operator delete(void*)@plt>
+    2484:	48 89 ef             	mov    %rbp,%rdi
+    2487:	e8 74 ff ff ff       	callq  2400 <_Unwind_Resume@plt>
+    248c:	f3 0f 1e fa          	endbr64 
+    2490:	49 89 c4             	mov    %rax,%r12
+    2493:	c5 f8 77             	vzeroupper 
+    2496:	eb 12                	jmp    24aa <main.cold+0x6a>
+    2498:	f3 0f 1e fa          	endbr64 
+    249c:	49 89 c4             	mov    %rax,%r12
+    249f:	4c 89 ef             	mov    %r13,%rdi
+    24a2:	c5 f8 77             	vzeroupper 
+    24a5:	e8 56 fe ff ff       	callq  2300 <__cxa_free_exception@plt>
+    24aa:	48 89 ef             	mov    %rbp,%rdi
+    24ad:	e8 be fd ff ff       	callq  2270 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream()@plt>
+    24b2:	4c 89 e7             	mov    %r12,%rdi
+    24b5:	e8 46 ff ff ff       	callq  2400 <_Unwind_Resume@plt>
+    24ba:	bf 10 00 00 00       	mov    $0x10,%edi
+    24bf:	e8 cc fd ff ff       	callq  2290 <__cxa_allocate_exception@plt>
+    24c4:	48 89 c7             	mov    %rax,%rdi
+    24c7:	48 8d 35 4a 0b 00 00 	lea    0xb4a(%rip),%rsi        # 3018 <_IO_stdin_used+0x18>
+    24ce:	48 89 c5             	mov    %rax,%rbp
+    24d1:	e8 5a ff ff ff       	callq  2430 <std::invalid_argument::invalid_argument(char const*)@plt>
+    24d6:	48 8b 15 f3 2a 00 00 	mov    0x2af3(%rip),%rdx        # 4fd0 <std::invalid_argument::~invalid_argument()@GLIBCXX_3.4>
+    24dd:	48 8d 35 94 27 00 00 	lea    0x2794(%rip),%rsi        # 4c78 <typeinfo for std::invalid_argument@@GLIBCXX_3.4>
+    24e4:	48 89 ef             	mov    %rbp,%rdi
+    24e7:	e8 f4 fe ff ff       	callq  23e0 <__cxa_throw@plt>
+    24ec:	c5 f8 77             	vzeroupper 
+    24ef:	eb 93                	jmp    2484 <main.cold+0x44>
+    24f1:	f3 0f 1e fa          	endbr64 
+    24f5:	49 89 c4             	mov    %rax,%r12
+    24f8:	48 89 ef             	mov    %rbp,%rdi
+    24fb:	c5 f8 77             	vzeroupper 
+    24fe:	e8 fd fd ff ff       	callq  2300 <__cxa_free_exception@plt>
+    2503:	4c 89 e7             	mov    %r12,%rdi
+    2506:	e8 f5 fe ff ff       	callq  2400 <_Unwind_Resume@plt>
+    250b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002510 <main>:
+    2510:	f3 0f 1e fa          	endbr64 
+    2514:	41 56                	push   %r14
+    2516:	41 55                	push   %r13
+    2518:	41 54                	push   %r12
+    251a:	55                   	push   %rbp
+    251b:	53                   	push   %rbx
+    251c:	48 81 ec c0 01 00 00 	sub    $0x1c0,%rsp
+    2523:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    252a:	00 00 
+    252c:	48 89 84 24 b8 01 00 	mov    %rax,0x1b8(%rsp)
+    2533:	00 
+    2534:	31 c0                	xor    %eax,%eax
+    2536:	83 ff 01             	cmp    $0x1,%edi
+    2539:	0f 8e 7b ff ff ff    	jle    24ba <main.cold+0x7a>
+    253f:	48 8b 6e 08          	mov    0x8(%rsi),%rbp
+    2543:	4c 8d 6c 24 20       	lea    0x20(%rsp),%r13
+    2548:	4c 89 6c 24 10       	mov    %r13,0x10(%rsp)
+    254d:	48 89 f3             	mov    %rsi,%rbx
+    2550:	4c 8d 74 24 10       	lea    0x10(%rsp),%r14
+    2555:	48 85 ed             	test   %rbp,%rbp
+    2558:	0f 84 4e 01 00 00    	je     26ac <main+0x19c>
+    255e:	48 89 ef             	mov    %rbp,%rdi
+    2561:	e8 fa fc ff ff       	callq  2260 <strlen@plt>
+    2566:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    256b:	49 89 c4             	mov    %rax,%r12
+    256e:	48 83 f8 0f          	cmp    $0xf,%rax
+    2572:	0f 87 03 01 00 00    	ja     267b <main+0x16b>
+    2578:	48 83 f8 01          	cmp    $0x1,%rax
+    257c:	0f 85 eb 00 00 00    	jne    266d <main+0x15d>
+    2582:	0f b6 45 00          	movzbl 0x0(%rbp),%eax
+    2586:	88 44 24 20          	mov    %al,0x20(%rsp)
+    258a:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    258f:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+    2594:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2599:	c6 04 02 00          	movb   $0x0,(%rdx,%rax,1)
+    259d:	48 8d 6c 24 30       	lea    0x30(%rsp),%rbp
+    25a2:	ba 08 00 00 00       	mov    $0x8,%edx
+    25a7:	4c 89 f6             	mov    %r14,%rsi
+    25aa:	48 89 ef             	mov    %rbp,%rdi
+    25ad:	e8 1e fe ff ff       	callq  23d0 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::basic_istringstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)@plt>
+    25b2:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    25b7:	4c 39 ef             	cmp    %r13,%rdi
+    25ba:	74 05                	je     25c1 <main+0xb1>
+    25bc:	e8 6f fd ff ff       	callq  2330 <operator delete(void*)@plt>
+    25c1:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+    25c6:	48 89 ef             	mov    %rbp,%rdi
+    25c9:	e8 22 fe ff ff       	callq  23f0 <std::istream& std::istream::_M_extract<unsigned int>(unsigned int&)@plt>
+    25ce:	f6 84 24 c8 00 00 00 	testb  $0x5,0xc8(%rsp)
+    25d5:	05 
+    25d6:	0f 85 64 fe ff ff    	jne    2440 <main.cold>
+    25dc:	48 8b 33             	mov    (%rbx),%rsi
+    25df:	48 8d 3d 5a 2a 00 00 	lea    0x2a5a(%rip),%rdi        # 5040 <std::cout@@GLIBCXX_3.4>
+    25e6:	e8 55 fd ff ff       	callq  2340 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>
+    25eb:	ba 01 00 00 00       	mov    $0x1,%edx
+    25f0:	48 8d 35 a0 0a 00 00 	lea    0xaa0(%rip),%rsi        # 3097 <_IO_stdin_used+0x97>
+    25f7:	48 89 c7             	mov    %rax,%rdi
+    25fa:	49 89 c4             	mov    %rax,%r12
+    25fd:	e8 6e fd ff ff       	callq  2370 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2602:	48 8b 73 08          	mov    0x8(%rbx),%rsi
+    2606:	4c 89 e7             	mov    %r12,%rdi
+    2609:	e8 32 fd ff ff       	callq  2340 <std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)@plt>
+    260e:	ba 04 00 00 00       	mov    $0x4,%edx
+    2613:	48 8d 35 7f 0a 00 00 	lea    0xa7f(%rip),%rsi        # 3099 <_IO_stdin_used+0x99>
+    261a:	48 89 c7             	mov    %rax,%rdi
+    261d:	49 89 c4             	mov    %rax,%r12
+    2620:	e8 4b fd ff ff       	callq  2370 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2625:	8b 7c 24 08          	mov    0x8(%rsp),%edi
+    2629:	e8 c2 04 00 00       	callq  2af0 <unsigned int fib<unsigned int>(unsigned int)>
+    262e:	89 c6                	mov    %eax,%esi
+    2630:	4c 89 e7             	mov    %r12,%rdi
+    2633:	e8 98 fc ff ff       	callq  22d0 <std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)@plt>
+    2638:	48 89 c7             	mov    %rax,%rdi
+    263b:	e8 40 fc ff ff       	callq  2280 <std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)@plt>
+    2640:	48 89 ef             	mov    %rbp,%rdi
+    2643:	e8 28 fc ff ff       	callq  2270 <std::__cxx11::basic_istringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_istringstream()@plt>
+    2648:	48 8b 84 24 b8 01 00 	mov    0x1b8(%rsp),%rax
+    264f:	00 
+    2650:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2657:	00 00 
+    2659:	75 5d                	jne    26b8 <main+0x1a8>
+    265b:	48 81 c4 c0 01 00 00 	add    $0x1c0,%rsp
+    2662:	5b                   	pop    %rbx
+    2663:	5d                   	pop    %rbp
+    2664:	41 5c                	pop    %r12
+    2666:	41 5d                	pop    %r13
+    2668:	31 c0                	xor    %eax,%eax
+    266a:	41 5e                	pop    %r14
+    266c:	c3                   	retq   
+    266d:	48 85 c0             	test   %rax,%rax
+    2670:	0f 84 14 ff ff ff    	je     258a <main+0x7a>
+    2676:	4c 89 ef             	mov    %r13,%rdi
+    2679:	eb 21                	jmp    269c <main+0x18c>
+    267b:	4c 89 f7             	mov    %r14,%rdi
+    267e:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+    2683:	31 d2                	xor    %edx,%edx
+    2685:	e8 86 fd ff ff       	callq  2410 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>
+    268a:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    268f:	48 89 c7             	mov    %rax,%rdi
+    2692:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2697:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+    269c:	4c 89 e2             	mov    %r12,%rdx
+    269f:	48 89 ee             	mov    %rbp,%rsi
+    26a2:	e8 69 fc ff ff       	callq  2310 <memcpy@plt>
+    26a7:	e9 de fe ff ff       	jmpq   258a <main+0x7a>
+    26ac:	48 8d 3d 8d 09 00 00 	lea    0x98d(%rip),%rdi        # 3040 <_IO_stdin_used+0x40>
+    26b3:	e8 38 fc ff ff       	callq  22f0 <std::__throw_logic_error(char const*)@plt>
+    26b8:	e8 a3 fc ff ff       	callq  2360 <__stack_chk_fail@plt>
+    26bd:	f3 0f 1e fa          	endbr64 
+    26c1:	48 89 c5             	mov    %rax,%rbp
+    26c4:	e9 a9 fd ff ff       	jmpq   2472 <main.cold+0x32>
+    26c9:	f3 0f 1e fa          	endbr64 
+    26cd:	e9 be fd ff ff       	jmpq   2490 <main.cold+0x50>
+    26d2:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    26d9:	00 00 00 00 
+    26dd:	0f 1f 00             	nopl   (%rax)
+
+00000000000026e0 <_GLOBAL__sub_I_main>:
+    26e0:	f3 0f 1e fa          	endbr64 
+    26e4:	48 83 ec 08          	sub    $0x8,%rsp
+    26e8:	48 8d 3d 62 2a 00 00 	lea    0x2a62(%rip),%rdi        # 5151 <std::__ioinit>
+    26ef:	e8 bc fc ff ff       	callq  23b0 <std::ios_base::Init::Init()@plt>
+    26f4:	48 8b 3d fd 28 00 00 	mov    0x28fd(%rip),%rdi        # 4ff8 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    26fb:	48 8d 15 06 29 00 00 	lea    0x2906(%rip),%rdx        # 5008 <__dso_handle>
+    2702:	48 8d 35 48 2a 00 00 	lea    0x2a48(%rip),%rsi        # 5151 <std::__ioinit>
+    2709:	48 83 c4 08          	add    $0x8,%rsp
+    270d:	e9 0e fc ff ff       	jmpq   2320 <__cxa_atexit@plt>
+    2712:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2719:	00 00 00 
+    271c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002720 <_start>:
+    2720:	f3 0f 1e fa          	endbr64 
+    2724:	31 ed                	xor    %ebp,%ebp
+    2726:	49 89 d1             	mov    %rdx,%r9
+    2729:	5e                   	pop    %rsi
+    272a:	48 89 e2             	mov    %rsp,%rdx
+    272d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    2731:	50                   	push   %rax
+    2732:	54                   	push   %rsp
+    2733:	4c 8d 05 76 08 00 00 	lea    0x876(%rip),%r8        # 2fb0 <__libc_csu_fini>
+    273a:	48 8d 0d ff 07 00 00 	lea    0x7ff(%rip),%rcx        # 2f40 <__libc_csu_init>
+    2741:	48 8d 3d c8 fd ff ff 	lea    -0x238(%rip),%rdi        # 2510 <main>
+    2748:	ff 15 92 28 00 00    	callq  *0x2892(%rip)        # 4fe0 <__libc_start_main@GLIBC_2.2.5>
+    274e:	f4                   	hlt    
+    274f:	90                   	nop
+
+0000000000002750 <deregister_tm_clones>:
+    2750:	48 8d 3d c9 28 00 00 	lea    0x28c9(%rip),%rdi        # 5020 <__TMC_END__>
+    2757:	48 8d 05 c2 28 00 00 	lea    0x28c2(%rip),%rax        # 5020 <__TMC_END__>
+    275e:	48 39 f8             	cmp    %rdi,%rax
+    2761:	74 15                	je     2778 <deregister_tm_clones+0x28>
+    2763:	48 8b 05 6e 28 00 00 	mov    0x286e(%rip),%rax        # 4fd8 <_ITM_deregisterTMCloneTable>
+    276a:	48 85 c0             	test   %rax,%rax
+    276d:	74 09                	je     2778 <deregister_tm_clones+0x28>
+    276f:	ff e0                	jmpq   *%rax
+    2771:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2778:	c3                   	retq   
+    2779:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002780 <register_tm_clones>:
+    2780:	48 8d 3d 99 28 00 00 	lea    0x2899(%rip),%rdi        # 5020 <__TMC_END__>
+    2787:	48 8d 35 92 28 00 00 	lea    0x2892(%rip),%rsi        # 5020 <__TMC_END__>
+    278e:	48 29 fe             	sub    %rdi,%rsi
+    2791:	48 89 f0             	mov    %rsi,%rax
+    2794:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    2798:	48 c1 f8 03          	sar    $0x3,%rax
+    279c:	48 01 c6             	add    %rax,%rsi
+    279f:	48 d1 fe             	sar    %rsi
+    27a2:	74 14                	je     27b8 <register_tm_clones+0x38>
+    27a4:	48 8b 05 45 28 00 00 	mov    0x2845(%rip),%rax        # 4ff0 <_ITM_registerTMCloneTable>
+    27ab:	48 85 c0             	test   %rax,%rax
+    27ae:	74 08                	je     27b8 <register_tm_clones+0x38>
+    27b0:	ff e0                	jmpq   *%rax
+    27b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    27b8:	c3                   	retq   
+    27b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000027c0 <__do_global_dtors_aux>:
+    27c0:	f3 0f 1e fa          	endbr64 
+    27c4:	80 3d 85 29 00 00 00 	cmpb   $0x0,0x2985(%rip)        # 5150 <completed.8061>
+    27cb:	75 2b                	jne    27f8 <__do_global_dtors_aux+0x38>
+    27cd:	55                   	push   %rbp
+    27ce:	48 83 3d f2 27 00 00 	cmpq   $0x0,0x27f2(%rip)        # 4fc8 <__cxa_finalize@GLIBC_2.2.5>
+    27d5:	00 
+    27d6:	48 89 e5             	mov    %rsp,%rbp
+    27d9:	74 0c                	je     27e7 <__do_global_dtors_aux+0x27>
+    27db:	48 8b 3d 26 28 00 00 	mov    0x2826(%rip),%rdi        # 5008 <__dso_handle>
+    27e2:	e8 49 fa ff ff       	callq  2230 <__cxa_finalize@plt>
+    27e7:	e8 64 ff ff ff       	callq  2750 <deregister_tm_clones>
+    27ec:	c6 05 5d 29 00 00 01 	movb   $0x1,0x295d(%rip)        # 5150 <completed.8061>
+    27f3:	5d                   	pop    %rbp
+    27f4:	c3                   	retq   
+    27f5:	0f 1f 00             	nopl   (%rax)
+    27f8:	c3                   	retq   
+    27f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002800 <frame_dummy>:
+    2800:	f3 0f 1e fa          	endbr64 
+    2804:	e9 77 ff ff ff       	jmpq   2780 <register_tm_clones>
+    2809:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002810 <std::unordered_map<unsigned int, unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::~unordered_map()>:
+    2810:	f3 0f 1e fa          	endbr64 
+    2814:	55                   	push   %rbp
+    2815:	53                   	push   %rbx
+    2816:	48 89 fb             	mov    %rdi,%rbx
+    2819:	48 83 ec 08          	sub    $0x8,%rsp
+    281d:	48 8b 6f 10          	mov    0x10(%rdi),%rbp
+    2821:	48 85 ed             	test   %rbp,%rbp
+    2824:	74 1b                	je     2841 <std::unordered_map<unsigned int, unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::~unordered_map()+0x31>
+    2826:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    282d:	00 00 00 
+    2830:	48 89 ef             	mov    %rbp,%rdi
+    2833:	48 8b 6d 00          	mov    0x0(%rbp),%rbp
+    2837:	e8 f4 fa ff ff       	callq  2330 <operator delete(void*)@plt>
+    283c:	48 85 ed             	test   %rbp,%rbp
+    283f:	75 ef                	jne    2830 <std::unordered_map<unsigned int, unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::~unordered_map()+0x20>
+    2841:	48 8b 43 08          	mov    0x8(%rbx),%rax
+    2845:	48 8b 3b             	mov    (%rbx),%rdi
+    2848:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    284f:	00 
+    2850:	31 f6                	xor    %esi,%esi
+    2852:	e8 49 fa ff ff       	callq  22a0 <memset@plt>
+    2857:	48 8b 3b             	mov    (%rbx),%rdi
+    285a:	48 c7 43 18 00 00 00 	movq   $0x0,0x18(%rbx)
+    2861:	00 
+    2862:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+    2869:	00 
+    286a:	48 83 c3 30          	add    $0x30,%rbx
+    286e:	48 39 df             	cmp    %rbx,%rdi
+    2871:	74 0d                	je     2880 <std::unordered_map<unsigned int, unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::~unordered_map()+0x70>
+    2873:	48 83 c4 08          	add    $0x8,%rsp
+    2877:	5b                   	pop    %rbx
+    2878:	5d                   	pop    %rbp
+    2879:	e9 b2 fa ff ff       	jmpq   2330 <operator delete(void*)@plt>
+    287e:	66 90                	xchg   %ax,%ax
+    2880:	48 83 c4 08          	add    $0x8,%rsp
+    2884:	5b                   	pop    %rbx
+    2885:	5d                   	pop    %rbp
+    2886:	c3                   	retq   
+    2887:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    288e:	00 00 
+
+0000000000002890 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>:
+    2890:	f3 0f 1e fa          	endbr64 
+    2894:	41 55                	push   %r13
+    2896:	41 54                	push   %r12
+    2898:	55                   	push   %rbp
+    2899:	48 89 f5             	mov    %rsi,%rbp
+    289c:	53                   	push   %rbx
+    289d:	48 89 fb             	mov    %rdi,%rbx
+    28a0:	48 83 ec 08          	sub    $0x8,%rsp
+    28a4:	48 83 fe 01          	cmp    $0x1,%rsi
+    28a8:	0f 84 da 00 00 00    	je     2988 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf8>
+    28ae:	48 b8 ff ff ff ff ff 	movabs $0xfffffffffffffff,%rax
+    28b5:	ff ff 0f 
+    28b8:	49 89 d4             	mov    %rdx,%r12
+    28bb:	48 39 c6             	cmp    %rax,%rsi
+    28be:	0f 87 d8 00 00 00    	ja     299c <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x10c>
+    28c4:	4c 8d 2c f5 00 00 00 	lea    0x0(,%rsi,8),%r13
+    28cb:	00 
+    28cc:	4c 89 ef             	mov    %r13,%rdi
+    28cf:	e8 7c fa ff ff       	callq  2350 <operator new(unsigned long)@plt>
+    28d4:	4c 89 ea             	mov    %r13,%rdx
+    28d7:	31 f6                	xor    %esi,%esi
+    28d9:	48 89 c7             	mov    %rax,%rdi
+    28dc:	49 89 c4             	mov    %rax,%r12
+    28df:	e8 bc f9 ff ff       	callq  22a0 <memset@plt>
+    28e4:	4c 8d 4b 30          	lea    0x30(%rbx),%r9
+    28e8:	48 8b 73 10          	mov    0x10(%rbx),%rsi
+    28ec:	48 c7 43 10 00 00 00 	movq   $0x0,0x10(%rbx)
+    28f3:	00 
+    28f4:	48 85 f6             	test   %rsi,%rsi
+    28f7:	74 5f                	je     2958 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    28f9:	45 31 c0             	xor    %r8d,%r8d
+    28fc:	4c 8d 53 10          	lea    0x10(%rbx),%r10
+    2900:	eb 17                	jmp    2919 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    2902:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2908:	48 8b 00             	mov    (%rax),%rax
+    290b:	48 89 01             	mov    %rax,(%rcx)
+    290e:	48 8b 07             	mov    (%rdi),%rax
+    2911:	48 89 08             	mov    %rcx,(%rax)
+    2914:	48 85 f6             	test   %rsi,%rsi
+    2917:	74 3f                	je     2958 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xc8>
+    2919:	48 89 f1             	mov    %rsi,%rcx
+    291c:	8b 41 08             	mov    0x8(%rcx),%eax
+    291f:	31 d2                	xor    %edx,%edx
+    2921:	48 f7 f5             	div    %rbp
+    2924:	48 8b 36             	mov    (%rsi),%rsi
+    2927:	49 8d 3c d4          	lea    (%r12,%rdx,8),%rdi
+    292b:	48 8b 07             	mov    (%rdi),%rax
+    292e:	48 85 c0             	test   %rax,%rax
+    2931:	75 d5                	jne    2908 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x78>
+    2933:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    2937:	48 89 01             	mov    %rax,(%rcx)
+    293a:	48 89 4b 10          	mov    %rcx,0x10(%rbx)
+    293e:	4c 89 17             	mov    %r10,(%rdi)
+    2941:	48 83 39 00          	cmpq   $0x0,(%rcx)
+    2945:	74 39                	je     2980 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xf0>
+    2947:	4b 89 0c c4          	mov    %rcx,(%r12,%r8,8)
+    294b:	49 89 d0             	mov    %rdx,%r8
+    294e:	48 85 f6             	test   %rsi,%rsi
+    2951:	75 c6                	jne    2919 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x89>
+    2953:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2958:	48 8b 3b             	mov    (%rbx),%rdi
+    295b:	4c 39 cf             	cmp    %r9,%rdi
+    295e:	74 05                	je     2965 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0xd5>
+    2960:	e8 cb f9 ff ff       	callq  2330 <operator delete(void*)@plt>
+    2965:	48 89 6b 08          	mov    %rbp,0x8(%rbx)
+    2969:	4c 89 23             	mov    %r12,(%rbx)
+    296c:	48 83 c4 08          	add    $0x8,%rsp
+    2970:	5b                   	pop    %rbx
+    2971:	5d                   	pop    %rbp
+    2972:	41 5c                	pop    %r12
+    2974:	41 5d                	pop    %r13
+    2976:	c3                   	retq   
+    2977:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    297e:	00 00 
+    2980:	49 89 d0             	mov    %rdx,%r8
+    2983:	eb 8f                	jmp    2914 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x84>
+    2985:	0f 1f 00             	nopl   (%rax)
+    2988:	4c 8d 67 30          	lea    0x30(%rdi),%r12
+    298c:	48 c7 47 30 00 00 00 	movq   $0x0,0x30(%rdi)
+    2993:	00 
+    2994:	4d 89 e1             	mov    %r12,%r9
+    2997:	e9 4c ff ff ff       	jmpq   28e8 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)+0x58>
+    299c:	e8 9f f8 ff ff       	callq  2240 <std::__throw_bad_alloc()@plt>
+    29a1:	f3 0f 1e fa          	endbr64 
+    29a5:	48 89 c7             	mov    %rax,%rdi
+    29a8:	c5 f8 77             	vzeroupper 
+    29ab:	e8 a0 f8 ff ff       	callq  2250 <__cxa_begin_catch@plt>
+    29b0:	49 8b 04 24          	mov    (%r12),%rax
+    29b4:	48 89 43 28          	mov    %rax,0x28(%rbx)
+    29b8:	e8 e3 f9 ff ff       	callq  23a0 <__cxa_rethrow@plt>
+    29bd:	f3 0f 1e fa          	endbr64 
+    29c1:	48 89 c5             	mov    %rax,%rbp
+    29c4:	c5 f8 77             	vzeroupper 
+    29c7:	e8 f4 f9 ff ff       	callq  23c0 <__cxa_end_catch@plt>
+    29cc:	48 89 ef             	mov    %rbp,%rdi
+    29cf:	e8 2c fa ff ff       	callq  2400 <_Unwind_Resume@plt>
+    29d4:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    29db:	00 00 00 
+    29de:	66 90                	xchg   %ax,%ax
+
+00000000000029e0 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)>:
+    29e0:	f3 0f 1e fa          	endbr64 
+    29e4:	41 55                	push   %r13
+    29e6:	49 89 d5             	mov    %rdx,%r13
+    29e9:	41 54                	push   %r12
+    29eb:	49 89 cc             	mov    %rcx,%r12
+    29ee:	4c 89 c1             	mov    %r8,%rcx
+    29f1:	55                   	push   %rbp
+    29f2:	48 89 f5             	mov    %rsi,%rbp
+    29f5:	53                   	push   %rbx
+    29f6:	48 89 fb             	mov    %rdi,%rbx
+    29f9:	48 83 c7 20          	add    $0x20,%rdi
+    29fd:	48 83 ec 18          	sub    $0x18,%rsp
+    2a01:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2a08:	00 00 
+    2a0a:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2a0f:	31 c0                	xor    %eax,%eax
+    2a11:	48 8b 57 f8          	mov    -0x8(%rdi),%rdx
+    2a15:	48 8b 47 08          	mov    0x8(%rdi),%rax
+    2a19:	48 8b 77 e8          	mov    -0x18(%rdi),%rsi
+    2a1d:	48 89 04 24          	mov    %rax,(%rsp)
+    2a21:	e8 5a f9 ff ff       	callq  2380 <std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt>
+    2a26:	84 c0                	test   %al,%al
+    2a28:	74 1a                	je     2a44 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)+0x64>
+    2a2a:	48 89 d6             	mov    %rdx,%rsi
+    2a2d:	48 89 df             	mov    %rbx,%rdi
+    2a30:	48 89 e2             	mov    %rsp,%rdx
+    2a33:	e8 58 fe ff ff       	callq  2890 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)>
+    2a38:	4c 89 e8             	mov    %r13,%rax
+    2a3b:	31 d2                	xor    %edx,%edx
+    2a3d:	48 f7 73 08          	divq   0x8(%rbx)
+    2a41:	48 89 d5             	mov    %rdx,%rbp
+    2a44:	48 8b 33             	mov    (%rbx),%rsi
+    2a47:	48 8d 0c ee          	lea    (%rsi,%rbp,8),%rcx
+    2a4b:	48 8b 01             	mov    (%rcx),%rax
+    2a4e:	48 85 c0             	test   %rax,%rax
+    2a51:	74 35                	je     2a88 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)+0xa8>
+    2a53:	48 8b 00             	mov    (%rax),%rax
+    2a56:	49 89 04 24          	mov    %rax,(%r12)
+    2a5a:	48 8b 01             	mov    (%rcx),%rax
+    2a5d:	4c 89 20             	mov    %r12,(%rax)
+    2a60:	48 ff 43 18          	incq   0x18(%rbx)
+    2a64:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2a69:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2a70:	00 00 
+    2a72:	75 3f                	jne    2ab3 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)+0xd3>
+    2a74:	48 83 c4 18          	add    $0x18,%rsp
+    2a78:	5b                   	pop    %rbx
+    2a79:	5d                   	pop    %rbp
+    2a7a:	4c 89 e0             	mov    %r12,%rax
+    2a7d:	41 5c                	pop    %r12
+    2a7f:	41 5d                	pop    %r13
+    2a81:	c3                   	retq   
+    2a82:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2a88:	48 8b 43 10          	mov    0x10(%rbx),%rax
+    2a8c:	49 89 04 24          	mov    %rax,(%r12)
+    2a90:	4c 89 63 10          	mov    %r12,0x10(%rbx)
+    2a94:	49 8b 04 24          	mov    (%r12),%rax
+    2a98:	48 85 c0             	test   %rax,%rax
+    2a9b:	74 0d                	je     2aaa <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)+0xca>
+    2a9d:	8b 40 08             	mov    0x8(%rax),%eax
+    2aa0:	31 d2                	xor    %edx,%edx
+    2aa2:	48 f7 73 08          	divq   0x8(%rbx)
+    2aa6:	4c 89 24 d6          	mov    %r12,(%rsi,%rdx,8)
+    2aaa:	48 8d 43 10          	lea    0x10(%rbx),%rax
+    2aae:	48 89 01             	mov    %rax,(%rcx)
+    2ab1:	eb ad                	jmp    2a60 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)+0x80>
+    2ab3:	e8 a8 f8 ff ff       	callq  2360 <__stack_chk_fail@plt>
+    2ab8:	f3 0f 1e fa          	endbr64 
+    2abc:	48 89 c7             	mov    %rax,%rdi
+    2abf:	c5 f8 77             	vzeroupper 
+    2ac2:	e8 89 f7 ff ff       	callq  2250 <__cxa_begin_catch@plt>
+    2ac7:	4c 89 e7             	mov    %r12,%rdi
+    2aca:	e8 61 f8 ff ff       	callq  2330 <operator delete(void*)@plt>
+    2acf:	e8 cc f8 ff ff       	callq  23a0 <__cxa_rethrow@plt>
+    2ad4:	f3 0f 1e fa          	endbr64 
+    2ad8:	48 89 c5             	mov    %rax,%rbp
+    2adb:	c5 f8 77             	vzeroupper 
+    2ade:	e8 dd f8 ff ff       	callq  23c0 <__cxa_end_catch@plt>
+    2ae3:	48 89 ef             	mov    %rbp,%rdi
+    2ae6:	e8 15 f9 ff ff       	callq  2400 <_Unwind_Resume@plt>
+    2aeb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002af0 <unsigned int fib<unsigned int>(unsigned int)>:
+    2af0:	f3 0f 1e fa          	endbr64 
+    2af4:	41 57                	push   %r15
+    2af6:	41 56                	push   %r14
+    2af8:	41 55                	push   %r13
+    2afa:	41 54                	push   %r12
+    2afc:	55                   	push   %rbp
+    2afd:	89 fd                	mov    %edi,%ebp
+    2aff:	53                   	push   %rbx
+    2b00:	48 83 ec 38          	sub    $0x38,%rsp
+    2b04:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2b0b:	00 00 
+    2b0d:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    2b12:	31 c0                	xor    %eax,%eax
+    2b14:	0f b6 05 3d 26 00 00 	movzbl 0x263d(%rip),%eax        # 5158 <guard variable for fib<unsigned int>(unsigned int)::solutions>
+    2b1b:	84 c0                	test   %al,%al
+    2b1d:	75 14                	jne    2b33 <unsigned int fib<unsigned int>(unsigned int)+0x43>
+    2b1f:	48 8d 3d 32 26 00 00 	lea    0x2632(%rip),%rdi        # 5158 <guard variable for fib<unsigned int>(unsigned int)::solutions>
+    2b26:	e8 f5 f8 ff ff       	callq  2420 <__cxa_guard_acquire@plt>
+    2b2b:	85 c0                	test   %eax,%eax
+    2b2d:	0f 85 8d 00 00 00    	jne    2bc0 <unsigned int fib<unsigned int>(unsigned int)+0xd0>
+    2b33:	48 8b 35 2e 26 00 00 	mov    0x262e(%rip),%rsi        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2b3a:	41 89 ec             	mov    %ebp,%r12d
+    2b3d:	4c 89 e0             	mov    %r12,%rax
+    2b40:	31 d2                	xor    %edx,%edx
+    2b42:	48 f7 f6             	div    %rsi
+    2b45:	48 8b 05 14 26 00 00 	mov    0x2614(%rip),%rax        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2b4c:	48 8b 04 d0          	mov    (%rax,%rdx,8),%rax
+    2b50:	49 89 d0             	mov    %rdx,%r8
+    2b53:	48 85 c0             	test   %rax,%rax
+    2b56:	0f 84 4d 02 00 00    	je     2da9 <unsigned int fib<unsigned int>(unsigned int)+0x2b9>
+    2b5c:	48 8b 08             	mov    (%rax),%rcx
+    2b5f:	8b 79 08             	mov    0x8(%rcx),%edi
+    2b62:	eb 24                	jmp    2b88 <unsigned int fib<unsigned int>(unsigned int)+0x98>
+    2b64:	0f 1f 40 00          	nopl   0x0(%rax)
+    2b68:	48 8b 09             	mov    (%rcx),%rcx
+    2b6b:	48 85 c9             	test   %rcx,%rcx
+    2b6e:	0f 84 35 02 00 00    	je     2da9 <unsigned int fib<unsigned int>(unsigned int)+0x2b9>
+    2b74:	8b 41 08             	mov    0x8(%rcx),%eax
+    2b77:	31 d2                	xor    %edx,%edx
+    2b79:	48 89 c7             	mov    %rax,%rdi
+    2b7c:	48 f7 f6             	div    %rsi
+    2b7f:	49 39 d0             	cmp    %rdx,%r8
+    2b82:	0f 85 21 02 00 00    	jne    2da9 <unsigned int fib<unsigned int>(unsigned int)+0x2b9>
+    2b88:	39 ef                	cmp    %ebp,%edi
+    2b8a:	75 dc                	jne    2b68 <unsigned int fib<unsigned int>(unsigned int)+0x78>
+    2b8c:	44 8b 69 0c          	mov    0xc(%rcx),%r13d
+    2b90:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+    2b95:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2b9c:	00 00 
+    2b9e:	0f 85 00 02 00 00    	jne    2da4 <unsigned int fib<unsigned int>(unsigned int)+0x2b4>
+    2ba4:	48 83 c4 38          	add    $0x38,%rsp
+    2ba8:	5b                   	pop    %rbx
+    2ba9:	5d                   	pop    %rbp
+    2baa:	41 5c                	pop    %r12
+    2bac:	44 89 e8             	mov    %r13d,%eax
+    2baf:	41 5d                	pop    %r13
+    2bb1:	41 5e                	pop    %r14
+    2bb3:	41 5f                	pop    %r15
+    2bb5:	c3                   	retq   
+    2bb6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2bbd:	00 00 00 
+    2bc0:	48 b8 01 00 00 00 01 	movabs $0x100000001,%rax
+    2bc7:	00 00 00 
+    2bca:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2bcf:	48 8d 05 ba 25 00 00 	lea    0x25ba(%rip),%rax        # 5190 <fib<unsigned int>(unsigned int)::solutions+0x30>
+    2bd6:	be 02 00 00 00       	mov    $0x2,%esi
+    2bdb:	48 8d 78 f0          	lea    -0x10(%rax),%rdi
+    2bdf:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+    2be6:	00 00 
+    2be8:	48 89 05 71 25 00 00 	mov    %rax,0x2571(%rip)        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2bef:	48 c7 05 6e 25 00 00 	movq   $0x1,0x256e(%rip)        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2bf6:	01 00 00 00 
+    2bfa:	48 c7 05 6b 25 00 00 	movq   $0x0,0x256b(%rip)        # 5170 <fib<unsigned int>(unsigned int)::solutions+0x10>
+    2c01:	00 00 00 00 
+    2c05:	48 c7 05 68 25 00 00 	movq   $0x0,0x2568(%rip)        # 5178 <fib<unsigned int>(unsigned int)::solutions+0x18>
+    2c0c:	00 00 00 00 
+    2c10:	c7 05 66 25 00 00 00 	movl   $0x3f800000,0x2566(%rip)        # 5180 <fib<unsigned int>(unsigned int)::solutions+0x20>
+    2c17:	00 80 3f 
+    2c1a:	48 c7 05 63 25 00 00 	movq   $0x0,0x2563(%rip)        # 5188 <fib<unsigned int>(unsigned int)::solutions+0x28>
+    2c21:	00 00 00 00 
+    2c25:	48 c7 05 60 25 00 00 	movq   $0x0,0x2560(%rip)        # 5190 <fib<unsigned int>(unsigned int)::solutions+0x30>
+    2c2c:	00 00 00 00 
+    2c30:	e8 ab f6 ff ff       	callq  22e0 <std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const@plt>
+    2c35:	48 89 c3             	mov    %rax,%rbx
+    2c38:	48 8b 05 29 25 00 00 	mov    0x2529(%rip),%rax        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2c3f:	48 39 c3             	cmp    %rax,%rbx
+    2c42:	0f 87 00 01 00 00    	ja     2d48 <unsigned int fib<unsigned int>(unsigned int)+0x258>
+    2c48:	48 8b 0d 11 25 00 00 	mov    0x2511(%rip),%rcx        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2c4f:	48 89 c3             	mov    %rax,%rbx
+    2c52:	48 8d 44 24 20       	lea    0x20(%rsp),%rax
+    2c57:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2c5c:	4c 8d 64 24 10       	lea    0x10(%rsp),%r12
+    2c61:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2c68:	45 8b 34 24          	mov    (%r12),%r14d
+    2c6c:	31 d2                	xor    %edx,%edx
+    2c6e:	4c 89 f0             	mov    %r14,%rax
+    2c71:	48 f7 f3             	div    %rbx
+    2c74:	4d 89 f7             	mov    %r14,%r15
+    2c77:	48 8b 04 d1          	mov    (%rcx,%rdx,8),%rax
+    2c7b:	49 89 d5             	mov    %rdx,%r13
+    2c7e:	48 85 c0             	test   %rax,%rax
+    2c81:	74 4d                	je     2cd0 <unsigned int fib<unsigned int>(unsigned int)+0x1e0>
+    2c83:	48 8b 08             	mov    (%rax),%rcx
+    2c86:	8b 71 08             	mov    0x8(%rcx),%esi
+    2c89:	eb 1d                	jmp    2ca8 <unsigned int fib<unsigned int>(unsigned int)+0x1b8>
+    2c8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2c90:	48 8b 09             	mov    (%rcx),%rcx
+    2c93:	48 85 c9             	test   %rcx,%rcx
+    2c96:	74 38                	je     2cd0 <unsigned int fib<unsigned int>(unsigned int)+0x1e0>
+    2c98:	8b 41 08             	mov    0x8(%rcx),%eax
+    2c9b:	31 d2                	xor    %edx,%edx
+    2c9d:	48 89 c6             	mov    %rax,%rsi
+    2ca0:	48 f7 f3             	div    %rbx
+    2ca3:	49 39 d5             	cmp    %rdx,%r13
+    2ca6:	75 28                	jne    2cd0 <unsigned int fib<unsigned int>(unsigned int)+0x1e0>
+    2ca8:	41 39 f7             	cmp    %esi,%r15d
+    2cab:	75 e3                	jne    2c90 <unsigned int fib<unsigned int>(unsigned int)+0x1a0>
+    2cad:	49 83 c4 08          	add    $0x8,%r12
+    2cb1:	4c 3b 64 24 08       	cmp    0x8(%rsp),%r12
+    2cb6:	74 60                	je     2d18 <unsigned int fib<unsigned int>(unsigned int)+0x228>
+    2cb8:	48 8b 1d a9 24 00 00 	mov    0x24a9(%rip),%rbx        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2cbf:	48 8b 0d 9a 24 00 00 	mov    0x249a(%rip),%rcx        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2cc6:	eb a0                	jmp    2c68 <unsigned int fib<unsigned int>(unsigned int)+0x178>
+    2cc8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    2ccf:	00 
+    2cd0:	bf 10 00 00 00       	mov    $0x10,%edi
+    2cd5:	e8 76 f6 ff ff       	callq  2350 <operator new(unsigned long)@plt>
+    2cda:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    2ce1:	48 89 c1             	mov    %rax,%rcx
+    2ce4:	41 8b 44 24 04       	mov    0x4(%r12),%eax
+    2ce9:	44 89 79 08          	mov    %r15d,0x8(%rcx)
+    2ced:	89 41 0c             	mov    %eax,0xc(%rcx)
+    2cf0:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+    2cf6:	4c 89 f2             	mov    %r14,%rdx
+    2cf9:	4c 89 ee             	mov    %r13,%rsi
+    2cfc:	48 8d 3d 5d 24 00 00 	lea    0x245d(%rip),%rdi        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2d03:	e8 d8 fc ff ff       	callq  29e0 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)>
+    2d08:	49 83 c4 08          	add    $0x8,%r12
+    2d0c:	4c 3b 64 24 08       	cmp    0x8(%rsp),%r12
+    2d11:	75 a5                	jne    2cb8 <unsigned int fib<unsigned int>(unsigned int)+0x1c8>
+    2d13:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2d18:	48 8d 15 e9 22 00 00 	lea    0x22e9(%rip),%rdx        # 5008 <__dso_handle>
+    2d1f:	48 8d 35 3a 24 00 00 	lea    0x243a(%rip),%rsi        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2d26:	48 8d 3d e3 fa ff ff 	lea    -0x51d(%rip),%rdi        # 2810 <std::unordered_map<unsigned int, unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> > >::~unordered_map()>
+    2d2d:	e8 ee f5 ff ff       	callq  2320 <__cxa_atexit@plt>
+    2d32:	48 8d 3d 1f 24 00 00 	lea    0x241f(%rip),%rdi        # 5158 <guard variable for fib<unsigned int>(unsigned int)::solutions>
+    2d39:	e8 82 f5 ff ff       	callq  22c0 <__cxa_guard_release@plt>
+    2d3e:	e9 f0 fd ff ff       	jmpq   2b33 <unsigned int fib<unsigned int>(unsigned int)+0x43>
+    2d43:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    2d48:	48 83 fb 01          	cmp    $0x1,%rbx
+    2d4c:	74 42                	je     2d90 <unsigned int fib<unsigned int>(unsigned int)+0x2a0>
+    2d4e:	48 b8 ff ff ff ff ff 	movabs $0xfffffffffffffff,%rax
+    2d55:	ff ff 0f 
+    2d58:	48 39 c3             	cmp    %rax,%rbx
+    2d5b:	77 58                	ja     2db5 <unsigned int fib<unsigned int>(unsigned int)+0x2c5>
+    2d5d:	4c 8d 24 dd 00 00 00 	lea    0x0(,%rbx,8),%r12
+    2d64:	00 
+    2d65:	4c 89 e7             	mov    %r12,%rdi
+    2d68:	e8 e3 f5 ff ff       	callq  2350 <operator new(unsigned long)@plt>
+    2d6d:	4c 89 e2             	mov    %r12,%rdx
+    2d70:	31 f6                	xor    %esi,%esi
+    2d72:	48 89 c7             	mov    %rax,%rdi
+    2d75:	e8 26 f5 ff ff       	callq  22a0 <memset@plt>
+    2d7a:	48 89 c1             	mov    %rax,%rcx
+    2d7d:	48 89 0d dc 23 00 00 	mov    %rcx,0x23dc(%rip)        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2d84:	48 89 1d dd 23 00 00 	mov    %rbx,0x23dd(%rip)        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2d8b:	e9 c2 fe ff ff       	jmpq   2c52 <unsigned int fib<unsigned int>(unsigned int)+0x162>
+    2d90:	48 c7 05 f5 23 00 00 	movq   $0x0,0x23f5(%rip)        # 5190 <fib<unsigned int>(unsigned int)::solutions+0x30>
+    2d97:	00 00 00 00 
+    2d9b:	48 8d 0d ee 23 00 00 	lea    0x23ee(%rip),%rcx        # 5190 <fib<unsigned int>(unsigned int)::solutions+0x30>
+    2da2:	eb d9                	jmp    2d7d <unsigned int fib<unsigned int>(unsigned int)+0x28d>
+    2da4:	e8 b7 f5 ff ff       	callq  2360 <__stack_chk_fail@plt>
+    2da9:	48 8d 3d 54 02 00 00 	lea    0x254(%rip),%rdi        # 3004 <_IO_stdin_used+0x4>
+    2db0:	e8 db f5 ff ff       	callq  2390 <std::__throw_out_of_range(char const*)@plt>
+    2db5:	e8 86 f4 ff ff       	callq  2240 <std::__throw_bad_alloc()@plt>
+    2dba:	f3 0f 1e fa          	endbr64 
+    2dbe:	48 89 c5             	mov    %rax,%rbp
+    2dc1:	eb 0c                	jmp    2dcf <unsigned int fib<unsigned int>(unsigned int)+0x2df>
+    2dc3:	f3 0f 1e fa          	endbr64 
+    2dc7:	48 89 c7             	mov    %rax,%rdi
+    2dca:	48 89 d0             	mov    %rdx,%rax
+    2dcd:	eb 72                	jmp    2e41 <unsigned int fib<unsigned int>(unsigned int)+0x351>
+    2dcf:	48 8b 3d 9a 23 00 00 	mov    0x239a(%rip),%rdi        # 5170 <fib<unsigned int>(unsigned int)::solutions+0x10>
+    2dd6:	c5 f8 77             	vzeroupper 
+    2dd9:	48 85 ff             	test   %rdi,%rdi
+    2ddc:	0f 85 f8 00 00 00    	jne    2eda <unsigned int fib<unsigned int>(unsigned int)+0x3ea>
+    2de2:	48 8b 05 7f 23 00 00 	mov    0x237f(%rip),%rax        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2de9:	48 8b 3d 70 23 00 00 	mov    0x2370(%rip),%rdi        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2df0:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+    2df7:	00 
+    2df8:	31 f6                	xor    %esi,%esi
+    2dfa:	e8 a1 f4 ff ff       	callq  22a0 <memset@plt>
+    2dff:	48 8b 3d 5a 23 00 00 	mov    0x235a(%rip),%rdi        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2e06:	48 8d 05 83 23 00 00 	lea    0x2383(%rip),%rax        # 5190 <fib<unsigned int>(unsigned int)::solutions+0x30>
+    2e0d:	48 c7 05 60 23 00 00 	movq   $0x0,0x2360(%rip)        # 5178 <fib<unsigned int>(unsigned int)::solutions+0x18>
+    2e14:	00 00 00 00 
+    2e18:	48 c7 05 4d 23 00 00 	movq   $0x0,0x234d(%rip)        # 5170 <fib<unsigned int>(unsigned int)::solutions+0x10>
+    2e1f:	00 00 00 00 
+    2e23:	48 39 c7             	cmp    %rax,%rdi
+    2e26:	74 05                	je     2e2d <unsigned int fib<unsigned int>(unsigned int)+0x33d>
+    2e28:	e8 03 f5 ff ff       	callq  2330 <operator delete(void*)@plt>
+    2e2d:	48 8d 3d 24 23 00 00 	lea    0x2324(%rip),%rdi        # 5158 <guard variable for fib<unsigned int>(unsigned int)::solutions>
+    2e34:	e8 77 f4 ff ff       	callq  22b0 <__cxa_guard_abort@plt>
+    2e39:	48 89 ef             	mov    %rbp,%rdi
+    2e3c:	e8 bf f5 ff ff       	callq  2400 <_Unwind_Resume@plt>
+    2e41:	48 ff c8             	dec    %rax
+    2e44:	0f 85 88 00 00 00    	jne    2ed2 <unsigned int fib<unsigned int>(unsigned int)+0x3e2>
+    2e4a:	c5 f8 77             	vzeroupper 
+    2e4d:	e8 fe f3 ff ff       	callq  2250 <__cxa_begin_catch@plt>
+    2e52:	8d 7d fe             	lea    -0x2(%rbp),%edi
+    2e55:	e8 96 fc ff ff       	callq  2af0 <unsigned int fib<unsigned int>(unsigned int)>
+    2e5a:	8d 7d ff             	lea    -0x1(%rbp),%edi
+    2e5d:	41 89 c5             	mov    %eax,%r13d
+    2e60:	e8 8b fc ff ff       	callq  2af0 <unsigned int fib<unsigned int>(unsigned int)>
+    2e65:	48 8b 35 fc 22 00 00 	mov    0x22fc(%rip),%rsi        # 5168 <fib<unsigned int>(unsigned int)::solutions+0x8>
+    2e6c:	41 01 c5             	add    %eax,%r13d
+    2e6f:	31 d2                	xor    %edx,%edx
+    2e71:	4c 89 e0             	mov    %r12,%rax
+    2e74:	48 f7 f6             	div    %rsi
+    2e77:	48 8b 05 e2 22 00 00 	mov    0x22e2(%rip),%rax        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2e7e:	48 8b 0c d0          	mov    (%rax,%rdx,8),%rcx
+    2e82:	49 89 d6             	mov    %rdx,%r14
+    2e85:	48 85 c9             	test   %rcx,%rcx
+    2e88:	75 60                	jne    2eea <unsigned int fib<unsigned int>(unsigned int)+0x3fa>
+    2e8a:	bf 10 00 00 00       	mov    $0x10,%edi
+    2e8f:	e8 bc f4 ff ff       	callq  2350 <operator new(unsigned long)@plt>
+    2e94:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+    2e9b:	89 68 08             	mov    %ebp,0x8(%rax)
+    2e9e:	c7 40 0c 00 00 00 00 	movl   $0x0,0xc(%rax)
+    2ea5:	48 89 c1             	mov    %rax,%rcx
+    2ea8:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+    2eae:	4c 89 e2             	mov    %r12,%rdx
+    2eb1:	4c 89 f6             	mov    %r14,%rsi
+    2eb4:	48 8d 3d a5 22 00 00 	lea    0x22a5(%rip),%rdi        # 5160 <fib<unsigned int>(unsigned int)::solutions>
+    2ebb:	e8 20 fb ff ff       	callq  29e0 <std::_Hashtable<unsigned int, std::pair<unsigned int const, unsigned int>, std::allocator<std::pair<unsigned int const, unsigned int> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned int const, unsigned int>, false>*, unsigned long)>
+    2ec0:	44 89 68 0c          	mov    %r13d,0xc(%rax)
+    2ec4:	48 83 c0 0c          	add    $0xc,%rax
+    2ec8:	e8 f3 f4 ff ff       	callq  23c0 <__cxa_end_catch@plt>
+    2ecd:	e9 be fc ff ff       	jmpq   2b90 <unsigned int fib<unsigned int>(unsigned int)+0xa0>
+    2ed2:	c5 f8 77             	vzeroupper 
+    2ed5:	e8 26 f5 ff ff       	callq  2400 <_Unwind_Resume@plt>
+    2eda:	48 8b 1f             	mov    (%rdi),%rbx
+    2edd:	e8 4e f4 ff ff       	callq  2330 <operator delete(void*)@plt>
+    2ee2:	48 89 df             	mov    %rbx,%rdi
+    2ee5:	e9 ef fe ff ff       	jmpq   2dd9 <unsigned int fib<unsigned int>(unsigned int)+0x2e9>
+    2eea:	48 8b 01             	mov    (%rcx),%rax
+    2eed:	39 68 08             	cmp    %ebp,0x8(%rax)
+    2ef0:	75 13                	jne    2f05 <unsigned int fib<unsigned int>(unsigned int)+0x415>
+    2ef2:	48 8b 01             	mov    (%rcx),%rax
+    2ef5:	48 85 c0             	test   %rax,%rax
+    2ef8:	74 90                	je     2e8a <unsigned int fib<unsigned int>(unsigned int)+0x39a>
+    2efa:	eb c4                	jmp    2ec0 <unsigned int fib<unsigned int>(unsigned int)+0x3d0>
+    2efc:	f3 0f 1e fa          	endbr64 
+    2f00:	48 89 c5             	mov    %rax,%rbp
+    2f03:	eb 25                	jmp    2f2a <unsigned int fib<unsigned int>(unsigned int)+0x43a>
+    2f05:	48 8b 38             	mov    (%rax),%rdi
+    2f08:	48 85 ff             	test   %rdi,%rdi
+    2f0b:	0f 84 79 ff ff ff    	je     2e8a <unsigned int fib<unsigned int>(unsigned int)+0x39a>
+    2f11:	48 89 c1             	mov    %rax,%rcx
+    2f14:	8b 47 08             	mov    0x8(%rdi),%eax
+    2f17:	31 d2                	xor    %edx,%edx
+    2f19:	48 f7 f6             	div    %rsi
+    2f1c:	49 39 d6             	cmp    %rdx,%r14
+    2f1f:	0f 85 65 ff ff ff    	jne    2e8a <unsigned int fib<unsigned int>(unsigned int)+0x39a>
+    2f25:	48 89 f8             	mov    %rdi,%rax
+    2f28:	eb c3                	jmp    2eed <unsigned int fib<unsigned int>(unsigned int)+0x3fd>
+    2f2a:	c5 f8 77             	vzeroupper 
+    2f2d:	e8 8e f4 ff ff       	callq  23c0 <__cxa_end_catch@plt>
+    2f32:	48 89 ef             	mov    %rbp,%rdi
+    2f35:	e8 c6 f4 ff ff       	callq  2400 <_Unwind_Resume@plt>
+    2f3a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000002f40 <__libc_csu_init>:
+    2f40:	f3 0f 1e fa          	endbr64 
+    2f44:	41 57                	push   %r15
+    2f46:	4c 8d 3d 13 1d 00 00 	lea    0x1d13(%rip),%r15        # 4c60 <__frame_dummy_init_array_entry>
+    2f4d:	41 56                	push   %r14
+    2f4f:	49 89 d6             	mov    %rdx,%r14
+    2f52:	41 55                	push   %r13
+    2f54:	49 89 f5             	mov    %rsi,%r13
+    2f57:	41 54                	push   %r12
+    2f59:	41 89 fc             	mov    %edi,%r12d
+    2f5c:	55                   	push   %rbp
+    2f5d:	48 8d 2d 0c 1d 00 00 	lea    0x1d0c(%rip),%rbp        # 4c70 <__do_global_dtors_aux_fini_array_entry>
+    2f64:	53                   	push   %rbx
+    2f65:	4c 29 fd             	sub    %r15,%rbp
+    2f68:	48 83 ec 08          	sub    $0x8,%rsp
+    2f6c:	e8 8f f0 ff ff       	callq  2000 <_init>
+    2f71:	48 c1 fd 03          	sar    $0x3,%rbp
+    2f75:	74 1f                	je     2f96 <__libc_csu_init+0x56>
+    2f77:	31 db                	xor    %ebx,%ebx
+    2f79:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2f80:	4c 89 f2             	mov    %r14,%rdx
+    2f83:	4c 89 ee             	mov    %r13,%rsi
+    2f86:	44 89 e7             	mov    %r12d,%edi
+    2f89:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    2f8d:	48 83 c3 01          	add    $0x1,%rbx
+    2f91:	48 39 dd             	cmp    %rbx,%rbp
+    2f94:	75 ea                	jne    2f80 <__libc_csu_init+0x40>
+    2f96:	48 83 c4 08          	add    $0x8,%rsp
+    2f9a:	5b                   	pop    %rbx
+    2f9b:	5d                   	pop    %rbp
+    2f9c:	41 5c                	pop    %r12
+    2f9e:	41 5d                	pop    %r13
+    2fa0:	41 5e                	pop    %r14
+    2fa2:	41 5f                	pop    %r15
+    2fa4:	c3                   	retq   
+    2fa5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2fac:	00 00 00 00 
+
+0000000000002fb0 <__libc_csu_fini>:
+    2fb0:	f3 0f 1e fa          	endbr64 
+    2fb4:	c3                   	retq   
+
+Desensamblado de la sección .fini:
+
+0000000000002fb8 <_fini>:
+    2fb8:	f3 0f 1e fa          	endbr64 
+    2fbc:	48 83 ec 08          	sub    $0x8,%rsp
+    2fc0:	48 83 c4 08          	add    $0x8,%rsp
+    2fc4:	c3                   	retq   

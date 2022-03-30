@@ -53,4 +53,6 @@ int main(int argc, char * argv[]){
         printf("La suma de los gastos es %i\n", sum_gastos);
         printf("La diferencia entre gastos e ingresos es %i (gastos-ingresos)\n", sum_ingresos-sum_gastos);
     }
+
+    return 0;
 }

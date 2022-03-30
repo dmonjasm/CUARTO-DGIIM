@@ -1,0 +1,1592 @@
+
+medir:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000002000 <_init>:
+    2000:	f3 0f 1e fa          	endbr64 
+    2004:	48 83 ec 08          	sub    $0x8,%rsp
+    2008:	48 8b 05 d9 4f 00 00 	mov    0x4fd9(%rip),%rax        # 6fe8 <__gmon_start__>
+    200f:	48 85 c0             	test   %rax,%rax
+    2012:	74 02                	je     2016 <_init+0x16>
+    2014:	ff d0                	callq  *%rax
+    2016:	48 83 c4 08          	add    $0x8,%rsp
+    201a:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000002020 <.plt>:
+    2020:	ff 35 3a 4e 00 00    	pushq  0x4e3a(%rip)        # 6e60 <_GLOBAL_OFFSET_TABLE_+0x8>
+    2026:	f2 ff 25 3b 4e 00 00 	bnd jmpq *0x4e3b(%rip)        # 6e68 <_GLOBAL_OFFSET_TABLE_+0x10>
+    202d:	0f 1f 00             	nopl   (%rax)
+    2030:	f3 0f 1e fa          	endbr64 
+    2034:	68 00 00 00 00       	pushq  $0x0
+    2039:	f2 e9 e1 ff ff ff    	bnd jmpq 2020 <.plt>
+    203f:	90                   	nop
+    2040:	f3 0f 1e fa          	endbr64 
+    2044:	68 01 00 00 00       	pushq  $0x1
+    2049:	f2 e9 d1 ff ff ff    	bnd jmpq 2020 <.plt>
+    204f:	90                   	nop
+    2050:	f3 0f 1e fa          	endbr64 
+    2054:	68 02 00 00 00       	pushq  $0x2
+    2059:	f2 e9 c1 ff ff ff    	bnd jmpq 2020 <.plt>
+    205f:	90                   	nop
+    2060:	f3 0f 1e fa          	endbr64 
+    2064:	68 03 00 00 00       	pushq  $0x3
+    2069:	f2 e9 b1 ff ff ff    	bnd jmpq 2020 <.plt>
+    206f:	90                   	nop
+    2070:	f3 0f 1e fa          	endbr64 
+    2074:	68 04 00 00 00       	pushq  $0x4
+    2079:	f2 e9 a1 ff ff ff    	bnd jmpq 2020 <.plt>
+    207f:	90                   	nop
+    2080:	f3 0f 1e fa          	endbr64 
+    2084:	68 05 00 00 00       	pushq  $0x5
+    2089:	f2 e9 91 ff ff ff    	bnd jmpq 2020 <.plt>
+    208f:	90                   	nop
+    2090:	f3 0f 1e fa          	endbr64 
+    2094:	68 06 00 00 00       	pushq  $0x6
+    2099:	f2 e9 81 ff ff ff    	bnd jmpq 2020 <.plt>
+    209f:	90                   	nop
+    20a0:	f3 0f 1e fa          	endbr64 
+    20a4:	68 07 00 00 00       	pushq  $0x7
+    20a9:	f2 e9 71 ff ff ff    	bnd jmpq 2020 <.plt>
+    20af:	90                   	nop
+    20b0:	f3 0f 1e fa          	endbr64 
+    20b4:	68 08 00 00 00       	pushq  $0x8
+    20b9:	f2 e9 61 ff ff ff    	bnd jmpq 2020 <.plt>
+    20bf:	90                   	nop
+    20c0:	f3 0f 1e fa          	endbr64 
+    20c4:	68 09 00 00 00       	pushq  $0x9
+    20c9:	f2 e9 51 ff ff ff    	bnd jmpq 2020 <.plt>
+    20cf:	90                   	nop
+    20d0:	f3 0f 1e fa          	endbr64 
+    20d4:	68 0a 00 00 00       	pushq  $0xa
+    20d9:	f2 e9 41 ff ff ff    	bnd jmpq 2020 <.plt>
+    20df:	90                   	nop
+    20e0:	f3 0f 1e fa          	endbr64 
+    20e4:	68 0b 00 00 00       	pushq  $0xb
+    20e9:	f2 e9 31 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ef:	90                   	nop
+    20f0:	f3 0f 1e fa          	endbr64 
+    20f4:	68 0c 00 00 00       	pushq  $0xc
+    20f9:	f2 e9 21 ff ff ff    	bnd jmpq 2020 <.plt>
+    20ff:	90                   	nop
+    2100:	f3 0f 1e fa          	endbr64 
+    2104:	68 0d 00 00 00       	pushq  $0xd
+    2109:	f2 e9 11 ff ff ff    	bnd jmpq 2020 <.plt>
+    210f:	90                   	nop
+    2110:	f3 0f 1e fa          	endbr64 
+    2114:	68 0e 00 00 00       	pushq  $0xe
+    2119:	f2 e9 01 ff ff ff    	bnd jmpq 2020 <.plt>
+    211f:	90                   	nop
+    2120:	f3 0f 1e fa          	endbr64 
+    2124:	68 0f 00 00 00       	pushq  $0xf
+    2129:	f2 e9 f1 fe ff ff    	bnd jmpq 2020 <.plt>
+    212f:	90                   	nop
+    2130:	f3 0f 1e fa          	endbr64 
+    2134:	68 10 00 00 00       	pushq  $0x10
+    2139:	f2 e9 e1 fe ff ff    	bnd jmpq 2020 <.plt>
+    213f:	90                   	nop
+    2140:	f3 0f 1e fa          	endbr64 
+    2144:	68 11 00 00 00       	pushq  $0x11
+    2149:	f2 e9 d1 fe ff ff    	bnd jmpq 2020 <.plt>
+    214f:	90                   	nop
+    2150:	f3 0f 1e fa          	endbr64 
+    2154:	68 12 00 00 00       	pushq  $0x12
+    2159:	f2 e9 c1 fe ff ff    	bnd jmpq 2020 <.plt>
+    215f:	90                   	nop
+    2160:	f3 0f 1e fa          	endbr64 
+    2164:	68 13 00 00 00       	pushq  $0x13
+    2169:	f2 e9 b1 fe ff ff    	bnd jmpq 2020 <.plt>
+    216f:	90                   	nop
+    2170:	f3 0f 1e fa          	endbr64 
+    2174:	68 14 00 00 00       	pushq  $0x14
+    2179:	f2 e9 a1 fe ff ff    	bnd jmpq 2020 <.plt>
+    217f:	90                   	nop
+    2180:	f3 0f 1e fa          	endbr64 
+    2184:	68 15 00 00 00       	pushq  $0x15
+    2189:	f2 e9 91 fe ff ff    	bnd jmpq 2020 <.plt>
+    218f:	90                   	nop
+    2190:	f3 0f 1e fa          	endbr64 
+    2194:	68 16 00 00 00       	pushq  $0x16
+    2199:	f2 e9 81 fe ff ff    	bnd jmpq 2020 <.plt>
+    219f:	90                   	nop
+    21a0:	f3 0f 1e fa          	endbr64 
+    21a4:	68 17 00 00 00       	pushq  $0x17
+    21a9:	f2 e9 71 fe ff ff    	bnd jmpq 2020 <.plt>
+    21af:	90                   	nop
+    21b0:	f3 0f 1e fa          	endbr64 
+    21b4:	68 18 00 00 00       	pushq  $0x18
+    21b9:	f2 e9 61 fe ff ff    	bnd jmpq 2020 <.plt>
+    21bf:	90                   	nop
+    21c0:	f3 0f 1e fa          	endbr64 
+    21c4:	68 19 00 00 00       	pushq  $0x19
+    21c9:	f2 e9 51 fe ff ff    	bnd jmpq 2020 <.plt>
+    21cf:	90                   	nop
+    21d0:	f3 0f 1e fa          	endbr64 
+    21d4:	68 1a 00 00 00       	pushq  $0x1a
+    21d9:	f2 e9 41 fe ff ff    	bnd jmpq 2020 <.plt>
+    21df:	90                   	nop
+    21e0:	f3 0f 1e fa          	endbr64 
+    21e4:	68 1b 00 00 00       	pushq  $0x1b
+    21e9:	f2 e9 31 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ef:	90                   	nop
+    21f0:	f3 0f 1e fa          	endbr64 
+    21f4:	68 1c 00 00 00       	pushq  $0x1c
+    21f9:	f2 e9 21 fe ff ff    	bnd jmpq 2020 <.plt>
+    21ff:	90                   	nop
+    2200:	f3 0f 1e fa          	endbr64 
+    2204:	68 1d 00 00 00       	pushq  $0x1d
+    2209:	f2 e9 11 fe ff ff    	bnd jmpq 2020 <.plt>
+    220f:	90                   	nop
+    2210:	f3 0f 1e fa          	endbr64 
+    2214:	68 1e 00 00 00       	pushq  $0x1e
+    2219:	f2 e9 01 fe ff ff    	bnd jmpq 2020 <.plt>
+    221f:	90                   	nop
+    2220:	f3 0f 1e fa          	endbr64 
+    2224:	68 1f 00 00 00       	pushq  $0x1f
+    2229:	f2 e9 f1 fd ff ff    	bnd jmpq 2020 <.plt>
+    222f:	90                   	nop
+    2230:	f3 0f 1e fa          	endbr64 
+    2234:	68 20 00 00 00       	pushq  $0x20
+    2239:	f2 e9 e1 fd ff ff    	bnd jmpq 2020 <.plt>
+    223f:	90                   	nop
+    2240:	f3 0f 1e fa          	endbr64 
+    2244:	68 21 00 00 00       	pushq  $0x21
+    2249:	f2 e9 d1 fd ff ff    	bnd jmpq 2020 <.plt>
+    224f:	90                   	nop
+    2250:	f3 0f 1e fa          	endbr64 
+    2254:	68 22 00 00 00       	pushq  $0x22
+    2259:	f2 e9 c1 fd ff ff    	bnd jmpq 2020 <.plt>
+    225f:	90                   	nop
+    2260:	f3 0f 1e fa          	endbr64 
+    2264:	68 23 00 00 00       	pushq  $0x23
+    2269:	f2 e9 b1 fd ff ff    	bnd jmpq 2020 <.plt>
+    226f:	90                   	nop
+    2270:	f3 0f 1e fa          	endbr64 
+    2274:	68 24 00 00 00       	pushq  $0x24
+    2279:	f2 e9 a1 fd ff ff    	bnd jmpq 2020 <.plt>
+    227f:	90                   	nop
+    2280:	f3 0f 1e fa          	endbr64 
+    2284:	68 25 00 00 00       	pushq  $0x25
+    2289:	f2 e9 91 fd ff ff    	bnd jmpq 2020 <.plt>
+    228f:	90                   	nop
+    2290:	f3 0f 1e fa          	endbr64 
+    2294:	68 26 00 00 00       	pushq  $0x26
+    2299:	f2 e9 81 fd ff ff    	bnd jmpq 2020 <.plt>
+    229f:	90                   	nop
+    22a0:	f3 0f 1e fa          	endbr64 
+    22a4:	68 27 00 00 00       	pushq  $0x27
+    22a9:	f2 e9 71 fd ff ff    	bnd jmpq 2020 <.plt>
+    22af:	90                   	nop
+    22b0:	f3 0f 1e fa          	endbr64 
+    22b4:	68 28 00 00 00       	pushq  $0x28
+    22b9:	f2 e9 61 fd ff ff    	bnd jmpq 2020 <.plt>
+    22bf:	90                   	nop
+    22c0:	f3 0f 1e fa          	endbr64 
+    22c4:	68 29 00 00 00       	pushq  $0x29
+    22c9:	f2 e9 51 fd ff ff    	bnd jmpq 2020 <.plt>
+    22cf:	90                   	nop
+
+Desensamblado de la sección .plt.got:
+
+00000000000022d0 <__cxa_finalize@plt>:
+    22d0:	f3 0f 1e fa          	endbr64 
+    22d4:	f2 ff 25 e5 4c 00 00 	bnd jmpq *0x4ce5(%rip)        # 6fc0 <__cxa_finalize@GLIBC_2.2.5>
+    22db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .plt.sec:
+
+00000000000022e0 <std::ostream::put(char)@plt>:
+    22e0:	f3 0f 1e fa          	endbr64 
+    22e4:	f2 ff 25 85 4b 00 00 	bnd jmpq *0x4b85(%rip)        # 6e70 <std::ostream::put(char)@GLIBCXX_3.4>
+    22eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000022f0 <__errno_location@plt>:
+    22f0:	f3 0f 1e fa          	endbr64 
+    22f4:	f2 ff 25 7d 4b 00 00 	bnd jmpq *0x4b7d(%rip)        # 6e78 <__errno_location@GLIBC_2.2.5>
+    22fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002300 <std::chrono::_V2::system_clock::now()@plt>:
+    2300:	f3 0f 1e fa          	endbr64 
+    2304:	f2 ff 25 75 4b 00 00 	bnd jmpq *0x4b75(%rip)        # 6e80 <std::chrono::_V2::system_clock::now()@GLIBCXX_3.4.19>
+    230b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002310 <fork@plt>:
+    2310:	f3 0f 1e fa          	endbr64 
+    2314:	f2 ff 25 6d 4b 00 00 	bnd jmpq *0x4b6d(%rip)        # 6e88 <fork@GLIBC_2.2.5>
+    231b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002320 <std::terminate()@plt>:
+    2320:	f3 0f 1e fa          	endbr64 
+    2324:	f2 ff 25 65 4b 00 00 	bnd jmpq *0x4b65(%rip)        # 6e90 <std::terminate()@GLIBCXX_3.4>
+    232b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002330 <strerror@plt>:
+    2330:	f3 0f 1e fa          	endbr64 
+    2334:	f2 ff 25 5d 4b 00 00 	bnd jmpq *0x4b5d(%rip)        # 6e98 <strerror@GLIBC_2.2.5>
+    233b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002340 <__cxa_begin_catch@plt>:
+    2340:	f3 0f 1e fa          	endbr64 
+    2344:	f2 ff 25 55 4b 00 00 	bnd jmpq *0x4b55(%rip)        # 6ea0 <__cxa_begin_catch@CXXABI_1.3>
+    234b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002350 <strlen@plt>:
+    2350:	f3 0f 1e fa          	endbr64 
+    2354:	f2 ff 25 4d 4b 00 00 	bnd jmpq *0x4b4d(%rip)        # 6ea8 <strlen@GLIBC_2.2.5>
+    235b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002360 <std::thread::_State::~_State()@plt>:
+    2360:	f3 0f 1e fa          	endbr64 
+    2364:	f2 ff 25 45 4b 00 00 	bnd jmpq *0x4b45(%rip)        # 6eb0 <std::thread::_State::~_State()@GLIBCXX_3.4.22>
+    236b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002370 <__cxa_allocate_exception@plt>:
+    2370:	f3 0f 1e fa          	endbr64 
+    2374:	f2 ff 25 3d 4b 00 00 	bnd jmpq *0x4b3d(%rip)        # 6eb8 <__cxa_allocate_exception@CXXABI_1.3>
+    237b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002380 <__assert_fail@plt>:
+    2380:	f3 0f 1e fa          	endbr64 
+    2384:	f2 ff 25 35 4b 00 00 	bnd jmpq *0x4b35(%rip)        # 6ec0 <__assert_fail@GLIBC_2.2.5>
+    238b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002390 <std::ostream::flush()@plt>:
+    2390:	f3 0f 1e fa          	endbr64 
+    2394:	f2 ff 25 2d 4b 00 00 	bnd jmpq *0x4b2d(%rip)        # 6ec8 <std::ostream::flush()@GLIBCXX_3.4>
+    239b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023a0 <ontop_fcontext@plt>:
+    23a0:	f3 0f 1e fa          	endbr64 
+    23a4:	f2 ff 25 25 4b 00 00 	bnd jmpq *0x4b25(%rip)        # 6ed0 <ontop_fcontext>
+    23ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023b0 <jump_fcontext@plt>:
+    23b0:	f3 0f 1e fa          	endbr64 
+    23b4:	f2 ff 25 1d 4b 00 00 	bnd jmpq *0x4b1d(%rip)        # 6ed8 <jump_fcontext>
+    23bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023c0 <__cxa_atexit@plt>:
+    23c0:	f3 0f 1e fa          	endbr64 
+    23c4:	f2 ff 25 15 4b 00 00 	bnd jmpq *0x4b15(%rip)        # 6ee0 <__cxa_atexit@GLIBC_2.2.5>
+    23cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023d0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>:
+    23d0:	f3 0f 1e fa          	endbr64 
+    23d4:	f2 ff 25 0d 4b 00 00 	bnd jmpq *0x4b0d(%rip)        # 6ee8 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@GLIBCXX_3.4.22>
+    23db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023e0 <boost::fibers::context::~context()@plt>:
+    23e0:	f3 0f 1e fa          	endbr64 
+    23e4:	f2 ff 25 05 4b 00 00 	bnd jmpq *0x4b05(%rip)        # 6ef0 <boost::fibers::context::~context()>
+    23eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000023f0 <operator new(unsigned long)@plt>:
+    23f0:	f3 0f 1e fa          	endbr64 
+    23f4:	f2 ff 25 fd 4a 00 00 	bnd jmpq *0x4afd(%rip)        # 6ef8 <operator new(unsigned long)@GLIBCXX_3.4>
+    23fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002400 <boost::fibers::fiber::start_()@plt>:
+    2400:	f3 0f 1e fa          	endbr64 
+    2404:	f2 ff 25 f5 4a 00 00 	bnd jmpq *0x4af5(%rip)        # 6f00 <boost::fibers::fiber::start_()>
+    240b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002410 <operator delete(void*, unsigned long)@plt>:
+    2410:	f3 0f 1e fa          	endbr64 
+    2414:	f2 ff 25 ed 4a 00 00 	bnd jmpq *0x4aed(%rip)        # 6f08 <operator delete(void*, unsigned long)@CXXABI_1.3.9>
+    241b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002420 <__stack_chk_fail@plt>:
+    2420:	f3 0f 1e fa          	endbr64 
+    2424:	f2 ff 25 e5 4a 00 00 	bnd jmpq *0x4ae5(%rip)        # 6f10 <__stack_chk_fail@GLIBC_2.4>
+    242b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>:
+    2430:	f3 0f 1e fa          	endbr64 
+    2434:	f2 ff 25 dd 4a 00 00 	bnd jmpq *0x4add(%rip)        # 6f18 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@GLIBCXX_3.4.9>
+    243b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002440 <make_fcontext@plt>:
+    2440:	f3 0f 1e fa          	endbr64 
+    2444:	f2 ff 25 d5 4a 00 00 	bnd jmpq *0x4ad5(%rip)        # 6f20 <make_fcontext>
+    244b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002450 <std::ctype<char>::_M_widen_init() const@plt>:
+    2450:	f3 0f 1e fa          	endbr64 
+    2454:	f2 ff 25 cd 4a 00 00 	bnd jmpq *0x4acd(%rip)        # 6f28 <std::ctype<char>::_M_widen_init() const@GLIBCXX_3.4.11>
+    245b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002460 <free@plt>:
+    2460:	f3 0f 1e fa          	endbr64 
+    2464:	f2 ff 25 c5 4a 00 00 	bnd jmpq *0x4ac5(%rip)        # 6f30 <free@GLIBC_2.2.5>
+    246b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002470 <boost::fibers::fiber::join()@plt>:
+    2470:	f3 0f 1e fa          	endbr64 
+    2474:	f2 ff 25 bd 4a 00 00 	bnd jmpq *0x4abd(%rip)        # 6f38 <boost::fibers::fiber::join()>
+    247b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002480 <exit@plt>:
+    2480:	f3 0f 1e fa          	endbr64 
+    2484:	f2 ff 25 b5 4a 00 00 	bnd jmpq *0x4ab5(%rip)        # 6f40 <exit@GLIBC_2.2.5>
+    248b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002490 <wait@plt>:
+    2490:	f3 0f 1e fa          	endbr64 
+    2494:	f2 ff 25 ad 4a 00 00 	bnd jmpq *0x4aad(%rip)        # 6f48 <wait@GLIBC_2.2.5>
+    249b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024a0 <execl@plt>:
+    24a0:	f3 0f 1e fa          	endbr64 
+    24a4:	f2 ff 25 a5 4a 00 00 	bnd jmpq *0x4aa5(%rip)        # 6f50 <execl@GLIBC_2.2.5>
+    24ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024b0 <std::__throw_bad_cast()@plt>:
+    24b0:	f3 0f 1e fa          	endbr64 
+    24b4:	f2 ff 25 9d 4a 00 00 	bnd jmpq *0x4a9d(%rip)        # 6f58 <std::__throw_bad_cast()@GLIBCXX_3.4>
+    24bb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024c0 <malloc@plt>:
+    24c0:	f3 0f 1e fa          	endbr64 
+    24c4:	f2 ff 25 95 4a 00 00 	bnd jmpq *0x4a95(%rip)        # 6f60 <malloc@GLIBC_2.2.5>
+    24cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024d0 <std::ios_base::Init::Init()@plt>:
+    24d0:	f3 0f 1e fa          	endbr64 
+    24d4:	f2 ff 25 8d 4a 00 00 	bnd jmpq *0x4a8d(%rip)        # 6f68 <std::ios_base::Init::Init()@GLIBCXX_3.4>
+    24db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024e0 <std::ostream& std::ostream::_M_insert<double>(double)@plt>:
+    24e0:	f3 0f 1e fa          	endbr64 
+    24e4:	f2 ff 25 85 4a 00 00 	bnd jmpq *0x4a85(%rip)        # 6f70 <std::ostream& std::ostream::_M_insert<double>(double)@GLIBCXX_3.4.9>
+    24eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000024f0 <memmove@plt>:
+    24f0:	f3 0f 1e fa          	endbr64 
+    24f4:	f2 ff 25 7d 4a 00 00 	bnd jmpq *0x4a7d(%rip)        # 6f78 <memmove@GLIBC_2.2.5>
+    24fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002500 <__cxa_end_catch@plt>:
+    2500:	f3 0f 1e fa          	endbr64 
+    2504:	f2 ff 25 75 4a 00 00 	bnd jmpq *0x4a75(%rip)        # 6f80 <__cxa_end_catch@CXXABI_1.3>
+    250b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002510 <boost::fibers::context::terminate()@plt>:
+    2510:	f3 0f 1e fa          	endbr64 
+    2514:	f2 ff 25 6d 4a 00 00 	bnd jmpq *0x4a6d(%rip)        # 6f88 <boost::fibers::context::terminate()>
+    251b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002520 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>:
+    2520:	f3 0f 1e fa          	endbr64 
+    2524:	f2 ff 25 65 4a 00 00 	bnd jmpq *0x4a65(%rip)        # 6f90 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@GLIBCXX_3.4>
+    252b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002530 <std::thread::join()@plt>:
+    2530:	f3 0f 1e fa          	endbr64 
+    2534:	f2 ff 25 5d 4a 00 00 	bnd jmpq *0x4a5d(%rip)        # 6f98 <std::thread::join()@GLIBCXX_3.4.11>
+    253b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002540 <__cxa_throw@plt>:
+    2540:	f3 0f 1e fa          	endbr64 
+    2544:	f2 ff 25 55 4a 00 00 	bnd jmpq *0x4a55(%rip)        # 6fa0 <__cxa_throw@CXXABI_1.3>
+    254b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002550 <std::ostream::operator<<(int)@plt>:
+    2550:	f3 0f 1e fa          	endbr64 
+    2554:	f2 ff 25 4d 4a 00 00 	bnd jmpq *0x4a4d(%rip)        # 6fa8 <std::ostream::operator<<(int)@GLIBCXX_3.4>
+    255b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002560 <_Unwind_Resume@plt>:
+    2560:	f3 0f 1e fa          	endbr64 
+    2564:	f2 ff 25 45 4a 00 00 	bnd jmpq *0x4a45(%rip)        # 6fb0 <_Unwind_Resume@GCC_3.0>
+    256b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002570 <boost::context::stack_traits::default_size()@plt>:
+    2570:	f3 0f 1e fa          	endbr64 
+    2574:	f2 ff 25 3d 4a 00 00 	bnd jmpq *0x4a3d(%rip)        # 6fb8 <boost::context::stack_traits::default_size()>
+    257b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .text:
+
+0000000000002580 <boost::context::detail::fiber_unwind(boost::context::detail::transfer_t)>:
+    2580:	f3 0f 1e fa          	endbr64 
+    2584:	53                   	push   %rbx
+    2585:	48 89 fb             	mov    %rdi,%rbx
+    2588:	bf 10 00 00 00       	mov    $0x10,%edi
+    258d:	e8 de fd ff ff       	callq  2370 <__cxa_allocate_exception@plt>
+    2592:	48 89 18             	mov    %rbx,(%rax)
+    2595:	c6 40 08 00          	movb   $0x0,0x8(%rax)
+    2599:	48 89 c7             	mov    %rax,%rdi
+    259c:	48 8d 15 fd 09 00 00 	lea    0x9fd(%rip),%rdx        # 2fa0 <boost::context::detail::forced_unwind::~forced_unwind()>
+    25a3:	48 8d 35 2e 46 00 00 	lea    0x462e(%rip),%rsi        # 6bd8 <vtable for __cxxabiv1::__class_type_info@CXXABI_1.3>
+    25aa:	e8 91 ff ff ff       	callq  2540 <__cxa_throw@plt>
+
+00000000000025af <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]>:
+    25af:	48 8b 7c 24 20       	mov    0x20(%rsp),%rdi
+    25b4:	48 85 ff             	test   %rdi,%rdi
+    25b7:	74 45                	je     25fe <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]+0x4f>
+    25b9:	48 8d 15 c0 ff ff ff 	lea    -0x40(%rip),%rdx        # 2580 <boost::context::detail::fiber_unwind(boost::context::detail::transfer_t)>
+    25c0:	31 f6                	xor    %esi,%esi
+    25c2:	48 c7 44 24 20 00 00 	movq   $0x0,0x20(%rsp)
+    25c9:	00 00 
+    25cb:	c5 f8 77             	vzeroupper 
+    25ce:	e8 cd fd ff ff       	callq  23a0 <ontop_fcontext@plt>
+    25d3:	48 89 df             	mov    %rbx,%rdi
+    25d6:	4c 89 e0             	mov    %r12,%rax
+    25d9:	48 ff c8             	dec    %rax
+    25dc:	75 25                	jne    2603 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]+0x54>
+    25de:	e8 5d fd ff ff       	callq  2340 <__cxa_begin_catch@plt>
+    25e3:	c6 40 08 01          	movb   $0x1,0x8(%rax)
+    25e7:	48 8b 38             	mov    (%rax),%rdi
+    25ea:	48 89 7c 24 08       	mov    %rdi,0x8(%rsp)
+    25ef:	e8 0c ff ff ff       	callq  2500 <__cxa_end_catch@plt>
+    25f4:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    25f9:	e9 3a 03 00 00       	jmpq   2938 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0x68>
+    25fe:	c5 f8 77             	vzeroupper 
+    2601:	eb d0                	jmp    25d3 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]+0x24>
+    2603:	e8 18 fd ff ff       	callq  2320 <std::terminate()@plt>
+
+0000000000002608 <nucleo() [clone .cold]>:
+    2608:	48 83 7c 24 08 00    	cmpq   $0x0,0x8(%rsp)
+    260e:	74 23                	je     2633 <nucleo() [clone .cold]+0x2b>
+    2610:	c5 f8 77             	vzeroupper 
+    2613:	e9 d2 04 00 00       	jmpq   2aea <nucleo()+0x8a>
+    2618:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    261d:	48 85 ff             	test   %rdi,%rdi
+    2620:	74 19                	je     263b <nucleo() [clone .cold]+0x33>
+    2622:	48 8b 07             	mov    (%rdi),%rax
+    2625:	c5 f8 77             	vzeroupper 
+    2628:	ff 50 08             	callq  *0x8(%rax)
+    262b:	48 89 ef             	mov    %rbp,%rdi
+    262e:	e8 2d ff ff ff       	callq  2560 <_Unwind_Resume@plt>
+    2633:	c5 f8 77             	vzeroupper 
+    2636:	e8 25 ff ff ff       	callq  2560 <_Unwind_Resume@plt>
+    263b:	c5 f8 77             	vzeroupper 
+    263e:	eb eb                	jmp    262b <nucleo() [clone .cold]+0x23>
+
+0000000000002640 <usuario() [clone .cold]>:
+    2640:	bf 08 00 00 00       	mov    $0x8,%edi
+    2645:	e8 26 fd ff ff       	callq  2370 <__cxa_allocate_exception@plt>
+    264a:	48 89 c7             	mov    %rax,%rdi
+    264d:	48 8d 05 3c 45 00 00 	lea    0x453c(%rip),%rax        # 6b90 <vtable for std::bad_alloc@@GLIBCXX_3.4+0x10>
+    2654:	48 89 07             	mov    %rax,(%rdi)
+    2657:	48 8b 15 72 49 00 00 	mov    0x4972(%rip),%rdx        # 6fd0 <std::bad_alloc::~bad_alloc()@GLIBCXX_3.4>
+    265e:	48 8d 35 5b 45 00 00 	lea    0x455b(%rip),%rsi        # 6bc0 <typeinfo for std::bad_alloc@@GLIBCXX_3.4>
+    2665:	e8 d6 fe ff ff       	callq  2540 <__cxa_throw@plt>
+    266a:	48 89 ef             	mov    %rbp,%rdi
+    266d:	c5 f8 77             	vzeroupper 
+    2670:	e8 6b fd ff ff       	callq  23e0 <boost::fibers::context::~context()@plt>
+    2675:	4c 89 e7             	mov    %r12,%rdi
+    2678:	e8 e3 fe ff ff       	callq  2560 <_Unwind_Resume@plt>
+    267d:	48 83 3c 24 00       	cmpq   $0x0,(%rsp)
+    2682:	74 08                	je     268c <usuario() [clone .cold]+0x4c>
+    2684:	c5 f8 77             	vzeroupper 
+    2687:	e9 dc 06 00 00       	jmpq   2d68 <usuario()+0x208>
+    268c:	c5 f8 77             	vzeroupper 
+    268f:	e8 cc fe ff ff       	callq  2560 <_Unwind_Resume@plt>
+    2694:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    269b:	00 00 00 
+    269e:	66 90                	xchg   %ax,%ax
+
+00000000000026a0 <main>:
+    26a0:	f3 0f 1e fa          	endbr64 
+    26a4:	48 83 ec 08          	sub    $0x8,%rsp
+    26a8:	48 8d 35 cd 1f 00 00 	lea    0x1fcd(%rip),%rsi        # 467c <_IO_stdin_used+0x67c>
+    26af:	48 8d 3d aa 04 00 00 	lea    0x4aa(%rip),%rdi        # 2b60 <usuario()>
+    26b6:	e8 55 0a 00 00       	callq  3110 <void test<void ()>(void (&)(), char const*)>
+    26bb:	48 8d 35 ce 1f 00 00 	lea    0x1fce(%rip),%rsi        # 4690 <_IO_stdin_used+0x690>
+    26c2:	48 8d 3d 97 03 00 00 	lea    0x397(%rip),%rdi        # 2a60 <nucleo()>
+    26c9:	e8 42 0a 00 00       	callq  3110 <void test<void ()>(void (&)(), char const*)>
+    26ce:	48 8d 35 cf 1f 00 00 	lea    0x1fcf(%rip),%rsi        # 46a4 <_IO_stdin_used+0x6a4>
+    26d5:	48 8d 3d 24 08 00 00 	lea    0x824(%rip),%rdi        # 2f00 <proceso()>
+    26dc:	e8 2f 0a 00 00       	callq  3110 <void test<void ()>(void (&)(), char const*)>
+    26e1:	31 c0                	xor    %eax,%eax
+    26e3:	48 83 c4 08          	add    $0x8,%rsp
+    26e7:	c3                   	retq   
+    26e8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    26ef:	00 
+
+00000000000026f0 <_GLOBAL__sub_I__Z7docheckiPKci>:
+    26f0:	f3 0f 1e fa          	endbr64 
+    26f4:	48 83 ec 08          	sub    $0x8,%rsp
+    26f8:	48 8d 3d 72 4b 00 00 	lea    0x4b72(%rip),%rdi        # 7271 <std::__ioinit>
+    26ff:	e8 cc fd ff ff       	callq  24d0 <std::ios_base::Init::Init()@plt>
+    2704:	48 8b 3d ed 48 00 00 	mov    0x48ed(%rip),%rdi        # 6ff8 <std::ios_base::Init::~Init()@GLIBCXX_3.4>
+    270b:	48 8d 15 f6 48 00 00 	lea    0x48f6(%rip),%rdx        # 7008 <__dso_handle>
+    2712:	48 8d 35 58 4b 00 00 	lea    0x4b58(%rip),%rsi        # 7271 <std::__ioinit>
+    2719:	48 83 c4 08          	add    $0x8,%rsp
+    271d:	e9 9e fc ff ff       	jmpq   23c0 <__cxa_atexit@plt>
+    2722:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    2729:	00 00 00 
+    272c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002730 <_start>:
+    2730:	f3 0f 1e fa          	endbr64 
+    2734:	31 ed                	xor    %ebp,%ebp
+    2736:	49 89 d1             	mov    %rdx,%r9
+    2739:	5e                   	pop    %rsi
+    273a:	48 89 e2             	mov    %rsp,%rdx
+    273d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    2741:	50                   	push   %rax
+    2742:	54                   	push   %rsp
+    2743:	4c 8d 05 06 10 00 00 	lea    0x1006(%rip),%r8        # 3750 <__libc_csu_fini>
+    274a:	48 8d 0d 8f 0f 00 00 	lea    0xf8f(%rip),%rcx        # 36e0 <__libc_csu_init>
+    2751:	48 8d 3d 48 ff ff ff 	lea    -0xb8(%rip),%rdi        # 26a0 <main>
+    2758:	ff 15 82 48 00 00    	callq  *0x4882(%rip)        # 6fe0 <__libc_start_main@GLIBC_2.2.5>
+    275e:	f4                   	hlt    
+    275f:	90                   	nop
+
+0000000000002760 <deregister_tm_clones>:
+    2760:	48 8d 3d b9 48 00 00 	lea    0x48b9(%rip),%rdi        # 7020 <__TMC_END__>
+    2767:	48 8d 05 b2 48 00 00 	lea    0x48b2(%rip),%rax        # 7020 <__TMC_END__>
+    276e:	48 39 f8             	cmp    %rdi,%rax
+    2771:	74 15                	je     2788 <deregister_tm_clones+0x28>
+    2773:	48 8b 05 5e 48 00 00 	mov    0x485e(%rip),%rax        # 6fd8 <_ITM_deregisterTMCloneTable>
+    277a:	48 85 c0             	test   %rax,%rax
+    277d:	74 09                	je     2788 <deregister_tm_clones+0x28>
+    277f:	ff e0                	jmpq   *%rax
+    2781:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2788:	c3                   	retq   
+    2789:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002790 <register_tm_clones>:
+    2790:	48 8d 3d 89 48 00 00 	lea    0x4889(%rip),%rdi        # 7020 <__TMC_END__>
+    2797:	48 8d 35 82 48 00 00 	lea    0x4882(%rip),%rsi        # 7020 <__TMC_END__>
+    279e:	48 29 fe             	sub    %rdi,%rsi
+    27a1:	48 89 f0             	mov    %rsi,%rax
+    27a4:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    27a8:	48 c1 f8 03          	sar    $0x3,%rax
+    27ac:	48 01 c6             	add    %rax,%rsi
+    27af:	48 d1 fe             	sar    %rsi
+    27b2:	74 14                	je     27c8 <register_tm_clones+0x38>
+    27b4:	48 8b 05 35 48 00 00 	mov    0x4835(%rip),%rax        # 6ff0 <_ITM_registerTMCloneTable>
+    27bb:	48 85 c0             	test   %rax,%rax
+    27be:	74 08                	je     27c8 <register_tm_clones+0x38>
+    27c0:	ff e0                	jmpq   *%rax
+    27c2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    27c8:	c3                   	retq   
+    27c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000027d0 <__do_global_dtors_aux>:
+    27d0:	f3 0f 1e fa          	endbr64 
+    27d4:	80 3d 95 4a 00 00 00 	cmpb   $0x0,0x4a95(%rip)        # 7270 <completed.8061>
+    27db:	75 2b                	jne    2808 <__do_global_dtors_aux+0x38>
+    27dd:	55                   	push   %rbp
+    27de:	48 83 3d da 47 00 00 	cmpq   $0x0,0x47da(%rip)        # 6fc0 <__cxa_finalize@GLIBC_2.2.5>
+    27e5:	00 
+    27e6:	48 89 e5             	mov    %rsp,%rbp
+    27e9:	74 0c                	je     27f7 <__do_global_dtors_aux+0x27>
+    27eb:	48 8b 3d 16 48 00 00 	mov    0x4816(%rip),%rdi        # 7008 <__dso_handle>
+    27f2:	e8 d9 fa ff ff       	callq  22d0 <__cxa_finalize@plt>
+    27f7:	e8 64 ff ff ff       	callq  2760 <deregister_tm_clones>
+    27fc:	c6 05 6d 4a 00 00 01 	movb   $0x1,0x4a6d(%rip)        # 7270 <completed.8061>
+    2803:	5d                   	pop    %rbp
+    2804:	c3                   	retq   
+    2805:	0f 1f 00             	nopl   (%rax)
+    2808:	c3                   	retq   
+    2809:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002810 <frame_dummy>:
+    2810:	f3 0f 1e fa          	endbr64 
+    2814:	e9 77 ff ff ff       	jmpq   2790 <register_tm_clones>
+    2819:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002820 <std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >::_M_run()>:
+    2820:	f3 0f 1e fa          	endbr64 
+    2824:	c3                   	retq   
+    2825:	90                   	nop
+    2826:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    282d:	00 00 00 
+
+0000000000002830 <boost::fibers::worker_context<usuario()::{lambda()#1}>::~worker_context()>:
+    2830:	f3 0f 1e fa          	endbr64 
+    2834:	48 8d 05 1d 43 00 00 	lea    0x431d(%rip),%rax        # 6b58 <vtable for boost::fibers::worker_context<usuario()::{lambda()#1}>+0x10>
+    283b:	48 89 07             	mov    %rax,(%rdi)
+    283e:	e9 9d fb ff ff       	jmpq   23e0 <boost::fibers::context::~context()@plt>
+    2843:	90                   	nop
+    2844:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    284b:	00 00 00 00 
+    284f:	90                   	nop
+
+0000000000002850 <boost::fibers::worker_context<usuario()::{lambda()#1}>::run_(boost::context::fiber&&)>:
+    2850:	f3 0f 1e fa          	endbr64 
+    2854:	41 54                	push   %r12
+    2856:	49 89 fc             	mov    %rdi,%r12
+    2859:	48 83 ec 10          	sub    $0x10,%rsp
+    285d:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2864:	00 00 
+    2866:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    286b:	31 c0                	xor    %eax,%eax
+    286d:	e8 9e fc ff ff       	callq  2510 <boost::fibers::context::terminate()@plt>
+    2872:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2877:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    287e:	00 00 
+    2880:	75 0a                	jne    288c <boost::fibers::worker_context<usuario()::{lambda()#1}>::run_(boost::context::fiber&&)+0x3c>
+    2882:	48 83 c4 10          	add    $0x10,%rsp
+    2886:	4c 89 e0             	mov    %r12,%rax
+    2889:	41 5c                	pop    %r12
+    288b:	c3                   	retq   
+    288c:	e8 8f fb ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2891:	90                   	nop
+    2892:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2899:	00 00 00 00 
+    289d:	0f 1f 00             	nopl   (%rax)
+
+00000000000028a0 <boost::fibers::worker_context<usuario()::{lambda()#1}>::~worker_context()>:
+    28a0:	f3 0f 1e fa          	endbr64 
+    28a4:	48 8d 05 ad 42 00 00 	lea    0x42ad(%rip),%rax        # 6b58 <vtable for boost::fibers::worker_context<usuario()::{lambda()#1}>+0x10>
+    28ab:	55                   	push   %rbp
+    28ac:	48 89 07             	mov    %rax,(%rdi)
+    28af:	48 89 fd             	mov    %rdi,%rbp
+    28b2:	e8 29 fb ff ff       	callq  23e0 <boost::fibers::context::~context()@plt>
+    28b7:	48 89 ef             	mov    %rbp,%rdi
+    28ba:	be f0 00 00 00       	mov    $0xf0,%esi
+    28bf:	5d                   	pop    %rbp
+    28c0:	e9 4b fb ff ff       	jmpq   2410 <operator delete(void*, unsigned long)@plt>
+    28c5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    28cc:	00 00 00 00 
+
+00000000000028d0 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)>:
+    28d0:	f3 0f 1e fa          	endbr64 
+    28d4:	41 54                	push   %r12
+    28d6:	55                   	push   %rbp
+    28d7:	53                   	push   %rbx
+    28d8:	48 83 ec 30          	sub    $0x30,%rsp
+    28dc:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    28e3:	00 00 
+    28e5:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    28ea:	31 c0                	xor    %eax,%eax
+    28ec:	48 85 ff             	test   %rdi,%rdi
+    28ef:	0f 84 be 00 00 00    	je     29b3 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0xe3>
+    28f5:	48 89 f5             	mov    %rsi,%rbp
+    28f8:	48 85 f6             	test   %rsi,%rsi
+    28fb:	74 78                	je     2975 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0xa5>
+    28fd:	31 f6                	xor    %esi,%esi
+    28ff:	e8 ac fa ff ff       	callq  23b0 <jump_fcontext@plt>
+    2904:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+    2909:	48 8b 75 20          	mov    0x20(%rbp),%rsi
+    290d:	48 8b 45 18          	mov    0x18(%rbp),%rax
+    2911:	48 03 75 28          	add    0x28(%rbp),%rsi
+    2915:	a8 01                	test   $0x1,%al
+    2917:	75 52                	jne    296b <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0x9b>
+    2919:	48 8d 7c 24 18       	lea    0x18(%rsp),%rdi
+    291e:	48 8d 54 24 20       	lea    0x20(%rsp),%rdx
+    2923:	ff d0                	callq  *%rax
+    2925:	48 8b 7c 24 20       	mov    0x20(%rsp),%rdi
+    292a:	48 85 ff             	test   %rdi,%rdi
+    292d:	0f 85 9f 00 00 00    	jne    29d2 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0x102>
+    2933:	48 8b 7c 24 18       	mov    0x18(%rsp),%rdi
+    2938:	48 85 ff             	test   %rdi,%rdi
+    293b:	74 57                	je     2994 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0xc4>
+    293d:	48 89 ee             	mov    %rbp,%rsi
+    2940:	48 8d 15 c9 01 00 00 	lea    0x1c9(%rip),%rdx        # 2b10 <boost::context::detail::transfer_t boost::context::detail::fiber_exit<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> >)>
+    2947:	e8 54 fa ff ff       	callq  23a0 <ontop_fcontext@plt>
+    294c:	48 8d 0d 25 17 00 00 	lea    0x1725(%rip),%rcx        # 4078 <_IO_stdin_used+0x78>
+    2953:	ba 5a 00 00 00       	mov    $0x5a,%edx
+    2958:	48 8d 35 c1 18 00 00 	lea    0x18c1(%rip),%rsi        # 4220 <_IO_stdin_used+0x220>
+    295f:	48 8d 3d ea 18 00 00 	lea    0x18ea(%rip),%rdi        # 4250 <_IO_stdin_used+0x250>
+    2966:	e8 15 fa ff ff       	callq  2380 <__assert_fail@plt>
+    296b:	48 8b 16             	mov    (%rsi),%rdx
+    296e:	48 8b 44 02 ff       	mov    -0x1(%rdx,%rax,1),%rax
+    2973:	eb a4                	jmp    2919 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0x49>
+    2975:	48 8d 0d fc 16 00 00 	lea    0x16fc(%rip),%rcx        # 4078 <_IO_stdin_used+0x78>
+    297c:	ba 4b 00 00 00       	mov    $0x4b,%edx
+    2981:	48 8d 35 98 18 00 00 	lea    0x1898(%rip),%rsi        # 4220 <_IO_stdin_used+0x220>
+    2988:	48 8d 3d b8 1c 00 00 	lea    0x1cb8(%rip),%rdi        # 4647 <_IO_stdin_used+0x647>
+    298f:	e8 ec f9 ff ff       	callq  2380 <__assert_fail@plt>
+    2994:	48 8d 0d dd 16 00 00 	lea    0x16dd(%rip),%rcx        # 4078 <_IO_stdin_used+0x78>
+    299b:	ba 57 00 00 00       	mov    $0x57,%edx
+    29a0:	48 8d 35 79 18 00 00 	lea    0x1879(%rip),%rsi        # 4220 <_IO_stdin_used+0x220>
+    29a7:	48 8d 3d 87 1c 00 00 	lea    0x1c87(%rip),%rdi        # 4635 <_IO_stdin_used+0x635>
+    29ae:	e8 cd f9 ff ff       	callq  2380 <__assert_fail@plt>
+    29b3:	48 8d 0d be 16 00 00 	lea    0x16be(%rip),%rcx        # 4078 <_IO_stdin_used+0x78>
+    29ba:	ba 4a 00 00 00       	mov    $0x4a,%edx
+    29bf:	48 8d 35 5a 18 00 00 	lea    0x185a(%rip),%rsi        # 4220 <_IO_stdin_used+0x220>
+    29c6:	48 8d 3d 68 1c 00 00 	lea    0x1c68(%rip),%rdi        # 4635 <_IO_stdin_used+0x635>
+    29cd:	e8 ae f9 ff ff       	callq  2380 <__assert_fail@plt>
+    29d2:	31 f6                	xor    %esi,%esi
+    29d4:	48 8d 15 a5 fb ff ff 	lea    -0x45b(%rip),%rdx        # 2580 <boost::context::detail::fiber_unwind(boost::context::detail::transfer_t)>
+    29db:	48 c7 44 24 20 00 00 	movq   $0x0,0x20(%rsp)
+    29e2:	00 00 
+    29e4:	e8 b7 f9 ff ff       	callq  23a0 <ontop_fcontext@plt>
+    29e9:	e9 45 ff ff ff       	jmpq   2933 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)+0x63>
+    29ee:	f3 0f 1e fa          	endbr64 
+    29f2:	48 89 c3             	mov    %rax,%rbx
+    29f5:	49 89 d4             	mov    %rdx,%r12
+    29f8:	e9 b2 fb ff ff       	jmpq   25af <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]>
+    29fd:	f3 0f 1e fa          	endbr64 
+    2a01:	48 89 c7             	mov    %rax,%rdi
+    2a04:	48 89 d0             	mov    %rdx,%rax
+    2a07:	c5 f8 77             	vzeroupper 
+    2a0a:	e9 ca fb ff ff       	jmpq   25d9 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t) [clone .cold]+0x2a>
+    2a0f:	90                   	nop
+
+0000000000002a10 <std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >::~_State_impl()>:
+    2a10:	f3 0f 1e fa          	endbr64 
+    2a14:	48 8d 05 15 41 00 00 	lea    0x4115(%rip),%rax        # 6b30 <vtable for std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >+0x10>
+    2a1b:	48 89 07             	mov    %rax,(%rdi)
+    2a1e:	e9 3d f9 ff ff       	jmpq   2360 <std::thread::_State::~_State()@plt>
+    2a23:	90                   	nop
+    2a24:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2a2b:	00 00 00 00 
+    2a2f:	90                   	nop
+
+0000000000002a30 <std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >::~_State_impl()>:
+    2a30:	f3 0f 1e fa          	endbr64 
+    2a34:	48 8d 05 f5 40 00 00 	lea    0x40f5(%rip),%rax        # 6b30 <vtable for std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >+0x10>
+    2a3b:	55                   	push   %rbp
+    2a3c:	48 89 07             	mov    %rax,(%rdi)
+    2a3f:	48 89 fd             	mov    %rdi,%rbp
+    2a42:	e8 19 f9 ff ff       	callq  2360 <std::thread::_State::~_State()@plt>
+    2a47:	48 89 ef             	mov    %rbp,%rdi
+    2a4a:	be 10 00 00 00       	mov    $0x10,%esi
+    2a4f:	5d                   	pop    %rbp
+    2a50:	e9 bb f9 ff ff       	jmpq   2410 <operator delete(void*, unsigned long)@plt>
+    2a55:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2a5c:	00 00 00 00 
+
+0000000000002a60 <nucleo()>:
+    2a60:	f3 0f 1e fa          	endbr64 
+    2a64:	55                   	push   %rbp
+    2a65:	bf 10 00 00 00       	mov    $0x10,%edi
+    2a6a:	48 83 ec 20          	sub    $0x20,%rsp
+    2a6e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2a75:	00 00 
+    2a77:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2a7c:	31 c0                	xor    %eax,%eax
+    2a7e:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+    2a85:	00 00 
+    2a87:	e8 64 f9 ff ff       	callq  23f0 <operator new(unsigned long)@plt>
+    2a8c:	48 8d 0d 9d 40 00 00 	lea    0x409d(%rip),%rcx        # 6b30 <vtable for std::thread::_State_impl<std::thread::_Invoker<std::tuple<nucleo()::{lambda()#1}> > >+0x10>
+    2a93:	48 89 08             	mov    %rcx,(%rax)
+    2a96:	48 8d 6c 24 08       	lea    0x8(%rsp),%rbp
+    2a9b:	48 8b 15 26 45 00 00 	mov    0x4526(%rip),%rdx        # 6fc8 <pthread_create@GLIBC_2.2.5>
+    2aa2:	48 8d 74 24 10       	lea    0x10(%rsp),%rsi
+    2aa7:	48 89 ef             	mov    %rbp,%rdi
+    2aaa:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    2aaf:	e8 1c f9 ff ff       	callq  23d0 <std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)())@plt>
+    2ab4:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    2ab9:	48 85 ff             	test   %rdi,%rdi
+    2abc:	74 06                	je     2ac4 <nucleo()+0x64>
+    2abe:	48 8b 07             	mov    (%rdi),%rax
+    2ac1:	ff 50 08             	callq  *0x8(%rax)
+    2ac4:	48 89 ef             	mov    %rbp,%rdi
+    2ac7:	e8 64 fa ff ff       	callq  2530 <std::thread::join()@plt>
+    2acc:	48 83 7c 24 08 00    	cmpq   $0x0,0x8(%rsp)
+    2ad2:	75 16                	jne    2aea <nucleo()+0x8a>
+    2ad4:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+    2ad9:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2ae0:	00 00 
+    2ae2:	75 0b                	jne    2aef <nucleo()+0x8f>
+    2ae4:	48 83 c4 20          	add    $0x20,%rsp
+    2ae8:	5d                   	pop    %rbp
+    2ae9:	c3                   	retq   
+    2aea:	e8 31 f8 ff ff       	callq  2320 <std::terminate()@plt>
+    2aef:	e8 2c f9 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2af4:	f3 0f 1e fa          	endbr64 
+    2af8:	48 89 c7             	mov    %rax,%rdi
+    2afb:	e9 08 fb ff ff       	jmpq   2608 <nucleo() [clone .cold]>
+    2b00:	f3 0f 1e fa          	endbr64 
+    2b04:	48 89 c5             	mov    %rax,%rbp
+    2b07:	e9 0c fb ff ff       	jmpq   2618 <nucleo() [clone .cold]+0x10>
+    2b0c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002b10 <boost::context::detail::transfer_t boost::context::detail::fiber_exit<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> >)>:
+    2b10:	f3 0f 1e fa          	endbr64 
+    2b14:	48 83 ec 08          	sub    $0x8,%rsp
+    2b18:	48 8b 7e 08          	mov    0x8(%rsi),%rdi
+    2b1c:	48 8b 06             	mov    (%rsi),%rax
+    2b1f:	48 85 ff             	test   %rdi,%rdi
+    2b22:	74 11                	je     2b35 <boost::context::detail::transfer_t boost::context::detail::fiber_exit<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> >)+0x25>
+    2b24:	48 29 c7             	sub    %rax,%rdi
+    2b27:	e8 34 f9 ff ff       	callq  2460 <free@plt>
+    2b2c:	31 c0                	xor    %eax,%eax
+    2b2e:	31 d2                	xor    %edx,%edx
+    2b30:	48 83 c4 08          	add    $0x8,%rsp
+    2b34:	c3                   	retq   
+    2b35:	48 8d 0d 3c 17 00 00 	lea    0x173c(%rip),%rcx        # 4278 <_IO_stdin_used+0x278>
+    2b3c:	ba 3b 00 00 00       	mov    $0x3b,%edx
+    2b41:	48 8d 35 c0 17 00 00 	lea    0x17c0(%rip),%rsi        # 4308 <_IO_stdin_used+0x308>
+    2b48:	48 8d 3d 07 1b 00 00 	lea    0x1b07(%rip),%rdi        # 4656 <_IO_stdin_used+0x656>
+    2b4f:	e8 2c f8 ff ff       	callq  2380 <__assert_fail@plt>
+    2b54:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2b5b:	00 00 00 00 
+    2b5f:	90                   	nop
+
+0000000000002b60 <usuario()>:
+    2b60:	f3 0f 1e fa          	endbr64 
+    2b64:	41 54                	push   %r12
+    2b66:	55                   	push   %rbp
+    2b67:	53                   	push   %rbx
+    2b68:	48 83 ec 10          	sub    $0x10,%rsp
+    2b6c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2b73:	00 00 
+    2b75:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    2b7a:	31 c0                	xor    %eax,%eax
+    2b7c:	e8 ef f9 ff ff       	callq  2570 <boost::context::stack_traits::default_size()@plt>
+    2b81:	48 89 c7             	mov    %rax,%rdi
+    2b84:	48 89 c3             	mov    %rax,%rbx
+    2b87:	e8 34 f9 ff ff       	callq  24c0 <malloc@plt>
+    2b8c:	48 85 c0             	test   %rax,%rax
+    2b8f:	0f 84 ab fa ff ff    	je     2640 <usuario() [clone .cold]>
+    2b95:	48 01 d8             	add    %rbx,%rax
+    2b98:	48 8d a8 10 ff ff ff 	lea    -0xf0(%rax),%rbp
+    2b9f:	40 30 ed             	xor    %bpl,%bpl
+    2ba2:	48 b9 ff ff ff ff ff 	movabs $0x7fffffffffffffff,%rcx
+    2ba9:	ff ff 7f 
+    2bac:	48 89 8d d8 00 00 00 	mov    %rcx,0xd8(%rbp)
+    2bb3:	48 8d 55 20          	lea    0x20(%rbp),%rdx
+    2bb7:	48 b9 08 00 00 00 01 	movabs $0x100000008,%rcx
+    2bbe:	00 00 00 
+    2bc1:	4c 8d a5 00 ff ff ff 	lea    -0x100(%rbp),%r12
+    2bc8:	48 89 55 20          	mov    %rdx,0x20(%rbp)
+    2bcc:	48 89 55 28          	mov    %rdx,0x28(%rbp)
+    2bd0:	48 89 8d e0 00 00 00 	mov    %rcx,0xe0(%rbp)
+    2bd7:	48 8d 55 58          	lea    0x58(%rbp),%rdx
+    2bdb:	48 8d 35 6e fc ff ff 	lea    -0x392(%rip),%rsi        # 2850 <boost::fibers::worker_context<usuario()::{lambda()#1}>::run_(boost::context::fiber&&)>
+    2be2:	48 8d 0d 6f 3f 00 00 	lea    0x3f6f(%rip),%rcx        # 6b58 <vtable for boost::fibers::worker_context<usuario()::{lambda()#1}>+0x10>
+    2be9:	48 89 55 68          	mov    %rdx,0x68(%rbp)
+    2bed:	48 89 55 70          	mov    %rdx,0x70(%rbp)
+    2bf1:	48 c7 45 08 01 00 00 	movq   $0x1,0x8(%rbp)
+    2bf8:	00 
+    2bf9:	48 c7 45 10 00 00 00 	movq   $0x0,0x10(%rbp)
+    2c00:	00 
+    2c01:	c7 45 18 01 00 00 00 	movl   $0x1,0x18(%rbp)
+    2c08:	c6 45 1c 00          	movb   $0x0,0x1c(%rbp)
+    2c0c:	48 c7 45 30 00 00 00 	movq   $0x0,0x30(%rbp)
+    2c13:	00 
+    2c14:	48 c7 45 38 00 00 00 	movq   $0x0,0x38(%rbp)
+    2c1b:	00 
+    2c1c:	48 c7 45 40 00 00 00 	movq   $0x0,0x40(%rbp)
+    2c23:	00 
+    2c24:	48 c7 45 48 00 00 00 	movq   $0x0,0x48(%rbp)
+    2c2b:	00 
+    2c2c:	c7 45 58 00 00 00 00 	movl   $0x0,0x58(%rbp)
+    2c33:	48 c7 45 60 00 00 00 	movq   $0x0,0x60(%rbp)
+    2c3a:	00 
+    2c3b:	48 c7 45 78 00 00 00 	movq   $0x0,0x78(%rbp)
+    2c42:	00 
+    2c43:	48 c7 85 80 00 00 00 	movq   $0x0,0x80(%rbp)
+    2c4a:	00 00 00 00 
+    2c4e:	48 c7 85 88 00 00 00 	movq   $0x0,0x88(%rbp)
+    2c55:	00 00 00 00 
+    2c59:	48 c7 85 90 00 00 00 	movq   $0x0,0x90(%rbp)
+    2c60:	00 00 00 00 
+    2c64:	48 c7 85 a0 00 00 00 	movq   $0x0,0xa0(%rbp)
+    2c6b:	00 00 00 00 
+    2c6f:	48 c7 85 a8 00 00 00 	movq   $0x0,0xa8(%rbp)
+    2c76:	00 00 00 00 
+    2c7a:	48 c7 85 b0 00 00 00 	movq   $0x0,0xb0(%rbp)
+    2c81:	00 00 00 00 
+    2c85:	48 c7 85 b8 00 00 00 	movq   $0x0,0xb8(%rbp)
+    2c8c:	00 00 00 00 
+    2c90:	48 c7 85 c0 00 00 00 	movq   $0x0,0xc0(%rbp)
+    2c97:	00 00 00 00 
+    2c9b:	48 c7 85 c8 00 00 00 	movq   $0x0,0xc8(%rbp)
+    2ca2:	00 00 00 00 
+    2ca6:	48 c7 85 d0 00 00 00 	movq   $0x0,0xd0(%rbp)
+    2cad:	00 00 00 00 
+    2cb1:	48 89 4d 00          	mov    %rcx,0x0(%rbp)
+    2cb5:	49 89 1c 24          	mov    %rbx,(%r12)
+    2cb9:	49 89 5c 24 10       	mov    %rbx,0x10(%r12)
+    2cbe:	49 89 74 24 18       	mov    %rsi,0x18(%r12)
+    2cc3:	49 89 44 24 08       	mov    %rax,0x8(%r12)
+    2cc8:	49 c7 44 24 20 00 00 	movq   $0x0,0x20(%r12)
+    2ccf:	00 00 
+    2cd1:	49 89 6c 24 28       	mov    %rbp,0x28(%r12)
+    2cd6:	49 8d 7c 24 c0       	lea    -0x40(%r12),%rdi
+    2cdb:	48 29 c3             	sub    %rax,%rbx
+    2cde:	48 8d 34 3b          	lea    (%rbx,%rdi,1),%rsi
+    2ce2:	48 8d 15 e7 fb ff ff 	lea    -0x419(%rip),%rdx        # 28d0 <void boost::context::detail::fiber_entry<boost::context::detail::fiber_record<boost::context::fiber, boost::context::basic_fixedsize_stack<boost::context::stack_traits>, std::_Bind<boost::context::fiber (boost::fibers::worker_context<usuario()::{lambda()#1}>::*(usuario()::{lambda()#1}*, std::_Placeholder<1>))(boost::context::fiber&&)> > >(boost::context::detail::transfer_t)>
+    2ce9:	e8 52 f7 ff ff       	callq  2440 <make_fcontext@plt>
+    2cee:	48 89 c7             	mov    %rax,%rdi
+    2cf1:	48 85 c0             	test   %rax,%rax
+    2cf4:	74 77                	je     2d6d <usuario()+0x20d>
+    2cf6:	4c 89 e6             	mov    %r12,%rsi
+    2cf9:	e8 b2 f6 ff ff       	callq  23b0 <jump_fcontext@plt>
+    2cfe:	48 8b bd d0 00 00 00 	mov    0xd0(%rbp),%rdi
+    2d05:	48 89 85 d0 00 00 00 	mov    %rax,0xd0(%rbp)
+    2d0c:	48 85 ff             	test   %rdi,%rdi
+    2d0f:	75 47                	jne    2d58 <usuario()+0x1f8>
+    2d11:	48 89 2c 24          	mov    %rbp,(%rsp)
+    2d15:	48 85 ed             	test   %rbp,%rbp
+    2d18:	74 05                	je     2d1f <usuario()+0x1bf>
+    2d1a:	f0 48 ff 45 08       	lock incq 0x8(%rbp)
+    2d1f:	48 89 e5             	mov    %rsp,%rbp
+    2d22:	48 89 ef             	mov    %rbp,%rdi
+    2d25:	e8 d6 f6 ff ff       	callq  2400 <boost::fibers::fiber::start_()@plt>
+    2d2a:	48 89 ef             	mov    %rbp,%rdi
+    2d2d:	e8 3e f7 ff ff       	callq  2470 <boost::fibers::fiber::join()@plt>
+    2d32:	48 83 3c 24 00       	cmpq   $0x0,(%rsp)
+    2d37:	75 2f                	jne    2d68 <usuario()+0x208>
+    2d39:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    2d3e:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    2d45:	00 00 
+    2d47:	75 43                	jne    2d8c <usuario()+0x22c>
+    2d49:	48 83 c4 10          	add    $0x10,%rsp
+    2d4d:	5b                   	pop    %rbx
+    2d4e:	5d                   	pop    %rbp
+    2d4f:	41 5c                	pop    %r12
+    2d51:	c3                   	retq   
+    2d52:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2d58:	31 f6                	xor    %esi,%esi
+    2d5a:	48 8d 15 1f f8 ff ff 	lea    -0x7e1(%rip),%rdx        # 2580 <boost::context::detail::fiber_unwind(boost::context::detail::transfer_t)>
+    2d61:	e8 3a f6 ff ff       	callq  23a0 <ontop_fcontext@plt>
+    2d66:	eb a9                	jmp    2d11 <usuario()+0x1b1>
+    2d68:	e8 b3 f5 ff ff       	callq  2320 <std::terminate()@plt>
+    2d6d:	48 8d 0d c4 15 00 00 	lea    0x15c4(%rip),%rcx        # 4338 <_IO_stdin_used+0x338>
+    2d74:	ba c2 00 00 00       	mov    $0xc2,%edx
+    2d79:	48 8d 35 a0 14 00 00 	lea    0x14a0(%rip),%rsi        # 4220 <_IO_stdin_used+0x220>
+    2d80:	48 8d 3d d7 18 00 00 	lea    0x18d7(%rip),%rdi        # 465e <_IO_stdin_used+0x65e>
+    2d87:	e8 f4 f5 ff ff       	callq  2380 <__assert_fail@plt>
+    2d8c:	e8 8f f6 ff ff       	callq  2420 <__stack_chk_fail@plt>
+    2d91:	f3 0f 1e fa          	endbr64 
+    2d95:	49 89 c4             	mov    %rax,%r12
+    2d98:	e9 cd f8 ff ff       	jmpq   266a <usuario() [clone .cold]+0x2a>
+    2d9d:	f3 0f 1e fa          	endbr64 
+    2da1:	48 89 c7             	mov    %rax,%rdi
+    2da4:	e9 d4 f8 ff ff       	jmpq   267d <usuario() [clone .cold]+0x3d>
+    2da9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000002db0 <docheck(int, char const*, int) [clone .part.0]>:
+    2db0:	41 54                	push   %r12
+    2db2:	41 89 f4             	mov    %esi,%r12d
+    2db5:	55                   	push   %rbp
+    2db6:	48 83 ec 08          	sub    $0x8,%rsp
+    2dba:	48 85 ff             	test   %rdi,%rdi
+    2dbd:	0f 84 12 01 00 00    	je     2ed5 <docheck(int, char const*, int) [clone .part.0]+0x125>
+    2dc3:	48 89 fd             	mov    %rdi,%rbp
+    2dc6:	e8 85 f5 ff ff       	callq  2350 <strlen@plt>
+    2dcb:	48 89 c2             	mov    %rax,%rdx
+    2dce:	48 89 ee             	mov    %rbp,%rsi
+    2dd1:	48 8d 3d 88 43 00 00 	lea    0x4388(%rip),%rdi        # 7160 <std::cerr@@GLIBCXX_3.4>
+    2dd8:	e8 53 f6 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2ddd:	ba 01 00 00 00       	mov    $0x1,%edx
+    2de2:	48 8d 35 b9 18 00 00 	lea    0x18b9(%rip),%rsi        # 46a2 <_IO_stdin_used+0x6a2>
+    2de9:	48 8d 3d 70 43 00 00 	lea    0x4370(%rip),%rdi        # 7160 <std::cerr@@GLIBCXX_3.4>
+    2df0:	e8 3b f6 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2df5:	44 89 e6             	mov    %r12d,%esi
+    2df8:	48 8d 3d 61 43 00 00 	lea    0x4361(%rip),%rdi        # 7160 <std::cerr@@GLIBCXX_3.4>
+    2dff:	e8 4c f7 ff ff       	callq  2550 <std::ostream::operator<<(int)@plt>
+    2e04:	48 89 c7             	mov    %rax,%rdi
+    2e07:	ba 02 00 00 00       	mov    $0x2,%edx
+    2e0c:	48 8d 35 bd 18 00 00 	lea    0x18bd(%rip),%rsi        # 46d0 <_IO_stdin_used+0x6d0>
+    2e13:	48 89 c5             	mov    %rax,%rbp
+    2e16:	e8 15 f6 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2e1b:	e8 d0 f4 ff ff       	callq  22f0 <__errno_location@plt>
+    2e20:	8b 38                	mov    (%rax),%edi
+    2e22:	e8 09 f5 ff ff       	callq  2330 <strerror@plt>
+    2e27:	49 89 c4             	mov    %rax,%r12
+    2e2a:	48 85 c0             	test   %rax,%rax
+    2e2d:	0f 84 87 00 00 00    	je     2eba <docheck(int, char const*, int) [clone .part.0]+0x10a>
+    2e33:	48 89 c7             	mov    %rax,%rdi
+    2e36:	e8 15 f5 ff ff       	callq  2350 <strlen@plt>
+    2e3b:	48 89 c2             	mov    %rax,%rdx
+    2e3e:	4c 89 e6             	mov    %r12,%rsi
+    2e41:	48 89 ef             	mov    %rbp,%rdi
+    2e44:	e8 e7 f5 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    2e49:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    2e4d:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    2e51:	4c 8b a4 05 f0 00 00 	mov    0xf0(%rbp,%rax,1),%r12
+    2e58:	00 
+    2e59:	4d 85 e4             	test   %r12,%r12
+    2e5c:	0f 84 95 00 00 00    	je     2ef7 <docheck(int, char const*, int) [clone .part.0]+0x147>
+    2e62:	41 80 7c 24 38 00    	cmpb   $0x0,0x38(%r12)
+    2e68:	74 20                	je     2e8a <docheck(int, char const*, int) [clone .part.0]+0xda>
+    2e6a:	41 0f be 74 24 43    	movsbl 0x43(%r12),%esi
+    2e70:	48 89 ef             	mov    %rbp,%rdi
+    2e73:	e8 68 f4 ff ff       	callq  22e0 <std::ostream::put(char)@plt>
+    2e78:	48 89 c7             	mov    %rax,%rdi
+    2e7b:	e8 10 f5 ff ff       	callq  2390 <std::ostream::flush()@plt>
+    2e80:	bf 01 00 00 00       	mov    $0x1,%edi
+    2e85:	e8 f6 f5 ff ff       	callq  2480 <exit@plt>
+    2e8a:	4c 89 e7             	mov    %r12,%rdi
+    2e8d:	e8 be f5 ff ff       	callq  2450 <std::ctype<char>::_M_widen_init() const@plt>
+    2e92:	49 8b 04 24          	mov    (%r12),%rax
+    2e96:	48 8d 15 f3 00 00 00 	lea    0xf3(%rip),%rdx        # 2f90 <std::ctype<char>::do_widen(char) const>
+    2e9d:	48 8b 40 30          	mov    0x30(%rax),%rax
+    2ea1:	be 0a 00 00 00       	mov    $0xa,%esi
+    2ea6:	48 39 d0             	cmp    %rdx,%rax
+    2ea9:	74 c5                	je     2e70 <docheck(int, char const*, int) [clone .part.0]+0xc0>
+    2eab:	be 0a 00 00 00       	mov    $0xa,%esi
+    2eb0:	4c 89 e7             	mov    %r12,%rdi
+    2eb3:	ff d0                	callq  *%rax
+    2eb5:	0f be f0             	movsbl %al,%esi
+    2eb8:	eb b6                	jmp    2e70 <docheck(int, char const*, int) [clone .part.0]+0xc0>
+    2eba:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    2ebe:	48 8b 78 e8          	mov    -0x18(%rax),%rdi
+    2ec2:	48 01 ef             	add    %rbp,%rdi
+    2ec5:	8b 77 20             	mov    0x20(%rdi),%esi
+    2ec8:	83 ce 01             	or     $0x1,%esi
+    2ecb:	e8 50 f6 ff ff       	callq  2520 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>
+    2ed0:	e9 74 ff ff ff       	jmpq   2e49 <docheck(int, char const*, int) [clone .part.0]+0x99>
+    2ed5:	48 8b 05 84 42 00 00 	mov    0x4284(%rip),%rax        # 7160 <std::cerr@@GLIBCXX_3.4>
+    2edc:	48 8d 3d 7d 42 00 00 	lea    0x427d(%rip),%rdi        # 7160 <std::cerr@@GLIBCXX_3.4>
+    2ee3:	48 03 78 e8          	add    -0x18(%rax),%rdi
+    2ee7:	8b 77 20             	mov    0x20(%rdi),%esi
+    2eea:	83 ce 01             	or     $0x1,%esi
+    2eed:	e8 2e f6 ff ff       	callq  2520 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>
+    2ef2:	e9 e6 fe ff ff       	jmpq   2ddd <docheck(int, char const*, int) [clone .part.0]+0x2d>
+    2ef7:	e8 b4 f5 ff ff       	callq  24b0 <std::__throw_bad_cast()@plt>
+    2efc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000002f00 <proceso()>:
+    2f00:	f3 0f 1e fa          	endbr64 
+    2f04:	48 83 ec 08          	sub    $0x8,%rsp
+    2f08:	e8 03 f4 ff ff       	callq  2310 <fork@plt>
+    2f0d:	83 f8 ff             	cmp    $0xffffffff,%eax
+    2f10:	74 31                	je     2f43 <proceso()+0x43>
+    2f12:	85 c0                	test   %eax,%eax
+    2f14:	75 22                	jne    2f38 <proceso()+0x38>
+    2f16:	48 8d 35 5a 17 00 00 	lea    0x175a(%rip),%rsi        # 4677 <_IO_stdin_used+0x677>
+    2f1d:	31 d2                	xor    %edx,%edx
+    2f1f:	48 89 f7             	mov    %rsi,%rdi
+    2f22:	e8 79 f5 ff ff       	callq  24a0 <execl@plt>
+    2f27:	83 f8 ff             	cmp    $0xffffffff,%eax
+    2f2a:	74 28                	je     2f54 <proceso()+0x54>
+    2f2c:	48 83 c4 08          	add    $0x8,%rsp
+    2f30:	c3                   	retq   
+    2f31:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    2f38:	31 ff                	xor    %edi,%edi
+    2f3a:	48 83 c4 08          	add    $0x8,%rsp
+    2f3e:	e9 4d f5 ff ff       	jmpq   2490 <wait@plt>
+    2f43:	be 32 00 00 00       	mov    $0x32,%esi
+    2f48:	48 8d 3d 1f 17 00 00 	lea    0x171f(%rip),%rdi        # 466e <_IO_stdin_used+0x66e>
+    2f4f:	e8 5c fe ff ff       	callq  2db0 <docheck(int, char const*, int) [clone .part.0]>
+    2f54:	be 34 00 00 00       	mov    $0x34,%esi
+    2f59:	48 8d 3d 0e 17 00 00 	lea    0x170e(%rip),%rdi        # 466e <_IO_stdin_used+0x66e>
+    2f60:	e8 4b fe ff ff       	callq  2db0 <docheck(int, char const*, int) [clone .part.0]>
+    2f65:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    2f6c:	00 00 00 00 
+
+0000000000002f70 <docheck(int, char const*, int)>:
+    2f70:	f3 0f 1e fa          	endbr64 
+    2f74:	89 f8                	mov    %edi,%eax
+    2f76:	83 ff ff             	cmp    $0xffffffff,%edi
+    2f79:	74 01                	je     2f7c <docheck(int, char const*, int)+0xc>
+    2f7b:	c3                   	retq   
+    2f7c:	50                   	push   %rax
+    2f7d:	48 89 f7             	mov    %rsi,%rdi
+    2f80:	89 d6                	mov    %edx,%esi
+    2f82:	e8 29 fe ff ff       	callq  2db0 <docheck(int, char const*, int) [clone .part.0]>
+    2f87:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    2f8e:	00 00 
+
+0000000000002f90 <std::ctype<char>::do_widen(char) const>:
+    2f90:	f3 0f 1e fa          	endbr64 
+    2f94:	89 f0                	mov    %esi,%eax
+    2f96:	c3                   	retq   
+    2f97:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    2f9e:	00 00 
+
+0000000000002fa0 <boost::context::detail::forced_unwind::~forced_unwind()>:
+    2fa0:	f3 0f 1e fa          	endbr64 
+    2fa4:	80 7f 08 00          	cmpb   $0x0,0x8(%rdi)
+    2fa8:	74 01                	je     2fab <boost::context::detail::forced_unwind::~forced_unwind()+0xb>
+    2faa:	c3                   	retq   
+    2fab:	50                   	push   %rax
+    2fac:	48 8d 0d 55 10 00 00 	lea    0x1055(%rip),%rcx        # 4008 <_IO_stdin_used+0x8>
+    2fb3:	ba 25 00 00 00       	mov    $0x25,%edx
+    2fb8:	48 8d 35 81 10 00 00 	lea    0x1081(%rip),%rsi        # 4040 <_IO_stdin_used+0x40>
+    2fbf:	48 8d 3d aa 10 00 00 	lea    0x10aa(%rip),%rdi        # 4070 <_IO_stdin_used+0x70>
+    2fc6:	e8 b5 f3 ff ff       	callq  2380 <__assert_fail@plt>
+    2fcb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000002fd0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)>:
+    2fd0:	f3 0f 1e fa          	endbr64 
+    2fd4:	48 8d 42 ff          	lea    -0x1(%rdx),%rax
+    2fd8:	49 89 c2             	mov    %rax,%r10
+    2fdb:	49 c1 ea 3f          	shr    $0x3f,%r10
+    2fdf:	49 01 c2             	add    %rax,%r10
+    2fe2:	49 89 d3             	mov    %rdx,%r11
+    2fe5:	49 d1 fa             	sar    %r10
+    2fe8:	41 83 e3 01          	and    $0x1,%r11d
+    2fec:	4c 39 d6             	cmp    %r10,%rsi
+    2fef:	0f 8d bb 00 00 00    	jge    30b0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0xe0>
+    2ff5:	49 89 f1             	mov    %rsi,%r9
+    2ff8:	eb 20                	jmp    301a <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x4a>
+    2ffa:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3000:	48 ff c8             	dec    %rax
+    3003:	4c 8d 04 c7          	lea    (%rdi,%rax,8),%r8
+    3007:	c4 c1 7b 10 08       	vmovsd (%r8),%xmm1
+    300c:	c4 a1 7b 11 0c cf    	vmovsd %xmm1,(%rdi,%r9,8)
+    3012:	49 39 c2             	cmp    %rax,%r10
+    3015:	7e 30                	jle    3047 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x77>
+    3017:	49 89 c1             	mov    %rax,%r9
+    301a:	49 8d 49 01          	lea    0x1(%r9),%rcx
+    301e:	48 8d 04 09          	lea    (%rcx,%rcx,1),%rax
+    3022:	48 c1 e1 04          	shl    $0x4,%rcx
+    3026:	c5 fb 10 4c 0f f8    	vmovsd -0x8(%rdi,%rcx,1),%xmm1
+    302c:	4c 8d 04 0f          	lea    (%rdi,%rcx,1),%r8
+    3030:	c4 c1 79 2f 08       	vcomisd (%r8),%xmm1
+    3035:	77 c9                	ja     3000 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x30>
+    3037:	c4 c1 7b 10 08       	vmovsd (%r8),%xmm1
+    303c:	c4 a1 7b 11 0c cf    	vmovsd %xmm1,(%rdi,%r9,8)
+    3042:	49 39 c2             	cmp    %rax,%r10
+    3045:	7f d0                	jg     3017 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x47>
+    3047:	4d 85 db             	test   %r11,%r11
+    304a:	74 74                	je     30c0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0xf0>
+    304c:	48 8d 50 ff          	lea    -0x1(%rax),%rdx
+    3050:	48 89 d1             	mov    %rdx,%rcx
+    3053:	48 c1 e9 3f          	shr    $0x3f,%rcx
+    3057:	48 01 d1             	add    %rdx,%rcx
+    305a:	48 d1 f9             	sar    %rcx
+    305d:	48 39 f0             	cmp    %rsi,%rax
+    3060:	7f 2f                	jg     3091 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0xc1>
+    3062:	eb 3c                	jmp    30a0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0xd0>
+    3064:	0f 1f 40 00          	nopl   0x0(%rax)
+    3068:	48 8d 51 ff          	lea    -0x1(%rcx),%rdx
+    306c:	48 89 d0             	mov    %rdx,%rax
+    306f:	48 c1 e8 3f          	shr    $0x3f,%rax
+    3073:	48 01 d0             	add    %rdx,%rax
+    3076:	c4 c1 7b 10 09       	vmovsd (%r9),%xmm1
+    307b:	48 d1 f8             	sar    %rax
+    307e:	48 89 c2             	mov    %rax,%rdx
+    3081:	c4 c1 7b 11 08       	vmovsd %xmm1,(%r8)
+    3086:	48 89 c8             	mov    %rcx,%rax
+    3089:	48 39 ce             	cmp    %rcx,%rsi
+    308c:	7d 72                	jge    3100 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x130>
+    308e:	48 89 d1             	mov    %rdx,%rcx
+    3091:	4c 8d 0c cf          	lea    (%rdi,%rcx,8),%r9
+    3095:	c4 c1 79 2f 01       	vcomisd (%r9),%xmm0
+    309a:	4c 8d 04 c7          	lea    (%rdi,%rax,8),%r8
+    309e:	77 c8                	ja     3068 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x98>
+    30a0:	c4 c1 7b 11 00       	vmovsd %xmm0,(%r8)
+    30a5:	c3                   	retq   
+    30a6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    30ad:	00 00 00 
+    30b0:	4c 8d 04 f7          	lea    (%rdi,%rsi,8),%r8
+    30b4:	4d 85 db             	test   %r11,%r11
+    30b7:	75 e7                	jne    30a0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0xd0>
+    30b9:	48 89 f0             	mov    %rsi,%rax
+    30bc:	0f 1f 40 00          	nopl   0x0(%rax)
+    30c0:	48 83 ea 02          	sub    $0x2,%rdx
+    30c4:	48 89 d1             	mov    %rdx,%rcx
+    30c7:	48 c1 e9 3f          	shr    $0x3f,%rcx
+    30cb:	48 01 ca             	add    %rcx,%rdx
+    30ce:	48 d1 fa             	sar    %rdx
+    30d1:	48 39 c2             	cmp    %rax,%rdx
+    30d4:	0f 85 72 ff ff ff    	jne    304c <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x7c>
+    30da:	48 8d 44 00 02       	lea    0x2(%rax,%rax,1),%rax
+    30df:	c5 fb 10 4c c7 f8    	vmovsd -0x8(%rdi,%rax,8),%xmm1
+    30e5:	48 ff c8             	dec    %rax
+    30e8:	c4 c1 7b 11 08       	vmovsd %xmm1,(%r8)
+    30ed:	4c 8d 04 c7          	lea    (%rdi,%rax,8),%r8
+    30f1:	e9 56 ff ff ff       	jmpq   304c <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)+0x7c>
+    30f6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    30fd:	00 00 00 
+    3100:	4d 89 c8             	mov    %r9,%r8
+    3103:	c4 c1 7b 11 00       	vmovsd %xmm0,(%r8)
+    3108:	c3                   	retq   
+    3109:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000003110 <void test<void ()>(void (&)(), char const*)>:
+    3110:	f3 0f 1e fa          	endbr64 
+    3114:	41 57                	push   %r15
+    3116:	41 56                	push   %r14
+    3118:	41 55                	push   %r13
+    311a:	41 54                	push   %r12
+    311c:	55                   	push   %rbp
+    311d:	53                   	push   %rbx
+    311e:	48 81 ec 00 10 00 00 	sub    $0x1000,%rsp
+    3125:	48 83 0c 24 00       	orq    $0x0,(%rsp)
+    312a:	48 81 ec 58 0f 00 00 	sub    $0xf58,%rsp
+    3131:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    3138:	00 00 
+    313a:	48 89 84 24 48 1f 00 	mov    %rax,0x1f48(%rsp)
+    3141:	00 
+    3142:	31 c0                	xor    %eax,%eax
+    3144:	4c 8d 64 24 10       	lea    0x10(%rsp),%r12
+    3149:	49 89 fd             	mov    %rdi,%r13
+    314c:	48 89 f5             	mov    %rsi,%rbp
+    314f:	4d 89 e7             	mov    %r12,%r15
+    3152:	48 8d 9c 24 48 1f 00 	lea    0x1f48(%rsp),%rbx
+    3159:	00 
+    315a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    3160:	e8 9b f1 ff ff       	callq  2300 <std::chrono::_V2::system_clock::now()@plt>
+    3165:	49 89 c6             	mov    %rax,%r14
+    3168:	41 ff d5             	callq  *%r13
+    316b:	e8 90 f1 ff ff       	callq  2300 <std::chrono::_V2::system_clock::now()@plt>
+    3170:	4c 29 f0             	sub    %r14,%rax
+    3173:	c5 d9 57 e4          	vxorpd %xmm4,%xmm4,%xmm4
+    3177:	c4 e1 db 2a c0       	vcvtsi2sd %rax,%xmm4,%xmm0
+    317c:	49 83 c7 08          	add    $0x8,%r15
+    3180:	c5 fb 5e 05 30 16 00 	vdivsd 0x1630(%rip),%xmm0,%xmm0        # 47b8 <typeinfo name for boost::fibers::worker_context<usuario()::{lambda()#1}>+0x38>
+    3187:	00 
+    3188:	c4 c1 7b 11 47 f8    	vmovsd %xmm0,-0x8(%r15)
+    318e:	4c 39 fb             	cmp    %r15,%rbx
+    3191:	75 cd                	jne    3160 <void test<void ()>(void (&)(), char const*)+0x50>
+    3193:	c5 fb 10 4c 24 10    	vmovsd 0x10(%rsp),%xmm1
+    3199:	be 12 00 00 00       	mov    $0x12,%esi
+    319e:	b8 38 1f 00 00       	mov    $0x1f38,%eax
+    31a3:	49 89 df             	mov    %rbx,%r15
+    31a6:	48 8d bc 24 a8 0f 00 	lea    0xfa8(%rsp),%rdi
+    31ad:	00 
+    31ae:	66 90                	xchg   %ax,%ax
+    31b0:	48 c1 f8 04          	sar    $0x4,%rax
+    31b4:	49 8d 04 c4          	lea    (%r12,%rax,8),%rax
+    31b8:	c4 c1 7b 10 54 24 08 	vmovsd 0x8(%r12),%xmm2
+    31bf:	c5 fb 10 00          	vmovsd (%rax),%xmm0
+    31c3:	c4 c1 7b 10 5f f8    	vmovsd -0x8(%r15),%xmm3
+    31c9:	c5 f9 2f c2          	vcomisd %xmm2,%xmm0
+    31cd:	49 8d 54 24 08       	lea    0x8(%r12),%rdx
+    31d2:	0f 86 90 03 00 00    	jbe    3568 <void test<void ()>(void (&)(), char const*)+0x458>
+    31d8:	c5 f9 2f d8          	vcomisd %xmm0,%xmm3
+    31dc:	0f 87 9a 03 00 00    	ja     357c <void test<void ()>(void (&)(), char const*)+0x46c>
+    31e2:	c5 f9 2f da          	vcomisd %xmm2,%xmm3
+    31e6:	0f 86 6c 04 00 00    	jbe    3658 <void test<void ()>(void (&)(), char const*)+0x548>
+    31ec:	c4 c1 7b 11 1c 24    	vmovsd %xmm3,(%r12)
+    31f2:	c5 f9 28 d1          	vmovapd %xmm1,%xmm2
+    31f6:	c4 c1 7b 11 4f f8    	vmovsd %xmm1,-0x8(%r15)
+    31fc:	c4 c1 7b 10 04 24    	vmovsd (%r12),%xmm0
+    3202:	4c 89 f8             	mov    %r15,%rax
+    3205:	0f 1f 00             	nopl   (%rax)
+    3208:	c5 fb 10 0a          	vmovsd (%rdx),%xmm1
+    320c:	c5 f9 2f c1          	vcomisd %xmm1,%xmm0
+    3210:	77 39                	ja     324b <void test<void ()>(void (&)(), char const*)+0x13b>
+    3212:	48 83 e8 08          	sub    $0x8,%rax
+    3216:	c5 f9 2f d0          	vcomisd %xmm0,%xmm2
+    321a:	76 13                	jbe    322f <void test<void ()>(void (&)(), char const*)+0x11f>
+    321c:	0f 1f 40 00          	nopl   0x0(%rax)
+    3220:	c5 fb 10 50 f8       	vmovsd -0x8(%rax),%xmm2
+    3225:	48 83 e8 08          	sub    $0x8,%rax
+    3229:	c5 f9 2f d0          	vcomisd %xmm0,%xmm2
+    322d:	77 f1                	ja     3220 <void test<void ()>(void (&)(), char const*)+0x110>
+    322f:	48 39 c2             	cmp    %rax,%rdx
+    3232:	73 24                	jae    3258 <void test<void ()>(void (&)(), char const*)+0x148>
+    3234:	c5 fb 10 00          	vmovsd (%rax),%xmm0
+    3238:	c5 fb 11 02          	vmovsd %xmm0,(%rdx)
+    323c:	c5 fb 11 08          	vmovsd %xmm1,(%rax)
+    3240:	c5 fb 10 50 f8       	vmovsd -0x8(%rax),%xmm2
+    3245:	c4 c1 7b 10 04 24    	vmovsd (%r12),%xmm0
+    324b:	48 83 c2 08          	add    $0x8,%rdx
+    324f:	eb b7                	jmp    3208 <void test<void ()>(void (&)(), char const*)+0xf8>
+    3251:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3258:	48 39 fa             	cmp    %rdi,%rdx
+    325b:	0f 86 37 03 00 00    	jbe    3598 <void test<void ()>(void (&)(), char const*)+0x488>
+    3261:	49 89 d7             	mov    %rdx,%r15
+    3264:	4c 89 f8             	mov    %r15,%rax
+    3267:	4c 29 e0             	sub    %r12,%rax
+    326a:	c5 f9 28 c8          	vmovapd %xmm0,%xmm1
+    326e:	48 83 f8 18          	cmp    $0x18,%rax
+    3272:	0f 8e 33 03 00 00    	jle    35ab <void test<void ()>(void (&)(), char const*)+0x49b>
+    3278:	48 ff ce             	dec    %rsi
+    327b:	0f 85 2f ff ff ff    	jne    31b0 <void test<void ()>(void (&)(), char const*)+0xa0>
+    3281:	48 8d 84 24 b0 0f 00 	lea    0xfb0(%rsp),%rax
+    3288:	00 
+    3289:	48 89 04 24          	mov    %rax,(%rsp)
+    328d:	4c 29 e0             	sub    %r12,%rax
+    3290:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    3295:	48 83 f8 08          	cmp    $0x8,%rax
+    3299:	7e 47                	jle    32e2 <void test<void ()>(void (&)(), char const*)+0x1d2>
+    329b:	48 c1 f8 03          	sar    $0x3,%rax
+    329f:	48 8d 50 fe          	lea    -0x2(%rax),%rdx
+    32a3:	49 89 c5             	mov    %rax,%r13
+    32a6:	48 89 d0             	mov    %rdx,%rax
+    32a9:	48 c1 e8 3f          	shr    $0x3f,%rax
+    32ad:	48 01 d0             	add    %rdx,%rax
+    32b0:	48 d1 f8             	sar    %rax
+    32b3:	49 89 c6             	mov    %rax,%r14
+    32b6:	eb 0b                	jmp    32c3 <void test<void ()>(void (&)(), char const*)+0x1b3>
+    32b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    32bf:	00 
+    32c0:	49 ff ce             	dec    %r14
+    32c3:	c4 81 7b 10 04 f4    	vmovsd (%r12,%r14,8),%xmm0
+    32c9:	4c 89 ea             	mov    %r13,%rdx
+    32cc:	4c 89 f6             	mov    %r14,%rsi
+    32cf:	4c 89 e7             	mov    %r12,%rdi
+    32d2:	e8 f9 fc ff ff       	callq  2fd0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)>
+    32d7:	4d 85 f6             	test   %r14,%r14
+    32da:	75 e4                	jne    32c0 <void test<void ()>(void (&)(), char const*)+0x1b0>
+    32dc:	c4 c1 7b 10 0c 24    	vmovsd (%r12),%xmm1
+    32e2:	4c 3b 3c 24          	cmp    (%rsp),%r15
+    32e6:	76 57                	jbe    333f <void test<void ()>(void (&)(), char const*)+0x22f>
+    32e8:	4c 8b 74 24 08       	mov    0x8(%rsp),%r14
+    32ed:	4c 8b 2c 24          	mov    (%rsp),%r13
+    32f1:	49 c1 fe 03          	sar    $0x3,%r14
+    32f5:	eb 12                	jmp    3309 <void test<void ()>(void (&)(), char const*)+0x1f9>
+    32f7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    32fe:	00 00 
+    3300:	49 83 c5 08          	add    $0x8,%r13
+    3304:	4d 39 fd             	cmp    %r15,%r13
+    3307:	73 36                	jae    333f <void test<void ()>(void (&)(), char const*)+0x22f>
+    3309:	c4 c1 79 2f 4d 00    	vcomisd 0x0(%r13),%xmm1
+    330f:	76 ef                	jbe    3300 <void test<void ()>(void (&)(), char const*)+0x1f0>
+    3311:	c4 c1 7b 10 0c 24    	vmovsd (%r12),%xmm1
+    3317:	c4 c1 7b 10 45 00    	vmovsd 0x0(%r13),%xmm0
+    331d:	4c 89 f2             	mov    %r14,%rdx
+    3320:	c4 c1 7b 11 4d 00    	vmovsd %xmm1,0x0(%r13)
+    3326:	31 f6                	xor    %esi,%esi
+    3328:	4c 89 e7             	mov    %r12,%rdi
+    332b:	49 83 c5 08          	add    $0x8,%r13
+    332f:	e8 9c fc ff ff       	callq  2fd0 <void std::__adjust_heap<std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter>(std::chrono::duration<double, std::ratio<1l, 1000000l> >*, long, long, std::chrono::duration<double, std::ratio<1l, 1000000l> >, __gnu_cxx::__ops::_Iter_less_iter)>
+    3334:	c4 c1 7b 10 0c 24    	vmovsd (%r12),%xmm1
+    333a:	4d 39 fd             	cmp    %r15,%r13
+    333d:	72 ca                	jb     3309 <void test<void ()>(void (&)(), char const*)+0x1f9>
+    333f:	c5 fb 10 84 24 a8 0f 	vmovsd 0xfa8(%rsp),%xmm0
+    3346:	00 00 
+    3348:	c4 c1 7b 11 04 24    	vmovsd %xmm0,(%r12)
+    334e:	c5 fb 11 8c 24 a8 0f 	vmovsd %xmm1,0xfa8(%rsp)
+    3355:	00 00 
+    3357:	48 85 ed             	test   %rbp,%rbp
+    335a:	0f 84 42 03 00 00    	je     36a2 <void test<void ()>(void (&)(), char const*)+0x592>
+    3360:	48 89 ef             	mov    %rbp,%rdi
+    3363:	e8 e8 ef ff ff       	callq  2350 <strlen@plt>
+    3368:	48 89 c2             	mov    %rax,%rdx
+    336b:	48 89 ee             	mov    %rbp,%rsi
+    336e:	48 8d 3d cb 3c 00 00 	lea    0x3ccb(%rip),%rdi        # 7040 <std::cout@@GLIBCXX_3.4>
+    3375:	e8 b6 f0 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    337a:	48 8d 2d bf 3c 00 00 	lea    0x3cbf(%rip),%rbp        # 7040 <std::cout@@GLIBCXX_3.4>
+    3381:	ba 0a 00 00 00       	mov    $0xa,%edx
+    3386:	48 8d 35 2b 13 00 00 	lea    0x132b(%rip),%rsi        # 46b8 <_IO_stdin_used+0x6b8>
+    338d:	48 8d 3d ac 3c 00 00 	lea    0x3cac(%rip),%rdi        # 7040 <std::cout@@GLIBCXX_3.4>
+    3394:	e8 97 f0 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    3399:	48 8b 0d a0 3c 00 00 	mov    0x3ca0(%rip),%rcx        # 7040 <std::cout@@GLIBCXX_3.4>
+    33a0:	c5 fb 10 44 24 10    	vmovsd 0x10(%rsp),%xmm0
+    33a6:	48 8b 51 e8          	mov    -0x18(%rcx),%rdx
+    33aa:	48 01 ea             	add    %rbp,%rdx
+    33ad:	8b 42 18             	mov    0x18(%rdx),%eax
+    33b0:	48 c7 42 08 02 00 00 	movq   $0x2,0x8(%rdx)
+    33b7:	00 
+    33b8:	25 fb fe ff ff       	and    $0xfffffefb,%eax
+    33bd:	83 c8 04             	or     $0x4,%eax
+    33c0:	89 42 18             	mov    %eax,0x18(%rdx)
+    33c3:	48 8b 41 e8          	mov    -0x18(%rcx),%rax
+    33c7:	48 c7 44 05 10 07 00 	movq   $0x7,0x10(%rbp,%rax,1)
+    33ce:	00 00 
+    33d0:	48 8d 6c 24 18       	lea    0x18(%rsp),%rbp
+    33d5:	48 89 e8             	mov    %rbp,%rax
+    33d8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    33df:	00 
+    33e0:	c5 f9 2f 00          	vcomisd (%rax),%xmm0
+    33e4:	76 04                	jbe    33ea <void test<void ()>(void (&)(), char const*)+0x2da>
+    33e6:	c5 fb 10 00          	vmovsd (%rax),%xmm0
+    33ea:	48 83 c0 08          	add    $0x8,%rax
+    33ee:	48 39 d8             	cmp    %rbx,%rax
+    33f1:	75 ed                	jne    33e0 <void test<void ()>(void (&)(), char const*)+0x2d0>
+    33f3:	48 8d 3d 46 3c 00 00 	lea    0x3c46(%rip),%rdi        # 7040 <std::cout@@GLIBCXX_3.4>
+    33fa:	e8 e1 f0 ff ff       	callq  24e0 <std::ostream& std::ostream::_M_insert<double>(double)@plt>
+    33ff:	49 89 c4             	mov    %rax,%r12
+    3402:	ba 03 00 00 00       	mov    $0x3,%edx
+    3407:	48 8d 35 b5 12 00 00 	lea    0x12b5(%rip),%rsi        # 46c3 <_IO_stdin_used+0x6c3>
+    340e:	48 89 c7             	mov    %rax,%rdi
+    3411:	e8 1a f0 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    3416:	48 8d 35 aa 12 00 00 	lea    0x12aa(%rip),%rsi        # 46c7 <_IO_stdin_used+0x6c7>
+    341d:	4c 89 e7             	mov    %r12,%rdi
+    3420:	ba 0b 00 00 00       	mov    $0xb,%edx
+    3425:	e8 06 f0 ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    342a:	49 8b 0c 24          	mov    (%r12),%rcx
+    342e:	c5 fb 10 84 24 a8 0f 	vmovsd 0xfa8(%rsp),%xmm0
+    3435:	00 00 
+    3437:	48 8b 51 e8          	mov    -0x18(%rcx),%rdx
+    343b:	4c 89 e7             	mov    %r12,%rdi
+    343e:	4c 01 e2             	add    %r12,%rdx
+    3441:	8b 42 18             	mov    0x18(%rdx),%eax
+    3444:	48 c7 42 08 02 00 00 	movq   $0x2,0x8(%rdx)
+    344b:	00 
+    344c:	25 fb fe ff ff       	and    $0xfffffefb,%eax
+    3451:	83 c8 04             	or     $0x4,%eax
+    3454:	89 42 18             	mov    %eax,0x18(%rdx)
+    3457:	48 8b 41 e8          	mov    -0x18(%rcx),%rax
+    345b:	49 c7 44 04 10 07 00 	movq   $0x7,0x10(%r12,%rax,1)
+    3462:	00 00 
+    3464:	e8 77 f0 ff ff       	callq  24e0 <std::ostream& std::ostream::_M_insert<double>(double)@plt>
+    3469:	49 89 c4             	mov    %rax,%r12
+    346c:	ba 03 00 00 00       	mov    $0x3,%edx
+    3471:	48 8d 35 4b 12 00 00 	lea    0x124b(%rip),%rsi        # 46c3 <_IO_stdin_used+0x6c3>
+    3478:	48 89 c7             	mov    %rax,%rdi
+    347b:	e8 b0 ef ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    3480:	ba 0b 00 00 00       	mov    $0xb,%edx
+    3485:	48 8d 35 47 12 00 00 	lea    0x1247(%rip),%rsi        # 46d3 <_IO_stdin_used+0x6d3>
+    348c:	4c 89 e7             	mov    %r12,%rdi
+    348f:	e8 9c ef ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    3494:	49 8b 0c 24          	mov    (%r12),%rcx
+    3498:	c5 fb 10 44 24 10    	vmovsd 0x10(%rsp),%xmm0
+    349e:	48 8b 51 e8          	mov    -0x18(%rcx),%rdx
+    34a2:	4c 01 e2             	add    %r12,%rdx
+    34a5:	8b 42 18             	mov    0x18(%rdx),%eax
+    34a8:	48 c7 42 08 02 00 00 	movq   $0x2,0x8(%rdx)
+    34af:	00 
+    34b0:	25 fb fe ff ff       	and    $0xfffffefb,%eax
+    34b5:	83 c8 04             	or     $0x4,%eax
+    34b8:	89 42 18             	mov    %eax,0x18(%rdx)
+    34bb:	48 8b 41 e8          	mov    -0x18(%rcx),%rax
+    34bf:	49 c7 44 04 10 07 00 	movq   $0x7,0x10(%r12,%rax,1)
+    34c6:	00 00 
+    34c8:	48 89 e8             	mov    %rbp,%rax
+    34cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    34d0:	c5 fb 10 08          	vmovsd (%rax),%xmm1
+    34d4:	48 83 c0 08          	add    $0x8,%rax
+    34d8:	c5 f3 5f c0          	vmaxsd %xmm0,%xmm1,%xmm0
+    34dc:	48 39 d8             	cmp    %rbx,%rax
+    34df:	75 ef                	jne    34d0 <void test<void ()>(void (&)(), char const*)+0x3c0>
+    34e1:	4c 89 e7             	mov    %r12,%rdi
+    34e4:	e8 f7 ef ff ff       	callq  24e0 <std::ostream& std::ostream::_M_insert<double>(double)@plt>
+    34e9:	48 89 c5             	mov    %rax,%rbp
+    34ec:	ba 03 00 00 00       	mov    $0x3,%edx
+    34f1:	48 8d 35 cb 11 00 00 	lea    0x11cb(%rip),%rsi        # 46c3 <_IO_stdin_used+0x6c3>
+    34f8:	48 89 c7             	mov    %rax,%rdi
+    34fb:	e8 30 ef ff ff       	callq  2430 <std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@plt>
+    3500:	48 8b 45 00          	mov    0x0(%rbp),%rax
+    3504:	48 8b 40 e8          	mov    -0x18(%rax),%rax
+    3508:	4c 8b a4 05 f0 00 00 	mov    0xf0(%rbp,%rax,1),%r12
+    350f:	00 
+    3510:	4d 85 e4             	test   %r12,%r12
+    3513:	0f 84 bf 01 00 00    	je     36d8 <void test<void ()>(void (&)(), char const*)+0x5c8>
+    3519:	41 80 7c 24 38 00    	cmpb   $0x0,0x38(%r12)
+    351f:	0f 84 4b 01 00 00    	je     3670 <void test<void ()>(void (&)(), char const*)+0x560>
+    3525:	41 0f be 74 24 43    	movsbl 0x43(%r12),%esi
+    352b:	48 89 ef             	mov    %rbp,%rdi
+    352e:	e8 ad ed ff ff       	callq  22e0 <std::ostream::put(char)@plt>
+    3533:	48 89 c7             	mov    %rax,%rdi
+    3536:	e8 55 ee ff ff       	callq  2390 <std::ostream::flush()@plt>
+    353b:	48 8b 84 24 48 1f 00 	mov    0x1f48(%rsp),%rax
+    3542:	00 
+    3543:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    354a:	00 00 
+    354c:	0f 85 81 01 00 00    	jne    36d3 <void test<void ()>(void (&)(), char const*)+0x5c3>
+    3552:	48 81 c4 58 1f 00 00 	add    $0x1f58,%rsp
+    3559:	5b                   	pop    %rbx
+    355a:	5d                   	pop    %rbp
+    355b:	41 5c                	pop    %r12
+    355d:	41 5d                	pop    %r13
+    355f:	41 5e                	pop    %r14
+    3561:	41 5f                	pop    %r15
+    3563:	c3                   	retq   
+    3564:	0f 1f 40 00          	nopl   0x0(%rax)
+    3568:	c5 f9 2f da          	vcomisd %xmm2,%xmm3
+    356c:	0f 87 e6 00 00 00    	ja     3658 <void test<void ()>(void (&)(), char const*)+0x548>
+    3572:	c5 f9 2f d8          	vcomisd %xmm0,%xmm3
+    3576:	0f 87 70 fc ff ff    	ja     31ec <void test<void ()>(void (&)(), char const*)+0xdc>
+    357c:	c4 c1 7b 11 04 24    	vmovsd %xmm0,(%r12)
+    3582:	c5 fb 11 08          	vmovsd %xmm1,(%rax)
+    3586:	c4 c1 7b 10 57 f8    	vmovsd -0x8(%r15),%xmm2
+    358c:	e9 6b fc ff ff       	jmpq   31fc <void test<void ()>(void (&)(), char const*)+0xec>
+    3591:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3598:	49 89 d4             	mov    %rdx,%r12
+    359b:	4c 89 f8             	mov    %r15,%rax
+    359e:	4c 29 e0             	sub    %r12,%rax
+    35a1:	48 83 f8 18          	cmp    $0x18,%rax
+    35a5:	0f 8f cd fc ff ff    	jg     3278 <void test<void ()>(void (&)(), char const*)+0x168>
+    35ab:	4d 39 fc             	cmp    %r15,%r12
+    35ae:	0f 84 a3 fd ff ff    	je     3357 <void test<void ()>(void (&)(), char const*)+0x247>
+    35b4:	4d 8d 74 24 08       	lea    0x8(%r12),%r14
+    35b9:	4d 39 fe             	cmp    %r15,%r14
+    35bc:	0f 84 95 fd ff ff    	je     3357 <void test<void ()>(void (&)(), char const*)+0x247>
+    35c2:	41 bd 08 00 00 00    	mov    $0x8,%r13d
+    35c8:	eb 40                	jmp    360a <void test<void ()>(void (&)(), char const*)+0x4fa>
+    35ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    35d0:	4d 39 f4             	cmp    %r14,%r12
+    35d3:	74 1c                	je     35f1 <void test<void ()>(void (&)(), char const*)+0x4e1>
+    35d5:	4c 89 f2             	mov    %r14,%rdx
+    35d8:	4c 29 e2             	sub    %r12,%rdx
+    35db:	4b 8d 3c 2c          	lea    (%r12,%r13,1),%rdi
+    35df:	4c 89 e6             	mov    %r12,%rsi
+    35e2:	c5 fb 11 04 24       	vmovsd %xmm0,(%rsp)
+    35e7:	e8 04 ef ff ff       	callq  24f0 <memmove@plt>
+    35ec:	c5 fb 10 04 24       	vmovsd (%rsp),%xmm0
+    35f1:	c4 c1 7b 11 04 24    	vmovsd %xmm0,(%r12)
+    35f7:	49 83 c6 08          	add    $0x8,%r14
+    35fb:	4d 39 fe             	cmp    %r15,%r14
+    35fe:	0f 84 53 fd ff ff    	je     3357 <void test<void ()>(void (&)(), char const*)+0x247>
+    3604:	c4 c1 7b 10 0c 24    	vmovsd (%r12),%xmm1
+    360a:	c4 c1 7b 10 06       	vmovsd (%r14),%xmm0
+    360f:	c5 f9 2f c8          	vcomisd %xmm0,%xmm1
+    3613:	77 bb                	ja     35d0 <void test<void ()>(void (&)(), char const*)+0x4c0>
+    3615:	c4 c1 7b 10 4e f8    	vmovsd -0x8(%r14),%xmm1
+    361b:	49 8d 46 f8          	lea    -0x8(%r14),%rax
+    361f:	c5 f9 2f c8          	vcomisd %xmm0,%xmm1
+    3623:	0f 86 9e 00 00 00    	jbe    36c7 <void test<void ()>(void (&)(), char const*)+0x5b7>
+    3629:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3630:	c5 fb 10 08          	vmovsd (%rax),%xmm1
+    3634:	48 89 c2             	mov    %rax,%rdx
+    3637:	c5 fb 11 48 08       	vmovsd %xmm1,0x8(%rax)
+    363c:	c5 fb 10 48 f8       	vmovsd -0x8(%rax),%xmm1
+    3641:	48 83 e8 08          	sub    $0x8,%rax
+    3645:	c5 f9 2f c8          	vcomisd %xmm0,%xmm1
+    3649:	77 e5                	ja     3630 <void test<void ()>(void (&)(), char const*)+0x520>
+    364b:	c5 fb 11 02          	vmovsd %xmm0,(%rdx)
+    364f:	eb a6                	jmp    35f7 <void test<void ()>(void (&)(), char const*)+0x4e7>
+    3651:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3658:	c4 c1 7b 11 14 24    	vmovsd %xmm2,(%r12)
+    365e:	c4 c1 7b 11 4c 24 08 	vmovsd %xmm1,0x8(%r12)
+    3665:	c4 c1 7b 10 57 f8    	vmovsd -0x8(%r15),%xmm2
+    366b:	e9 8c fb ff ff       	jmpq   31fc <void test<void ()>(void (&)(), char const*)+0xec>
+    3670:	4c 89 e7             	mov    %r12,%rdi
+    3673:	e8 d8 ed ff ff       	callq  2450 <std::ctype<char>::_M_widen_init() const@plt>
+    3678:	49 8b 04 24          	mov    (%r12),%rax
+    367c:	48 8d 15 0d f9 ff ff 	lea    -0x6f3(%rip),%rdx        # 2f90 <std::ctype<char>::do_widen(char) const>
+    3683:	48 8b 40 30          	mov    0x30(%rax),%rax
+    3687:	be 0a 00 00 00       	mov    $0xa,%esi
+    368c:	48 39 d0             	cmp    %rdx,%rax
+    368f:	0f 84 96 fe ff ff    	je     352b <void test<void ()>(void (&)(), char const*)+0x41b>
+    3695:	4c 89 e7             	mov    %r12,%rdi
+    3698:	ff d0                	callq  *%rax
+    369a:	0f be f0             	movsbl %al,%esi
+    369d:	e9 89 fe ff ff       	jmpq   352b <void test<void ()>(void (&)(), char const*)+0x41b>
+    36a2:	48 8b 05 97 39 00 00 	mov    0x3997(%rip),%rax        # 7040 <std::cout@@GLIBCXX_3.4>
+    36a9:	48 8d 2d 90 39 00 00 	lea    0x3990(%rip),%rbp        # 7040 <std::cout@@GLIBCXX_3.4>
+    36b0:	48 8b 78 e8          	mov    -0x18(%rax),%rdi
+    36b4:	48 01 ef             	add    %rbp,%rdi
+    36b7:	8b 77 20             	mov    0x20(%rdi),%esi
+    36ba:	83 ce 01             	or     $0x1,%esi
+    36bd:	e8 5e ee ff ff       	callq  2520 <std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)@plt>
+    36c2:	e9 ba fc ff ff       	jmpq   3381 <void test<void ()>(void (&)(), char const*)+0x271>
+    36c7:	4c 89 f2             	mov    %r14,%rdx
+    36ca:	c5 fb 11 02          	vmovsd %xmm0,(%rdx)
+    36ce:	e9 24 ff ff ff       	jmpq   35f7 <void test<void ()>(void (&)(), char const*)+0x4e7>
+    36d3:	e8 48 ed ff ff       	callq  2420 <__stack_chk_fail@plt>
+    36d8:	e8 d3 ed ff ff       	callq  24b0 <std::__throw_bad_cast()@plt>
+    36dd:	0f 1f 00             	nopl   (%rax)
+
+00000000000036e0 <__libc_csu_init>:
+    36e0:	f3 0f 1e fa          	endbr64 
+    36e4:	41 57                	push   %r15
+    36e6:	4c 8d 3d 1b 34 00 00 	lea    0x341b(%rip),%r15        # 6b08 <__frame_dummy_init_array_entry>
+    36ed:	41 56                	push   %r14
+    36ef:	49 89 d6             	mov    %rdx,%r14
+    36f2:	41 55                	push   %r13
+    36f4:	49 89 f5             	mov    %rsi,%r13
+    36f7:	41 54                	push   %r12
+    36f9:	41 89 fc             	mov    %edi,%r12d
+    36fc:	55                   	push   %rbp
+    36fd:	48 8d 2d 14 34 00 00 	lea    0x3414(%rip),%rbp        # 6b18 <__do_global_dtors_aux_fini_array_entry>
+    3704:	53                   	push   %rbx
+    3705:	4c 29 fd             	sub    %r15,%rbp
+    3708:	48 83 ec 08          	sub    $0x8,%rsp
+    370c:	e8 ef e8 ff ff       	callq  2000 <_init>
+    3711:	48 c1 fd 03          	sar    $0x3,%rbp
+    3715:	74 1f                	je     3736 <__libc_csu_init+0x56>
+    3717:	31 db                	xor    %ebx,%ebx
+    3719:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    3720:	4c 89 f2             	mov    %r14,%rdx
+    3723:	4c 89 ee             	mov    %r13,%rsi
+    3726:	44 89 e7             	mov    %r12d,%edi
+    3729:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    372d:	48 83 c3 01          	add    $0x1,%rbx
+    3731:	48 39 dd             	cmp    %rbx,%rbp
+    3734:	75 ea                	jne    3720 <__libc_csu_init+0x40>
+    3736:	48 83 c4 08          	add    $0x8,%rsp
+    373a:	5b                   	pop    %rbx
+    373b:	5d                   	pop    %rbp
+    373c:	41 5c                	pop    %r12
+    373e:	41 5d                	pop    %r13
+    3740:	41 5e                	pop    %r14
+    3742:	41 5f                	pop    %r15
+    3744:	c3                   	retq   
+    3745:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    374c:	00 00 00 00 
+
+0000000000003750 <__libc_csu_fini>:
+    3750:	f3 0f 1e fa          	endbr64 
+    3754:	c3                   	retq   
+
+Desensamblado de la sección .fini:
+
+0000000000003758 <_fini>:
+    3758:	f3 0f 1e fa          	endbr64 
+    375c:	48 83 ec 08          	sub    $0x8,%rsp
+    3760:	48 83 c4 08          	add    $0x8,%rsp
+    3764:	c3                   	retq   
