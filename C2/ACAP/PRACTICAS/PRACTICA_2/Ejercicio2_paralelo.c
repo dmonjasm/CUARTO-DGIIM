@@ -7,7 +7,7 @@
 void vectorInit(double * vec, int len){
     double f=0.0;
     for(int i=0; i < len; i++){
-        f=(double) rand()/ (double)RAND_MAX + rand();
+        f=(double) rand()/ (double)RAND_MAX + rand()%10;
         vec[i]=f;
     }
 }

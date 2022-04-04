@@ -2087,6 +2087,247 @@ Métodos d ecomunicación (ya explicado):
 \includegraphics[scale=1,width=\textwidth]{comunicacion.png}
 \end{figure}
 
+\section{Tema 5: Hebras}
+\subsection{Definción}
+\begin{itemize}
+\item Proceso en un SO "tradicional" = espacio de direcciones + hebra de control.
 
+\item Proceso = contenedor de recursos + hebra de ejecución.
 
+\item Una hebra se ejecuta dentro de un proceso.
+
+\item Proceso y hebra son conceptos diferentes y suelen ser tratados por separado.
+	\begin{itemize}
+	\item La función de un proceso es agrupar recursos.
+	
+	\item Las hebras son entidades planificables para su ejecución sobre un procesador.
+	\end{itemize}
+	
+\item Las hebras añaden a los procesos la capacidad de ejecutar varios conjuntos de instrucciones de forma concurrente dentro de un mismo entorno de procesamiento.
+
+\item Ejecutar varias hebras en paralelo es parecido a ejecutar varios procesos salvo porque comparten sus recursos.
+
+\item También se denominan procesos ligeros o subprocesos.
+\end{itemize}
+
+\subsection{Comparativo Procesos/Hebras}
+Dos formas de ejecutar 3 hebras:
+\begin{itemize}
+\item En un caso necesitamos 3 PCB y en el otro 1.
+
+\item En un caso necesitamos 0 TCB y en el otro 3.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{comparativathread.png}
+\end{figure}
+
+\subsection{Ejecución multihebra}
+Se conoce como multihebra a la ejecución concurrente de hebras en el interior de un proceso. 
+\begin{itemize}
+\item En un sistema con un único procesador las hebras se alternan en el uso del procesador.
+
+\item En un sistema multiprocesador tantas hebras como procesadores pueden ejecutarse en paralelo.
+\end{itemize}
+
+\textbf{Ventajas de la multihebra}
+\begin{itemize}
+\item Sensibilidad. Hacer una aplicación interaciva multihilo puede permitir a un programa correr incluso si parte del mismo está bloqueado o realizando una operación larga, incrementando así la respuesta dada al usuario.
+
+\item Compartición de recursos: los procesos solo comparten recursos a través de técnicas como memoria compartida o paso de mensajes, la cuales se tienen que declarar explícitamente por el programador. Las hebras comparten memoria y recursos del proceso al que pertenecen por defecto.
+
+\item Economía: reservar memoria y recursos para la creación de un proceso es costoso. Ya que las hebras comparte los recursos del proceso al que pertenecen es más económico crear y cambiar de contexto hebras.
+
+\item Escalabilidad: los beneficios de la programación multihilo pueden verse gratamente incrementados por una arquitectura multiprocesador, donde las hebras pueden correr en paralelo en distintos procesadores.
+\end{itemize}
+
+\textbf{Ejemplos de uso:}
+\begin{itemize}
+\item Trabajo simultáneo en primer y segundo plano (ej: procesador de texto, servidor de ficheros, ...)
+
+\item Procesamiento asíncrono (ej: copia de seguridad)
+
+\item Velocidad de ejecución: descomposición de problemas y procesamiento paralelo (ej: solapamiento entre obtención de datos y cálculo).
+
+\item Mejor modularidad: fácil subdivisión de tareas complejas en otras más simples.
+\end{itemize}
+
+Las diferentes hebras de un proceso no son independientes como las que se encuentran en diferentes procesos. Esto se debe a que las hebras de un proceso comparten sus recursos: espacio de direcciones, variables globales, ficheros abiertos, ...\\
+
+No hay protección entre hebras ya que:
+\begin{itemize}
+\item Es imposible, pues comparten recursos.
+
+\item No es necesario, pues diferentes procesos pueden pertenecer a diferentes usuarios, en cambio, todas las hebras de un proceso pertenecen al mismo.
+\end{itemize}
+
+\newpage
+\textbf{Recursos necesarios}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1, width=\textwidth]{recursos.png}
+\end{figure}
+
+\textbf{Estado de una hebra}
+
+Al igual que los procesos, una hebra puede pasar por diferentes estados a lo largo de us ejecución.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=80mm]{estados_hebra.png}
+\end{figure}
+
+\textbf{Espacio de direcciones}
+Cada hebra necesita su propia pila. Cada pila contiene un marco de función por cada función llamada y de la que todavía no se ha retornado. Si en una hebra ejecutamos el procedimiento X, este llama al Y, y este llama al Z, durante la ejecución de Z la pila contendrá los marcos de X, Y y Z.
+
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=60mm]{espacio_direcciones.png}
+\end{figure}
+
+\newpage
+
+\textbf{Gestión de hebras}
+Para gestionar las hebras, al igual que sucede con los procesos, necesitamos una serie de llamadas al sistema. Los procesos multihebra comienzan su ejecución con una única hebra y crean más en caso de necesitarlas:
+\begin{verbatim}
+pthread_create()/std::thread::thread()
+\end{verbatim}
+
+Las hebras pueden mantener una relación jerárquica o ser creadas todas iguales. Cada hebra suele tener un identificador único, recogido en el TCB. Es necesario una llamada al sistema para terminar con una hebra
+\begin{verbatim}
+pthread_exit()/std::thread::~thread()
+\end{verbatim}
+
+Al igual que los procesos, podemos hacer que las hebras sincronicen su funcionamiento:
+\begin{verbatim}
+pthread_join()/std::thread::join()
+\end{verbatim}
+
+Otra habitual es 
+\begin{verbatim}
+thread_yield()/std::this_thread::yield()
+\end{verbatim}
+
+, permite a una hebra ceder voluntariamente el procesador.
+\begin{itemize}
+\item Muy importante porque puede que la interrupción de reloj no las afecte o no se pueda imponer el tiempo compartido.
+
+\item Las hebras deben cooperar.
+\end{itemize}
+
+Las hebras introducen nuevos problemas en el sistema, cuya mejor solución es no duplicar hebras.
+
+\textbf{Tipos de hebras}
+\begin{itemize}
+\item Hebras tipo usuario: En las hebras de tipo usuario el parquete de hebras se coloca enteramente en el espacio de usuario. El núcleo no tiene información sobre las misma, y lo que a él respecta está gestionando procesos ordinarios. La primera y principal ventaja es que la hebras a nivel de usuario se pueden implementar en sistemas operativos que no soportan hebras. Todos los sistemas operativos solían caer en esta categoría, y algunos lo siguen haciendo. Con esta aproximación las hebras se implementan por medio de librerías.\\
+
+Cada hebra tiene su propia tabla de hebras privada para mantener un registro de las hebras en el proceso. Esta tabla es análoga a la tabla de procesos del kernel, con la única diferencia de que solo registra información de las propiedades de las hebras, como el contador de programa, registro de pila, registros, estado, etc. Esta tabla es gestionada por el sistema de tiempo de ejecución.\\
+
+Las principales ventajas de las hebras de tipo usuario son:
+	\begin{itemize}
+	\item Se puede implementar en cualquier SO.
+	
+	\item La conmutación entre hebras es varios órdenes más rápida que la de procesos.
+	
+	\item Cuando una hebra termina de ejecutarse (pthread\_exit()/pthread\_yield()), puede cambiarse sin involucrar al núcleo con lo que ahorramos cambios de procesos y modo.
+	
+	\item Cada proceso puede utilizar un algoritmo de planificación personalizado.
+	\end{itemize}
+
+Los principales inconvenientes de las hebras de tipo usuario son:
+	\begin{itemize}
+	\item Como se implementan las llamadas al sistema bloqueantes. Si una hebra hace una llamada al sistema detendrá a todas las hebras. Como soluciones a este problema se tienen:
+		\begin{itemize}
+		\item Modificar el SO para hacer llamadas no lboqueantes. No tiene sentido, pues cambiar el SO no es atractivo, además se supone que una de las ventajas es que es implementable en cualquier SO. Addemás, cambiar las semánticas de estas requeriría demasiados programas de usuario.
+		
+		\item Otra alternativa es comprobar si las llamadas bloqueantes tendrán éxito antes de ejecutarlas. Este método es ineficiente y poco elegantes, pero no quedan muchas opciones.
+		\end{itemize}
+	
+	\item Como no existe interrupción de reloj no podremos ejecutar una hebra hasta que otra deje libre el procesador voluntariamente. La solución sería que el sistema de ejecución mande una interrupción periódicamente para cambiar el control, pero es demasiado lioso de programar. Además el overhead sería bastante sustancial.
+	
+	\item En sistemas multiprocesador no podremos asignar maś de un procesador por proceso.
+	\end{itemize}
+
+\item Hebras tipo núcleo. El núcleo conoce la existecia de las hebras y las gestiona. No se requiere un sistema de gestión de hebra ni tablas de hebras en cada proceso. En su lugar el kernel mantiene una tabla de hebras que mantiene un historial de todas las hebras del sistema. La gestión de las hebras se hace por medio de llamadas al sistema, lo que implica un costo considerablemente mayor.\\
+
+Entre las ventajas de las hebras encontramos:
+	\begin{itemize}
+	\item No requieren llamadas al sistema no bloqueantes nuevas. 
+	
+	\item Si una hebra es blqoeuada o excede su tiempo de ejecución otra puede ser ejecutada.
+	
+	\item En sistemas multiprocesador tantas hebras de un mismo proceso como procesadores existan se pueden ejecutar en paralelo.
+	\end{itemize}
+	
+Entre los inconvenientes encontramos:
+	\begin{itemize}
+	\item El coste de las llamadas al sistema es sustancial, de forma que las operaciones con hebras implicarán un gran overhead.
+	
+	\item Importante el reciclaje de hebras: finalizado implica nuevo.
+	\end{itemize}
+
+\item Hebras híbridas. Estas intentan combinar las ventajas de las hebra de usuario y las de núcleo. Una forma es usar hebras de núcleo y multiplexar hebra de usuario con alguna o todas ellas. Detalles de implementación.
+	\begin{itemize}
+	\item Es necesario implementar hebras tipo núcleo en el SO.
+	
+	\item Utiliza hebras tipo usuario pero multiplexadas sobre hebras tipo núcleo.
+	
+	\item Cada hebra del núcleo ejecuta un conjunto de hebras de usuario que se turnan en su utilización.
+	\end{itemize}
+	
+Con esta aproximación, el núcleo es consciente solo de los hebras a nivel de kernel y planifica las mismas.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=\textwidth]{hybrid.png}
+\end{figure}
+\end{itemize}
+
+\textbf{Activaciones del planificador}
+
+Método propuesto por Thomas E.Anderson. En este el núcleo asigna cierto número de procesadores virtuales o procesos ligeros a cada proceso. 
+	\begin{itemize}
+	\item Inicialmente suele asignarse un procesador virtual.
+	
+	\item Cada proceso puede solicitar y devolver procesadores virtuales.
+	
+	\item El núcleo puede conceder y retirar procesadores virtuales.
+	\end{itemize}
+	
+Cuando el núcleo detecta que una hebra se bloquea avisa al sistema de gestión de hebras en espacio de usuario mediante una llamada directa ("upcall"). Una vez avisado un planificador a nivel usuario puede seleccionar otra hebra para ejecutar. Cuando la hebra se desbloquea de nuevo el núcleo avisa al sistema de gestión de hebras en espacio de usuario.\\
+
+Ventajas de este enfoque:
+	\begin{itemize}
+	\item Dos formas de manejar las llamadas al sistema bloqueantes:
+		\begin{itemize}
+		\item Una llamada bloqueante en una hebra de usuario sólo bloquea su correspondiente hebra del núcleo hasta que finalice la causa del bloqueo mientras que el resto de hebras del proceso continuan ejecutándose.
+		
+		\item La hebra del núcleo almacena la causa del bloqueo y avisa al planificador a nivel usuario para que cambie a otra hebra de usuario hasta que finalice la causa del bloqueo.
+		\end{itemize}
+	\end{itemize}
+	
+Por otro lado los principales inconvenientes son:
+	\begin{itemize}
+	\item El SO debe disponer de hebras de tipo núcleo.
+	
+	\item Hay dos niveles de planificación:
+		\begin{itemize}
+		\item El núcleo planifica las hebras del núcleo.
+		
+		\item Las hebras de usuario son planificadas por una biblioteca.
+		
+		\item Ambos planificadores deben cooperar.
+		\end{itemize}
+	
+	\item Problema: las llamadas directas violan los principios de los sistemas por capas.
+	\end{itemize}
+	
+\textbf{Representación de hebras}
+
+Para poder gestionar hebras necesitamos estructuras de datos que las representen. Este es el bloque de control de hebra (TCB, Thread Control Block)
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=60mm]{tcb.png}
+\end{figure}
 \end{document}
