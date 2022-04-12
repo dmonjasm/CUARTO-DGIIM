@@ -13,7 +13,7 @@ PNG = $(SVG:.svg=.png)
 SRC = $(wildcard *.c *.cc)
 SVG = sort.svg sort.l.svg
 
-CFLAGS = -march=native -O3 -pthread -Wall
+CFLAGS = -march=native -O3 -pthread -Wall 
 CXXFLAGS = $(CFLAGS) -std=c++17
 
 ###############################################################################
@@ -45,7 +45,7 @@ tabla: medir-usuario medir-nucleo medir-proceso sw-f sw-t sw-p
 	done | tr '\n' '\t'
 	echo -en "\nsignal/wait\t"
 	for i in sw-f sw-t sw-p; do
-		perf stat -r 256 -- ./$$i 2> /dev/null | sort -h | head -1 | sed 's/.* ≈ \([[:digit:].,]*\)µs/\1/'
+		 perf stat -r 256 -- ./$$i 2> /dev/null | sort -h | head -1 | sed 's/.* ≈ \([[:digit:].,]*\)µs/\1/'
 	done | tr '\n' '\t'
 	echo
 
@@ -53,9 +53,9 @@ tabla: medir-usuario medir-nucleo medir-proceso sw-f sw-t sw-p
 
 bench-fib: LDLIBS+=-lbenchmark
 
-bench-fib fiber fib-u id medir medir-usuario sw-f: LDLIBS+=-lboost_fiber -lboost_context
+bench-fib fiber fib-u id medir medir-usuario sw-f: LDLIBS+=-lboost_fiber -lboost_context -lboost_system
 
-medir-gb: LDLIBS+=-lbenchmark -lboost_fiber -lboost_context
+medir-gb: LDLIBS+=-lbenchmark -lboost_fiber -lboost_context -lboost_system
 
 medir-proceso: | nulo
 

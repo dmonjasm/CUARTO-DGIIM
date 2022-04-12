@@ -14,7 +14,6 @@ void funcionCero(int rank, int nProcs);
 void funcionUno(int rank);
 void funcionDos(int rank);
 void funcionTres(int rank);
-void consumirNuevaLinea();
 
 int main(int argc, char* argv[]){
     MPI_Init(&argc, &argv);
@@ -68,12 +67,7 @@ void funcionCero(int rank, int nProcs){
         if(num_ant < 4){
             num = 0;
             printf("\nIntroduzca un número (rango [0,4]):\n");fflush(stdout);
-            //El problema de combinar scanf y fgets en la toma de datos es que scaf no consume los saltos de línea, mientras que fgets si lo hace
-            //Debido a esto, si no se consume el salto de línea después del scanf, fgets no se ejecuta correctamente pues consume solo el salto de línea.
-            //Esto se puede arreglar con un único getchar tras el scanf que consuma el salto de línea, pero he preferido utilizar la función consumirNuevaLínea
-            //, la cual consume todo lo que haya en el buffer tras el scanf, dejándolo vacío para la correcta ejecución de fgets (es más seguro que un simple getchar)
-            scanf("%d", &num);
-            consumirNuevaLinea();
+            scanf("%d", &num);fflush(stdout); fflush(stdin); 
         }
 
         else{
@@ -103,14 +97,13 @@ void funcionCero(int rank, int nProcs){
             case 1:
                 printf("Escriba el texto a procesar:\n");fflush(stdout);
                 char texto[256];
-                
-                fgets(texto, 256, stdin);
+
+                scanf("%s", texto);
                 
                 MPI_Send(texto, sizeof(texto), MPI_CHAR, num, NORMAL, MPI_COMM_WORLD);
                 MPI_Recv(texto, sizeof(texto), MPI_CHAR, num, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
                 printf("El texto en mayúsculas es:\n%s\n", texto);fflush(stdout);
-
                 break;
 
             case 2: ;
@@ -129,7 +122,6 @@ void funcionCero(int rank, int nProcs){
 
                 MPI_Recv(resultado, 2, MPI_FLOAT, num, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
                 printf("La suma de los resultados es: %.3lf\nLa raíz cuadrada de los resultados es: %.3lf\n", resultado[0], resultado[1]);fflush(stdout);
-
                 break;
 
             case 3:
@@ -231,8 +223,8 @@ void funcionTres(int rank){
         else{
             int suma = 0;
             MPI_Recv(&suma, 1, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-            char mensaje[] = "\nEntrando en funcionalidad 3"; 
-            fflush(stdout);printf("%s\n", mensaje);
+            char mensaje[] = "Entrando en funcionalidad 3"; 
+            printf("%s\n", mensaje);fflush(stdout);
 
             suma = 0;
             for(int i =0; i < sizeof(mensaje); i++){
@@ -243,13 +235,4 @@ void funcionTres(int rank){
         }
         
     }
-}
-
-void consumirNuevaLinea()
-{
-    int c;
-    do
-    {
-        c = getchar();
-    } while (c != EOF && c != '\n');
 }

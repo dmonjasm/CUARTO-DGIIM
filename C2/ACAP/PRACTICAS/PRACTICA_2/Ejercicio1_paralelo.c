@@ -38,38 +38,40 @@ int main(int argc, char * argv[]){
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
     if(argc < 2)
-        printf("./Ejercicio1: FALTAN ARGUMENTO.\nModo de uso: ./Ejercicio1 <tamaño>");
+        printf("./Ejercicio1: FALTAN ARGUMENTO.\nModo de uso: ./Ejercicio1 <tamaño>\n");
 
     else{
         int * ingresos = NULL;
         int * gastos = NULL;
+        int potencial = atoi(argv[1]);
+        int nProcs = 0;
+        MPI_Comm_size(MPI_COMM_WORLD, &nProcs);
+        int workSize = potencial/nProcs;
+        int offset = potencial % nProcs;
+        int quantity = workSize + (rank<offset);
 
         if(rank==0){
-            int nProcs = 0;
-            MPI_Comm_size(MPI_COMM_WORLD, &nProcs);
 
-            int potencial = atoi(argv[1]);
             ingresos = (int *) malloc(sizeof(int)*potencial);
             gastos = (int *) malloc(sizeof(int)*potencial);
             bufferInit(ingresos, potencial);
             bufferInit(gastos, potencial);
 
-            int workSize = potencial/nProcs;
-            int offset = potencial % nProcs;
-            int start, quantity;
+            int start[nProcs], quantities[nProcs];
 
             double inicio = get_wall_time();
-            for(int i=1; i < nProcs; i++){
-                start = i*workSize + (i<offset?i:offset);
-                quantity =  workSize + (i<offset);
-
-                MPI_Send(&(ingresos[start]), quantity, MPI_INT, i, 0, MPI_COMM_WORLD);
-                MPI_Send(&(gastos[start]), quantity, MPI_INT, i, 0, MPI_COMM_WORLD);
+            for(int i=0; i < nProcs; i++){
+                start[i] = i*workSize + (i<offset?i:offset);
+                quantities[i] =  workSize + (i<offset);
             }
 
-            quantity = workSize + (0 < offset);
+            int *recibo_ingresos = (int *) malloc(sizeof(int)*quantities[0]);
+            int *recibo_gastos = (int *) malloc(sizeof(int)*quantities[0]);
 
-            int parciales[2] = {sumaVec(ingresos, quantity), sumaVec(gastos, quantity)};
+            MPI_Scatterv(ingresos, quantities, start, MPI_INT, recibo_ingresos, quantity, MPI_INT, 0, MPI_COMM_WORLD);
+            MPI_Scatterv(gastos, quantities, start, MPI_INT, recibo_gastos, quantity, MPI_INT, 0, MPI_COMM_WORLD);
+
+            int parciales[2] = {sumaVec(recibo_ingresos, quantity), sumaVec(recibo_gastos, quantity)};
             int totales[2];
 
             MPI_Reduce(parciales, totales, 2, MPI_INT, MPI_SUM, rank, MPI_COMM_WORLD);
@@ -83,19 +85,14 @@ int main(int argc, char * argv[]){
         }
 
         else{
-            MPI_Probe( 0 , MPI_ANY_TAG, MPI_COMM_WORLD , &status);
-
-            int quantity = 0;
-            MPI_Get_count(&status, MPI_INT, &quantity);
             ingresos = (int *) malloc(sizeof(int)*quantity);
             gastos = (int *) malloc(sizeof(int)*quantity);
-            MPI_Recv(ingresos, quantity, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-            MPI_Recv(gastos, quantity, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+            MPI_Scatterv(NULL, NULL, NULL, NULL, ingresos, quantity, MPI_INT, 0, MPI_COMM_WORLD);
+            MPI_Scatterv(NULL, NULL, NULL, NULL, gastos, quantity, MPI_INT, 0, MPI_COMM_WORLD);
 
             int parciales[2] = {sumaVec(ingresos, quantity), sumaVec(ingresos, quantity)};
 
             MPI_Reduce(parciales, 0, 2, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-
         }
 
         free(ingresos);

@@ -9,7 +9,7 @@ void codigo()
 
 int main()
 {
-	codigo();
+	//codigo();
 	std::thread t(codigo);
 	t.join();
 }

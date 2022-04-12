@@ -1,0 +1,100 @@
+#include <iostream>
+#include <benchmark/benchmark.h>
+#include "demangle.h"
+
+const size_t B = 2, C = 3, N = 128;
+
+template<class T> void ijk(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t i = 0; i < N; ++i)
+		for (size_t j = 0; j < N; ++j)
+			for (size_t k = 0; k < N; ++k)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T> void ikj(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t i = 0; i < N; ++i)
+		for (size_t k = 0; k < N; ++k)
+			for (size_t j = 0; j < N; ++j)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T> void jik(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t j = 0; j < N; ++j)
+		for (size_t i = 0; i < N; ++i)
+			for (size_t k = 0; k < N; ++k)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T> void jki(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t j = 0; j < N; ++j)
+		for (size_t k = 0; k < N; ++k)
+			for (size_t i = 0; i < N; ++i)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T> void kij(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t k = 0; k < N; ++k)
+		for (size_t i = 0; i < N; ++i)
+			for (size_t j = 0; j < N; ++j)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T> void kji(T a[N][N], T b[N][N], T c[N][N])
+{
+	for (size_t k = 0; k < N; ++k)
+		for (size_t j = 0; j < N; ++j)
+			for (size_t i = 0; i < N; ++i)
+				a[i][j] += b[i][k] * c[k][j];
+}
+
+template<class T, auto f> void test(benchmark::State& state)
+{
+	T a[N][N], b[N][N], c[N][N];
+	
+	for (size_t i = 0; i < N; ++i)
+		for (size_t j = 0; j < N; ++j)
+		{
+			a[i][j] = 0;
+			b[i][j] = B;
+			c[i][j] = C;
+		}
+	
+	for (auto _ : state)
+	{
+		f(a, b, c); 
+	}
+}
+
+template<class T> void register_benchmark()
+{
+	BENCHMARK_TEMPLATE(test, T, ijk<T>);
+	BENCHMARK_TEMPLATE(test, T, ikj<T>);
+	BENCHMARK_TEMPLATE(test, T, jik<T>);
+	BENCHMARK_TEMPLATE(test, T, jki<T>);
+	BENCHMARK_TEMPLATE(test, T, kij<T>);
+	BENCHMARK_TEMPLATE(test, T, kji<T>);
+}
+
+struct Init
+{
+	Init()
+	{
+//		register_benchmark<char>(); 
+//		register_benchmark<short>(); 
+		register_benchmark<int>(); 
+//		register_benchmark<long>(); 
+//		register_benchmark<__int128>(); 
+//		register_benchmark<float>(); 
+//		register_benchmark<double>(); 
+//		register_benchmark<long double>(); 
+//		register_benchmark<__float128>(); 
+	}
+} init;
+
+BENCHMARK_MAIN();
+
