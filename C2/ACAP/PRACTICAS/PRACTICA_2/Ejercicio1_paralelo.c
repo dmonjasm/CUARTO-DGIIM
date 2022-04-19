@@ -1,3 +1,4 @@
+//Daniel Monjas Miguélez
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
@@ -92,7 +93,7 @@ int main(int argc, char * argv[]){
 
             int parciales[2] = {sumaVec(ingresos, quantity), sumaVec(ingresos, quantity)};
 
-            MPI_Reduce(parciales, 0, 2, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+            MPI_Reduce(parciales, NULL, 2, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
         }
 
         free(ingresos);

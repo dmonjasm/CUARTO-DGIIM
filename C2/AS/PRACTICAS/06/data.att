@@ -1,0 +1,689 @@
+
+data:     formato del fichero elf64-x86-64
+
+
+Desensamblado de la sección .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64 
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 e1 2f 00 00 	mov    0x2fe1(%rip),%rax        # 3ff0 <__gmon_start__>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	callq  *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	retq   
+
+Desensamblado de la sección .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 5a 2f 00 00    	pushq  0x2f5a(%rip)        # 3f80 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	f2 ff 25 5b 2f 00 00 	bnd jmpq *0x2f5b(%rip)        # 3f88 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102d:	0f 1f 00             	nopl   (%rax)
+    1030:	f3 0f 1e fa          	endbr64 
+    1034:	68 00 00 00 00       	pushq  $0x0
+    1039:	f2 e9 e1 ff ff ff    	bnd jmpq 1020 <.plt>
+    103f:	90                   	nop
+    1040:	f3 0f 1e fa          	endbr64 
+    1044:	68 01 00 00 00       	pushq  $0x1
+    1049:	f2 e9 d1 ff ff ff    	bnd jmpq 1020 <.plt>
+    104f:	90                   	nop
+    1050:	f3 0f 1e fa          	endbr64 
+    1054:	68 02 00 00 00       	pushq  $0x2
+    1059:	f2 e9 c1 ff ff ff    	bnd jmpq 1020 <.plt>
+    105f:	90                   	nop
+    1060:	f3 0f 1e fa          	endbr64 
+    1064:	68 03 00 00 00       	pushq  $0x3
+    1069:	f2 e9 b1 ff ff ff    	bnd jmpq 1020 <.plt>
+    106f:	90                   	nop
+    1070:	f3 0f 1e fa          	endbr64 
+    1074:	68 04 00 00 00       	pushq  $0x4
+    1079:	f2 e9 a1 ff ff ff    	bnd jmpq 1020 <.plt>
+    107f:	90                   	nop
+    1080:	f3 0f 1e fa          	endbr64 
+    1084:	68 05 00 00 00       	pushq  $0x5
+    1089:	f2 e9 91 ff ff ff    	bnd jmpq 1020 <.plt>
+    108f:	90                   	nop
+    1090:	f3 0f 1e fa          	endbr64 
+    1094:	68 06 00 00 00       	pushq  $0x6
+    1099:	f2 e9 81 ff ff ff    	bnd jmpq 1020 <.plt>
+    109f:	90                   	nop
+    10a0:	f3 0f 1e fa          	endbr64 
+    10a4:	68 07 00 00 00       	pushq  $0x7
+    10a9:	f2 e9 71 ff ff ff    	bnd jmpq 1020 <.plt>
+    10af:	90                   	nop
+    10b0:	f3 0f 1e fa          	endbr64 
+    10b4:	68 08 00 00 00       	pushq  $0x8
+    10b9:	f2 e9 61 ff ff ff    	bnd jmpq 1020 <.plt>
+    10bf:	90                   	nop
+
+Desensamblado de la sección .plt.got:
+
+00000000000010c0 <__cxa_finalize@plt>:
+    10c0:	f3 0f 1e fa          	endbr64 
+    10c4:	f2 ff 25 0d 2f 00 00 	bnd jmpq *0x2f0d(%rip)        # 3fd8 <__cxa_finalize@GLIBC_2.2.5>
+    10cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .plt.sec:
+
+00000000000010d0 <memset@plt>:
+    10d0:	f3 0f 1e fa          	endbr64 
+    10d4:	f2 ff 25 b5 2e 00 00 	bnd jmpq *0x2eb5(%rip)        # 3f90 <memset@GLIBC_2.2.5>
+    10db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000010e0 <__cxa_atexit@plt>:
+    10e0:	f3 0f 1e fa          	endbr64 
+    10e4:	f2 ff 25 ad 2e 00 00 	bnd jmpq *0x2ead(%rip)        # 3f98 <__cxa_atexit@GLIBC_2.2.5>
+    10eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+00000000000010f0 <std::random_device::_M_fini()@plt>:
+    10f0:	f3 0f 1e fa          	endbr64 
+    10f4:	f2 ff 25 a5 2e 00 00 	bnd jmpq *0x2ea5(%rip)        # 3fa0 <std::random_device::_M_fini()@GLIBCXX_3.4.18>
+    10fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001100 <operator delete(void*)@plt>:
+    1100:	f3 0f 1e fa          	endbr64 
+    1104:	f2 ff 25 9d 2e 00 00 	bnd jmpq *0x2e9d(%rip)        # 3fa8 <operator delete(void*)@GLIBCXX_3.4>
+    110b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001110 <operator new(unsigned long)@plt>:
+    1110:	f3 0f 1e fa          	endbr64 
+    1114:	f2 ff 25 95 2e 00 00 	bnd jmpq *0x2e95(%rip)        # 3fb0 <operator new(unsigned long)@GLIBCXX_3.4>
+    111b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001120 <__stack_chk_fail@plt>:
+    1120:	f3 0f 1e fa          	endbr64 
+    1124:	f2 ff 25 8d 2e 00 00 	bnd jmpq *0x2e8d(%rip)        # 3fb8 <__stack_chk_fail@GLIBC_2.4>
+    112b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001130 <std::random_device::_M_getval()@plt>:
+    1130:	f3 0f 1e fa          	endbr64 
+    1134:	f2 ff 25 85 2e 00 00 	bnd jmpq *0x2e85(%rip)        # 3fc0 <std::random_device::_M_getval()@GLIBCXX_3.4.18>
+    113b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001140 <std::random_device::_M_init(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@plt>:
+    1140:	f3 0f 1e fa          	endbr64 
+    1144:	f2 ff 25 7d 2e 00 00 	bnd jmpq *0x2e7d(%rip)        # 3fc8 <std::random_device::_M_init(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@GLIBCXX_3.4.21>
+    114b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000001150 <_Unwind_Resume@plt>:
+    1150:	f3 0f 1e fa          	endbr64 
+    1154:	f2 ff 25 75 2e 00 00 	bnd jmpq *0x2e75(%rip)        # 3fd0 <_Unwind_Resume@GCC_3.0>
+    115b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Desensamblado de la sección .text:
+
+0000000000001160 <main.cold>:
+    1160:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    1165:	c5 f8 77             	vzeroupper 
+    1168:	e8 93 ff ff ff       	callq  1100 <operator delete(void*)@plt>
+    116d:	4c 89 e7             	mov    %r12,%rdi
+    1170:	e8 db ff ff ff       	callq  1150 <_Unwind_Resume@plt>
+    1175:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    117c:	00 00 00 
+    117f:	90                   	nop
+
+0000000000001180 <main>:
+    1180:	f3 0f 1e fa          	endbr64 
+    1184:	55                   	push   %rbp
+    1185:	bf 00 00 00 04       	mov    $0x4000000,%edi
+    118a:	48 89 e5             	mov    %rsp,%rbp
+    118d:	41 57                	push   %r15
+    118f:	41 56                	push   %r14
+    1191:	41 55                	push   %r13
+    1193:	41 54                	push   %r12
+    1195:	53                   	push   %rbx
+    1196:	48 83 e4 e0          	and    $0xffffffffffffffe0,%rsp
+    119a:	48 83 ec 60          	sub    $0x60,%rsp
+    119e:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    11a5:	00 00 
+    11a7:	48 89 44 24 58       	mov    %rax,0x58(%rsp)
+    11ac:	31 c0                	xor    %eax,%eax
+    11ae:	e8 5d ff ff ff       	callq  1110 <operator new(unsigned long)@plt>
+    11b3:	48 89 c7             	mov    %rax,%rdi
+    11b6:	ba 00 00 00 04       	mov    $0x4000000,%edx
+    11bb:	31 f6                	xor    %esi,%esi
+    11bd:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    11c2:	48 89 c3             	mov    %rax,%rbx
+    11c5:	e8 06 ff ff ff       	callq  10d0 <memset@plt>
+    11ca:	bf 00 00 00 04       	mov    $0x4000000,%edi
+    11cf:	e8 3c ff ff ff       	callq  1110 <operator new(unsigned long)@plt>
+    11d4:	31 f6                	xor    %esi,%esi
+    11d6:	ba 00 00 00 04       	mov    $0x4000000,%edx
+    11db:	48 89 c7             	mov    %rax,%rdi
+    11de:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    11e3:	e8 e8 fe ff ff       	callq  10d0 <memset@plt>
+    11e8:	48 8d 83 00 00 00 04 	lea    0x4000000(%rbx),%rax
+    11ef:	48 89 44 24 20       	mov    %rax,0x20(%rsp)
+    11f4:	48 8d 44 24 40       	lea    0x40(%rsp),%rax
+    11f9:	c5 f9 6f 1d 3f 2e 00 	vmovdqa 0x2e3f(%rip),%xmm3        # 4040 <rng>
+    1200:	00 
+    1201:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    1206:	8b 35 34 2e 00 00    	mov    0x2e34(%rip),%esi        # 4040 <rng>
+    120c:	c5 f8 29 5c 24 40    	vmovaps %xmm3,0x40(%rsp)
+    1212:	49 89 de             	mov    %rbx,%r14
+    1215:	49 bc 05 00 00 00 02 	movabs $0x200000005,%r12
+    121c:	00 00 00 
+    121f:	4c 8d 7c 24 38       	lea    0x38(%rsp),%r15
+    1224:	0f 1f 40 00          	nopl   0x0(%rax)
+    1228:	48 63 4c 24 44       	movslq 0x44(%rsp),%rcx
+    122d:	48 63 c6             	movslq %esi,%rax
+    1230:	48 29 c1             	sub    %rax,%rcx
+    1233:	48 81 f9 fc ff ff 7f 	cmp    $0x7ffffffc,%rcx
+    123a:	0f 87 78 01 00 00    	ja     13b8 <main+0x238>
+    1240:	48 ff c1             	inc    %rcx
+    1243:	b8 fd ff ff 7f       	mov    $0x7ffffffd,%eax
+    1248:	31 d2                	xor    %edx,%edx
+    124a:	48 f7 f1             	div    %rcx
+    124d:	48 8b 54 24 48       	mov    0x48(%rsp),%rdx
+    1252:	48 0f af c8          	imul   %rax,%rcx
+    1256:	48 89 c7             	mov    %rax,%rdi
+    1259:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1260:	4c 69 ca a7 41 00 00 	imul   $0x41a7,%rdx,%r9
+    1267:	4c 89 c8             	mov    %r9,%rax
+    126a:	49 f7 e4             	mul    %r12
+    126d:	4c 89 c8             	mov    %r9,%rax
+    1270:	48 29 d0             	sub    %rdx,%rax
+    1273:	48 d1 e8             	shr    %rax
+    1276:	48 01 c2             	add    %rax,%rdx
+    1279:	48 c1 ea 1e          	shr    $0x1e,%rdx
+    127d:	48 89 d0             	mov    %rdx,%rax
+    1280:	48 c1 e0 1f          	shl    $0x1f,%rax
+    1284:	48 29 d0             	sub    %rdx,%rax
+    1287:	4c 89 ca             	mov    %r9,%rdx
+    128a:	48 29 c2             	sub    %rax,%rdx
+    128d:	48 8d 42 ff          	lea    -0x1(%rdx),%rax
+    1291:	48 39 c1             	cmp    %rax,%rcx
+    1294:	76 ca                	jbe    1260 <main+0xe0>
+    1296:	48 89 54 24 48       	mov    %rdx,0x48(%rsp)
+    129b:	31 d2                	xor    %edx,%edx
+    129d:	48 f7 f7             	div    %rdi
+    12a0:	01 f0                	add    %esi,%eax
+    12a2:	41 89 06             	mov    %eax,(%r14)
+    12a5:	49 83 c6 04          	add    $0x4,%r14
+    12a9:	4c 39 74 24 20       	cmp    %r14,0x20(%rsp)
+    12ae:	0f 85 74 ff ff ff    	jne    1228 <main+0xa8>
+    12b4:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    12b9:	c5 fd 6f 05 5f 0d 00 	vmovdqa 0xd5f(%rip),%ymm0        # 2020 <_IO_stdin_used+0x20>
+    12c0:	00 
+    12c1:	c5 fd 6f 15 77 0d 00 	vmovdqa 0xd77(%rip),%ymm2        # 2040 <_IO_stdin_used+0x40>
+    12c8:	00 
+    12c9:	48 89 f8             	mov    %rdi,%rax
+    12cc:	48 8d 8f 00 00 00 04 	lea    0x4000000(%rdi),%rcx
+    12d3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    12d8:	c5 fd 6f c8          	vmovdqa %ymm0,%ymm1
+    12dc:	c5 fe 7f 08          	vmovdqu %ymm1,(%rax)
+    12e0:	48 83 c0 20          	add    $0x20,%rax
+    12e4:	c5 fd fe c2          	vpaddd %ymm2,%ymm0,%ymm0
+    12e8:	48 39 c1             	cmp    %rax,%rcx
+    12eb:	75 eb                	jne    12d8 <main+0x158>
+    12ed:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+    12f2:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    12f6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    12fd:	00 00 00 
+    1300:	c5 fd fe 00          	vpaddd (%rax),%ymm0,%ymm0
+    1304:	48 83 c0 20          	add    $0x20,%rax
+    1308:	48 39 44 24 20       	cmp    %rax,0x20(%rsp)
+    130d:	75 f1                	jne    1300 <main+0x180>
+    130f:	c4 e3 7d 39 c1 01    	vextracti128 $0x1,%ymm0,%xmm1
+    1315:	c5 f1 fe c0          	vpaddd %xmm0,%xmm1,%xmm0
+    1319:	c5 f1 73 d8 08       	vpsrldq $0x8,%xmm0,%xmm1
+    131e:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    1322:	c5 f1 73 d8 04       	vpsrldq $0x4,%xmm0,%xmm1
+    1327:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    132b:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+    1330:	c5 f9 7e c0          	vmovd  %xmm0,%eax
+    1334:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    1338:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    133f:	00 
+    1340:	c5 fd fe 02          	vpaddd (%rdx),%ymm0,%ymm0
+    1344:	48 83 c2 20          	add    $0x20,%rdx
+    1348:	48 39 ca             	cmp    %rcx,%rdx
+    134b:	75 f3                	jne    1340 <main+0x1c0>
+    134d:	c5 f9 6f c8          	vmovdqa %xmm0,%xmm1
+    1351:	c4 e3 7d 39 c0 01    	vextracti128 $0x1,%ymm0,%xmm0
+    1357:	c5 f1 fe c0          	vpaddd %xmm0,%xmm1,%xmm0
+    135b:	c5 f1 73 d8 08       	vpsrldq $0x8,%xmm0,%xmm1
+    1360:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    1364:	c5 f1 73 d8 04       	vpsrldq $0x4,%xmm0,%xmm1
+    1369:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    136d:	c4 c1 79 7e c4       	vmovd  %xmm0,%r12d
+    1372:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    1377:	41 01 c4             	add    %eax,%r12d
+    137a:	c5 f8 77             	vzeroupper 
+    137d:	e8 7e fd ff ff       	callq  1100 <operator delete(void*)@plt>
+    1382:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    1387:	e8 74 fd ff ff       	callq  1100 <operator delete(void*)@plt>
+    138c:	48 8b 44 24 58       	mov    0x58(%rsp),%rax
+    1391:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    1398:	00 00 
+    139a:	0f 85 0c 01 00 00    	jne    14ac <main+0x32c>
+    13a0:	48 8d 65 d8          	lea    -0x28(%rbp),%rsp
+    13a4:	5b                   	pop    %rbx
+    13a5:	44 89 e0             	mov    %r12d,%eax
+    13a8:	41 5c                	pop    %r12
+    13aa:	41 5d                	pop    %r13
+    13ac:	41 5e                	pop    %r14
+    13ae:	41 5f                	pop    %r15
+    13b0:	5d                   	pop    %rbp
+    13b1:	c3                   	retq   
+    13b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    13b8:	48 81 f9 fd ff ff 7f 	cmp    $0x7ffffffd,%rcx
+    13bf:	0f 84 ab 00 00 00    	je     1470 <main+0x2f0>
+    13c5:	48 89 ca             	mov    %rcx,%rdx
+    13c8:	48 d1 ea             	shr    %rdx
+    13cb:	48 b8 09 00 00 00 02 	movabs $0x8000000200000009,%rax
+    13d2:	00 00 80 
+    13d5:	48 f7 e2             	mul    %rdx
+    13d8:	4c 8d 6c 24 48       	lea    0x48(%rsp),%r13
+    13dd:	48 89 d3             	mov    %rdx,%rbx
+    13e0:	48 c1 eb 1d          	shr    $0x1d,%rbx
+    13e4:	48 8b 7c 24 18       	mov    0x18(%rsp),%rdi
+    13e9:	4c 89 fa             	mov    %r15,%rdx
+    13ec:	4c 89 ee             	mov    %r13,%rsi
+    13ef:	48 89 4c 24 28       	mov    %rcx,0x28(%rsp)
+    13f4:	c7 44 24 38 00 00 00 	movl   $0x0,0x38(%rsp)
+    13fb:	00 
+    13fc:	89 5c 24 3c          	mov    %ebx,0x3c(%rsp)
+    1400:	e8 0b 03 00 00       	callq  1710 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)>
+    1405:	48 69 74 24 48 a7 41 	imul   $0x41a7,0x48(%rsp),%rsi
+    140c:	00 00 
+    140e:	41 89 c1             	mov    %eax,%r9d
+    1411:	48 8b 4c 24 28       	mov    0x28(%rsp),%rcx
+    1416:	48 89 f0             	mov    %rsi,%rax
+    1419:	49 f7 e4             	mul    %r12
+    141c:	48 89 f0             	mov    %rsi,%rax
+    141f:	48 29 d0             	sub    %rdx,%rax
+    1422:	48 d1 e8             	shr    %rax
+    1425:	48 01 c2             	add    %rax,%rdx
+    1428:	48 c1 ea 1e          	shr    $0x1e,%rdx
+    142c:	48 89 d0             	mov    %rdx,%rax
+    142f:	48 c1 e0 1f          	shl    $0x1f,%rax
+    1433:	48 29 d0             	sub    %rdx,%rax
+    1436:	48 29 c6             	sub    %rax,%rsi
+    1439:	49 63 c1             	movslq %r9d,%rax
+    143c:	48 69 c0 fe ff ff 7f 	imul   $0x7ffffffe,%rax,%rax
+    1443:	48 89 f2             	mov    %rsi,%rdx
+    1446:	48 ff ca             	dec    %rdx
+    1449:	48 89 74 24 48       	mov    %rsi,0x48(%rsp)
+    144e:	31 f6                	xor    %esi,%esi
+    1450:	48 01 c2             	add    %rax,%rdx
+    1453:	40 0f 92 c6          	setb   %sil
+    1457:	48 89 d0             	mov    %rdx,%rax
+    145a:	48 39 d1             	cmp    %rdx,%rcx
+    145d:	72 85                	jb     13e4 <main+0x264>
+    145f:	48 85 f6             	test   %rsi,%rsi
+    1462:	75 80                	jne    13e4 <main+0x264>
+    1464:	8b 74 24 40          	mov    0x40(%rsp),%esi
+    1468:	e9 33 fe ff ff       	jmpq   12a0 <main+0x120>
+    146d:	0f 1f 00             	nopl   (%rax)
+    1470:	48 69 4c 24 48 a7 41 	imul   $0x41a7,0x48(%rsp),%rcx
+    1477:	00 00 
+    1479:	48 89 c8             	mov    %rcx,%rax
+    147c:	49 f7 e4             	mul    %r12
+    147f:	48 89 c8             	mov    %rcx,%rax
+    1482:	48 29 d0             	sub    %rdx,%rax
+    1485:	48 d1 e8             	shr    %rax
+    1488:	48 01 d0             	add    %rdx,%rax
+    148b:	48 c1 e8 1e          	shr    $0x1e,%rax
+    148f:	48 89 c2             	mov    %rax,%rdx
+    1492:	48 c1 e2 1f          	shl    $0x1f,%rdx
+    1496:	48 29 c2             	sub    %rax,%rdx
+    1499:	48 29 d1             	sub    %rdx,%rcx
+    149c:	48 89 c8             	mov    %rcx,%rax
+    149f:	48 89 4c 24 48       	mov    %rcx,0x48(%rsp)
+    14a4:	48 ff c8             	dec    %rax
+    14a7:	e9 f4 fd ff ff       	jmpq   12a0 <main+0x120>
+    14ac:	e8 6f fc ff ff       	callq  1120 <__stack_chk_fail@plt>
+    14b1:	f3 0f 1e fa          	endbr64 
+    14b5:	49 89 c4             	mov    %rax,%r12
+    14b8:	e9 a3 fc ff ff       	jmpq   1160 <main.cold>
+    14bd:	0f 1f 00             	nopl   (%rax)
+
+00000000000014c0 <_GLOBAL__sub_I_device>:
+    14c0:	f3 0f 1e fa          	endbr64 
+    14c4:	48 83 ec 08          	sub    $0x8,%rsp
+    14c8:	48 8d 3d 91 2b 00 00 	lea    0x2b91(%rip),%rdi        # 4060 <device>
+    14cf:	e8 9c 01 00 00       	callq  1670 <std::random_device::random_device()>
+    14d4:	48 8d 15 2d 2b 00 00 	lea    0x2b2d(%rip),%rdx        # 4008 <__dso_handle>
+    14db:	48 8d 35 7e 2b 00 00 	lea    0x2b7e(%rip),%rsi        # 4060 <device>
+    14e2:	48 8d 3d 67 01 00 00 	lea    0x167(%rip),%rdi        # 1650 <std::random_device::~random_device()>
+    14e9:	e8 f2 fb ff ff       	callq  10e0 <__cxa_atexit@plt>
+    14ee:	48 8d 3d 6b 2b 00 00 	lea    0x2b6b(%rip),%rdi        # 4060 <device>
+    14f5:	e8 36 fc ff ff       	callq  1130 <std::random_device::_M_getval()@plt>
+    14fa:	89 c1                	mov    %eax,%ecx
+    14fc:	48 89 c8             	mov    %rcx,%rax
+    14ff:	48 ba 05 00 00 00 02 	movabs $0x200000005,%rdx
+    1506:	00 00 00 
+    1509:	48 f7 e2             	mul    %rdx
+    150c:	48 89 c8             	mov    %rcx,%rax
+    150f:	48 29 d0             	sub    %rdx,%rax
+    1512:	48 d1 e8             	shr    %rax
+    1515:	48 01 c2             	add    %rax,%rdx
+    1518:	48 c1 ea 1e          	shr    $0x1e,%rdx
+    151c:	48 89 d0             	mov    %rdx,%rax
+    151f:	48 c1 e0 1f          	shl    $0x1f,%rax
+    1523:	48 29 d0             	sub    %rdx,%rax
+    1526:	48 29 c1             	sub    %rax,%rcx
+    1529:	48 89 ca             	mov    %rcx,%rdx
+    152c:	b8 01 00 00 00       	mov    $0x1,%eax
+    1531:	48 0f 44 d0          	cmove  %rax,%rdx
+    1535:	48 b8 00 00 00 00 ff 	movabs $0x7fffffff00000000,%rax
+    153c:	ff ff 7f 
+    153f:	48 89 15 12 2b 00 00 	mov    %rdx,0x2b12(%rip)        # 4058 <engine>
+    1546:	48 89 05 03 2b 00 00 	mov    %rax,0x2b03(%rip)        # 4050 <distribution>
+    154d:	48 89 05 ec 2a 00 00 	mov    %rax,0x2aec(%rip)        # 4040 <rng>
+    1554:	48 89 15 ed 2a 00 00 	mov    %rdx,0x2aed(%rip)        # 4048 <rng+0x8>
+    155b:	48 83 c4 08          	add    $0x8,%rsp
+    155f:	c3                   	retq   
+
+0000000000001560 <_start>:
+    1560:	f3 0f 1e fa          	endbr64 
+    1564:	31 ed                	xor    %ebp,%ebp
+    1566:	49 89 d1             	mov    %rdx,%r9
+    1569:	5e                   	pop    %rsi
+    156a:	48 89 e2             	mov    %rsp,%rdx
+    156d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1571:	50                   	push   %rax
+    1572:	54                   	push   %rsp
+    1573:	4c 8d 05 d6 03 00 00 	lea    0x3d6(%rip),%r8        # 1950 <__libc_csu_fini>
+    157a:	48 8d 0d 5f 03 00 00 	lea    0x35f(%rip),%rcx        # 18e0 <__libc_csu_init>
+    1581:	48 8d 3d f8 fb ff ff 	lea    -0x408(%rip),%rdi        # 1180 <main>
+    1588:	ff 15 5a 2a 00 00    	callq  *0x2a5a(%rip)        # 3fe8 <__libc_start_main@GLIBC_2.2.5>
+    158e:	f4                   	hlt    
+    158f:	90                   	nop
+
+0000000000001590 <deregister_tm_clones>:
+    1590:	48 8d 3d 81 2a 00 00 	lea    0x2a81(%rip),%rdi        # 4018 <__TMC_END__>
+    1597:	48 8d 05 7a 2a 00 00 	lea    0x2a7a(%rip),%rax        # 4018 <__TMC_END__>
+    159e:	48 39 f8             	cmp    %rdi,%rax
+    15a1:	74 15                	je     15b8 <deregister_tm_clones+0x28>
+    15a3:	48 8b 05 36 2a 00 00 	mov    0x2a36(%rip),%rax        # 3fe0 <_ITM_deregisterTMCloneTable>
+    15aa:	48 85 c0             	test   %rax,%rax
+    15ad:	74 09                	je     15b8 <deregister_tm_clones+0x28>
+    15af:	ff e0                	jmpq   *%rax
+    15b1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    15b8:	c3                   	retq   
+    15b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000015c0 <register_tm_clones>:
+    15c0:	48 8d 3d 51 2a 00 00 	lea    0x2a51(%rip),%rdi        # 4018 <__TMC_END__>
+    15c7:	48 8d 35 4a 2a 00 00 	lea    0x2a4a(%rip),%rsi        # 4018 <__TMC_END__>
+    15ce:	48 29 fe             	sub    %rdi,%rsi
+    15d1:	48 89 f0             	mov    %rsi,%rax
+    15d4:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    15d8:	48 c1 f8 03          	sar    $0x3,%rax
+    15dc:	48 01 c6             	add    %rax,%rsi
+    15df:	48 d1 fe             	sar    %rsi
+    15e2:	74 14                	je     15f8 <register_tm_clones+0x38>
+    15e4:	48 8b 05 0d 2a 00 00 	mov    0x2a0d(%rip),%rax        # 3ff8 <_ITM_registerTMCloneTable>
+    15eb:	48 85 c0             	test   %rax,%rax
+    15ee:	74 08                	je     15f8 <register_tm_clones+0x38>
+    15f0:	ff e0                	jmpq   *%rax
+    15f2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    15f8:	c3                   	retq   
+    15f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001600 <__do_global_dtors_aux>:
+    1600:	f3 0f 1e fa          	endbr64 
+    1604:	80 3d 15 2a 00 00 00 	cmpb   $0x0,0x2a15(%rip)        # 4020 <completed.8061>
+    160b:	75 2b                	jne    1638 <__do_global_dtors_aux+0x38>
+    160d:	55                   	push   %rbp
+    160e:	48 83 3d c2 29 00 00 	cmpq   $0x0,0x29c2(%rip)        # 3fd8 <__cxa_finalize@GLIBC_2.2.5>
+    1615:	00 
+    1616:	48 89 e5             	mov    %rsp,%rbp
+    1619:	74 0c                	je     1627 <__do_global_dtors_aux+0x27>
+    161b:	48 8b 3d e6 29 00 00 	mov    0x29e6(%rip),%rdi        # 4008 <__dso_handle>
+    1622:	e8 99 fa ff ff       	callq  10c0 <__cxa_finalize@plt>
+    1627:	e8 64 ff ff ff       	callq  1590 <deregister_tm_clones>
+    162c:	c6 05 ed 29 00 00 01 	movb   $0x1,0x29ed(%rip)        # 4020 <completed.8061>
+    1633:	5d                   	pop    %rbp
+    1634:	c3                   	retq   
+    1635:	0f 1f 00             	nopl   (%rax)
+    1638:	c3                   	retq   
+    1639:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001640 <frame_dummy>:
+    1640:	f3 0f 1e fa          	endbr64 
+    1644:	e9 77 ff ff ff       	jmpq   15c0 <register_tm_clones>
+    1649:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001650 <std::random_device::~random_device()>:
+    1650:	f3 0f 1e fa          	endbr64 
+    1654:	48 83 ec 08          	sub    $0x8,%rsp
+    1658:	e8 93 fa ff ff       	callq  10f0 <std::random_device::_M_fini()@plt>
+    165d:	48 83 c4 08          	add    $0x8,%rsp
+    1661:	c3                   	retq   
+    1662:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    1669:	00 00 00 
+    166c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001670 <std::random_device::random_device()>:
+    1670:	f3 0f 1e fa          	endbr64 
+    1674:	55                   	push   %rbp
+    1675:	53                   	push   %rbx
+    1676:	48 83 ec 38          	sub    $0x38,%rsp
+    167a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1681:	00 00 
+    1683:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    1688:	31 c0                	xor    %eax,%eax
+    168a:	48 8d 5c 24 10       	lea    0x10(%rsp),%rbx
+    168f:	b8 75 6c 00 00       	mov    $0x6c75,%eax
+    1694:	48 89 e6             	mov    %rsp,%rsi
+    1697:	48 89 1c 24          	mov    %rbx,(%rsp)
+    169b:	c7 44 24 10 64 65 66 	movl   $0x61666564,0x10(%rsp)
+    16a2:	61 
+    16a3:	66 89 44 24 14       	mov    %ax,0x14(%rsp)
+    16a8:	c6 44 24 16 74       	movb   $0x74,0x16(%rsp)
+    16ad:	48 c7 44 24 08 07 00 	movq   $0x7,0x8(%rsp)
+    16b4:	00 00 
+    16b6:	c6 44 24 17 00       	movb   $0x0,0x17(%rsp)
+    16bb:	e8 80 fa ff ff       	callq  1140 <std::random_device::_M_init(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@plt>
+    16c0:	48 8b 3c 24          	mov    (%rsp),%rdi
+    16c4:	48 39 df             	cmp    %rbx,%rdi
+    16c7:	74 05                	je     16ce <std::random_device::random_device()+0x5e>
+    16c9:	e8 32 fa ff ff       	callq  1100 <operator delete(void*)@plt>
+    16ce:	48 8b 44 24 28       	mov    0x28(%rsp),%rax
+    16d3:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+    16da:	00 00 
+    16dc:	75 07                	jne    16e5 <std::random_device::random_device()+0x75>
+    16de:	48 83 c4 38          	add    $0x38,%rsp
+    16e2:	5b                   	pop    %rbx
+    16e3:	5d                   	pop    %rbp
+    16e4:	c3                   	retq   
+    16e5:	e8 36 fa ff ff       	callq  1120 <__stack_chk_fail@plt>
+    16ea:	f3 0f 1e fa          	endbr64 
+    16ee:	48 89 c5             	mov    %rax,%rbp
+    16f1:	48 8b 3c 24          	mov    (%rsp),%rdi
+    16f5:	48 39 df             	cmp    %rbx,%rdi
+    16f8:	74 10                	je     170a <std::random_device::random_device()+0x9a>
+    16fa:	c5 f8 77             	vzeroupper 
+    16fd:	e8 fe f9 ff ff       	callq  1100 <operator delete(void*)@plt>
+    1702:	48 89 ef             	mov    %rbp,%rdi
+    1705:	e8 46 fa ff ff       	callq  1150 <_Unwind_Resume@plt>
+    170a:	c5 f8 77             	vzeroupper 
+    170d:	eb f3                	jmp    1702 <std::random_device::random_device()+0x92>
+    170f:	90                   	nop
+
+0000000000001710 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)>:
+    1710:	f3 0f 1e fa          	endbr64 
+    1714:	41 57                	push   %r15
+    1716:	41 56                	push   %r14
+    1718:	41 55                	push   %r13
+    171a:	49 89 f5             	mov    %rsi,%r13
+    171d:	41 54                	push   %r12
+    171f:	55                   	push   %rbp
+    1720:	53                   	push   %rbx
+    1721:	48 83 ec 18          	sub    $0x18,%rsp
+    1725:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    172c:	00 00 
+    172e:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    1733:	31 c0                	xor    %eax,%eax
+    1735:	4c 63 72 04          	movslq 0x4(%rdx),%r14
+    1739:	48 63 02             	movslq (%rdx),%rax
+    173c:	49 29 c6             	sub    %rax,%r14
+    173f:	48 89 c6             	mov    %rax,%rsi
+    1742:	49 81 fe fc ff ff 7f 	cmp    $0x7ffffffc,%r14
+    1749:	0f 87 91 00 00 00    	ja     17e0 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0xd0>
+    174f:	49 ff c6             	inc    %r14
+    1752:	b8 fd ff ff 7f       	mov    $0x7ffffffd,%eax
+    1757:	31 d2                	xor    %edx,%edx
+    1759:	49 f7 f6             	div    %r14
+    175c:	49 8b 4d 00          	mov    0x0(%r13),%rcx
+    1760:	49 b9 05 00 00 00 02 	movabs $0x200000005,%r9
+    1767:	00 00 00 
+    176a:	4c 0f af f0          	imul   %rax,%r14
+    176e:	49 89 c2             	mov    %rax,%r10
+    1771:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1778:	4c 69 c1 a7 41 00 00 	imul   $0x41a7,%rcx,%r8
+    177f:	4c 89 c0             	mov    %r8,%rax
+    1782:	49 f7 e1             	mul    %r9
+    1785:	4c 89 c1             	mov    %r8,%rcx
+    1788:	48 29 d1             	sub    %rdx,%rcx
+    178b:	48 d1 e9             	shr    %rcx
+    178e:	48 01 ca             	add    %rcx,%rdx
+    1791:	48 c1 ea 1e          	shr    $0x1e,%rdx
+    1795:	48 89 d7             	mov    %rdx,%rdi
+    1798:	48 c1 e7 1f          	shl    $0x1f,%rdi
+    179c:	48 29 d7             	sub    %rdx,%rdi
+    179f:	49 29 f8             	sub    %rdi,%r8
+    17a2:	49 8d 40 ff          	lea    -0x1(%r8),%rax
+    17a6:	4c 89 c1             	mov    %r8,%rcx
+    17a9:	49 39 c6             	cmp    %rax,%r14
+    17ac:	76 ca                	jbe    1778 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0x68>
+    17ae:	31 d2                	xor    %edx,%edx
+    17b0:	49 f7 f2             	div    %r10
+    17b3:	4d 89 45 00          	mov    %r8,0x0(%r13)
+    17b7:	01 f0                	add    %esi,%eax
+    17b9:	48 8b 5c 24 08       	mov    0x8(%rsp),%rbx
+    17be:	64 48 33 1c 25 28 00 	xor    %fs:0x28,%rbx
+    17c5:	00 00 
+    17c7:	0f 85 07 01 00 00    	jne    18d4 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0x1c4>
+    17cd:	48 83 c4 18          	add    $0x18,%rsp
+    17d1:	5b                   	pop    %rbx
+    17d2:	5d                   	pop    %rbp
+    17d3:	41 5c                	pop    %r12
+    17d5:	41 5d                	pop    %r13
+    17d7:	41 5e                	pop    %r14
+    17d9:	41 5f                	pop    %r15
+    17db:	c3                   	retq   
+    17dc:	0f 1f 40 00          	nopl   0x0(%rax)
+    17e0:	49 81 fe fd ff ff 7f 	cmp    $0x7ffffffd,%r14
+    17e7:	0f 84 a3 00 00 00    	je     1890 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0x180>
+    17ed:	49 89 d7             	mov    %rdx,%r15
+    17f0:	4c 89 f2             	mov    %r14,%rdx
+    17f3:	48 d1 ea             	shr    %rdx
+    17f6:	48 bb 09 00 00 00 02 	movabs $0x8000000200000009,%rbx
+    17fd:	00 00 80 
+    1800:	48 89 d0             	mov    %rdx,%rax
+    1803:	48 f7 e3             	mul    %rbx
+    1806:	48 89 fd             	mov    %rdi,%rbp
+    1809:	49 89 e4             	mov    %rsp,%r12
+    180c:	48 89 d3             	mov    %rdx,%rbx
+    180f:	48 c1 eb 1d          	shr    $0x1d,%rbx
+    1813:	4c 89 e2             	mov    %r12,%rdx
+    1816:	4c 89 ee             	mov    %r13,%rsi
+    1819:	48 89 ef             	mov    %rbp,%rdi
+    181c:	c7 04 24 00 00 00 00 	movl   $0x0,(%rsp)
+    1823:	89 5c 24 04          	mov    %ebx,0x4(%rsp)
+    1827:	e8 e4 fe ff ff       	callq  1710 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)>
+    182c:	49 69 4d 00 a7 41 00 	imul   $0x41a7,0x0(%r13),%rcx
+    1833:	00 
+    1834:	4c 63 c0             	movslq %eax,%r8
+    1837:	48 b8 05 00 00 00 02 	movabs $0x200000005,%rax
+    183e:	00 00 00 
+    1841:	48 f7 e1             	mul    %rcx
+    1844:	48 89 c8             	mov    %rcx,%rax
+    1847:	48 29 d0             	sub    %rdx,%rax
+    184a:	48 d1 e8             	shr    %rax
+    184d:	48 01 c2             	add    %rax,%rdx
+    1850:	48 c1 ea 1e          	shr    $0x1e,%rdx
+    1854:	48 89 d0             	mov    %rdx,%rax
+    1857:	48 c1 e0 1f          	shl    $0x1f,%rax
+    185b:	48 29 d0             	sub    %rdx,%rax
+    185e:	48 89 ca             	mov    %rcx,%rdx
+    1861:	48 29 c2             	sub    %rax,%rdx
+    1864:	49 69 c0 fe ff ff 7f 	imul   $0x7ffffffe,%r8,%rax
+    186b:	49 89 55 00          	mov    %rdx,0x0(%r13)
+    186f:	48 ff ca             	dec    %rdx
+    1872:	48 01 d0             	add    %rdx,%rax
+    1875:	0f 92 c2             	setb   %dl
+    1878:	0f b6 d2             	movzbl %dl,%edx
+    187b:	49 39 c6             	cmp    %rax,%r14
+    187e:	72 93                	jb     1813 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0x103>
+    1880:	48 85 d2             	test   %rdx,%rdx
+    1883:	75 8e                	jne    1813 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0x103>
+    1885:	41 8b 37             	mov    (%r15),%esi
+    1888:	e9 2a ff ff ff       	jmpq   17b7 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0xa7>
+    188d:	0f 1f 00             	nopl   (%rax)
+    1890:	49 69 4d 00 a7 41 00 	imul   $0x41a7,0x0(%r13),%rcx
+    1897:	00 
+    1898:	48 ba 05 00 00 00 02 	movabs $0x200000005,%rdx
+    189f:	00 00 00 
+    18a2:	48 89 c8             	mov    %rcx,%rax
+    18a5:	48 f7 e2             	mul    %rdx
+    18a8:	48 89 c8             	mov    %rcx,%rax
+    18ab:	48 29 d0             	sub    %rdx,%rax
+    18ae:	48 d1 e8             	shr    %rax
+    18b1:	48 01 d0             	add    %rdx,%rax
+    18b4:	48 c1 e8 1e          	shr    $0x1e,%rax
+    18b8:	48 89 c2             	mov    %rax,%rdx
+    18bb:	48 c1 e2 1f          	shl    $0x1f,%rdx
+    18bf:	48 29 c2             	sub    %rax,%rdx
+    18c2:	48 29 d1             	sub    %rdx,%rcx
+    18c5:	48 89 c8             	mov    %rcx,%rax
+    18c8:	49 89 4d 00          	mov    %rcx,0x0(%r13)
+    18cc:	48 ff c8             	dec    %rax
+    18cf:	e9 e3 fe ff ff       	jmpq   17b7 <int std::uniform_int_distribution<int>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_int_distribution<int>::param_type const&)+0xa7>
+    18d4:	e8 47 f8 ff ff       	callq  1120 <__stack_chk_fail@plt>
+    18d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000018e0 <__libc_csu_init>:
+    18e0:	f3 0f 1e fa          	endbr64 
+    18e4:	41 57                	push   %r15
+    18e6:	4c 8d 3d 63 24 00 00 	lea    0x2463(%rip),%r15        # 3d50 <__frame_dummy_init_array_entry>
+    18ed:	41 56                	push   %r14
+    18ef:	49 89 d6             	mov    %rdx,%r14
+    18f2:	41 55                	push   %r13
+    18f4:	49 89 f5             	mov    %rsi,%r13
+    18f7:	41 54                	push   %r12
+    18f9:	41 89 fc             	mov    %edi,%r12d
+    18fc:	55                   	push   %rbp
+    18fd:	48 8d 2d 5c 24 00 00 	lea    0x245c(%rip),%rbp        # 3d60 <__do_global_dtors_aux_fini_array_entry>
+    1904:	53                   	push   %rbx
+    1905:	4c 29 fd             	sub    %r15,%rbp
+    1908:	48 83 ec 08          	sub    $0x8,%rsp
+    190c:	e8 ef f6 ff ff       	callq  1000 <_init>
+    1911:	48 c1 fd 03          	sar    $0x3,%rbp
+    1915:	74 1f                	je     1936 <__libc_csu_init+0x56>
+    1917:	31 db                	xor    %ebx,%ebx
+    1919:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1920:	4c 89 f2             	mov    %r14,%rdx
+    1923:	4c 89 ee             	mov    %r13,%rsi
+    1926:	44 89 e7             	mov    %r12d,%edi
+    1929:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    192d:	48 83 c3 01          	add    $0x1,%rbx
+    1931:	48 39 dd             	cmp    %rbx,%rbp
+    1934:	75 ea                	jne    1920 <__libc_csu_init+0x40>
+    1936:	48 83 c4 08          	add    $0x8,%rsp
+    193a:	5b                   	pop    %rbx
+    193b:	5d                   	pop    %rbp
+    193c:	41 5c                	pop    %r12
+    193e:	41 5d                	pop    %r13
+    1940:	41 5e                	pop    %r14
+    1942:	41 5f                	pop    %r15
+    1944:	c3                   	retq   
+    1945:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    194c:	00 00 00 00 
+
+0000000000001950 <__libc_csu_fini>:
+    1950:	f3 0f 1e fa          	endbr64 
+    1954:	c3                   	retq   
+
+Desensamblado de la sección .fini:
+
+0000000000001958 <_fini>:
+    1958:	f3 0f 1e fa          	endbr64 
+    195c:	48 83 ec 08          	sub    $0x8,%rsp
+    1960:	48 83 c4 08          	add    $0x8,%rsp
+    1964:	c3                   	retq   

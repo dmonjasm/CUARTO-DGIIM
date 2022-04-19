@@ -1,0 +1,240 @@
+Tamaño 16
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tamaño 165
+Tiempo requerido: 0.071
+Tiempo requerido: 0.070
+Tiempo requerido: 0.068
+Tiempo requerido: 0.070
+Tiempo requerido: 0.068
+Tamaño 314
+Tiempo requerido: 0.240
+Tiempo requerido: 0.134
+Tiempo requerido: 0.140
+Tiempo requerido: 0.139
+Tiempo requerido: 0.133
+Tamaño 463
+Tiempo requerido: 0.468
+Tiempo requerido: 0.476
+Tiempo requerido: 0.460
+Tiempo requerido: 0.459
+Tiempo requerido: 0.455
+Tamaño 612
+Tiempo requerido: 1.137
+Tiempo requerido: 1.062
+Tiempo requerido: 1.063
+Tiempo requerido: 1.094
+Tiempo requerido: 1.079
+Tamaño 761
+Tiempo requerido: 2.286
+Tiempo requerido: 2.162
+Tiempo requerido: 2.173
+Tiempo requerido: 2.182
+Tiempo requerido: 2.142
+Tamaño 910
+Tiempo requerido: 4.098
+Tiempo requerido: 4.098
+Tiempo requerido: 4.117
+Tiempo requerido: 4.004
+Tiempo requerido: 4.118
+Tamaño 1059
+Tiempo requerido: 7.876
+Tiempo requerido: 7.422
+Tiempo requerido: 7.730
+Tiempo requerido: 7.685
+Tiempo requerido: 7.529
+Tamaño 1208
+Tiempo requerido: 10.762
+Tiempo requerido: 10.827
+Tiempo requerido: 10.742
+Tiempo requerido: 10.717
+Tiempo requerido: 10.747
+Tamaño 1357
+Tiempo requerido: 22.342
+Tiempo requerido: 22.356
+Tiempo requerido: 22.160
+Tiempo requerido: 22.262
+Tiempo requerido: 22.297
+Tamaño 16
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tamaño 165
+Tiempo requerido: 0.069
+Tiempo requerido: 0.069
+Tiempo requerido: 0.067
+Tiempo requerido: 0.069
+Tiempo requerido: 0.058
+Tamaño 314
+Tiempo requerido: 0.245
+Tiempo requerido: 0.139
+Tiempo requerido: 0.133
+Tiempo requerido: 0.133
+Tiempo requerido: 0.132
+Tamaño 463
+Tiempo requerido: 0.539
+Tiempo requerido: 0.448
+Tiempo requerido: 0.449
+Tiempo requerido: 0.455
+Tiempo requerido: 0.452
+Tamaño 612
+Tiempo requerido: 1.175
+Tiempo requerido: 1.094
+Tiempo requerido: 1.093
+Tiempo requerido: 1.073
+Tiempo requerido: 1.070
+Tamaño 761
+Tiempo requerido: 2.259
+Tiempo requerido: 2.120
+Tiempo requerido: 2.119
+Tiempo requerido: 2.146
+Tiempo requerido: 2.123
+Tamaño 910
+Tiempo requerido: 4.151
+Tiempo requerido: 4.076
+Tiempo requerido: 3.965
+Tiempo requerido: 4.037
+Tiempo requerido: 4.062
+Tamaño 1059
+Tiempo requerido: 7.487
+Tiempo requerido: 7.373
+Tiempo requerido: 7.409
+Tiempo requerido: 7.344
+Tiempo requerido: 7.232
+Tamaño 1208
+Tiempo requerido: 10.749
+Tiempo requerido: 10.668
+Tiempo requerido: 11.089
+Tiempo requerido: 10.750
+Tiempo requerido: 10.625
+Tamaño 1357
+Tiempo requerido: 22.382
+Tiempo requerido: 22.290
+Tiempo requerido: 22.840
+Tiempo requerido: 22.044
+Tiempo requerido: 22.050
+Tamaño 16
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tamaño 165
+Tiempo requerido: 0.069
+Tiempo requerido: 0.059
+Tiempo requerido: 0.027
+Tiempo requerido: 0.020
+Tiempo requerido: 0.020
+Tamaño 314
+Tiempo requerido: 0.237
+Tiempo requerido: 0.133
+Tiempo requerido: 0.133
+Tiempo requerido: 0.139
+Tiempo requerido: 0.132
+Tamaño 463
+Tiempo requerido: 0.543
+Tiempo requerido: 0.456
+Tiempo requerido: 0.451
+Tiempo requerido: 0.450
+Tiempo requerido: 0.451
+Tamaño 612
+Tiempo requerido: 1.155
+Tiempo requerido: 1.072
+Tiempo requerido: 1.087
+Tiempo requerido: 1.070
+Tiempo requerido: 1.070
+Tamaño 761
+Tiempo requerido: 2.212
+Tiempo requerido: 2.087
+Tiempo requerido: 2.117
+Tiempo requerido: 2.114
+Tiempo requerido: 2.115
+Tamaño 910
+Tiempo requerido: 4.063
+Tiempo requerido: 3.939
+Tiempo requerido: 3.888
+Tiempo requerido: 3.949
+Tiempo requerido: 3.986
+Tamaño 1059
+Tiempo requerido: 7.286
+Tiempo requerido: 7.193
+Tiempo requerido: 7.133
+Tiempo requerido: 7.133
+Tiempo requerido: 7.138
+Tamaño 1208
+Tiempo requerido: 10.724
+Tiempo requerido: 10.498
+Tiempo requerido: 10.823
+Tiempo requerido: 10.627
+Tiempo requerido: 10.783
+Tamaño 1357
+Tiempo requerido: 21.978
+Tiempo requerido: 21.957
+Tiempo requerido: 21.876
+Tiempo requerido: 21.974
+Tiempo requerido: 21.789
+Tamaño 16
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tiempo requerido: 0.000
+Tamaño 165
+Tiempo requerido: 0.070
+Tiempo requerido: 0.068
+Tiempo requerido: 0.059
+Tiempo requerido: 0.035
+Tiempo requerido: 0.042
+Tamaño 314
+Tiempo requerido: 0.257
+Tiempo requerido: 0.138
+Tiempo requerido: 0.138
+Tiempo requerido: 0.138
+Tiempo requerido: 0.138
+Tamaño 463
+Tiempo requerido: 0.548
+Tiempo requerido: 0.460
+Tiempo requerido: 0.447
+Tiempo requerido: 0.448
+Tiempo requerido: 0.448
+Tamaño 612
+Tiempo requerido: 1.163
+Tiempo requerido: 1.072
+Tiempo requerido: 1.061
+Tiempo requerido: 1.076
+Tiempo requerido: 1.064
+Tamaño 761
+Tiempo requerido: 2.177
+Tiempo requerido: 2.146
+Tiempo requerido: 2.095
+Tiempo requerido: 2.129
+Tiempo requerido: 2.133
+Tamaño 910
+Tiempo requerido: 3.952
+Tiempo requerido: 3.978
+Tiempo requerido: 3.897
+Tiempo requerido: 3.942
+Tiempo requerido: 3.934
+Tamaño 1059
+Tiempo requerido: 7.370
+Tiempo requerido: 7.263
+Tiempo requerido: 7.220
+Tiempo requerido: 7.114
+Tiempo requerido: 7.194
+Tamaño 1208
+Tiempo requerido: 10.619
+Tiempo requerido: 10.475
+Tiempo requerido: 10.567
+Tiempo requerido: 10.602
+Tiempo requerido: 10.701
+Tamaño 1357
+Tiempo requerido: 22.141
+Tiempo requerido: 21.827
+Tiempo requerido: 21.891
+Tiempo requerido: 21.811
+Tiempo requerido: 21.932
