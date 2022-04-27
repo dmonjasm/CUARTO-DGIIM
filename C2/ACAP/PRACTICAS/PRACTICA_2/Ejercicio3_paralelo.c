@@ -232,7 +232,7 @@ void funcionTres(int rank){
         else{
             int suma = 0;
             MPI_Recv(&suma, 1, MPI_INT, MASTER, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
-            char mensaje[] = "\nEntrando en funcionalidad 3"; 
+            char mensaje[] = "Entrando en funcionalidad 3"; 
             fflush(stdout);printf("%s\n", mensaje);
 
             suma = 0;

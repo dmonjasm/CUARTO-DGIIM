@@ -1,0 +1,9 @@
+BIBLIOGRAFÍA TRABAJO CONECTIVIDAD WIFI
+
+https://programarfacil.com/podcast/esp8266-wifi-coste-arduino/
+https://docs.arduino.cc/retired/shields/arduino-wifi-shield
+https://store.arduino.cc/products/arduino-uno-rev3
+https://store.arduino.cc/products/arduino-mega-2560-rev3
+https://store.arduino.cc/products/arduino-due
+https://www.youtube.com/watch?v=dTy0Qg_cY6Y&ab_channel=Makecademy
+https://programarfacil.com/podcast/como-configurar-esp01-wifi-esp8266/#Como_programar_el_ESP-01
