@@ -6,7 +6,7 @@
 #define IMDEP 256
 #define SIZE (100*1024*1024) // 100 MB
 
-#define NBLOCKS 32
+#define NBLOCKS 8192
 #define THREADS_PER_BLOCK 256
 
 const int numRuns = 10;
@@ -29,12 +29,18 @@ void* inicializarImagen(unsigned long nBytes){
 }
 
 void histogramaCPU(unsigned char* img, unsigned long nBytes, unsigned int* histo){
+	double inicio, final;
+	
+	inicio = get_wall_time();
+	
         for(int i = 0; i<IMDEP; i++)
                 histo[i] = 0;//Inicializacion
         for(unsigned long i = 0; i<nBytes; i++){
                 histo[ img[i] ]++;
         }
-        printf("Tiempo de CPU (s): %.4lf\n", 0.0);
+        
+        final = get_wall_time();
+        printf("Tiempo de CPU (s): %.9lf\n", final-inicio);
 }
 
 long calcularCheckSum(unsigned int* histo){
@@ -90,6 +96,7 @@ int main(void){
 
         unsigned char *dev_imagen = 0;
         unsigned int *dev_histo = 0;
+       
         cudaMalloc( (void**) &dev_imagen, SIZE );
         cudaMemcpy( dev_imagen, imagen, SIZE, cudaMemcpyHostToDevice );
         cudaMalloc( (void**) &dev_histo, IMDEP * sizeof( unsigned int) );
@@ -125,10 +132,11 @@ int main(void){
         if(compararHistogramas(histoCPU, gpuHisto))
                 printf("Cálculo correcto!!\n");
 
-        printf("Tiempo medio de ejecucion del kernel<<<%d, %d>>> sobre %u bytes [s]: %.4f\n", NBLOCKS, THREADS_PER_BLOCK, SIZE, aveGPUMS / (numRuns*1000.0));
+        printf("Tiempo medio de ejecucion del kernel<<<%d, %d>>> sobre %u bytes [s]: %.9f\n", NBLOCKS, THREADS_PER_BLOCK, SIZE, aveGPUMS / (numRuns*1000.0));
 
         free(imagen);
         cudaFree(dev_imagen);
         cudaFree(dev_histo);
+                
         return 0;
 }
