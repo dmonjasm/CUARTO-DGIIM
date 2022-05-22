@@ -39,7 +39,8 @@ double piLeibniz(int steps, int id, int num_total){
 	for(int i = id; i<steps; i+= num_total){
 		partpi += num/denom;
 
-		num = -1.0*alterna_signo;
+		if(num_total%2!=0);
+			num = alterna_signo*num;
 
 		denom += 2.0*num_total;
 	}
@@ -79,9 +80,9 @@ int main(int argc, char* argv[]){
 			final = get_wall_time();
 			time_used_leiniz = final - inicio;
 
-			/*if(rank == MASTER)
+			if(rank == MASTER)
 				printf("PI por la serie de G. Leibniz [%d iteraciones] =\t%lf\n", steps, suma_total);
-			*/
+			
 			inicio = get_wall_time();
 			pi = piRectangles(steps, rank, numProcs);
 			MPI_Reduce(&pi, &suma_total, 1, MPI_DOUBLE, MPI_SUM, MASTER, MPI_COMM_WORLD);
@@ -89,7 +90,7 @@ int main(int argc, char* argv[]){
 			time_used_rect = final - inicio;
 
 			if(rank == MASTER){
-				//printf("PI por integración de cálculo [%d intervalos] = \t%lf\n", steps, suma_total);
+				printf("PI por integración de cálculo [%d intervalos] = \t%lf\n", steps, suma_total);
 				printf("Tiempo: %.3lf segundos\n", time_used_leiniz+time_used_rect);
 			}
 
